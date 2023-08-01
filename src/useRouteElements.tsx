@@ -5,7 +5,7 @@ import MainLayout from './layouts/MainLayout'
 
 const Home = lazy(() => import('./pages/Home'))
 const NotFound = lazy(() => import('./pages/NotFound'))
-
+const HowItWork = lazy(() => import('./pages/howitwork'))
 const routeMain = [
   {
     path: path.home,
@@ -14,6 +14,10 @@ const routeMain = [
   {
     path: '*',
     Component: NotFound
+  },
+  {
+    path: path.howitwork,
+    Component: HowItWork
   }
 ]
 
