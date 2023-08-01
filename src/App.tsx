@@ -5,7 +5,6 @@ import ErrorBoundary from './components/ErrorBoundary'
 import { HelmetProvider } from 'react-helmet-async'
 import { useContext, useEffect } from 'react'
 
-
 function App() {
   const routeElements = useRouteElements()
 
