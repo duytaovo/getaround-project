@@ -26,6 +26,9 @@ module.exports = {
       maxWidth: {
         '1/2': '50%',
         '9/11': '88%'
+      },
+      colors: {
+        mainColor: '#44C5e5'
       }
     }
   },
