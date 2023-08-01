@@ -3,9 +3,7 @@ import React from 'react'
 type Props = {}
 
 const Header = (props: Props) => {
-  return (
-    <div>Header</div>
-  )
+  return <div className='h-11 w-full'>Header</div>
 }
 
 export default Header
