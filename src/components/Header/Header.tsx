@@ -18,7 +18,7 @@ const Header = (props: Props) => {
         </div>
         <div className='ml-6  flex items-center cursor-pointer justify-between text-black font-bold font-sans text-sm'>
           <CustomDropDown arrow={false} isOnClick={false}
-            children={<span>Cách thức hoạt động</span>}
+            children={<span>Cách thức hoạt độngg</span>}
             items={itemsFirst}
             className='p-2 hover:text-mainColor '
           />
