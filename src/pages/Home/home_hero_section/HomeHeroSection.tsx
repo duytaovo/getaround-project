@@ -1,7 +1,7 @@
 import React from 'react'
-import home_hero_background from '../../../assets/images/63c5b095e7bfaba115ba5ccd_homepage-bg-picnic.webp'
-import { AutoComplete, Button, DatePicker } from 'antd'
-import { TimePicker, Space } from 'antd'
+// import home_hero_background from '../../../assets/images/63c5b095e7bfaba115ba5ccd_homepage-bg-picnic.webp'
+// import { AutoComplete, Button, DatePicker } from 'antd'
+// import { TimePicker, Space } from 'antd'
 
 type Props = {}
 
@@ -30,7 +30,7 @@ const HomeHeroSection = (props: Props) => {
         </div>
         <Space align='center' className='flex justify-center'>
           <div className='w-[180px] h-[60px] bg-white/90 rounded-xl'>
-            <AutoComplete
+            <Autocomplete
               bordered={false}
               placeholder='Địa chỉ...'
               style={{
