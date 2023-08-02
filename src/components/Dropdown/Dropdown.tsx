@@ -9,8 +9,8 @@ interface Props {
   children?: ReactNode
   items?: ItemType[] | undefined
   className?: string
-  isOnClick: boolean
-  arrow:boolean
+  isOnClick?: boolean
+  arrow?:boolean
 }
 const CustomDropDown = ({ children, items, className, isOnClick,arrow }: Props) => (
   <div>

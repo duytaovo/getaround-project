@@ -10,19 +10,19 @@ export const selectItems:ISelectItems[] = [
     icon: '	https://assets-global.website-files.com/5c16e90c8f…98f834e5/612412c4691bb97eac3bd71c_flag-france.png'
   },
   {
-    value: 'Pháp',
+    value: 'Anh',
     icon: '	https://assets-global.website-files.com/5c16e90c8f…98f834e5/612412c4691bb97eac3bd71c_flag-france.png'
   },
   {
-    value: 'Pháp',
+    value: 'Úc',
     icon: '	https://assets-global.website-files.com/5c16e90c8f…98f834e5/612412c4691bb97eac3bd71c_flag-france.png'
   },
   {
-    value: 'Pháp',
+    value: 'Canada',
     icon: '	https://assets-global.website-files.com/5c16e90c8f…98f834e5/612412c4691bb97eac3bd71c_flag-france.png'
   },
   {
-    value: 'Pháp',
+    value: 'Nga',
     icon: '	https://assets-global.website-files.com/5c16e90c8f…98f834e5/612412c4691bb97eac3bd71c_flag-france.png'
   }
 ]

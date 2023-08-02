@@ -40,4 +40,38 @@ body {
   color: #44c5e5 !important; /* Replace with your desired color */
 }
 
-/* Begin customize color of Antd steps*/
+
+/* src/components/Arrow.css (hoặc index.css nếu muốn sử dụng toàn cục) */
+.arrow-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    transition: left 0.5s ease;
+  }
+  
+  .arrow:hover {
+    animation: moveLeft 1s forwards;
+  }
+  
+  @keyframes moveLeft {
+    0% {
+      left: 50%;
+    }
+    100% {
+      left: 10%;
+    }
+  }
+  
+

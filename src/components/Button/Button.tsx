@@ -1,14 +1,16 @@
 import { ButtonHTMLAttributes } from 'react'
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean
+  isNext?: boolean
 }
 
 export default function Button(props: ButtonProps) {
-  const { className, isLoading, disabled, children, ...rest } = props
+  const { className, isLoading, disabled, children, isNext, ...rest } = props
   const newClassName = disabled ? className + ' cursor-not-allowed' : className
   return (
-    <button className={newClassName} disabled={disabled} {...rest}>
+    <button className={`${newClassName} group `} disabled={disabled} {...rest}>
       {isLoading && (
         <svg
           aria-hidden='true'
@@ -27,7 +29,10 @@ export default function Button(props: ButtonProps) {
           />
         </svg>
       )}
-      <span>{children}</span>
+      <div>
+        {children}
+        {isNext == true && <ArrowCircleRightIcon className='ml-3 group-hover:delay-150 transition-transform group-hover:duration-700  hover:arrow group-hover:transition-all group-hover:-translate-x-2'/>}
+      </div>
     </button>
   )
 }

@@ -1,2 +1,28 @@
 {
-}       
+    "header": {
+      "howItWork": "How it works",
+      "hoisting": "Hosting",
+      "partners": "Partners",
+      "aboutUs": "About us",
+      "bookACar":"Book a Car",
+      "login":"Login"
+    },
+    "howItWork":{
+      "howItWork":"How it Works",
+      "insurance":"Insurance",
+      "trust&safe":"Trust & safe",
+      "getAround":"Get around connect"
+    },
+    "hosting":{
+        "shareaCar":"Share a Car",
+        "hostComunity":"Host Community"
+    },
+    "partners":{
+      "driveWithUber":"Drive With Uber",
+      "partnerWithUs":"Parter With Us"
+    },
+    "about us":{
+      "aboutUs":"About us"
+    }
+  }
+  

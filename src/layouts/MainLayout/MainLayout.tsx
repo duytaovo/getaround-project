@@ -10,7 +10,9 @@ const MainLayoutInner = (props: Props) => {
   return (
     <div>
       <Header />
-      <Outlet />
+      <div className='pt-[100px]'>
+        <Outlet />
+      </div>
       <Footer />
       <HypeMemo />
       <ConsentManager />

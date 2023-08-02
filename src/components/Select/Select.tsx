@@ -40,18 +40,18 @@ const CustomSelect = ({
   return (
     <div className={className}>
       <h1 className=''>{requirementField && <span className='text-red'>*</span>}</h1>
-      {/* <Select
+      <Select
       defaultValue={defaultValue}
       style={{ width: width }}
       // onChange={handleChange}
       options={options}
-    /> */}
-      <select id={id} name={id} className='select' required>
+    />
+      {/* <select id={id} name={id} className='select' required>
         <option hidden defaultValue='Pháp'>
           {placeholder}
         </option>
         {renderSelectOption()}
-      </select>
+      </select> */}
     </div>
   )
 }

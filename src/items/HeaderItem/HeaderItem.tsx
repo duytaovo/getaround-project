@@ -1,5 +1,8 @@
 import { MenuProps } from 'antd'
 import CustomLink from 'src/components/CustomLink'
+import { useTranslation } from 'react-i18next'
+
+
 
 export const itemsFirst: MenuProps['items'] = [
   {
@@ -125,8 +128,7 @@ export const itemsThird: MenuProps['items'] = [
         </div>
       </CustomLink>
     )
-  },
- 
+  }
 ]
 export const itemsFour: MenuProps['items'] = [
   {
@@ -184,11 +186,10 @@ export const itemAcount: MenuProps['items'] = [
     key: '1',
     label: (
       <CustomLink to={'/'}>
-        <div className='flex flex-col px-5 text-black '>
-          <span className='cursor-pointer justify-between text-black font-bold font-sans text-xs  hover:text-mainColor'>
-            Đăng nhập
+        <div className='flex flex-col px-5 text-black group-hover:text-mainColor'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black font-bold font-sans text-xs  hover:text-mainColor'>
+            <span className='group-hover:text-mainColor'>Đăng nhập</span>
           </span>
-          
         </div>
       </CustomLink>
     )
