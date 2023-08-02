@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import ErrorBoundary from './components/ErrorBoundary'
 import { HelmetProvider } from 'react-helmet-async'
 import { useContext, useEffect } from 'react'
-
+import './App.css'
 
 function App() {
   const routeElements = useRouteElements()

@@ -38,7 +38,7 @@ const HeaderHowItWord = () => {
           <div className=' w-full max-with max-w-5xl mx-auto flex-col px-9 flex '>
             <div className='w-6/13 max-w-xl ml-0 px-9 bg-[#efeff0] rounded-3xl'>
               <h1 className='text-black text-5xl font-bold mt-6'>
-                Thuê và mở khóa một <span className='text-[#bc00cc]'>ô tô gần đó</span> chỉ trong vài giây
+                Thuê và mở khóa một <span className='text-mainColor'>ô tô gần đó</span> chỉ trong vài giây
               </h1>
               <div className=' h-8'></div>
               <div className='my-8'>
@@ -98,7 +98,7 @@ const HeaderHowItWord = () => {
                           />
                         </Space>
                       </div>
-                      <div className='h-14 w-full bg-[#b01aa7] mt-6 rounded-lg'>
+                      <div className='h-14 w-full bg-mainColor mt-6 rounded-lg'>
                         <div className='flex justify-center items-center h-full group cursor-pointer'>
                           <h2 className='text-white text-xl font-semibold mr-5'>Tìm kiếm xe</h2>
                           <svg
