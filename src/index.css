@@ -3,18 +3,43 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Inter';
-    src: url('../src/assets/fonts/brownpro-bold.otf')
-        format('woff2 supports variations'),
-        url('../src/assets/fonts/brownpro-bold.otf')
-        format('woff2 supports variations'),;
-    font-weight: 100 900;
-  }
+  font-family: 'Inter';
+  src:
+    url('../src/assets/fonts/brownpro-bold.otf') format('woff2 supports variations'),
+    url('../src/assets/fonts/brownpro-bold.otf') format('woff2 supports variations');
+  font-weight: 100 900;
+}
 
-  html {
+html {
   font-family: 'Inter', sans-serif;
+  scrollbar-gutter: stable;
+}
 
-  }
+body {
+  background: #f9f8f8;
+}
+
+/* Begin customize color of Antd steps */
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
+  background-color: #44c5e5 !important;
+}
+
+.ant-steps-item-finish .ant-steps-icon > span > svg {
+  color: #44c5e5;
+}
+
+.ant-steps-item-process .ant-steps-icon > span > svg {
+  color: #44c5e5;
+}
+
+.ant-steps-item-active .ant-steps-item-title {
+  color: #44c5e5 !important; /* Replace with your desired color */
+}
+
+.ant-steps-item-finish .ant-steps-item-title {
+  color: #44c5e5 !important; /* Replace with your desired color */
+}
+
 
 /* src/components/Arrow.css (hoặc index.css nếu muốn sử dụng toàn cục) */
 .arrow-container {
@@ -49,3 +74,4 @@
     }
   }
   
+

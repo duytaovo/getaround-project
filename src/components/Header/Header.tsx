@@ -31,7 +31,9 @@ const Header = (props: Props) => {
   }
 
   return (
-    <div className='bg-slate-400 flex items-center fixed z-30 justify-between h-[100px] w-[100vw] px-10'>
+
+    <div className='bg-slate-400 flex items-center justify-between h-[100px] w-[98.95vw] px-10'>
+
       <div className='flex  '>
         <div>
           {/* <img src={logo} alt='logo' className='fill-current bg-none h-[26px] w-[120px]'/> */}
