@@ -1,2 +1,28 @@
 {
-}
+    "header": {
+      "howItWork": "Cách thức hoạt động",
+      "hoisting": "Lưu trữ",
+      "partners": "Đối tác",
+      "aboutUs": "Về chúng tôi",
+      "bookACar":"Đặt xe",
+      "login":"Đăng nhập"
+    },
+    "howItWork":{
+      "howItWork":"Cách thức hoạt động",
+      "insurance":"Bảo hiển",
+      "trust&safe":"Tin cậy và an toàn",
+      "getAround":"Kết nối"
+    },
+    "hosting":{
+        "shareaCar":"Chia sẻ Xe",
+        "hostComunity":"Tổ chức cộng đồng"
+    },
+    "partners":{
+      "driveWithUber":"Lái xe với Uber",
+      "partnerWithUs":"Cộng tác với chúng tôi"
+    },
+    "about us":{
+      "aboutUs":"Về chúng tôi"
+    }
+  }
+  

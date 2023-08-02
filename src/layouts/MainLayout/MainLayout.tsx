@@ -9,8 +9,10 @@ const MainLayoutInner = (props: Props) => {
   return (
     <div>
       <Header />
-      <Outlet />
-      <Footer/>
+      <div className='pt-[100px]'>
+        <Outlet />
+      </div>
+      <Footer />
     </div>
   )
 }

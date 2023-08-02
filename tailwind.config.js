@@ -9,7 +9,6 @@ module.exports = {
   },
   theme: {
     extend: {
-      colors: {},
       height: {
         11: '100px',
         101: '41rem',
@@ -29,7 +28,7 @@ module.exports = {
       },
       colors: {
         mainColor: '#44C5e5'
-      }
+      },
     }
   },
   plugins: [

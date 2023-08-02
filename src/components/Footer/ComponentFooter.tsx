@@ -23,7 +23,7 @@ const ComponentFooter = ({header, tabContent}:Props) => {
                     <div className="">
                       <div className="">
                         <Link to={content.link}>
-                          <div className=" hover:text-mainColor cursor-pointer">{content.content}</div>
+                          <div className=" hover:text-mainColor hover:translate-x-2 duration-300 my-2 cursor-pointer">{content.content}</div>
                         </Link>
                       </div>
                     </div>
