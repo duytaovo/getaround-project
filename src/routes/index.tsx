@@ -5,6 +5,7 @@ const Home = lazy(() => import('../pages/Home'))
 const NotFound = lazy(() => import('../pages/NotFound'))
 const HowItWork = lazy(() => import('../pages/howitwork'))
 const HowItWorkConnect = lazy(() => import('../pages/howitworkConnect'))
+const ShareACar = lazy(() => import('src/pages/Hosting/ShareACar'))
 export const routeMain = [
   {
     path: path.home,
@@ -13,6 +14,10 @@ export const routeMain = [
   {
     path: path.howitwork,
     Component: HowItWork
+  },
+  {
+    path: path.sharACar,
+    Component: ShareACar
   },
   {
     path: path.howitworkconnect,

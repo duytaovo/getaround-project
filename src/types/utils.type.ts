@@ -1,6 +1,6 @@
 export interface IItemSlider {
     id:number
-    title:string
+    title?:string
     img:string
 }
 

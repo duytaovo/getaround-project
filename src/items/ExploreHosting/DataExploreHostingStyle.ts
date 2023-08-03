@@ -24,13 +24,14 @@ export const DataExploreHostingShareCar = {
   Title: 'Big-time bonuses to help you grow',
   styleTitle:
     'w-full text-mainColor tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left ',
+
   Description:
     "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
 
   Button: {
     href: '',
     className:
-      'text-mainColor underline  touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
+      'text-mainColor no-underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
     text: 'Khám phá các phần thưởng'
   }
 }
