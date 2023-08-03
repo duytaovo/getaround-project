@@ -4,10 +4,12 @@ type HeadingPropsType = {
   title: string
   className?: string
   breakLineAt?: number
+  color?: string
+  fillColorAt?: number[]
   fontSize: number
 }
 
-const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize }) => {
+const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize, color, fillColorAt }) => {
   const [sentences, setSentences] = useState<string[]>([])
   useEffect(() => {
     const words = title.split(' ')
@@ -18,11 +20,17 @@ const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize
 
   return (
     <div className={className}>
-      <h1 className={`w-full mx-auto h-full text-black text-[${JSON.stringify(fontSize)}px] font-bold py-4`}>
-        {sentences.map((sentence) => {
+      <h1
+        style={{
+          fontSize: `${fontSize}px`
+        }}
+        className={`w-full mx-auto h-full text-black  font-bold py-4`}
+      >
+        {sentences.map((sentence, index) => {
           return (
             <p
-              className='mb-1'
+              key={index}
+              className={`mb-1 `}
               style={{
                 lineHeight: '100%'
               }}
