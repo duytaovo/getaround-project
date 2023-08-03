@@ -1,14 +1,11 @@
 import { MenuProps } from 'antd'
 import CustomLink from 'src/components/CustomLink'
-import { useTranslation } from 'react-i18next'
-
-
 
 export const itemsFirst: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={'/how-it-work'}>
         <div className='inline-block px-5 text-black hover:text-mainColor'>
           <span className='cursor-pointer justify-between text-black font-bold font-sans text-sm  hover:text-mainColor'>
             Cách thức hoát động
@@ -44,7 +41,7 @@ export const itemsFirst: MenuProps['items'] = [
   {
     key: '4',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={'/how-it-work/connect'}>
         <div className='inline-block px-5 text-black'>
           <span className='cursor-pointer justify-between text-black font-bold font-sans text-sm hover:text-mainColor'>
             Kết nối
