@@ -58,7 +58,7 @@ export const itemsSecond: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={'/how-it-work/share-a-car'}>
         <div className='inline-block px-5 text-black hover:text-mainColor'>
           <span className='cursor-pointer justify-between text-black font-bold font-sans text-sm  hover:text-mainColor'>
             Chia sẻ xe

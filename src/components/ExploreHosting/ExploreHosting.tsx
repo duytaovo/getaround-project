@@ -9,7 +9,7 @@ const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, D
   return (
     <div className='flex-col items-center mb-[104px] flex'>
       {isEx === true ? (
-        <div className='w-full max-w-[1272px] self-center items-stretch px-9 flex relative'>
+        <div className='w-full max-w-[1272px] self-center items-stretch  flex relative'>
           <div className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
             {DataExploreHostingText.mainTitle}
           </div>
@@ -37,10 +37,10 @@ const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, D
           )}
           <div>
             <h2 className={`${DataExploreHostingStyle.styleTitle}`}>
-              <strong className='font-[bolder]'>{DataExploreHostingText.Title}</strong>
+              <strong className=''>{DataExploreHostingText.Title}</strong>
             </h2>
           </div>
-          <div className='text-[#727272] mt-[30px] text-[16px] font-normal mb-4'>
+          <div className='text-[#727272] mt-[30px]  text-[16px] font-normal mb-4'>
             {DataExploreHostingText.Description}
             <br />
           </div>
