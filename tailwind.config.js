@@ -26,9 +26,15 @@ module.exports = {
         '1/2': '50%',
         '9/11': '88%'
       },
-      colors: {
-        mainColor: '#44C5e5'
+      backgroundImage:{
+        mainColor: 'linear-gradient(70deg,#44c5e5,#276dc1)'
       },
+      colors: {
+        mainColor: '#3699d3'
+      },
+      backgroundColor:{
+        mainBackGroundColor:'#1c2635'
+      }
     }
   },
   plugins: [

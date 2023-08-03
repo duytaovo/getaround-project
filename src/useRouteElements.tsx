@@ -1,30 +1,10 @@
 import path from 'src/constants/path'
-import { lazy, Suspense, useContext, useMemo, useRef } from 'react'
-import { Navigate, Outlet, Route, RouteObject, Routes, useRoutes } from 'react-router-dom'
+import { lazy, Suspense, useMemo } from 'react'
+import {  Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
+import { routeMain } from './routes'
 
-const Home = lazy(() => import('./pages/Home'))
-const NotFound = lazy(() => import('./pages/NotFound'))
-const HowItWork = lazy(() => import('./pages/howitwork'))
-const HowItWorkConnect = lazy(() => import('./pages/howitworkConnect'))
-const routeMain = [
-  {
-    path: path.home,
-    Component: Home
-  },
-  {
-    path: '*',
-    Component: NotFound
-  },
-  {
-    path: path.howitwork,
-    Component: HowItWork
-  },
-  {
-    path: path.howitworkconnect,
-    Component: HowItWorkConnect
-  }
-]
+
 
 export default function useRouteElements() {
   const renderRouter = useMemo(() => {

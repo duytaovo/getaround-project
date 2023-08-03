@@ -1,8 +1,6 @@
-import React, { ReactNode } from 'react'
+import  { ReactNode } from 'react'
 import { ItemType } from 'antd/es/menu/hooks/useItems'
 import { Link } from 'react-router-dom'
-import { DownOutlined } from '@ant-design/icons'
-import type { MenuProps } from 'antd'
 import { Dropdown, Space } from 'antd'
 
 interface Props {

@@ -10,15 +10,18 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import ggplay from './ggPlay.jpeg'
 import appstore from './appstore.png'
 import { Link } from 'react-router-dom'
+import logo from 'src/assets/images/logo.jpg'
+
 type Props = {}
 
 const style: React.CSSProperties = { padding: '8px 0' }
 
 const Footer = (props: Props) => {
   return (
-    <div className='px-10 bg-slate-400'>
+    <div className='p-10 bg-white'>
       <div className='flex items-center justify-between  '>
-        <span className='text-mainColor  font-bold fill-current text-[50px] '>Unlock</span>
+      <img src={logo} alt='logo' className='fill-current bg-none h-[36px] w-[120px]'/>
+
         <CustomSelect
           width='200px'
           defaultValue='Pháp'
