@@ -3,7 +3,7 @@ import React from 'react'
 const SlideHowItWork = () => {
   return (
     <div className='flex-col items-stretch mb-28 flex'>
-      <div className='w-full max-w-7xl flex-col self-center items-stretch px-9 flex relative'>
+      <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative'>
         <div className='max-w-1.5 text-center mx-auto text-mainColor uppercase text-xs font-bold leading-3 mb-6'>
           Out mission
         </div>

@@ -6,7 +6,7 @@ interface Props {
 const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>
-      <div className='w-full max-w-[1272px] flex-col self-center items-stretch px-9 flex relative'>
+      <div className='w-full max-w-full flex-col self-center items-stretch flex relative'>
         <div className='w-full max-w-[1080px] flex-col mx-auto px-9 flex'>
           <h2 className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
             {mainTitle}

@@ -14,10 +14,14 @@ const SlideHIWC = () => {
         }}
       >
         <div className='text-right'>
-          <button className='h-14 w-40 bg-white text-mainColor rounded-md'>Share A Car</button>
+          <button className='h-14 w-40 bg-white text-mainColor rounded-md cursor-pointer hover:text-[#1f4160]'>
+            Share A Car
+          </button>
         </div>
         <div className=''>
-          <button className='h-14 w-40 bg-white text-mainColor rounded-md'>Book A Car</button>
+          <button className='h-14 w-40 bg-white text-mainColor rounded-md cursor-pointer hover:text-[#1f4160]'>
+            Book A Car
+          </button>
         </div>
       </div>
     </div>

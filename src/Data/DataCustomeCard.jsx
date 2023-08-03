@@ -87,9 +87,7 @@ export const DataCustomeCardHostBonus = [
   {
     id: 1,
     header: (
-      <div className='mt-[6px] text-[20px] font-bold block  box-border leading-[140%] font-[Brownpro,sans-serif] '>
-        The New Onboard Bonus
-      </div>
+      <div className='mt-[6px] text-[20px] font-bold block  box-border leading-[140%]  '>The New Onboard Bonus</div>
     ),
     title:
       "Your Onboarding Bonus is based on the location of your car. We'll give larger bonuses in zip codes with high guest demand",
@@ -104,11 +102,7 @@ export const DataCustomeCardHostBonus = [
   },
   {
     id: 2,
-    header: (
-      <div className='mt-[6px] text-[20px] font-bold block  box-border leading-[140%] font-[Brownpro,sans-serif] '>
-        The Referral Bonus
-      </div>
-    ),
+    header: <div className='mt-[6px] text-[20px] font-bold block  box-border leading-[140%] '>The Referral Bonus</div>,
     title: 'Time to share the love. You could earn more money by inviting friends to host on Getaround.',
     description: (
       <a href='/' className='text-black no-underline bg-transparent'>
@@ -122,7 +116,7 @@ export const DataCustomeCardHostBonus = [
   {
     id: 2,
     header: (
-      <div className='mt-[6px] text-[20px] font-bold block  box-border leading-[140%] font-[Brownpro,sans-serif] '>
+      <div className='mt-[6px] text-[20px] font-bold block  box-border leading-[140%]  '>
         Electric Vehicle Financing with Tenet
       </div>
     ),
