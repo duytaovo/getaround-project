@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-
-const Proprietary = () => {
+interface Props {
+  Data: any
+}
+const Proprietary: React.FC<Props> = ({ Data }) => {
   const [isOnScreen, setIsOnScreen] = useState(true)
 
   useEffect(() => {
@@ -48,18 +50,16 @@ const Proprietary = () => {
           <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <div>
               <div className='max-w-[30ch] text-mainColor text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
-                out proprietary hardware
+                {Data?.[0]?.headerTitle}
               </div>
               <h2 className='max-w-full text-[#000] tracking-[-.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em]'>
-                <strong className='font-bold'>Explore the power of Getaround Connect®</strong>
+                <strong className='font-bold'> {Data?.[0]?.title}</strong>
               </h2>
               <div className='text-[#727272] mt-[30px] text-sm font-semibold'>
-                Getaround vehicles are powered by our proprietary Connect® technology. To make sharing a car as easy as
-                owning one, we built the only hardware designed specifically for contactless, peer-to-peer car sharing.{' '}
+                {Data?.[0]?.description}
                 <br /> <br />
-                <strong className='text-[#000] font-bold'>Getaround Connect® </strong>
-                allows you to find, book, and unlock cars directly from your phone, and avoid meeting up with anyone
-                throughout the process to exchange keys.
+                <strong className='text-[#000] font-bold'>{Data?.[0]?.span}</strong>
+                {Data?.[0]?.description2}
                 <br />
                 <br />
                 <a

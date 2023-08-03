@@ -1,4 +1,3 @@
-import React from 'react'
 interface Props {
   DataConnectedCarSharingHome: Array<{
     id: number
@@ -7,7 +6,6 @@ interface Props {
   }>
 }
 const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome }) => {
-  console.log(DataConnectedCarSharingHome)
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>
       <div className='w-full flex-col max-w-[1272px] self-center items-stretch px-auto flex relative'>
@@ -20,7 +18,11 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome }) =
                     <div className='mb-1 text-[32px] font-bold'>{DataConnectedCarSharingHome?.[index]?.total}</div>
                     <div className='text-[13px] font-bold'>{DataConnectedCarSharingHome?.[index]?.title}</div>
                   </div>
-                  <div className='w-[1px] h-16 bg-[#c9c9c9] self-strech'></div>
+                  {index === DataConnectedCarSharingHome.length - 1 ? (
+                    <></>
+                  ) : (
+                    <div className='w-[1px] h-16 bg-[#c9c9c9] self-strech'></div>
+                  )}
                 </>
               ))}
             </div>
