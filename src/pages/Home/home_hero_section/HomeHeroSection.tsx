@@ -48,17 +48,17 @@ const HomeHeroSection = (props: Props) => {
         <Space align='center' className='flex justify-center items-end'>
           <CustomeAddressAutocomplete items={options} />
           <div className='grow flex'>
-            <CustomDatetimePicker className='h-[52px]' title='Ngày bắt đầu' />
+            <CustomDatetimePicker className='h-[52px]' title='Start trip' />
             <div style={{ width: '10px' }} />
-            <CustomDatetimePicker className='h-[52px]' title='Ngày kết thúc' />
+            <CustomDatetimePicker className='h-[52px]' title='End trip' />
           </div>
 
           <CustomeButton className='min-w-[140px] h-[52px] bg-mainColor rounded-[10px] text-white/80' isNext={true}>
-            Tìm xe ngay
+            Search a car
           </CustomeButton>
         </Space>
       </div>
-      <RatingStar rating={4} review='' />
+      {/* <RatingStar rating={4} review='Shoppee' classReview='text-white' activeClassname='h-20' /> */}
     </div>
   )
 }
