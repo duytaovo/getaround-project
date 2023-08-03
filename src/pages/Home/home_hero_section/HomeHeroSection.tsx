@@ -36,7 +36,7 @@ const HomeHeroSection = (props: Props) => {
       <div className='w-full h-[90%] max-w-[980px] bg-white/90 m-auto rounded-[20px] py-9 px-14 flex flex-col justify-center'>
         <div className='flex flex-col justify-center items-center pb-8'>
           <div>
-            <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>Chủ động thời gian</h2>
+            <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>Drive on your schedule</h2>
           </div>
           <div>
             <h1 className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'>
