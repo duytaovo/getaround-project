@@ -5,7 +5,7 @@ import KeyFeature from 'src/components/HowItWorkConnect/KeyFeature'
 
 const HowItWorkConnect = () => {
   return (
-    <div className='bg-[#ffffff]'>
+    <div className='bg-mainBackGroundColor'>
       <HeaderHIWC />
       <SlideHIWC />
       <KeyFeature />
