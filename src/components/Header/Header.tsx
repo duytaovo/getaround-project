@@ -10,6 +10,7 @@ import LanguageIcon from '@mui/icons-material/Language'
 import logo from 'src/assets/images/logo.jpg'
 import { AppContext } from 'src/contexts/app.context'
 import TransitionsModal from '../Modal'
+import { Link } from 'react-router-dom'
 type Props = {}
 
 const Header = (props: Props) => {
@@ -39,7 +40,9 @@ const Header = (props: Props) => {
       <div className='bg-white fixed z-50 flex items-center justify-between h-[100px] w-[98.95vw] px-10'>
         <div className='flex  '>
           <div>
+            <Link to='/'>
             <img src={logo} alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
+            </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
           <div className='ml-6  flex items-center cursor-pointer justify-between text-black font-bold font-sans text-sm'>
@@ -75,7 +78,7 @@ const Header = (props: Props) => {
         </div>
         <div className='flex items-center justify-between'>
           <Button
-            className='bg-[#000000] border hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] text-sm font-bold leading-5 px-0
+            className='bg-black border hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] text-sm font-bold leading-5 px-0
           '
             children={<span>{t('header.bookACar')}</span>}
           />

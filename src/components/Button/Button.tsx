@@ -31,7 +31,9 @@ export default function Button(props: ButtonProps) {
       )}
       <div>
         {children}
-        {isNext == true && <ArrowCircleRightIcon className='ml-3 group-hover:delay-150 transition-transform group-hover:duration-700  hover:arrow group-hover:transition-all group-hover:-translate-x-2'/>}
+        {isNext == true && <ArrowCircleRightIcon sx={{
+          fontSize:"30px"
+        }} className=' ml-3 group-hover:delay-150 transition-transform group-hover:duration-700  hover:arrow group-hover:transition-all group-hover:-translate-x-1.5'/>}
       </div>
     </button>
   )
