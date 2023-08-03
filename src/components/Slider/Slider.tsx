@@ -21,14 +21,26 @@ interface Props {
   classNameImage?: string
 }
 
-export default function CustomSlider({ numberItem,numberItemScroll, data,className,classNameContent,classNameImage,classNameTime,classNameTitle,isContent,isTime,isTitle }: Props) {
+export default function CustomSlider({
+  numberItem,
+  numberItemScroll,
+  data,
+  className,
+  classNameContent,
+  classNameImage,
+  classNameTime,
+  classNameTitle,
+  isContent,
+  isTime,
+  isTitle
+}: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
     speed: 1000,
     infinite: true,
-    autoplay:false,
+    autoplay: false,
     slidesToShow: numberItem,
-    autoplaySpeed:2000,
+    autoplaySpeed: 2000,
     nextArrow: <NextArrow breakpoints={breakpoints} />,
     prevArrow: <PrevArrow breakpoints={breakpoints} />,
     responsive: [

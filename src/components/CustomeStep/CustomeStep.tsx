@@ -1,9 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { Steps } from 'antd'
-import { LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons'
 
 interface ICustomeStep {
-  icon: string
   title: string
   images?: string[]
   subTitle: string
@@ -36,11 +34,11 @@ const CustomeStep: FC<Props> = ({ items, classname, icons }) => {
         } else {
           setCurrent(-1)
         }
-        if (y <= 30) {
+        if (y <= 35) {
           setCurrent((x) => (x % 3) + 1)
         }
 
-        if (y <= 5) {
+        if (y <= 10) {
           setCurrent((x) => (x % 3) + 1)
         }
       }

@@ -16,12 +16,18 @@ type CommonQuestionProps = {
 const CustomeCommonQuestions: FC<CommonQuestionProps> = ({ className, items }) => {
   const itemsForColapse: CollapseProps['items'] = items.map((item) => ({
     key: item.key,
-    label: <h1 className='font-bold text-[16px]'>{item.label}</h1>,
+    label: <h1 className='font-bold text-[16px] text-black/60'>{item.label}</h1>,
     children: <SingleCommonQuestion contents={item.contents} />
   }))
   return (
     <div className={className}>
-      <Collapse expandIconPosition='end' style={{ width: '100%' }} accordion items={itemsForColapse} bordered={false} />
+      <Collapse
+        expandIconPosition='end'
+        style={{ width: '100%', background: 'transparent' }}
+        accordion
+        items={itemsForColapse}
+        bordered={false}
+      />
     </div>
   )
 }
