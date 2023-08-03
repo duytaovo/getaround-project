@@ -1,8 +1,8 @@
 import React from 'react'
 import BodyTop from './Component/BodyTop'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
-import { DataExploreHostingHome, DataExploreHostingShareCar } from 'src/Data/DataExploreHostingStyle'
-import { DataExploreHostingHomeText, DataExploreHostingShareCarText } from 'src/Data/DataExploreHostingText'
+import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
+import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 
 type Props = {}
 
