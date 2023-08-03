@@ -2,14 +2,16 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 type Props = {
-  content: string
+  contents: string[]
   path?: string
 }
 
-const SingleCommonQuestion: FC<Props> = ({ content, path }) => {
+const SingleCommonQuestion: FC<Props> = ({ contents, path }) => {
   return (
-    <div className='text-justify'>
-      <p>{content}</p>
+    <div className='text-ellipsis'>
+      {contents.map((sentence) => (
+        <p>{sentence}</p>
+      ))}
       <Link to={path || '/'}>Read more</Link>
     </div>
   )

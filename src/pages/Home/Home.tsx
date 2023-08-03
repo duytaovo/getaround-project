@@ -5,6 +5,8 @@ import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
 import Heading from 'src/components/Heading/Heading'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
+import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
+import { LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons'
 
 type Props = {}
 
@@ -26,13 +28,19 @@ const Home = (props: Props) => {
             />
           </div>
           {/* End image portion */}
-          <CustomeStep classname='w-1/2' items={CustomeStepItems} />
+          <CustomeStep
+            icons={[<UserOutlined />, <SmileOutlined />, <SolutionOutlined />]}
+            classname='w-1/2'
+            items={CustomeStepItems}
+          />
         </div>
       </WrapperContent>
       {/* End hero section */}
 
-      <WrapperContent textAlign='left' title='Learn more about the benefits of Getaround'>
-        <CustomeCommonQuestions />
+      <WrapperContent titlePadding={4} textAlign='left' title='Learn more about the benefits of Getaround'>
+        <div>
+          <CustomeCommonQuestions items={items} className='w-1/2 p-4' />
+        </div>
       </WrapperContent>
     </div>
   )
