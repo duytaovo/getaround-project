@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeaderHIWC = () => {
   return (
-    <div className='max-w-full mt-[0%] mx-auto p-[5%]'>
+    <div className='max-w-full mt-[0%] mx-auto mb-10'>
       <div
         style={{
           gridColumnGap: '16px',
@@ -30,10 +30,10 @@ const HeaderHIWC = () => {
           <p className='w-auto max-w-[1279px] text-left text-mainColor uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'>
             A SAFER, MORE CONVENIENT WAY TO CARSHARE
           </p>
-          <h1 className='w-auto max-w-[1279px] text-left mt-0 mb-[0.5em] text-[rgba(0,0,0,0.85)] font-medium pb-[20px] text-[50px] leading-[105%] m-[0.67em_0]'>
+          <h1 className='w-auto max-w-[1279px] text-left mt-0 mb-[0.5em] text-white font-medium pb-[20px] text-[50px] leading-[105%] m-[0.67em_0]'>
             Getaround Connect
           </h1>
-          <p className='w-auto text-[#333] text-[22px] font-light leading-[145%] block max-w-[1279px] text-left mt-0 mb-[10px] pl-0 not-italic'>
+          <p className='w-auto text-white text-[22px] font-light leading-[145%] block max-w-[1279px] text-left mt-0 mb-[10px] pl-0 not-italic'>
             No other carsharing service offers contactless sharing using Getaround Connect®. With your Android or iOS
             phone and the Getaround app, you can find, book, and unlock a car, truck, or van near you. Getaround is the
             leading global and digital carsharing marketplace. Try it today.

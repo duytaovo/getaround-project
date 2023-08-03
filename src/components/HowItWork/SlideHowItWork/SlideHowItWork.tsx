@@ -8,7 +8,7 @@ const SlideHowItWork = () => {
           Out mission
         </div>
         <h2 className='max-w-xl text-center mx-auto text-mainColor font-bold text-4xl :selection:bg-mainColor'>
-          Chúng tôi kết nối <span className='text-black'>những chiếc xe an toàn, tiện lợi </span> với mọi người
+          Chúng tôi kết nối <span className='text-white'>những chiếc xe an toàn, tiện lợi </span> với mọi người
         </h2>
       </div>
       <div className='px-9 relative'>

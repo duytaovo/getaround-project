@@ -34,7 +34,7 @@ const HowItWork = () => {
   const [step, setStep] = useState(false)
   console.log(step)
   return (
-    <div className='w-full h-auto bg-[#f9f8f8]'>
+    <div className='w-full h-auto bg-mainBackGroundColor'>
       <HeaderHowItWord />
       <SlideHowItWork />
       <WrapperContent textAlign='center' title='DISCOVER HOW IT WORKS' classname='flex flex-col'>
