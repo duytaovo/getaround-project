@@ -1,17 +1,31 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { Steps } from 'antd'
+import { LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons'
 
-import { ICustomeStep } from '../../items/CustomeStepItem/CustomeStepItem'
+interface ICustomeStep {
+  icon: string
+  title: string
+  images?: string[]
+  subTitle: string
+}
 
 type Props = {
   items: ICustomeStep[]
+  icons: React.ReactNode[]
   children?: React.ReactNode
   classname?: string
 }
 
-const CustomeStep: FC<Props> = ({ items, classname, children }) => {
+const CustomeStep: FC<Props> = ({ items, classname, icons }) => {
   const stepRef = useRef<HTMLDivElement | null>(null)
   const [current, setCurrent] = useState<number>(-1)
+
+  const itemsForSteps = items.map((item, index) => ({
+    icon: icons[index],
+    title: item.title,
+    subTitle: <h1>{item.subTitle}</h1>,
+    description: <div className='flex'>{item.images?.map((image) => <img className='pr-2' src={image} />)}</div>
+  }))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +63,7 @@ const CustomeStep: FC<Props> = ({ items, classname, children }) => {
           width: '100%',
           height: '100%'
         }}
-        items={items}
+        items={itemsForSteps}
       />
     </div>
   )
