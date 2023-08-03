@@ -26,7 +26,7 @@ const Home = (props: Props) => {
       >
         <div className='w-[70%] mx-auto pt-4'>
           <CustomeSlider
-            classNameTitle='text-center font-bold py-2 text-black/60'
+            classNameTitle='text-center py-2 text-white/80 justify-center'
             numberItem={4}
             numberItemScroll={1}
             isTitle={true}
