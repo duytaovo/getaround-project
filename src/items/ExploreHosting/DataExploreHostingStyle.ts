@@ -5,7 +5,7 @@ export const DataExploreHostingHome = {
   headerTitle: '',
   Title: 'Have a car? Start sharing',
   styleTitle:
-    'w-full text-black tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left font-brown-pro font-sans',
+    'w-full text-black tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left ',
   Description:
     "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
 
@@ -23,7 +23,7 @@ export const DataExploreHostingShareCar = {
   headerTitle: 'HOST INCENTIVES',
   Title: 'Big-time bonuses to help you grow',
   styleTitle:
-    'w-full text-mainColor tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left font-brown-pro font-sans',
+    'w-full text-mainColor tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left ',
   Description:
     "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
 

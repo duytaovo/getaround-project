@@ -1,5 +1,6 @@
 import React from 'react'
-
+import KeyFeatureItem from './KeyFeatureItem'
+import { DataKeyFeatureItem } from 'src/items/KeyFeatureItem/DataKeyFeatureItem'
 const KeyFeature = () => {
   return (
     <div className='flex-col items-center mt-[5%] p-[5%] flex'>
@@ -16,6 +17,7 @@ const KeyFeature = () => {
           </p>
         </div>
       </div>
+      <KeyFeatureItem DataKeyFeatureItem={DataKeyFeatureItem} />
     </div>
   )
 }
