@@ -4,7 +4,6 @@ interface Props {
   DataCustomeCard: any
 }
 const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
-  console.log(DataCustomeCard.styleTitle)
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>
       <div className='w-full max-w-[1272px] flex-col self-center items-stretch px-9 flex relative'>
