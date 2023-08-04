@@ -9,7 +9,7 @@ interface Props {
 const ComponentFooter = ({header, tabContent}:Props) => {
  
   return (
-    <div className="">
+    <div className="text-black">
       <div>
         <div className="">
           <div className="mb-3">

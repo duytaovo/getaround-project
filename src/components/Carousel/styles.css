@@ -10,13 +10,14 @@
 
 .custom-dots li {
   list-style-type: none;
-  margin: 0 4px;
-  color: #000;
+  margin: 8px 4px;
+  color: #fff;
   font-size: 12px;
   text-align: center;
   line-height: 16px;
   width: 16px;
   border-radius: 50%;
+
 }
 
 .custom-dots li.slick-active {

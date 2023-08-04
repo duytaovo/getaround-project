@@ -27,15 +27,15 @@ const NextArrow: React.FC<NextArrowProps> = (props) => {
       }
       style={{ ...style }}
     >
-      <div className={`h-full w-full flex items-center bg-transparent ${disabled && 'hidden'}`}>
+      <div className={`h-full w-full flex  items-center bg-transparent ${disabled && 'hidden'}`}>
         {!disabled && (
           <div
             onClick={onClick}
             className={
-              "translate-x-full w-9 h-9 rounded-full  opacity-60   flex items-center justify-center cursor-pointer"
+              "translate-x-full w-9 h-9 rounded-full flex items-center justify-center cursor-pointer"
             }
           >
-            <BsChevronRight size={18} className="text-black rounded-full" />
+            <BsChevronRight size={18} className="text-mainColor rounded-full" />
           </div>
         )}
       </div>

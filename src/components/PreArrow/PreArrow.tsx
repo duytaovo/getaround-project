@@ -18,18 +18,18 @@ const PrevArrow: React.FC<PrevArrowProps> = (props) => {
         {!disabled ? (
           <div
             onClick={onClick}
-            className={`-translate-x-full w-9 h-9 cursor-pointer rounded-full bg-white opacity-60  flex items-center justify-center cursor-pointer'
+            className={`-translate-x-full w-9 h-9 cursor-pointer rounded-full text-mainColor  flex items-center justify-center cursor-pointer'
                       ${customClassName}`}
           >
-            <BsChevronLeft size={18} className='text-black rounded-full' />
+            <BsChevronLeft size={18} className='text-mainColor rounded-full' />
           </div>
         ) : (
           <div
             onClick={onClick}
-            className={`-translate-x-full w-9 h-9 cursor-pointer rounded-full  flex items-center justify-center cursor-not-allowed'
+            className={`-translate-x-full w-9 h-9 cursor-pointer rounded-full text-mainColor flex items-center justify-center cursor-not-allowed'
                    ${customClassName}`}
           >
-            <BsChevronLeft size={18} className='text-black rounded-full' />
+            <BsChevronLeft size={18} className='text-mainColor rounded-full' />
           </div>
         )}
       </div>

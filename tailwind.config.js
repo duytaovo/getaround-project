@@ -27,7 +27,8 @@ module.exports = {
         '9/11': '88%'
       },
       backgroundImage:{
-        mainColor: 'linear-gradient(70deg,#44c5e5,#276dc1)'
+        mainColor: 'linear-gradient(70deg,#44c5e5,#276dc1)',
+        shareACar:"url('https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d8276f5f590e8cd734e67c_shareacar2tiny.jpg')"
       },
       colors: {
         mainColor: '#3699d3',
@@ -35,6 +36,9 @@ module.exports = {
       },
       backgroundColor:{
         mainBackGroundColor:'#1c2635'
+      },
+      margin:{
+        bottom:'105px'
       }
     }
   },
