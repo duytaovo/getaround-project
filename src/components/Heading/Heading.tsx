@@ -32,7 +32,8 @@ const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize
               key={index}
               className={`mb-1 `}
               style={{
-                lineHeight: '100%'
+                lineHeight: '100%',
+                color
               }}
             >
               {sentence}

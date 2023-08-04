@@ -9,7 +9,7 @@ type Props = {}
 const options = [
   {
     label: 'Option 1',
-    value: '1'
+    value: 'This is value one'
   },
   {
     label: 'Option 2',

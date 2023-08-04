@@ -106,7 +106,13 @@ const Home = (props: Props) => {
       </WrapperContent>
 
       <WrapperContent title='CARS IN YOUR CITY' isBgTransparent textAlign='center'>
-        <Heading title='Local favorites near you' fontSize={30} breakLineAt={4} className='text-center' />
+        <Heading
+          title='Local favorites near you'
+          fontSize={30}
+          breakLineAt={4}
+          className='text-center'
+          color='rgba(255,255,255, .8)'
+        />
         <div className='mx-auto pt-4 w-[60%]'>
           <CustomeSlider
             data={ItemSlider}
@@ -120,7 +126,13 @@ const Home = (props: Props) => {
       </WrapperContent>
 
       <WrapperContent title='THE GETAROUND BLOG' isBgTransparent textAlign='center'>
-        <Heading title='The Road Ahead: Discover our Blog' fontSize={30} breakLineAt={6} className='text-center' />
+        <Heading
+          title='The Road Ahead: Discover our Blog'
+          fontSize={30}
+          breakLineAt={6}
+          className='text-center'
+          color='rgba(255,255,255, .8)'
+        />
         <div className='mx-auto w-full h-fit  '>
           <CustomeSlider
             data={ItemSlider}
