@@ -5,7 +5,8 @@ const path = {
   howitwork: '/how-it-work',
   howitworkconnect: '/how-it-work/connect',
   hostrefernal: 'host-referral',
-  sharACar: '/how-it-work/share-a-car',
+  sharACar: '/host/share-a-car',
+  hostCommunity: '/host/community',
   aboutus: '/about-us'
 } as const
 

@@ -37,7 +37,7 @@ const Header = (props: Props) => {
 
   return (
     <div>
-      <div className='bg-white fixed z-50 flex items-center justify-between h-[100px] w-[98.95vw] px-10'>
+      <div className='bg-white fixed cur z-50 flex items-center justify-between h-[100px] w-[98.95vw] px-10'>
         <div className='flex  '>
           <div>
             <Link to='/'>
@@ -45,7 +45,7 @@ const Header = (props: Props) => {
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
-          <div className='ml-6  flex items-center cursor-pointer justify-between text-black font-bold font-sans text-sm'>
+          <div className='ml-6  flex items-center cursor-pointer justify-between text-black font-medium font-sans text-sm'>
             <CustomDropDown
               arrow={false}
               isOnClick={false}
@@ -78,25 +78,25 @@ const Header = (props: Props) => {
         </div>
         <div className='flex items-center justify-between'>
           <Button
-            className='bg-black border hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] text-sm font-bold leading-5 px-0
+            className='bg-black border hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0
           '
             children={<span>{t('header.bookACar')}</span>}
           />
           <Button
-            className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-bold leading-5 px-0 text-center'
+            className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0 text-center'
             children={<span>{t('header.bookACar')}</span>}
           />
           <CustomDropDown
             arrow={false}
             isOnClick={false}
             children={
-              <div className='flex items-center justify-around group:' >
+              <div className='flex items-center justify-around cursor-pointer ' >
                 <AccountCircleIcon  onClick={handleOpenModal}/>
                 {/* <ArrowDropDownIcon className='group-hover:text-mainColor'/> */}
               </div>
             }
             items={itemAcount}
-            className='p-2 mx-2 hover:text-mainColor cursor-pointer group-hover:text-mainColor'
+            className='p-2 mx-2  text-black hover:text-mainColor cursor-pointer group-hover:text-mainColor'
           />
           <div>
             <IconButton

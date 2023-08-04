@@ -16,9 +16,9 @@ const Review = ({
   classNameContent = 'text-lg text-[#727272] flex flex-start align-left wrap flex-column leading-[22px]',
 }: Props) => {
   return (
-    <div className={`${className} bg-white mt-10 flex flex-col p-10 ml-10 rounded-2xl`}>
+    <div className={`${className} bg-white mt-10 flex flex-col p-10 rounded-2xl`}>
       <div className='rounded-lg '>
-        <p className={`${classNameContent} w-[70%] text-ellipsis overflow-hidden break-words rounded-sm  relative bg-mainBackGroundColor text-white shadow-md p-4`}>
+        <p className={`${classNameContent} w-[70%] text-ellipsis overflow-hidden break-words rounded-lg  relative bg-mainBackGroundColor text-white shadow-md p-4 `}>
           {item?.content}
         </p>
       </div>
@@ -27,14 +27,14 @@ const Review = ({
           fontSize:"60px",
 
         }} />
-        <div style={{ transform: 'translate(20px,-40px)' }} className='flex items-center gap-1 text-black'>
+        <div style={{ transform: 'translate(20px,-40px)' }} className='flex items-center  text-black'>
             {/* <FaceOutlinedIcon className='' sx={{
               fontSize:'50px',
               // width:'150px',
               
             }}/> */}
             <img src="https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/62a8da05550d5c48e19f1f2f_Trevor_Hero.jpg" className='w-[67px] h-[67px] rounded-full' alt="" />
-          <span className=''>My Name</span>
+          <span className='ml-2'>{item?.name || 'My name'}</span>
       </div>
     </div>
   )
