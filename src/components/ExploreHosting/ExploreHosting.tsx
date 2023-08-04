@@ -5,12 +5,13 @@ interface Props {
   isEx: boolean
   DataExploreHostingStyle: any
   DataExploreHostingText: any
+  className: string
 }
-const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText }) => {
+const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
   return (
-    <div className='flex-col items-center flex'>
+    <div className={className}>
       {isEx === true ? (
-        <div className='w-full max-w-[1272px] self-center items-stretch  flex relative'>
+        <div className='w-full  self-center items-stretch  flex relative'>
           <div className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
             {DataExploreHostingText.mainTitle}
           </div>
@@ -18,7 +19,7 @@ const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, D
       ) : (
         <></>
       )}
-      <div className='w-full max-w-[1000px] mx-auto flex-col items-start pb-[66px] flex relative'>
+      <div className='w-full mx-auto flex-col items-start  flex relative'>
         <div className={`${DataExploreHostingStyle.styleImg}`}>
           <img src={img} loading='lazy' alt='' className='w-full h-full object-fit-cover object-[50%_22%]' />
         </div>
