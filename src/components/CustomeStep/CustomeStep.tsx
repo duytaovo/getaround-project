@@ -22,7 +22,11 @@ const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
   const itemsForSteps = items.map((item, index) => ({
     icon: icons[index],
     title: item.title,
-    subTitle: <h1 className={textClassName}>{item.subTitle}</h1>,
+    subTitle: (
+      <h1 key={index} className={textClassName}>
+        {item.subTitle}
+      </h1>
+    ),
     description: <div className='flex'>{item.images?.map((image) => <img className='pr-2' src={image} />)}</div>
   }))
 

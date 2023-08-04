@@ -24,7 +24,7 @@ const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize
         style={{
           fontSize: `${fontSize}px`
         }}
-        className={`w-full mx-auto h-full text-black  font-bold py-4`}
+        className={`w-full mx-auto h-full text-black font-medium py-4`}
       >
         {sentences.map((sentence, index) => {
           return (
@@ -32,7 +32,8 @@ const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize
               key={index}
               className={`mb-1 `}
               style={{
-                lineHeight: '100%'
+                lineHeight: '100%',
+                color
               }}
             >
               {sentence}
