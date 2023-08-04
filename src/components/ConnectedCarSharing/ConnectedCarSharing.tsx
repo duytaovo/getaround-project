@@ -15,8 +15,12 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome }) =
               {DataConnectedCarSharingHome.map((item: any, index: number) => (
                 <>
                   <div className='text-center flex-col justify-start items-center flex ' key={index}>
-                    <div className='mb-1 text-[32px] font-bold'>{DataConnectedCarSharingHome?.[index]?.total}</div>
-                    <div className='text-[13px] font-bold'>{DataConnectedCarSharingHome?.[index]?.title}</div>
+                    <div className='mb-1 text-[32px] font-bold text-black'>
+                      {DataConnectedCarSharingHome?.[index]?.total}
+                    </div>
+                    <div className='text-[13px] font-bold text-black'>
+                      {DataConnectedCarSharingHome?.[index]?.title}
+                    </div>
                   </div>
                   {index === DataConnectedCarSharingHome.length - 1 ? (
                     <></>

@@ -7,16 +7,29 @@ const getBreakpoint = (breakpoints: Array<Object>) => {
 
 export default getBreakpoint;
 
-const getRandomColor = () => {
+const getRandomColorWhiteAndMain = () => {
    const colors = ['white','#3699d3']
    const randomIndex = Math.floor(Math.random() * colors.length)
    return colors[randomIndex]
  }
+ const getRandomColorBlackAndMain = () => {
+  const colors = ['black','#3699d3']
+  const randomIndex = Math.floor(Math.random() * colors.length)
+  return colors[randomIndex]
+}
 
-export const changeColor =(arrContent:string[] | undefined)=>(
+export const changeColorWhiteAndMain =(arrContent:string[] | undefined)=>(
    arrContent?.map((word, index) => (
-     <span key={index} style={{ color: getRandomColor() }}>
+     <span key={index} style={{ color: getRandomColorWhiteAndMain() }}>
        {word}{' '}
      </span>
    ))
  ) 
+
+ export const changeColorBlackAndMain =(arrContent:string[] | undefined)=>(
+  arrContent?.map((word, index) => (
+    <span key={index} style={{ color: getRandomColorBlackAndMain() }}>
+      {word}{' '}
+    </span>
+  ))
+) 

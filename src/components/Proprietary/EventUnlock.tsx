@@ -46,8 +46,8 @@ const Proprietary: React.FC<Props> = ({ Data }) => {
   }, [isOnScreen])
   return (
     <div id='proprietary-component' className={`flex-col items-stretch mb-[104px] flex `}>
-      <div className='w-full max-w-[1272px] flex-col self-center items-stretch px-9 flex relative'>
-        <div className='gap-x-[56px] flex-row w-full max-w-[1080px] mx-auto px-9 flex'>
+      <div className='w-full max-w-[1272px] flex-col self-center items-stretch flex relative'>
+        <div className='gap-x-[56px] flex-row w-full max-w-[1080px] mx-auto flex'>
           <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <div>
               <div

@@ -16,7 +16,7 @@ import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCar
 import { DataConnectedCarSharingHome } from 'src/items/ConnectedCarSharing/DataConnectedCarSharing'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
+import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 
 type Props = {}
 
@@ -100,8 +100,9 @@ const Home = (props: Props) => {
         <ExploreHosting
           isEx={true}
           DataExploreHostingStyle={DataExploreHostingHome}
-          DataExploreHostingText={DataExploreHostingShareCarText}
+          DataExploreHostingText={DataExploreHostingHomeText}
           img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
+          className='flex-col items-center flex w-full'
         />
       </WrapperContent>
 
