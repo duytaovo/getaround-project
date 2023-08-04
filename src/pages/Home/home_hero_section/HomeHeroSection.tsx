@@ -36,7 +36,7 @@ const HomeHeroSection = (props: Props) => {
       <div className='w-full h-[90%] max-w-[980px] bg-white/90 m-auto rounded-[20px] py-9 px-14 flex flex-col justify-center'>
         <div className='flex flex-col justify-center items-center pb-8'>
           <div>
-            <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>Chủ động thời gian</h2>
+            <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>Drive on your schedule</h2>
           </div>
           <div>
             <h1 className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'>
@@ -48,17 +48,17 @@ const HomeHeroSection = (props: Props) => {
         <Space align='center' className='flex justify-center items-end'>
           <CustomeAddressAutocomplete items={options} />
           <div className='grow flex'>
-            <CustomDatetimePicker className='h-[52px]' title='Ngày bắt đầu' />
+            <CustomDatetimePicker className='h-[52px]' title='Start trip' />
             <div style={{ width: '10px' }} />
-            <CustomDatetimePicker className='h-[52px]' title='Ngày kết thúc' />
+            <CustomDatetimePicker className='h-[52px]' title='End trip' />
           </div>
 
           <CustomeButton className='min-w-[140px] h-[52px] bg-mainColor rounded-[10px] text-white/80' isNext={true}>
-            Tìm xe ngay
+            Search a car
           </CustomeButton>
         </Space>
       </div>
-      <RatingStar rating={4} review='' />
+      {/* <RatingStar rating={4} review='Shoppee' classReview='text-white' activeClassname='h-20' /> */}
     </div>
   )
 }

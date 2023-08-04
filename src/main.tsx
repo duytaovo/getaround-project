@@ -7,13 +7,17 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store/store'
+import { ConfigProvider } from 'antd'
+import { theme } from './constants/antdConfig'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <ConfigProvider theme={theme}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </ConfigProvider>
     </BrowserRouter>
   </React.StrictMode>
 )

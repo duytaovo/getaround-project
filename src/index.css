@@ -11,12 +11,16 @@
 }
 
 html {
-  font-family: 'Inter', sans-serif;
   scrollbar-gutter: stable;
 }
 
 body {
   background: #1c2635;
+  font-family: 'Brow-pro', sans-serif !important;
+  overflow-y: scroll;
+  height: 100vh;
+  color:#fff;
+
 }
 
 /* Begin customize color of Antd steps */

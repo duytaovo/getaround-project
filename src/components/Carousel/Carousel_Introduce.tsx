@@ -39,13 +39,13 @@ export default function Carousel_Introduce({
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
-    speed: 500,
+    speed: 1000,
     infinite: true,
     autoplay: true,
     slidesToShow: numberItem,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     dots: true,
-    dotsClass: `${'custom-dots'}`,
+    // dotsClass: `${'custom-dots'}`,
     nextArrow: <NextArrow breakpoints={breakpoints} />,
     prevArrow: <PrevArrow breakpoints={breakpoints} />,
     responsive: [
@@ -89,8 +89,14 @@ export default function Carousel_Introduce({
                   '
           >
             {' '}
-            <Introduce item={item} classNameImage={classNameImage} classNameHeader={classNameHeader} classNameTitle={classNameTitle} classNameContent={classNameContent} className={className} />
-
+            <Introduce
+              item={item}
+              classNameImage={classNameImage}
+              classNameHeader={classNameHeader}
+              classNameTitle={classNameTitle}
+              classNameContent={classNameContent}
+              className={className}
+            />
           </div>
         ))}
       </Slider>
