@@ -1,15 +1,9 @@
 import React, { useState } from 'react'
 import HeaderHowItWord from 'src/components/HowItWork/HeaderHowItWork'
 import SlideHowItWork from 'src/components/HowItWork/SlideHowItWork/SlideHowItWork'
-import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCarSharing'
-import { DataConnectedCarSharingHome } from 'src/items/ConnectedCarSharing/DataConnectedCarSharing'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import {
-  DataExploreHostingHomeText,
-  DataExploreHostingShareCarText
-} from 'src/items/ExploreHosting/DataExploreHostingText'
+import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import CustomeCard from 'src/components/CustomeCard/CustomeCard'
 import { DataCustomeCard } from 'src/Data/DataCustomeCard'
 import { DataCustomeCardHostBonus } from 'src/Data/DataCustomeCard'
@@ -20,31 +14,29 @@ import { DataProprietary } from 'src/items/Proprietary/DataProprietary'
 import Heading from 'src/components/Heading/Heading'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import CustomeStep from 'src/components/CustomeStep/CustomeStep'
-import { CustomeStepItems, CustomeStepItemsHowItWork } from 'src/items/CustomeStepItem/CustomeStepItem'
 import {
-  LoadingOutlined,
-  SmileOutlined,
-  SolutionOutlined,
-  UserOutlined,
-  MobileOutlined,
-  CarOutlined,
-  RiseOutlined
-} from '@ant-design/icons'
+  CustomeStepItems,
+  CustomeStepItemsHowItWork1,
+  CustomeStepItemsHowItWork2
+} from 'src/items/CustomeStepItem/CustomeStepItem'
+import { MobileOutlined, CarOutlined, RiseOutlined, DollarOutlined, WalletOutlined } from '@ant-design/icons'
+import SlideLeftRight from 'src/components/SlideLeftRight/SlideLeftRight'
+import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideLeftRight'
+import { Link } from 'react-router-dom'
 const HowItWork = () => {
   const [step, setStep] = useState(false)
-  console.log(step)
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <HeaderHowItWord />
       <SlideHowItWork />
       <WrapperContent textAlign='center' title='DISCOVER HOW IT WORKS' classname='flex flex-col'>
         <div className='justify-center items-center flex relative'>
-          <a
+          <Link
             data-w-tab='Tab 1'
             className='bg-[rgba(0,0,0,)] items-center no-underline tracking-[-0.03em] px-0 text-[24px] font-bold flex align-top cursor-pointer text-left text-[#222] p-[9px_30px] relative max-w-[100%] touch-manipulation duration-[0.3s] ease-[ease] delay-0 transition-[color]'
             style={{ gridColumnGap: '14px', outline: 'none' }}
             id='w-tabs-0-data-w-tab-0'
-            href='#bookingtab'
+            to='#bookingtab'
             role='tab'
             aria-controls='bookingtab'
             aria-selected='true'
@@ -56,13 +48,13 @@ const HowItWork = () => {
               Booking a car
             </h3>
             <div className='w-[30px] h-[30px] bg-[#3699d3] p-[6px] rounded-l-[30px]'></div>
-          </a>
-          <a
+          </Link>
+          <Link
             data-w-tab='Tab 1'
             className='bg-[rgba(0,0,0,)] items-center no-underline tracking-[-0.03em] px-0 text-[24px] font-bold flex align-top cursor-pointer text-left text-[#222] p-[9px_30px] relative max-w-[100%] touch-manipulation duration-[0.3s] ease-[ease] delay-0 transition-[color]'
             style={{ gridColumnGap: '14px', outline: 'none' }}
             id='w-tabs-0-data-w-tab-0'
-            href='#bookingtab'
+            to='#bookingtab'
             role='tab'
             aria-controls='bookingtab'
             aria-selected='true'
@@ -72,7 +64,7 @@ const HowItWork = () => {
                 onClick={() => {
                   setStep(!step)
                 }}
-                className={`bg-white w-full h-full rounded-full  left-[1px]`}
+                className={`bg-white w-full h-full rounded-full right-[-10px]`}
                 style={{
                   transform:
                     'translate3d(-150%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
@@ -86,23 +78,43 @@ const HowItWork = () => {
             >
               Sharing a car
             </h3>
-          </a>
+          </Link>
         </div>
         <div className='flex justify-center px-[36px] '>
           {/* Begin image portion */}
-          <div className='w-1/2 flex justify-center'>
-            <img
-              className='object-contain h-[500px]'
-              src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar-p-500.jpg'
-              alt='ss'
-            />
-          </div>
+
           {/* End image portion */}
-          <CustomeStep
-            icons={[<MobileOutlined />, <CarOutlined />, <RiseOutlined />]}
-            classname='w-1/2'
-            items={CustomeStepItemsHowItWork}
-          />
+          {step === true ? (
+            <>
+              <div className='w-1/2 flex justify-center'>
+                <img
+                  className='object-contain h-[500px]'
+                  src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar-p-500.jpg'
+                  alt='ss'
+                />
+              </div>{' '}
+              <CustomeStep
+                icons={[<MobileOutlined />, <CarOutlined />, <RiseOutlined />]}
+                classname='w-1/2'
+                items={CustomeStepItemsHowItWork1}
+              />
+            </>
+          ) : (
+            <>
+              <div className='w-1/2 flex justify-center'>
+                <img
+                  className='object-contain h-[500px]'
+                  src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0b73b2f4fb34b18ddb8a_ga-illustration-8.svg'
+                  alt='ss'
+                />
+              </div>
+              <CustomeStep
+                icons={[<CarOutlined />, <WalletOutlined />, <WalletOutlined />, <DollarOutlined />]}
+                classname='w-1/2'
+                items={CustomeStepItemsHowItWork2}
+              />
+            </>
+          )}
         </div>
       </WrapperContent>
       {/* <ConnectedCarSharing DataConnectedCarSharingHome={DataConnectedCarSharingHome} /> */}
@@ -119,6 +131,11 @@ const HowItWork = () => {
       {/* <CustomeCard mainTitle={`EARN EXTRA WITH BONUSES`} DataCustomeCard={DataCustomeCardHostBonus} /> */}
 
       <Proprietary Data={DataProprietary} />
+      <SlideLeftRight
+        Data={DataSlideLeftRightHowItWork}
+        img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg'
+        mainTitle='HIT THE ROAD STRESS-FREE'
+      />
       <HearCommunity />
       <ExploreHosting
         img={
@@ -128,15 +145,6 @@ const HowItWork = () => {
         DataExploreHostingText={DataExploreHostingHomeText}
         isEx={true}
       />
-
-      {/* <FormContact
-        titleForm={'Refer a friend'}
-        titleInput={'Input your information to get your referral link or submit a referee.'}
-      />
-      <FormContact
-        titleForm={'Track your Referrals'}
-        titleInput={'Input your information to see your referral progress!'}
-      /> */}
     </div>
   )
 }

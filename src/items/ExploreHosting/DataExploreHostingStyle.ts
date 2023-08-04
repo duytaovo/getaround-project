@@ -19,7 +19,7 @@ export const DataExploreHostingHome = {
 export const DataExploreHostingShareCar = {
   styleDivRight: `will-change-transform transform translate-y-[0.86424%] scale-100 rotate-x-0 rotate-y-0 rotate-z-0 skew-x-0 skew-y-0  transform-style-preserve-3  w-[44%] right-[0] shadow-[7px_7px_20px_rgba(0,0,0,0.01)]
       bg-white rounded-[16px] p-[52px_6%] absolute top-[70px]`,
-  styleImg: `h-[330px] max-w-[85%] w-full rounded-[20px] relative overflow-hidden`,
+  styleImg: `h-[330px] max-w-[800px] w-full rounded-[20px] relative overflow-hidden`,
   headerTitle: 'HOST INCENTIVES',
   Title: 'Big-time bonuses to help you grow',
   styleTitle:
@@ -33,5 +33,24 @@ export const DataExploreHostingShareCar = {
     className:
       'text-mainColor no-underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
     text: 'Khám phá các phần thưởng'
+  }
+}
+export const DataExploreHostingHostRefernal = {
+  styleDivRight: `will-change-transform transform translate-y-[0.86424%] scale-100 rotate-x-0 rotate-y-0 rotate-z-0 skew-x-0 skew-y-0  transform-style-preserve-3  w-[46%] right-[0] shadow-[7px_7px_20px_rgba(0,0,0,0.01)]
+      bg-white rounded-[16px] p-[52px_6%] absolute top-[70px]`,
+  styleImg: `h-[330px] max-w-[800px] w-full rounded-[20px] relative overflow-hidden`,
+  headerTitle: 'HOST INCENTIVES',
+  Title: 'Big-time bonuses to help you grow',
+  styleTitle:
+    'w-full text-mainColor tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left ',
+
+  Description:
+    "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
+
+  Button: {
+    href: '',
+    className:
+      'text-mainColor underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
+    text: 'Find your bonuses'
   }
 }

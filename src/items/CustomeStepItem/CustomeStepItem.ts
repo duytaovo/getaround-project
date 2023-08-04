@@ -19,7 +19,7 @@ export const CustomeStepItems = [
       " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!"
   }
 ]
-export const CustomeStepItemsHowItWork = [
+export const CustomeStepItemsHowItWork1 = [
   {
     title: 'Get the Getaround app',
     images: [
@@ -36,5 +36,29 @@ export const CustomeStepItemsHowItWork = [
   {
     title: 'Hit the road',
     subTitle: 'Unlock your car directly through the Getaround app. No meetups or key exchanges.'
+  }
+]
+export const CustomeStepItemsHowItWork2 = [
+  {
+    title: 'Sign up and name your car.',
+    images: [
+      'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/636580091db0b72179b2c1ab_appstore-icon.svg',
+      'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63657fca094cac0e19c45708_googleplay-icon.svg'
+    ],
+    subTitle:
+      "On the sign-up form, you'll tell us about you and your car. Give your car a name, and continue to the next step."
+  },
+  {
+    title: 'Create a profile and upload photos.',
+    subTitle:
+      'If you have multiple vehicles, use the car manager to create a profile for each one. Listing each car costs $100 for initial setup and $20 per month—but you wont be charged until your car is ready for bookings.'
+  },
+  {
+    title: 'Install Getaround Connect®',
+    subTitle: `We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!`
+  },
+  {
+    title: 'Start earning!',
+    subTitle: `As soon as you enable bookings, guests can start taking trips in your car—and you can start earning money.`
   }
 ]
