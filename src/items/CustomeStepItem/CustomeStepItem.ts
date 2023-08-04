@@ -62,3 +62,19 @@ export const CustomeStepItemsHowItWork2 = [
     subTitle: `As soon as you enable bookings, guests can start taking trips in your car—and you can start earning money.`
   }
 ]
+export const CustomeStepItemAboutUs = [
+  {
+    title: 'Think of friends to refer',
+
+    subTitle: "You've got this. Who do you know with a car that  might like to list it?"
+  },
+  {
+    title: 'Copy your custom referral link',
+    subTitle: `Generate your link in the tool on this page. Share it with your friends via email or text. Make sure to use your link, since it's the only way for us to credit you for referrals.`
+  },
+  {
+    title: 'Follow up with your friends',
+    subTitle:
+      "Don't stop with just sending the link. Talk to your friends, share the Host handbook, and see how you can help them get started."
+  }
+]
