@@ -12,16 +12,17 @@ type Props = {
   icons: React.ReactNode[]
   children?: React.ReactNode
   classname?: string
+  textClassName?: string
 }
 
-const CustomeStep: FC<Props> = ({ items, classname, icons }) => {
+const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
   const stepRef = useRef<HTMLDivElement | null>(null)
   const [current, setCurrent] = useState<number>(-1)
 
   const itemsForSteps = items.map((item, index) => ({
     icon: icons[index],
     title: item.title,
-    subTitle: <h1>{item.subTitle}</h1>,
+    subTitle: <h1 className={textClassName}>{item.subTitle}</h1>,
     description: <div className='flex'>{item.images?.map((image) => <img className='pr-2' src={image} />)}</div>
   }))
 

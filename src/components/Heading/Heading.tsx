@@ -16,7 +16,7 @@ const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize
     const firstSentence = words.slice(0, breakLineAt).join(' ')
     const secondSentence = words.slice(breakLineAt, words.length).join(' ')
     setSentences([firstSentence, secondSentence])
-  }, [title])
+  }, [title, breakLineAt])
 
   return (
     <div className={className}>

@@ -22,14 +22,22 @@ const Introduce = ({
   classNameImage = 'rounded-sm object-contain '
 }: Props) => {
   return (
-    <div className={`${className} flex  flex-start`}>
+    <div className={`flex  flex-start ${className}`}>
       <div>
-        <img src={item?.img} alt='' className={`${classNameImage} w-[410px] h-[290px] rounded-sm`}/>
+        <img src={item?.img} alt='' className={`w-[410px] h-[290px] ${classNameImage}`} />
       </div>
-      <div className='flex  justify-around flex-col h-[260px] w-[444px] m-[15px]'>
-        <span className={`${classNameHeader} flex justify-start leading-[13px] font-bold uppercase text-mainColor text-[11px]`}>{item?.header}</span>
-        <div className={`${classNameTitle} font-bold text-black leading-[32px] text-[32px]`}>{item?.title}</div>
-        <p className={`${classNameContent} text-[#727272] flex flex-start align-left wrap font-medium flex-column leading-[22px]`}>{item?.content}</p>
+      <div className='flex justify-center flex-col h-[260px] w-[444px] m-[15px]'>
+        <span
+          className={`flex justify-start leading-[13px] font-bold uppercase text-mainColor text-[11px] ${classNameHeader} `}
+        >
+          {item?.header}
+        </span>
+        <div className={`font-bold text-black leading-[32px] text-[32px] ${classNameTitle} `}>{item?.title}</div>
+        <p
+          className={`text-[#727272] flex flex-start align-left wrap font-medium flex-column leading-[22px] ${classNameContent} `}
+        >
+          {item?.content}
+        </p>
       </div>
     </div>
   )
