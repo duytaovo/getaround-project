@@ -28,11 +28,11 @@ const Introduce = ({
       </div>
       <div className='flex justify-center flex-col h-[260px] w-[444px] m-[15px]'>
         <span
-          className={`flex justify-start leading-[13px] font-bold uppercase text-mainColor text-[11px] ${classNameHeader} `}
+          className={`flex justify-start leading-[13px] font-medium uppercase text-mainColor text-[11px] ${classNameHeader} `}
         >
           {item?.header}
         </span>
-        <div className={`font-bold text-black leading-[32px] text-[32px] ${classNameTitle} `}>{item?.title}</div>
+        <div className={`font-medium text-black leading-[32px] text-[32px] ${classNameTitle} `}>{item?.title}</div>
         <p
           className={`text-[#727272] flex flex-start align-left wrap font-medium flex-column leading-[22px] ${classNameContent} `}
         >

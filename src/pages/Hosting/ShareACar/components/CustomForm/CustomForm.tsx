@@ -36,7 +36,7 @@ const CustomForm = (props: Props) => {
   return (
     <div className='p-4 pr-12  rounded-md'>
       <div className='flex justify-center'>
-      <img src={logo} alt="" className='w-[300px] h-20' />
+      <img src={logo} alt="" className='w-[200px] h-15' />
       </div>
       <Form size='middle' form={form} name='validateOnly' layout='vertical' autoComplete='off'>
         <Form.Item name='First Name' label='First Name' rules={[{ required: true }]}>

@@ -1,4 +1,4 @@
-import { IItem } from "src/pages/Hosting/ShareACar/Component/ContentSlider/ContentSlider";
+import { IItem } from "src/pages/Hosting/ShareACar/components/ContentSlider/ContentSlider";
 
 export const ItemContentSlider:IItem = 
     {

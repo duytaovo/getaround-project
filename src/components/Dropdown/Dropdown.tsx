@@ -22,7 +22,7 @@ const CustomDropDown = ({ children, items, className, isOnClick,arrow }: Props) 
       </div>
     ) : (
       <div className={className}>
-        <Dropdown menu={{ items }} placement='bottom' arrow={arrow}>
+        <Dropdown menu={{ items }} placement='bottom' arrow={arrow} className='cursor-pointer'>
           {children}
         </Dropdown>
       </div>

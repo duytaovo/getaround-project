@@ -44,10 +44,10 @@ module.exports = {
       keyframes: {
         fadeIn: {
           '0%': {
-            scrollY:0
+            scrollY: 0
           },
           '100%': {
-            scrollY:100
+            scrollY: 100
           }
         },
         fadeOut: {
@@ -73,12 +73,23 @@ module.exports = {
             transform: 'scale(2)'
             // border: "1px solid rgba(255,255,255,0.4)",
           }
+        },
+        customBounce: {
+          '0%, 100%': {
+            transform: 'translateX(-25%)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+          },
+          '50%': {
+            transform: 'translateX(0)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+          }
         }
       },
       animation: {
         zomOutControlThumB: 'zomOutControlThumB 0.5s ease-in-out',
         fadeIn: 'fadeIn 1s ',
-        fadeOut: 'fadeOut 0.3s ease-in-out'
+        fadeOut: 'fadeOut 0.3s ease-in-out',
+        customBounce:'customBounce 1.5s infinite'
       }
     }
   },
