@@ -10,15 +10,15 @@ interface ICommonQuestion {
 
 type CommonQuestionProps = {
   items: ICommonQuestion[]
+  titleClassName?: string
   className?: string
 }
 
-const CustomeCommonQuestions: FC<CommonQuestionProps> = ({ className, items }) => {
+const CustomeCommonQuestions: FC<CommonQuestionProps> = ({ titleClassName, items, className }) => {
   const itemsForColapse: CollapseProps['items'] = items.map((item) => ({
     key: item.key,
 
-    label: <h1 className='font-bold text-[18px] text-black/60'>{item.label}</h1>,
-
+    label: <h1 className={titleClassName}>{item.label}</h1>,
 
     children: <SingleCommonQuestion contents={item.contents} />
   }))

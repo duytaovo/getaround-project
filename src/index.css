@@ -19,13 +19,13 @@ body {
   font-family: 'Brow-pro', sans-serif !important;
   overflow-y: scroll;
   height: 100vh;
-  color:#fff;
-
+  color: #fff;
 }
 
 /* Begin customize color of Antd steps */
 .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
   background-color: #44c5e5 !important;
+  width: 2px !important;
 }
 
 .ant-steps-item-finish .ant-steps-icon > span > svg {
@@ -50,6 +50,18 @@ body {
   background: #44c5e5;
 }
 /* End customize ok button of time picker */
+
+/* Begin customize expand icon Antd */
+.ant-collapse-expand-icon svg {
+  color: #fff;
+}
+/* End customize expand icon Antd */
+
+/*  */
+.ant-collapse-header {
+  padding: 10px 0 !important;
+}
+/*  */
 
 /* src/components/Arrow.css (hoặc index.css nếu muốn sử dụng toàn cục) */
 .arrow-container {

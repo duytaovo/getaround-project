@@ -31,7 +31,7 @@ const HomeHeroSection = (props: Props) => {
         backgroundSize: '158%',
         scrollbarGutter: 'stable'
       }}
-      className='h-[478px] bg-no-repeat p-9 pb-6 flex flex-col items-center'
+      className='h-[478px] bg-no-repeat p-9 pb-6 flex flex-col items-center mb-bottom'
     >
       <div className='w-full h-[90%] max-w-[980px] bg-white/90 m-auto rounded-[20px] py-9 px-14 flex flex-col justify-center'>
         <div className='flex flex-col justify-center items-center pb-8'>

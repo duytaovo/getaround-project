@@ -12,7 +12,9 @@ const SingleCommonQuestion: FC<Props> = ({ contents, path }) => {
       {contents.map((sentence) => (
         <p>{sentence}</p>
       ))}
-      <Link to={path || '/'}>Read more</Link>
+      <Link to={path || '/'} className='text-mainColor'>
+        Read more
+      </Link>
     </div>
   )
 }

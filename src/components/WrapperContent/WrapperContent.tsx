@@ -10,8 +10,6 @@ type WrapperProps = {
   fontSize?: number
 }
 
-
-
 const WrapperContent: FC<WrapperProps> = ({
   title,
   classname,
@@ -21,17 +19,17 @@ const WrapperContent: FC<WrapperProps> = ({
   isBgTransparent,
   fontSize
 }) => {
-
   return (
     <div
       className={`max-w-[1272px] h-fit ${
         isBgTransparent ? 'bg-transparent' : 'bg-white/90'
-      } py-[20px] my-8 rounded-[22px] m-auto`}
+      } mb-bottom my-8 rounded-[22px] m-auto`}
     >
       <p
-        className={`px-${titlePadding + ''} text-${textAlign} text-mainColor uppercase text-[11px] text-[${
-          fontSize + 'px'
-        }] font-bold`}
+        className={`text-${textAlign} text-mainColor uppercase text-[11px] text-[${fontSize + 'px'}] font-bold pt-2`}
+        style={{
+          padding: `0 ${titlePadding}px`
+        }}
       >
         {title}
       </p>

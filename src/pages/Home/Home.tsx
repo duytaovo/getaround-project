@@ -158,7 +158,11 @@ const Home = (props: Props) => {
         fontSize={12}
       >
         <div className='flex'>
-          <CustomeCommonQuestions items={items} className='w-1/2 p-4' />
+          <CustomeCommonQuestions
+            titleClassName='text-white/90 text-bold text-[18px]'
+            items={items}
+            className='w-1/2'
+          />
           <div className='w-1/2 p-4 flex justify-center items-center'>
             <img width='50%' src={CommonQuestionRightImg} alt='' />
           </div>
