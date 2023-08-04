@@ -10,6 +10,8 @@ type WrapperProps = {
   fontSize?: number
 }
 
+
+
 const WrapperContent: FC<WrapperProps> = ({
   title,
   classname,
@@ -19,6 +21,7 @@ const WrapperContent: FC<WrapperProps> = ({
   isBgTransparent,
   fontSize
 }) => {
+
   return (
     <div
       className={`max-w-[1272px] h-fit ${

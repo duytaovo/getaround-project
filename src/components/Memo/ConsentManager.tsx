@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ConsentManager = () => {
   const [memo, setMemo] = useState(true)
@@ -20,9 +21,9 @@ const ConsentManager = () => {
           </p>
           <p className='m-0  text-[18px] font-normal leading-[140%] text-center mt-2'>
             <span>
-              <a href='/' className='inline p-0 border-0 underline cursor-pointer'>
+              <Link to='/' className='inline p-0 border-0 underline cursor-pointer'>
                 You can change your preferences at any time.
-              </a>
+              </Link>
             </span>
           </p>
         </div>

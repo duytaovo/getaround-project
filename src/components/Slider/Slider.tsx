@@ -19,6 +19,7 @@ interface Props {
   classNameContent?: string
   classNameTime?: string
   classNameImage?: string
+  autoPlay?:boolean
 }
 
 export default function CustomSlider({
@@ -32,13 +33,14 @@ export default function CustomSlider({
   classNameTitle,
   isContent,
   isTime,
-  isTitle
+  isTitle,
+  autoPlay
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
     speed: 2000,
     infinite: true,
-    autoplay: true,
+    autoplay: autoPlay,
     slidesToShow: numberItem,
     autoplaySpeed: 3000,
     nextArrow: <NextArrow breakpoints={breakpoints} />,

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export const DataCustomeCard = [
   {
     id: 1,
@@ -92,9 +94,9 @@ export const DataCustomeCardHostBonus = [
     title:
       "Your Onboarding Bonus is based on the location of your car. We'll give larger bonuses in zip codes with high guest demand",
     description: (
-      <a href='/' className='text-black no-underline bg-transparent'>
+      <Link to='/' className='text-black no-underline bg-transparent'>
         <strong>Learn more →</strong>
-      </a>
+      </Link>
     ),
     styleHeader: ``,
     styleTitle: `max-w-[40ch] text-[#727272] mt-[30px] font-normal block box-border block`,
@@ -129,5 +131,39 @@ export const DataCustomeCardHostBonus = [
     styleHeader: ``,
     styleTitle: `max-w-[40ch] text-[#727272] mt-[30px] font-normal block box-border block`,
     styleDes: `mt-[30px] max-w-[40ch] text-[#727272] font-normal border-box block`
+  }
+]
+export const DataCustomeCardHostRefernal = [
+  {
+    id: 1,
+    header: (
+      <div className='mt-[6px] text-[30px] font-bold block  box-border leading-[140%] text-mainColor '>+ $200</div>
+    ),
+    title: 'When car is live',
+    description: (
+      <p className=' no-underline bg-transparent'>
+        <strong>You get a $200 bonus when your friend becomes a host and list their first car.</strong>
+      </p>
+    ),
+    styleHeader: ``,
+    styleTitle: `max-w-[40ch] text-black mt-[10px] font-semibold block box-border block`,
+    styleDes: `mt-10 max-w-[40ch] text-[#727272] font-normal border-box block`
+  },
+  {
+    id: 2,
+    header: (
+      <div className='mt-[6px] text-[30px] font-bold block  box-border leading-[140%] text-mainColor '>+ 25%</div>
+    ),
+    title: 'of referred host earnings',
+    description: (
+      <p className=' no-underline bg-transparent'>
+        <strong>
+          You’ll also get the equivalent of 25% of your friend’s earnings for their first 60 days after listing a car.
+        </strong>
+      </p>
+    ),
+    styleHeader: ``,
+    styleTitle: `max-w-[40ch] text-black mt-[10px] font-semibold block box-border block`,
+    styleDes: `mt-10 max-w-[40ch] text-[#727272] font-normal border-box block`
   }
 ]

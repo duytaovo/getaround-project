@@ -9,10 +9,10 @@ interface Props {
 }
 const KeyFeatureItem: React.FC<Props> = ({ DataKeyFeatureItem }) => {
   return (
-    <div className='mt-0 mb-[25px] grid-flow-col'>
+    <div className='mt-0 mb-[25px] grid-flow-col '>
       {DataKeyFeatureItem.map((item, index) => (
         <div className='w-1/2 float-left min-h-[1px] px-[10px] relative'>
-          <div className='min-h-[230px] flex-col justify-center items-center mx-auto p-[15px] flex'>
+          <div className='h-[330px] flex-col justify-center items-center mx-auto p-[15px] flex'>
             <div className='shadow-none bg-[rgba(0,0,0,0)] w-[55px] h-[55px] rounded-[100px] justify-center items-center mb-[15px] p-[15px] flex'>
               <img
                 src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6048b2f9d00d693cb20869aa_icon-teal-checkmark.svg'

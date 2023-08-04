@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 interface Props {
   Data: any
 }
@@ -49,25 +50,28 @@ const Proprietary: React.FC<Props> = ({ Data }) => {
         <div className='gap-x-[56px] flex-row w-full max-w-[1080px] mx-auto px-9 flex'>
           <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <div>
-              <div className='max-w-[30ch] text-mainColor text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
+              <div
+                className='max-w-[30ch] text-mainColor text-left uppercase m-[0_0_24px] text-[11px] font-bold
+               leading-[13px]'
+              >
                 {Data?.[0]?.headerTitle}
               </div>
               <h2 className='max-w-full text-white tracking-[-.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em]'>
                 <strong className='font-bold'> {Data?.[0]?.title}</strong>
               </h2>
-              <div className='text-[#e9ebec] mt-[30px] text-sm font-semibold'>
+              <div className='text-[#e9ebec] mt-[30px] text-sm'>
                 {Data?.[0]?.description}
                 <br /> <br />
                 <strong className='text-mainColor font-bold'>{Data?.[0]?.span}</strong>
                 {Data?.[0]?.description2}
                 <br />
                 <br />
-                <a
-                  href='/'
+                <Link
+                  to='/'
                   className='text-mainColor delay-[0.2s] underline touch-manipulation bg-transparent cursor-pointer outline-none hover:text-mainColor hover:none-underline leading-4'
                 >
                   <strong className='font-bold'>Read more</strong>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

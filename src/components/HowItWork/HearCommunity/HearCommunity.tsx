@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HearCommunity = () => {
   return (
@@ -13,9 +14,9 @@ const HearCommunity = () => {
               Stories from Getaround community members, in their own words.
             </h2>
             <div className='text-[#727272] mt-[30px] text-[16px] font-normal '>
-              <a href='/' className='text-[#000] underline hover:text-mainColor hover:no-underline'>
+              <Link to='/' className='text-[#000] underline hover:text-mainColor hover:no-underline'>
                 Read now
-              </a>
+              </Link>
             </div>
           </div>
         </div>

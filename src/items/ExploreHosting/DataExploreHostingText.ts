@@ -4,7 +4,8 @@ export const DataExploreHostingHomeText = {
   Title: 'Have a car? Start sharing',
 
   Description:
-    "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month."
+    "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
+  Link: ''
 }
 export const DataExploreHostingShareCarText = {
   mainTitle: '',
@@ -12,5 +13,14 @@ export const DataExploreHostingShareCarText = {
   Title: 'Big-time bonuses to help you grow',
 
   Description:
-    "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time."
+    "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
+  Link: '/'
+}
+export const DataExploreHostingHostRefernalText = {
+  mainTitle: '',
+  headerTitle: 'OTHER HOST BONUSES',
+  Title: 'Explore more bonuses',
+
+  Description: "Referrals aren't the only way to make extra money as a Getaround Host. Explore more ways to earn more.",
+  Link: '/'
 }

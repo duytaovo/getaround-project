@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 interface Props {
   img: string
   isEx: boolean
@@ -19,13 +20,7 @@ const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, D
       )}
       <div className='w-full max-w-[1000px] mx-auto flex-col items-start pb-[66px] flex relative'>
         <div className={`${DataExploreHostingStyle.styleImg}`}>
-          <img
-            src={img}
-            loading='lazy'
-            sizes='(max-width: 479px) 100vw, (max-width: 767px) 94vw, (max-width: 1439px) 93vw, 1000px'
-            alt=''
-            className='w-full h-full object-fit-cover object-[50%_22%]'
-          />
+          <img src={img} loading='lazy' alt='' className='w-full h-full object-fit-cover object-[50%_22%]' />
         </div>
         <div className={`${DataExploreHostingStyle.styleDivRight}`}>
           {isEx === false ? (
@@ -45,9 +40,9 @@ const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, D
             <br />
           </div>
 
-          <a href='' className={DataExploreHostingStyle.Button.className}>
+          <Link to={DataExploreHostingText.Link} className={DataExploreHostingStyle.Button.className}>
             {DataExploreHostingStyle.Button.text}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

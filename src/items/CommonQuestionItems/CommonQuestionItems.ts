@@ -36,3 +36,77 @@ export const items = [
     ]
   }
 ]
+export const itemsHostRefernal = [
+  {
+    key: '1',
+    label: 'When and how will I receive my referral bonus?',
+    contents: [
+      'Initial $200',
+      "‍When: After your referral's first vehicle goes live for bookings",
+      'How: Earnings adjustment in your account',
+      '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
+      `‍When: 60 days after the referral's first vehicle goes live for bookings`,
+      'How: Earnings adjustment in your account'
+    ]
+  },
+  {
+    key: '2',
+    label: 'When and how will I receive my referral bonus?',
+    contents: [
+      'Initial $200',
+      "‍When: After your referral's first vehicle goes live for bookings",
+      'How: Earnings adjustment in your account',
+      '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
+      `‍When: 60 days after the referral's first vehicle goes live for bookings`,
+      'How: Earnings adjustment in your account'
+    ]
+  },
+  {
+    key: '3',
+    label: 'When and how will I receive my referral bonus?',
+    contents: [
+      'Initial $200',
+      "‍When: After your referral's first vehicle goes live for bookings",
+      'How: Earnings adjustment in your account',
+      '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
+      `‍When: 60 days after the referral's first vehicle goes live for bookings`,
+      'How: Earnings adjustment in your account'
+    ]
+  },
+  {
+    key: '4',
+    label: 'When and how will I receive my referral bonus?',
+    contents: [
+      'Initial $200',
+      "‍When: After your referral's first vehicle goes live for bookings",
+      'How: Earnings adjustment in your account',
+      '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
+      `‍When: 60 days after the referral's first vehicle goes live for bookings`,
+      'How: Earnings adjustment in your account'
+    ]
+  },
+  {
+    key: '5',
+    label: 'When and how will I receive my referral bonus?',
+    contents: [
+      'Initial $200',
+      "‍When: After your referral's first vehicle goes live for bookings",
+      'How: Earnings adjustment in your account',
+      '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
+      `‍When: 60 days after the referral's first vehicle goes live for bookings`,
+      'How: Earnings adjustment in your account'
+    ]
+  },
+  {
+    key: '6',
+    label: 'When and how will I receive my referral bonus?',
+    contents: [
+      'Initial $200',
+      "‍When: After your referral's first vehicle goes live for bookings",
+      'How: Earnings adjustment in your account',
+      '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
+      `‍When: 60 days after the referral's first vehicle goes live for bookings`,
+      'How: Earnings adjustment in your account'
+    ]
+  }
+]

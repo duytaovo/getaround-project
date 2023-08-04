@@ -26,10 +26,18 @@ import { ItemCarousel } from 'src/items/Carousel/Carouseltems'
 type Props = {}
 
 const ShareACar = (props: Props) => {
+  const onClick = ()=>{
+    const element = document.querySelector(`#getstarted`)
+    element &&
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      })
+  }
   return (
     <div className='pt-[84px]'>
       {/* start top */}
-      <div className='mb-bottom'>
+      <div className='mb-bottom transition-all duration-1000 delay-100' onClick = {onClick}>
         <BodyTop
           img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg'
           content="
@@ -49,7 +57,7 @@ const ShareACar = (props: Props) => {
         DataExploreHostingText={DataExploreHostingShareCarText}
         isEx={false}
       />
-      <div className='mb-bottom'>
+      <div className='mb-bottom' id='getstarted'>
         <div className='flex items-center justify-between flex-auto rounded-2xl bg-white '>
           <div className='flex-1 p-4'>
             <CustomForm />

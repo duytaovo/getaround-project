@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const HypeMemo = () => {
   const [memo, setMemo] = useState(true)
@@ -18,7 +19,9 @@ const HypeMemo = () => {
         <h1 className='font-semibold text-[13px] mt-3'>
           Exciting News: <br /> Getaround Acquires HyreCar!
         </h1>
-        <h1 className='font-semibold text-[13px] text-mainColor mt-6 underline'>Read the announcement</h1>
+        <Link to='/' className='font-semibold text-[13px] text-mainColor mt-8 underline '>
+          Read the announcement
+        </Link>
       </div>
       <button className='absolute top-2 right-2' onClick={() => setMemo(false)}>
         ✕

@@ -26,19 +26,59 @@ module.exports = {
         '1/2': '50%',
         '9/11': '88%'
       },
-      backgroundImage:{
+      backgroundImage: {
         mainColor: 'linear-gradient(70deg,#44c5e5,#276dc1)',
-        shareACar:"url('https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d8276f5f590e8cd734e67c_shareacar2tiny.jpg')"
+        shareACar:
+          "url('https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d8276f5f590e8cd734e67c_shareacar2tiny.jpg')"
       },
       colors: {
         mainColor: '#3699d3',
-        textMainColor:"#ffffff"
+        textMainColor: '#ffffff'
       },
-      backgroundColor:{
-        mainBackGroundColor:'#1c2635'
+      backgroundColor: {
+        mainBackGroundColor: '#1c2635'
       },
-      margin:{
-        bottom:'105px'
+      margin: {
+        bottom: '105px'
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': {
+            scrollY:0
+          },
+          '100%': {
+            scrollY:100
+          }
+        },
+        fadeOut: {
+          '0%': {
+            opacity: 1
+          },
+          '100%': {
+            opacity: 0
+          }
+        },
+        zomOutControlThumB: {
+          '0%': {
+            opacity: 1,
+            height: '80px',
+            width: '80px',
+            transform: 'scale(1)'
+            // border: "1px solid rgba(255,255,255,0.4)",
+          },
+          '100%': {
+            opacity: 0,
+            height: '80px',
+            width: '80px',
+            transform: 'scale(2)'
+            // border: "1px solid rgba(255,255,255,0.4)",
+          }
+        }
+      },
+      animation: {
+        zomOutControlThumB: 'zomOutControlThumB 0.5s ease-in-out',
+        fadeIn: 'fadeIn 1s ',
+        fadeOut: 'fadeOut 0.3s ease-in-out'
       }
     }
   },

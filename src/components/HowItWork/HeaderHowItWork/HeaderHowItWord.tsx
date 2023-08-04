@@ -8,6 +8,8 @@ import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { TimePicker } from 'antd'
 import '../style.css'
 import { AiFillStar } from 'react-icons/ai'
+import CustomDatetimePicker from 'src/components/CustomDatetimePicker/CustomDatetimePicker'
+import RatingStar from 'src/components/RatingStar'
 dayjs.extend(customParseFormat)
 
 const { RangePicker } = DatePicker
@@ -58,14 +60,6 @@ const HeaderHowItWord = () => {
                                   type='text'
                                   data-testid='location-autocomplete-address'
                                   placeholder='Address'
-                                  role='combobox'
-                                  aria-expanded='false'
-                                  aria-haspopup='listbox'
-                                  aria-owns='rc_select_0_list'
-                                  aria-autocomplete='list'
-                                  aria-controls='rc_select_0_list'
-                                  aria-activedescendant='rc_select_0_list_0'
-                                  id='rc_select_0'
                                 />
                               </div>
                               <span className='ant-select-selection-placeholder'></span>
@@ -90,13 +84,11 @@ const HeaderHowItWord = () => {
                     </div>
                     <div className='mt-3 w-full'>
                       <div className='StartEndDatePickers'>
-                        <Space direction='vertical' size={12}>
-                          <RangePicker disabledDate={disabledDate} />
-                          <TimePicker.RangePicker
-                            defaultValue={[dayjs('12:08', format), dayjs('15:20', format)]}
-                            format={format}
-                          />
-                        </Space>
+                        <div className='grow flex'>
+                          <CustomDatetimePicker className='h-[52px]' title='Ngày bắt đầu' />
+                          <div style={{ width: '10px' }} />
+                          <CustomDatetimePicker className='h-[52px]' title='Ngày kết thúc' />
+                        </div>
                       </div>
                       <div className='h-14 w-full bg-mainColor mt-6 rounded-lg'>
                         <div className='flex justify-center items-center h-full group cursor-pointer'>
@@ -127,13 +119,7 @@ const HeaderHowItWord = () => {
               </div>
             </div>
             <div className='w-6/13 max-w-xl h-20 flex justify-center items-center'>
-              <div className='flex text-white mr-2'>
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-              </div>
-              <h1 className='text-white text-sm font-medium'>4.7 average from 23.3K reviews in the App Store</h1>
+              <RatingStar rating={4} review='' />
             </div>
           </div>
         </div>
