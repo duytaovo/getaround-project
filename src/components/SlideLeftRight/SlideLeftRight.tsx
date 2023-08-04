@@ -17,8 +17,8 @@ const SlideLeftRight: React.FC<Props> = ({ Data, img, mainTitle }) => {
       className='opacity-[1] flex-col items-stretch mb-[104px] flex text-[16px] font-normal leading-[140%]'
       style={{ transformStyle: 'preserve-3d' }}
     >
-      <div className='w-full max-w-[1279px] flex-col items-start px-9 flex relative '>
-        <div className='flex-row w-full max-w-[1080px] mx-auto px-9 flex' style={{ gridColumnGap: '26px' }}>
+      <div className='w-full flex-col items-start  flex relative '>
+        <div className='flex-row w-full max-w-[1080px] mx-auto flex' style={{ gridColumnGap: '26px' }}>
           <div className='items-center flex w-full flex-col relative'>
             <img
               src={img}

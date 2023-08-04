@@ -24,3 +24,12 @@ export const DataExploreHostingHostRefernalText = {
   Description: "Referrals aren't the only way to make extra money as a Getaround Host. Explore more ways to earn more.",
   Link: '/'
 }
+
+export const DataExploreHostingAboutUsText = {
+  mainTitle: '',
+  headerTitle: 'Book  Unlock  and Drive nearby cars',
+  Title: 'Book a car ',
+
+  Description: 'Have a car to share?',
+  Link: '/'
+}
