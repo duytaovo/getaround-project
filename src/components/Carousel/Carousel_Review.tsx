@@ -9,8 +9,8 @@ import './styles.css'
 import Review from './component/Review'
 import { Col, Row } from 'antd'
 interface Props {
-  numberItem?: number
-  numberItemScroll?: number
+  numberItem: number
+  numberItemScroll: number
   data?: IItemCarousel[]
   className?: string
   isTitle?: boolean
@@ -21,6 +21,7 @@ interface Props {
   classNameHeader?: string
   classNameImage?: string
   isCustomDot?: boolean
+  imgPerson?:string
 }
 
 export default function Carousel_Review({
@@ -29,7 +30,8 @@ export default function Carousel_Review({
   data,
   className,
   classNameContent,
-  classNameImage
+  classNameImage,
+  imgPerson
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
@@ -37,8 +39,8 @@ export default function Carousel_Review({
     infinite: true,
     autoplay: true,
     slidesToShow: numberItem,
-    autoplaySpeed: 2000,
-    dots: true,
+    autoplaySpeed: 3000,
+    // dots: true,
     // dotsClass:`${'custom-dots'}`,
     nextArrow: <NextArrow breakpoints={breakpoints} />,
     prevArrow: <PrevArrow breakpoints={breakpoints} />,
@@ -68,31 +70,29 @@ export default function Carousel_Review({
   }
 
   return (
-    <div className=''>
-      <Row>
-        <Col span={12}>
-          <Slider {...settings}>
-            {data?.map((item, index: number) => (
-              <div
-                key={item.id}
-                className='
+    <div className='flex justify-between'>
+      <div className='w-1/2'>
+        <Slider {...settings}>
+          {data?.map((item, index: number) => (
+            <div
+              key={item.id}
+              className='
                
                   '
-              >
-                {' '}
-                <Review item={item} classNameContent={classNameContent} className={className} />
-              </div>
-            ))}
-          </Slider>
-        </Col>
-        <Col span={12}>
-          <img
-            src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'
-            alt=''
-            className={`object-contain w-[347px] h-[400px] ${classNameImage}`}
-          />
-        </Col>
-      </Row>
+            >
+              {' '}
+              <Review item={item} classNameContent={classNameContent} className={className} />
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <div className='w-1/2'>
+        <img
+          src={`${imgPerson || 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'}`}
+          alt=''
+          className={`${classNameImage} object-contain w-full h-[400px] ml-10 bg-white rounded-2xl`}
+        />
+      </div>
     </div>
   )
 }

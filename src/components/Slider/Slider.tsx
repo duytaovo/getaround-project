@@ -36,11 +36,11 @@ export default function CustomSlider({
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
-    speed: 1000,
+    speed: 2000,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     slidesToShow: numberItem,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     nextArrow: <NextArrow breakpoints={breakpoints} />,
     prevArrow: <PrevArrow breakpoints={breakpoints} />,
     responsive: [
