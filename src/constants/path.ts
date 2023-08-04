@@ -7,7 +7,9 @@ const path = {
   hostrefernal: 'host-referral',
   sharACar: '/host/share-a-car',
   hostCommunity: '/host/community',
-  aboutus: '/about-us'
+  aboutus: '/about-us',
+  newsroom: '/news-room'
+
 } as const
 
 export default path

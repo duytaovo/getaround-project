@@ -11,7 +11,7 @@ const SlideHowItWork = () => {
           Chúng tôi kết nối <span className='text-white'>những chiếc xe an toàn, tiện lợi </span> với mọi người
         </h2>
       </div>
-      <div className='px-9 relative'>
+      <div className='relative'>
         <div className='max-w-[900px] flex justify-center mx-auto  gap-x-34 '>
           <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <img

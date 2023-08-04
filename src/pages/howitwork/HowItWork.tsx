@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import HeaderHowItWord from 'src/components/HowItWork/HeaderHowItWork'
-import SlideHowItWork from 'src/components/HowItWork/SlideHowItWork/SlideHowItWork'
+import HeaderHowItWord from './HeaderHowItWork'
+import SlideHowItWork from 'src/pages/howitwork/SlideHowItWork/SlideHowItWork'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import CustomeCard from 'src/components/CustomeCard/CustomeCard'
 import { DataCustomeCard } from 'src/Data/DataCustomeCard'
 import { DataCustomeCardHostBonus } from 'src/Data/DataCustomeCard'
-import HearCommunity from 'src/components/HowItWork/HearCommunity/HearCommunity'
+import HearCommunity from './HearCommunity/HearCommunity'
 import Proprietary from 'src/components/Proprietary/EventUnlock'
 import FormContact from 'src/components/FormContact/FormContact'
 import { DataProprietary } from 'src/items/Proprietary/DataProprietary'
@@ -117,16 +117,7 @@ const HowItWork = () => {
           )}
         </div>
       </WrapperContent>
-      {/* <ConnectedCarSharing DataConnectedCarSharingHome={DataConnectedCarSharingHome} /> */}
 
-      {/* <ExploreHosting
-        img={
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6324f5891e795a0a4cf1c346_AdobeStock_488832115.jpg'
-        }
-        DataExploreHostingStyle={DataExploreHostingShareCar}
-        DataExploreHostingText={DataExploreHostingShareCarText}
-        isEx={false}
-      /> */}
       <CustomeCard mainTitle={`WHAT WE'RE DOING`} DataCustomeCard={DataCustomeCard} />
       {/* <CustomeCard mainTitle={`EARN EXTRA WITH BONUSES`} DataCustomeCard={DataCustomeCardHostBonus} /> */}
 
@@ -144,6 +135,7 @@ const HowItWork = () => {
         DataExploreHostingStyle={DataExploreHostingHome}
         DataExploreHostingText={DataExploreHostingHomeText}
         isEx={true}
+        className='flex-col items-center flex w-full mb-[66px]'
       />
     </div>
   )

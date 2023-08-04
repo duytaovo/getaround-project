@@ -6,7 +6,7 @@ import type { RangePickerProps } from 'antd/es/date-picker'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { TimePicker } from 'antd'
-import '../style.css'
+import './style.css'
 import { AiFillStar } from 'react-icons/ai'
 import CustomDatetimePicker from 'src/components/CustomDatetimePicker/CustomDatetimePicker'
 import RatingStar from 'src/components/RatingStar'
@@ -30,7 +30,7 @@ const HeaderHowItWord = () => {
   }
   return (
     <div className='mb-28 flex flex-col items-stretch m-full h-101 '>
-      <div className='w-full max-w-7xl flex-col self-center items-stretch px-9 flex relative  h-full'>
+      <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative  h-full'>
         <div
           className='rounded-2xl py-10 w-full h-full  bg-cover'
           style={{

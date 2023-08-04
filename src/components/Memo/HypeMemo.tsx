@@ -16,14 +16,14 @@ const HypeMemo = () => {
         </div> */}
       </div>
       <div className='w-[65%] pl-6 h-full'>
-        <h1 className='font-semibold text-[13px] mt-3'>
+        <h1 className='font-semibold text-[13px] mt-3 text-black'>
           Exciting News: <br /> Getaround Acquires HyreCar!
         </h1>
         <Link to='/' className='font-semibold text-[13px] text-mainColor mt-8 underline '>
           Read the announcement
         </Link>
       </div>
-      <button className='absolute top-2 right-2' onClick={() => setMemo(false)}>
+      <button className='absolute top-2 right-2 text-black' onClick={() => setMemo(false)}>
         ✕
       </button>
     </div>

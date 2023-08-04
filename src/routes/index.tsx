@@ -9,6 +9,7 @@ const ShareACar = lazy(() => import('src/pages/Hosting/ShareACar'))
 const HostComunity = lazy(() => import('src/pages/Hosting/HostComunity'))
 const HostRefernal = lazy(() => import('src/pages/HostRefernal'))
 const AboutUs = lazy(() => import('src/pages/AboutUs'))
+const NewsRoom = lazy(() => import('src/pages/NewsRoom/NewsRoom'))
 export const routeMain = [
   {
     path: path.home,
@@ -41,5 +42,9 @@ export const routeMain = [
   {
     path: path.aboutus,
     Component: AboutUs
+  },
+  {
+    path: path.newsroom,
+    Component: NewsRoom
   }
 ]
