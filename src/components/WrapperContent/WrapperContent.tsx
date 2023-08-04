@@ -10,6 +10,7 @@ type WrapperProps = {
 }
 
 const WrapperContent: FC<WrapperProps> = ({ title, classname, children, textAlign, titlePadding, isBgTransparent }) => {
+  console.log(classname, children)
   return (
     <div
       className={`max-w-[1272px] h-fit ${

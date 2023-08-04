@@ -11,7 +11,7 @@ const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
           <h2 className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
             {mainTitle}
           </h2>
-          <div className='gap-x-[18px] flex'>
+          <div className='gap-x-[18px] flex justify-around'>
             {DataCustomeCard.map((item: any, index: any) => (
               <div
                 className='w-[33%] gap-x-[18px] bg-white rounded-[28px] flex-col items-start p-[42px_42px_56px] flex'
@@ -19,7 +19,7 @@ const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
               >
                 <div>{DataCustomeCard?.[index]?.header}</div>
                 <h3 className={`${DataCustomeCard?.[index]?.styleTitle}`}>
-                  <strong className='font-[bolder]'>
+                  <strong>
                     {DataCustomeCard?.[index]?.title} <br />
                   </strong>
                 </h3>

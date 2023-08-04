@@ -58,7 +58,7 @@ const FormContact: React.FC<Props> = ({ titleForm, titleInput }) => {
                   <Form.Item {...buttonItemLayout}>
                     <Button
                       type='primary'
-                      className='bg-mainColor absolute right-0 w-36 rounded-2xl'
+                      className='bg-mainColor absolute right-0 w-36 rounded-2xl text-white'
                       disabled={!phoneNumber || !email}
                     >
                       Refer a friend
