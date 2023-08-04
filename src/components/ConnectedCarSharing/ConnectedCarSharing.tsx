@@ -7,10 +7,10 @@ interface Props {
 }
 const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome }) => {
   return (
-    <div className='flex-col items-stretch mb-[104px] flex'>
+    <div className='flex-col items-stretch flex py-10'>
       <div className='w-full flex-col max-w-[1272px] self-center items-stretch px-auto flex relative'>
-        <div className='w-full max-w-[1080px] flex-col mx-auto px-9 flex items-center gap-y-[32px]'>
-          <div className='w-full max-w-[1272px] bg-[#fff] rounded-[22px] flex-col justify-center mt-auto mx-auto p-[28px_36px] flex'>
+        <div className='w-full flex-col mx-auto flex items-center'>
+          <div className='w-full max-w-[1272px] bg-white/90 rounded-[22px] flex-col justify-center mt-auto mx-auto p-[10px_36px] flex'>
             <div className='w-full max-w-[1072px] justify-around items-center flex'>
               {DataConnectedCarSharingHome.map((item: any, index: number) => (
                 <>
