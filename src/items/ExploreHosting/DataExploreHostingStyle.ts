@@ -49,7 +49,7 @@ export const DataExploreHostingAboutUs = {
   styleImg: `h-[330px]  w-[60%] rounded-[20px] relative overflow-hidden`,
 
   styleTitle:
-    'w-full text-mainColor tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left ',
+    'w-1/2 text-white p-3 rounded-[10px]  duration-[0.5s] cursor-pointer tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left  hover:bg-mainColor bg-black',
 
   Button: {
     href: '',
