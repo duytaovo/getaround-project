@@ -8,8 +8,7 @@ export const ItemCarousel: IItemCarousel[] = [
       'Get the exact kind of vehicle for your trip, and book it for the hours (or days) when you actually need it.',
     header: 'THOUSANDS OF OPTIONS',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png',
-    name: 'Sheri and Adam, Oahu, HI',
-
+    name: 'Sheri and Adam, Oahu, HI'
   },
   {
     id: 2,
@@ -18,8 +17,7 @@ export const ItemCarousel: IItemCarousel[] = [
       'Get the exact kind of vehicle for your trip, and book it for the hours (or days) when you actually need it.',
     header: 'THOUSANDS OF OPTIONS',
     img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/6142421290b0dffe55de5b67_613d13c7206f306a6a64e9d6_chicago-illinois-1279X700-p-500.jpeg',
-    name: 'Trevor, Washington, D.C',
-
+    name: 'Trevor, Washington, D.C'
   },
   {
     id: 3,
@@ -28,8 +26,7 @@ export const ItemCarousel: IItemCarousel[] = [
       'Get the exact kind of vehicle for your trip, and book it for the hours (or days) when you actually need it.',
     header: 'THOUSANDS OF OPTIONS',
     img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e93194b43a1163b71ff_613d0738270e9b84f99c22ae_atlanta-georgia.jpeg',
-    name: 'Catonya, College Park, GA',
-
+    name: 'Catonya, College Park, GA'
   },
   {
     id: 4,
@@ -37,8 +34,7 @@ export const ItemCarousel: IItemCarousel[] = [
     content:
       'Get the exact kind of vehicle for your trip, and book it for the hours (or days) when you actually need it.',
     header: 'THOUSANDS OF OPTIONS',
-    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e96af08bc335e05d0f0_60aa6771c2681850507efd68_austin-texas-p-500.jpeg',
-
+    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e96af08bc335e05d0f0_60aa6771c2681850507efd68_austin-texas-p-500.jpeg'
   },
   {
     id: 5,
@@ -86,7 +82,6 @@ export const ItemCarouselAboutUS: IItemCarousel[] = [
   }
 ]
 
-
 export const ItemCarouselCommunity: IItemCarousel[] = [
   {
     id: 1,
@@ -95,8 +90,12 @@ export const ItemCarouselCommunity: IItemCarousel[] = [
       'Get the exact kind of vehicle for your trip, and book it for the hours (or days) when you actually need it.',
     header: 'THOUSANDS OF OPTIONS',
     name: 'Sheri and Adam, Oahu, HI',
-    childrenImgPersong:<img className='w-[77px] h-[77px] rounded-full' src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png'/>
-
+    childrenImgPersong: (
+      <img
+        className='w-[77px] h-[77px] rounded-full'
+        src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png'
+      />
+    )
   },
   {
     id: 2,
@@ -105,8 +104,12 @@ export const ItemCarouselCommunity: IItemCarousel[] = [
       'If you’re able to invest even just $7,000 in a car that will meet the requirements to be listed, you’re going to pay that car off completely within three months* … and then everything after that is 100% profit.',
     header: 'THOUSANDS OF OPTIONS',
     name: 'Colin, New Haven, CT',
-    childrenImgPersong:<img className='w-[77px] h-[77px] rounded-full' src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png'/>
-    
+    childrenImgPersong: (
+      <img
+        className='w-[77px] h-[77px] rounded-full'
+        src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png'
+      />
+    )
   },
   {
     id: 3,
@@ -115,8 +118,12 @@ export const ItemCarouselCommunity: IItemCarousel[] = [
       'Get the exact kind of vehicle for your trip, and book it for the hours (or days) when you actually need it.',
     header: 'THOUSANDS OF OPTIONS',
     name: 'Catonya, College Park, GA',
-    childrenImgPersong:<img className='w-[77px] h-[77px] rounded-full' src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png'/>
-
+    childrenImgPersong: (
+      <img
+        className='w-[77px] h-[77px] rounded-full'
+        src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png'
+      />
+    )
   },
   {
     id: 4,
@@ -124,7 +131,55 @@ export const ItemCarouselCommunity: IItemCarousel[] = [
     content:
       'Get the exact kind of vehicle for your trip, and book it for the hours (or days) when you actually need it.',
     header: 'THOUSANDS OF OPTIONS',
-    childrenImgPersong:<img className='w-[77px] h-[77px] rounded-full' src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png'/>
+    childrenImgPersong: (
+      <img
+        className='w-[77px] h-[77px] rounded-full'
+        src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png'
+      />
+    )
+  }
+]
 
+export const ItemCarouselAboutUs_NewsRoom = [
+  {
+    id: 1,
+    title: 'Getaround Reaffirms Commitment as the True Open Carsharing   Marketplace with New Onboarding Incentives',
+    date: 'April 28, 2023',
+    description: `Following recent news of industry competitor's plans to shut down access to third-party vendors including CarSync, Getaround is ramping up its onboarding incentives`,
+    linkto: '/'
   },
+  {
+    id: 2,
+    title: `Getaround Reveals Earth Day Plans to Support Guests' Wallets and The Planet`,
+    date: 'April 13, 2023',
+    description: `Industry pioneer and world's first connected carsharing
+    marketplace is offering new U.S. guests up to $100 in
+    savings`,
+    linkto: '/'
+  },
+  {
+    id: 3,
+    title: `Getaround Acquires HyreCar Assets
+    to Accelerate Profitability Path and
+    Fortify Worldwide Gig Carsharing
+    Leadership Position`,
+    date: 'May 11, 2023',
+    description: `Getaround anticipates that the acquisition will
+    contribute up to $75 million of run-rate annualized
+    Gross Booking Value and positive Adjusted EBITDA,
+    accelerating its path to profitability
+    Transaction is expected to be synergistic as Getaround
+    expands its global market footprint`,
+    linkto: '/'
+  },
+  {
+    id: 4,
+    title: `Getaround Acquires HyreCar Assets
+    to Accelerate Profitability Path and
+    Fortify Worldwide Gig Carsharing
+    Leadership Position`,
+    date: 'May 11, 2023',
+    description: ``,
+    linkto: '/'
+  }
 ]
