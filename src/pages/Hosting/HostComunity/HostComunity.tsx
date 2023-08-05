@@ -30,9 +30,10 @@ const HostCominity = (props: Props) => {
       {/* end slider */}
       {/* start card */}
       <div className='mb-bottom flex gap-3'>
-        <CardBody.CardBodyImg />
-        <CardBody.CardBodyImg />
-        <CardBody.CardBodyImg />
+        <CardBody.CardBodyImg title=' Offer & Bonus' img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg'/>
+        <CardBody.CardBodyImg title=' Offer & Bonus' img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg'/>
+        <CardBody.CardBodyImg title=' Offer & Bonus' img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg'/>
+       
         <CardBody.CardBodyButton />
       </div>
       {/* end card */}

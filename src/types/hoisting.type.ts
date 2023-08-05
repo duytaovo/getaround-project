@@ -17,3 +17,9 @@ export interface IItemCarousel {
     name?:string
     img?:string
 }
+
+export interface ICardBody {
+    title:string,
+    img?:string
+    content?:string
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { IItemCarousel } from 'src/types/utils.type'
+import { IItemCarousel } from 'src/types/hoisting.type'
 
 interface Props {
   item?: IItemCarousel

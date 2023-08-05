@@ -1,4 +1,4 @@
-import { IItemSlider } from "src/types/utils.type";
+import { IItemSlider } from "src/types/hoisting.type";
 
 export const ItemSlider:IItemSlider[] = [
     {
