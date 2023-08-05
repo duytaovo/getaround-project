@@ -7,16 +7,12 @@ import { IItemCarousel, IItemSlider } from 'src/types/utils.type'
 import getBreakpoint from 'src/helpers/getBreakpoint'
 import './styles.css'
 import Introduce from './component/Introduce'
-import Review from './component/Review'
-import { Col, Row } from 'antd'
+
 interface Props {
   numberItem?: number
   numberItemScroll?: number
   data?: IItemCarousel[]
   className?: string
-  isTitle?: boolean
-  isContent?: boolean
-  isTime?: boolean
   classNameTitle?: string
   classNameContent?: string
   classNameHeader?: string
@@ -33,9 +29,6 @@ export default function Carousel_Introduce({
   classNameImage,
   classNameHeader,
   classNameTitle,
-  isContent,
-  isTime,
-  isTitle
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {

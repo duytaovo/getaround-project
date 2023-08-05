@@ -10,7 +10,7 @@ import TimeToLeaveOutlinedIcon from '@mui/icons-material/TimeToLeaveOutlined'
 import LinkedCameraOutlinedIcon from '@mui/icons-material/LinkedCameraOutlined'
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
 import CustomSlider from 'src/components/Slider'
-import { ItemSlider } from 'src/items/SliderItem/Slider'
+import { ItemSlider, ItemSliderShareCar } from 'src/items/SliderItem/Slider'
 import ContentSlider from './components/ContentSlider/ContentSlider'
 import { ItemContentSlider } from 'src/items/ShareACar/ShareACar'
 import BodyBanner, { item } from './components/BodyBanner/BodyBanner'
@@ -21,17 +21,17 @@ import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
 import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
 import Carousel_Review from '../../../components/Carousel/Carousel_Review'
-import { ItemCarousel } from 'src/items/Carousel/Carouseltems'
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import { ItemCarousel, ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
+import LocalOfferIcon from '@mui/icons-material/LocalOffer'
+import Carousel_Review_Comunity from '../HostComunity/components/Carousel/Carousel_Review'
 
 type Props = {}
 
 const ShareACar = (props: Props) => {
-
   return (
     <div className='pt-[84px]'>
       {/* start top */}
-      <div className='mb-bottom transition-all duration-1000 delay-100' >
+      <div className='mb-bottom transition-all duration-1000 delay-100'>
         <BodyTop
           img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg'
           content="
@@ -43,7 +43,7 @@ const ShareACar = (props: Props) => {
       </div>
       {/* end top */}
       {/* start body 1 */}
-      <div className='mb-bottom'>
+      <div className='mb-[200px]'>
         <ExploreHosting
           img={
             'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
@@ -51,6 +51,7 @@ const ShareACar = (props: Props) => {
           DataExploreHostingStyle={DataExploreHostingShareCar}
           DataExploreHostingText={DataExploreHostingShareCarText}
           isEx={false}
+          className={''}
         />
       </div>
       <div className='mb-bottom' id='getstarted'>
@@ -71,13 +72,15 @@ const ShareACar = (props: Props) => {
       {/* start body 2 */}
 
       <div className='  rounded-2xl p-2  mb-bottom flex'>
-        <div className='w-[50%]'>
+        <div className='w-1/2'>
           <div className='w-[70%]'>
             <CustomSlider
               classNameImage='rounded-lg'
               classNameTitle='text-[25px] text-mainColor ml-2'
               classNameContent=' text-[25px] ml-2'
-              data={ItemSlider}
+              data={ItemSliderShareCar}
+              isTime
+              classNameTime='text-mainColor ml-2 text-base mt-[19px]'
               isTitle={true}
               isContent={true}
               numberItem={1}
@@ -86,8 +89,8 @@ const ShareACar = (props: Props) => {
             />
           </div>
         </div>
-        <div className=''>
-          <ContentSlider item={ItemContentSlider} classNameTitle='text-[48px]' classNameContent='text-white'/>
+        <div className='w-1/2'>
+          <ContentSlider item={ItemContentSlider} classNameTitle='text-[48px]' classNameContent='text-white' />
         </div>
       </div>
       {/* end body2 */}
@@ -99,11 +102,11 @@ const ShareACar = (props: Props) => {
         <div>
           <div className='flex gap-10 mt-3 h-full mb-5'>
             <div className='w-[70%] '>
-              <BodyBanner item={item}/>
+              <BodyBanner item={item} />
             </div>
             <div className='w-[30%] h-full justify-between'>
               <BodyCard
-              item={item1}
+                item={item1}
                 classNameTitle='py-2 text-black'
                 classNameContent='text-black'
                 icon={<VerifiedOutlinedIcon className=' text-mainColor leading-[22.4px] mb-4 ' />}
@@ -112,12 +115,12 @@ const ShareACar = (props: Props) => {
           </div>
           <div className='flex gap-10 mt-3 items-center'>
             <div className='w-[70%] h-max'>
-              <Support item={itemSupport}/>
+              <Support item={itemSupport} />
               {/* <BodyBanner /> */}
             </div>
             <div className='w-[30%] h-max'>
               <BodyCard
-              item={item2}
+                item={item2}
                 classNameTitle='text-mainColor py-2'
                 classNameContent='text-black'
                 icon={<LocalOfferIcon className='text-mainColor leading-[22.4px] mb-4' />}
@@ -129,17 +132,32 @@ const ShareACar = (props: Props) => {
       {/* end body banner */}
       {/* start collapse 1 */}
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
-      <div className='bg-white flex items-center justify-between rounded-2xl mb-bottom'>
-        <h2>...And More</h2>
-        <div className='w-1/2'>
-          <CustomeCommonQuestions items={items} className='' />
-        </div>
-        <div className='w-1/2'>
-          <img
-            src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'
-            className='w-[300px] h-[300px]'
-          />
-        </div>
+      <div className=' rounded-2xl mb-bottom'>
+        <h2 className='text-[32px] font-medium tracking-tight leading-5'>...and more</h2>
+        <WrapperContent
+          titlePadding={5}
+          textAlign='left'
+          title='Learn more about the benefits of Getaround'
+          isBgTransparent={true}
+          fontSize={12}
+        >
+          <div className='flex'>
+            <CustomeCommonQuestions
+              titleClassName='text-white/90 text-bold text-[18px]'
+              items={items}
+              className='w-1/2'
+            />
+            <div className='w-1/2 p-4 flex justify-center items-center bg-white rounded-2xl ml-4'>
+              <img
+                width='50%'
+                src={
+                  'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'
+                }
+                alt=''
+              />
+            </div>
+          </div>
+        </WrapperContent>
       </div>
       {/* </WrapperContent> */}
       {/* end collapse */}
@@ -152,6 +170,7 @@ const ShareACar = (props: Props) => {
           DataExploreHostingStyle={DataExploreHostingShareCar}
           DataExploreHostingText={DataExploreHostingShareCarText}
           isEx={false}
+          className=''
         />
       </div>
       {/* start carousel review */}
@@ -164,11 +183,17 @@ const ShareACar = (props: Props) => {
             Our hosts have earned a total of $370M to date
           </h2>
         </div>
-        <Carousel_Review className='' classNameImage='h-[305px] flex flex-col flex-end' numberItem={1} numberItemScroll={1} data={ItemCarousel} />
+        <Carousel_Review_Comunity
+          className='m-4'
+          data={ItemCarouselCommunity}
+          numberItem={2}
+          numberItemScroll={1}
+          classNameContent='text-[#727171]'
+        />
       </div>
       {/* end carousel review */}
       {/* start start hoisting increase income */}
-      <div className='mb-bottom' >
+      <div className='mb-bottom'>
         <BodyTop
           img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg'
           content="
@@ -183,9 +208,23 @@ const ShareACar = (props: Props) => {
 
       {/* start collapse 2 */}
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
-      <div className='bg-white flex flex-col  justify-start rounded-2xl mb-bottom w-full text-black'>
+      <div className=' w-[80%]   rounded-2xl mb-bottom   text-black'>
         <h2 className='flex justify-center text-mainColor text-[26px] leading-8'>...Need more info? Check out FAQs.</h2>
-        <CustomeCommonQuestions items={items} className='text-white' />
+        <WrapperContent
+          titlePadding={5}
+          textAlign='left'
+          title='Learn more about the benefits of Getaround'
+          isBgTransparent={true}
+          fontSize={12}
+        >
+          <div className='flex'>
+            <CustomeCommonQuestions
+              titleClassName='text-white/90 text-bold text-[18px]'
+              items={items}
+              className='w-full'
+            />
+          </div>
+        </WrapperContent>
       </div>
       {/* </WrapperContent> */}
       {/* end collapse 2 */}
