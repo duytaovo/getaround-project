@@ -24,7 +24,7 @@ export const DataExploreHostingShareCar = {
   Button: {
     href: '',
     className:
-      'text-mainColor no-underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
+      'text-mainColor underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
     text: 'Khám phá các phần thưởng'
   }
 }

@@ -27,7 +27,7 @@ const BodyTop = ({ header, content, img, className }: Props) => {
     >
       <div className='w-[600px] h-[300px] flex flex-col justify-between items-start'>
         <h1 className='w-[500px]  text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1>
-        <p className='w-[500px] text-ellipsis'>{content}</p>
+        <p className='w-[500px] text-ellipsis text-justify'>{content}</p>
         <Button
           onClick={onClick}
           children={<span className='text-xl'>Share A Car</span>}
@@ -35,7 +35,7 @@ const BodyTop = ({ header, content, img, className }: Props) => {
           className='w-[200px] hover:duration-500 duration-500 hover:transition-all  text-white h-[70px]  rounded-lg bg-[#3699d3] hover:bg-black  '
         ></Button>
       </div>
-      <img className='w-[401px] h-[388px] bg-white rounded-2xl' src={img} alt='' />
+      <img className='w-[401px] h-[300px]  bg-white rounded-2xl' src={img} alt='' />
     </div>
   )
 }

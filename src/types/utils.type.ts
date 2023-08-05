@@ -1,7 +1,11 @@
+import { ReactNode } from "react"
+
 export interface IItemSlider {
     id:number
     title?:string
-    img:string
+    img:string,
+    content?:string,
+    time?:string,
 }
 
 export interface IItemCarousel {
@@ -9,6 +13,7 @@ export interface IItemCarousel {
     title?:string
     header?:string
     content?:string
-    img?:string
+    childrenImgPersong?:ReactNode
     name?:string
+    img?:string
 }
