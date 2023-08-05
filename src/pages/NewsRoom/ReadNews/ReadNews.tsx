@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { RightOutlined } from '@ant-design/icons'
 
 import ReadNewsItem from './ReadNewsItem/ReadNewsItem'
+import { DataReadNewItem } from 'src/items/NewsRoom/DataNewsRoom'
 const ReadNews = () => {
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>
@@ -18,7 +19,32 @@ const ReadNews = () => {
           </div>
           <div className='w-full'>
             <div className='gap-y-[14px] flex-col flex'>
-              <ReadNewsItem />
+              <div>
+                {DataReadNewItem.map((item, index) => (
+                  <Link
+                    to=''
+                    className='gap-x-[53px] text-black bg-[#f9f8f8] rounded-[18px] justify-between p-[40px] flex touch-manipulation outline-none cursor-pointer font-normal duration-[0.2s] group'
+                  >
+                    <div className='group-hover:text-mainColor'>Jan 5, 2023</div>
+                    <div className='my-0 ml-0 m-auto'>
+                      <div className='max-w-[70ch]'>
+                        <div className='text-black mb-0 text-[24px] leading-[106%]'>
+                          Car Sharing: What You Need To Know - Kelley Blue Book
+                        </div>
+                        <Link
+                          to='/'
+                          className='text-[20px] underline text-black hover:text-mainColor hover:no-underline duration-[0.3s] mt-2'
+                        >
+                          <strong>Read more</strong>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className='text-[24px] group-hover:text-mainColor'>
+                      <RightOutlined />
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

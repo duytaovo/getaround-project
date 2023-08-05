@@ -9,7 +9,8 @@ const path = {
   driveWithUber: '/drive-with-uber',
   sharACar: '/host/share-a-car',
   hostCommunity: '/host/community',
-  newsroom: '/news-room'
+  newsroom: '/news-room',
+  safetytrust: '/how-it-work/safety-trust'
 } as const
 
 export default path

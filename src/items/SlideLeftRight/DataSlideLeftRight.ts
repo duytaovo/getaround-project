@@ -41,3 +41,23 @@ export const DataSlideLeftRightHowItWork = [
     ]
   }
 ]
+export const DataSlideLeftRightSafetyTrust = [
+  {
+    id: 1,
+    label: 'Insurance on every trip',
+    Linkto: '',
+    Link: '',
+    contents: [
+      `Protection for your car in the event of damage. Hosts are covered up to $1,000,00 in liability insurance`
+    ]
+  },
+  {
+    id: 2,
+    label: 'Real-time trip monitoring',
+    Linkto: '',
+    Link: '',
+    contents: [
+      `Our team receives and monitors real-time alerts for late returns and other renter behavior that may indicate a safety event.  We monitor these events on a 24/7 basis and our team takes prompt and appropriate action.`
+    ]
+  }
+]
