@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 interface Props {
-  Data: any
+  Data?: any
 }
 const Proprietary: React.FC<Props> = ({ Data }) => {
   const [isOnScreen, setIsOnScreen] = useState(true)
@@ -67,7 +67,7 @@ const Proprietary: React.FC<Props> = ({ Data }) => {
                 <br />
                 <br />
                 <Link
-                  to='/'
+                  to={Data?.[0]?.Link}
                   className='text-mainColor delay-[0.2s] underline touch-manipulation bg-transparent cursor-pointer outline-none hover:text-mainColor hover:none-underline leading-4'
                 >
                   <strong className='font-bold'>Read more</strong>

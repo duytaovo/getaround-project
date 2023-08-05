@@ -13,7 +13,7 @@ const AboutUs = lazy(() => import('src/pages/AboutUs'))
 const DriveWithUber = lazy(() => import('src/pages/DriveWithUber'))
 
 const NewsRoom = lazy(() => import('src/pages/NewsRoom/NewsRoom'))
-
+const SafetyTrust = lazy(() => import('src/pages/SafetyTrust/SafetyTrust'))
 export const routeMain = [
   {
     path: path.home,
@@ -50,8 +50,13 @@ export const routeMain = [
   {
     path: path.driveWithUber,
     Component: DriveWithUber
-
   },
-      {path: path.newsroom,
-    Component: NewsRoom}
+  {
+    path: path.newsroom,
+    Component: NewsRoom
+  },
+  {
+    path: path.safetytrust,
+    Component: SafetyTrust
+  }
 ]

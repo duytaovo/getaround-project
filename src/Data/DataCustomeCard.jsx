@@ -98,6 +98,8 @@ export const DataCustomeCardHostBonus = [
         <strong>Learn more →</strong>
       </Link>
     ),
+    Footer: '',
+    LinkFooter: '',
     styleHeader: ``,
     styleTitle: `max-w-[40ch] text-[#727272] mt-[30px] font-normal block box-border block`,
     styleDes: `mt-4 max-w-[40ch] text-[#727272] font-normal border-box block`
@@ -111,6 +113,8 @@ export const DataCustomeCardHostBonus = [
         <strong>Learn more →</strong>
       </a>
     ),
+    Footer: '',
+    LinkFooter: '',
     styleHeader: ``,
     styleTitle: `max-w-[40ch] text-[#727272] mt-[30px] font-normal block box-border block`,
     styleDes: `mt-4 max-w-[40ch] text-[#727272] font-normal border-box block`
@@ -128,6 +132,8 @@ export const DataCustomeCardHostBonus = [
         <strong>Learn more →</strong>
       </a>
     ),
+    Footer: '',
+    LinkFooter: '',
     styleHeader: ``,
     styleTitle: `max-w-[40ch] text-[#727272] mt-[30px] font-normal block box-border block`,
     styleDes: `mt-[30px] max-w-[40ch] text-[#727272] font-normal border-box block`
@@ -145,6 +151,8 @@ export const DataCustomeCardHostRefernal = [
         <strong>You get a $200 bonus when your friend becomes a host and list their first car.</strong>
       </p>
     ),
+    Footer: '',
+    LinkFooter: '',
     styleHeader: ``,
     styleTitle: `max-w-[40ch] text-black mt-[10px] font-semibold block box-border block`,
     styleDes: `mt-10 max-w-[40ch] text-[#727272] font-normal border-box block`
@@ -162,8 +170,73 @@ export const DataCustomeCardHostRefernal = [
         </strong>
       </p>
     ),
+    Footer: '',
+    LinkFooter: '',
     styleHeader: ``,
     styleTitle: `max-w-[40ch] text-black mt-[10px] font-semibold block box-border block`,
     styleDes: `mt-10 max-w-[40ch] text-[#727272] font-normal border-box block`
+  }
+]
+export const DataCustomeCardSafetyTrust = [
+  {
+    id: 1,
+    header: (
+      <svg width='16' height='35' viewBox='0 0 16 33' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <path
+          d='M8.96791 16.7749L14.4856 12.2764V0.573242H1.83352V12.3116L7.35122 16.8101C3.45016 17.2318 0.427734 20.5003 0.427734 24.5068C0.427734 28.7593 3.90706 32.2386 8.15957 32.2386C12.4121 32.2386 15.8914 28.7593 15.8914 24.5068C15.8914 20.4651 12.869 17.1967 8.96791 16.7749ZM4.6451 3.38482H11.674V10.9761L8.15957 13.8228L4.6451 10.9761V3.38482ZM8.15957 29.3919C5.45343 29.3919 3.23931 27.1778 3.23931 24.4716C3.23931 21.7655 5.45343 19.5514 8.15957 19.5514C10.8657 19.5514 13.0798 21.7655 13.0798 24.4716C13.0798 27.1778 10.8657 29.3919 8.15957 29.3919Z'
+          fill='#3699d3'
+        ></path>
+        <path
+          d='M8.15923 27.2833C9.71202 27.2833 10.9708 26.0245 10.9708 24.4717C10.9708 22.9189 9.71202 21.6602 8.15923 21.6602C6.60644 21.6602 5.34766 22.9189 5.34766 24.4717C5.34766 26.0245 6.60644 27.2833 8.15923 27.2833Z'
+          fill='#3699d3'
+        ></path>
+      </svg>
+    ),
+    title: 'Insurance',
+    description:
+      'Coverage for both you and the vehicle during the trip. Protection plans offer a wide range of options so you can choose the best protection for your needs.',
+    Footer: 'Learn more',
+    LinkFooter: '/',
+    styleHeader: ``,
+    styleTitle: `max-w-[100%] text-[#000] tracking-[-.015em] mx-0 text-[28px] font-normal leading-[110%] my-7`,
+    styleDes: `mt-0 text-[16px] font-normal text-[#727272]`
+  },
+  {
+    id: 2,
+    header: (
+      <svg width='29' height='35' viewBox='0 0 29 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <path
+          d='M28.0542 6.77397H26.1135L21.585 0.304688H7.35254L2.82404 6.77397H0.883256C0.527446 6.77397 0.236328 7.06509 0.236328 7.4209V17.1248C0.236328 17.4806 0.527446 17.7718 0.883256 17.7718H4.1179C4.1179 19.9066 5.8646 21.6533 7.99947 21.6533C10.1343 21.6533 11.881 19.9066 11.881 17.7718H17.0565C17.0565 19.9066 18.8032 21.6533 20.938 21.6533C23.0729 21.6533 24.8196 19.9066 24.8196 17.7718H28.0542C28.4101 17.7718 28.7012 17.4806 28.7012 17.1248V7.4209C28.7012 7.06509 28.4101 6.77397 28.0542 6.77397ZM20.2264 2.8924L22.9435 6.77397H17.7034V2.8924H20.2264ZM8.71109 2.8924H15.1157V6.77397H5.99399L8.71109 2.8924ZM7.99947 19.0656C7.28785 19.0656 6.70561 18.4834 6.70561 17.7718C6.70561 17.0601 7.28785 16.4779 7.99947 16.4779C8.71109 16.4779 9.29332 17.0601 9.29332 17.7718C9.29332 18.4834 8.71109 19.0656 7.99947 19.0656ZM20.938 19.0656C20.2264 19.0656 19.6442 18.4834 19.6442 17.7718C19.6442 17.0601 20.2264 16.4779 20.938 16.4779C21.6497 16.4779 22.2319 17.0601 22.2319 17.7718C22.2319 18.4834 21.6497 19.0656 20.938 19.0656ZM26.1135 15.184H23.8169C23.1052 14.4077 22.0702 13.8902 20.938 13.8902C19.8059 13.8902 18.7708 14.4077 18.0592 15.184H10.8783C10.1667 14.4077 9.13159 13.8902 7.99947 13.8902C6.86734 13.8902 5.83225 14.4077 5.12063 15.184H2.82404V9.36168H3.14751H25.4665H26.1135V15.184Z'
+          fill='#3699d3'
+        ></path>
+      </svg>
+    ),
+    title: 'Safe cars',
+    description:
+      'Trust that every car you rent on Getaround has passed our stringent eligibility standards for safety & quality.',
+    Footer: 'Learn more',
+    LinkFooter: '/',
+    styleHeader: ``,
+    styleTitle: `max-w-[100%] text-[#000] tracking-[-.015em] mx-0 text-[28px] font-normal leading-[110%] my-7`,
+    styleDes: `mt-0 text-[16px] font-normal text-[#727272]`
+  },
+  {
+    id: 3,
+    header: (
+      <svg width='24' height='35' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <path
+          d='M23.624 7.73742H17.2133L22.992 1.95871L21.2764 0.243164L15.0162 6.50342L11.3142 1.08589H0.75V3.49368H10.0501L12.9094 7.70732H0.75V10.1151H15.4977H21.2162V18.5424H14.5045C14.0831 16.4958 12.2472 14.9307 10.0802 14.9307C7.91318 14.9307 6.07725 16.4958 5.65589 18.5424H0.75V20.9502H5.83647C6.46851 22.6958 8.12386 23.9599 10.0802 23.9599C12.0365 23.9599 13.722 22.6958 14.3239 20.9502H23.624V7.73742ZM10.0802 21.5822C8.90639 21.5822 7.97338 20.6492 7.97338 19.4754C7.97338 18.3016 8.90639 17.3686 10.0802 17.3686C11.254 17.3686 12.187 18.3016 12.187 19.4754C12.187 20.6492 11.254 21.5822 10.0802 21.5822Z'
+          fill='#3699d3'
+        ></path>
+      </svg>
+    ),
+    title: '24/7 support',
+    description:
+      "Getaround's community representatives address concerns from guests and hosts. For Trust & Safety-related issues, request to speak with a Trust & Safety agent, and you will be connected with someone who can assist you.",
+    Footer: '',
+    LinkFooter: '',
+    styleHeader: ``,
+    styleTitle: `max-w-[100%] text-[#000] tracking-[-.015em] mx-0 text-[28px] font-normal leading-[110%] my-7`,
+    styleDes: `mt-0 text-[16px] font-normal text-[#727272]`
   }
 ]
