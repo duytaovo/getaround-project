@@ -45,7 +45,7 @@ export const CardBodyParnerDeal = ({title,content}:ICardBody) => (
     </div>
     <div className='w-1/2 '>
       <strong className='text-[26px] font-medium leading-8 tracking-tight'>{title}</strong>
-      <p className='py-5 text-lg gap-y-3 tracking-tight leading-6'>
+      <p className='py-5 text-lg gap-y-3 tracking-tight leading-6 xl'>
         As a Getaround host, you get access to exclusive deals and discounts with our entire network of partners.
       </p>
       <Button
