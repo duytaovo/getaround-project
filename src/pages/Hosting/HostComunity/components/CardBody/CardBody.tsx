@@ -2,11 +2,14 @@ import React from 'react'
 import Button from 'src/components/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { Link } from 'react-router-dom'
+import { ICardBody } from 'src/types/hoisting.type'
 
-export const CardBodyImg: React.FC = () => (
+
+
+export const CardBodyImg = ({title,img}:ICardBody) => (
   <div className='w-[260px] h-[260px] text-black font-medium text-[20px] break-words hover:text-mainColor  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
     <div>
-      Offer & Bonus
+     {title}
       <span>
         <ArrowForwardIcon />
       </span>
@@ -15,12 +18,12 @@ export const CardBodyImg: React.FC = () => (
     <img
       className='w-[140px] h-[140px] rounded-full border-solid border border-[#d2d2d2]'
       alt='cardImg'
-      src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg'
+      src={img}
     />
   </div>
 )
 
-export const CardBodyButton: React.FC = () => (
+export const CardBodyButton = () => (
   <div className='w-[260px] h-[260px] text-mainColor font-medium text-[20px] break-words hover:text-black  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
     <div>Login to view your host</div>
     <Button
@@ -31,7 +34,7 @@ export const CardBodyButton: React.FC = () => (
   </div>
 )
 
-export const CardBodyParnerDeal = () => (
+export const CardBodyParnerDeal = ({title,content}:ICardBody) => (
   <div className='w-full h-[300px]   text-black font-medium text-[20px] break-words bg-white flex items-center rounded-2xl border border-solid flex-row justify-around px-10 leading-5 border-[#d2d2d2]'>
     <div className='w-1/2'>
       <img
@@ -41,7 +44,7 @@ export const CardBodyParnerDeal = () => (
       />
     </div>
     <div className='w-1/2 '>
-      <strong className='text-[26px] font-medium leading-8 tracking-tight'>Partners, Deals & Discounts</strong>
+      <strong className='text-[26px] font-medium leading-8 tracking-tight'>{title}</strong>
       <p className='py-5 text-lg gap-y-3 tracking-tight leading-6'>
         As a Getaround host, you get access to exclusive deals and discounts with our entire network of partners.
       </p>

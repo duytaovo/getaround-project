@@ -1,4 +1,4 @@
-import { IItemCarousel } from 'src/types/utils.type'
+import { IItemCarousel } from 'src/types/hoisting.type'
 
 export const ItemCarousel: IItemCarousel[] = [
   {
