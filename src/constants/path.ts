@@ -7,6 +7,7 @@ const path = {
   hostrefernal: 'host-referral',
   aboutus: '/about-us',
   driveWithUber: '/drive-with-uber',
+  partnerWithUs: '/partner-with-us',
   sharACar: '/host/share-a-car',
   hostCommunity: '/host/community',
   newsroom: '/news-room'

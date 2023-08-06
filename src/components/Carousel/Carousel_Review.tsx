@@ -21,7 +21,7 @@ interface Props {
   classNameHeader?: string
   classNameImage?: string
   isCustomDot?: boolean
-  imgPerson?:string
+  imgPerson?: string
 }
 
 export default function Carousel_Review({
@@ -88,9 +88,12 @@ export default function Carousel_Review({
       </div>
       <div className='w-1/2 flex flex-col justify-end'>
         <img
-          src={`${imgPerson || 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'}`}
+          src={`${
+            imgPerson ||
+            'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'
+          }`}
           alt=''
-          className={`${classNameImage} object-contain w-full h-[400px] ml-10 bg-white fill-white rounded-2xl`}
+          className={`object-contain w-full h-[400px] bg-white fill-white rounded-2xl ${classNameImage + ''}`}
         />
       </div>
     </div>

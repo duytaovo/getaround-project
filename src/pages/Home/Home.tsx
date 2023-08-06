@@ -86,17 +86,24 @@ const Home = (props: Props) => {
       </WrapperContent>
       {/* End hero section */}
 
-      {/* <WrapperContent title='TESTIMONIALS' textAlign='center' classname='flex flex-col'>
+      {/* <WrapperContent title='TESTIMONIALS' textAlign='center' classname='flex flex-col' isBgTransparent>
         <Heading title='Hear from our guests' breakLineAt={4} fontSize={30} className='text-center' />
-        <div className='flex justify-between'>
-          <div className='w-1/2'>
-            <CustomeCarousel.Carousel_Review data={ItemCarousel} numberItem={3} numberItemScroll={1} />
+        <div className=''>
+          <div className='bg-red-500 w-1/2'>
+            <CustomeCarousel.Carousel_Review
+              classNameImage='hidden'
+              className='bg-white/80'
+              classNameContent='bg-mainColor w-[200px]'
+              data={ItemCarousel}
+              numberItem={1}
+              numberItemScroll={1}
+            />
           </div>
-          <div></div>
+          <div>sadhsakj</div>
         </div>
       </WrapperContent> */}
 
-      <WrapperContent title=''>
+      <WrapperContent title='' isBgTransparent>
         <ExploreHosting
           isEx={true}
           DataExploreHostingStyle={DataExploreHostingHome}
@@ -134,12 +141,12 @@ const Home = (props: Props) => {
           className='text-center'
           color='rgba(255,255,255, .8)'
         />
-        <div className='mx-auto w-full h-fit  '>
+        <div className='mx-auto w-full h-fit'>
           <CustomeSlider
             data={ItemSlider}
             numberItem={3}
             numberItemScroll={1}
-            className='bg-mainColor/20 rounded-md p-2 overflow-hidden flex flex-col'
+            className='bg-mainColor/20 rounded-md p-2 overflow-hidden'
             classNameImage='rounded-md w-full'
             classNameTitle='text-[14px] leading-[22px] text-white/40'
             classNameContent='text-white/90 text-[24px] leading-[25px] break-words'
@@ -163,6 +170,7 @@ const Home = (props: Props) => {
             titleClassName='text-white/90 text-bold text-[18px]'
             items={items}
             className='w-1/2'
+            paddingRightSingleCommonQuestion={10}
           />
           <div className='w-1/2 p-4 flex justify-center items-center'>
             <img width='50%' src={CommonQuestionRightImg} alt='' />
