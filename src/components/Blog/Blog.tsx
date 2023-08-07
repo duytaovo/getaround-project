@@ -2,14 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 const Blog = () => {
   return (
-    <div className='flex justify-center h-full w-full mb-16'>
-      <div className='w-1/2 flex justify-center mr-5 rounded-2xl'>
-        <img
-          className='object-contain  rounded-2xl'
-          src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63dc05d87b4b95cb44c4ef9f_getaroundblog%20Grande.jpeg'
-          alt='ss'
-        />
-      </div>
+    <div className='flex justify-center h-auto w-full mb-16 md:mb-24'>
+      <img
+        className='object-contain rounded-2xl w-1/2 flex justify-center mr-5 md:rounded-2xl'
+        src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63dc05d87b4b95cb44c4ef9f_getaroundblog%20Grande.jpeg'
+        alt='ss'
+      />
+
       <div className='w-1/2  flex justify-center items-center '>
         <div className='block h-[50%]'>
           <p className='uppercase text-mainColor font-semibold mb-8 text-[10px]'>THE GETAROUND BLOG</p>

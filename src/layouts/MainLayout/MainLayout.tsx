@@ -11,7 +11,6 @@ type Props = {}
 const MainLayoutInner = (props: Props) => {
   return (
     <div>
-
       <div>
         <Hidden mdDown>
           <Header />
@@ -24,8 +23,10 @@ const MainLayoutInner = (props: Props) => {
         <Outlet />
       </div>
       <Footer />
-      <HypeMemo />
-      <ConsentManager />
+      <div className='fixed left-0 right-0 bottom-0 z-[20000]'>
+        <HypeMemo />
+        <ConsentManager />
+      </div>
     </div>
   )
 }

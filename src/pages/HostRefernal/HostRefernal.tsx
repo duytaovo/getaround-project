@@ -49,7 +49,7 @@ const HostRefernal = () => {
       <WrapperContent textAlign='center' title='HOW IT WORKS' classname='flex flex-col'>
         <div className='justify-center items-center flex relative'>
           <div className='flex justify-center px-[36px] '>
-            <div className='w-1/2 '>
+            <div className='w-1/2 md:w-[65%] '>
               <p className='text-black text-2xl mb-3 font-semibold'>Make it happen in seconds</p>
               <CustomeStep
                 icons={[<CarOutlined />, <WalletOutlined />, <DollarOutlined />]}
@@ -57,13 +57,13 @@ const HostRefernal = () => {
                 items={CustomeStepItemAboutUs}
               />
             </div>
-            <div className='w-1/2 flex justify-center rounded-[16px] items-center'>
-              <img
-                className='object-contain h-[60%] rounded-[16px]'
-                src='https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg'
-                alt='ss'
-              />
-            </div>
+            {/* <div className='w-1/2 flex justify-center rounded-[16px] items-center'> */}
+            <img
+              className='object-cover w-[310px] md:w-[230px] min-h-[260px] md:min-h-[400px] mb-auto mx-auto  rounded-[16px]'
+              src='https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg'
+              alt='ss'
+            />
+            {/* </div> */}
           </div>
         </div>
       </WrapperContent>

@@ -32,15 +32,18 @@ const HeaderHowItWord = () => {
     <div className='mb-28 flex flex-col items-stretch m-full h-101 '>
       <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative  h-full'>
         <div
-          className='rounded-2xl py-10 w-full h-full  bg-cover'
+          className='rounded-2xl '
           style={{
-            backgroundImage: `url(${Img})`
+            backgroundImage: `url(${Img})`,
+            backgroundPosition: '50% 22%',
+            backgroundSize: 'auto 161%',
+            padding: '42px 0'
           }}
         >
           <div className=' w-full max-with max-w-5xl mx-auto flex-col px-9 flex '>
-            <div className='w-6/13 max-w-xl ml-0 px-9 bg-[#efeff0] rounded-3xl'>
+            <div className='w-6/13 md:w-[70%] ml-0 px-9 bg-[#efeff0] rounded-3xl'>
               <h1 className='text-black text-5xl font-bold mt-6'>
-                Thuê và mở khóa một <span className='text-mainColor'>ô tô gần đó</span> chỉ trong vài giây
+                Rent and unlock a <span className='text-mainColor'>nearby car</span> in seconds
               </h1>
               <div className=' h-8'></div>
               <div className='my-8'>

@@ -4,10 +4,11 @@ interface Props {
     total: string
     title: string
   }>
+  className?: string
 }
-const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome }) => {
+const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, className }) => {
   return (
-    <div className='flex-col items-stretch flex py-10'>
+    <div className={className}>
       <div className='w-full flex-col max-w-[1272px] self-center items-stretch px-auto flex relative'>
         <div className='w-full flex-col mx-auto flex items-center'>
           <div className='w-full max-w-[1272px] bg-white/90 rounded-[22px] flex-col justify-center mt-auto mx-auto p-[10px_36px] flex'>
