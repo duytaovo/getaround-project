@@ -1,7 +1,9 @@
+import { Hidden } from '@mui/material'
 import React, { memo } from 'react'
 import { Outlet } from 'react-router-dom'
 import Footer from 'src/components/Footer'
 import Header from 'src/components/Header'
+import HeaderMobile from 'src/components/HeaderMobile/HeaderMobile'
 import ConsentManager from 'src/components/Memo/ConsentManager'
 import HypeMemo from 'src/components/Memo/HypeMemo'
 type Props = {}
@@ -9,7 +11,14 @@ type Props = {}
 const MainLayoutInner = (props: Props) => {
   return (
     <div>
-      <Header />
+      <div>
+        <Hidden mdDown>
+          <Header />
+        </Hidden>
+        <Hidden mdUp>
+          <HeaderMobile />
+        </Hidden>
+      </div>
       <div className='pt-[110px] container px-[96px]'>
         <Outlet />
       </div>
