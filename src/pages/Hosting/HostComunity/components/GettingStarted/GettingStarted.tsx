@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import CustomLink from 'src/components/CustomLink'
 import CustomSelect from 'src/components/Select'
 import { selectItems } from 'src/items/FooterItem/FooterItem'
-import { IItemGettingStarted, IItemNailTheBasic } from 'src/types/hoisting_comunity.type '
+import { IItemGettingStarted, IItemNailTheBasic } from 'src/types/hosting_comunity.type '
 import { useAppSelector } from 'src/hooks/useRedux'
 interface Props {}
 

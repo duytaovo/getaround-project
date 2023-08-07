@@ -1,4 +1,4 @@
-import { IItemCarousel } from 'src/types/hoisting_shareACar.type'
+import { IItemCarousel } from 'src/types/hosting_shareACar.type'
 
 export const ItemCarousel: IItemCarousel[] = [
   {

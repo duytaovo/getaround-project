@@ -1,4 +1,4 @@
-import { IItemSlider } from "src/types/hoisting_shareACar.type";
+import { IItemSlider } from "src/types/hosting_shareACar.type";
 
 export const ItemSlider:IItemSlider[] = [
     {

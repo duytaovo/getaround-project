@@ -16,7 +16,7 @@ import {
   IItemContentSlider,
   IItemSlider,
   IItemSupport
-} from 'src/types/hoisting_shareACar.type'
+} from 'src/types/hosting_shareACar.type'
 
 interface ShareACarState {
   bodyTop: IBodyTop

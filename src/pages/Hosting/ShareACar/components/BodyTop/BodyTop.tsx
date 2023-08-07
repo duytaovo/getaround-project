@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'src/components/Button'
 import {  changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
-import { IBodyTop } from 'src/types/hoisting_shareACar.type'
+import { IBodyTop } from 'src/types/hosting_shareACar.type'
 
 interface Props {
   item:IBodyTop

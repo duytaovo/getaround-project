@@ -1,7 +1,8 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
 import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
 import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
+import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import {
   ItemBodyTop,
   ItemContentSlider,
@@ -11,7 +12,12 @@ import {
 } from 'src/items/ShareACar/ShareACar'
 import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
 import { itemSupport } from 'src/pages/Hosting/ShareACar/components/Support/Support'
-import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemSlider, IItemSupport } from 'src/types/hoisting_shareACar.type'
+import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
+import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
+import { payloadCreator } from 'src/utils/utils'
+
+export const getPlayList = createAsyncThunk('shareACar/getShareACar', payloadCreator(''))
+
 
 interface ICustomeStep {
   title: string
@@ -36,6 +42,7 @@ interface ShareACarState {
   support: IItemSupport
   step:ICustomeStep[]
   commonQuestion:ICommonQuestion[]
+  exploreHosting:ISelectItemsExploreHosting[]
 }
 
 const initialState: ShareACarState = {
@@ -48,7 +55,9 @@ const initialState: ShareACarState = {
   carouselReview:ItemCarouselCommunity,
   support:itemSupport,
   step:CustomeStepItems,
-  commonQuestion:items
+  commonQuestion:items,
+  exploreHosting:DataExploreHostingShareCarText
+
 }
 
 const shareACarSlice = createSlice({

@@ -1,5 +1,5 @@
 import { Icon, IconButton } from '@mui/material'
-import { IItemCarousel } from 'src/types/hoisting_shareACar.type'
+import { IItemCarousel } from 'src/types/hosting_shareACar.type'
 import DriveEtaIcon from '@mui/icons-material/DriveEta'
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined'
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined'

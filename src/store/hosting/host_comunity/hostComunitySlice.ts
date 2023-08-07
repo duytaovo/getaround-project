@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
+import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import {
   itemBannerCommunity,
   itemCardBodyImg,
@@ -8,8 +9,9 @@ import {
   itemGettingStarted,
   itemSliderHostComunity
 } from 'src/items/ShareACar/ShareACar'
-import { IItemBanner, IItemGettingStarted, IItemSliderHostComunity } from 'src/types/hoisting_comunity.type '
-import { IItemBodyBannerCard, IItemCarousel } from 'src/types/hoisting_shareACar.type'
+import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
+import { IItemBanner, IItemGettingStarted, IItemSliderHostComunity } from 'src/types/hosting_comunity.type '
+import { IItemBodyBannerCard, IItemCarousel } from 'src/types/hosting_shareACar.type'
 
 interface ShareACarState {
   sliderHostComunity:IItemSliderHostComunity[]
@@ -19,6 +21,8 @@ interface ShareACarState {
   gettingStarted:IItemGettingStarted
   bannerCommunity:IItemBanner
   CarouselCommunity:IItemCarousel[]
+  exploreHosting:ISelectItemsExploreHosting[]
+
 }
 
 const initialState: ShareACarState = {
@@ -28,7 +32,10 @@ const initialState: ShareACarState = {
   cardBodyReferFriend:itemCardBodyReferFriend,
   gettingStarted:itemGettingStarted,
   bannerCommunity:itemBannerCommunity,
-  CarouselCommunity:ItemCarouselCommunity
+  CarouselCommunity:ItemCarouselCommunity,
+  exploreHosting:DataExploreHostingShareCarText
+
+
 }
 
 const communitySlice = createSlice({

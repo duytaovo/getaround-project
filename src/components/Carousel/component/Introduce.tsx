@@ -1,5 +1,5 @@
 import React from 'react'
-import { IItemCarousel } from 'src/types/hoisting_shareACar.type'
+import { IItemCarousel } from 'src/types/hosting_shareACar.type'
 
 interface Props {
   item?: IItemCarousel

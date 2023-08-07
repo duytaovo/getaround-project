@@ -9,12 +9,11 @@ import { CardBodyParnerDeal, CardBodyReferFriend } from './components/CardBody/C
 import Carousel_Review_Comunity from './components/Carousel/Carousel_Review'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { useAppSelector } from 'src/hooks/useRedux'
 
 
 const HostCominity = () => {
-  const {CarouselCommunity,bannerCommunity,cardBodyImg,cardBodyParnerDeal,cardBodyReferFriend,gettingStarted,sliderHostComunity} = useAppSelector((state) => state.community);
+  const {CarouselCommunity,exploreHosting,bannerCommunity,cardBodyImg,cardBodyParnerDeal,cardBodyReferFriend,gettingStarted,sliderHostComunity} = useAppSelector((state) => state.community);
 
   const text = 'Featured news & updates'
   return (
@@ -106,7 +105,7 @@ const HostCominity = () => {
               'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
             }
             DataExploreHostingStyle={DataExploreHostingShareCar}
-            DataExploreHostingText={DataExploreHostingShareCarText}
+            DataExploreHostingText={exploreHosting}
             isEx={false}
             className=''
           />

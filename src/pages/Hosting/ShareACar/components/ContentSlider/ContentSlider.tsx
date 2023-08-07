@@ -1,6 +1,6 @@
 import React from 'react'
 import {  changeColorBlackAndMain, changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
-import { IItemContentSlider } from 'src/types/hoisting_shareACar.type'
+import { IItemContentSlider } from 'src/types/hosting_shareACar.type'
 
 
 
