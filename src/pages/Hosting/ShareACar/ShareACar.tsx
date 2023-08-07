@@ -10,35 +10,49 @@ import TimeToLeaveOutlinedIcon from '@mui/icons-material/TimeToLeaveOutlined'
 import LinkedCameraOutlinedIcon from '@mui/icons-material/LinkedCameraOutlined'
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
 import CustomSlider from 'src/components/Slider'
-import { ItemSlider, ItemSliderShareCar } from 'src/items/SliderItem/Slider'
+import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
 import ContentSlider from './components/ContentSlider/ContentSlider'
-import { ItemContentSlider } from 'src/items/ShareACar/ShareACar'
-import BodyBanner, { item } from './components/BodyBanner/BodyBanner'
-import BodyCard, { item1, item2 } from './components/BodyCard/BodyCard'
+import { ItemBodyTop, ItemContentSlider, itemBanner, itemBodyCardBottom, itemBodyCardTop } from 'src/items/ShareACar/ShareACar'
 import Support, { itemSupport } from './components/Support/Support'
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
 import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
-import Carousel_Review from '../../../components/Carousel/Carousel_Review'
-import { ItemCarousel, ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
+import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
 import LocalOfferIcon from '@mui/icons-material/LocalOffer'
 import Carousel_Review_Comunity from '../HostComunity/components/Carousel/Carousel_Review'
+import BodyBanner from './components/BodyBanner/BodyBanner'
+import BodyCard from './components/BodyCard/BodyCard'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
+import { IBodyTop, IItemSlider } from 'src/types/hoisting_shareACar.type'
+import { addSlider, updateBodyTop, updateSlider } from 'src/store/hosting/share_a_car/shareACarSlice'
 
 type Props = {}
 
 const ShareACar = (props: Props) => {
+
+  const {bodyTop,bodyBannerCard,bodyCardBottom,bodyCardTop,carouselReview,contentSlider,sliders,support} = useSelector((state: RootState) => state.shareAcar);
+  const dispatch = useDispatch();
+
+  const handleBodyTopChange = (newBodyTop: IBodyTop) => {
+    dispatch(updateBodyTop(newBodyTop));
+  };
+
+  const handleAddSlider = (newSlider: IItemSlider) => {
+    dispatch(addSlider(newSlider));
+  };
+
+  const handleSliderChange = (index: number, newSlider: IItemSlider) => {
+    dispatch(updateSlider({ index, slider: newSlider }));
+  };
+
   return (
     <div className='pt-[84px]'>
       {/* start top */}
       <div className='mb-bottom transition-all duration-1000 delay-100'>
         <BodyTop
-          img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg'
-          content="
-      When you list your car, you're earning money while helping others navigate your city. It's a win-win, and your next big opportunity.
-      "
-          header='Turn your car
-      into extra money'
+        item={bodyTop}
         />
       </div>
       {/* end top */}
@@ -78,7 +92,7 @@ const ShareACar = (props: Props) => {
               classNameImage='rounded-lg'
               classNameTitle='text-[25px] text-mainColor ml-2'
               classNameContent=' text-[25px] ml-2'
-              data={ItemSliderShareCar}
+              data={sliders}
               isTime
               classNameTime='text-mainColor ml-2 text-base mt-[19px]'
               isTitle={true}
@@ -90,7 +104,7 @@ const ShareACar = (props: Props) => {
           </div>
         </div>
         <div className='w-1/2'>
-          <ContentSlider item={ItemContentSlider} classNameTitle='text-[48px]' classNameContent='text-white' />
+          <ContentSlider item={contentSlider} classNameTitle='text-[48px]' classNameContent='text-white' />
         </div>
       </div>
       {/* end body2 */}
@@ -102,11 +116,11 @@ const ShareACar = (props: Props) => {
         <div>
           <div className='flex gap-10 mt-3 h-full mb-5'>
             <div className='w-[70%] '>
-              <BodyBanner item={item} />
+              <BodyBanner item={bodyBannerCard} />
             </div>
             <div className='w-[30%] h-full justify-between'>
               <BodyCard
-                item={item1}
+                item={bodyCardTop}
                 classNameTitle='py-2 text-black'
                 classNameContent='text-black'
                 icon={<VerifiedOutlinedIcon className=' text-mainColor leading-[22.4px] mb-4 ' />}
@@ -115,12 +129,12 @@ const ShareACar = (props: Props) => {
           </div>
           <div className='flex gap-10 mt-3 items-center'>
             <div className='w-[70%] h-max'>
-              <Support item={itemSupport} />
+              <Support item={support} />
               {/* <BodyBanner /> */}
             </div>
             <div className='w-[30%] h-max'>
               <BodyCard
-                item={item2}
+                item={bodyCardBottom}
                 classNameTitle='text-mainColor py-2'
                 classNameContent='text-black'
                 icon={<LocalOfferIcon className='text-mainColor leading-[22.4px] mb-4' />}
@@ -185,7 +199,7 @@ const ShareACar = (props: Props) => {
         </div>
         <Carousel_Review_Comunity
           className='m-4'
-          data={ItemCarouselCommunity}
+          data={carouselReview}
           numberItem={2}
           numberItemScroll={1}
           classNameContent='text-[#727171]'
@@ -195,12 +209,7 @@ const ShareACar = (props: Props) => {
       {/* start start hoisting increase income */}
       <div className='mb-bottom'>
         <BodyTop
-          img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg'
-          content="
-      When you list your car, you're earning money while helping others navigate your city. It's a win-win, and your next big opportunity.
-      "
-          header='Turn your car
-      into extra money'
+          item={ItemBodyTop}
           className='flex-row-reverse'
         />
       </div>

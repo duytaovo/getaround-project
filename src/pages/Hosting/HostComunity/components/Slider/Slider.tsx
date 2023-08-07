@@ -1,12 +1,13 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { IItemSlider } from 'src/types/hoisting.type'
+import { IItemSlider } from 'src/types/hoisting_shareACar.type'
 import getBreakpoint from 'src/helpers/getBreakpoint'
 import NextArrow from 'src/components/NextArrow'
 import PrevArrow from 'src/components/PreArrow/PreArrow'
 import CustomCardSlider from 'src/components/Card'
 import CardSlider from './Card'
+import { IItemSliderHostComunity } from 'src/types/hoisting_comunity.type '
 
 interface Props {
   numberItem: number
@@ -22,39 +23,8 @@ interface Props {
   autoPlay?: boolean
 }
 
-export interface IItemSliderHostComunity {
-  id:number
-  img: string
-  content: string
-  url: string
-}
 
-export const itemSliderHostComunity: IItemSliderHostComunity[] = [
-  {
-    id:1,
-    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
-    content: 'Getaround was featured on Crackle TV’s newest season of Going From Broke.',
-    url: 'Watch free episode'
-  },
-  {
-    id:2,
-    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
-    content: 'Getaround was featured on Crackle TV’s newest season of Going From Broke.',
-    url: 'Watch free episode'
-  },
-  {
-    id:3,
-    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
-    content: 'Getaround was featured on Crackle TV’s newest season of Going From Broke.',
-    url: 'Watch free episode'
-  },
-  {
-    id:4,
-    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
-    content: 'Getaround was featured on Crackle TV’s newest season of Going From Broke.',
-    url: 'Watch free episode'
-  }
-]
+
 
 export default function SliderHostComunity({
   numberItem,
