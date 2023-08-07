@@ -88,7 +88,7 @@ const Proprietary: React.FC<Props> = ({ Data }) => {
             <div
               data-w-id='d68abdf6-cac5-7051-6406-ec9a6d19ef9a'
               data-is-ix2-target='1'
-              className={`max-w-[60%] absolute top-[236px] right-[13%] transition-transform duration-1000 ease-in-out ${
+              className={`max-w-[60%] absolute top-[236px] md:top-[236px] right-[-23%] transition-transform duration-1000 ease-in-out ${
                 isScaled ? 'scale-95' : ''
               }`}
               data-animation-type='lottie'

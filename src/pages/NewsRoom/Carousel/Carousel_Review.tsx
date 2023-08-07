@@ -1,7 +1,7 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { IItemCarousel, IItemSlider } from 'src/types/hoisting.type'
+import { IItemCarousel, IItemSlider } from 'src/types/hosting_shareACar.type'
 import getBreakpoint from 'src/helpers/getBreakpoint'
 import { Col, Row } from 'antd'
 import NextArrow from 'src/components/NextArrow'

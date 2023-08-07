@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
-import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
 import LooksOneOutlinedIcon from '@mui/icons-material/LooksOneOutlined'
 import LooksTwoOutlinedIcon from '@mui/icons-material/LooksTwoOutlined'
 import Looks3OutlinedIcon from '@mui/icons-material/Looks3Outlined'
@@ -9,13 +8,11 @@ import { Link } from 'react-router-dom'
 import CustomLink from 'src/components/CustomLink'
 import CustomSelect from 'src/components/Select'
 import { selectItems } from 'src/items/FooterItem/FooterItem'
+import { IItemGettingStarted, IItemNailTheBasic } from 'src/types/hosting_comunity.type '
+import { useAppSelector } from 'src/hooks/useRedux'
 interface Props {}
 
-interface IItemNailTheBasic {
-  id: number
-  iconSTT: ReactNode
-  title: string
-}
+
 
 const itemItemNailTheBasic: IItemNailTheBasic[] = [
   {
@@ -78,7 +75,13 @@ const renderItemLink = () => {
   ))
 }
 
-const GettingStarted = (props: Props) => {
+interface PropsGettingStarted {
+  itemGettingStarted:IItemGettingStarted
+}
+
+const GettingStarted = ({itemGettingStarted}: PropsGettingStarted) => {
+  const {commonQuestion} = useAppSelector((state) => state.shareAcar);
+
   return (
     <div>
       <div className='mb-mbGettingStarted gap-10'>
@@ -89,19 +92,17 @@ const GettingStarted = (props: Props) => {
           Getting Started
         </strong>
         <p className='text-white flex flex-start leading-[22.4px] line-clamp-3 text-ellipsis'>
-          Onboard and optimize your Getaround business with best practices and recommendations from our team and other
-          hosts.
+      {}
         </p>
       </div>
       <div className='mb-mbGettingStarted'>
-        <CustomeCommonQuestions titleClassName='text-white text-[18px] tracking-tight leading-[22.4px]' items={items} className='text-white' />
+        <CustomeCommonQuestions titleClassName='text-white text-[18px] tracking-tight leading-[22.4px]' items={commonQuestion} className='text-white' />
       </div>
       <div className='mb-mbGettingStarted gap-y-3'>
         <h2 className='text-textSizeHostingTitle tracking-tight leading-8 text-left mb-mbGettingStarted'>Nail the basics</h2>
         <div>
           <p className='text-white mb-mbGettingStarted flex flex-col flex-start leading-5 break-words line-clamp-4 text-ellipsis'>
-            Want to learn about our full claims process, our proprietary hardware technology, or how to manage for
-            seasonal demand? Start here.
+           {itemGettingStarted.content}
           </p>
         </div>
         <div className='mb-mbGettingStarted'>{renderItemNailTheBasic()}</div>

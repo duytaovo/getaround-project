@@ -5,9 +5,12 @@ const HeaderNewsRoom = () => {
     <div className='flex-col items-stretch mb-[104px] flex'>
       <div className='w-full  flex-col self-center items-stretch  flex relative'>
         <div
-          className='bg-[50%_58%] bg-cover bg-scroll bg-no-repeat rounded-[24px] flex-col justify-center items-center p-9 flex'
+          className='bg-[50%_58%]  bg-scroll rounded-[24px] flex-col justify-center items-center p-9 flex w-full'
           style={{
-            backgroundImage: ` url("https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c98c83e7bffe6581cd4811_AdobeStock_516425442%202%20compress.jpg")`
+            backgroundImage: ` url("https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c98c83e7bffe6581cd4811_AdobeStock_516425442%202%20compress.jpg")`,
+            backgroundSize: 'cover',
+            backgroundPosition: '50% 58%',
+            backgroundRepeat: 'no-repeat'
           }}
         >
           <div className='gap-x-[56px] flex-row w-[100%] mx-auto flex'>

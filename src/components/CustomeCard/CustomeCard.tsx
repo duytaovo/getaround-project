@@ -15,11 +15,11 @@ const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
           <div className='gap-x-[18px] flex justify-around'>
             {DataCustomeCard.map((item: any, index: any) => (
               <div
-                className='w-[33%] gap-x-[18px] bg-white rounded-[28px] flex-col items-start p-[42px_42px_56px] flex'
+                className='w-[33%] gap-x-[18px] bg-white rounded-[28px] flex-col items-start p-[42px_42px_56px] flex md:p-[30px_30px_45px] '
                 key={index}
               >
                 <div>{DataCustomeCard?.[index]?.header}</div>
-                <h3 className={`${DataCustomeCard?.[index]?.styleTitle}`}>
+                <h3 className={`${DataCustomeCard?.[index]?.styleTitle} md:text-[20px]`}>
                   <strong>
                     {DataCustomeCard?.[index]?.title} <br />
                   </strong>

@@ -9,9 +9,10 @@ interface Props {
 }
 const KeyFeatureItem: React.FC<Props> = ({ DataKeyFeatureItem }) => {
   return (
-    <div className='mt-0 mb-[25px] grid-flow-col '>
+    <div className='md:mt-0 mt-10 mb-[25px]'>
+      {' '}
       {DataKeyFeatureItem.map((item, index) => (
-        <div className='w-1/2 float-left min-h-[1px] px-[10px] relative'>
+        <div className='w-1/2 float-left sm:block min-h-[1px] px-[10px] relative md:mb-0 mb-[70px] h-auto'>
           <div className='h-[330px] flex-col justify-center items-center mx-auto p-[15px] flex'>
             <div className='shadow-none bg-[rgba(0,0,0,0)] w-[55px] h-[55px] rounded-[100px] justify-center items-center mb-[15px] p-[15px] flex'>
               <img
@@ -31,7 +32,7 @@ const KeyFeatureItem: React.FC<Props> = ({ DataKeyFeatureItem }) => {
             </p>
           </div>
         </div>
-      ))}
+      ))}{' '}
     </div>
   )
 }

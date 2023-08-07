@@ -143,7 +143,9 @@ export const DataCustomeCardHostRefernal = [
   {
     id: 1,
     header: (
-      <div className='mt-[6px] text-[30px] font-bold block  box-border leading-[140%] text-mainColor '>+ $200</div>
+      <div className='mt-[6px] text-[30px] md:text-[25px] font-bold block  box-border leading-[140%] text-mainColor '>
+        + $200
+      </div>
     ),
     title: 'When car is live',
     description: (
@@ -199,7 +201,7 @@ export const DataCustomeCardSafetyTrust = [
     LinkFooter: '/',
     styleHeader: ``,
     styleTitle: `max-w-[100%] text-[#000] tracking-[-.015em] mx-0 text-[28px] font-normal leading-[110%] my-7`,
-    styleDes: `mt-0 text-[16px] font-normal text-[#727272]`
+    styleDes: `mt-0 text-[16px] text-[10px] font-normal text-[#727272]`
   },
   {
     id: 2,

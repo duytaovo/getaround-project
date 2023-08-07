@@ -1,19 +1,29 @@
-import React from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-interface Props {
+
+interface IExploreHosting {
+  mainTitle?: string
+  headerTitle?: string
+  Title?: string
+  Description?: string
+  Link?: string
+}
+
+type Props = {
   img?: string
   isEx?: boolean
   DataExploreHostingStyle?: any
-  DataExploreHostingText?: any
+  DataExploreHostingText?: IExploreHosting[]
   className?: string
 }
-const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
+
+const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
   return (
     <div className={className}>
       {isEx === true ? (
         <div className='w-full  self-center items-stretch  flex relative'>
           <div className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
-            {DataExploreHostingText.mainTitle}
+            {DataExploreHostingText?.[0]?.mainTitle}
           </div>
         </div>
       ) : (
@@ -26,22 +36,22 @@ const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, D
         <div className={`${DataExploreHostingStyle.styleDivRight}`}>
           {isEx === false ? (
             <div className='text-black max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
-              {DataExploreHostingText.headerTitle}
+              {DataExploreHostingText?.[0]?.headerTitle}
             </div>
           ) : (
             <></>
           )}
           <div>
-            <h2 className={`${DataExploreHostingStyle.styleTitle}`}>
-              <strong className=''>{DataExploreHostingText.Title}</strong>
+            <h2 className={`${DataExploreHostingStyle.styleTitle} md:text-[20px]`}>
+              <strong className=''>{DataExploreHostingText?.[0]?.Title}</strong>
             </h2>
           </div>
-          <div className='text-[#727272] mt-[30px]  text-[16px] font-normal mb-4'>
-            {DataExploreHostingText.Description}
+          <div className='text-[#727272] mt-[30px]  text-[16px] md:text-13px font-normal mb-4'>
+            {DataExploreHostingText?.[0]?.Description}
             <br />
           </div>
 
-          <Link to={DataExploreHostingText.Link} className={DataExploreHostingStyle.Button.className}>
+          <Link to={DataExploreHostingText?.[0]?.Link || ''} className={DataExploreHostingStyle.Button.className}>
             {DataExploreHostingStyle.Button.text}
           </Link>
         </div>

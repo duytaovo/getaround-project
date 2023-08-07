@@ -1,7 +1,7 @@
 import { Avatar, Card } from 'antd'
-import { IItemSliderHostComunity } from '../Slider'
 import { Link } from 'react-router-dom'
 import { changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
+import { IItemSliderHostComunity } from 'src/types/hosting_comunity.type '
 
 interface Props {
   item?: IItemSliderHostComunity

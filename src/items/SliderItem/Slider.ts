@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { IItemSlider } from 'src/types/hoisting.type'
+=======
+import { IItemSlider } from "src/types/hosting_shareACar.type";
+>>>>>>> 7f6af7d26b4b54e6a8765f17ce6f1711f77cf9de
 
 export const ItemSlider: IItemSlider[] = [
   {
