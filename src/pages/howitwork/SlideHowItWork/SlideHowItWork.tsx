@@ -1,5 +1,12 @@
 import React from 'react'
-
+export const DataSlideHowItWork = {
+  mainTitle: 'Out mission',
+  title: 'Chúng tôi kết nối những chiếc xe an toàn, tiện lợi với mọi người',
+  img1: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63cef76977f95804643dc7b4_howitworks-guest%20c.jpg',
+  content1: 'Người chia sẻ xe hưởng lợi bằng việc tiếp cận linh hoạt đến một phương tiện xe hơi.',
+  img2: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63cef77225a91196b5c06fe7_howitworks-host-c.jpg',
+  content2: 'Chủ xe hơi kiếm tiền từ những khoảng thời gian họ không lái xe dù sao.'
+}
 const SlideHowItWork = () => {
   return (
     <div className='flex-col items-stretch mb-28 flex'>

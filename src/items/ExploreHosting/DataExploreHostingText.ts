@@ -1,4 +1,4 @@
-import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
+import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
 export const DataExploreHostingHomeText: ISelectItemsExploreHosting[] = [
   {
     mainTitle: 'EXPLORE HOSTING',

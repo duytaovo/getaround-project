@@ -1,63 +1,55 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
-import {
-  ItemBodyTop,
-  ItemContentSlider,
-  itemBanner,
-  itemBodyCardBottom,
-  itemBodyCardTop
-} from 'src/items/ShareACar/ShareACar'
-import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
-import { itemSupport } from 'src/pages/Hosting/ShareACar/components/Support/Support'
-import {
-  IBodyTop,
-  IItemBodyBannerCard,
-  IItemCarousel,
-  IItemContentSlider,
-  IItemSlider,
-  IItemSupport
-} from 'src/types/hoisting_shareACar.type'
 
-interface ShareACarState {
-  bodyTop: IBodyTop
-  sliders: IItemSlider[]
-  contentSlider: IItemContentSlider
-  bodyBannerCard: IItemBodyBannerCard
-  bodyCardTop: IItemBodyBannerCard
-  bodyCardBottom: IItemBodyBannerCard
-  carouselReview: IItemCarousel[]
-  support: IItemSupport
+import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
+import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
+import { DataProprietaryHowItWork } from 'src/items/Proprietary/DataProprietary'
+import { ISelectItemsProprietary } from 'src/types/HowItWork'
+import { ISelectItemsHearCommunity } from 'src/types/HowItWork'
+import { DataCommunity } from 'src/pages/howitwork/HearCommunity/HearCommunity'
+import { ISelectItemsSlide } from 'src/types/HowItWork'
+import { DataSlideHowItWork } from 'src/pages/howitwork/SlideHowItWork/SlideHowItWork'
+import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
+import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideLeftRight'
+interface HowItWorkState {
+  ExploreHowItWork: ISelectItemsExploreHosting[]
+  ProprietaryHowItWork: ISelectItemsProprietary[]
+  HearCommunityHowItWork: ISelectItemsHearCommunity
+  SlideHowItWork: ISelectItemsSlide
+  SlideLeftRightHowItWork: ISelectItemsSlideLeftRight[]
 }
 
-const initialState: ShareACarState = {
-  bodyTop: ItemBodyTop,
-  sliders: ItemSliderShareCar,
-  contentSlider: ItemContentSlider,
-  bodyBannerCard: itemBanner,
-  bodyCardTop: itemBodyCardTop,
-  bodyCardBottom: itemBodyCardBottom,
-  carouselReview: ItemCarouselCommunity,
-  support: itemSupport
+const initialState: HowItWorkState = {
+  ExploreHowItWork: DataExploreHostingHomeText,
+  ProprietaryHowItWork: DataProprietaryHowItWork,
+  HearCommunityHowItWork: DataCommunity,
+  SlideHowItWork: DataSlideHowItWork,
+  SlideLeftRightHowItWork: DataSlideLeftRightHowItWork
 }
 
-const shareACarSlice = createSlice({
-  name: 'shareACar',
+const HowItWorkSlice = createSlice({
+  name: 'HowItwork',
   initialState,
   reducers: {
-    updateBodyTop: (state, action: PayloadAction<IBodyTop>) => {
-      state.bodyTop = action.payload
+    updateExploreHIW: (state, action: PayloadAction<ISelectItemsExploreHosting>) => {
+      state.ExploreHowItWork.push(action.payload)
     },
-    addSlider: (state, action: PayloadAction<IItemSlider>) => {
-      state.sliders.push(action.payload)
+    updateProprietaryHIW: (state, action: PayloadAction<ISelectItemsProprietary>) => {
+      state.ProprietaryHowItWork.push(action.payload)
     },
-    updateSlider: (state, action: PayloadAction<{ index: number; slider: IItemSlider }>) => {
-      const { index, slider } = action.payload
-      state.sliders[index] = slider
+    updateCommunityHIW: (state, action: PayloadAction<ISelectItemsHearCommunity>) => {
+      state.HearCommunityHowItWork = action.payload
+    },
+    updateSlideHIW: (state, action: PayloadAction<ISelectItemsSlide>) => {
+      state.SlideHowItWork = action.payload
+    },
+    updateSlideLeftRightHIW: (state, action: PayloadAction<ISelectItemsSlideLeftRight>) => {
+      state.SlideLeftRightHowItWork.push(action.payload)
     }
   },
   extraReducers: (builder) => {}
 })
 
-export const { updateBodyTop, addSlider, updateSlider } = shareACarSlice.actions
-const shareAcarReducer = shareACarSlice.reducer
-export default shareAcarReducer
+export const { updateExploreHIW, updateProprietaryHIW, updateCommunityHIW, updateSlideHIW, updateSlideLeftRightHIW } =
+  HowItWorkSlice.actions
+const HowItWorkReducer = HowItWorkSlice.reducer
+export default HowItWorkReducer

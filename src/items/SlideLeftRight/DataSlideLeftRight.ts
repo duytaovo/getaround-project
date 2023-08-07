@@ -1,7 +1,7 @@
-export const DataSlideLeftRightHostRefernal = [
+import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
+export const DataSlideLeftRightHostRefernal: ISelectItemsSlideLeftRight[] = [
   {
-    id: 1,
-
+    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'The details',
     Linkto: '/',
     Link: 'Referrals must be made with your custom referral link on this page',
@@ -12,9 +12,9 @@ export const DataSlideLeftRightHostRefernal = [
     ]
   }
 ]
-export const DataSlideLeftRightHowItWork = [
+export const DataSlideLeftRightHowItWork: ISelectItemsSlideLeftRight[] = [
   {
-    id: 1,
+    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Trip insurance',
     Linkto: '',
     Link: 'Peace of mind by design.',
@@ -23,7 +23,7 @@ export const DataSlideLeftRightHowItWork = [
     ]
   },
   {
-    id: 2,
+    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Customer support',
     Linkto: '',
     Link: 'Help standing by, 24/7.',
@@ -32,7 +32,7 @@ export const DataSlideLeftRightHowItWork = [
     ]
   },
   {
-    id: 3,
+    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Wiggle room for changes',
     Linkto: '',
     Link: 'Flexible cancellations.',
@@ -41,9 +41,9 @@ export const DataSlideLeftRightHowItWork = [
     ]
   }
 ]
-export const DataSlideLeftRightSafetyTrust = [
+export const DataSlideLeftRightSafetyTrust: ISelectItemsSlideLeftRight[] = [
   {
-    id: 1,
+    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Insurance on every trip',
     Linkto: '',
     Link: '',
@@ -52,7 +52,7 @@ export const DataSlideLeftRightSafetyTrust = [
     ]
   },
   {
-    id: 2,
+    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Real-time trip monitoring',
     Linkto: '',
     Link: '',
