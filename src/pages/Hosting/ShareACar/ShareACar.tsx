@@ -1,59 +1,49 @@
-import React from 'react'
 import BodyTop from './components/BodyTop'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import CustomForm from './components/CustomForm/CustomForm'
 import CustomeStep from 'src/components/CustomeStep/CustomeStep'
-import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
 import TimeToLeaveOutlinedIcon from '@mui/icons-material/TimeToLeaveOutlined'
 import LinkedCameraOutlinedIcon from '@mui/icons-material/LinkedCameraOutlined'
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
 import CustomSlider from 'src/components/Slider'
-import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
 import ContentSlider from './components/ContentSlider/ContentSlider'
-import { ItemBodyTop, ItemContentSlider, itemBanner, itemBodyCardBottom, itemBodyCardTop } from 'src/items/ShareACar/ShareACar'
 import Support, { itemSupport } from './components/Support/Support'
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
-import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
-import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
 import LocalOfferIcon from '@mui/icons-material/LocalOffer'
 import Carousel_Review_Comunity from '../HostComunity/components/Carousel/Carousel_Review'
 import BodyBanner from './components/BodyBanner/BodyBanner'
 import BodyCard from './components/BodyCard/BodyCard'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from 'src/store/store'
 import { IBodyTop, IItemSlider } from 'src/types/hoisting_shareACar.type'
 import { addSlider, updateBodyTop, updateSlider } from 'src/store/hosting/share_a_car/shareACarSlice'
+import { useAppSelector } from 'src/hooks/useRedux'
 
-type Props = {}
-
-const ShareACar = (props: Props) => {
-
-  const {bodyTop,bodyBannerCard,bodyCardBottom,bodyCardTop,carouselReview,contentSlider,sliders,support} = useSelector((state: RootState) => state.shareAcar);
-  const dispatch = useDispatch();
+const ShareACar = () => {
+  const { bodyTop,step,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
+  useAppSelector((state) => state.shareAcar)
+  const dispatch = useDispatch()
 
   const handleBodyTopChange = (newBodyTop: IBodyTop) => {
-    dispatch(updateBodyTop(newBodyTop));
-  };
+    dispatch(updateBodyTop(newBodyTop))
+  }
 
   const handleAddSlider = (newSlider: IItemSlider) => {
-    dispatch(addSlider(newSlider));
-  };
+    dispatch(addSlider(newSlider))
+  }
 
   const handleSliderChange = (index: number, newSlider: IItemSlider) => {
-    dispatch(updateSlider({ index, slider: newSlider }));
-  };
+    dispatch(updateSlider({ index, slider: newSlider }))
+  }
 
   return (
     <div className='pt-[84px]'>
       {/* start top */}
       <div className='mb-bottom transition-all duration-1000 delay-100'>
-        <BodyTop
-        item={bodyTop}
-        />
+        <BodyTop item={bodyTop} />
       </div>
       {/* end top */}
       {/* start body 1 */}
@@ -76,7 +66,7 @@ const ShareACar = (props: Props) => {
           <div className='flex-1 py-6 '>
             <CustomeStep
               classname='text-white'
-              items={CustomeStepItems}
+              items={step}
               icons={[<TimeToLeaveOutlinedIcon />, <LinkedCameraOutlinedIcon />, <FileDownloadOutlinedIcon />]}
             />
           </div>
@@ -158,7 +148,7 @@ const ShareACar = (props: Props) => {
           <div className='flex'>
             <CustomeCommonQuestions
               titleClassName='text-white/90 text-bold text-[18px]'
-              items={items}
+              items={commonQuestion}
               className='w-1/2'
             />
             <div className='w-1/2 p-4 flex justify-center items-center bg-white rounded-2xl ml-4'>
@@ -208,10 +198,7 @@ const ShareACar = (props: Props) => {
       {/* end carousel review */}
       {/* start start hoisting increase income */}
       <div className='mb-bottom'>
-        <BodyTop
-          item={ItemBodyTop}
-          className='flex-row-reverse'
-        />
+        <BodyTop item={bodyTop} className='flex-row-reverse' />
       </div>
       {/* end start hoisting increase income */}
 
@@ -229,7 +216,7 @@ const ShareACar = (props: Props) => {
           <div className='flex'>
             <CustomeCommonQuestions
               titleClassName='text-white/90 text-bold text-[18px]'
-              items={items}
+              items={commonQuestion}
               className='w-full'
             />
           </div>

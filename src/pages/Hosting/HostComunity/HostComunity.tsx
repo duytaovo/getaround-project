@@ -7,16 +7,15 @@ import { Col, Row } from 'antd'
 import Banner from './components/Banner/Banner'
 import { CardBodyParnerDeal, CardBodyReferFriend } from './components/CardBody/CardBody'
 import Carousel_Review_Comunity from './components/Carousel/Carousel_Review'
-import { ItemCarousel } from 'src/items/Carousel/Carouseltems'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
-import { ItemCarouselCommunity } from '../../../items/Carousel/Carouseltems'
-import { itemBannerCommunity, itemCardBodyImg, itemCardBodyParnerDeal, itemCardBodyReferFriend, itemGettingStarted, itemSliderHostComunity } from 'src/items/ShareACar/ShareACar'
+import { useAppSelector } from 'src/hooks/useRedux'
 
-type Props = {}
 
-const HostCominity = (props: Props) => {
+const HostCominity = () => {
+  const {CarouselCommunity,bannerCommunity,cardBodyImg,cardBodyParnerDeal,cardBodyReferFriend,gettingStarted,sliderHostComunity} = useAppSelector((state) => state.community);
+
   const text = 'Featured news & updates'
   return (
     <div className='mt-[33px]'>
@@ -26,14 +25,14 @@ const HostCominity = (props: Props) => {
           <span className='text-sm font-medium leading-4 text-center uppercase'>HOST COMMUNITY</span>
           <span className='text-[58px] font-medium tracking-tight'>{changeColorWhiteAndMain(text.split(' '))}</span>
         </div>
-        <SliderHostComunity numberItem={3} numberItemScroll={3} data={itemSliderHostComunity} />
+        <SliderHostComunity numberItem={3} numberItemScroll={3} data={sliderHostComunity} />
       </div>
       {/* end slider */}
       {/* start card */}
       <div className='mb-bottom flex gap-3'>
-        <CardBody.CardBodyImg itemCardBodyImg={itemCardBodyImg} />
-        <CardBody.CardBodyImg itemCardBodyImg={itemCardBodyImg} />
-        <CardBody.CardBodyImg itemCardBodyImg={itemCardBodyImg} />
+        <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+        <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+        <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
        
         <CardBody.CardBodyButton />
       </div>
@@ -53,7 +52,7 @@ const HostCominity = (props: Props) => {
           </Col>
           <Col span={12}>
             <div className=' gap-y-4'>
-              <GettingStarted itemGettingStarted={itemGettingStarted}/>
+              <GettingStarted itemGettingStarted={gettingStarted}/>
             </div>
           </Col>
         </Row>
@@ -63,7 +62,7 @@ const HostCominity = (props: Props) => {
       {/* start banner the new onboard */}
       <div className='mb-bottom rounded-2xl w-[100%]'>
         <div className='w-full  ml-auto pl-[36px] pr-9 mr-9'>
-          <Banner item={itemBannerCommunity}/>
+          <Banner item={bannerCommunity}/>
         </div>
       </div>
       {/* end banner the new onboard */}
@@ -72,10 +71,10 @@ const HostCominity = (props: Props) => {
         /* start card Partner,deal*/
         <div className='flex mb-[75px]'>
           <div className='w-2/3 mr-5'>
-            <CardBodyParnerDeal itemCardBodyParnerDeal={itemCardBodyParnerDeal}/>
+            <CardBodyParnerDeal itemCardBodyParnerDeal={cardBodyParnerDeal}/>
           </div>
           <div className='w-1/3'>
-            <CardBodyReferFriend itemCardBodyReferFriend={itemCardBodyReferFriend}/>
+            <CardBodyReferFriend itemCardBodyReferFriend={cardBodyReferFriend}/>
           </div>
         </div>
         /* end card Partner,deal*/
@@ -92,7 +91,7 @@ const HostCominity = (props: Props) => {
           </h2>
           <Carousel_Review_Comunity
             className='m-4'
-            data={ItemCarouselCommunity}
+            data={CarouselCommunity}
             numberItem={2}
             numberItemScroll={1}
           />
