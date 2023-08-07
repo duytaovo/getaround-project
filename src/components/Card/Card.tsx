@@ -25,7 +25,7 @@ const CustomCardSlider = ({
   classNameImage = 'rounded-sm object-contain '
 }: Props) => (
   <div className={className}>
-    <div>
+    <div className='w-full h-[70%] flex justify-center max-h-[160px]'>
       <img src={item?.img} alt='' className={classNameImage} />
     </div>
     <div>{isTitle == true && <div className={`${classNameTitle} items-center flex  `}>{item?.title}</div>}</div>

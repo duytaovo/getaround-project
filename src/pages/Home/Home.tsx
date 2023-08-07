@@ -22,7 +22,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <HomeHeroSection />
 
       <WrapperContent
@@ -33,11 +33,12 @@ const Home = (props: Props) => {
         <div className='w-[70%] mx-auto pt-4'>
           <CustomeSlider
             classNameTitle='text-center py-2 text-white/80 justify-center'
-            className='bg-mainColor/20 flex flex-col items-center justify-center p-2 rounded-md'
+            className='bg-mainColor/20 flex flex-col items-center justify-center
+             rounded-md overflow-hidden h-full p-1'
+            classNameImage='rounded-md w-[100%] h-[100%] object-cover'
             numberItem={4}
             numberItemScroll={1}
             isTitle={true}
-            classNameImage='rounded-md w-[100%]'
             data={ItemSlider}
           />
         </div>
@@ -67,9 +68,9 @@ const Home = (props: Props) => {
       {/* Begin hero section */}
       <WrapperContent textAlign='center' title='How it works' classname='flex flex-col'>
         <Heading title='Find your drive in 3 easy steps' breakLineAt={3} fontSize={30} className='text-center' />
-        <div className='flex justify-center px-[36px] '>
+        <div className='flex justify-center px-[36px] xl:flex-col-reverse'>
           {/* Begin image portion */}
-          <div className='w-1/2 flex justify-center'>
+          <div className='w-1/2 flex justify-center xl:w-full'>
             <img
               className='object-contain h-[500px]'
               src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar-p-500.jpg'
@@ -79,24 +80,32 @@ const Home = (props: Props) => {
           {/* End image portion */}
           <CustomeStep
             icons={[<UserOutlined />, <SolutionOutlined />, <SmileOutlined />]}
-            classname='w-1/2'
+            classname='w-1/2 xl:w-full'
+            textClassName='text-justify'
             items={CustomeStepItems}
           />
         </div>
       </WrapperContent>
       {/* End hero section */}
 
-      {/* <WrapperContent title='TESTIMONIALS' textAlign='center' classname='flex flex-col'>
+      {/* <WrapperContent title='TESTIMONIALS' textAlign='center' classname='flex flex-col' isBgTransparent>
         <Heading title='Hear from our guests' breakLineAt={4} fontSize={30} className='text-center' />
-        <div className='flex justify-between'>
-          <div className='w-1/2'>
-            <CustomeCarousel.Carousel_Review data={ItemCarousel} numberItem={3} numberItemScroll={1} />
+        <div className=''>
+          <div className='bg-red-500 w-1/2'>
+            <CustomeCarousel.Carousel_Review
+              classNameImage='hidden'
+              className='bg-white/80'
+              classNameContent='bg-mainColor w-[200px]'
+              data={ItemCarousel}
+              numberItem={1}
+              numberItemScroll={1}
+            />
           </div>
-          <div></div>
+          <div>sadhsakj</div>
         </div>
       </WrapperContent> */}
 
-      <WrapperContent title=''>
+      <WrapperContent title='' isBgTransparent>
         <ExploreHosting
           isEx={true}
           DataExploreHostingStyle={DataExploreHostingHome}
@@ -114,14 +123,15 @@ const Home = (props: Props) => {
           className='text-center'
           color='rgba(255,255,255, .8)'
         />
-        <div className='mx-auto pt-4 w-[60%]'>
+        <div className='mx-auto pt-4 w-[60%] md:w-full'>
           <CustomeSlider
             data={ItemSlider}
             numberItem={5}
             numberItemScroll={4}
             isTitle
-            classNameImage='w-[100px] h-[100px] rounded-full object-cover	'
+            classNameImage='w-[100px] h-[100px] rounded-full object-cover'
             className='flex flex-col justify-center items-center'
+            classNameTitle='pt-3 text-white/80'
           />
         </div>
       </WrapperContent>
@@ -134,15 +144,15 @@ const Home = (props: Props) => {
           className='text-center'
           color='rgba(255,255,255, .8)'
         />
-        <div className='mx-auto w-full h-fit  '>
+        <div className='mx-auto w-full h-fit'>
           <CustomeSlider
             data={ItemSlider}
             numberItem={3}
             numberItemScroll={1}
-            className='bg-mainColor/20 rounded-md p-2 overflow-hidden flex flex-col'
+            className='bg-mainColor/20 rounded-md h-fit p-2 overflow-hidden object-cover'
             classNameImage='rounded-md w-full'
-            classNameTitle='text-[14px] leading-[22px] text-white/40'
-            classNameContent='text-white/90 text-[24px] leading-[25px] break-words'
+            classNameTitle='text-[14px] leading-[22px] text-white/40 pt-6'
+            classNameContent='text-white/90 text-[24px] leading-[25px] break-words py-6'
             classNameTime='text-[14px] leading-[22px] text-white/40'
             isContent
             isTime
@@ -158,13 +168,14 @@ const Home = (props: Props) => {
         isBgTransparent={true}
         fontSize={12}
       >
-        <div className='flex'>
+        <div className='flex xl:flex-col'>
           <CustomeCommonQuestions
             titleClassName='text-white/90 text-bold text-[18px]'
             items={items}
-            className='w-1/2'
+            className='w-1/2 xl:w-full'
+            paddingRightSingleCommonQuestion={10}
           />
-          <div className='w-1/2 p-4 flex justify-center items-center'>
+          <div className='w-1/2 p-4 flex justify-center items-center xl:w-full'>
             <img width='50%' src={CommonQuestionRightImg} alt='' />
           </div>
         </div>

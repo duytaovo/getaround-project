@@ -16,8 +16,10 @@ interface Props {
   className?: string
   classNameContent?: string
   classNameImage?: string
-  imgThumbnailRight?:string
-  childrenImgPerson:ReactNode
+  isCustomDot?: boolean
+  imgPerson?: string
+  imgThumbnailRight?: string
+  childrenImgPerson: ReactNode
 }
 
 export default function Carousel_Review({
@@ -85,7 +87,10 @@ export default function Carousel_Review({
       </div>
       <div className='w-1/2 flex flex-col justify-end'>
         <img
-          src={`${imgThumbnailRight || 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'}`}
+          src={`${
+            imgThumbnailRight ||
+            'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'
+          }`}
           alt=''
           className={`${classNameImage} object-contain w-full ml-10 bg-white rounded-2xl`}
         />

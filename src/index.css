@@ -4,7 +4,7 @@
 
 @layer base {
   .container {
-      @apply max-w-[1535px] xl:max-w-[1279px] lg:max-w-[1023px] md:max-w-[767px] sm:max-w-[639px];
+    @apply max-w-[1535px] xl:max-w-[1279px] lg:max-w-[1023px] md:max-w-[767px] sm:max-w-[639px];
   }
 }
 @font-face {
@@ -61,6 +61,15 @@ body {
   color: #fff;
 }
 /* End customize expand icon Antd */
+
+/* Begin responsive for hero section in home page */
+@media (max-width: 767px) {
+  .ant-space-item {
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+/* End responsive for hero section in home page */
 
 /*  */
 .ant-collapse-header {
