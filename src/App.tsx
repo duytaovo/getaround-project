@@ -6,22 +6,20 @@ import { HelmetProvider } from 'react-helmet-async'
 import { useContext, useEffect } from 'react'
 import './App.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
-const theme = createTheme({
-  direction: 'rtl'
-  // other theme properties
-})
+// const theme = createTheme({
+//   direction: 'rtl'
+//   // other theme properties
+// })
 
 function App() {
   const routeElements = useRouteElements()
 
   return (
-    <ThemeProvider theme={theme}>
-      <HelmetProvider>
-        <ErrorBoundary>
-          {routeElements}
-        </ErrorBoundary>
-      </HelmetProvider>
-    </ThemeProvider>
+    // <ThemeProvider theme={theme}>
+    <HelmetProvider>
+      <ErrorBoundary>{routeElements}</ErrorBoundary>
+    </HelmetProvider>
+    // </ThemeProvider>
   )
 }
 
