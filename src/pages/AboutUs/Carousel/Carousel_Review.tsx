@@ -6,7 +6,7 @@ import getBreakpoint from 'src/helpers/getBreakpoint'
 import { Col, Row } from 'antd'
 import NextArrow from 'src/components/NextArrow'
 import PrevArrow from 'src/components/PreArrow/PreArrow'
-import Review from 'src/components/Carousel/component/Review'
+import Carousel_About from './Carousel_About'
 import { ReactNode } from 'react'
 interface Props {
   numberItem: number
@@ -72,7 +72,7 @@ export default function Carousel_Review_Comunity({
                   '
             >
               {' '}
-              <Review item={item} classNameContent={classNameContent} className={className} />
+              <Carousel_About item={item} classNameContent={classNameContent} className={className} />
             </div>
           ))}
         </Slider>

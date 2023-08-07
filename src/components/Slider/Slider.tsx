@@ -19,7 +19,7 @@ interface Props {
   classNameContent?: string
   classNameTime?: string
   classNameImage?: string
-  autoPlay?:boolean
+  autoPlay?: boolean
 }
 
 export default function CustomSlider({
@@ -54,6 +54,13 @@ export default function CustomSlider({
         }
       },
       {
+        breakpoint: 765,
+        settings: {
+          slidesToShow: 10,
+          slidesToScroll: 1
+        }
+      },
+      {
         breakpoint: 1289,
         settings: {
           slidesToShow: 2,
@@ -71,7 +78,7 @@ export default function CustomSlider({
   }
 
   return (
-    <div className=''>
+    <div className='py-2'>
       <Slider {...settings}>
         {data?.map((item, index: number) => (
           <div

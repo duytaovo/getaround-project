@@ -27,13 +27,12 @@ const HomeHeroSection = (props: Props) => {
       style={{
         backgroundImage: `url(${home_hero_background})`,
         backgroundPosition: '58%',
-        backgroundAttachment: 'scroll',
-        backgroundSize: '158%',
-        scrollbarGutter: 'stable'
+        backgroundAttachment: 'scroll'
+        // backgroundSize: '158%'
       }}
-      className='h-[478px] bg-no-repeat p-9 pb-6 flex flex-col items-center mb-bottom'
+      className='h-[478px] bg-no-repeat bg-[length:158%] p-9 pb-6 flex flex-col items-center mb-bottom md:h-fit md:bg-cover sm:p-0'
     >
-      <div className='w-full h-[90%] max-w-[980px] bg-white/90 m-auto rounded-[20px] py-9 px-14 flex flex-col justify-center'>
+      <div className='w-full h-[90%] max-w-[980px] bg-white/90 m-auto rounded-[20px] py-9 px-14 flex flex-col justify-center sm:px-2'>
         <div className='flex flex-col justify-center items-center pb-8'>
           <div>
             <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>Drive on your schedule</h2>
@@ -45,7 +44,7 @@ const HomeHeroSection = (props: Props) => {
           </div>
         </div>
 
-        <Space align='center' className='flex justify-center items-end'>
+        <Space align='center' className='flex justify-center items-end md:flex-col'>
           <CustomeAddressAutocomplete items={options} />
           <div className='grow flex'>
             <CustomDatetimePicker className='h-[52px]' title='Start trip' />
@@ -53,7 +52,10 @@ const HomeHeroSection = (props: Props) => {
             <CustomDatetimePicker className='h-[52px]' title='End trip' />
           </div>
 
-          <CustomeButton className='min-w-[140px] h-[52px] bg-mainColor rounded-[10px] text-white/80' isNext={true}>
+          <CustomeButton
+            className='min-w-[140px] h-[52px] bg-mainColor rounded-[10px] text-white/80 md:w-full'
+            isNext={true}
+          >
             Search a car
           </CustomeButton>
         </Space>

@@ -11,6 +11,7 @@ type Props = {}
 const MainLayoutInner = (props: Props) => {
   return (
     <div>
+
       <div>
         <Hidden mdDown>
           <Header />

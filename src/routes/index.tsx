@@ -11,6 +11,7 @@ const HostRefernal = lazy(() => import('src/pages/HostRefernal'))
 const AboutUs = lazy(() => import('src/pages/AboutUs'))
 
 const DriveWithUber = lazy(() => import('src/pages/DriveWithUber'))
+const PartnerWithUs = lazy(() => import('src/pages/PartnerWithUs'))
 
 const NewsRoom = lazy(() => import('src/pages/NewsRoom/NewsRoom'))
 const SafetyTrust = lazy(() => import('src/pages/SafetyTrust/SafetyTrust'))
@@ -51,6 +52,10 @@ export const routeMain = [
   {
     path: path.driveWithUber,
     Component: DriveWithUber
+  },
+  {
+    path: path.partnerWithUs,
+    Component: PartnerWithUs
   },
   {
     path: path.newsroom,

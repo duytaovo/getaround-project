@@ -13,6 +13,8 @@ import { ItemCarouselAboutUS } from 'src/items/Carousel/Carouseltems'
 import Button from 'src/components/Button'
 import { Link } from 'react-router-dom'
 import Blog from 'src/components/Blog/Blog'
+import Carousel_Review_Comunity from './Carousel/Carousel_Review'
+import { ItemCarousel, ItemCarouselAboutUs_NewsRoom } from 'src/items/Carousel/Carouseltems'
 const AboutUs = () => {
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
@@ -62,6 +64,22 @@ const AboutUs = () => {
       >
         <ConnectedCarSharing DataConnectedCarSharingHome={DataConnectedCarSharingHome} />
       </WrapperContent>
+
+      <div className='mb-bottom'>
+        <div>
+          <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
+            OUR LATEST UPDATES
+          </span>
+          <h2 className=' flex text-[32px] text-center  justify-center mb-2'>News room: Press releases</h2>
+        </div>
+        <Carousel_Review_Comunity
+          className='m-4'
+          data={ItemCarouselAboutUs_NewsRoom}
+          numberItem={2}
+          numberItemScroll={1}
+          classNameContent='text-[#727171]'
+        />
+      </div>
 
       <Blog />
 
