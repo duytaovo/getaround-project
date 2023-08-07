@@ -8,15 +8,17 @@ import {
   ItemContentSlider,
   itemBanner,
   itemBodyCardBottom,
-  itemBodyCardTop
+  itemBodyCardTop,
+  itemGetAroundYourBack,
+  itemOurHost
 } from 'src/items/ShareACar/ShareACar'
 import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
 import { itemSupport } from 'src/pages/Hosting/ShareACar/components/Support/Support'
 import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
-import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
+import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemGetAroundYourBack, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
 import { payloadCreator } from 'src/utils/utils'
 
-export const getPlayList = createAsyncThunk('shareACar/getShareACar', payloadCreator(''))
+export const getShareACar = createAsyncThunk('shareACar/getShareACar', payloadCreator(''))
 
 
 interface ICustomeStep {
@@ -40,9 +42,11 @@ interface ShareACarState {
   bodyCardBottom: IItemBodyBannerCard
   carouselReview: IItemCarousel[]
   support: IItemSupport
+  getAroundYourBack:IItemGetAroundYourBack
   step:ICustomeStep[]
   commonQuestion:ICommonQuestion[]
   exploreHosting:ISelectItemsExploreHosting[]
+  ourHost:IItemGetAroundYourBack
 }
 
 const initialState: ShareACarState = {
@@ -53,10 +57,12 @@ const initialState: ShareACarState = {
   bodyCardTop: itemBodyCardTop,
   bodyCardBottom: itemBodyCardBottom,
   carouselReview:ItemCarouselCommunity,
+  getAroundYourBack:itemGetAroundYourBack,
   support:itemSupport,
   step:CustomeStepItems,
   commonQuestion:items,
-  exploreHosting:DataExploreHostingShareCarText
+  exploreHosting:DataExploreHostingShareCarText,
+  ourHost:itemOurHost
 
 }
 

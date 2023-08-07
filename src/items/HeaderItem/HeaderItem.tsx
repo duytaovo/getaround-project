@@ -107,7 +107,7 @@ export const itemsThird: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={path.driveWithUber}>
         <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
           <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
             Lái xe với Uber
@@ -119,7 +119,7 @@ export const itemsThird: MenuProps['items'] = [
   {
     key: '2',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={path.partnerWithUs}>
         <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 '>
           <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
             Cộng tác với US
@@ -206,7 +206,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
           <CustomLink to={path.howitwork}>
             <div className='inline-block mt-2 px-5 text-black  hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black  hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Cách thức hoạt động
               </span>
             </div>
           </CustomLink>
@@ -215,10 +215,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 2,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={'/'}>
             <div className='inline-block px-5 text-black  hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black  hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Bảo hiểm
               </span>
             </div>
           </CustomLink>
@@ -227,10 +227,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 3,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={path.safetytrust}>
             <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Tin cậy và an toàn
               </span>
             </div>
           </CustomLink>
@@ -239,10 +239,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 4,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={path.howitworkconnect}>
             <div className='inline-block px-5 mb-2 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Kết nối
               </span>
             </div>
           </CustomLink>
@@ -257,10 +257,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 1,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={path.sharACar}>
             <div className='inline-block mt-2 px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Chia sẻ xe
               </span>
             </div>
           </CustomLink>
@@ -269,10 +269,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 2,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={path.hostCommunity}>
             <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Tổ chức cộng đồng
               </span>
             </div>
           </CustomLink>
@@ -281,10 +281,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 3,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={'/'}>
             <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Tổ chức bonus
               </span>
             </div>
           </CustomLink>
@@ -293,10 +293,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 4,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={path.hostrefernal}>
             <div className='inline-block mb-2 px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Giới thiệu tổ chức
               </span>
             </div>
           </CustomLink>
@@ -311,10 +311,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 1,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={path.driveWithUber}>
             <div className='inline-block px-5 mt-2 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Lái xe với Uber
               </span>
             </div>
           </CustomLink>
@@ -323,39 +323,15 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 2,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={path.partnerWithUs}>
             <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Cộng tác với US
               </span>
             </div>
           </CustomLink>
         )
       },
-      {
-        id: 3,
-        link: (
-          <CustomLink to={path.howitwork}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
-              </span>
-            </div>
-          </CustomLink>
-        )
-      },
-      {
-        id: 4,
-        link: (
-          <CustomLink to={path.howitwork}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer mb-2 justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
-              </span>
-            </div>
-          </CustomLink>
-        )
-      }
     ]
   },
   {
@@ -365,10 +341,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 1,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={path.aboutus}>
             <div className='inline-block px-5 mt-2 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Về chúng tôi
               </span>
             </div>
           </CustomLink>
@@ -377,10 +353,10 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
       {
         id: 2,
         link: (
-          <CustomLink to={path.howitwork}>
+          <CustomLink to={'/'}>
             <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Quan hệ đầu tư 
               </span>
             </div>
           </CustomLink>
@@ -392,7 +368,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
           <CustomLink to={path.howitwork}>
             <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Tòa sạn
               </span>
             </div>
           </CustomLink>
@@ -404,7 +380,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
           <CustomLink to={path.howitwork}>
             <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer mb-2 justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoát động
+                Blog
               </span>
             </div>
           </CustomLink>
