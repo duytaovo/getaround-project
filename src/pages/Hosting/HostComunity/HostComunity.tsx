@@ -71,7 +71,7 @@ const HostCominity = (props: Props) => {
         /* start card Partner,deal*/
         <div className='flex mb-[75px]'>
           <div className='w-2/3 mr-5'>
-            <CardBodyParnerDeal />
+            <CardBodyParnerDeal title=''/>
           </div>
           <div className='w-1/3'>
             <CardBodyReferFriend />

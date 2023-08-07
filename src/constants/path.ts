@@ -11,7 +11,8 @@ const path = {
   sharACar: '/host/share-a-car',
   hostCommunity: '/host/community',
   newsroom: '/news-room',
-  safetytrust: '/how-it-work/safety-trust'
+  safetytrust: '/how-it-work/safety-trust',
+  test:'/test'
 } as const
 
 export default path

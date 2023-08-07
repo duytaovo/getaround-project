@@ -38,8 +38,10 @@ module.exports = {
         textMainColor: '#ffffff'
       },
       backgroundColor: {
-        mainBackGroundColor: '#1c2635'
+        mainBackGroundColor: '#1c2635',
+        bgHeaderMobile :'rgb(249 248 248 / 80%)'
       },
+      
       margin: {
         bottom: '105px',
         mbGettingStarted: '29px'

@@ -15,6 +15,7 @@ const PartnerWithUs = lazy(() => import('src/pages/PartnerWithUs'))
 
 const NewsRoom = lazy(() => import('src/pages/NewsRoom/NewsRoom'))
 const SafetyTrust = lazy(() => import('src/pages/SafetyTrust/SafetyTrust'))
+const Test = lazy(() => import('src/pages/Hosting/Test'))
 export const routeMain = [
   {
     path: path.home,
@@ -63,5 +64,9 @@ export const routeMain = [
   {
     path: path.safetytrust,
     Component: SafetyTrust
+  },
+  {
+    path:path.test,
+    Component:Test
   }
 ]

@@ -9,12 +9,16 @@ type Props = {
 
 const SingleCommonQuestion: FC<Props> = ({ contents, path, paddingRight }) => {
   return (
+
+    <div className='text-ellipsis text-white/50 '>
+
     <div
       style={{
         paddingRight: `${paddingRight}%`
       }}
       className='text-justify text-white/50'
     >
+
       {contents.map((sentence) => (
         <p>{sentence}</p>
       ))}
