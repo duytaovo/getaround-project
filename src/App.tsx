@@ -7,7 +7,7 @@ import { useContext, useEffect } from 'react'
 import './App.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 const theme = createTheme({
-  direction: 'rtl'
+  // direction: 'rtl'
   // other theme properties
 })
 
