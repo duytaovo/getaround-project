@@ -31,7 +31,7 @@ export const itemsFirst: MenuProps['items'] = [
   {
     key: '3',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={path.safetytrust}>
         <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all'>
           <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
             Tin cậy & An toàn
@@ -93,7 +93,7 @@ export const itemsSecond: MenuProps['items'] = [
   {
     key: '4',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={path.hostrefernal}>
         <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
           <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
             Giới thiệu 1 tổ chức
@@ -133,7 +133,7 @@ export const itemsFour: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={path.aboutus}>
         <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
           <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
             Về chúng tôi
@@ -157,7 +157,7 @@ export const itemsFour: MenuProps['items'] = [
   {
     key: '3',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={path.newsroom}>
         <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
           <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
             Tòa sạn
