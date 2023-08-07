@@ -20,9 +20,11 @@ import { useDispatch } from 'react-redux'
 import { IBodyTop, IItemSlider } from 'src/types/hosting_shareACar.type'
 import { addSlider, updateBodyTop, updateSlider } from 'src/store/hosting/share_a_car/shareACarSlice'
 import { useAppSelector } from 'src/hooks/useRedux'
+import GetAroundYourBack from './components/GetAroundYourBack/GetAroundYourBack'
+import OurHost from './components/OurHost/OurHost'
 
 const ShareACar = () => {
-  const { bodyTop,step,exploreHosting,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
+  const { bodyTop,ourHost,getAroundYourBack,step,exploreHosting,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
   useAppSelector((state) => state.shareAcar)
   const dispatch = useDispatch()
 
@@ -100,8 +102,7 @@ const ShareACar = () => {
       {/* start body banner */}
 
       <div className=' p-5 mb-bottom'>
-        <span className='text-mainColor text-sm font-medium flex justify-center mb-2'>PERKS OF HOSTING</span>
-        <div className='text-[32px] font-medium tracking-tight leading-8 text-center mb-5'>Getaround has your back</div>
+       <GetAroundYourBack item={getAroundYourBack}/>
         <div>
           <div className='flex gap-10 mt-3 h-full mb-5'>
             <div className='w-[70%] '>
@@ -179,12 +180,7 @@ const ShareACar = () => {
       {/* start carousel review */}
       <div className='mb-bottom'>
         <div>
-          <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
-            COMUNITY
-          </span>
-          <h2 className=' flex text-[32px] text-center  justify-center mb-2'>
-            Our hosts have earned a total of $370M to date
-          </h2>
+         <OurHost item={ourHost}/>
         </div>
         <Carousel_Review_Comunity
           className='m-4'

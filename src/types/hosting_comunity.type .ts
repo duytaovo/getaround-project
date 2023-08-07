@@ -8,16 +8,22 @@ export interface IItemSliderHostComunity {
 }
 
 export interface IItemNailTheBasic {
-  id: number
-  iconSTT: ReactNode
-  title: string
-}
-
-export interface IItemGettingStarted {
+  id?: number
+  iconSTT?: ReactNode
+  title?: string
+  header?:string
   content?:string
 }
+
+
 
 export interface IItemBanner {
   title:string
   content:string
 }
+
+export interface IItemTopGettingStarted {
+  topHeader?:string
+  title?:string
+  content?:string  
+} 
