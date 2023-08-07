@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 interface Props {
-  img: string
-  isEx: boolean
-  DataExploreHostingStyle: any
-  DataExploreHostingText: any
-  className: string
+  img?: string
+  isEx?: boolean
+  DataExploreHostingStyle?: any
+  DataExploreHostingText?: any
+  className?: string
 }
 const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
   return (

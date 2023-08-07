@@ -29,7 +29,9 @@ module.exports = {
       backgroundImage: {
         mainColor: 'linear-gradient(70deg,#44c5e5,#276dc1)',
         shareACar:
-          "url('https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d8276f5f590e8cd734e67c_shareacar2tiny.jpg')"
+          "url('https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d8276f5f590e8cd734e67c_shareacar2tiny.jpg')",
+        bannerComunity:
+          "url('https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png')"
       },
       colors: {
         mainColor: '#3699d3',
@@ -39,7 +41,8 @@ module.exports = {
         mainBackGroundColor: '#1c2635'
       },
       margin: {
-        bottom: '105px'
+        bottom: '105px',
+        mbGettingStarted: '29px'
       },
       keyframes: {
         fadeIn: {
@@ -89,7 +92,17 @@ module.exports = {
         zomOutControlThumB: 'zomOutControlThumB 0.5s ease-in-out',
         fadeIn: 'fadeIn 1s ',
         fadeOut: 'fadeOut 0.3s ease-in-out',
-        customBounce:'customBounce 1.5s infinite'
+        customBounce: 'customBounce 1.5s infinite'
+      },
+      fontSize: {
+        textSizeHostingTitle: '32px'
+      },
+      screens: {
+        '2xl': { max: '1535px' },
+        xl: { max: '1279px' },
+        lg: { max: '1023px' },
+        md: { max: '767px' },
+        sm: { max: '639px' }
       }
     }
   },

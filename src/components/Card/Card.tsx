@@ -1,5 +1,5 @@
 import { Avatar, Card } from 'antd'
-import { IItemSlider } from 'src/types/utils.type'
+import { IItemSlider } from 'src/types/hoisting.type'
 
 interface Props {
   item?: IItemSlider
@@ -12,7 +12,6 @@ interface Props {
   classNameTime?: string
   classNameImage?: string
 }
-const { Meta } = Card
 
 const CustomCardSlider = ({
   item,
@@ -26,12 +25,12 @@ const CustomCardSlider = ({
   classNameImage = 'rounded-sm object-contain '
 }: Props) => (
   <div className={className}>
-    <div>
+    <div className='w-full h-[70%] flex justify-center max-h-[160px]'>
       <img src={item?.img} alt='' className={classNameImage} />
     </div>
     <div>{isTitle == true && <div className={`${classNameTitle} items-center flex  `}>{item?.title}</div>}</div>
-    {isContent == true && <div className={classNameContent}> {item?.title}</div>}
-    {isTime == true && <div className={classNameTime}> {item?.title}</div>}
+    {isContent == true && <div className={classNameContent}> {item?.content}</div>}
+    {isTime == true && <div className={classNameTime}> {item?.time}</div>}
   </div>
 )
 

@@ -33,3 +33,12 @@ export const DataExploreHostingAboutUsText = {
   Description: 'Have a car to share?',
   Link: '/'
 }
+export const DataExploreHostingSafetyTrustText = {
+  mainTitle: 'EXPLORE HOSTING',
+  headerTitle: '',
+  Title: 'Have a car? Start sharing',
+
+  Description:
+    "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
+  Link: '/'
+}

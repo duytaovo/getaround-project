@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 interface Props {
   mainTitle?: string
-  DataCustomeCard: any
+  DataCustomeCard?: any
 }
 const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
   return (
@@ -24,6 +25,9 @@ const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
                   </strong>
                 </h3>
                 <div className={`${DataCustomeCard?.[index]?.styleDes}`}>{DataCustomeCard?.[index]?.description}</div>
+                <Link to={DataCustomeCard?.[index]?.LinkFooter} className='text-mainColor font-light mt-3'>
+                  {DataCustomeCard?.[index]?.Footer}
+                </Link>
               </div>
             ))}
           </div>

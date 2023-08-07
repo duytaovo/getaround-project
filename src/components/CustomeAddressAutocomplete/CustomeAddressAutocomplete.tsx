@@ -13,7 +13,7 @@ type Props = {
 
 const CustomeAddressAutocomplete: FC<Props> = ({ items }) => {
   return (
-    <div className='h-[52px] rounded-[10px] overflow-hidden bg-white'>
+    <div className='h-[52px] rounded-[10px] overflow-hidden bg-white md:grow'>
       <AutoComplete
         options={items}
         style={{

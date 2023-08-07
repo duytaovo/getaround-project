@@ -3,23 +3,18 @@ import { Select } from 'antd'
 import { ISelectItems } from 'src/types/Footer.type'
 
 interface Props {
-  label?: string
   id?: string
   className?: string
-  defaultValue?: string
+  defaultValue: string
   register?: boolean
-  options?: ISelectItems[]
-  placeholder?: string
+  options: ISelectItems[]
   requirementField?: boolean
   width?: string
 }
 const CustomSelect = ({
-  label,
-  id,
   className,
   defaultValue,
   options = [],
-  placeholder,
   requirementField = false,
   width
 }: Props) => {
