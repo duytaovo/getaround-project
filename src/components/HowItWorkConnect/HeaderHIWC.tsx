@@ -4,6 +4,7 @@ const HeaderHIWC = () => {
   return (
     <div className='max-w-full mt-[0%] mx-auto mb-10'>
       <div
+        className=' md:grid block '
         style={{
           gridColumnGap: '16px',
           gridRowGap: '16px',
@@ -15,8 +16,7 @@ const HeaderHIWC = () => {
           justifyItems: 'end',
           marginLeft: 'auto',
           marginRight: 'auto',
-          padding: '0%',
-          display: 'grid'
+          padding: '0%'
         }}
       >
         <div className='self-auto w-auto max-w-[1279px] text-left'>
