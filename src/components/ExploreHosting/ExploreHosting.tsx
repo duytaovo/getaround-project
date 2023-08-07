@@ -1,13 +1,23 @@
-import React from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-interface Props {
+
+interface IExploreHosting {
+  mainTitle?: string
+  headerTitle?: string
+  Title?: string
+  Description?: string
+  Link?: string
+}
+
+type Props = {
   img?: string
   isEx?: boolean
   DataExploreHostingStyle?: any
-  DataExploreHostingText?: any
+  DataExploreHostingText?: IExploreHosting[]
   className?: string
 }
-const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
+
+const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
   return (
     <div className={className}>
       {isEx === true ? (
@@ -41,7 +51,7 @@ const ExploreHosting: React.FC<Props> = ({ img, isEx, DataExploreHostingStyle, D
             <br />
           </div>
 
-          <Link to={DataExploreHostingText?.[0]?.Link} className={DataExploreHostingStyle.Button.className}>
+          <Link to={DataExploreHostingText?.[0]?.Link || ''} className={DataExploreHostingStyle.Button.className}>
             {DataExploreHostingStyle.Button.text}
           </Link>
         </div>
