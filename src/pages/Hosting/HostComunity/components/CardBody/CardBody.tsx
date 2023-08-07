@@ -2,14 +2,16 @@ import React from 'react'
 import Button from 'src/components/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { Link } from 'react-router-dom'
-import { ICardBody } from 'src/types/hoisting.type'
+import { IItemBodyBannerCard } from 'src/types/hoisting_shareACar.type'
 
+interface PropsCardBodyImg {
+  itemCardBodyImg:IItemBodyBannerCard
+}
 
-
-export const CardBodyImg = ({title,img}:ICardBody) => (
+export const CardBodyImg = ({itemCardBodyImg}:PropsCardBodyImg) => (
   <div className='w-[260px] h-[260px] text-black font-medium text-[20px] break-words hover:text-mainColor  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
     <div>
-     {title}
+     {itemCardBodyImg.title}
       <span>
         <ArrowForwardIcon />
       </span>
@@ -18,7 +20,7 @@ export const CardBodyImg = ({title,img}:ICardBody) => (
     <img
       className='w-[140px] h-[140px] rounded-full border-solid border border-[#d2d2d2]'
       alt='cardImg'
-      src={img}
+      src={itemCardBodyImg.img}
     />
   </div>
 )
@@ -34,19 +36,22 @@ export const CardBodyButton = () => (
   </div>
 )
 
-export const CardBodyParnerDeal = ({title,content}:ICardBody) => (
+interface PropsCardBodyParnerDeal {
+  itemCardBodyParnerDeal:IItemBodyBannerCard
+}
+export const CardBodyParnerDeal = ({itemCardBodyParnerDeal}:PropsCardBodyParnerDeal) => (
   <div className='w-full h-[300px]   text-black font-medium text-[20px] break-words bg-white flex items-center rounded-2xl border border-solid flex-row justify-around px-10 leading-5 border-[#d2d2d2]'>
     <div className='w-1/2'>
       <img
         className='rounded-full border-solid border border-[#d2d2d2] w-[231px] h-[231px]'
         alt='cardImg'
-        src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg'
+        src={itemCardBodyParnerDeal.img}
       />
     </div>
     <div className='w-1/2 '>
-      <strong className='text-[26px] font-medium leading-8 tracking-tight'>{title}</strong>
+      <strong className='text-[26px] font-medium leading-8 tracking-tight'>{itemCardBodyParnerDeal.title}</strong>
       <p className='py-5 text-lg gap-y-3 tracking-tight leading-6 xl'>
-        As a Getaround host, you get access to exclusive deals and discounts with our entire network of partners.
+        {itemCardBodyParnerDeal.content}
       </p>
       <Button
         children={<span className='text-base'>Explore Offers</span>}
@@ -57,11 +62,14 @@ export const CardBodyParnerDeal = ({title,content}:ICardBody) => (
   </div>
 )
 
-export const CardBodyReferFriend = () => (
+interface PropsCardBodyReferFriend {
+  itemCardBodyReferFriend:IItemBodyBannerCard
+}
+export const CardBodyReferFriend = ({itemCardBodyReferFriend}:PropsCardBodyReferFriend) => (
   <div className='flex flex-col items-start justify-center w-full h-[300px]   text-black font-medium text-[20px] break-words bg-white rounded-2xl border border-solid  px-10 leading-5 border-[#d2d2d2]'>
-      <strong className='text-[26px] font-medium leading-8 tracking-tight'>Refer a friend, earn money</strong>
+      <strong className='text-[26px] font-medium leading-8 tracking-tight'>{itemCardBodyReferFriend.title}</strong>
       <p className='py-5 text-lg gap-y-3 tracking-tight leading-6'>
-        Earn even more when you refer a friend to host on Getaround.
+        {itemCardBodyReferFriend.content}
       </p>
       <Link to={'/'} className='text-mainColor underline hover:text-black'>
         Share your referral link

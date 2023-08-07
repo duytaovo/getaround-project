@@ -98,7 +98,7 @@ const Header = (props: Props) => {
             items={itemAcount}
             className='p-2 mx-2  text-black hover:text-mainColor cursor-pointer group-hover:text-mainColor'
           />
-          <div>
+          <div className='mr-10'>
             <IconButton
               sx={{
                 color: 'black',
@@ -106,7 +106,7 @@ const Header = (props: Props) => {
                   opacity: [0.9, 0.8, 0.7]
                 }
               }}
-              className='hover:text-mainColor'
+              className='hover:text-mainColor mr-10'
               onClick={handleClick}
             >
               <LanguageIcon />
@@ -122,7 +122,7 @@ const Header = (props: Props) => {
                 horizontal: 'left'
               }}
             >
-              <div className='relative mr-5 rounded-sm border border-gray-200 bg-white shadow-md'>
+              <div className='relative mr-10 rounded-sm border border-gray-200 bg-white shadow-md'>
                 <div className='flex flex-col py-2 pr-2 pl-3'>
                   <button className='py-2 px-3 text-left hover:text-mainColor' onClick={() => changeLanguage('vi')}>
                     Tiếng Việt

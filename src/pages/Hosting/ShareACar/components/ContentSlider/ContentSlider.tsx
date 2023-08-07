@@ -1,16 +1,14 @@
 import React from 'react'
 import {  changeColorBlackAndMain, changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
+import { IItemContentSlider } from 'src/types/hoisting_shareACar.type'
 
 
-export interface IItem {
-  title?:string
-  content?:string
-}
+
 interface Props {
     classNameHeader?:string
     classNameContent?:string
     classNameTitle?:string
-    item:IItem
+    item:IItemContentSlider
 }
 
 const ContentSlider = ({classNameHeader,classNameTitle,classNameContent,item}: Props) => {

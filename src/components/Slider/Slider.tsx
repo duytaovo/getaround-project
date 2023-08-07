@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import NextArrow from '../NextArrow'
 import PrevArrow from '../PreArrow/PreArrow'
-import { IItemSlider } from 'src/types/hoisting.type'
+import { IItemSlider } from 'src/types/hoisting_shareACar.type'
 import CustomCardSlider from '../Card'
 import getBreakpoint from 'src/helpers/getBreakpoint'
 

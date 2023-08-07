@@ -1,5 +1,5 @@
 import { Avatar, Card } from 'antd'
-import { IItemSlider } from 'src/types/hoisting.type'
+import { IItemSlider } from 'src/types/hoisting_shareACar.type'
 
 interface Props {
   item?: IItemSlider

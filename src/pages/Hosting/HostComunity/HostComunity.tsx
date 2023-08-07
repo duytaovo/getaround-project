@@ -1,5 +1,5 @@
 import React from 'react'
-import SliderHostComunity, { itemSliderHostComunity } from './components/Slider/Slider'
+import SliderHostComunity from './components/Slider/Slider'
 import { changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import CardBody from './components/CardBody'
 import GettingStarted from './components/GettingStarted/GettingStarted'
@@ -12,6 +12,7 @@ import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { ItemCarouselCommunity } from '../../../items/Carousel/Carouseltems'
+import { itemBannerCommunity, itemCardBodyImg, itemCardBodyParnerDeal, itemCardBodyReferFriend, itemGettingStarted, itemSliderHostComunity } from 'src/items/ShareACar/ShareACar'
 
 type Props = {}
 
@@ -30,9 +31,9 @@ const HostCominity = (props: Props) => {
       {/* end slider */}
       {/* start card */}
       <div className='mb-bottom flex gap-3'>
-        <CardBody.CardBodyImg title=' Offer & Bonus' img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg'/>
-        <CardBody.CardBodyImg title=' Offer & Bonus' img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg'/>
-        <CardBody.CardBodyImg title=' Offer & Bonus' img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg'/>
+        <CardBody.CardBodyImg itemCardBodyImg={itemCardBodyImg} />
+        <CardBody.CardBodyImg itemCardBodyImg={itemCardBodyImg} />
+        <CardBody.CardBodyImg itemCardBodyImg={itemCardBodyImg} />
        
         <CardBody.CardBodyButton />
       </div>
@@ -52,7 +53,7 @@ const HostCominity = (props: Props) => {
           </Col>
           <Col span={12}>
             <div className=' gap-y-4'>
-              <GettingStarted />
+              <GettingStarted itemGettingStarted={itemGettingStarted}/>
             </div>
           </Col>
         </Row>
@@ -62,7 +63,7 @@ const HostCominity = (props: Props) => {
       {/* start banner the new onboard */}
       <div className='mb-bottom rounded-2xl w-[100%]'>
         <div className='w-full  ml-auto pl-[36px] pr-9 mr-9'>
-          <Banner />
+          <Banner item={itemBannerCommunity}/>
         </div>
       </div>
       {/* end banner the new onboard */}
@@ -71,10 +72,10 @@ const HostCominity = (props: Props) => {
         /* start card Partner,deal*/
         <div className='flex mb-[75px]'>
           <div className='w-2/3 mr-5'>
-            <CardBodyParnerDeal title=''/>
+            <CardBodyParnerDeal itemCardBodyParnerDeal={itemCardBodyParnerDeal}/>
           </div>
           <div className='w-1/3'>
-            <CardBodyReferFriend />
+            <CardBodyReferFriend itemCardBodyReferFriend={itemCardBodyReferFriend}/>
           </div>
         </div>
         /* end card Partner,deal*/

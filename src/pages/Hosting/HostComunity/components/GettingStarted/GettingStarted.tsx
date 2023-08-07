@@ -9,13 +9,10 @@ import { Link } from 'react-router-dom'
 import CustomLink from 'src/components/CustomLink'
 import CustomSelect from 'src/components/Select'
 import { selectItems } from 'src/items/FooterItem/FooterItem'
+import { IItemGettingStarted, IItemNailTheBasic } from 'src/types/hoisting_comunity.type '
 interface Props {}
 
-interface IItemNailTheBasic {
-  id: number
-  iconSTT: ReactNode
-  title: string
-}
+
 
 const itemItemNailTheBasic: IItemNailTheBasic[] = [
   {
@@ -78,7 +75,11 @@ const renderItemLink = () => {
   ))
 }
 
-const GettingStarted = (props: Props) => {
+interface PropsGettingStarted {
+  itemGettingStarted:IItemGettingStarted
+}
+
+const GettingStarted = ({itemGettingStarted}: PropsGettingStarted) => {
   return (
     <div>
       <div className='mb-mbGettingStarted gap-10'>
@@ -89,8 +90,7 @@ const GettingStarted = (props: Props) => {
           Getting Started
         </strong>
         <p className='text-white flex flex-start leading-[22.4px] line-clamp-3 text-ellipsis'>
-          Onboard and optimize your Getaround business with best practices and recommendations from our team and other
-          hosts.
+      {}
         </p>
       </div>
       <div className='mb-mbGettingStarted'>
@@ -100,8 +100,7 @@ const GettingStarted = (props: Props) => {
         <h2 className='text-textSizeHostingTitle tracking-tight leading-8 text-left mb-mbGettingStarted'>Nail the basics</h2>
         <div>
           <p className='text-white mb-mbGettingStarted flex flex-col flex-start leading-5 break-words line-clamp-4 text-ellipsis'>
-            Want to learn about our full claims process, our proprietary hardware technology, or how to manage for
-            seasonal demand? Start here.
+           {itemGettingStarted.content}
           </p>
         </div>
         <div className='mb-mbGettingStarted'>{renderItemNailTheBasic()}</div>

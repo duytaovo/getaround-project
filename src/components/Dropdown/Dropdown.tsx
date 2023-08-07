@@ -14,7 +14,7 @@ const CustomDropDown = ({ children, items, className, isOnClick,arrow }: Props) 
   <div>
     {isOnClick == true ? (
       <div className={className}>
-        <Dropdown arrow={arrow} placement='bottom' menu={{ items }} trigger={['click']}>
+        <Dropdown arrow={arrow} placement='bottomLeft' menu={{ items }} trigger={['click']}>
           <Link to='' onClick={(e) => e.preventDefault()}>
             <Space>{children}</Space>
           </Link>

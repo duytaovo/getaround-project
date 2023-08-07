@@ -1,9 +1,11 @@
 import { AnyAction, Store, ThunkDispatch, configureStore } from '@reduxjs/toolkit'
 import appReducer from './app/app.slice';
+import shareAcarReducer from './hosting/share_a_car/shareACarSlice';
 
 export const store = configureStore({
   reducer: {
     loading: appReducer,
+    shareAcar:shareAcarReducer
 
   },
   devTools: process.env.NODE_ENV === 'development',

@@ -1,17 +1,14 @@
 import React from 'react'
 import { changeColorBlackAndMain, changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
+import { IItemSupport } from 'src/types/hoisting_shareACar.type'
 
-interface IItem {
-  title:string
-  contentLeft:string
-  contentRight:string
-}
+
 
 interface Props {
-  item:IItem
+  item:IItemSupport
 }
 
-export const itemSupport:IItem = {
+export const itemSupport:IItemSupport = {
   title:"24/7 support, prioritized for hosts.",
   contentLeft:"Don't hesitate to contact us if you ever have a problem.",
   contentRight:"  Dedicated account managers for power hosts. As you grow your fleet, you'll get more personalized support from a Getaround team member assigned to you."
