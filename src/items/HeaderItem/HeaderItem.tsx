@@ -160,7 +160,7 @@ export const itemsFour: MenuProps['items'] = [
       <CustomLink to={path.newsroom}>
         <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
           <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-            Tòa sạn
+            Tòa soạn
           </span>
         </div>
       </CustomLink>
