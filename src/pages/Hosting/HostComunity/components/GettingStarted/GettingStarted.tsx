@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
-import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
 import LooksOneOutlinedIcon from '@mui/icons-material/LooksOneOutlined'
 import LooksTwoOutlinedIcon from '@mui/icons-material/LooksTwoOutlined'
 import Looks3OutlinedIcon from '@mui/icons-material/Looks3Outlined'
@@ -10,6 +9,7 @@ import CustomLink from 'src/components/CustomLink'
 import CustomSelect from 'src/components/Select'
 import { selectItems } from 'src/items/FooterItem/FooterItem'
 import { IItemGettingStarted, IItemNailTheBasic } from 'src/types/hoisting_comunity.type '
+import { useAppSelector } from 'src/hooks/useRedux'
 interface Props {}
 
 
@@ -80,6 +80,8 @@ interface PropsGettingStarted {
 }
 
 const GettingStarted = ({itemGettingStarted}: PropsGettingStarted) => {
+  const {commonQuestion} = useAppSelector((state) => state.shareAcar);
+
   return (
     <div>
       <div className='mb-mbGettingStarted gap-10'>
@@ -94,7 +96,7 @@ const GettingStarted = ({itemGettingStarted}: PropsGettingStarted) => {
         </p>
       </div>
       <div className='mb-mbGettingStarted'>
-        <CustomeCommonQuestions titleClassName='text-white text-[18px] tracking-tight leading-[22.4px]' items={items} className='text-white' />
+        <CustomeCommonQuestions titleClassName='text-white text-[18px] tracking-tight leading-[22.4px]' items={commonQuestion} className='text-white' />
       </div>
       <div className='mb-mbGettingStarted gap-y-3'>
         <h2 className='text-textSizeHostingTitle tracking-tight leading-8 text-left mb-mbGettingStarted'>Nail the basics</h2>

@@ -1,5 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
+import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
+import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
 import {
   ItemBodyTop,
   ItemContentSlider,
@@ -11,6 +13,18 @@ import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
 import { itemSupport } from 'src/pages/Hosting/ShareACar/components/Support/Support'
 import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemSlider, IItemSupport } from 'src/types/hoisting_shareACar.type'
 
+interface ICustomeStep {
+  title: string
+  images?: string[]
+  subTitle: string
+}
+
+interface ICommonQuestion {
+  key: string
+  label: string
+  contents: string[]
+}
+
 interface ShareACarState {
   bodyTop: IBodyTop
   sliders: IItemSlider[]
@@ -20,6 +34,8 @@ interface ShareACarState {
   bodyCardBottom: IItemBodyBannerCard
   carouselReview: IItemCarousel[]
   support: IItemSupport
+  step:ICustomeStep[]
+  commonQuestion:ICommonQuestion[]
 }
 
 const initialState: ShareACarState = {
@@ -30,7 +46,9 @@ const initialState: ShareACarState = {
   bodyCardTop: itemBodyCardTop,
   bodyCardBottom: itemBodyCardBottom,
   carouselReview:ItemCarouselCommunity,
-  support:itemSupport
+  support:itemSupport,
+  step:CustomeStepItems,
+  commonQuestion:items
 }
 
 const shareACarSlice = createSlice({
