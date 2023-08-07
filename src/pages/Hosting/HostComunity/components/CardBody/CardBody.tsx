@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'src/components/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { Link } from 'react-router-dom'
-import { IItemBodyBannerCard } from 'src/types/hoisting_shareACar.type'
+import { IItemBodyBannerCard } from 'src/types/hosting_shareACar.type'
 
 interface PropsCardBodyImg {
   itemCardBodyImg:IItemBodyBannerCard

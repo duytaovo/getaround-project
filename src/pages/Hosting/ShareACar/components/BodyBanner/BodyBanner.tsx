@@ -1,6 +1,6 @@
 import React from 'react'
 import { changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
-import { IItemBodyBannerCard } from 'src/types/hoisting_shareACar.type'
+import { IItemBodyBannerCard } from 'src/types/hosting_shareACar.type'
 
 
 

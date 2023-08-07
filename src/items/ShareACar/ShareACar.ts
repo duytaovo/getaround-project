@@ -1,5 +1,5 @@
-import { IItemBanner, IItemGettingStarted, IItemSliderHostComunity } from 'src/types/hoisting_comunity.type '
-import { IBodyTop, IItemBodyBannerCard, IItemContentSlider } from 'src/types/hoisting_shareACar.type'
+import { IItemBanner, IItemGettingStarted, IItemSliderHostComunity } from 'src/types/hosting_comunity.type '
+import { IBodyTop, IItemBodyBannerCard, IItemContentSlider } from 'src/types/hosting_shareACar.type'
 // Share a car
 export const ItemContentSlider: IItemContentSlider = {
   title: 'Discover how much you can earn each month',

@@ -1,7 +1,6 @@
 import BodyTop from './components/BodyTop'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import CustomForm from './components/CustomForm/CustomForm'
 import CustomeStep from 'src/components/CustomeStep/CustomeStep'
 import TimeToLeaveOutlinedIcon from '@mui/icons-material/TimeToLeaveOutlined'
@@ -9,7 +8,7 @@ import LinkedCameraOutlinedIcon from '@mui/icons-material/LinkedCameraOutlined'
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
 import CustomSlider from 'src/components/Slider'
 import ContentSlider from './components/ContentSlider/ContentSlider'
-import Support, { itemSupport } from './components/Support/Support'
+import Support from './components/Support/Support'
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
@@ -17,13 +16,13 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer'
 import Carousel_Review_Comunity from '../HostComunity/components/Carousel/Carousel_Review'
 import BodyBanner from './components/BodyBanner/BodyBanner'
 import BodyCard from './components/BodyCard/BodyCard'
-import { useDispatch, useSelector } from 'react-redux'
-import { IBodyTop, IItemSlider } from 'src/types/hoisting_shareACar.type'
+import { useDispatch } from 'react-redux'
+import { IBodyTop, IItemSlider } from 'src/types/hosting_shareACar.type'
 import { addSlider, updateBodyTop, updateSlider } from 'src/store/hosting/share_a_car/shareACarSlice'
 import { useAppSelector } from 'src/hooks/useRedux'
 
 const ShareACar = () => {
-  const { bodyTop,step,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
+  const { bodyTop,step,exploreHosting,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
   useAppSelector((state) => state.shareAcar)
   const dispatch = useDispatch()
 
@@ -53,7 +52,7 @@ const ShareACar = () => {
             'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
           }
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          DataExploreHostingText={DataExploreHostingShareCarText}
+          DataExploreHostingText={exploreHosting}
           isEx={false}
           className={''}
         />
@@ -172,7 +171,7 @@ const ShareACar = () => {
             'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
           }
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          DataExploreHostingText={DataExploreHostingShareCarText}
+          DataExploreHostingText={exploreHosting}
           isEx={false}
           className=''
         />

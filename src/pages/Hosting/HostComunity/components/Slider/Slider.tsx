@@ -1,13 +1,13 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { IItemSlider } from 'src/types/hoisting_shareACar.type'
+import { IItemSlider } from 'src/types/hosting_shareACar.type'
 import getBreakpoint from 'src/helpers/getBreakpoint'
 import NextArrow from 'src/components/NextArrow'
 import PrevArrow from 'src/components/PreArrow/PreArrow'
 import CustomCardSlider from 'src/components/Card'
 import CardSlider from './Card'
-import { IItemSliderHostComunity } from 'src/types/hoisting_comunity.type '
+import { IItemSliderHostComunity } from 'src/types/hosting_comunity.type '
 
 interface Props {
   numberItem: number
