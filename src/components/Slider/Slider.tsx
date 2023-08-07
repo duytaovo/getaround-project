@@ -84,8 +84,7 @@ export default function CustomSlider({
           <div
             key={item.id}
             className='
-                     h-36 w-full
-                  px-3 sm:h-36
+                     h-36 w-full px-3 sm:h-36
                   sm:w-full md:h-36
                   md:w-1/2 xl:h-36
                   xl:w-1/3 2xl:h-36

@@ -1,9 +1,12 @@
+import { IConnectedCarSharing } from 'src/types/connectedCarSharing.type'
+
 interface Props {
-  DataConnectedCarSharingHome: Array<{
-    id: number
-    total: string
-    title: string
-  }>
+  DataConnectedCarSharingHome: IConnectedCarSharing[]
+  // Array<{
+  //   id: number
+  //   total: string
+  //   title: string
+  // }>
 }
 const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome }) => {
   return (

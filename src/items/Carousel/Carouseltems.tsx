@@ -16,7 +16,7 @@ export const ItemCarousel: IItemCarousel[] = [
     content:
       'Get the exact kind of vehicle for your trip, and book it for the hours (or days) when you actually need it.',
     header: 'THOUSANDS OF OPTIONS',
-    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/6142421290b0dffe55de5b67_613d13c7206f306a6a64e9d6_chicago-illinois-1279X700-p-500.jpeg',
+    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png',
     name: 'Trevor, Washington, D.C'
   },
   {
