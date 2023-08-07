@@ -1,4 +1,6 @@
-export const items = [
+import { ICommonQuestions } from 'src/types/commonQuestion.type'
+
+export const items: ICommonQuestions[] = [
   {
     key: '1',
     label: 'How do I find a car and book a trip?',

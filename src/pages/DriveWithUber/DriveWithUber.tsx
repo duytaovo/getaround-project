@@ -6,17 +6,16 @@ import { thirdSecionData } from 'src/items/DriveWithUberSectionItems/ThirdSectio
 import Filter1OutlinedIcon from '@mui/icons-material/Filter1Outlined'
 import Filter2OutlinedIcon from '@mui/icons-material/Filter2Outlined'
 import Filter3OutlinedIcon from '@mui/icons-material/Filter3Outlined'
-import Filter4OutlinedIcon from '@mui/icons-material/Filter4Outlined'
 import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
 import Button from 'src/components/Button'
-import { FifthSetionData } from 'src/items/DriveWithUberSectionItems/FifthSection/FifthSection'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
 import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
-import { SecondSection } from 'src/items/DriveWithUberSectionItems/SecondSection/SecondSection'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingDriveWithUber } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { FirstSectionData } from 'src/items/DriveWithUberSectionItems/FirstSection/FirstSection'
+import { SecondSection } from 'src/items/DriveWithUberSectionItems/SecondSection/SecondSection'
+import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
+import { FifthSetionData } from 'src/items/DriveWithUberSectionItems/FifthSection/FifthSection'
 type Props = {}
 
 const DriveWithUber = (props: Props) => {
@@ -50,7 +49,7 @@ const DriveWithUber = (props: Props) => {
             ))}
           </div>
           <div className='flex items-center pt-2'>
-            <Button className='bg-mainColor py-2 px-4 rounded-md' isNext>
+            <Button className='bg-mainColor py-2 px-4 mr-4 rounded-md' isNext>
               Get started now
             </Button>
             <a>Share you car with Uber</a>
@@ -76,7 +75,7 @@ const DriveWithUber = (props: Props) => {
           />
         </div>
         <div className='w-1/2 text-black/90 my-auto text-justify'>
-          <h1 className='leading-[33px] tracking-[0.8px] text-[28px]'>{SecondSection.title}</h1>
+          <h1 className='leading-[33px] tracking-[0.8px] font-bold text-[28px]'>{SecondSection.title}</h1>
           {SecondSection?.paragraphs?.map((paragraph) => (
             <p className='py-4 pr-10 text-black/70 text-[14px]'>{paragraph}</p>
           ))}
@@ -86,9 +85,9 @@ const DriveWithUber = (props: Props) => {
       <WrapperContent title='' isBgTransparent>
         <Heading
           title='The perks of Getaround x Uber'
-          fontSize={30}
+          fontSize={28}
           breakLineAt={6}
-          className='pl-2'
+          className='pl-2 leading-[28px]'
           color='rgba(255,255,255,.9)'
         />
         <div className='grid grid-cols-4 grid-rows-1 gap-x-2 '>
@@ -102,7 +101,12 @@ const DriveWithUber = (props: Props) => {
       </WrapperContent>
 
       <WrapperContent title='HOW IT WORKS' textAlign='center'>
-        <Heading title="It's easy to drive with Uber" fontSize={30} breakLineAt={6} className='text-center' />
+        <Heading
+          title="It's easy to drive with Uber"
+          fontSize={28}
+          breakLineAt={6}
+          className='text-center leading-[28px]'
+        />
         <div className='flex justify-between'>
           <div className='w-1/2 flex justify-center items-center'>
             <img
