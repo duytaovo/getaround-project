@@ -62,7 +62,10 @@ const Home = (props: Props) => {
         textAlign='center'
         isBgTransparent={true}
       >
-        <ConnectedCarSharing DataConnectedCarSharingHome={DataConnectedCarSharingHome} />
+        <ConnectedCarSharing
+          DataConnectedCarSharingHome={DataConnectedCarSharingHome}
+          className={'flex-col items-stretch flex'}
+        />
       </WrapperContent>
 
       {/* Begin hero section */}

@@ -4,7 +4,7 @@ const HeaderHIWC = () => {
   return (
     <div className='max-w-full mt-[0%] mx-auto mb-10'>
       <div
-        className=' md:grid block '
+        className=' md:block grid '
         style={{
           gridColumnGap: '16px',
           gridRowGap: '16px',
@@ -19,7 +19,7 @@ const HeaderHIWC = () => {
           padding: '0%'
         }}
       >
-        <div className='self-auto w-auto max-w-[1279px] text-left'>
+        <div className='self-auto w-auto max-w-[1279px] sm:text-center text-left '>
           <img
             src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/600754c5a561bdd9d1f4a065_badge-getaround%C2%AE%401X.png'
             loading='lazy'

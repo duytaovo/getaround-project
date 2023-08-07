@@ -5,7 +5,7 @@ const ConsentManager = () => {
   const [memo, setMemo] = useState(true)
 
   return (
-    <div className={`${memo === true ? 'fixed left-0 right-0 bottom-0 z-[20000] w-full  bg-[#1f4160]' : 'hidden'}`}>
+    <div className={`${memo === true ? ' w-full  bg-[#1f4160]' : 'hidden'}`}>
       <div className='text-white bg-scroll flex p-[7px_10px]'>
         <div className='w-[97%]'>
           <p className='m-0 text-[14px] font-normal leading-[140%] text-center mt-2'>
