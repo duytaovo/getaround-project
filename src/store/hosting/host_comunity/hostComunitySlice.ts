@@ -12,16 +12,12 @@ import {
   theNailBasicContent
 } from 'src/items/ShareACar/ShareACar'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
-<<<<<<< HEAD
 import {
   IItemBanner,
   IItemNailTheBasic,
   IItemSliderHostComunity,
   IItemTopGettingStarted
 } from 'src/types/hosting_comunity.type '
-=======
-import { IItemBanner,  IItemNailTheBasic,  IItemSliderHostComunity, IItemTopGettingStarted } from 'src/types/hosting_comunity.type '
->>>>>>> f25d000073120ccb3220fc5dd4b386d63fb97716
 import { IItemBodyBannerCard, IItemCarousel, IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
 
 interface ShareACarState {

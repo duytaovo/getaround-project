@@ -9,7 +9,7 @@ type Props = {
 const TopHostComunity = ({ item }: Props) => {
   return (
     <div>
-      <div className='flex flex-col justify-center items-center'>
+      <div className='flex flex-col justify-center items-center text-center'>
         <span className='text-sm font-medium leading-4 text-center uppercase'>{item.title}</span>
         <span className='text-[58px] font-medium tracking-tight'>{changeColorWhiteAndMain(item?.content?.split(' '))}</span>
       </div>

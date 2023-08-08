@@ -22,7 +22,7 @@ const BodyTop = ({ item,className }: Props) => {
   }
   return (
     <div
-      className={`${className} text-textMainColor space-x-5 flex items-center lg:flex-col-reverse justify-between`}
+      className={`${className} text-textMainColor space-x-5 lg:space-x-0 flex items-center lg:flex-col-reverse justify-between`}
     >
       <div className='w-1/2 lg:w-full  h-full lg:h-full flex flex-col justify-between items-start'>
         <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1>

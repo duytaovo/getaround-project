@@ -1,8 +1,6 @@
 import React from 'react'
-import ComponentFooter from './ComponentFooter'
 import { firstColumn, fourColumn, secondColumn, selectItems, thirdColumn } from 'src/items/FooterItem/FooterItem'
 import { Col, Row, Space } from 'antd'
-import CustomSelect from '../Select'
 import { IconButton } from '@mui/material'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -11,6 +9,8 @@ import ggplay from './ggPlay.jpeg'
 import appstore from './appstore.png'
 import { Link } from 'react-router-dom'
 import logo from 'src/assets/images/logo.jpg'
+import CustomSelect from 'src/components/Select'
+import ComponentFooter from 'src/components/Footer/ComponentFooter'
 
 type Props = {}
 

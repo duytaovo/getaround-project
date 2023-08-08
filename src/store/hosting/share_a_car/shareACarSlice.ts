@@ -15,20 +15,7 @@ import {
 import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
 import { itemSupport } from 'src/pages/Hosting/ShareACar/components/Support/Support'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
-<<<<<<< HEAD
-
-import {
-  IBodyTop,
-  IItemBodyBannerCard,
-  IItemCarousel,
-  IItemContentSlider,
-  IItemGetAroundYourBack,
-  IItemSlider,
-  IItemSupport
-} from 'src/types/hosting_shareACar.type'
-=======
 import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemGetAroundYourBack, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
->>>>>>> f25d000073120ccb3220fc5dd4b386d63fb97716
 import { payloadCreator } from 'src/utils/utils'
 
 export const getShareACar = createAsyncThunk('shareACar/getShareACar', payloadCreator(''))
