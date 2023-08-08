@@ -1,4 +1,4 @@
 export interface ISelectBookUnlockCar {
-  title?: string
+  title?: JSX.Element
   link?: string
 }
