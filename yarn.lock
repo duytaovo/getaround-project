@@ -3593,6 +3593,11 @@ rc-virtual-list@^3.5.1, rc-virtual-list@^3.5.2:
     rc-resize-observer "^1.0.0"
     rc-util "^5.15.0"
 
+react-dangerous-html@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-dangerous-html/-/react-dangerous-html-1.0.0.tgz#24e443d156a4fc5e61467179cda319145aa3a7e1"
+  integrity sha512-OMi5HF1WN7nw/djRHepn9yIMYRafAg3FlBdXgh6bdvq/hnZ/p0fMHyL77o7uM9xctEu9t1p2qMSf2yOmPNrlVw==
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"

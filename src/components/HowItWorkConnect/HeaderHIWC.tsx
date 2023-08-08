@@ -1,5 +1,15 @@
 import React from 'react'
-
+export const DataHeaderConnect = {
+  imgLogo:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/600754c5a561bdd9d1f4a065_badge-getaround%C2%AE%401X.png',
+  titleLogo: ' A SAFER, MORE CONVENIENT WAY TO CARSHARE',
+  mainTitleHeader: 'Getaround Connect',
+  contentHeader: `No other carsharing service offers contactless sharing using Getaround Connect®. With your Android or iOS
+  phone and the Getaround app, you can find, book, and unlock a car, truck, or van near you. Getaround is the
+  leading global and digital carsharing marketplace. Try it today.`,
+  imgContentHeader:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6064908339a45b8d2297f2c9_feature-contactless-booking.svg'
+}
 const HeaderHIWC = () => {
   return (
     <div className='max-w-full mt-[0%] mx-auto mb-10'>

@@ -1,24 +1,20 @@
 import { AnyAction, Store, ThunkDispatch, configureStore } from '@reduxjs/toolkit'
-<<<<<<< HEAD
-import appReducer from './app/app.slice'
-import HomeReducer from './app/home/home.slice'
-=======
-import appReducer from './app/app.slice';
-import shareAcarReducer from './hosting/share_a_car/shareACarSlice';
-import communityReducer from './hosting/host_comunity/hostComunitySlice';
->>>>>>> 7f6af7d26b4b54e6a8765f17ce6f1711f77cf9de
 
+import appReducer from './app/app.slice'
+import shareAcarReducer from './hosting/share_a_car/shareACarSlice'
+import HowItWorkReducer from './howitwork/HowItWork/HowItWorkSlice'
+import ConnectHIWReducer from './howitwork/Connect/Connect'
+import HomeReducer from './app/home/home.slice'
+import communityReducer from './hosting/host_comunity/hostComunitySlice';
 export const store = configureStore({
   reducer: {
     loading: appReducer,
-<<<<<<< HEAD
-    homePageData: HomeReducer
-=======
-    shareAcar:shareAcarReducer,
+    shareAcar: shareAcarReducer,
+    howitwork: HowItWorkReducer,
+    connecthiw: ConnectHIWReducer,
+    homePageData: HomeReducer,
     community:communityReducer
 
->>>>>>> 7f6af7d26b4b54e6a8765f17ce6f1711f77cf9de
-  },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]
 })

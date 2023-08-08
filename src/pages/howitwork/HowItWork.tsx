@@ -18,7 +18,25 @@ import SlideLeftRight from 'src/components/SlideLeftRight/SlideLeftRight'
 import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 import { Link } from 'react-router-dom'
 import Step from './Step/Step'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
+import { updateExploreHIW, updateProprietaryHIW } from 'src/store/howitwork/HowItWork/HowItWorkSlice'
+import { ISelectItemsExploreHosting, ISelectItemsProprietary } from 'src/types/HowItWork'
 const HowItWork = () => {
+  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork } = useSelector(
+    (state: RootState) => state.howitwork
+  )
+
+  const dispatch = useDispatch()
+
+  const handleExploreHIW = (newExploreHostring: ISelectItemsExploreHosting) => {
+    dispatch(updateExploreHIW(newExploreHostring))
+  }
+
+  const handleAddSlider = (newProprietary: ISelectItemsProprietary) => {
+    dispatch(updateProprietaryHIW(newProprietary))
+  }
+
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <HeaderHowItWord />
