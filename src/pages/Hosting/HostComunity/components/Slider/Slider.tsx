@@ -10,8 +10,7 @@ import CardSlider from './Card'
 import { IItemSliderHostComunity } from 'src/types/hosting_comunity.type '
 
 interface Props {
-  numberItem: number
-  numberItemScroll: number
+  numberItem?: number
   data: IItemSliderHostComunity[]
   className?: string
   isTitle?: boolean
@@ -21,6 +20,8 @@ interface Props {
   classNameImage?: string
   classNameURL?:string
   autoPlay?: boolean
+  breakPoint: Array<number>
+  breakPointScroll:Array<number>
 }
 
 
@@ -28,7 +29,6 @@ interface Props {
 
 export default function SliderHostComunity({
   numberItem,
-  numberItemScroll,
   data,
   className,
   classNameContent,
@@ -36,7 +36,9 @@ export default function SliderHostComunity({
   isContent,
   isLink,
   autoPlay,
-  classNameURL
+  classNameURL,
+  breakPoint,
+  breakPointScroll
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
@@ -51,22 +53,29 @@ export default function SliderHostComunity({
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: breakPoint[0],
+          slidesToScroll: breakPointScroll[0]
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: breakPoint[1],
+          slidesToScroll: breakPointScroll[1]
         }
       },
       {
         breakpoint: 1289,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToShow: breakPoint[2],
+          slidesToScroll: breakPointScroll[2]
         }
       },
       {
         breakpoint: 1920,
         settings: {
-          slidesToShow: numberItem,
-          slidesToScroll: numberItemScroll
+          slidesToShow: breakPoint[3],
+          slidesToScroll: breakPointScroll[3]
         }
       }
     ]

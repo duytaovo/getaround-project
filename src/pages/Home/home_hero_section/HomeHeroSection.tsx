@@ -5,6 +5,7 @@ import CustomeButton from '../../../components/Button/Button'
 import { Space } from 'antd'
 import RatingStar from 'src/components/RatingStar'
 import { IHeroSection } from 'src/store/app/home/HomeTypes/Hero.type'
+import { Text } from 'src/components/Edition/Text'
 
 const options = [
   {
@@ -44,12 +45,21 @@ const HomeHeroSection: FC<IHeroSection> = ({
       <div className='w-full h-[90%] max-w-[980px] bg-white/90 m-auto rounded-[20px] py-9 px-14 flex flex-col justify-center sm:px-2'>
         <div className='flex flex-col justify-center items-center pb-8'>
           <div>
-            <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>{title}</h2>
+            <Text
+              id='id-text'
+              tag='h2'
+              content={title}
+              className='py-4 leading-5 text-lg font-bold my-0 text-black/80'
+            />
+            {/* <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>{title}</h2> */}
           </div>
           <div>
-            <h1 className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'>
-              {mainText}
-            </h1>
+            <Text
+              id='id-text-2'
+              tag='h1'
+              content={mainText}
+              className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'
+            />
           </div>
         </div>
 

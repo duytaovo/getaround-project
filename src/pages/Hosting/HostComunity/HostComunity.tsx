@@ -13,6 +13,7 @@ import { useAppSelector } from 'src/hooks/useRedux'
 import OurHost from './components/OurHost/OurHost'
 import TopHostComunity from './components/TopHostCommunity/OurHost'
 import { itemTopHostComunity } from 'src/items/ShareACar/ShareACar'
+import { Grid } from '@mui/material'
 
 const HostCominity = () => {
   const {
@@ -34,16 +35,25 @@ const HostCominity = () => {
       {/* start slider */}
       <div className=' mb-bottom py-5 rounded-2xl'>
         <TopHostComunity item={itemTopHostComunity} />
-        <SliderHostComunity numberItem={3} numberItemScroll={3} data={sliderHostComunity} />
+        <SliderHostComunity breakPoint={[2, 2, 2.5, 3]} breakPointScroll={[1, 1, 1, 1]} data={sliderHostComunity} />
       </div>
       {/* end slider */}
       {/* start card */}
-      <div className='mb-bottom flex gap-3'>
-        <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
-        <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
-        <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
-
-        <CardBody.CardBodyButton />
+      <div className='mb-bottom flex justify-around  flex-wrap '>
+        <Grid container spacing={2}>
+          <Grid item xs={6} sm={6} md={3}>
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+          </Grid>
+          <Grid item xs={6} sm={6} md={3}>
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+          </Grid>
+          <Grid item xs={6} sm={6} md={3}>
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+          </Grid>
+          <Grid item xs={6} sm={6} md={3}>
+            <CardBody.CardBodyButton />
+          </Grid>
+        </Grid>
       </div>
       {/* end card */}
 
@@ -79,12 +89,14 @@ const HostCominity = () => {
       {
         /* start card Partner,deal*/
         <div className='flex mb-[75px]'>
-          <div className='w-2/3 mr-5'>
-            <CardBodyParnerDeal itemCardBodyParnerDeal={cardBodyParnerDeal} />
-          </div>
-          <div className='w-1/3'>
-            <CardBodyReferFriend itemCardBodyReferFriend={cardBodyReferFriend} />
-          </div>
+          <Grid container spacing={2}>
+            <Grid item sm={12}  md={8}>
+              <CardBodyParnerDeal itemCardBodyParnerDeal={cardBodyParnerDeal} />
+            </Grid>
+            <Grid item sm={12}  md={4}>
+              <CardBodyReferFriend itemCardBodyReferFriend={cardBodyReferFriend} />
+            </Grid>
+          </Grid>
         </div>
         /* end card Partner,deal*/
       }
@@ -105,7 +117,7 @@ const HostCominity = () => {
               'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
             }
             DataExploreHostingStyle={DataExploreHostingShareCar}
-            DataExploreHostingText={exploreHosting}
+            // DataExploreHostingText={exploreHosting}
             isEx={false}
             className=''
           />
