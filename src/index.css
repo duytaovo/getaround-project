@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base {
   .container {
     @apply max-w-[1535px] xl:max-w-[1279px] lg:max-w-[1023px] md:max-w-[767px] sm:max-w-[639px];
   }
-}
+} */
 @font-face {
   font-family: 'Brown-pro';
   src:
@@ -17,6 +17,9 @@
 
 html {
   /* scrollbar-gutter: stable; */
+  overflow: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 body {
@@ -25,6 +28,7 @@ body {
   overflow-y: scroll;
   height: 100dvh;
   color: #fff;
+  width: 100vw;
 }
 
 /* Begin customize color of Antd steps */

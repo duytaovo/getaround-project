@@ -91,6 +91,7 @@ const ShareACar = () => {
               numberItem={1}
               numberItemScroll={1}
               className='flex-col-reverse'
+              breakPoint={[1,1,2,2]}
             />
           </div>
         </div>
@@ -141,7 +142,7 @@ const ShareACar = () => {
         <WrapperContent
           titlePadding={5}
           textAlign='left'
-          title='Learn more about the benefits of Getaround'
+          title=''
           isBgTransparent={true}
           fontSize={12}
         >
@@ -193,7 +194,7 @@ const ShareACar = () => {
       {/* end carousel review */}
       {/* start start hoisting increase income */}
       <div className='mb-bottom'>
-        <BodyTop item={bodyTop} className='flex-row-reverse' />
+        <BodyTop item={bodyTop} className='flex-row-reverse ' />
       </div>
       {/* end start hoisting increase income */}
 
