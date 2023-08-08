@@ -13,7 +13,7 @@ type Props = {
   img?: string
   isEx?: boolean
   DataExploreHostingStyle?: any
-  DataExploreHostingText?: IExploreHosting[]
+  DataExploreHostingText?: IExploreHosting
   className?: string
 }
 
@@ -23,7 +23,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
       {isEx === true ? (
         <div className='w-full  self-center items-stretch  flex relative'>
           <div className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
-            {DataExploreHostingText?.[0]?.mainTitle}
+            {DataExploreHostingText?.mainTitle}
           </div>
         </div>
       ) : (
@@ -36,22 +36,22 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
         <div className={`${DataExploreHostingStyle.styleDivRight}`}>
           {isEx === false ? (
             <div className='text-black max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
-              {DataExploreHostingText?.[0]?.headerTitle}
+              {DataExploreHostingText?.headerTitle}
             </div>
           ) : (
             <></>
           )}
           <div>
             <h2 className={`${DataExploreHostingStyle.styleTitle} md:text-[20px]`}>
-              <strong className=''>{DataExploreHostingText?.[0]?.Title}</strong>
+              <strong className=''>{DataExploreHostingText?.Title}</strong>
             </h2>
           </div>
           <div className='text-[#727272] mt-[30px]  text-[16px] md:text-13px font-normal mb-4'>
-            {DataExploreHostingText?.[0]?.Description}
+            {DataExploreHostingText?.Description}
             <br />
           </div>
 
-          <Link to={DataExploreHostingText?.[0]?.Link || ''} className={DataExploreHostingStyle.Button.className}>
+          <Link to={DataExploreHostingText?.Link || ''} className={DataExploreHostingStyle.Button.className}>
             {DataExploreHostingStyle.Button.text}
           </Link>
         </div>

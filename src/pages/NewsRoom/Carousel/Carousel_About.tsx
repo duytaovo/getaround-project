@@ -20,9 +20,6 @@ const Carousel_About = ({
     <div className={`${className} `}>
       <div className='w-auto h-auto bg-white rounded-2xl'>
         <div className='block px-8 py-10'>
-          <h1 className='text-black text-[20px] font-semibold'>
-            Getaround Announces Restructuring Plan to Reduce Costs and Streamline Operations
-          </h1>
           <h2 className='text-[10px] font-normal text-[#000000] my-4'>February 22, 2023</h2>
           <h3 className='text-[14px] font-sans text-[#727272] my-4'>
             roactive actions will optimize Getaround's cost tructure in response to near-term macroeconomic ncertainty,

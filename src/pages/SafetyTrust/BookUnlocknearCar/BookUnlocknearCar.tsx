@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom'
 export const DataBookUnlockCar = {
   title: (
     <>
-      Book <CarOutlined className='text-white' /> Unlock <KeyOutlined className='text-white' /> and Drive{' '}
-      <ReloadOutlined className='text-white' /> nearby cars
+      Book <CarOutlined /> Unlock <KeyOutlined /> and Drive <ReloadOutlined /> nearby cars
     </>
   ),
   link: '/'

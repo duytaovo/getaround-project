@@ -38,7 +38,7 @@ export const items: ICommonQuestions[] = [
     ]
   }
 ]
-export const itemsHostRefernal = [
+export const DataitemsHostRefernal: ICommonQuestions[] = [
   {
     key: '1',
     label: 'When and how will I receive my referral bonus?',

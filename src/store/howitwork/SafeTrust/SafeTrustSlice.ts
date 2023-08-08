@@ -9,38 +9,49 @@ import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightSafetyTrust } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 import { ISelectBookUnlockCar } from 'src/types/SafeTrust'
 import { DataBookUnlockCar } from 'src/pages/SafetyTrust/BookUnlocknearCar/BookUnlocknearCar'
+import { ISelectItemsHeaderHostRefernal } from 'src/types/hostRefernal/hostRefernal'
+import { DataHeaderST } from 'src/pages/SafetyTrust/HeaderSafeTrust'
 interface SafeTrustState {
-  ExploreHowItWork: ISelectItemsExploreHosting[]
-  ProprietaryHowItWork: ISelectItemsProprietary[]
-  SlideLeftRightHowItWork: ISelectItemsSlideLeftRight[]
-  // BookUnlockCar:ISelectBookUnlockCar
+  ExploreST: ISelectItemsExploreHosting[]
+  ProprietaryST: ISelectItemsProprietary[]
+  SlideLeftRightST: ISelectItemsSlideLeftRight[]
+  BookUnlockCar: ISelectBookUnlockCar
+  HeaderST: ISelectItemsHeaderHostRefernal
 }
 
 const initialState: SafeTrustState = {
-  ExploreHowItWork: DataExploreHostingSafetyTrustText,
-  ProprietaryHowItWork: DataProprietarySafetyTrust,
-  SlideLeftRightHowItWork: DataSlideLeftRightSafetyTrust
-  // BookUnlockCar: DataBookUnlockCar
+  ExploreST: DataExploreHostingSafetyTrustText,
+  ProprietaryST: DataProprietarySafetyTrust,
+  SlideLeftRightST: DataSlideLeftRightSafetyTrust,
+  BookUnlockCar: DataBookUnlockCar,
+  HeaderST: DataHeaderST
 }
 
 const SafeTrustSlice = createSlice({
-  name: 'HowItwork',
+  name: 'SafeTrust',
   initialState,
   reducers: {
     updateExploreST: (state, action: PayloadAction<ISelectItemsExploreHosting>) => {
-      state.ExploreHowItWork.push(action.payload)
+      state.ExploreST.push(action.payload)
     },
     updateProprietaryST: (state, action: PayloadAction<ISelectItemsProprietary>) => {
-      state.ProprietaryHowItWork.push(action.payload)
+      state.ProprietaryST.push(action.payload)
     },
 
     updateSlideLeftRightST: (state, action: PayloadAction<ISelectItemsSlideLeftRight>) => {
-      state.SlideLeftRightHowItWork.push(action.payload)
+      state.SlideLeftRightST.push(action.payload)
+    },
+    updateBookUnlockCarST: (state, action: PayloadAction<ISelectBookUnlockCar>) => {
+      state.BookUnlockCar = action.payload
+    },
+    updateHeaderST: (state, action: PayloadAction<ISelectItemsHeaderHostRefernal>) => {
+      state.HeaderST = action.payload
     }
   },
   extraReducers: (builder) => {}
 })
 
-export const { updateExploreST, updateProprietaryST, updateSlideLeftRightST } = SafeTrustSlice.actions
+export const { updateExploreST, updateProprietaryST, updateSlideLeftRightST, updateBookUnlockCarST, updateHeaderST } =
+  SafeTrustSlice.actions
 const SafeTrustReducer = SafeTrustSlice.reducer
 export default SafeTrustReducer

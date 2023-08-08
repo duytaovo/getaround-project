@@ -22,7 +22,7 @@ const initialState: ConnectHIWState = {
 }
 
 const ConnectHIWSlice = createSlice({
-  name: 'HowItwork',
+  name: 'ConnectHowItWork',
   initialState,
   reducers: {
     updateHeaderConnect: (state, action: PayloadAction<ISelectItemsConnectHeader>) => {

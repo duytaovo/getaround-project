@@ -5,7 +5,12 @@ import HelpCustomer from './HelpCustomer/HelpCustomer'
 import ReadNews from './ReadNews/ReadNews'
 import Carousel_Review_Comunity from './Carousel/Carousel_Review'
 import { ItemCarousel, ItemCarouselAboutUs_NewsRoom } from 'src/items/Carousel/Carouseltems'
-const NewsRoom = () => {
+export const DataTitleCarouselNR = {
+  headerTitle: 'NEWS FROM GETAROUND',
+  title: 'Press releases',
+  linkTo: '/'
+}
+export const NewsRoom = () => {
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <HeaderNewsRoom />
