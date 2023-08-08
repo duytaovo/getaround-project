@@ -119,7 +119,7 @@ const Home = (props: Props) => {
       >
         <ExploreHosting
           DataExploreHostingStyle={DataExploreHostingHome}
-          DataExploreHostingText={homePageData.exploreHostingSection.itemData}
+          // DataExploreHostingText={homePageData.exploreHostingSection.itemData}
           img={homePageData.exploreHostingSection.img}
           className='flex-col items-center flex w-full'
         />
