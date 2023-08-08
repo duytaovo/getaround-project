@@ -1,33 +1,49 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
+import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import {
-  ItemBodyTop,
-  ItemContentSlider,
-  itemBanner,
-  itemBodyCardBottom,
-  itemBodyCardTop
+  itemBannerCommunity,
+  itemCardBodyImg,
+  itemCardBodyParnerDeal,
+  itemCardBodyReferFriend,
+  itemOurHost,
+  itemSliderHostComunity,
+  itemTopGettingStarted,
+  theNailBasicContent
 } from 'src/items/ShareACar/ShareACar'
-import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
-import { itemSupport } from 'src/pages/Hosting/ShareACar/components/Support/Support'
-import { IItemGettingStarted, IItemSliderHostComunity } from 'src/types/hoisting_comunity.type '
-import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemSlider, IItemSupport } from 'src/types/hoisting_shareACar.type'
+import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
+import { IItemBanner,  IItemNailTheBasic,  IItemSliderHostComunity, IItemTopGettingStarted } from 'src/types/hosting_comunity.type '
+import { IItemBodyBannerCard, IItemCarousel, IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
 
 interface ShareACarState {
-  // sliderHostComunity:IItemSliderHostComunity[]
-  // cardBodyImg:IItemBodyBannerCard
-  // cardBodyParnerDeal:IItemBodyBannerCard
-  // cardBodyReferFriend:IItemBodyBannerCard
-  // gettingStarted:IItemGettingStarted
-
-
+  sliderHostComunity:IItemSliderHostComunity[]
+  cardBodyImg:IItemBodyBannerCard
+  cardBodyParnerDeal:IItemBodyBannerCard
+  cardBodyReferFriend:IItemBodyBannerCard
+  bannerCommunity:IItemBanner
+  CarouselCommunity:IItemCarousel[]
+  exploreHosting:ISelectItemsExploreHosting[]
+  ourHost:IItemGetAroundYourBack
+  gettingStartedNailBasic:IItemNailTheBasic
+  topGettingStarted:IItemTopGettingStarted
 }
 
 const initialState: ShareACarState = {
-  // sliderHostComunity:
+  sliderHostComunity:itemSliderHostComunity,
+  cardBodyImg:itemCardBodyImg,
+  cardBodyParnerDeal:itemCardBodyParnerDeal,
+  cardBodyReferFriend:itemCardBodyReferFriend,
+  bannerCommunity:itemBannerCommunity,
+  CarouselCommunity:ItemCarouselCommunity,
+  exploreHosting:DataExploreHostingShareCarText,
+  ourHost:itemOurHost,
+  gettingStartedNailBasic:theNailBasicContent,
+  topGettingStarted:itemTopGettingStarted
+
 }
 
-const shareACarSlice = createSlice({
-  name: 'shareACar',
+const communitySlice = createSlice({
+  name: 'community',
   initialState,
   reducers: {
     // updateBodyTop: (state, action: PayloadAction<IBodyTop>) => {
@@ -45,5 +61,5 @@ const shareACarSlice = createSlice({
 })
 
 // export const {updateBodyTop,addSlider,updateSlider} = shareACarSlice.actions
-const shareAcarReducer = shareACarSlice.reducer
-export default shareAcarReducer
+const communityReducer = communitySlice.reducer
+export default communityReducer

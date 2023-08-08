@@ -1,11 +1,11 @@
-import home_hero_background from '../../../assets/images/63c5b095e7bfaba115ba5ccd_homepage-bg-picnic.webp'
+import { FC } from 'react'
 import CustomDatetimePicker from 'src/components/CustomDatetimePicker/CustomDatetimePicker'
 import CustomeAddressAutocomplete from 'src/components/CustomeAddressAutocomplete/CustomeAddressAutocomplete'
 import CustomeButton from '../../../components/Button/Button'
 import { Space } from 'antd'
 import RatingStar from 'src/components/RatingStar'
+import { IHeroSection } from 'src/store/app/home/HomeTypes/Hero.type'
 
-type Props = {}
 const options = [
   {
     label: 'Option 1',
@@ -21,25 +21,34 @@ const options = [
   }
 ]
 
-const HomeHeroSection = (props: Props) => {
+const HomeHeroSection: FC<IHeroSection> = ({
+  id,
+  title,
+  timePickerPlaceholder,
+  datePickerPlaceholder,
+  img,
+  startDateTimePikerTitle,
+  endDateTimePikerTitle,
+  buttonSearchText,
+  addressPlaceholder,
+  mainText
+}) => {
   return (
     <div
       style={{
-        backgroundImage: `url(${home_hero_background})`,
-        backgroundPosition: '58%',
-        backgroundAttachment: 'scroll'
-        // backgroundSize: '158%'
+        backgroundImage: `url(${img})`,
+        backgroundPosition: '58%'
       }}
       className='h-[478px] bg-no-repeat bg-[length:158%] p-9 pb-6 flex flex-col items-center mb-bottom md:h-fit md:bg-cover sm:p-0'
     >
       <div className='w-full h-[90%] max-w-[980px] bg-white/90 m-auto rounded-[20px] py-9 px-14 flex flex-col justify-center sm:px-2'>
         <div className='flex flex-col justify-center items-center pb-8'>
           <div>
-            <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>Drive on your schedule</h2>
+            <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>{title}</h2>
           </div>
           <div>
             <h1 className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'>
-              Instantly <span className='text-mainColor'>rent and unlock</span> nearby cars
+              {mainText}
             </h1>
           </div>
         </div>
@@ -47,16 +56,16 @@ const HomeHeroSection = (props: Props) => {
         <Space align='center' className='flex justify-center items-end md:flex-col'>
           <CustomeAddressAutocomplete items={options} />
           <div className='grow flex'>
-            <CustomDatetimePicker className='h-[52px]' title='Start trip' />
+            <CustomDatetimePicker className='h-[52px]' title={startDateTimePikerTitle} />
             <div style={{ width: '10px' }} />
-            <CustomDatetimePicker className='h-[52px]' title='End trip' />
+            <CustomDatetimePicker className='h-[52px]' title={endDateTimePikerTitle} />
           </div>
 
           <CustomeButton
             className='min-w-[140px] h-[52px] bg-mainColor rounded-[10px] text-white/80 md:w-full'
             isNext={true}
           >
-            Search a car
+            {buttonSearchText}
           </CustomeButton>
         </Space>
       </div>

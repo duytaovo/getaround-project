@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import NextArrow from '../NextArrow'
 import PrevArrow from '../PreArrow/PreArrow'
-import { IItemSlider } from 'src/types/hoisting_shareACar.type'
+import { IItemSlider } from 'src/types/hosting_shareACar.type'
 import CustomCardSlider from '../Card'
 import getBreakpoint from 'src/helpers/getBreakpoint'
 
@@ -84,8 +84,7 @@ export default function CustomSlider({
           <div
             key={item.id}
             className='
-                     h-36 w-full
-                  px-3 sm:h-36
+                     h-36 w-full px-3 sm:h-36
                   sm:w-full md:h-36
                   md:w-1/2 xl:h-36
                   xl:w-1/3 2xl:h-36

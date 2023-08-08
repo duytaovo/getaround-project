@@ -1,4 +1,6 @@
-export const CustomeStepItems = [
+import { ICustomeSteps } from 'src/types/customeSteps.type'
+
+export const CustomeStepItems: ICustomeSteps[] = [
   {
     title: 'Sign up and name your car.',
     images: [

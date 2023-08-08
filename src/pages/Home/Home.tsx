@@ -1,32 +1,45 @@
 import React from 'react'
+import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
+import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
+import { ItemSlider } from '../../items/SliderItem/Slider'
+import { ItemCarousel } from 'src/items/Carousel/Carouseltems'
+import CommonQuestionRightImg from 'src/assets/images/commonQuestionRight.svg'
+import { DataConnectedCarSharingHome } from 'src/items/ConnectedCarSharing/DataConnectedCarSharing'
+import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import HomeHeroSection from './home_hero_section/HomeHeroSection'
 import CustomeStep from 'src/components/CustomeStep/CustomeStep'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
-import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
 import Heading from 'src/components/Heading/Heading'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
-import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
-import { SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons'
 import CustomeSlider from '../../components/Slider/Slider'
-import { ItemSlider } from '../../items/SliderItem/Slider'
+import { SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons'
 import CustomeCarousel from 'src/components/Carousel/index'
-import { ItemCarousel } from 'src/items/Carousel/Carouseltems'
-import CommonQuestionRightImg from 'src/assets/images/commonQuestionRight.svg'
 import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCarSharing'
-import { DataConnectedCarSharingHome } from 'src/items/ConnectedCarSharing/DataConnectedCarSharing'
-import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
+import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
+import { useAppSelector } from 'src/hooks/useRedux'
 
 type Props = {}
 
 const Home = (props: Props) => {
+  const homePageData = useAppSelector((state) => state.homePageData)
+  // console.log(homePageData)
   return (
     <div className='overflow-x-hidden'>
-      <HomeHeroSection />
+      <HomeHeroSection
+        title={homePageData.heroSection.title}
+        img={homePageData.heroSection.img}
+        addressPlaceholder={homePageData.heroSection.addressPlaceholder}
+        buttonSearchText={homePageData.heroSection.buttonSearchText}
+        mainText={homePageData.heroSection.mainText}
+        datePickerPlaceholder={homePageData.heroSection.datePickerPlaceholder}
+        endDateTimePikerTitle={homePageData.heroSection.endDateTimePikerTitle}
+        startDateTimePikerTitle={homePageData.heroSection.startDateTimePikerTitle}
+        timePickerPlaceholder={homePageData.heroSection.timePickerPlaceholder}
+      />
 
       <WrapperContent
-        title='The perfect car for your trip is just around the corner'
+        title={homePageData.perfectCarSliderSection.wrapperTitle}
         textAlign='center'
         isBgTransparent={true}
       >
@@ -39,57 +52,54 @@ const Home = (props: Props) => {
             numberItem={4}
             numberItemScroll={1}
             isTitle={true}
-            data={ItemSlider}
+            data={homePageData.perfectCarSliderSection.itemsData}
           />
         </div>
       </WrapperContent>
 
-      <section title='' className='my-14 w-[70%] mx-auto'>
+      <section title='' className='my-14 w-[70%] mx-auto mb-bottom'>
         <CustomeCarousel.Carousel_Introduce
           classNameHeader='text-[11px] text-mainColor'
           classNameTitle='text-[32px] text-white/60 text-bold tracking-[-0.48px] leading-[34px] py-4'
           classNameContent='leading-[22px] text-white/60'
           className='w-full flex justify-between bg-black p-2 bg-mainColor/20 rounded-md'
           classNameImage='w-1/2 rounded-md'
-          data={ItemCarousel}
           numberItem={1}
           numberItemScroll={1}
+          data={homePageData.homeIntoduceCarouselSection}
         />
       </section>
 
       <WrapperContent
-        title="The World's First 🌐 Connected Car Sharing Marketplace"
+        title={homePageData.sharingMaketPlaceSection.wrapperTitle}
         textAlign='center'
         isBgTransparent={true}
       >
+<<<<<<< HEAD
+        <ConnectedCarSharing DataConnectedCarSharingHome={homePageData.sharingMaketPlaceSection.itemsData} />
+=======
         <ConnectedCarSharing
           DataConnectedCarSharingHome={DataConnectedCarSharingHome}
           className={'flex-col items-stretch flex'}
         />
+>>>>>>> 7f6af7d26b4b54e6a8765f17ce6f1711f77cf9de
       </WrapperContent>
 
-      {/* Begin hero section */}
-      <WrapperContent textAlign='center' title='How it works' classname='flex flex-col'>
-        <Heading title='Find your drive in 3 easy steps' breakLineAt={3} fontSize={30} className='text-center' />
+      <WrapperContent textAlign='center' title={homePageData.homeStepSection.wrapperTitle} classname='flex flex-col'>
+        <Heading title={homePageData.homeStepSection.heading} breakLineAt={3} fontSize={30} className='text-center' />
         <div className='flex justify-center px-[36px] xl:flex-col-reverse'>
-          {/* Begin image portion */}
           <div className='w-1/2 flex justify-center xl:w-full'>
-            <img
-              className='object-contain h-[500px]'
-              src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar-p-500.jpg'
-              alt='ss'
-            />
+            <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' />
           </div>
-          {/* End image portion */}
+
           <CustomeStep
             icons={[<UserOutlined />, <SolutionOutlined />, <SmileOutlined />]}
             classname='w-1/2 xl:w-full'
             textClassName='text-justify'
-            items={CustomeStepItems}
+            items={homePageData.homeStepSection.itemsData}
           />
         </div>
       </WrapperContent>
-      {/* End hero section */}
 
       {/* <WrapperContent title='TESTIMONIALS' textAlign='center' classname='flex flex-col' isBgTransparent>
         <Heading title='Hear from our guests' breakLineAt={4} fontSize={30} className='text-center' />
@@ -108,19 +118,23 @@ const Home = (props: Props) => {
         </div>
       </WrapperContent> */}
 
-      <WrapperContent title='' isBgTransparent>
+      <WrapperContent
+        title={homePageData.exploreHostingSection.wrapperTitle}
+        textAlign='center'
+        classname='pt-4'
+        isBgTransparent
+      >
         <ExploreHosting
-          isEx={true}
           DataExploreHostingStyle={DataExploreHostingHome}
-          DataExploreHostingText={DataExploreHostingHomeText}
-          img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
+          DataExploreHostingText={homePageData.exploreHostingSection.itemData}
+          img={homePageData.exploreHostingSection.img}
           className='flex-col items-center flex w-full'
         />
       </WrapperContent>
 
-      <WrapperContent title='CARS IN YOUR CITY' isBgTransparent textAlign='center'>
+      <WrapperContent title={homePageData.localFavouriteSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
-          title='Local favorites near you'
+          title={homePageData.localFavouriteSection.heading}
           fontSize={30}
           breakLineAt={4}
           className='text-center'
@@ -128,20 +142,20 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto pt-4 w-[60%] md:w-full'>
           <CustomeSlider
-            data={ItemSlider}
             numberItem={5}
             numberItemScroll={4}
             isTitle
             classNameImage='w-[100px] h-[100px] rounded-full object-cover'
             className='flex flex-col justify-center items-center'
             classNameTitle='pt-3 text-white/80'
+            data={homePageData.localFavouriteSection.itemsData}
           />
         </div>
       </WrapperContent>
 
-      <WrapperContent title='THE GETAROUND BLOG' isBgTransparent textAlign='center'>
+      <WrapperContent title={homePageData.blogSilerSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
-          title='The Road Ahead: Discover our Blog'
+          title={homePageData.blogSilerSection.heading}
           fontSize={30}
           breakLineAt={6}
           className='text-center'
@@ -149,7 +163,6 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
-            data={ItemSlider}
             numberItem={3}
             numberItemScroll={1}
             className='bg-mainColor/20 rounded-md h-fit p-2 overflow-hidden object-cover'
@@ -160,6 +173,7 @@ const Home = (props: Props) => {
             isContent
             isTime
             isTitle
+            data={homePageData.blogSilerSection.itemsData}
           />
         </div>
       </WrapperContent>
@@ -167,19 +181,19 @@ const Home = (props: Props) => {
       <WrapperContent
         titlePadding={5}
         textAlign='left'
-        title='Learn more about the benefits of Getaround'
+        title={homePageData.qAndASection.wrapperTitle}
         isBgTransparent={true}
         fontSize={12}
       >
         <div className='flex xl:flex-col'>
           <CustomeCommonQuestions
             titleClassName='text-white/90 text-bold text-[18px]'
-            items={items}
+            items={homePageData.qAndASection.itemsData}
             className='w-1/2 xl:w-full'
             paddingRightSingleCommonQuestion={10}
           />
           <div className='w-1/2 p-4 flex justify-center items-center xl:w-full'>
-            <img width='50%' src={CommonQuestionRightImg} alt='' />
+            <img width='50%' src={homePageData.qAndASection.img} alt='' />
           </div>
         </div>
       </WrapperContent>

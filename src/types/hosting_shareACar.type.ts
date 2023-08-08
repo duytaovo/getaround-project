@@ -35,6 +35,11 @@ export interface IItemContentSlider {
   content?: string
 }
 
+export interface IItemGetAroundYourBack {
+  title?: string
+  content?: string
+}
+
 export interface IItemSupport {
   title: string
   contentLeft: string
