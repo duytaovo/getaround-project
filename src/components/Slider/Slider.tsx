@@ -23,8 +23,6 @@ interface Props {
   autoPlay?: boolean
 
   breakPoint: Array<number>
-
-  breakPoint:Array<number>
   breakPointScroll:Array<number>
 }
 // breackPoint = {[1,1,2,2,3]}
