@@ -16,8 +16,8 @@ export const itemSupport:IItemSupport = {
 
 const Support = ({item}: Props) => {
   return (
-    <div className='flex items-center justify-between bg-white text-black rounded-2xl pt-[28px] px-[32px] pb-[36px]'>
-      <div className='flex items-center justify-between w-2/3'>
+    <div className='flex items-center justify-between bg-white text-black rounded-2xl pt-[28px] px-[32px] pb-[36px] lg:flex-col'>
+      <div className='flex items-center justify-between w-2/3 lg:w-full'>
         <div>
           <img
             src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6328bdb541c77f294bfb6e1e_aboutga-247-support-p-500.png'
