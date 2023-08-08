@@ -11,7 +11,7 @@ import {
   itemTopGettingStarted,
   theNailBasicContent
 } from 'src/items/ShareACar/ShareACar'
-import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
+import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
 import { IItemBanner,  IItemNailTheBasic,  IItemSliderHostComunity, IItemTopGettingStarted } from 'src/types/hosting_comunity.type '
 import { IItemBodyBannerCard, IItemCarousel, IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
 
