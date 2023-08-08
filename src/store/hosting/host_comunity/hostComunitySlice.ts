@@ -12,34 +12,42 @@ import {
   theNailBasicContent
 } from 'src/items/ShareACar/ShareACar'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
+<<<<<<< HEAD
+import {
+  IItemBanner,
+  IItemNailTheBasic,
+  IItemSliderHostComunity,
+  IItemTopGettingStarted
+} from 'src/types/hosting_comunity.type '
+=======
 import { IItemBanner,  IItemNailTheBasic,  IItemSliderHostComunity, IItemTopGettingStarted } from 'src/types/hosting_comunity.type '
+>>>>>>> f25d000073120ccb3220fc5dd4b386d63fb97716
 import { IItemBodyBannerCard, IItemCarousel, IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
 
 interface ShareACarState {
-  sliderHostComunity:IItemSliderHostComunity[]
-  cardBodyImg:IItemBodyBannerCard
-  cardBodyParnerDeal:IItemBodyBannerCard
-  cardBodyReferFriend:IItemBodyBannerCard
-  bannerCommunity:IItemBanner
-  CarouselCommunity:IItemCarousel[]
-  exploreHosting:ISelectItemsExploreHosting[]
-  ourHost:IItemGetAroundYourBack
-  gettingStartedNailBasic:IItemNailTheBasic
-  topGettingStarted:IItemTopGettingStarted
+  sliderHostComunity: IItemSliderHostComunity[]
+  cardBodyImg: IItemBodyBannerCard
+  cardBodyParnerDeal: IItemBodyBannerCard
+  cardBodyReferFriend: IItemBodyBannerCard
+  bannerCommunity: IItemBanner
+  CarouselCommunity: IItemCarousel[]
+  exploreHosting: ISelectItemsExploreHosting[]
+  ourHost: IItemGetAroundYourBack
+  gettingStartedNailBasic: IItemNailTheBasic
+  topGettingStarted: IItemTopGettingStarted
 }
 
 const initialState: ShareACarState = {
-  sliderHostComunity:itemSliderHostComunity,
-  cardBodyImg:itemCardBodyImg,
-  cardBodyParnerDeal:itemCardBodyParnerDeal,
-  cardBodyReferFriend:itemCardBodyReferFriend,
-  bannerCommunity:itemBannerCommunity,
-  CarouselCommunity:ItemCarouselCommunity,
-  exploreHosting:DataExploreHostingShareCarText,
-  ourHost:itemOurHost,
-  gettingStartedNailBasic:theNailBasicContent,
-  topGettingStarted:itemTopGettingStarted
-
+  sliderHostComunity: itemSliderHostComunity,
+  cardBodyImg: itemCardBodyImg,
+  cardBodyParnerDeal: itemCardBodyParnerDeal,
+  cardBodyReferFriend: itemCardBodyReferFriend,
+  bannerCommunity: itemBannerCommunity,
+  CarouselCommunity: ItemCarouselCommunity,
+  exploreHosting: DataExploreHostingShareCarText,
+  ourHost: itemOurHost,
+  gettingStartedNailBasic: theNailBasicContent,
+  topGettingStarted: itemTopGettingStarted
 }
 
 const communitySlice = createSlice({

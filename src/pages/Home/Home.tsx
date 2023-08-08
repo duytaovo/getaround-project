@@ -18,6 +18,7 @@ import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCar
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { useAppSelector } from 'src/hooks/useRedux'
+import { Image } from 'src/components/Edition/Image'
 
 type Props = {}
 
@@ -84,7 +85,8 @@ const Home = (props: Props) => {
         <Heading title={homePageData.homeStepSection.heading} breakLineAt={3} fontSize={30} className='text-center' />
         <div className='flex justify-center px-[36px] xl:flex-col-reverse'>
           <div className='w-1/2 flex justify-center xl:w-full'>
-            <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' />
+            {/* <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' /> */}
+            <Image id='img-id' className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' />
           </div>
 
           <CustomeStep
@@ -126,6 +128,7 @@ const Home = (props: Props) => {
           className='flex-col items-center flex w-full'
         />
       </WrapperContent>
+      {/* <h1 contentEditable={true}>content test</h1> */}
 
       <WrapperContent title={homePageData.localFavouriteSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
