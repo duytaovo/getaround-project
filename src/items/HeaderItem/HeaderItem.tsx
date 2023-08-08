@@ -331,7 +331,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
             </div>
           </CustomLink>
         )
-      },
+      }
     ]
   },
   {
@@ -356,7 +356,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
           <CustomLink to={'/'}>
             <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Quan hệ đầu tư 
+                Quan hệ đầu tư
               </span>
             </div>
           </CustomLink>
@@ -387,8 +387,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         )
       }
     ]
-  },
-
+  }
 ]
 export const itemsHostRefernal = [
   {
@@ -464,3 +463,5 @@ export const itemsHostRefernal = [
     ]
   }
 ]
+
+

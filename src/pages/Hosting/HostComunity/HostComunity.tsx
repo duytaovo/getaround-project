@@ -50,12 +50,12 @@ const HostCominity = () => {
       {/* start area scroll */}
       <div className='flex justify-between items-center gap-5 mb-bottom'>
         <Row gutter={16}>
-          <Col span={12} className='relative ml-auto mr-auto mt-[36px]'>
+          <Col span={12} className='relative ml-auto mr-auto mt-[36px] '>
             {/* <div className=' bg-white rounded-md relative ml-auto mr-auto mt-[36px]'> */}
             <img
               src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0b73b2f4fb34b18ddb8a_ga-illustration-8.svg'
               alt=''
-              className='sticky  object-contain max-h-[400px] w-full top-1/3'
+              className='sticky bg-white rounded-2xl  object-contain max-h-[400px] w-[95%] top-1/3'
             />
             {/* </div> */}
           </Col>

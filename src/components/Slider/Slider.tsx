@@ -56,15 +56,15 @@ export default function CustomSlider({
       {
         breakpoint: 765,
         settings: {
-          slidesToShow: 10,
+          slidesToShow: 1,
           slidesToScroll: 1
         }
       },
       {
         breakpoint: 1289,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       },
       {

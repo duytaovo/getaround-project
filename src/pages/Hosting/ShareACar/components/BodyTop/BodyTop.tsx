@@ -22,19 +22,19 @@ const BodyTop = ({ item,className }: Props) => {
   }
   return (
     <div
-      className={`${className} text-textMainColor flex items-center  justify-between transition-all duration-500 delay-100`}
+      className={`${className} text-textMainColor space-x-5 flex items-center lg:flex-col-reverse justify-between`}
     >
-      <div className='w-[600px] h-[300px] flex flex-col justify-between items-start'>
-        <h1 className='w-[500px]  text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1>
-        <p className='w-[500px] text-ellipsis text-justify'>{item.content}</p>
+      <div className='w-1/2 lg:w-full  h-[300px] lg:h-full flex flex-col justify-between items-start'>
+        <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1>
+        <p className='w-[90%] text-ellipsis text-justify break-words'>{item.content}</p>
         <Button
           onClick={onClick}
           children={<span className='text-xl'>Share A Car</span>}
           isNext={true}
-          className='w-[200px] hover:duration-500 duration-500 hover:transition-all  text-white h-[70px]  rounded-lg bg-[#3699d3] hover:bg-black  '
+          className='w-[200px] hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[70px]  rounded-lg bg-[#3699d3] hover:bg-black  '
         ></Button>
       </div>
-      <img className='w-[401px] h-[300px]  bg-white rounded-2xl' src={item.img} alt='' />
+      <img className='w-1/2 lg:w-full h-[300px]  bg-white rounded-2xl' src={item.img} alt='' />
     </div>
   )
 }
