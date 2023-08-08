@@ -2,11 +2,13 @@ import { AnyAction, Store, ThunkDispatch, configureStore } from '@reduxjs/toolki
 import appReducer from './app/app.slice'
 import shareAcarReducer from './hosting/share_a_car/shareACarSlice'
 import HowItWorkReducer from './howitwork/HowItWork/HowItWorkSlice'
+import ConnectHIWReducer from './howitwork/Connect/Connect'
 export const store = configureStore({
   reducer: {
     loading: appReducer,
     shareAcar: shareAcarReducer,
-    howitwork: HowItWorkReducer
+    howitwork: HowItWorkReducer,
+    connecthiw: ConnectHIWReducer
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]

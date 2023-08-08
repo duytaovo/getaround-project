@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
 import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { DataProprietaryHowItWork } from 'src/items/Proprietary/DataProprietary'

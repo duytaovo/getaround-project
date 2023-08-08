@@ -1,17 +1,21 @@
-import React from 'react'
-interface Props {
-  DataKeyFeatureItem: Array<{
-    id: number
-    title: string
-    description: string
-    linkSecurity: string
-  }>
+import React, { FC } from 'react'
+import { Link } from 'react-router-dom'
+interface ISelectBodyKeyFeatures {
+  title?: string
+  description?: string
+  linkSecurity?: string
+  linkTo?: string
 }
-const KeyFeatureItem: React.FC<Props> = ({ DataKeyFeatureItem }) => {
+
+type Props = {
+  DataKeyFeatureItem?: ISelectBodyKeyFeatures[]
+}
+
+const KeyFeatureItem: FC<Props> = ({ DataKeyFeatureItem }) => {
   return (
     <div className='md:mt-0 mt-10 mb-[25px]'>
       {' '}
-      {DataKeyFeatureItem.map((item, index) => (
+      {DataKeyFeatureItem?.map((item, index) => (
         <div className='w-1/2 float-left sm:block min-h-[1px] px-[10px] relative md:mb-0 mb-[70px] h-auto'>
           <div className='h-[330px] flex-col justify-center items-center mx-auto p-[15px] flex'>
             <div className='shadow-none bg-[rgba(0,0,0,0)] w-[55px] h-[55px] rounded-[100px] justify-center items-center mb-[15px] p-[15px] flex'>
@@ -26,9 +30,9 @@ const KeyFeatureItem: React.FC<Props> = ({ DataKeyFeatureItem }) => {
             </h3>
             <p className='w-auto text-center max-w-[1279px] mt-0 mb-[10px] pl-0 text-[17px] font-light leading-[155%] block not-italic text-white'>
               {DataKeyFeatureItem?.[index]?.description}
-              <a href='/' className='text-center text-mainColor'>
+              <Link to='/' className='text-center text-mainColor'>
                 {DataKeyFeatureItem?.[index]?.linkSecurity}
-              </a>
+              </Link>
             </p>
           </div>
         </div>
