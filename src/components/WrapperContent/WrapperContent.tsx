@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Text } from '../Edition/Text'
 
 type WrapperProps = {
   title: string
@@ -25,14 +26,23 @@ const WrapperContent: FC<WrapperProps> = ({
         isBgTransparent ? 'bg-transparent' : 'bg-white/90'
       } mb-bottom my-8 rounded-[22px] m-auto xl:mx-[8px]`}
     >
-      <p
+      <Text
+        id='id-text'
+        tag='p'
+        content={title}
+        className={`text-${textAlign} text-mainColor uppercase text-[11px] text-[${fontSize + 'px'}] font-bold pt-2`}
+        style={{
+          padding: `0 ${titlePadding}px`
+        }}
+      />
+      {/* <p
         className={`text-${textAlign} text-mainColor uppercase text-[11px] text-[${fontSize + 'px'}] font-bold pt-2`}
         style={{
           padding: `0 ${titlePadding}px`
         }}
       >
         {title}
-      </p>
+      </p> */}
       <div className={classname}>{children}</div>
     </div>
   )

@@ -1,5 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { Steps } from 'antd'
+import { Text } from '../Edition/Text'
 
 interface ICustomeStep {
   title: string
@@ -21,11 +22,12 @@ const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
 
   const itemsForSteps = items.map((item, index) => ({
     icon: icons[index],
-    title: item.title,
+    title: <Text id='id-text' tag='p' content={item.title} />,
     subTitle: (
-      <h1 key={index} className={textClassName}>
-        {item.subTitle}
-      </h1>
+      <Text id='id-text' tag='h1' content={item.subTitle} className={textClassName} />
+      // <h1 key={index} className={textClassName}>
+      //   {item.subTitle}
+      // </h1>
     ),
     description: <div className='flex'>{item.images?.map((image) => <img className='pr-2' src={image} />)}</div>
   }))
