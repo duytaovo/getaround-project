@@ -9,17 +9,14 @@ type Props = {
 
 const SingleCommonQuestion: FC<Props> = ({ contents, path, paddingRight }) => {
   return (
-
-
     <div
       style={{
         paddingRight: `${paddingRight}%`
       }}
       className='text-justify text-white/50'
     >
-
-      {contents.map((sentence) => (
-        <p>{sentence}</p>
+      {contents.map((sentence, index) => (
+        <p key={index}>{sentence}</p>
       ))}
       <Link to={path || '/'} className='text-mainColor'>
         Read more

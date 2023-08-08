@@ -15,7 +15,6 @@ export const store = configureStore({
     howitwork: HowItWorkReducer,
     connecthiw: ConnectHIWReducer,
     homePageData: HomeReducer,
-
     community: communityReducer
   },
   devTools: process.env.NODE_ENV === 'development',
