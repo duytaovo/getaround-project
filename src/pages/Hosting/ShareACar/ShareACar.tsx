@@ -92,6 +92,7 @@ const ShareACar = () => {
               numberItemScroll={1}
               className='flex-col-reverse'
               breakPoint={[1,1,2,2]}
+              breakPointScroll={[1,1,1,1]}
             />
           </div>
         </div>

@@ -7,6 +7,7 @@ import ConnectHIWReducer from './howitwork/Connect/Connect'
 import HomeReducer from './app/home/home.slice'
 
 import communityReducer from './hosting/host_comunity/hostComunitySlice'
+
 export const store = configureStore({
   reducer: {
     loading: appReducer,
