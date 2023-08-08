@@ -1,4 +1,6 @@
+
 import { IItemSlider } from 'src/types/hosting_shareACar.type'
+
 
 export const ItemSlider: IItemSlider[] = [
   {

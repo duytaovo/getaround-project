@@ -75,14 +75,7 @@ const Home = (props: Props) => {
         textAlign='center'
         isBgTransparent={true}
       >
-<<<<<<< HEAD
         <ConnectedCarSharing DataConnectedCarSharingHome={homePageData.sharingMaketPlaceSection.itemsData} />
-=======
-        <ConnectedCarSharing
-          DataConnectedCarSharingHome={DataConnectedCarSharingHome}
-          className={'flex-col items-stretch flex'}
-        />
->>>>>>> 7f6af7d26b4b54e6a8765f17ce6f1711f77cf9de
       </WrapperContent>
 
       <WrapperContent textAlign='center' title={homePageData.homeStepSection.wrapperTitle} classname='flex flex-col'>
