@@ -2,11 +2,7 @@ import { IConnectedCarSharing } from 'src/types/connectedCarSharing.type'
 
 interface Props {
   DataConnectedCarSharingHome: IConnectedCarSharing[]
-  // Array<{
-  //   id: number
-  //   total: string
-  //   title: string
-  // }>
+  className?: string
 }
 const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, className }) => {
   return (
