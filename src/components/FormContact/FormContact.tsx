@@ -38,7 +38,7 @@ const FormContact: React.FC<Props> = ({ titleForm, titleInput }) => {
                 <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span>
               </div>
               <div className='block'>
-                <h1 className='text-[40px] font-semibold text-mainColor'>{titleForm}</h1>
+                <h1 className='text-[40px] sm:text-[20px] font-semibold text-mainColor'>{titleForm}</h1>
                 <h2 className='text-black text-[14px] font-semibold'>{titleInput}</h2>
                 <Form
                   {...formItemLayout}
