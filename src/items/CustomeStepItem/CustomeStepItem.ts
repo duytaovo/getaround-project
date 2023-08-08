@@ -21,7 +21,7 @@ export const CustomeStepItems: ICustomeSteps[] = [
       " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!"
   }
 ]
-export const CustomeStepItemsHowItWork1 = [
+export const CustomeStepItemsHowItWork1: ICustomeSteps[] = [
   {
     title: 'Get the Getaround app',
     images: [
@@ -40,7 +40,7 @@ export const CustomeStepItemsHowItWork1 = [
     subTitle: 'Unlock your car directly through the Getaround app. No meetups or key exchanges.'
   }
 ]
-export const CustomeStepItemsHowItWork2 = [
+export const CustomeStepItemsHowItWork2: ICustomeSteps[] = [
   {
     title: 'Sign up and name your car.',
     images: [
@@ -64,7 +64,7 @@ export const CustomeStepItemsHowItWork2 = [
     subTitle: `As soon as you enable bookings, guests can start taking trips in your car—and you can start earning money.`
   }
 ]
-export const CustomeStepItemAboutUs = [
+export const CustomeStepItemHostRefernal: ICustomeSteps[] = [
   {
     title: 'Think of friends to refer',
 
