@@ -16,7 +16,10 @@
 }
 
 html {
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
+  overflow: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 body {
@@ -25,6 +28,7 @@ body {
   overflow-y: scroll;
   height: 100vh;
   color: #fff;
+  width: 100vw;
 }
 
 /* Begin customize color of Antd steps */
