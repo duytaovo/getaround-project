@@ -16,14 +16,14 @@
 }
 
 html {
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
 }
 
 body {
   background: #1c2635;
   font-family: 'Brown-pro', sans-serif !important;
   overflow-y: scroll;
-  height: 100vh;
+  height: 100dvh;
   color: #fff;
 }
 
@@ -109,4 +109,3 @@ body {
     left: 10%;
   }
 }
-

@@ -10,6 +10,7 @@ import getBreakpoint from 'src/helpers/getBreakpoint'
 interface Props {
   numberItem?: number
   numberItemScroll?: number
+  classNameContainer?: string
   data?: IItemSlider[]
   className?: string
   isTitle?: boolean
@@ -28,6 +29,7 @@ export default function CustomSlider({
   data,
   className,
   classNameContent,
+  classNameContainer,
   classNameImage,
   classNameTime,
   classNameTitle,
@@ -49,14 +51,14 @@ export default function CustomSlider({
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1
         }
       },
       {
-        breakpoint: 765,
+        breakpoint: 800,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1
         }
       },
@@ -78,7 +80,7 @@ export default function CustomSlider({
   }
 
   return (
-    <div className='py-2'>
+    <div className={classNameContainer + ' ' + 'px-2'}>
       <Slider {...settings}>
         {data?.map((item, index: number) => (
           <div

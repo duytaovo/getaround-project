@@ -27,7 +27,9 @@ const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
         {item.subTitle}
       </h1>
     ),
-    description: <div className='flex'>{item.images?.map((image) => <img className='pr-2' src={image} />)}</div>
+    description: (
+      <div className='flex'>{item.images?.map((image, index) => <img key={index} className='pr-2' src={image} />)}</div>
+    )
   }))
 
   useEffect(() => {

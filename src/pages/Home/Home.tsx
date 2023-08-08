@@ -23,7 +23,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
-  // console.log(homePageData)
+  console.log(homePageData.exploreHostingSection)
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
@@ -43,8 +43,9 @@ const Home = (props: Props) => {
         textAlign='center'
         isBgTransparent={true}
       >
-        <div className='w-[70%] mx-auto pt-4'>
+        <div className='w-[70%] mx-auto pt-4 lg:w-[80%] sm:w-full'>
           <CustomeSlider
+            classNameContainer='w-full'
             classNameTitle='text-center py-2 text-white/80 justify-center'
             className='bg-mainColor/20 flex flex-col items-center justify-center
              rounded-md overflow-hidden h-full p-1'
@@ -57,7 +58,7 @@ const Home = (props: Props) => {
         </div>
       </WrapperContent>
 
-      <section title='' className='my-14 w-[70%] mx-auto mb-bottom'>
+      <section title='' className='my-14 w-[70%] lg:w-[80%] sm:w-full mx-auto mb-bottom'>
         <CustomeCarousel.Carousel_Introduce
           classNameHeader='text-[11px] text-mainColor'
           classNameTitle='text-[32px] text-white/60 text-bold tracking-[-0.48px] leading-[34px] py-4'
