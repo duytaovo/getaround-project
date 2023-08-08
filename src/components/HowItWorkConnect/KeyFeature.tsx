@@ -11,13 +11,13 @@ const KeyFeature = () => {
     <div className='flex-col items-center mt-[5%] p-[5%] flex'>
       <div className='max-w-[1140px] mx-auto block'>
         <div className='max-w-[1140px] flex-col justify-center items-center mb-[40px] mx-auto flex '>
-          <p className='max-w-none text-mainColor text-left uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'>
+          <p className='max-w-none text-mainColor text-left uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em] sm:text-[10px]'>
             key features
           </p>
-          <h2 className='text-center mt-0 mb-[0.5em] text-white font-medium max-w-fullm-[20px_auto_10px] text-[42px] leading-[105%]'>
+          <h2 className='text-center mt-0 mb-[0.5em] text-white font-medium max-w-fullm-[20px_auto_10px] text-[42px] leading-[105%] sm:text-[30px]'>
             The ultimate in carsharing connectivity
           </h2>
-          <p className='w-auto text-white text-[22px] font-light leading-[145%] block max-w-full text-left mt-0 mb-[10px] pl-0 not-italic	'>
+          <p className='w-auto text-white text-[22px] font-light leading-[145%] block max-w-full text-left mt-0 mb-[10px] pl-0 not-italic	sm:text-[15px]'>
             For iOS and Android devices.
           </p>
         </div>

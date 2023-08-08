@@ -9,8 +9,15 @@ export const DataHeaderST = {
 const HeaderSafeTrust = () => {
   return (
     <div>
-      <div className='flex justify-center px-[36px] '>
-        <div className='w-1/2  flex justify-center items-center'>
+      <div className='flex justify-center px-[36px] sm:flex-col'>
+        <div className='w-1/2 flex justify-center sm:w-[100%]'>
+          <img
+            className='object-contain h-[500px]'
+            src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/641a1bcc9cff2052158af235_ga-illustration-6.svg'
+            alt='ss'
+          />
+        </div>{' '}
+        <div className='w-1/2  flex justify-center items-center sm:w-[100%]'>
           <div className='block'>
             <h2 className='text-4xl text-black font-bold'>
               <span className='text-mainColor'> Safety and trust</span> at every level
@@ -24,13 +31,6 @@ const HeaderSafeTrust = () => {
             </p>
           </div>
         </div>
-        <div className='w-1/2 flex justify-center'>
-          <img
-            className='object-contain h-[500px]'
-            src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/641a1bcc9cff2052158af235_ga-illustration-6.svg'
-            alt='ss'
-          />
-        </div>{' '}
       </div>
     </div>
   )

@@ -59,8 +59,8 @@ const Proprietary: FC<Props> = ({ Data }) => {
   return (
     <div id='proprietary-component' className={`flex-col items-stretch mb-[104px] flex `}>
       <div className='w-full max-w-[1272px] flex-col self-center items-stretch flex relative'>
-        <div className='gap-x-[56px] flex-row w-full max-w-[1080px] mx-auto flex'>
-          <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
+        <div className='gap-x-[56px] flex-row w-full max-w-[1080px] mx-auto flex sm:flex-col'>
+          <div className='w-1/2 sm:w-[80%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <div>
               <div
                 className='max-w-[30ch] text-mainColor text-left uppercase m-[0_0_24px] text-[11px] font-bold
@@ -87,7 +87,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
               </div>
             </div>
           </div>
-          <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
+          <div className='w-1/2 sm:w-[80%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <img
               src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg'
               loading='lazy'
@@ -100,7 +100,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
             <div
               data-w-id='d68abdf6-cac5-7051-6406-ec9a6d19ef9a'
               data-is-ix2-target='1'
-              className={`max-w-[60%] absolute top-[236px] md:top-[236px] right-[23%] md:right-[-23%] transition-transform duration-1000 ease-in-out ${
+              className={`max-w-[60%] absolute top-[236px] md:top-[236px] right-[23%] md:right-[-3%] sm:right-[20%] transition-transform duration-1000 ease-in-out ${
                 isScaled ? 'scale-95' : ''
               }`}
               data-animation-type='lottie'

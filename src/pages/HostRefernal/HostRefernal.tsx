@@ -42,8 +42,8 @@ const HostRefernal = () => {
       <CustomeCard mainTitle={`When you refer a friend`} DataCustomeCard={DataCustomeCardHostRefernal} />
       <WrapperContent textAlign='center' title='HOW IT WORKS' classname='flex flex-col'>
         <div className='justify-center items-center flex relative'>
-          <div className='flex justify-center px-[36px] '>
-            <div className='w-1/2 md:w-[65%] '>
+          <div className='flex justify-center px-[36px] sm:flex-col'>
+            <div className='w-1/2 md:w-[65%] sm:w-[100%]'>
               <p className='text-black text-2xl mb-3 font-semibold'>Make it happen in seconds</p>
               <CustomeStep
                 icons={[<CarOutlined />, <WalletOutlined />, <DollarOutlined />]}
@@ -80,7 +80,7 @@ const HostRefernal = () => {
           'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6324f5891e795a0a4cf1c346_AdobeStock_488832115.jpg'
         }
         DataExploreHostingStyle={DataExploreHostingHostRefernal}
-        DataExploreHostingText={DataExploreHostingHostRefernalText}
+        DataExploreHostingText={ExplorehostRefernal}
         isEx={false}
         className='flex-col items-center flex w-full mb-[120px]'
       />
