@@ -1,6 +1,11 @@
 import React from 'react'
 import KeyFeatureItem from './KeyFeatureItem'
 import { DataKeyFeatureItem } from 'src/items/KeyFeatureItem/DataKeyFeatureItem'
+export const DataHeaderKeyFeatures = {
+  title: 'key features',
+  mainTitle: 'The ultimate in carsharing connectivity',
+  subTitle: 'For iOS and Android devices.'
+}
 const KeyFeature = () => {
   return (
     <div className='flex-col items-center mt-[5%] p-[5%] flex'>

@@ -11,14 +11,12 @@ import logo from 'src/assets/images/logo.jpg'
 import { AppContext } from 'src/contexts/app.context'
 import TransitionsModal from '../Modal'
 import { Link } from 'react-router-dom'
+import { Dropdown, MenuProps } from 'antd'
 type Props = {}
 
 const Header = (props: Props) => {
   const { t } = useTranslation('home')
   const { i18n } = useTranslation()
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
-  const open = Boolean(anchorEl)
-  const id = open ? 'simple-popover' : undefined
   const currentLanguage = locales[i18n.language as keyof typeof locales]
   const { setOpenModal } = useContext(AppContext)
   const handleOpenModal = () => {
@@ -27,13 +25,25 @@ const Header = (props: Props) => {
   const changeLanguage = (lng: 'en' | 'vi') => {
     i18n.changeLanguage(lng)
   }
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
 
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
+  const items: MenuProps['items'] = [
+    {
+      key: '1',
+      label: (
+        <button className=' px-2 text-left text-sm hover:text-mainColor' onClick={() => changeLanguage('vi')}>
+          VN
+        </button>
+      )
+    },
+    {
+      key: '2',
+      label: (
+        <button className='px-2 text-left text-sm hover:text-mainColor ' onClick={() => changeLanguage('en')}>
+          ENG
+        </button>
+      )
+    }
+  ]
 
   return (
     <div>
@@ -41,7 +51,7 @@ const Header = (props: Props) => {
         <div className='flex  '>
           <div>
             <Link to='/'>
-            <img src={logo} alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
+              <img src={logo} alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
@@ -51,28 +61,28 @@ const Header = (props: Props) => {
               isOnClick={false}
               children={<span>{t('header.howItWork')}</span>}
               items={itemsFirst}
-              className='p-2 hover:text-mainColor '
+              className='p-2 xl:p-0 xl:mr-0 hover:text-mainColor '
             />
             <CustomDropDown
               arrow={false}
               isOnClick={false}
               children={<span>{t('header.hoisting')}</span>}
               items={itemsSecond}
-              className='p-2 mx-2 hover:text-mainColor'
+              className='p-2 xl:p-0 xl:mr-0 mx-2  hover:text-mainColor'
             />
             <CustomDropDown
               arrow={false}
               isOnClick={false}
               children={<span>{t('header.partners')}</span>}
               items={itemsThird}
-              className='p-2 mx-2 hover:text-mainColor'
+              className='p-2 xl:p-0 xl:mr-0 mx-2 hover:text-mainColor'
             />
             <CustomDropDown
               arrow={false}
               isOnClick={false}
               children={<span>{t('header.aboutUs')}</span>}
               items={itemsFour}
-              className='p-2 hover:text-mainColor'
+              className='p-2 xl:p-0 xl:mr-0 mx-2 hover:text-mainColor'
             />
           </div>
         </div>
@@ -90,52 +100,35 @@ const Header = (props: Props) => {
             arrow={false}
             isOnClick={false}
             children={
-              <div className='flex items-center justify-around cursor-pointer ' >
-                <AccountCircleIcon  onClick={handleOpenModal}/>
+              <div className='flex items-center justify-around cursor-pointer '>
+                <AccountCircleIcon onClick={handleOpenModal} />
                 {/* <ArrowDropDownIcon className='group-hover:text-mainColor'/> */}
               </div>
             }
             items={itemAcount}
             className='p-2 mx-2  text-black hover:text-mainColor cursor-pointer group-hover:text-mainColor'
           />
-          <div className='mr-10'>
-            <IconButton
-              sx={{
-                color: 'black',
-                '&:hover': {
-                  opacity: [0.9, 0.8, 0.7]
-                }
+          <div className=''>
+            <Dropdown
+              menu={{
+                items
               }}
-              className='hover:text-mainColor mr-10'
-              onClick={handleClick}
+              placement='bottom'
             >
-              <LanguageIcon />
-            </IconButton>
-            <span className='mx-1 text-mainColor'>{currentLanguage}</span>
-            <Popover
-              id={id}
-              open={open}
-              anchorEl={anchorEl}
-              onClose={handleClose}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left'
-              }}
-            >
-              <div className='relative mr-10 rounded-sm border border-gray-200 bg-white shadow-md'>
-                <div className='flex flex-col py-2 pr-2 pl-3'>
-                  <button className='py-2 px-3 text-left hover:text-mainColor' onClick={() => changeLanguage('vi')}>
-                    Tiếng Việt
-                  </button>
-                  <button
-                    className='mt-2 py-2 px-3 text-left hover:text-mainColor '
-                    onClick={() => changeLanguage('en')}
-                  >
-                    English
-                  </button>
-                </div>
-              </div>
-            </Popover>
+              <IconButton
+                sx={{
+                  color: 'black',
+                  '&:hover': {
+                    opacity: [0.9, 0.8, 0.7]
+                  }
+                }}
+                className='hover:text-mainColor '
+              >
+                <LanguageIcon />
+              </IconButton>
+            </Dropdown>
+            <span className='mx-1 text-mainColor text-sm'>{currentLanguage}</span>
+
           </div>
         </div>
       </div>

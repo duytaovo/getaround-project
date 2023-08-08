@@ -20,9 +20,11 @@ import { useDispatch } from 'react-redux'
 import { IBodyTop, IItemSlider } from 'src/types/hosting_shareACar.type'
 import { addSlider, updateBodyTop, updateSlider } from 'src/store/hosting/share_a_car/shareACarSlice'
 import { useAppSelector } from 'src/hooks/useRedux'
+import GetAroundYourBack from './components/GetAroundYourBack/GetAroundYourBack'
+import OurHost from './components/OurHost/OurHost'
 
 const ShareACar = () => {
-  const { bodyTop,step,exploreHosting,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
+  const { bodyTop,ourHost,getAroundYourBack,step,exploreHosting,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
   useAppSelector((state) => state.shareAcar)
   const dispatch = useDispatch()
 
@@ -58,11 +60,11 @@ const ShareACar = () => {
         />
       </div>
       <div className='mb-bottom' id='getstarted'>
-        <div className='flex items-center justify-between flex-auto rounded-2xl bg-white '>
-          <div className='flex-1 p-4'>
+        <div className='flex items-center justify-between bg-white md:bg-transparent flex-wrap md:flex-col md:space-y-2 flex-auto rounded-2xl '>
+          <div className='w-1/2 p-4 h-full md:w-full md:bg-white md:lg rounded-xl'>
             <CustomForm />
           </div>
-          <div className='flex-1 py-6 '>
+          <div className='w-1/2 py-6 md:w-full md:bg-white'>
             <CustomeStep
               classname='text-white'
               items={step}
@@ -74,9 +76,9 @@ const ShareACar = () => {
       {/* end body1 */}
       {/* start body 2 */}
 
-      <div className='  rounded-2xl p-2  mb-bottom flex'>
-        <div className='w-1/2'>
-          <div className='w-[70%]'>
+      <div className='  rounded-2xl p-2  mb-bottom flex md:flex-col-reverse'>
+        <div className='w-1/2 md:w-full'>
+          <div className='w-[70%] md:w-full'>
             <CustomSlider
               classNameImage='rounded-lg'
               classNameTitle='text-[25px] text-mainColor ml-2'
@@ -92,7 +94,7 @@ const ShareACar = () => {
             />
           </div>
         </div>
-        <div className='w-1/2'>
+        <div className='w-1/2 md:w-[60%]'>
           <ContentSlider item={contentSlider} classNameTitle='text-[48px]' classNameContent='text-white' />
         </div>
       </div>
@@ -100,14 +102,13 @@ const ShareACar = () => {
       {/* start body banner */}
 
       <div className=' p-5 mb-bottom'>
-        <span className='text-mainColor text-sm font-medium flex justify-center mb-2'>PERKS OF HOSTING</span>
-        <div className='text-[32px] font-medium tracking-tight leading-8 text-center mb-5'>Getaround has your back</div>
-        <div>
-          <div className='flex gap-10 mt-3 h-full mb-5'>
-            <div className='w-[70%] '>
+       <GetAroundYourBack item={getAroundYourBack}/>
+        <div className='md:flex md:flex-col '>
+          <div className='flex gap-10 mt-3 h-full mb-5  md:flex-col'>
+            <div className='w-[70%] lg:w-1/2 md:w-full  '>
               <BodyBanner item={bodyBannerCard} />
             </div>
-            <div className='w-[30%] h-full justify-between'>
+            <div className='w-[30%] lg:w-1/2 md:w-full h-full justify-between'>
               <BodyCard
                 item={bodyCardTop}
                 classNameTitle='py-2 text-black'
@@ -116,12 +117,12 @@ const ShareACar = () => {
               />
             </div>
           </div>
-          <div className='flex gap-10 mt-3 items-center'>
-            <div className='w-[70%] h-max'>
+          <div className='flex gap-10 mt-3 items-center '>
+            <div className='w-[70%] md:w-full  h-max'>
               <Support item={support} />
               {/* <BodyBanner /> */}
             </div>
-            <div className='w-[30%] h-max'>
+            <div className='w-[30%] md:w-full  h-max'>
               <BodyCard
                 item={bodyCardBottom}
                 classNameTitle='text-mainColor py-2'
@@ -179,12 +180,7 @@ const ShareACar = () => {
       {/* start carousel review */}
       <div className='mb-bottom'>
         <div>
-          <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
-            COMUNITY
-          </span>
-          <h2 className=' flex text-[32px] text-center  justify-center mb-2'>
-            Our hosts have earned a total of $370M to date
-          </h2>
+         <OurHost item={ourHost}/>
         </div>
         <Carousel_Review_Comunity
           className='m-4'

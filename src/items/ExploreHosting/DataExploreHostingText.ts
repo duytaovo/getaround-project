@@ -1,4 +1,5 @@
 import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
+
 export const DataExploreHostingHomeText: ISelectItemsExploreHosting[] = [
   {
     mainTitle: 'EXPLORE HOSTING',
@@ -15,6 +16,7 @@ export const DataExploreHostingShareCarText: ISelectItemsExploreHosting[] = [
     mainTitle: '',
     headerTitle: 'HOST INCENTIVES',
     Title: 'Big-time bonuses to help you grow',
+
     Description:
       "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
     Link: '/'

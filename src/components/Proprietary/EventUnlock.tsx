@@ -1,9 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, FC } from 'react'
 import { Link } from 'react-router-dom'
-interface Props {
-  Data?: any
+
+interface IProprietary {
+  id?: number
+  headerTitle?: string
+  title?: string
+  description?: string
+  description2?: string
+  span?: string
+  Link?: string
 }
-const Proprietary: React.FC<Props> = ({ Data }) => {
+
+type Props = {
+  Data?: IProprietary[]
+}
+
+const Proprietary: FC<Props> = ({ Data }) => {
   const [isOnScreen, setIsOnScreen] = useState(true)
 
   useEffect(() => {
@@ -67,7 +79,7 @@ const Proprietary: React.FC<Props> = ({ Data }) => {
                 <br />
                 <br />
                 <Link
-                  to={Data?.[0]?.Link}
+                  to={Data?.[0]?.Link || ''}
                   className='text-mainColor delay-[0.2s] underline touch-manipulation bg-transparent cursor-pointer outline-none hover:text-mainColor hover:none-underline leading-4'
                 >
                   <strong className='font-bold'>Read more</strong>
@@ -88,7 +100,7 @@ const Proprietary: React.FC<Props> = ({ Data }) => {
             <div
               data-w-id='d68abdf6-cac5-7051-6406-ec9a6d19ef9a'
               data-is-ix2-target='1'
-              className={`max-w-[60%] absolute top-[236px] md:top-[236px] right-[-23%] transition-transform duration-1000 ease-in-out ${
+              className={`max-w-[60%] absolute top-[236px] md:top-[236px] right-[23%] md:right-[-23%] transition-transform duration-1000 ease-in-out ${
                 isScaled ? 'scale-95' : ''
               }`}
               data-animation-type='lottie'

@@ -2,12 +2,12 @@ import React from 'react'
 import HeaderHIWC from 'src/components/HowItWorkConnect/HeaderHIWC'
 import SlideHIWC from 'src/components/HowItWorkConnect/SlideHIWC'
 import KeyFeature from 'src/components/HowItWorkConnect/KeyFeature'
-
+import { DataSliceHIWC } from 'src/items/SlideHIWC/DataSlideHIWC'
 const HowItWorkConnect = () => {
   return (
     <div className='bg-mainBackGroundColor'>
       <HeaderHIWC />
-      <SlideHIWC />
+      <SlideHIWC DataSliceHIWC={DataSliceHIWC} />
       <KeyFeature />
     </div>
   )

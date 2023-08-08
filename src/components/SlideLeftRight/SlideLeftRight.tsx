@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
-interface Props {
-  Data: Array<{
-    id: number
-    label: string
-    Linkto: string
-    Link: string
-    contents: string[]
-  }>
+
+interface ISlideLR {
   img: string
-  mainTitle: string
+  label?: string
+  Linkto?: string
+  Link?: string
+  contents?: any[]
 }
-const SlideLeftRight: React.FC<Props> = ({ Data, img, mainTitle }) => {
+type Props = {
+  Data?: ISlideLR[]
+  img?: string
+  mainTitle?: string
+}
+const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
   return (
     <div
       className='opacity-[1] flex-col items-stretch mb-[104px] flex text-[16px] font-normal leading-[140%]'
@@ -21,7 +23,7 @@ const SlideLeftRight: React.FC<Props> = ({ Data, img, mainTitle }) => {
         <div className='flex-row w-full max-w-[1080px] mx-auto flex' style={{ gridColumnGap: '26px' }}>
           <div className='items-center flex w-full flex-col relative'>
             <img
-              src={img}
+              src={Data?.[0]?.img}
               alt=''
               className='h-full w-full max-h-[316px] object-contain max-w-full align-middle inline-block border-0'
             />
@@ -36,7 +38,7 @@ const SlideLeftRight: React.FC<Props> = ({ Data, img, mainTitle }) => {
                   {Data?.[index]?.label}
                 </h2>
                 <div className='text-[#fff]'>
-                  <Link to={Data?.[index]?.Linkto} className='no-underline text-mainColor'>
+                  <Link to={Data?.[index]?.Linkto || ''} className='no-underline text-mainColor'>
                     {Data?.[index]?.Link}
                   </Link>{' '}
                   {Data?.[index]?.contents}

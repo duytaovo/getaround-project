@@ -1,4 +1,5 @@
-export const DataProprietaryHowItWork = [
+import { ISelectItemsProprietary } from 'src/types/HowItWork'
+export const DataProprietaryHowItWork: ISelectItemsProprietary[] = [
   {
     id: 1,
     headerTitle: 'out proprietary hardware',
@@ -11,7 +12,7 @@ export const DataProprietaryHowItWork = [
     Link: '/'
   }
 ]
-export const DataProprietarySafetyTrust = [
+export const DataProprietarySafetyTrust: ISelectItemsProprietary[] = [
   {
     id: 1,
     headerTitle: '',
