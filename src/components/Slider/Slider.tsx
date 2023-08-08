@@ -10,6 +10,7 @@ import getBreakpoint from 'src/helpers/getBreakpoint'
 interface Props {
   numberItem?: number
   numberItemScroll?: number
+  classNameContainer?: string
   data?: IItemSlider[]
   className?: string
   isTitle?: boolean
@@ -20,21 +21,28 @@ interface Props {
   classNameTime?: string
   classNameImage?: string
   autoPlay?: boolean
-}
 
+  breakPoint: Array<number>
+  breakPointScroll:Array<number>
+}
+// breackPoint = {[1,1,2,2,3]}
 export default function CustomSlider({
   numberItem,
-  numberItemScroll,
   data,
   className,
   classNameContent,
+  classNameContainer,
   classNameImage,
   classNameTime,
   classNameTitle,
   isContent,
   isTime,
   isTitle,
-  autoPlay
+  autoPlay,
+
+  breakPoint,
+  breakPointScroll,
+
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
@@ -49,42 +57,43 @@ export default function CustomSlider({
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: breakPoint[0],
+          slidesToScroll: breakPointScroll[0]
         }
       },
       {
-        breakpoint: 765,
+        breakpoint: 800,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: breakPoint[1],
+          slidesToScroll: breakPointScroll[1]
         }
       },
       {
         breakpoint: 1289,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: breakPoint[2],
+          slidesToScroll: breakPointScroll[2]
         }
       },
       {
         breakpoint: 1920,
         settings: {
-          slidesToShow: numberItem,
-          slidesToScroll: numberItemScroll
+          slidesToShow: breakPoint[3],
+          slidesToScroll: breakPointScroll[3]
         }
       }
     ]
   }
 
   return (
-    <div className='py-2'>
+    <div className={classNameContainer + ' ' + 'px-2'}>
       <Slider {...settings}>
         {data?.map((item, index: number) => (
           <div
             key={item.id}
             className='
-                     h-36 w-full px-3 sm:h-36
+                     h-36 w-full
+                  px-3 sm:h-36
                   sm:w-full md:h-36
                   md:w-1/2 xl:h-36
                   xl:w-1/3 2xl:h-36

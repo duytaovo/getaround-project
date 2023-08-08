@@ -24,7 +24,7 @@ const BodyTop = ({ item,className }: Props) => {
     <div
       className={`${className} text-textMainColor space-x-5 flex items-center lg:flex-col-reverse justify-between`}
     >
-      <div className='w-1/2 lg:w-full  h-[300px] lg:h-full flex flex-col justify-between items-start'>
+      <div className='w-1/2 lg:w-full  h-full lg:h-full flex flex-col justify-between items-start'>
         <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1>
         <p className='w-[90%] text-ellipsis text-justify break-words'>{item.content}</p>
         <Button
@@ -34,7 +34,7 @@ const BodyTop = ({ item,className }: Props) => {
           className='w-[200px] hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[70px]  rounded-lg bg-[#3699d3] hover:bg-black  '
         ></Button>
       </div>
-      <img className='w-1/2 lg:w-full h-[300px]  bg-white rounded-2xl' src={item.img} alt='' />
+      <img className='w-[45%] lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4' src={item.img} alt='' />
     </div>
   )
 }

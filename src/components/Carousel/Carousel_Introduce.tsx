@@ -28,7 +28,7 @@ export default function Carousel_Introduce({
   classNameContent,
   classNameImage,
   classNameHeader,
-  classNameTitle,
+  classNameTitle
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
@@ -52,8 +52,8 @@ export default function Carousel_Introduce({
       {
         breakpoint: 1289,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       },
       {

@@ -23,7 +23,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
-  // console.log(homePageData)
+  console.log(homePageData.exploreHostingSection)
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
@@ -43,8 +43,10 @@ const Home = (props: Props) => {
         textAlign='center'
         isBgTransparent={true}
       >
-        <div className='w-[70%] mx-auto pt-4'>
+        <div className='xl:w-[70%] mx-auto pt-4 lg:w-[80%] sm:w-full'>
           <CustomeSlider
+            breakPoint={[2, 2, 3, 4]}
+            classNameContainer=''
             classNameTitle='text-center py-2 text-white/80 justify-center'
             className='bg-mainColor/20 flex flex-col items-center justify-center
              rounded-md overflow-hidden h-full p-1'
@@ -57,7 +59,7 @@ const Home = (props: Props) => {
         </div>
       </WrapperContent>
 
-      <section title='' className='my-14 w-[70%] mx-auto mb-bottom'>
+      <section title='' className='my-14 w-[70%] lg:w-[80%] sm:w-full mx-auto mb-bottom'>
         <CustomeCarousel.Carousel_Introduce
           classNameHeader='text-[11px] text-mainColor'
           classNameTitle='text-[32px] text-white/60 text-bold tracking-[-0.48px] leading-[34px] py-4'
@@ -119,7 +121,7 @@ const Home = (props: Props) => {
       >
         <ExploreHosting
           DataExploreHostingStyle={DataExploreHostingHome}
-          DataExploreHostingText={homePageData.exploreHostingSection.itemData}
+          // DataExploreHostingText={homePageData.exploreHostingSection.itemData}
           img={homePageData.exploreHostingSection.img}
           className='flex-col items-center flex w-full'
         />
@@ -135,6 +137,7 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto pt-4 w-[60%] md:w-full'>
           <CustomeSlider
+            breakPoint={[1, 1, 2, 2]}
             numberItem={5}
             numberItemScroll={4}
             isTitle
@@ -156,6 +159,7 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
+            breakPoint={[1, 1, 2, 2]}
             numberItem={3}
             numberItemScroll={1}
             className='bg-mainColor/20 rounded-md h-fit p-2 overflow-hidden object-cover'

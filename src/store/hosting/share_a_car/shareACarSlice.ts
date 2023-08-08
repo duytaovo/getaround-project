@@ -14,7 +14,7 @@ import {
 } from 'src/items/ShareACar/ShareACar'
 import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
 import { itemSupport } from 'src/pages/Hosting/ShareACar/components/Support/Support'
-import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
+import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
 import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemGetAroundYourBack, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
 import { payloadCreator } from 'src/utils/utils'
 

@@ -9,6 +9,7 @@ import communityReducer from './hosting/host_comunity/hostComunitySlice'
 import NewsRoomReducer from './aboutus/newsroom/newsroomSlice'
 import AboutUSReducer from './aboutus/aboutUs/aboutusSlice'
 import hostRefernalReducer from './hosting/hostRefernal/hostRefernalSlice'
+
 export const store = configureStore({
   reducer: {
     loading: appReducer,
@@ -20,6 +21,7 @@ export const store = configureStore({
     AboutUs: AboutUSReducer,
     community: communityReducer,
     hostingReferral: hostRefernalReducer
+
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]
