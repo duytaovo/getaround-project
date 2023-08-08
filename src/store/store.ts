@@ -5,7 +5,7 @@ import shareAcarReducer from './hosting/share_a_car/shareACarSlice'
 import HowItWorkReducer from './howitwork/HowItWork/HowItWorkSlice'
 import ConnectHIWReducer from './howitwork/Connect/Connect'
 import HomeReducer from './app/home/home.slice'
-import communityReducer from './hosting/host_comunity/hostComunitySlice';
+import communityReducer from './hosting/host_comunity/hostComunitySlice'
 export const store = configureStore({
   reducer: {
     loading: appReducer,
@@ -13,8 +13,8 @@ export const store = configureStore({
     howitwork: HowItWorkReducer,
     connecthiw: ConnectHIWReducer,
     homePageData: HomeReducer,
-    community:communityReducer
-
+    community: communityReducer
+  },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]
 })
