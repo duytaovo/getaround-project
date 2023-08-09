@@ -26,7 +26,7 @@ const Introduce = ({
       <div>
         <img src={item?.img} alt='' className={`w-[410px] h-[290px] ${classNameImage}`} />
       </div>
-      <div className='flex justify-center flex-col h-[260px] w-[444px] m-[15px]'>
+      <div className='flex justify-center flex-col h-[260px] w-fit m-[15px]  md:overflow-hidden p-6'>
         <span
           className={`flex justify-start leading-[13px] font-medium uppercase text-mainColor text-[11px] ${classNameHeader} `}
         >

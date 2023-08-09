@@ -96,6 +96,11 @@ const initialState: HomePageType = {
         id: 5,
         title: 'SUV/Jeep',
         img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+      },
+      {
+        id: 6,
+        title: 'SUV/Jeep',
+        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
       }
     ]
   },

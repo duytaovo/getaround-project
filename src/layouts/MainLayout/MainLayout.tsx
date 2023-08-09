@@ -19,7 +19,7 @@ const MainLayoutInner = (props: Props) => {
           <HeaderMobile />
         </Hidden>
       </div>
-      <div className='pt-[110px] container px-[96px] md:px-2'>
+      <div className='pt-[110px] container px-[96px] lg:px-2'>
         <Outlet />
       </div>
       <Footer />

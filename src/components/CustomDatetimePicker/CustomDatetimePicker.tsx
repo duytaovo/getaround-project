@@ -8,7 +8,7 @@ type CustomeDateTimeProps = {
 
 const CustomDatetimePicker: FC<CustomeDateTimeProps> = ({ className, title }) => {
   return (
-    <div>
+    <div className='lg:grow'>
       <p className='pl-2 text-[#a49da7] text-xs'>{title}</p>
       <div
         className={className}

@@ -34,6 +34,7 @@ const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // console.log('scroll')
       if (stepRef.current) {
         let y: number = Math.floor((stepRef.current.getBoundingClientRect().y / window.innerHeight) * 100)
         if (y <= 60) {
@@ -50,6 +51,7 @@ const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
         }
       }
     }
+
     window.addEventListener('scroll', handleScroll)
     return () => removeEventListener('scroll', handleScroll)
   }, [])

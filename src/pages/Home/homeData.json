@@ -1,0 +1,30 @@
+{
+  "heroSection": {
+    "id": "hero_s_01",
+    "addressPlaceholder": "Address",
+    "buttonSearchText": "Search a car",
+    "datePickerPlaceholder": "Select date",
+    "endDateTimePikerTitle": "End trip",
+    "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b095e7bfaba115ba5ccd_homepage-bg-picnic.webp",
+    "mainText": "Instantly rent and unlock nearby cars",
+    "startDateTimePikerTitle": "Start trip",
+    "timePickerPlaceholder": "SelectTime",
+    "title": "Drive on your schedule"
+  },
+  "blogSilerSection": {
+    "id": "blog_s_02",
+    "heading": "The Road Ahead: Discover our Blog",
+    "wrapperTitle": "THE GETAROUND BLOG",
+    "itemsData": [
+      {
+        "id": 1,
+        "title": "SUV/Jeep",
+        "time": "August-25-2023",
+        "img": "https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151560314aa5369291e7a_homesuv-p-500.jpg"
+      },
+      {
+        "Chú thích": "itemsData là một mảng Object ,Mỗi Object là một item, mỗi item sẽ có cấu trúc như trên"
+      }
+    ]
+  }
+}
