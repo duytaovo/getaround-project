@@ -10,6 +10,7 @@ export const DataExploreHostingHomeText: IExploreHostingText = {
   Link: ''
 }
 
+
 export const DataExploreHostingHowItWorkText: IExploreHostingText = {
   id: 'ExploreHosting_HowItWork',
   mainTitle: 'EXPLORE HOSTING',
@@ -61,3 +62,5 @@ export const DataExploreHostingSafetyTrustText: IExploreHostingText = {
     "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
   Link: '/'
 }
+
+

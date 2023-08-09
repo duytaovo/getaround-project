@@ -73,13 +73,7 @@ export default function Carousel_Introduce({
           <div
             key={item.id}
             className='
-                h-36 w-full
-                px-3 sm:h-36
-                sm:w-full md:h-36
-                md:w-1/2 xl:h-36
-                xl:w-1/3 2xl:h-36
-                2xl:w-1/3 
-                  '
+                 w-full px-3 sm:w-full md:w-1/2 xl:w-1/3 2xl:w-1/3 sm:max-h-[600px]'
           >
             {' '}
             <Introduce

@@ -13,16 +13,17 @@ type Props = {
   icons: React.ReactNode[]
   children?: React.ReactNode
   classname?: string
+  titleClassName?: string
   textClassName?: string
 }
 
-const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
+const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName, titleClassName }) => {
   const stepRef = useRef<HTMLDivElement | null>(null)
   const [current, setCurrent] = useState<number>(-1)
 
   const itemsForSteps = items.map((item, index) => ({
     icon: icons[index],
-    title: <Text id='id-text' tag='p' content={item.title} />,
+    title: <Text id='id-text' tag='p' content={item.title} className={titleClassName} />,
     subTitle: (
       <Text id='id-text' tag='h1' content={item.subTitle} className={textClassName} />
       // <h1 key={index} className={textClassName}>
@@ -36,6 +37,7 @@ const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // console.log('scroll')
       if (stepRef.current) {
         let y: number = Math.floor((stepRef.current.getBoundingClientRect().y / window.innerHeight) * 100)
         if (y <= 60) {
@@ -52,6 +54,7 @@ const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName }) => {
         }
       }
     }
+
     window.addEventListener('scroll', handleScroll)
     return () => removeEventListener('scroll', handleScroll)
   }, [])

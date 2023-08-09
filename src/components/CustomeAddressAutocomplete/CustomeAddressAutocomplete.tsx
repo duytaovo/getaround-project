@@ -13,7 +13,7 @@ type Props = {
 
 const CustomeAddressAutocomplete: FC<Props> = ({ items }) => {
   return (
-    <div className='h-[52px] rounded-[10px] overflow-hidden bg-white md:grow'>
+    <div className='h-[52px] lg:grow rounded-[10px] overflow-hidden bg-white grow'>
       <AutoComplete
         options={items}
         style={{
@@ -21,6 +21,7 @@ const CustomeAddressAutocomplete: FC<Props> = ({ items }) => {
           width: '100%',
           display: 'flex',
           padding: '0 10px'
+          // background: 'black'
         }}
       >
         <div className='flex justify-between items-center h-full'>

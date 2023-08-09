@@ -21,9 +21,8 @@ interface Props {
   classNameTime?: string
   classNameImage?: string
   autoPlay?: boolean
-
   breakPoint: Array<number>
-  breakPointScroll:Array<number>
+  breakPointScroll: Array<number>
 }
 // breackPoint = {[1,1,2,2,3]}
 export default function CustomSlider({
@@ -41,8 +40,7 @@ export default function CustomSlider({
   autoPlay,
 
   breakPoint,
-  breakPointScroll,
-
+  breakPointScroll
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {

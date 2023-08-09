@@ -1,4 +1,3 @@
-import React from 'react'
 import CustomeStep from 'src/components/CustomeStep/CustomeStep'
 import Heading from 'src/components/Heading/Heading'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
@@ -22,19 +21,19 @@ const DriveWithUber = (props: Props) => {
   return (
     <div>
       <WrapperContent title='' classname='flex' isBgTransparent>
-        <div className='bg-black w-2/3 py-10 pl-12 pr-[10%] rounded-lg text-justify'>
+        <div className='bg-black w-2/3 py-10 pl-12 pr-[10%] rounded-lg text-justify md:pl-4 sm:w-full'>
           <div className='flex'>
             {FirstSectionData?.logos?.map((logo, index) => (
               <p
                 contentEditable
-                className='first:text-mainColor first:border-r-2  first:border-white text-[20px] pr-2 last:pl-2'
+                className='first:text-mainColor first:border-r-2  first:border-white text-[20px] pr-2 last:pl-2 '
                 key={index}
               >
                 {logo}
               </p>
             ))}
           </div>
-          <div className='py-8 text-[36px] leading-[38px]'>
+          <div className='py-8 text-[36px] leading-[38px] sm:text-left'>
             {FirstSectionData?.titles?.map((title, index) => (
               <p className='last:text-mainColor' key={index}>
                 {title}
@@ -43,7 +42,7 @@ const DriveWithUber = (props: Props) => {
           </div>
           <div>
             {FirstSectionData?.paragraphs?.map((paragraph, index) => (
-              <p className='py-2' key={index}>
+              <p className='py-2 md:text-[14px]' key={index}>
                 {paragraph}
               </p>
             ))}
@@ -55,7 +54,7 @@ const DriveWithUber = (props: Props) => {
             <a>Share you car with Uber</a>
           </div>
         </div>
-        <div className='w-1/3 relative'>
+        <div className='w-1/3 relative sm:hidden'>
           <div
             className='absolute left-[-20%] top-[8%] rounded-lg right-0 bottom-[10%] bg-cover bg-center bg-red-400'
             style={{
@@ -66,18 +65,22 @@ const DriveWithUber = (props: Props) => {
         </div>
       </WrapperContent>
 
-      <WrapperContent title='' classname='flex justify-between'>
-        <div className='w-1/2 flex justify-center items-center'>
+      <WrapperContent title='' classname='flex justify-between sm:flex-col-reverse'>
+        <div className='w-1/2 flex justify-center items-center sm:w-full'>
           <img
             className='w-[70%] '
             src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f913e7a34806823acdff1a_ga-illustration-16.svg'
             alt='Second section image'
           />
         </div>
-        <div className='w-1/2 text-black/90 my-auto text-justify'>
-          <h1 className='leading-[33px] tracking-[0.8px] font-bold text-[28px]'>{SecondSection.title}</h1>
-          {SecondSection?.paragraphs?.map((paragraph) => (
-            <p className='py-4 pr-10 text-black/70 text-[14px]'>{paragraph}</p>
+        <div className='w-1/2 text-black/90 my-auto text-justify sm:w-full'>
+          <h1 className='leading-[33px] tracking-[0.8px] font-bold text-[28px] xl:text-left md:pr-[40px]'>
+            {SecondSection.title}
+          </h1>
+          {SecondSection?.paragraphs?.map((paragraph, index) => (
+            <p className='py-4 pr-10 text-black/70 text-[14px]' key={index}>
+              {paragraph}
+            </p>
           ))}
         </div>
       </WrapperContent>
@@ -93,8 +96,8 @@ const DriveWithUber = (props: Props) => {
         <div className='grid grid-cols-4 grid-rows-1 gap-x-2 '>
           {thirdSecionData.map((item, index) => (
             <div key={index} className='py-2 grow text-ellipsis text-white/80 p-2 rounded-md bg-mainColor text-justify'>
-              <p className='text-[20px] leading-[28px] min-h-[70px] flex justify-start'>{item.title}</p>
-              <p className='text-[14px]'>{item.descriptions}</p>
+              <p className='text-[20px] leading-[28px] min-h-[70px] flex justify-start md:text-left'>{item.title}</p>
+              <p className='text-[14px] md:text-left'>{item.descriptions}</p>
             </div>
           ))}
         </div>

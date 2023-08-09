@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'src/components/Button'
+import { Text } from 'src/components/Edition/Text'
 import {  changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import { IBodyTop } from 'src/types/hosting_shareACar.type'
 
@@ -24,6 +25,7 @@ const BodyTop = ({ item,className }: Props) => {
     <div
       className={`${className} text-textMainColor space-x-5 lg:space-x-0 flex items-center lg:flex-col-reverse justify-between`}
     >
+       
       <div className='w-1/2 lg:w-full  h-full lg:h-full flex flex-col justify-between items-start'>
         <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1>
         <p className='w-[90%] text-ellipsis text-justify break-words'>{item.content}</p>

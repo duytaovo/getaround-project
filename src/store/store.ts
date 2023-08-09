@@ -11,6 +11,8 @@ import NewsRoomReducer from './aboutus/newsroom/newsroomSlice'
 import AboutUSReducer from './aboutus/aboutUs/aboutusSlice'
 import hostRefernalReducer from './hosting/hostRefernal/hostRefernalSlice'
 import SafeTrustReducer from './howitwork/SafeTrust/SafeTrustSlice'
+import driveWithUberSlice from './app/partners/driveWithUber/driveWithUber.slice'
+import partnersWithUsSlice from './app/partners/partnerWithUs/partnersWithUs.slice'
 export const store = configureStore({
   reducer: {
     loading: appReducer,
@@ -19,6 +21,8 @@ export const store = configureStore({
     connecthiw: ConnectHIWReducer,
     newsroom: NewsRoomReducer,
     homePageData: HomeReducer,
+    driveWithUberData: driveWithUberSlice.reducer,
+    partnersWithUs: partnersWithUsSlice.reducer,
     AboutUs: AboutUSReducer,
     community: communityReducer,
     hostingReferral: hostRefernalReducer,

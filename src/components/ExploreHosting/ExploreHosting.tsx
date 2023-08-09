@@ -24,6 +24,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
     <div className={className}>
       {isEx === true ? (
         <div className='w-full  self-center items-stretch  flex relative'>
+
           <Text
             id='Explore-mainTitle'
             tag='div'
@@ -33,6 +34,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
           {/* <div className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
             {DataExploreHostingText?.[0]?.mainTitle}
           </div> */}
+
         </div>
       ) : (
         <></>
@@ -49,12 +51,14 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
         </div>
         <div className={`${DataExploreHostingStyle.styleDivRight}`}>
           {isEx === false ? (
+
             <Text
               id='Explore-headerTitle'
               tag='div'
               content={DataExploreHostingText?.headerTitle || ''}
               className='text-black max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'
             />
+
           ) : (
             // <div className='text-black max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
             //   {DataExploreHostingText?.[0]?.headerTitle}
@@ -63,6 +67,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
           )}
           <div>
             <h2 className={`${DataExploreHostingStyle.styleTitle} md:text-[20px]`}>
+
               <Text
                 id='Explore-headerTitle'
                 tag='strong'
@@ -90,6 +95,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
             className={DataExploreHostingStyle.Button.className}
           />
           {/* <Link to={DataExploreHostingText?.[0]?.Link || ''} className={DataExploreHostingStyle.Button.className}>
+
             {DataExploreHostingStyle.Button.text}
           </Link> */}
         </div>
