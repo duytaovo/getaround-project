@@ -1,16 +1,15 @@
 import { IExploreHostingText } from 'src/types/exploreHostingText.type'
 
-export const DataExploreHostingHomeText: IExploreHostingText[] = [
-  {
-    mainTitle: 'EXPLORE HOSTING',
-    headerTitle: '',
-    Title: 'Have a car? Start sharing',
+export const DataExploreHostingHomeText: IExploreHostingText = {
+  mainTitle: 'EXPLORE HOSTING',
+  headerTitle: '',
+  Title: 'Have a car? Start sharing',
 
-    Description:
-      "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
-    Link: ''
-  }
-]
+  Description:
+    "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
+  Link: ''
+}
+
 export const DataExploreHostingShareCarText: IExploreHostingText[] = [
   {
     mainTitle: '',

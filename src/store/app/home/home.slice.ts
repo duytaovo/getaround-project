@@ -6,6 +6,8 @@ import { ICustomeSteps } from 'src/types/customeSteps.type'
 import { IExploreHostingText } from 'src/types/exploreHostingText.type'
 import { IItemSlider, IItemCarousel } from 'src/types/hoisting.type'
 import { IHeroSection } from './HomeTypes/Hero.type'
+import { IQAndASection } from 'src/types/IQAndASection.type'
+import { IExploreHostingSection } from 'src/types/IExploreHostingSection.type'
 
 interface IHomeStepSection {
   id?: string
@@ -22,34 +24,24 @@ interface ISectionIncludesSliderPart {
   itemsData: IItemSlider[]
 }
 
-interface IQAndASection {
-  id?: string
-  wrapperTitle: string
-  heading: string
-  itemsData: ICommonQuestions[]
-  img: string
-}
-
 interface ISharingMarketplace {
   id?: string
   wrapperTitle: string
   itemsData: IConnectedCarSharing[]
 }
 
-interface IExploreHosting {
+interface IHomeCarouselSection {
   id?: string
-  wrapperTitle: string
-  img: string
-  itemData: IExploreHostingText
+  itemsData: IItemCarousel[]
 }
 
 type HomePageType = {
   heroSection: IHeroSection
   perfectCarSliderSection: ISectionIncludesSliderPart
-  homeIntoduceCarouselSection: IItemCarousel[]
+  homeIntoduceCarouselSection: IHomeCarouselSection
   sharingMaketPlaceSection: ISharingMarketplace
   homeStepSection: IHomeStepSection
-  exploreHostingSection: IExploreHosting
+  exploreHostingSection: IExploreHostingSection
   localFavouriteSection: ISectionIncludesSliderPart
   blogSilerSection: ISectionIncludesSliderPart
   qAndASection: IQAndASection
@@ -57,7 +49,7 @@ type HomePageType = {
 
 const initialState: HomePageType = {
   heroSection: {
-    id: 'hero-x1',
+    id: 'p-001',
     title: 'Drive on your schedule Nam',
     mainText: 'Instantly rent and unlock nearby cars',
     addressPlaceholder: 'Address',
@@ -69,6 +61,7 @@ const initialState: HomePageType = {
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b095e7bfaba115ba5ccd_homepage-bg-picnic.webp'
   },
   perfectCarSliderSection: {
+    id: 'p-002',
     heading: '',
     wrapperTitle: 'THE PERFECT CAR FOR YOUR TRIP IS JUST AROUND THE CORNER',
     itemsData: [
@@ -104,42 +97,45 @@ const initialState: HomePageType = {
       }
     ]
   },
-  homeIntoduceCarouselSection: [
-    {
-      id: 1,
-      title: 'We make sharing cars simple.',
-      content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
-      header: 'WHAT IS GETAROUND?',
-      img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e93194b43a1163b71ff_613d0738270e9b84f99c22ae_atlanta-georgia.jpeg',
-      name: 'Sheri and Adam, Oahu, HI'
-    },
-    {
-      id: 2,
-      title: 'We make sharing cars simple.',
-      content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
-      header: 'WHAT IS GETAROUND?',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png',
-      name: 'Sheri and Adam, Oahu, HI'
-    },
-    {
-      id: 3,
-      title: 'We make sharing cars simple.',
-      content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
-      header: 'WHAT IS GETAROUND?',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0bdc7fffbd39d91b6d46_ga-illustration-11.svg',
-      name: 'Sheri and Adam, Oahu, HI'
-    },
-    {
-      id: 4,
-      title: 'We make sharing cars simple.',
-      content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
-      header: 'WHAT IS GETAROUND?',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0bdc7fffbd39d91b6d46_ga-illustration-11.svg',
-      name: 'Sheri and Adam, Oahu, HI'
-    }
-  ],
+  homeIntoduceCarouselSection: {
+    id: 'p-003',
+    itemsData: [
+      {
+        id: 1,
+        title: 'We make sharing cars simple.',
+        content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
+        header: 'WHAT IS GETAROUND?',
+        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e93194b43a1163b71ff_613d0738270e9b84f99c22ae_atlanta-georgia.jpeg',
+        name: 'Sheri and Adam, Oahu, HI'
+      },
+      {
+        id: 2,
+        title: 'We make sharing cars simple.',
+        content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
+        header: 'WHAT IS GETAROUND?',
+        img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png',
+        name: 'Sheri and Adam, Oahu, HI'
+      },
+      {
+        id: 3,
+        title: 'We make sharing cars simple.',
+        content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
+        header: 'WHAT IS GETAROUND?',
+        img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0bdc7fffbd39d91b6d46_ga-illustration-11.svg',
+        name: 'Sheri and Adam, Oahu, HI'
+      },
+      {
+        id: 4,
+        title: 'We make sharing cars simple.',
+        content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
+        header: 'WHAT IS GETAROUND?',
+        img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0bdc7fffbd39d91b6d46_ga-illustration-11.svg',
+        name: 'Sheri and Adam, Oahu, HI'
+      }
+    ]
+  },
   sharingMaketPlaceSection: {
-    id: 'sharingMaketPlace',
+    id: 'p-004',
     wrapperTitle: "The World's First🌐Connected Car Sharing Marketplace",
     itemsData: [
       {
@@ -165,7 +161,7 @@ const initialState: HomePageType = {
     ]
   },
   homeStepSection: {
-    id: 'home-step-x01',
+    id: 'p-005',
     heading: 'Find your drive in 3 easy steps',
     wrapperTitle: 'HOW IT WORKS',
     itemsData: [
@@ -192,7 +188,7 @@ const initialState: HomePageType = {
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar.jpg'
   },
   exploreHostingSection: {
-    id: 'explore-x01',
+    id: 'p-006',
     wrapperTitle: 'EXPLORE HOSTING',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg',
     itemData: {
@@ -205,7 +201,7 @@ const initialState: HomePageType = {
     }
   },
   localFavouriteSection: {
-    id: 'local-favourite-x01',
+    id: 'p-007',
     wrapperTitle: 'CARS IN YOUR CITY',
     heading: 'Local favorites near you',
     itemsData: [
@@ -254,7 +250,7 @@ const initialState: HomePageType = {
     ]
   },
   blogSilerSection: {
-    id: 'slider-blog',
+    id: 'p-008',
     wrapperTitle: 'THE GETAROUND BLOG',
     heading: 'The Road Ahead: Discover our Blog',
     itemsData: [
@@ -303,7 +299,7 @@ const initialState: HomePageType = {
     ]
   },
   qAndASection: {
-    id: 'common-question-x01',
+    id: 'p-009',
     heading: 'LEARN MORE ABOUT THE BENEFITS OF GETAROUND',
     wrapperTitle: 'LEARN MORE ABOUT THE BENEFITS OF GETAROUND',
     img: 'http://localhost:3000/src/assets/images/commonQuestionRight.svg',
