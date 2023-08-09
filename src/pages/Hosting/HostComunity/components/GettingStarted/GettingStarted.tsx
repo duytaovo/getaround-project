@@ -7,16 +7,17 @@ import CustomSelect from 'src/components/Select'
 import { selectItems } from 'src/items/FooterItem/FooterItem'
 import { useAppSelector } from 'src/hooks/useRedux'
 import TopGettingStarted from './components/TopGettingStarted'
-import {  itemLink, itemLinkNailTheBasic} from 'src/items/ShareACar/ShareACar'
-import { IItemNailTheBasic, IItemTopGettingStarted } from 'src/types/hosting_comunity.type '
+import { IItemLink, IItemNailTheBasic, IItemTopGettingStarted } from 'src/types/hosting_comunity.type '
 interface Props {}
 
 interface PropsGettingStarted {
   itemGettingStarted: IItemNailTheBasic
   itemTopGettingStarted:IItemTopGettingStarted
+  itemLinkNailTheBasic:IItemNailTheBasic[]
+  itemLink:IItemLink[]
 }
 
-const GettingStarted = ({ itemGettingStarted,itemTopGettingStarted }: PropsGettingStarted) => {
+const GettingStarted = ({ itemGettingStarted,itemTopGettingStarted,itemLinkNailTheBasic,itemLink }: PropsGettingStarted) => {
   const { commonQuestion } = useAppSelector((state) => state.shareAcar)
   const renderItemNailTheBasic = () => {
     return itemLinkNailTheBasic?.map((item: any, index: number) => (

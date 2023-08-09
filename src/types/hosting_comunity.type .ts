@@ -15,11 +15,22 @@ export interface IItemNailTheBasic {
   content?:string
 }
 
+export interface IItemLink {
+  id?:number
+  title:string
+  to?:string
+}
+
+export interface IItemCardBodyButton {
+  title:string
+  infoButton:string
+}
 
 
 export interface IItemBanner {
   title:string
   content:string
+  infoButton:string
 }
 
 export interface IItemTopGettingStarted {

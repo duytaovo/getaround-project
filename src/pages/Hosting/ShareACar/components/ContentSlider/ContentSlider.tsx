@@ -16,7 +16,7 @@ const ContentSlider = ({classNameHeader,classNameTitle,classNameContent,item}: P
 
   return (
     <div>
-      {/* <span className={`${classNameHeader} text-left flex justify-start text-base font-bold leading-3 mx-[24px] text-mainColor`}>EARN</span> */}
+      <span className={`${classNameHeader} text-left mb-2 flex justify-start text-base font-medium leading-3  text-mainColor`}>{item.headerTitle}</span>
       <h2 className={` text-mainColor text-[52px] font-medium spacing tracking-tight	leading-[52px] text-left text-ellipsis ${classNameTitle}`}>{changeColorWhiteAndMain(_title)}</h2>
       <div>
         <p className={`${classNameContent} text-[#727272] text-justify flex flex-col flex-start leading-[22px] mt-7 md:mt-2`}>

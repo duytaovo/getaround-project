@@ -9,13 +9,16 @@ import {
   itemBanner,
   itemBodyCardBottom,
   itemBodyCardTop,
+  itemCommonQuestionBody,
   itemGetAroundYourBack,
-  itemOurHost
+  itemImgExploreHosting,
+  itemOurHost,
+  itemSupport,
+  wrapperTitle
 } from 'src/items/ShareACar/ShareACar'
 import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
-import { itemSupport } from 'src/pages/Hosting/ShareACar/components/Support/Support'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
-import { IBodyTop, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemGetAroundYourBack, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
+import { IBodyCommonQuestionImg, IBodyTop, IIWrapContentTitle, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemGetAroundYourBack, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
 import { payloadCreator } from 'src/utils/utils'
 
 export const getShareACar = createAsyncThunk('shareACar/getShareACar', payloadCreator(''))
@@ -44,8 +47,11 @@ interface ShareACarState {
   getAroundYourBack: IItemGetAroundYourBack
   step: ICustomeStep[]
   commonQuestion: ICommonQuestion[]
+  commonQuestionImg: IBodyCommonQuestionImg
   exploreHosting: ISelectItemsExploreHosting[]
   ourHost: IItemGetAroundYourBack
+  wrapperTitle:IIWrapContentTitle[]
+  imgExploreHosting:string
 }
 
 const initialState: ShareACarState = {
@@ -61,7 +67,10 @@ const initialState: ShareACarState = {
   step: CustomeStepItems,
   commonQuestion: items,
   exploreHosting: DataExploreHostingShareCarText,
-  ourHost: itemOurHost
+  ourHost: itemOurHost,
+  commonQuestionImg:itemCommonQuestionBody,
+  imgExploreHosting:itemImgExploreHosting,
+  wrapperTitle:wrapperTitle
 }
 
 const shareACarSlice = createSlice({
