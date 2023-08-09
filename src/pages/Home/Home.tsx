@@ -70,7 +70,7 @@ const Home = (props: Props) => {
           classNameImage='w-1/2 rounded-md mx-auto'
           numberItem={1}
           numberItemScroll={1}
-          data={homePageData.homeIntoduceCarouselSection}
+          data={homePageData.homeIntoduceCarouselSection.itemsData}
         />
       </section>
 
@@ -91,8 +91,8 @@ const Home = (props: Props) => {
           </div>
 
           <CustomeStep
-            icons={[<UserOutlined />, <SolutionOutlined />, <SmileOutlined />]}
             classname='w-1/2 xl:w-full'
+            icons={[<UserOutlined />, <SolutionOutlined />, <SmileOutlined />]}
             textClassName='text-justify'
             items={homePageData.homeStepSection.itemsData}
           />
