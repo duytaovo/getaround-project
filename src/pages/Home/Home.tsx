@@ -164,15 +164,13 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
-
-            classNameContainer='px-6'
             breakPointScroll={[1, 2, 2, 2]}
             breakPoint={[1, 2, 3, 3]}
-
             numberItem={3}
             numberItemScroll={1}
-            className='bg-mainColor/20 rounded-md h-fit p-2 overflow-hidden object-cover'
-            classNameImage='rounded-md w-full'
+            classNameContainer='px-6'
+            className='bg-mainColor/20 rounded-md p-2 overflow-hidden object-cover h-[360px]'
+            classNameImage='rounded-md w-full h-[160px] object-cover'
             classNameTitle='text-[14px] leading-[22px] text-white/40 pt-6'
             classNameContent='text-white/90 text-[24px] leading-[25px] break-words py-6'
             classNameTime='text-[14px] leading-[22px] text-white/40'

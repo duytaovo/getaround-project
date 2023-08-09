@@ -139,22 +139,22 @@ const initialState: HomePageType = {
     wrapperTitle: "The World's First🌐Connected Car Sharing Marketplace",
     itemsData: [
       {
-        id: 1,
+        id: '1',
         total: '1.7M',
         title: 'Worldwide guests sdhsdhasdhk'
       },
       {
-        id: 2,
+        id: '2',
         total: '6M',
         title: 'Trips taken'
       },
       {
-        id: 3,
+        id: '3',
         total: '1,000+',
         title: 'Cities covered'
       },
       {
-        id: 4,
+        id: '4',
         total: '8',
         title: 'Countries'
       }
