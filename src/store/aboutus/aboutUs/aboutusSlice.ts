@@ -16,7 +16,7 @@ import { ISelectHeaderAboutUs } from 'src/types/aboutUs/aboutus'
 import { DataHeaderAboutUs } from 'src/pages/AboutUs/HeaderSlide/HeaderSlide'
 interface AboutUSState {
   BlogNewsRoom: ISelectItemsBlog
-  ExploreAboutUs: ISelectItemsExploreHosting[]
+  ExploreAboutUs: ISelectItemsExploreHosting
   CarouselNewsRoom: ISelectItemsCarouselNewsRoom[]
   TitleCarouselAboutUs: ISelectItemsTitleCarouselNewsRoom
   JoinTeamAboutUs: ISelectItemsJoinTeamAboutUs
@@ -41,7 +41,7 @@ const AboutUSSlice = createSlice({
   initialState,
   reducers: {
     updateExploreAboutUs: (state, action: PayloadAction<ISelectItemsExploreHosting>) => {
-      state.ExploreAboutUs.push(action.payload)
+      state.ExploreAboutUs = action.payload
     },
     updateCaruouselNewsRoom: (state, action: PayloadAction<ISelectItemsCarouselNewsRoom>) => {
       state.CarouselNewsRoom.push(action.payload)

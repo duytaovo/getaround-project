@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
 interface ISelectBodyKeyFeatures {
   title?: string
   description?: string
@@ -25,15 +27,28 @@ const KeyFeatureItem: FC<Props> = ({ DataKeyFeatureItem }) => {
                 className='w-[150px] h-[150px] max-w-none align-middle border-none inline-block border-0'
               />
             </div>
-            <h3 className='text-center mt-0 mb-[0.5em] text-white font-medium text-[36px] leading-[105%] sm:text-[20px] lg:text-[25px]'>
+            <Text
+              id='howitwork-connect-keyfeatureitem-title'
+              tag='h3'
+              content={DataKeyFeatureItem?.[index]?.title || ''}
+              className='text-center mt-0 mb-[0.5em] text-white font-medium text-[36px] leading-[105%] sm:text-[20px] lg:text-[25px]'
+            />
+            {/* <h3 className='text-center mt-0 mb-[0.5em] text-white font-medium text-[36px] leading-[105%] sm:text-[20px] lg:text-[25px]'>
               {DataKeyFeatureItem?.[index]?.title}
-            </h3>
-            <p className='w-auto text-center max-w-[1279px] mt-0 mb-[10px] pl-0 text-[17px] font-light leading-[155%] block not-italic text-white sm:text-[10px]'>
+            </h3> */}
+            <Text
+              id='howitwork-connect-keyfeatureitem-description'
+              tag='p'
+              content={DataKeyFeatureItem?.[index]?.description || ''}
+              className='w-auto text-center max-w-[1279px] mt-0 mb-[10px] pl-0 text-[17px] font-light leading-[155%] block not-italic text-white sm:text-[10px]'
+            />
+            {/* <p className='w-auto text-center max-w-[1279px] mt-0 mb-[10px] pl-0 text-[17px] font-light leading-[155%] block not-italic text-white sm:text-[10px]'>
               {DataKeyFeatureItem?.[index]?.description}
+
               <Link to='/' className='text-center text-mainColor'>
                 {DataKeyFeatureItem?.[index]?.linkSecurity}
               </Link>
-            </p>
+            </p> */}
           </div>
         </div>
       ))}{' '}

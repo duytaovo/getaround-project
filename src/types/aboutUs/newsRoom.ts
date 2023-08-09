@@ -1,4 +1,5 @@
 export interface ISelectItemsBlog {
+  id?: string
   img?: string
   headerTitle?: string
   mainTitle?: string
@@ -7,12 +8,14 @@ export interface ISelectItemsBlog {
 }
 
 export interface ISelectItemsHelpCustomer {
+  id?: string
   title?: string
   linkTo?: string
   nameButton?: string
   img?: string
 }
 export interface ISelectItemsHeader {
+  id?: string
   img?: string
   title?: string
   content?: string
@@ -20,6 +23,7 @@ export interface ISelectItemsHeader {
   email?: string
 }
 export interface ISelectItemsReadNews {
+  id?: string
   day?: string
   title?: string
   link?: string

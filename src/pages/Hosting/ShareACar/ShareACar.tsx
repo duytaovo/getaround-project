@@ -24,8 +24,21 @@ import GetAroundYourBack from './components/GetAroundYourBack/GetAroundYourBack'
 import OurHost from './components/OurHost/OurHost'
 
 const ShareACar = () => {
-  const { bodyTop,ourHost,getAroundYourBack,step,exploreHosting,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
-  useAppSelector((state) => state.shareAcar)
+  const {
+    bodyTop,
+    ourHost,
+    getAroundYourBack,
+    step,
+    exploreHosting,
+    commonQuestion,
+    bodyBannerCard,
+    bodyCardBottom,
+    bodyCardTop,
+    carouselReview,
+    contentSlider,
+    sliders,
+    support
+  } = useAppSelector((state) => state.shareAcar)
   const dispatch = useDispatch()
 
   const handleBodyTopChange = (newBodyTop: IBodyTop) => {
@@ -91,8 +104,8 @@ const ShareACar = () => {
               numberItem={1}
               numberItemScroll={1}
               className='flex-col-reverse'
-              breakPoint={[1,1,1,1]}
-              breakPointScroll={[1,1,1,1]}
+              breakPoint={[1, 1, 1, 1]}
+              breakPointScroll={[1, 1, 1, 1]}
             />
           </div>
         </div>
@@ -104,7 +117,7 @@ const ShareACar = () => {
       {/* start body banner */}
 
       <div className=' p-5 mb-bottom'>
-       <GetAroundYourBack item={getAroundYourBack}/>
+        <GetAroundYourBack item={getAroundYourBack} />
         <div className='lg:flex lg:flex-col '>
           <div className='flex gap-10 mt-3 h-full mb-5  lg:flex-col'>
             <div className='w-[70%]  lg:w-full  '>
@@ -140,13 +153,7 @@ const ShareACar = () => {
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
       <div className=' rounded-2xl mb-bottom'>
         <h2 className='text-[32px] font-medium tracking-tight leading-5'>...and more</h2>
-        <WrapperContent
-          titlePadding={5}
-          textAlign='left'
-          title=''
-          isBgTransparent={true}
-          fontSize={12}
-        >
+        <WrapperContent titlePadding={5} textAlign='left' title='' isBgTransparent={true} fontSize={12}>
           <div className='flex md:flex-col'>
             <CustomeCommonQuestions
               titleClassName='text-white/90 text-bold text-[18px]'
@@ -182,7 +189,7 @@ const ShareACar = () => {
       {/* start carousel review */}
       <div className='mb-bottom'>
         <div>
-         <OurHost item={ourHost}/>
+          <OurHost item={ourHost} />
         </div>
         <Carousel_Review_Comunity
           className='m-4'

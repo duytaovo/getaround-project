@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 export interface ISelectItemsExploreHosting {
+  id?: string
   mainTitle?: string
   headerTitle?: string
   Title?: string
@@ -9,7 +10,7 @@ export interface ISelectItemsExploreHosting {
 }
 
 export interface ISelectItemsProprietary {
-  id?: number
+  id?: string
   headerTitle?: string
   title?: string
   description?: string
@@ -18,11 +19,13 @@ export interface ISelectItemsProprietary {
   Link?: string
 }
 export interface ISelectItemsHearCommunity {
+  id?: string
   title?: string
   content?: string
   link?: string
 }
 export interface ISelectItemsSlide {
+  id?: string
   mainTitle?: string
   title?: string
   img1?: string
@@ -31,6 +34,7 @@ export interface ISelectItemsSlide {
   content2?: string
 }
 export interface ISelectItemsSlideLeftRight {
+  id?: string
   img: string
   label?: string
   Linkto?: string

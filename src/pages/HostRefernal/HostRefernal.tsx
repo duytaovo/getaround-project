@@ -21,7 +21,10 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
 import { MobileOutlined, CarOutlined, RiseOutlined, DollarOutlined, WalletOutlined } from '@ant-design/icons'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
 export const DataImgCustomeStepHostRF = {
+  id: 'ImgCustomeSteps_HostRF',
   img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg',
   title: 'Make it happen in seconds'
 }
@@ -52,11 +55,17 @@ const HostRefernal = () => {
               />
             </div>
             {/* <div className='w-1/2 flex justify-center rounded-[16px] items-center'> */}
-            <img
+            <Image
+              id='imgRightCustome'
+              className='object-cover w-[310px] md:w-[230px] min-h-[260px] md:min-h-[400px] mb-auto mx-auto  rounded-[16px]'
+              src='https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg'
+              alt='Getaround Connect®'
+            />
+            {/* <img
               className='object-cover w-[310px] md:w-[230px] min-h-[260px] md:min-h-[400px] mb-auto mx-auto  rounded-[16px]'
               src='https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg'
               alt='ss'
-            />
+            /> */}
             {/* </div> */}
           </div>
         </div>

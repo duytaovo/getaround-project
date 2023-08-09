@@ -1,0 +1,59 @@
+{
+  "Header_HowItWork_Connect": {
+    "id": "Header_HowItWork_Connect",
+    "imgLogo": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/600754c5a561bdd9d1f4a065_badge-getaround%C2%AE%401X.png",
+    "titleLogo": " A SAFER, MORE CONVENIENT WAY TO CARSHARE",
+    "mainTitleHeader": "Getaround Connect",
+    "contentHeader": "No other carsharing service offers contactless sharing using Getaround Connect®. With your Android or iOS       phone and the Getaround app, you can find, book, and unlock a car, truck, or van near you. Getaround is the   leading global and digital carsharing marketplace. Try it today.",
+    "imgContentHeader": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6064908339a45b8d2297f2c9_feature-contactless-booking.svg"
+  },
+  "SlideButton_HowItWork_Connect": [
+    {
+      "id": "SlideButton_HowItWork_Connect_01",
+      "nameButton": "Share A Car",
+      "linkTo": "/"
+    },
+    {
+      "id": "SlideButton_HowItWork_Connect_02",
+      "nameButton": "Book A Car",
+      "linkTo": "/"
+    }
+  ],
+
+  "HeaderKeyFeatures_HowItWork_Connect": {
+    "id": "HeaderKeyFeatures_HowItWork_Connect",
+    "title": "key features",
+    "mainTitle": "The ultimate in carsharing connectivity",
+    "subTitle": "For iOS and Android devices."
+  },
+  "BodyKeyFeatures_HowItWork_Connect": [
+    {
+      "id": "BodykeyFeatures_01",
+      "title": "GPS tracking",
+      "description": "Getaround Connect® enables us to securely track each car's location during Getaround trips, which means we can provide roadside assistance to guests in real-time if they experience any mechanical troubles during their trips.",
+      "linkSecurity": "",
+      "linkTo": "/"
+    },
+    {
+      "id": "BodykeyFeatures_02",
+      "title": "Security",
+      "description": "Theft-deterrent functionality disables the car's starter when the vehicle is not in use by the host or by a verified guest, so long as the host has enabled",
+      "linkSecurity": " Enhanced Security.",
+      "linkTo": "/"
+    },
+    {
+      "id": "BodykeyFeatures_03",
+      "title": "Contactless sharing",
+      "description": "Book and unlock with confidence. Getaround Connect® means you don't need a physical hand-off of keys.",
+      "linkSecurity": "",
+      "linkTo": "/"
+    },
+    {
+      "id": "BodykeyFeatures_04",
+      "title": "Location",
+      "description": "Getaround Connect® helps hosts find their cars quickly if they’re street-parked without a designated parking space.",
+      "linkSecurity": "",
+      "linkTo": "/"
+    }
+  ]
+}

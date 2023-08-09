@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const DataBannerAboutUs = {
+  id: 'Banner_AboutUs_AboutUS',
   headerTitle: 'OUR MISSION',
   title:
     "We're helping consumers shift away from car ownership by giving them instant and convenient access to vehicles when they need them.",

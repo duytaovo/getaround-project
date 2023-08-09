@@ -1,5 +1,6 @@
 import React from 'react'
 export const DataHeaderST = {
+  id: 'header_HowItWork_SafeTrust',
   headerTitle: 'Safety and trust',
   title: ' at every level',
   content:

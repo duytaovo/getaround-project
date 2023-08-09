@@ -4,11 +4,8 @@ import Button from 'src/components/Button'
 import { Link } from 'react-router-dom'
 
 export const DataBookUnlockCar = {
-  title: (
-    <>
-      Book <CarOutlined /> Unlock <KeyOutlined /> and Drive <ReloadOutlined /> nearby cars
-    </>
-  ),
+  id: 'BookUnlockCar',
+  title: ' Book - Unlock and Drive  nearby cars',
   link: '/'
 }
 

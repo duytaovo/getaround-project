@@ -2,7 +2,7 @@ import React, { useEffect, useState, FC } from 'react'
 import { Link } from 'react-router-dom'
 
 interface IProprietary {
-  id?: number
+  id?: string
   headerTitle?: string
   title?: string
   description?: string

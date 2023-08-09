@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 export const DataBlogNewsRoom = {
+  id: 'Blog_AboutUS_NewsRoom',
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63dc05d87b4b95cb44c4ef9f_getaroundblog%20Grande.jpeg',
   headerTitle: 'THE GETAROUND BLOG',
   mainTitle: 'Discover the Getaround blog',
@@ -9,6 +10,7 @@ export const DataBlogNewsRoom = {
   linkTo: '/'
 }
 export const DataBlogAboutUs = {
+  id: 'Blog_AboutUS_AboutUs',
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63dc05d87b4b95cb44c4ef9f_getaroundblog%20Grande.jpeg',
   headerTitle: 'THE GETAROUND BLOG',
   mainTitle: 'Discover the Getaround blog',

@@ -10,7 +10,7 @@ import { DataSlideHowItWork } from 'src/pages/howitwork/SlideHowItWork/SlideHowI
 import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 interface HowItWorkState {
-  ExploreHowItWork: ISelectItemsExploreHosting[]
+  ExploreHowItWork: ISelectItemsExploreHosting
   ProprietaryHowItWork: ISelectItemsProprietary[]
   HearCommunityHowItWork: ISelectItemsHearCommunity
   SlideHowItWork: ISelectItemsSlide
@@ -30,7 +30,7 @@ const HowItWorkSlice = createSlice({
   initialState,
   reducers: {
     updateExploreHIW: (state, action: PayloadAction<ISelectItemsExploreHosting>) => {
-      state.ExploreHowItWork.push(action.payload)
+      state.ExploreHowItWork = action.payload
     },
     updateProprietaryHIW: (state, action: PayloadAction<ISelectItemsProprietary>) => {
       state.ProprietaryHowItWork.push(action.payload)
