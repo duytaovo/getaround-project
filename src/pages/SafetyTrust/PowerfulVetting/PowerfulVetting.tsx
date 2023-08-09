@@ -1,24 +1,29 @@
 import React from 'react'
 import { CarOutlined, KeyOutlined, ReloadOutlined } from '@ant-design/icons'
-const Data = [
-  {
-    id: 1,
-    titleSpan: 'Getaround uses advanced identity verification ',
-    titleH2: 'technologies and a thorough screening process to ensure that every Getaround guest meets our guidelines.'
-  },
-  {
-    id: 2,
-    titleSpan: 'Every Getaround guest must meet our eligibility criteria ',
-    titleH2:
-      ' in order to rent. To verify guests’ eligibility, we obtain their driving records from the Department of Motor Vehicles. ‍'
-  },
-  {
-    id: 1,
-    titleSpan: 'A team of dedicated experts agents the latest ',
-    titleH2:
-      'risk detection technologies to protect hosts by identifying and preventing fraudulent activity on our platform.'
-  }
-]
+export const DataPowerFullSafeTrust = {
+  id: 'PowerFullSafeTrust',
+  img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/648380f3f2fadb5289320a68_ga-illustration-4.svg',
+  headerTitle: 'For Hosts',
+  title: 'POWERFUL VETTING & FRAUD DETECTION SYSTEM',
+  content: [
+    {
+      titleSpan: 'Getaround uses advanced identity verification ',
+      titleH2:
+        'technologies and a thorough screening process to ensure that every Getaround guest meets our guidelines.'
+    },
+    {
+      titleSpan: 'Every Getaround guest must meet our eligibility criteria ',
+      titleH2:
+        ' in order to rent. To verify guests’ eligibility, we obtain their driving records from the Department of Motor Vehicles. ‍'
+    },
+    {
+      titleSpan: 'A team of dedicated experts agents the latest ',
+      titleH2:
+        'risk detection technologies to protect hosts by identifying and preventing fraudulent activity on our platform.'
+    }
+  ]
+}
+
 const PowerfulVetting = () => {
   return (
     <div
@@ -41,10 +46,13 @@ const PowerfulVetting = () => {
               Powerful vetting & fraud detection system
             </h2>
             <ul>
-              {Data.map((item, index) => (
+              {DataPowerFullSafeTrust?.content?.map((item, index) => (
                 <li className='text-white mb-3 sm:text-[15px]'>
-                  <span className='text-mainColor sm:text-[15px]'> {Data?.[index]?.titleSpan} </span>
-                  {Data?.[index]?.titleH2}
+                  <span className='text-mainColor sm:text-[15px]'>
+                    {' '}
+                    {DataPowerFullSafeTrust?.content?.[index]?.titleSpan}{' '}
+                  </span>
+                  {DataPowerFullSafeTrust?.content?.[index]?.titleH2}
                 </li>
               ))}
             </ul>

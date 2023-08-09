@@ -1,5 +1,6 @@
 import React from 'react'
 export const DataHeaderNewsRoom = {
+  id: 'header_AboutUs_NewsRoom',
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c98c83e7bffe6581cd4811_AdobeStock_516425442%202%20compress.jpg',
   title: 'Explore Getaround in the news',
   content: 'Welcome to our press room. Find our latest press releases and new media coverage of our company.',

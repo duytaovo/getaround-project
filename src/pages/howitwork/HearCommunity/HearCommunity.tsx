@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 export const DataCommunity = {
+  id: 'Community_HowItWork',
   title: 'Hear from the community',
   content: 'Stories from Getaround community members, in their own words.',
   link: '/'

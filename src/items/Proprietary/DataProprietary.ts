@@ -1,7 +1,7 @@
 import { ISelectItemsProprietary } from 'src/types/HowItWork'
 export const DataProprietaryHowItWork: ISelectItemsProprietary[] = [
   {
-    id: 1,
+    id: 'Proprietary_HowItWork',
     headerTitle: 'out proprietary hardware',
     title: 'Explore the power of Getaround Connect®',
     description:
@@ -14,7 +14,7 @@ export const DataProprietaryHowItWork: ISelectItemsProprietary[] = [
 ]
 export const DataProprietarySafetyTrust: ISelectItemsProprietary[] = [
   {
-    id: 1,
+    id: 'Proprietary_safety-trust',
     headerTitle: '',
     title: 'Getaround Connect® - as an option',
     description:

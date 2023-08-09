@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 export const DataJoinTeamAboutUs = {
+  id: 'JoinTeam_AboutUS_AboutUs',
   title: 'Join the Getaround team',
   content:
     'Want to work with us? Come join the team focused on empowering people to carshare everywhere. Explore open roles at Getaround.',

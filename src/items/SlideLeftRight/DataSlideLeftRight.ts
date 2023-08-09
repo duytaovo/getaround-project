@@ -1,6 +1,7 @@
 import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
 export const DataSlideLeftRightHostRefernal: ISelectItemsSlideLeftRight[] = [
   {
+    id: 'SlideLeftRight_hostRefernal_01',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'The details',
     Linkto: '/',
@@ -14,6 +15,7 @@ export const DataSlideLeftRightHostRefernal: ISelectItemsSlideLeftRight[] = [
 ]
 export const DataSlideLeftRightHowItWork: ISelectItemsSlideLeftRight[] = [
   {
+    id: 'SlideLeftRight_HowItWork_01',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Trip insurance',
     Linkto: '',
@@ -23,6 +25,7 @@ export const DataSlideLeftRightHowItWork: ISelectItemsSlideLeftRight[] = [
     ]
   },
   {
+    id: 'SlideLeftRight_HowItWork_02',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Customer support',
     Linkto: '',
@@ -32,6 +35,7 @@ export const DataSlideLeftRightHowItWork: ISelectItemsSlideLeftRight[] = [
     ]
   },
   {
+    id: 'SlideLeftRight_HowItWork_03',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Wiggle room for changes',
     Linkto: '',
@@ -43,6 +47,7 @@ export const DataSlideLeftRightHowItWork: ISelectItemsSlideLeftRight[] = [
 ]
 export const DataSlideLeftRightSafetyTrust: ISelectItemsSlideLeftRight[] = [
   {
+    id: 'SlideLeftRight_SafeTrust_01',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Insurance on every trip',
     Linkto: '',
@@ -52,6 +57,7 @@ export const DataSlideLeftRightSafetyTrust: ISelectItemsSlideLeftRight[] = [
     ]
   },
   {
+    id: 'SlideLeftRight_SafeTrust_02',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
     label: 'Real-time trip monitoring',
     Linkto: '',

@@ -1,5 +1,5 @@
 export interface IConnectedCarSharing {
-  id?: number
+  id?: string
   total: string
   title: string
 }

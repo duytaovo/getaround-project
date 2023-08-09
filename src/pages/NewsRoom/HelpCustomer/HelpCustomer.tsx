@@ -3,6 +3,7 @@ import Button from 'src/components/Button'
 import { Link } from 'react-router-dom'
 import { DownloadOutlined } from '@ant-design/icons'
 export const DataHelpCUstomerNewsroom = {
+  id: 'helpCustomer_AboutUs_NewsRoom',
   title: ` We're helping consumers shift away from car ownership.`,
   linkTo: `/`,
   nameButton: ' the media kit for logos, media assets, and more.',

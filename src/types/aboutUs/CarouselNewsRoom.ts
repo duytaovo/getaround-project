@@ -6,6 +6,7 @@ export interface ISelectItemsCarouselNewsRoom {
   linkto?: string
 }
 export interface ISelectItemsTitleCarouselNewsRoom {
+  id?: string
   headerTitle?: string
   title?: string
   linkTo?: string

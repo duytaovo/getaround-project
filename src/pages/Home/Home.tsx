@@ -164,9 +164,11 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
+
             classNameContainer='px-6'
             breakPointScroll={[1, 2, 2, 2]}
             breakPoint={[1, 2, 3, 3]}
+
             numberItem={3}
             numberItemScroll={1}
             className='bg-mainColor/20 rounded-md h-fit p-2 overflow-hidden object-cover'

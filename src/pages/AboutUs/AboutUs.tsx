@@ -18,6 +18,7 @@ import { ItemCarousel, ItemCarouselAboutUs_NewsRoom } from 'src/items/Carousel/C
 import JoinTeam from './JoinTeam/JoinTeam'
 import Banner from './Banner/Banner'
 export const DataTitleCarouselAboutUs = {
+  id: 'Carousel_Title_AboutUs_AboutUs',
   headerTitle: 'OUR LATEST UPDATES',
   title: 'News room: Press releases',
   linkTo: ''

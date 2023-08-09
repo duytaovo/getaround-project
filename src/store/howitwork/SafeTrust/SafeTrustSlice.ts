@@ -11,12 +11,15 @@ import { ISelectBookUnlockCar } from 'src/types/SafeTrust'
 import { DataBookUnlockCar } from 'src/pages/SafetyTrust/BookUnlocknearCar/BookUnlocknearCar'
 import { ISelectItemsHeaderHostRefernal } from 'src/types/hostRefernal/hostRefernal'
 import { DataHeaderST } from 'src/pages/SafetyTrust/HeaderSafeTrust'
+import { ISelectPowerFull } from 'src/types/SafeTrust'
+import { DataPowerFullSafeTrust } from 'src/pages/SafetyTrust/PowerfulVetting/PowerfulVetting'
 interface SafeTrustState {
-  ExploreST: ISelectItemsExploreHosting[]
+  ExploreST: ISelectItemsExploreHosting
   ProprietaryST: ISelectItemsProprietary[]
   SlideLeftRightST: ISelectItemsSlideLeftRight[]
   BookUnlockCar: ISelectBookUnlockCar
   HeaderST: ISelectItemsHeaderHostRefernal
+  PowerFullST: ISelectPowerFull
 }
 
 const initialState: SafeTrustState = {
@@ -24,7 +27,8 @@ const initialState: SafeTrustState = {
   ProprietaryST: DataProprietarySafetyTrust,
   SlideLeftRightST: DataSlideLeftRightSafetyTrust,
   BookUnlockCar: DataBookUnlockCar,
-  HeaderST: DataHeaderST
+  HeaderST: DataHeaderST,
+  PowerFullST: DataPowerFullSafeTrust
 }
 
 const SafeTrustSlice = createSlice({
@@ -32,7 +36,7 @@ const SafeTrustSlice = createSlice({
   initialState,
   reducers: {
     updateExploreST: (state, action: PayloadAction<ISelectItemsExploreHosting>) => {
-      state.ExploreST.push(action.payload)
+      state.ExploreST = action.payload
     },
     updateProprietaryST: (state, action: PayloadAction<ISelectItemsProprietary>) => {
       state.ProprietaryST.push(action.payload)
@@ -46,6 +50,9 @@ const SafeTrustSlice = createSlice({
     },
     updateHeaderST: (state, action: PayloadAction<ISelectItemsHeaderHostRefernal>) => {
       state.HeaderST = action.payload
+    },
+    updatePowerST: (state, action: PayloadAction<ISelectPowerFull>) => {
+      state.PowerFullST = action.payload
     }
   },
   extraReducers: (builder) => {}

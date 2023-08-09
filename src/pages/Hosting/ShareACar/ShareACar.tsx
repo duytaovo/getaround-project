@@ -44,6 +44,7 @@ const ShareACar = () => {
   } = useAppSelector((state) => state.shareAcar)
   console.log(bodyTop)
 
+
   const dispatch = useDispatch()
 
   const handleBodyTopChange = (newBodyTop: IBodyTop) => {
@@ -156,8 +157,10 @@ const ShareACar = () => {
       {/* start collapse 1 */}
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
       <div className=' rounded-2xl mb-bottom'>
+
         <h2 className='text-[32px] font-medium tracking-tight leading-5'>{wrapperTitle[0].title}</h2>
         <WrapperContent titlePadding={5} textAlign='left' title={''} isBgTransparent={true} fontSize={20}>
+
           <div className='flex md:flex-col'>
             <CustomeCommonQuestions
               titleClassName='text-white/90 text-bold text-[18px]'
