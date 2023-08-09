@@ -27,11 +27,11 @@ const HeaderSlide = () => {
             backgroundSize: 'auto, auto 135%'
           }}
         >
-          <h1 className='max-w-[22ch] text-center mx-auto text-mainColor tracking-[-.04em] m-0 pd-0 text-[47px] font-bold leading-[106%] '>
-            <span className='text-white font-normal'>{DataHeaderAboutUs?.[0]?.title}</span>
+          <h1 className='max-w-[22ch] text-center mx-auto text-mainColor tracking-[-.04em] m-0 pd-0 text-[47px] font-bold leading-[106%] sm:text-[35px] sm:leading-[100%] '>
+            <span className='text-white font-normal '>{DataHeaderAboutUs?.[0]?.title}</span>
           </h1>
           <div
-            className='w-full max-w-[1080px] bg-white rounded-2xl justify-between items-center mb-[-80px] p-[32px_60px] '
+            className='w-full max-w-[1080px] bg-white rounded-2xl justify-between items-center mb-[-80px] p-[32px_60px] sm:p-[10px_20px]'
             style={{
               gridColumnGap: '26px',
               gridRowGap: '26px',
@@ -43,7 +43,7 @@ const HeaderSlide = () => {
           >
             {DataHeaderAboutUs?.[0]?.arrayImg?.map((item, index) => (
               <img
-                className='w-[100%] max-h-[23px] max-w-[150px] object-contain flex-[0_auto] align-middle border-none inline-block border-0'
+                className='w-full max-h-[23px] max-w-[150px] object-contain flex-[0_auto] align-middle border-none inline-block border-0'
                 style={{ filter: 'brightness(0%) grayscale()' }}
                 src={DataHeaderAboutUs?.[0]?.arrayImg?.[index]}
                 alt=''

@@ -77,7 +77,7 @@ export const DataExploreHostingAboutUs = {
 }
 export const DataExploreHostingSafetyTrust = {
   styleDivRight: `will-change-transform transform translate-y-[0.86424%] scale-100 rotate-x-0 rotate-y-0 rotate-z-0 skew-x-0 skew-y-0  transform-style-preserve-3  w-[44%] right-[36px] shadow-[7px_7px_20px_rgba(0,0,0,0.01)]
-    bg-white rounded-[16px] p-[30px_5%] absolute top-[70px] sm:absolute-none`,
+    bg-white rounded-[16px] p-[30px_5%] absolute top-[70px] sm:relative`,
   styleImg: `h-[400px]  w-full rounded-[20px] relative overflow-hidden`,
 
   styleTitle:
