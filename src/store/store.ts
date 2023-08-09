@@ -19,15 +19,11 @@ export const store = configureStore({
     connecthiw: ConnectHIWReducer,
     newsroom: NewsRoomReducer,
     homePageData: HomeReducer,
-
     AboutUs: AboutUSReducer,
     community: communityReducer,
     hostingReferral: hostRefernalReducer,
-    safetrust: SafeTrustReducer
-
-    user: UserReducer,
-    community: communityReducer
-
+    safetrust: SafeTrustReducer,
+    user: UserReducer
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]
