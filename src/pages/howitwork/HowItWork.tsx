@@ -26,7 +26,7 @@ const HowItWork = () => {
   const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork } = useSelector(
     (state: RootState) => state.howitwork
   )
-
+  console.log(ExploreHowItWork)
   const dispatch = useDispatch()
 
   const handleExploreHIW = (newExploreHostring: ISelectItemsExploreHosting) => {
@@ -48,7 +48,7 @@ const HowItWork = () => {
       <CustomeCard mainTitle={`WHAT WE'RE DOING`} DataCustomeCard={DataCustomeCard} />
       {/* <CustomeCard mainTitle={`EARN EXTRA WITH BONUSES`} DataCustomeCard={DataCustomeCardHostBonus} /> */}
 
-      <Proprietary Data={DataProprietaryHowItWork} />
+      <Proprietary Data={ProprietaryHowItWork} />
       <SlideLeftRight
         Data={DataSlideLeftRightHowItWork}
         img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg'
@@ -60,7 +60,7 @@ const HowItWork = () => {
           'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
         }
         DataExploreHostingStyle={DataExploreHostingHome}
-        DataExploreHostingText={DataExploreHostingHomeText}
+        DataExploreHostingText={ExploreHowItWork}
         isEx={true}
         className='flex-col items-center flex w-full mb-[66px]'
       />

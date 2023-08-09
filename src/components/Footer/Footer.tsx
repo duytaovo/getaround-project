@@ -19,7 +19,7 @@ const style: React.CSSProperties = { padding: '8px 0' }
 const Footer = (props: Props) => {
   return (
     <div className='p-10 bg-white'>
-      <div className='flex items-center justify-between  '>
+      <div className='flex items-start justify-between  '>
       <img src={logo} alt='logo' className='fill-current bg-none h-[36px] w-[120px]'/>
 
         <CustomSelect
@@ -29,34 +29,29 @@ const Footer = (props: Props) => {
           className='text-black border-none outline-none rounded-md h-10'
         />
       </div>
-      <div className='mt-8'>
-        <Row gutter={16}>
-          <Col className='gutter-row' span={4}>
+      <div className='mt-8 flex flex-grow justify-between flex-wrap'>
+
             <div style={style}>
               <ComponentFooter header='Cách thức hoạt động' tabContent={firstColumn} />
             </div>
-          </Col>
-          <Col className='gutter-row' span={4}>
             <div style={style}>
               <ComponentFooter header='Tổ chức' tabContent={secondColumn} />
             </div>
-          </Col>{' '}
-          <Col className='gutter-row' span={4}>
             <div style={style}>
               <ComponentFooter header='Cộng tác' tabContent={thirdColumn} />
             </div>
-          </Col>{' '}
-          <Col className='gutter-row' span={4}>
             <div style={style}>
               <ComponentFooter header='Về chúng tôi' tabContent={fourColumn} />
             </div>
-          </Col>
-          <Col className='gutter-row' span={4}>
             <div style={style}>
               <ComponentFooter header='Top city' tabContent={firstColumn} />
             </div>
-          </Col>
-        </Row>
+            <div style={style}>
+              <ComponentFooter header='Top city' tabContent={firstColumn} />
+            </div>
+            {/* <div style={style}>
+              <ComponentFooter header='Top city' tabContent={firstColumn} />
+            </div> */}
       </div>
       <div className='flex items-center justify-center mb-5'>
         <div>

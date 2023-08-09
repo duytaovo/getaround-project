@@ -3,19 +3,31 @@ import { AnyAction, Store, ThunkDispatch, configureStore } from '@reduxjs/toolki
 import appReducer from './app/app.slice'
 import shareAcarReducer from './hosting/share_a_car/shareACarSlice'
 import HowItWorkReducer from './howitwork/HowItWork/HowItWorkSlice'
-import ConnectHIWReducer from './howitwork/Connect/Connect'
+import ConnectHIWReducer from './howitwork/Connect/ConnectSlice'
 import HomeReducer from './app/home/home.slice'
-
+import UserReducer from './user/userSlice'
 import communityReducer from './hosting/host_comunity/hostComunitySlice'
-
+import NewsRoomReducer from './aboutus/newsroom/newsroomSlice'
+import AboutUSReducer from './aboutus/aboutUs/aboutusSlice'
+import hostRefernalReducer from './hosting/hostRefernal/hostRefernalSlice'
+import SafeTrustReducer from './howitwork/SafeTrust/SafeTrustSlice'
 export const store = configureStore({
   reducer: {
     loading: appReducer,
     shareAcar: shareAcarReducer,
     howitwork: HowItWorkReducer,
     connecthiw: ConnectHIWReducer,
+    newsroom: NewsRoomReducer,
     homePageData: HomeReducer,
+
+    AboutUs: AboutUSReducer,
+    community: communityReducer,
+    hostingReferral: hostRefernalReducer,
+    safetrust: SafeTrustReducer
+
+    user: UserReducer,
     community: communityReducer
+
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]

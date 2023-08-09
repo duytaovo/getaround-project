@@ -1,8 +1,7 @@
 export interface IExploreHostingText {
-  id?: string
-  headerTitle: string
-  mainTitle: string
-  Description: string
-  Title: string
-  Link: string
+  mainTitle?: string
+  headerTitle?: string
+  Title?: string
+  Description?: string
+  Link?: string
 }

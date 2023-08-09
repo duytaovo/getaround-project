@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { RightOutlined } from '@ant-design/icons'
-
-import ReadNewsItem from './ReadNewsItem/ReadNewsItem'
 import { DataReadNewItem } from 'src/items/NewsRoom/DataNewsRoom'
 const ReadNews = () => {
   return (

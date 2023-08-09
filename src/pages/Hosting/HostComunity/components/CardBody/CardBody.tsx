@@ -7,9 +7,9 @@ import { IItemBodyBannerCard } from 'src/types/hosting_shareACar.type'
 interface PropsCardBodyImg {
   itemCardBodyImg:IItemBodyBannerCard
 }
-
+// w-[260px] h-[260px] lg:w-[350px] lg:h-[350px] xl:w-[300px] xl:h-[300px] md:w-auto
 export const CardBodyImg = ({itemCardBodyImg}:PropsCardBodyImg) => (
-  <div className='w-[260px] h-[260px] text-black font-medium text-[20px] break-words hover:text-mainColor  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
+  <div className=' h-[260px] sm:h-[200px] text-black font-medium text-[20px] break-words hover:text-mainColor  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
     <div>
      {itemCardBodyImg.title}
       <span>
@@ -24,14 +24,14 @@ export const CardBodyImg = ({itemCardBodyImg}:PropsCardBodyImg) => (
     />
   </div>
 )
-
+// w-[260px] h-[260px] xl:w-[300px] xl:h-[300px] lg:w-[350px] lg:h-[350px]
 export const CardBodyButton = () => (
-  <div className='w-[260px] h-[260px] text-mainColor font-medium text-[20px] break-words hover:text-black  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
+  <div className=' h-[260px] sm:h-[200px] text-mainColor font-medium text-[20px] lg:text-[15px] break-words hover:text-black  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
     <div>Login to view your host</div>
     <Button
       children={<span className='text-xl'>Share A Car</span>}
       isNext={true}
-      className='w-[200px] hover:duration-500 duration-500 hover:transition-all  text-white h-[70px]  rounded-lg bg-[#3699d3] hover:bg-black  '
+      className='w-[200px] lg:w-[150px] hover:duration-500 duration-500 hover:transition-all  text-white h-[70px]  rounded-lg bg-[#3699d3] hover:bg-black  '
     ></Button>
   </div>
 )
@@ -41,14 +41,14 @@ interface PropsCardBodyParnerDeal {
 }
 export const CardBodyParnerDeal = ({itemCardBodyParnerDeal}:PropsCardBodyParnerDeal) => (
   <div className='w-full h-[300px]   text-black font-medium text-[20px] break-words bg-white flex items-center rounded-2xl border border-solid flex-row justify-around px-10 leading-5 border-[#d2d2d2]'>
-    <div className='w-1/2'>
+    <div className='w-1/2 mr-3 lg:w-1/3'>
       <img
-        className='rounded-full border-solid border border-[#d2d2d2] w-[231px] h-[231px]'
+        className='rounded-full border-solid border border-[#d2d2d2]'
         alt='cardImg'
         src={itemCardBodyParnerDeal.img}
       />
     </div>
-    <div className='w-1/2 '>
+    <div className='w-1/2 lg:w-2/3'>
       <strong className='text-[26px] font-medium leading-8 tracking-tight'>{itemCardBodyParnerDeal.title}</strong>
       <p className='py-5 text-lg gap-y-3 tracking-tight leading-6 xl'>
         {itemCardBodyParnerDeal.content}

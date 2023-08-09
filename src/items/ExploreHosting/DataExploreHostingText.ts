@@ -1,6 +1,6 @@
-import { ISelectItemsExploreHosting } from 'src/types/ExploreHosting'
+import { IExploreHostingText } from 'src/types/exploreHostingText.type'
 
-export const DataExploreHostingHomeText: ISelectItemsExploreHosting[] = [
+export const DataExploreHostingHomeText: IExploreHostingText[] = [
   {
     mainTitle: 'EXPLORE HOSTING',
     headerTitle: '',
@@ -11,7 +11,7 @@ export const DataExploreHostingHomeText: ISelectItemsExploreHosting[] = [
     Link: ''
   }
 ]
-export const DataExploreHostingShareCarText: ISelectItemsExploreHosting[] = [
+export const DataExploreHostingShareCarText: IExploreHostingText[] = [
   {
     mainTitle: '',
     headerTitle: 'HOST INCENTIVES',
@@ -22,7 +22,7 @@ export const DataExploreHostingShareCarText: ISelectItemsExploreHosting[] = [
     Link: '/'
   }
 ]
-export const DataExploreHostingHostRefernalText: ISelectItemsExploreHosting[] = [
+export const DataExploreHostingHostRefernalText: IExploreHostingText[] = [
   {
     mainTitle: '',
     headerTitle: 'OTHER HOST BONUSES',
@@ -34,7 +34,7 @@ export const DataExploreHostingHostRefernalText: ISelectItemsExploreHosting[] = 
   }
 ]
 
-export const DataExploreHostingAboutUsText: ISelectItemsExploreHosting[] = [
+export const DataExploreHostingAboutUsText: IExploreHostingText[] = [
   {
     mainTitle: '',
     headerTitle: 'Book  Unlock  and Drive nearby cars',
@@ -44,7 +44,7 @@ export const DataExploreHostingAboutUsText: ISelectItemsExploreHosting[] = [
     Link: '/'
   }
 ]
-export const DataExploreHostingSafetyTrustText: ISelectItemsExploreHosting[] = [
+export const DataExploreHostingSafetyTrustText: IExploreHostingText[] = [
   {
     mainTitle: 'EXPLORE HOSTING',
     headerTitle: '',

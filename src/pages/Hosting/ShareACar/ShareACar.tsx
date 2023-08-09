@@ -54,17 +54,17 @@ const ShareACar = () => {
             'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
           }
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          DataExploreHostingText={exploreHosting}
+          // DataExploreHostingText={exploreHosting}
           isEx={false}
           className={''}
         />
       </div>
       <div className='mb-bottom' id='getstarted'>
-        <div className='flex items-center justify-between bg-white md:bg-transparent flex-wrap md:flex-col md:space-y-2 flex-auto rounded-2xl '>
-          <div className='w-1/2 p-4 h-full md:w-full md:bg-white md:lg rounded-xl'>
+        <div className='flex items-center justify-between bg-white lg:bg-transparent flex-wrap lg:flex-col lg:space-y-3 flex-auto rounded-2xl '>
+          <div className='w-1/2 p-4 h-full lg:w-full lg:bg-white  rounded-xl'>
             <CustomForm />
           </div>
-          <div className='w-1/2 py-6 md:w-full md:bg-white'>
+          <div className='w-1/2 py-6 lg:w-full lg:bg-white rounded-xl '>
             <CustomeStep
               classname='text-white'
               items={step}
@@ -76,9 +76,9 @@ const ShareACar = () => {
       {/* end body1 */}
       {/* start body 2 */}
 
-      <div className='  rounded-2xl p-2  mb-bottom flex md:flex-col-reverse'>
-        <div className='w-1/2 md:w-full'>
-          <div className='w-[70%] md:w-full'>
+      <div className=' rounded-2xl p-2  mb-bottom flex md:flex-col-reverse'>
+        <div className='w-1/2 md:w-full md:flex md:justify-around md:mt-3'>
+          <div className='w-[80%] '>
             <CustomSlider
               classNameImage='rounded-lg'
               classNameTitle='text-[25px] text-mainColor ml-2'
@@ -91,12 +91,12 @@ const ShareACar = () => {
               numberItem={1}
               numberItemScroll={1}
               className='flex-col-reverse'
-              breakPoint={[1,1,2,2]}
+              breakPoint={[1,1,1,1]}
               breakPointScroll={[1,1,1,1]}
             />
           </div>
         </div>
-        <div className='w-1/2 md:w-[60%]'>
+        <div className='w-1/2 md:w-full md:mb-2'>
           <ContentSlider item={contentSlider} classNameTitle='text-[48px]' classNameContent='text-white' />
         </div>
       </div>
@@ -105,12 +105,12 @@ const ShareACar = () => {
 
       <div className=' p-5 mb-bottom'>
        <GetAroundYourBack item={getAroundYourBack}/>
-        <div className='md:flex md:flex-col '>
-          <div className='flex gap-10 mt-3 h-full mb-5  md:flex-col'>
-            <div className='w-[70%] lg:w-1/2 md:w-full  '>
+        <div className='lg:flex lg:flex-col '>
+          <div className='flex gap-10 mt-3 h-full mb-5  lg:flex-col'>
+            <div className='w-[70%]  lg:w-full  '>
               <BodyBanner item={bodyBannerCard} />
             </div>
-            <div className='w-[30%] lg:w-1/2 md:w-full h-full justify-between'>
+            <div className='w-[30%]  lg:w-full h-full justify-between'>
               <BodyCard
                 item={bodyCardTop}
                 classNameTitle='py-2 text-black'
@@ -119,12 +119,12 @@ const ShareACar = () => {
               />
             </div>
           </div>
-          <div className='flex gap-10 mt-3 items-center '>
-            <div className='w-[70%] md:w-full  h-max'>
+          <div className='flex gap-10 mt-4 items-center lg:flex-col'>
+            <div className='w-[70%] lg:w-full  h-max'>
               <Support item={support} />
               {/* <BodyBanner /> */}
             </div>
-            <div className='w-[30%] md:w-full  h-max'>
+            <div className='w-[30%] lg:w-full  h-max'>
               <BodyCard
                 item={bodyCardBottom}
                 classNameTitle='text-mainColor py-2'
@@ -147,15 +147,15 @@ const ShareACar = () => {
           isBgTransparent={true}
           fontSize={12}
         >
-          <div className='flex'>
+          <div className='flex md:flex-col'>
             <CustomeCommonQuestions
               titleClassName='text-white/90 text-bold text-[18px]'
               items={commonQuestion}
-              className='w-1/2'
+              className='w-1/2 md:w-full'
             />
-            <div className='w-1/2 p-4 flex justify-center items-center bg-white rounded-2xl ml-4'>
+            <div className='w-1/2 md:w-full md:mt-2 md:p-0 p-4 flex justify-center items-center bg-white rounded-2xl ml-4 md:ml-0'>
               <img
-                width='50%'
+                width='50% md:lg'
                 src={
                   'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'
                 }
@@ -174,7 +174,7 @@ const ShareACar = () => {
             'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
           }
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          DataExploreHostingText={exploreHosting}
+          // DataExploreHostingText={exploreHosting}
           isEx={false}
           className=''
         />
@@ -201,7 +201,7 @@ const ShareACar = () => {
 
       {/* start collapse 2 */}
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
-      <div className=' w-[80%]   rounded-2xl mb-bottom   text-black'>
+      <div className='xl:flex xl:justify-center flex-col  rounded-2xl mb-bottom   text-black'>
         <h2 className='flex justify-center text-mainColor text-[26px] leading-8'>...Need more info? Check out FAQs.</h2>
         <WrapperContent
           titlePadding={5}

@@ -7,54 +7,48 @@ import CustomeCard from 'src/components/CustomeCard/CustomeCard'
 import { DataCustomeCardHostRefernal } from 'src/Data/DataCustomeCard'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
-import { itemsHostRefernal } from 'src/items/CommonQuestionItems/CommonQuestionItems'
+import { DataitemsHostRefernal } from 'src/items/CommonQuestionItems/CommonQuestionItems'
 import { Link } from 'react-router-dom'
 import SlideLeftRight from 'src/components/SlideLeftRight/SlideLeftRight'
 import { DataSlideLeftRightHostRefernal } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 import CustomeStep from 'src/components/CustomeStep/CustomeStep'
+import HeaderhostRefernal from './HeaderhostRefernal'
 import {
   CustomeStepItems,
   CustomeStepItemsHowItWork1,
-  CustomeStepItemAboutUs
+  CustomeStepItemHostRefernal
 } from 'src/items/CustomeStepItem/CustomeStepItem'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 import { MobileOutlined, CarOutlined, RiseOutlined, DollarOutlined, WalletOutlined } from '@ant-design/icons'
+export const DataImgCustomeStepHostRF = {
+  img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg',
+  title: 'Make it happen in seconds'
+}
 const HostRefernal = () => {
+  const { ExplorehostRefernal, customeSteps } = useSelector((state: RootState) => state.hostingReferral)
+  console.log(ExplorehostRefernal)
+  const dispatch = useDispatch()
+
+  // const handleExploreHIW = (newExploreHostring: ISelectItemsExploreHosting) => {
+  //   dispatch(updateExploreHIW(newExploreHostring))
+  // }
+
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
-        <div className='justify-center items-center flex relative'></div>
-        <div className='flex justify-center px-[36px] '>
-          <div className='w-1/2  flex justify-center items-center'>
-            <div className='block'>
-              <h2 className='text-3xl text-black font-bold'>
-                <span className='text-mainColor'> Make even more</span> when you refer your friends
-              </h2>
-
-              <p className='text-[#1e1e1e] font-normal mt-3'>
-                You already know how powerful hosting can be. Time to share the love. Don't delay—this is a limited-time
-                offer.
-              </p>
-            </div>
-          </div>
-          <div className='w-1/2 flex justify-center'>
-            <img
-              className='object-contain h-[500px]'
-              src='https://assets.website-files.com/581d2676fe18a07e43923cfc/63ec0f79defe6c3903d84ee4_ga-illustration-2.svg'
-              alt='ss'
-            />
-          </div>{' '}
-        </div>
+        <HeaderhostRefernal />
       </WrapperContent>
       <CustomeCard mainTitle={`When you refer a friend`} DataCustomeCard={DataCustomeCardHostRefernal} />
       <WrapperContent textAlign='center' title='HOW IT WORKS' classname='flex flex-col'>
         <div className='justify-center items-center flex relative'>
-          <div className='flex justify-center px-[36px] '>
-            <div className='w-1/2 md:w-[65%] '>
+          <div className='flex justify-center px-[36px] sm:flex-col'>
+            <div className='w-1/2 md:w-[65%] sm:w-[100%]'>
               <p className='text-black text-2xl mb-3 font-semibold'>Make it happen in seconds</p>
               <CustomeStep
                 icons={[<CarOutlined />, <WalletOutlined />, <DollarOutlined />]}
                 classname='w-full'
-                items={CustomeStepItemAboutUs}
+                items={customeSteps}
               />
             </div>
             {/* <div className='w-1/2 flex justify-center rounded-[16px] items-center'> */}
@@ -86,13 +80,13 @@ const HostRefernal = () => {
           'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6324f5891e795a0a4cf1c346_AdobeStock_488832115.jpg'
         }
         DataExploreHostingStyle={DataExploreHostingHostRefernal}
-        DataExploreHostingText={DataExploreHostingHostRefernalText}
+        DataExploreHostingText={ExplorehostRefernal}
         isEx={false}
         className='flex-col items-center flex w-full mb-[120px]'
       />
       <WrapperContent titlePadding={8} textAlign='left' title='Need more info? Check out FAQs.'>
         <div>
-          <CustomeCommonQuestions items={itemsHostRefernal} className='w-full p-4' />
+          <CustomeCommonQuestions items={DataitemsHostRefernal} className='w-full p-4' />
         </div>
       </WrapperContent>
     </div>

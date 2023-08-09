@@ -1,5 +1,5 @@
 import { IItemCarousel } from 'src/types/hosting_shareACar.type'
-
+import { ISelectItemsCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
 export const ItemCarousel: IItemCarousel[] = [
   {
     id: 1,
@@ -141,6 +141,50 @@ export const ItemCarouselCommunity: IItemCarousel[] = [
 ]
 
 export const ItemCarouselAboutUs_NewsRoom = [
+  {
+    id: 1,
+    title: 'Getaround Reaffirms Commitment as the True Open Carsharing   Marketplace with New Onboarding Incentives',
+    date: 'April 28, 2023',
+    description: `Following recent news of industry competitor's plans to shut down access to third-party vendors including CarSync, Getaround is ramping up its onboarding incentives`,
+    linkto: '/'
+  },
+  {
+    id: 2,
+    title: `Getaround Reveals Earth Day Plans to Support Guests' Wallets and The Planet`,
+    date: 'April 13, 2023',
+    description: `Industry pioneer and world's first connected carsharing
+    marketplace is offering new U.S. guests up to $100 in
+    savings`,
+    linkto: '/'
+  },
+  {
+    id: 3,
+    title: `Getaround Acquires HyreCar Assets
+    to Accelerate Profitability Path and
+    Fortify Worldwide Gig Carsharing
+    Leadership Position`,
+    date: 'May 11, 2023',
+    description: `Getaround anticipates that the acquisition will
+    contribute up to $75 million of run-rate annualized
+    Gross Booking Value and positive Adjusted EBITDA,
+    accelerating its path to profitability
+    Transaction is expected to be synergistic as Getaround
+    expands its global market footprint`,
+    linkto: '/'
+  },
+  {
+    id: 4,
+    title: `Getaround Acquires HyreCar Assets
+    to Accelerate Profitability Path and
+    Fortify Worldwide Gig Carsharing
+    Leadership Position`,
+    date: 'May 11, 2023',
+    description: ``,
+    linkto: '/'
+  }
+]
+
+export const ItemCarouselNewsRoom_NewsRoom = [
   {
     id: 1,
     title: 'Getaround Reaffirms Commitment as the True Open Carsharing   Marketplace with New Onboarding Incentives',
