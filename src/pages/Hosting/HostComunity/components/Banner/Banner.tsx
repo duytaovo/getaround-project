@@ -14,7 +14,7 @@ const Banner = ({item}: PropsBanner) => {
          {item.content}
         </p>
         <Button
-          children={<span className='text-xl'>Share A Car</span>}
+          children={<span className='text-xl'>{item.infoButton}</span>}
           isNext={true}
           className='w-[200px] hover:duration-500 duration-500 hover:transition-all  text-black h-[70px]  rounded-lg bg-white hover:bg-mainColor  hover:text-white'
         ></Button>

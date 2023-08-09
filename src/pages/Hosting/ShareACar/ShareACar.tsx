@@ -24,8 +24,26 @@ import GetAroundYourBack from './components/GetAroundYourBack/GetAroundYourBack'
 import OurHost from './components/OurHost/OurHost'
 
 const ShareACar = () => {
-  const { bodyTop,ourHost,getAroundYourBack,step,exploreHosting,commonQuestion, bodyBannerCard, bodyCardBottom, bodyCardTop, carouselReview, contentSlider, sliders, support } =
-  useAppSelector((state) => state.shareAcar)
+  const {
+    bodyTop,
+    ourHost,
+    commonQuestionImg,
+    getAroundYourBack,
+    step,
+    exploreHosting,
+    commonQuestion,
+    bodyBannerCard,
+    bodyCardBottom,
+    bodyCardTop,
+    carouselReview,
+    contentSlider,
+    sliders,
+    support,
+    wrapperTitle,
+    imgExploreHosting
+  } = useAppSelector((state) => state.shareAcar)
+  console.log(bodyTop)
+
   const dispatch = useDispatch()
 
   const handleBodyTopChange = (newBodyTop: IBodyTop) => {
@@ -50,23 +68,22 @@ const ShareACar = () => {
       {/* start body 1 */}
       <div className='mb-[200px]'>
         <ExploreHosting
-          img={
-            'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
-          }
+          img={imgExploreHosting}
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          // DataExploreHostingText={exploreHosting}
+          DataExploreHostingText={exploreHosting[0]}
           isEx={false}
           className={''}
         />
       </div>
       <div className='mb-bottom' id='getstarted'>
-        <div className='flex items-center justify-between bg-white lg:bg-transparent flex-wrap lg:flex-col lg:space-y-3 flex-auto rounded-2xl '>
-          <div className='w-1/2 p-4 h-full lg:w-full lg:bg-white  rounded-xl'>
+        <div className='flex items-center justify-between lg:bg-transparent flex-wrap lg:flex-col lg:space-y-3 flex-auto rounded-2xl '>
+          <div className='w-1/2 p-4 h-full lg:w-full bg-white lg:bg-white  rounded-xl'>
             <CustomForm />
           </div>
-          <div className='w-1/2 py-6 lg:w-full lg:bg-white rounded-xl '>
+          <div className='w-1/2 py-6 lg:w-full lg:bg-white rounded-xl text-white'>
             <CustomeStep
               classname='text-white'
+              textClassName='text-white'
               items={step}
               icons={[<TimeToLeaveOutlinedIcon />, <LinkedCameraOutlinedIcon />, <FileDownloadOutlinedIcon />]}
             />
@@ -91,8 +108,8 @@ const ShareACar = () => {
               numberItem={1}
               numberItemScroll={1}
               className='flex-col-reverse'
-              breakPoint={[1,1,1,1]}
-              breakPointScroll={[1,1,1,1]}
+              breakPoint={[1, 1, 1, 1]}
+              breakPointScroll={[1, 1, 1, 1]}
             />
           </div>
         </div>
@@ -104,7 +121,7 @@ const ShareACar = () => {
       {/* start body banner */}
 
       <div className=' p-5 mb-bottom'>
-       <GetAroundYourBack item={getAroundYourBack}/>
+        <GetAroundYourBack item={getAroundYourBack} />
         <div className='lg:flex lg:flex-col '>
           <div className='flex gap-10 mt-3 h-full mb-5  lg:flex-col'>
             <div className='w-[70%]  lg:w-full  '>
@@ -139,14 +156,8 @@ const ShareACar = () => {
       {/* start collapse 1 */}
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
       <div className=' rounded-2xl mb-bottom'>
-        <h2 className='text-[32px] font-medium tracking-tight leading-5'>...and more</h2>
-        <WrapperContent
-          titlePadding={5}
-          textAlign='left'
-          title=''
-          isBgTransparent={true}
-          fontSize={12}
-        >
+        <h2 className='text-[32px] font-medium tracking-tight leading-5'>{wrapperTitle[0].title}</h2>
+        <WrapperContent titlePadding={5} textAlign='left' title={''} isBgTransparent={true} fontSize={20}>
           <div className='flex md:flex-col'>
             <CustomeCommonQuestions
               titleClassName='text-white/90 text-bold text-[18px]'
@@ -154,13 +165,7 @@ const ShareACar = () => {
               className='w-1/2 md:w-full'
             />
             <div className='w-1/2 md:w-full md:mt-2 md:p-0 p-4 flex justify-center items-center bg-white rounded-2xl ml-4 md:ml-0'>
-              <img
-                width='50% md:lg'
-                src={
-                  'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg'
-                }
-                alt=''
-              />
+              <img width='50% md:lg' src={commonQuestionImg.img} alt='' />
             </div>
           </div>
         </WrapperContent>
@@ -171,10 +176,10 @@ const ShareACar = () => {
       <div className='mb-bottom'>
         <ExploreHosting
           img={
-            'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
+            imgExploreHosting
           }
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          // DataExploreHostingText={exploreHosting}
+          DataExploreHostingText={exploreHosting[0]}
           isEx={false}
           className=''
         />
@@ -182,7 +187,7 @@ const ShareACar = () => {
       {/* start carousel review */}
       <div className='mb-bottom'>
         <div>
-         <OurHost item={ourHost}/>
+          <OurHost item={ourHost} />
         </div>
         <Carousel_Review_Comunity
           className='m-4'
@@ -202,13 +207,14 @@ const ShareACar = () => {
       {/* start collapse 2 */}
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
       <div className='xl:flex xl:justify-center flex-col  rounded-2xl mb-bottom   text-black'>
-        <h2 className='flex justify-center text-mainColor text-[26px] leading-8'>...Need more info? Check out FAQs.</h2>
+        <h2 className='flex  text-mainColor text-[26px] leading-8'>{wrapperTitle[1].title}</h2>
         <WrapperContent
           titlePadding={5}
           textAlign='left'
-          title='Learn more about the benefits of Getaround'
+          title={''}
           isBgTransparent={true}
-          fontSize={12}
+          fontSize={22}
+          isUpperCase={false}
         >
           <div className='flex'>
             <CustomeCommonQuestions

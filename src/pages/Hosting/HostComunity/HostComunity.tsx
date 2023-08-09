@@ -1,6 +1,5 @@
 import React from 'react'
 import SliderHostComunity from './components/Slider/Slider'
-import { changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import CardBody from './components/CardBody'
 import GettingStarted from './components/GettingStarted/GettingStarted'
 import { Col, Row } from 'antd'
@@ -17,16 +16,21 @@ import { Grid } from '@mui/material'
 
 const HostCominity = () => {
   const {
-    CarouselCommunity,
+    carouselCommunity,
     ourHost,
-    exploreHosting,
     bannerCommunity,
     cardBodyImg,
     cardBodyParnerDeal,
     cardBodyReferFriend,
     sliderHostComunity,
     gettingStartedNailBasic,
-    topGettingStarted
+    topGettingStarted,
+    imgGettingStarted,
+    exploreHosting,
+    imgExploreHosting,
+    cardBodyButton,
+    itemLink,
+    itemLinkNailTheBasic
   } = useAppSelector((state) => state.community)
 
   const text = 'Featured news & updates'
@@ -51,7 +55,7 @@ const HostCominity = () => {
             <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
           </Grid>
           <Grid item xs={6} sm={6} md={3}>
-            <CardBody.CardBodyButton />
+            <CardBody.CardBodyButton item={cardBodyButton} />
           </Grid>
         </Grid>
       </div>
@@ -63,7 +67,7 @@ const HostCominity = () => {
           <Col span={12} className='relative ml-auto mr-auto mt-[36px] '>
             {/* <div className=' bg-white rounded-md relative ml-auto mr-auto mt-[36px]'> */}
             <img
-              src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0b73b2f4fb34b18ddb8a_ga-illustration-8.svg'
+              src={imgGettingStarted}
               alt=''
               className='sticky bg-white rounded-2xl  object-contain max-h-[400px] w-[95%] top-1/3'
             />
@@ -71,7 +75,7 @@ const HostCominity = () => {
           </Col>
           <Col span={12}>
             <div className=' gap-y-4'>
-              <GettingStarted itemTopGettingStarted={topGettingStarted} itemGettingStarted={gettingStartedNailBasic} />
+              <GettingStarted itemLinkNailTheBasic={itemLinkNailTheBasic} itemLink={itemLink} itemTopGettingStarted={topGettingStarted} itemGettingStarted={gettingStartedNailBasic} />
             </div>
           </Col>
         </Row>
@@ -90,10 +94,10 @@ const HostCominity = () => {
         /* start card Partner,deal*/
         <div className='flex mb-[75px]'>
           <Grid container spacing={2}>
-            <Grid item sm={12}  md={8}>
+            <Grid item sm={12} md={8}>
               <CardBodyParnerDeal itemCardBodyParnerDeal={cardBodyParnerDeal} />
             </Grid>
-            <Grid item sm={12}  md={4}>
+            <Grid item sm={12} md={4}>
               <CardBodyReferFriend itemCardBodyReferFriend={cardBodyReferFriend} />
             </Grid>
           </Grid>
@@ -105,7 +109,7 @@ const HostCominity = () => {
         /* start card Partner,deal*/
         <div className='mb-bottom gap-x-5'>
           <OurHost item={ourHost} />
-          <Carousel_Review_Comunity className='m-4' data={CarouselCommunity} numberItem={2} numberItemScroll={1} />
+          <Carousel_Review_Comunity className='m-4' data={carouselCommunity} numberItem={2} numberItemScroll={1} />
         </div>
       }
 
@@ -113,11 +117,9 @@ const HostCominity = () => {
         // start exploreHosting
         <div className='mb-[200px]'>
           <ExploreHosting
-            img={
-              'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
-            }
+            img={imgExploreHosting}
             DataExploreHostingStyle={DataExploreHostingShareCar}
-            // DataExploreHostingText={exploreHosting}
+            DataExploreHostingText={exploreHosting[0]}
             isEx={false}
             className=''
           />

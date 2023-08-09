@@ -9,6 +9,7 @@ type WrapperProps = {
   titlePadding?: number
   isBgTransparent?: boolean
   fontSize?: number
+  isUpperCase?:boolean
 }
 
 const WrapperContent: FC<WrapperProps> = ({
@@ -18,7 +19,8 @@ const WrapperContent: FC<WrapperProps> = ({
   textAlign,
   titlePadding,
   isBgTransparent,
-  fontSize
+  fontSize,
+  isUpperCase
 }) => {
   return (
     <div
@@ -30,9 +32,10 @@ const WrapperContent: FC<WrapperProps> = ({
         id='id-text'
         tag='p'
         content={title}
-        className={`text-${textAlign} text-mainColor uppercase text-[11px] text-[${fontSize + 'px'}] font-bold pt-2`}
+        className={`text-${textAlign} text-mainColor text-[11px] ${isUpperCase ? 'uppercase' : ""} text-[${fontSize + 'px'}] font-bold pt-2`}
         style={{
-          padding: `0 ${titlePadding}px`
+          padding: `0 ${titlePadding}px`,
+          // textTransform:`${isUpperCase ? 'uppercase' : "lowercase"}`
         }}
       />
       {/* <p

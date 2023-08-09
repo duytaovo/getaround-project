@@ -8,11 +8,7 @@ interface Props {
   item:IItemSupport
 }
 
-export const itemSupport:IItemSupport = {
-  title:"24/7 support, prioritized for hosts.",
-  contentLeft:"Don't hesitate to contact us if you ever have a problem.",
-  contentRight:"  Dedicated account managers for power hosts. As you grow your fleet, you'll get more personalized support from a Getaround team member assigned to you."
-}
+
 
 const Support = ({item}: Props) => {
   return (
@@ -20,7 +16,7 @@ const Support = ({item}: Props) => {
       <div className='flex items-center justify-between w-2/3 lg:w-full'>
         <div>
           <img
-            src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6328bdb541c77f294bfb6e1e_aboutga-247-support-p-500.png'
+            src={item.img}
             alt=''
             className='w-[200px] h-[124px] rounded-full'
           />

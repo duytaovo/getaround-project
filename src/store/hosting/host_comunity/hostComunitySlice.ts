@@ -3,9 +3,14 @@ import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
 import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import {
   itemBannerCommunity,
+  itemCardBodyButton,
   itemCardBodyImg,
   itemCardBodyParnerDeal,
   itemCardBodyReferFriend,
+  itemImgExploreHosting,
+  itemImgGettingStarted,
+  itemLink,
+  itemLinkNailTheBasic,
   itemOurHost,
   itemSliderHostComunity,
   itemTopGettingStarted,
@@ -14,6 +19,8 @@ import {
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
 import {
   IItemBanner,
+  IItemCardBodyButton,
+  IItemLink,
   IItemNailTheBasic,
   IItemSliderHostComunity,
   IItemTopGettingStarted
@@ -26,11 +33,18 @@ interface ShareACarState {
   cardBodyParnerDeal: IItemBodyBannerCard
   cardBodyReferFriend: IItemBodyBannerCard
   bannerCommunity: IItemBanner
-  CarouselCommunity: IItemCarousel[]
+  carouselCommunity: IItemCarousel[]
   exploreHosting: ISelectItemsExploreHosting[]
   ourHost: IItemGetAroundYourBack
   gettingStartedNailBasic: IItemNailTheBasic
   topGettingStarted: IItemTopGettingStarted
+  imgGettingStarted: string
+  imgExploreHosting: string
+  cardBodyButton:IItemCardBodyButton
+
+  itemLinkNailTheBasic:IItemNailTheBasic[]
+  itemLink:IItemLink[]
+
 }
 
 const initialState: ShareACarState = {
@@ -38,12 +52,18 @@ const initialState: ShareACarState = {
   cardBodyImg: itemCardBodyImg,
   cardBodyParnerDeal: itemCardBodyParnerDeal,
   cardBodyReferFriend: itemCardBodyReferFriend,
+  cardBodyButton: itemCardBodyButton,
   bannerCommunity: itemBannerCommunity,
-  CarouselCommunity: ItemCarouselCommunity,
+  carouselCommunity: ItemCarouselCommunity,
   exploreHosting: DataExploreHostingShareCarText,
   ourHost: itemOurHost,
   gettingStartedNailBasic: theNailBasicContent,
-  topGettingStarted: itemTopGettingStarted
+  topGettingStarted: itemTopGettingStarted,
+  imgGettingStarted:itemImgGettingStarted,
+  imgExploreHosting:itemImgExploreHosting,
+  itemLinkNailTheBasic:itemLinkNailTheBasic,
+  itemLink:itemLink
+
 }
 
 const communitySlice = createSlice({
