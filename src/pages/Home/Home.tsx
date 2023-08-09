@@ -24,7 +24,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
-  console.log(homePageData.exploreHostingSection)
+  console.log(homePageData[0])
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
@@ -43,17 +43,20 @@ const Home = (props: Props) => {
         title={homePageData.perfectCarSliderSection.wrapperTitle}
         textAlign='center'
         isBgTransparent={true}
+        classname='w-full'
       >
-        <div className='xl:w-[70%] mx-auto pt-4 lg:w-[80%] sm:w-full'>
+        <div className='mx-auto pt-4'>
           <CustomeSlider
-            breakPoint={[2, 2, 3, 4]}
+
             breakPointScroll={[1, 1, 1, 1]}
-            classNameContainer=''
+            breakPoint={[2, 3, 3, 5]}
+            classNameContainer='px-6 w-full'
+
             classNameTitle='text-center py-2 text-white/80 justify-center'
             className='bg-mainColor/20 flex flex-col items-center justify-center
              rounded-md overflow-hidden h-full p-1'
             classNameImage='rounded-md w-[100%] h-[100%] object-cover'
-            numberItem={4}
+            numberItem={5}
             numberItemScroll={1}
             isTitle={true}
             data={homePageData.perfectCarSliderSection.itemsData}
@@ -61,13 +64,13 @@ const Home = (props: Props) => {
         </div>
       </WrapperContent>
 
-      <section title='' className='my-14 w-[70%] lg:w-[80%] sm:w-full mx-auto mb-bottom'>
+      <section title='' className='my-14 w-[70%] lg:w-[80%] md:w-full h-fit mx-auto mb-bottom'>
         <CustomeCarousel.Carousel_Introduce
           classNameHeader='text-[11px] text-mainColor'
-          classNameTitle='text-[32px] text-white/60 text-bold tracking-[-0.48px] leading-[34px] py-4'
-          classNameContent='leading-[22px] text-white/60'
-          className='w-full flex justify-between bg-black p-2 bg-mainColor/20 rounded-md'
-          classNameImage='w-1/2 rounded-md'
+          classNameTitle='text-[32px] text-white/60 text-bold tracking-[-0.48px] leading-[34px] py-4 md:py-0 sm:text-md'
+          classNameContent='leading-[22px] text-white/60 sm:text-sm  sm:w-fit'
+          className='w-full flex justify-between bg-black p-2 bg-mainColor/20 rounded-md md:flex-col-reverse'
+          classNameImage='w-1/2 rounded-md mx-auto'
           numberItem={1}
           numberItemScroll={1}
           data={homePageData.homeIntoduceCarouselSection}
@@ -78,6 +81,7 @@ const Home = (props: Props) => {
         title={homePageData.sharingMaketPlaceSection.wrapperTitle}
         textAlign='center'
         isBgTransparent={true}
+        classname='z-[10] pt-4'
       >
         <ConnectedCarSharing DataConnectedCarSharingHome={homePageData.sharingMaketPlaceSection.itemsData} />
       </WrapperContent>
@@ -141,11 +145,14 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto pt-4 w-[60%] md:w-full'>
           <CustomeSlider
-            breakPointScroll={[1, 1, 1, 1]}
-            breakPoint={[1, 1, 2, 2]}
+
+            breakPointScroll={[1, 3, 4, 5]}
+            breakPoint={[2, 4, 4, 5]}
+
             numberItem={5}
             numberItemScroll={4}
             isTitle
+            classNameContainer='px-4'
             classNameImage='w-[100px] h-[100px] rounded-full object-cover'
             className='flex flex-col justify-center items-center'
             classNameTitle='pt-3 text-white/80'
@@ -164,9 +171,12 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
-            breakPoint={[1, 1, 2, 2]}
-            breakPointScroll={[1,1,1,1]}
-            numberItem={3}  
+
+            classNameContainer='px-6'
+            breakPointScroll={[1, 2, 2, 2]}
+            breakPoint={[1, 2, 3, 3]}
+            numberItem={3}
+
             numberItemScroll={1}
             className='bg-mainColor/20 rounded-md h-fit p-2 overflow-hidden object-cover'
             classNameImage='rounded-md w-full'
