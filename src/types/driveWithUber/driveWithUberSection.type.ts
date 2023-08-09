@@ -6,6 +6,8 @@ export interface IHeroSectionType {
   logos: string[]
   titles: string[]
   paragraphs: string[]
+  buttonTitle: string
+  link: string
 }
 
 export interface IIntroduceSection {
