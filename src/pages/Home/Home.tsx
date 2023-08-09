@@ -18,13 +18,12 @@ import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCar
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { useAppSelector } from 'src/hooks/useRedux'
-import { Image } from 'src/components/Edition/Image'
 
 type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
-  console.log(homePageData[0])
+  console.log(homePageData)
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
@@ -47,11 +46,9 @@ const Home = (props: Props) => {
       >
         <div className='mx-auto pt-4'>
           <CustomeSlider
-
             breakPointScroll={[1, 1, 1, 1]}
             breakPoint={[2, 3, 3, 5]}
             classNameContainer='px-6 w-full'
-
             classNameTitle='text-center py-2 text-white/80 justify-center'
             className='bg-mainColor/20 flex flex-col items-center justify-center
              rounded-md overflow-hidden h-full p-1'
@@ -90,8 +87,7 @@ const Home = (props: Props) => {
         <Heading title={homePageData.homeStepSection.heading} breakLineAt={3} fontSize={30} className='text-center' />
         <div className='flex justify-center px-[36px] xl:flex-col-reverse'>
           <div className='w-1/2 flex justify-center xl:w-full'>
-            {/* <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' /> */}
-            <Image id='img-id' className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' />
+            <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' />
           </div>
 
           <CustomeStep
@@ -128,12 +124,11 @@ const Home = (props: Props) => {
       >
         <ExploreHosting
           DataExploreHostingStyle={DataExploreHostingHome}
-          // DataExploreHostingText={homePageData.exploreHostingSection.itemData}
+          DataExploreHostingText={homePageData.exploreHostingSection.itemData}
           img={homePageData.exploreHostingSection.img}
           className='flex-col items-center flex w-full'
         />
       </WrapperContent>
-      {/* <h1 contentEditable={true}>content test</h1> */}
 
       <WrapperContent title={homePageData.localFavouriteSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
@@ -145,10 +140,8 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto pt-4 w-[60%] md:w-full'>
           <CustomeSlider
-
             breakPointScroll={[1, 3, 4, 5]}
             breakPoint={[2, 4, 4, 5]}
-
             numberItem={5}
             numberItemScroll={4}
             isTitle
@@ -171,12 +164,10 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
-
             classNameContainer='px-6'
             breakPointScroll={[1, 2, 2, 2]}
             breakPoint={[1, 2, 3, 3]}
             numberItem={3}
-
             numberItemScroll={1}
             className='bg-mainColor/20 rounded-md h-fit p-2 overflow-hidden object-cover'
             classNameImage='rounded-md w-full'
