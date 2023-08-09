@@ -9,12 +9,12 @@ export const DataJoinTeamAboutUs = {
 }
 const JoinTeam = () => {
   return (
-    <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10'>
-      <div className='w-1/2  flex items-center'>
+    <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10 sm:flex-col'>
+      <div className='w-1/2  flex items-center sm:w-full'>
         <div className='block '>
-          <p className='uppercase text-mainColor font-bold mb-3 text-3xl mt-10'>Join the Getaround team </p>
+          <p className='uppercase text-mainColor font-bold mb-3 text-3xl mt-10 sm:text-xl'>Join the Getaround team </p>
 
-          <p className='text-[#808795] font-normal mt-3'>
+          <p className='text-[#808795] font-normal mt-3 sm:text-[15px]'>
             Want to work with us? Come join the team focused on empowering people to carshare everywhere. Explore open
             roles at Getaround.
           </p>
@@ -26,7 +26,7 @@ const JoinTeam = () => {
           </Link>
         </div>
       </div>
-      <div className='w-[35%] flex justify-center'>
+      <div className='w-[35%] flex justify-center sm:w-full'>
         <img
           className='object-contain h-[500px]'
           src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea9fc9c0cafb2053ba37ac_ga-illustration-19.svg'

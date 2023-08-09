@@ -20,21 +20,21 @@ export const DataBlogAboutUs = {
 }
 const Blog = () => {
   return (
-    <div className='flex justify-center h-auto w-full mb-16 md:mb-24'>
+    <div className='flex justify-center h-auto w-full mb-16 md:mb-24 sm:flex-col sm:mb-20'>
       <img
-        className='object-contain rounded-2xl w-1/2 flex justify-center mr-5 md:rounded-2xl'
+        className='object-contain rounded-2xl w-1/2 flex justify-center mr-5 md:rounded-2xl sm:w-full'
         src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63dc05d87b4b95cb44c4ef9f_getaroundblog%20Grande.jpeg'
         alt='ss'
       />
 
-      <div className='w-1/2  flex justify-center items-center '>
+      <div className='w-1/2  flex justify-center items-center sm:w-full sm:mt-6'>
         <div className='block h-[50%]'>
           <p className='uppercase text-mainColor font-semibold mb-8 text-[10px]'>THE GETAROUND BLOG</p>
-          <h2 className='text-3xl  font-bold mb-4'>
+          <h2 className='text-3xl  font-bold mb-4 sm:text-xl'>
             <span className='text-mainColor'>Discover the Getaround blog</span>
           </h2>
 
-          <p className='text-white font-normal my-6 '>
+          <p className='text-white font-normal my-6 sm:text-[15px]'>
             Explore the collection of stories, news, and other resources for hosts, guests, and partners throughout the
             Getaround carsharing community.
           </p>

@@ -24,7 +24,7 @@ const Step = () => {
         >
           <h3
             data-w-id='19b49919-2a64-d52b-9a28-bb8f08bfcea8'
-            className='text-mainColor my-0 text-[24px] font-bold text-left leading-[105%]'
+            className='text-mainColor my-0 text-[24px] font-bold text-left leading-[105%] sm:leading-[50%] sm:text-[15px] sm:font-medium'
           >
             Booking a car
           </h3>
@@ -56,19 +56,19 @@ const Step = () => {
           </div>
           <h3
             data-w-id='19b49919-2a64-d52b-9a28-bb8f08bfcea8'
-            className='text-black my-0 text-[24px] font-bold text-left leading-[105%]'
+            className='text-black my-0 text-[24px] font-bold text-left leading-[105%] sm:leading-[50%] sm:text-[15px] sm:font-medium'
           >
             Sharing a car
           </h3>
         </Link>
       </div>
-      <div className='flex justify-center px-[36px] '>
+      <div className='flex justify-center px-[36px] sm:flex-col'>
         {/* Begin image portion */}
 
         {/* End image portion */}
         {step === true ? (
           <>
-            <div className='w-1/2 flex justify-center'>
+            <div className='w-1/2 flex justify-center sm:w-full'>
               <img
                 className='object-contain h-[500px]'
                 src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar-p-500.jpg'
@@ -77,7 +77,7 @@ const Step = () => {
             </div>{' '}
             <CustomeStep
               icons={[<MobileOutlined />, <CarOutlined />, <RiseOutlined />]}
-              classname='w-1/2'
+              classname='w-1/2 sm:w-full'
               items={CustomeStepItemsHowItWork1}
             />
           </>

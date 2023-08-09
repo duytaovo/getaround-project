@@ -31,7 +31,9 @@ const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName, titleC
       // </h1>
     ),
     description: (
-      <div className='flex'>{item.images?.map((image, index) => <img key={index} className='pr-2' src={image} />)}</div>
+      <div className='flex'>
+        {item.images?.map((image, index) => <img key={index} className='pr-2 w-20' src={image} />)}
+      </div>
     )
   }))
 

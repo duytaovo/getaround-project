@@ -10,6 +10,7 @@ import './style.css'
 import { AiFillStar } from 'react-icons/ai'
 import CustomDatetimePicker from 'src/components/CustomDatetimePicker/CustomDatetimePicker'
 import RatingStar from 'src/components/RatingStar'
+import CustomeAddressAutocomplete from 'src/components/CustomeAddressAutocomplete/CustomeAddressAutocomplete'
 dayjs.extend(customParseFormat)
 
 const { RangePicker } = DatePicker
@@ -21,7 +22,20 @@ const range = (start: number, end: number) => {
   }
   return result
 }
-
+const options = [
+  {
+    label: 'Option 1',
+    value: 'This is value one'
+  },
+  {
+    label: 'Option 2',
+    value: '2'
+  },
+  {
+    label: 'Option 3',
+    value: '3'
+  }
+]
 const HeaderHowItWord = () => {
   // eslint-disable-next-line arrow-body-style
   const disabledDate: RangePickerProps['disabledDate'] = (current) => {
@@ -29,62 +43,27 @@ const HeaderHowItWord = () => {
     return current && current < dayjs().endOf('day')
   }
   return (
-    <div className='mb-28 flex flex-col items-stretch m-full h-101 '>
+    <div className='mb-28 flex flex-col items-stretch m-full h-101 sm:mb-0'>
       <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative  h-full'>
         <div
-          className='rounded-2xl '
+          className='rounded-2xl sm:bg-[0%_0%]'
           style={{
-            backgroundImage: `url(${Img})`,
+            backgroundImage: ` url(${Img})`,
             backgroundPosition: '50% 22%',
             backgroundSize: 'auto 161%',
             padding: '42px 0'
           }}
         >
           <div className=' w-full max-with max-w-5xl mx-auto flex-col px-9 flex '>
-            <div className='w-6/13 md:w-[70%] ml-0 px-9 bg-[#efeff0] rounded-3xl'>
-              <h1 className='text-black text-5xl font-bold mt-6'>
+            <div className='w-6/13   ml-0 px-9 bg-[#efeff0] rounded-3xl sm:w-full sm:px-2'>
+              <h1 className='text-black text-5xl font-bold mt-6 sm:text-xl'>
                 Rent and unlock a <span className='text-mainColor'>nearby car</span> in seconds
               </h1>
               <div className=' h-8'></div>
               <div className='my-8'>
                 <div>
                   <div>
-                    <div className='w-full'>
-                      <span className='text-xs pl-2 text-[#a49da7]'>Địa điểm</span>{' '}
-                      <div className='rounded-lg'>
-                        <div className='flex items-center md:pb-0 relative rounded-lg'>
-                          <div className='rounded ant-select ant-select-auto-complete AVFB2APpFuQWSWz1zt5r w-full WT68zOsPUPzLwXLqTmOF ant-select-single ant-select-allow-clear ant-select-customize-input ant-select-show-search bg-white'>
-                            <div className='ant-select-selector'>
-                              <div className='ant-select-selection-search flex justify-end'>
-                                <input
-                                  autoComplete='dontshow'
-                                  // className='ant-inpu w-96  outline-none ant-input-lg ant-select-selection-search-input rounded-r-lg h-[44px] lg:h-[56px]  placeholder-graphite'
-                                  className='ant-inpu w-97  outline-none ant-input-lg ant-select-selection-search-input rounded-r-lg h-[44px] lg:h-[56px]  placeholder-black'
-                                  type='text'
-                                  data-testid='location-autocomplete-address'
-                                  placeholder='Address'
-                                />
-                              </div>
-                              <span className='ant-select-selection-placeholder'></span>
-                            </div>
-                          </div>
-                          <div className='absolute flex items-center pl-3'>
-                            <svg
-                              width='12'
-                              height='18'
-                              viewBox='0 0 12 18'
-                              fill='none'
-                              xmlns='http://www.w3.org/2000/svg'
-                            >
-                              <path
-                                d='M6 .667A5.834 5.834 0 00.167 6.5C.167 10.875 6 17.334 6 17.334s5.833-6.459 5.833-10.834A5.834 5.834 0 006 .667zm0 7.917A2.084 2.084 0 116 4.415 2.084 2.084 0 016 8.584z'
-                                fill='#DBD8DC'
-                              ></path>
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <CustomeAddressAutocomplete items={options} />
                     <div className='mt-3 w-full'>
                       <div className='StartEndDatePickers'>
                         <div className='grow flex'>
@@ -121,7 +100,7 @@ const HeaderHowItWord = () => {
                 </div>
               </div>
             </div>
-            <div className='w-6/13 max-w-xl h-20 flex justify-center items-center'>
+            <div className='w-6/13 max-w-xl h-20 flex justify-center items-center sm:w-full'>
               <RatingStar rating={4} review='' />
             </div>
           </div>

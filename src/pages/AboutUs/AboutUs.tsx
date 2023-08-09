@@ -39,11 +39,11 @@ const AboutUs = () => {
       >
         <ConnectedCarSharing
           DataConnectedCarSharingHome={DataConnectedCarSharingHome}
-          className={'flex-col items-stretch flex py-10'}
+          className={'flex-col items-stretch flex py-10 sm:py-3'}
         />
       </WrapperContent>
 
-      <div className='mb-[60px]'>
+      <div className='mb-[60px] sm:mb-[30px]'>
         <div>
           <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
             OUR LATEST UPDATES

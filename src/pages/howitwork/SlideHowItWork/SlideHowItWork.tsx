@@ -15,7 +15,7 @@ const SlideHowItWork = () => {
         <div className='max-w-1.5 text-center mx-auto text-mainColor uppercase text-xs font-bold leading-3 mb-6'>
           Out mission
         </div>
-        <h2 className='max-w-xl text-center mx-auto text-mainColor font-bold text-4xl :selection:bg-mainColor'>
+        <h2 className='max-w-xl text-center mx-auto text-mainColor font-bold text-4xl :selection:bg-mainColor sm:text-sm'>
           Chúng tôi kết nối <span className='text-white'>những chiếc xe an toàn, tiện lợi </span> với mọi người
         </h2>
       </div>
