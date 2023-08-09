@@ -125,19 +125,19 @@ export const itemCardBodyReferFriend: IItemBodyRefer = {
   title: 'Refer a friend, earn money',
   content: 'Earn even more when you refer a friend to host on Getaround.',
   infoLink: 'Share your referral link',
-  to:"/"
+  to: '/'
 }
 
-export const itemCardBodyButton:IItemCardBodyButton= {
+export const itemCardBodyButton: IItemCardBodyButton = {
   title: 'Login to view your host dashboard',
-  infoButton:"Login"
+  infoButton: 'Login'
 }
 
 export const itemBannerCommunity: IItemBanner = {
   title: 'The New Onboard Bonus',
   content:
     'Earn up to $1200 for adding a new car depending on where you list it. Check our bonus programs for more details.',
-    infoButton:"Share a car"
+  infoButton: 'Share a car'
 }
 
 export const itemTopHostComunity: IItemGetAroundYourBack = {
@@ -158,8 +158,6 @@ export const itemImgGettingStarted: string =
 export const itemImgExploreHosting: string =
   'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
 
-
-  
 export const itemLinkNailTheBasic: IItemNailTheBasic[] = [
   {
     id: 1,
@@ -183,7 +181,7 @@ export const itemLinkNailTheBasic: IItemNailTheBasic[] = [
   }
 ]
 
-export const itemLink:IItemLink[] = [
+export const itemLink: IItemLink[] = [
   {
     id: 1,
     title: 'Maximize your earnings',
@@ -202,7 +200,9 @@ export const itemLink:IItemLink[] = [
 ]
 
 export const theNailBasicContent: IItemNailTheBasic = {
-  header: 'Nail the basics',
-  content:
-    'Want to learn about our full claims process, our proprietary hardware technology, or how to manage for seasonal demand? Start here.'
+  headerTheNailBasic: 'Nail the basics',
+  contentNailTheBasic:
+    'Want to learn about our full claims process, our proprietary hardware technology, or how to manage for seasonal demand? Start here.',
+  headerBusiness: 'Grow your business',
+  contentBusiness:"Ready to grow your business even further? Here are resources and tools that will help you as you scale."
 }

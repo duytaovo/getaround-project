@@ -32,36 +32,44 @@
             "time": "2003 Toyota Yaris Seattle",
             "image": "https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151560314aa5369291e7a_homesuv-p-500.jpg"
           }
-        ]
+        ],
+        "contentSlider": {
+          "id": "contentSlider",
+          "headerTitle": "EARN",
+          "title": "Discover how much you can earn each month",
+          "content": "Car earnings differ by make, model, calendar availability, and market. Earnings numbers and car information shown are from real hosts on Getaround"
+        }
       },
-      "contentSlider": {
-        "id": "contentSlider",
-        "headerTitle": "EARN",
-        "title": "Discover how much you can earn each month",
-        "content": "Car earnings differ by make, model, calendar availability, and market. Earnings numbers and car information shown are from real hosts on Getaround"
-      },
-      "bodyBannerCard": {
-        "id": "bodyBannerCard",
-        "title": "Digital key platform",
-        "content": "Experience a seamless, hands-off, and secure experience. Getaround Connect® hardware lets guests unlock your car from the app, and gives you data about the usage and location of your vehicle."
-      },
-      "bodyCardTop": {
-        "id": "bodyCardTop",
-        "title": "Insurance on every trip",
-        "content": "Rest easy knowing that you are covered whenever your car is in a trip booked on Getaround."
-      },
-      "getAroundYourBack": {
-        "id": "getAroundYourBack",
-        "title": "PERKS OF HOSTING",
-        "content": "Getaround has your back"
-      },
-      "bodyCardBottom": {
-        "id": "bodyCardBottom",
-        "title": "Predictive pricing",
-        "content": "Let our data figure out exactly how to price bookings, so you can maximize your earnings."
+      "banner": {
+        "imgBackGround": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d8276f5f590e8cd734e67c_shareacar2tiny.jpg",
+        "bodyBannerCard": {
+          "id": "bodyBannerCard",
+          "title": "Digital key platform",
+          "content": "Experience a seamless, hands-off, and secure experience. Getaround Connect® hardware lets guests unlock your car from the app, and gives you data about the usage and location of your vehicle."
+        },
+        "bodyCardTop": {
+          "id": "bodyCardTop",
+          "title": "Insurance on every trip",
+          "content": "Rest easy knowing that you are covered whenever your car is in a trip booked on Getaround."
+        },
+        "getAroundYourBack": {
+          "id": "getAroundYourBack",
+          "title": "PERKS OF HOSTING",
+          "content": "Getaround has your back"
+        },
+        "bodyCardBottom": {
+          "id": "bodyCardBottom",
+          "title": "Predictive pricing",
+          "content": "Let our data figure out exactly how to price bookings, so you can maximize your earnings."
+        }
       },
       "carouselReview": {
         "id": "carouselReview",
+        "ourHost": {
+          "id": "ourHost",
+          "title": "COMMUNITY",
+          "content": "Our hosts have earned a total of $370M to date"
+        },
         "carouselReview": [
           {
             "id": 1,
@@ -96,15 +104,7 @@
         "contentRight": "Dedicated account managers for power hosts. As you grow your fleet, you'll get more personalized support from a Getaround team member assigned to you.",
         "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6328bdb541c77f294bfb6e1e_aboutga-247-support-p-500.png"
       },
-      "commonQuestionImg": {
-        "id": "commonQuestionImg",
-        "hostingShareACarCommonQuestionImg": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg"
-      },
-      "ourHost": {
-        "id": "ourHost",
-        "title": "COMMUNITY",
-        "content": "Our hosts have earned a total of $370M to date"
-      },
+
       "step": {
         "id": "step",
         "step": [
@@ -177,7 +177,11 @@
               "Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown"
             ]
           }
-        ]
+        ],
+        "commonQuestionImg": {
+          "id": "commonQuestionImg",
+          "hostingShareACarCommonQuestionImg": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg"
+        }
       },
       "wrapperTitle": {
         "id": "wrapperTitle",
@@ -218,33 +222,41 @@
           "url": "Watch free episode"
         }
       ],
-      "cardBodyImg": {
-        "id": "cardBodyimg",
-        "title": " Offer & Bonus",
-        "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg"
-      },
-      "cardBodyParnerDeal": {
-        "id": "cardBodyParnerDeal",
-        "title": "Partners, Deals & Discounts",
-        "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6423102cd0a502d6a4c44b95_Car%20Illustration.png",
-        "content": "As a Getaround host, you get access to exclusive deals and discounts with our entire network of partners."
-      },
-      "cardBodyReferFriend": {
-        "id": "cardBodyReferFriend",
-        "title": "Refer a friend, earn money",
-        "content": "Earn even more when you refer a friend to host on Getaround."
-      },
-      "cardBodyButton": {
-        "title": "Login to view your host dashboard",
-        "infoButton": "Login"
+      "CardBody": {
+        "cardBodyImg": {
+          "id": "cardBodyimg",
+          "title": " Offer & Bonus",
+          "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg"
+        },
+        "cardBodyParnerDeal": {
+          "id": "cardBodyParnerDeal",
+          "title": "Partners, Deals & Discounts",
+          "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6423102cd0a502d6a4c44b95_Car%20Illustration.png",
+          "content": "As a Getaround host, you get access to exclusive deals and discounts with our entire network of partners."
+        },
+        "cardBodyReferFriend": {
+          "id": "cardBodyReferFriend",
+          "title": "Refer a friend, earn money",
+          "content": "Earn even more when you refer a friend to host on Getaround."
+        },
+        "cardBodyButton": {
+          "title": "Login to view your host dashboard",
+          "infoButton": "Login"
+        }
       },
       "bannerCommunity": {
+        "imageBackGround": "https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png",
         "id": "bannerCommunity",
         "title": "The New Onboard Bonus",
         "content": "Earn up to $1200 for adding a new car depending on where you list it. Check our bonus programs for more details."
       },
       "carouselCommunity": {
         "id": "carouselCommunity",
+        "ourHost": {
+          "id": "ourHost",
+          "title": "COMMUNITY",
+          "content": "Our hosts have earned a total of $370M to date"
+        },
         "carouselCommunity": [
           {
             "id": 1,
@@ -286,73 +298,67 @@
           "mainTitle": "",
           "headerTitle": "HOST INCENTIVES",
           "Title": "Big-time bonuses to help you grow",
-
           "Description": "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
           "Link": "/"
         }
       },
-      "ourHost": {
-        "id": "ourHost",
-        "title": "COMMUNITY",
-        "content": "Our hosts have earned a total of $370M to date"
-      },
-      "gettingStartedNailBasic": {
-        "id": "gettingStartedNailBasic",
-        "header": "Nail the basics",
-        "content": "Want to learn about our full claims process, our proprietary hardware technology, or how to manage for seasonal demand? Start here."
-      },
-      "topGettingStarted": {
-        "id": "topGettingStarted",
-        "topHeader": "HOSTING 101",
-        "title": "Getting Started",
-        "content": "Onboard and optimize your Getaround business with best practices and recommendations from our team and other hosts."
-      },
-      "imgGetTingStarted": {
-        "id": "imgGettingStarted",
-        "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0b73b2f4fb34b18ddb8a_ga-illustration-8.svg"
-      },
-      "imgExploreHosting": {
-        "id": "imgExploreHosting",
-        "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg"
-      },
-      "itemLinkNailTheBasic": {
-        "id": "itemLinkNailTheBasic",
-        "itemLinkNailTheBasic": [
+      "gettingStarted": {
+        "imgGetTingStarted": {
+          "id": "imgGettingStarted",
+          "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0b73b2f4fb34b18ddb8a_ga-illustration-8.svg"
+        },
+        "topGettingStarted": {
+          "id": "topGettingStarted",
+          "topHeader": "HOSTING 101",
+          "title": "Getting Started",
+          "content": "Onboard and optimize your Getaround business with best practices and recommendations from our team and other hosts."
+        },
+        "gettingStartedNailBasic": {
+          "id": "gettingStartedNailBasic",
+          "headerTheNailBasic": "Nail the basics",
+          "contentNailTheBasic": "Want to learn about our full claims process, our proprietary hardware technology, or how to manage for seasonal demand? Start here.",
+          "headerBusiness": "Grow your business",
+          "contentBusiness": "Ready to grow your business even further? Here are resources and tools that will help you as you scale."
+        },
+        "itemLinkNailTheBasic": {
+          "id": "itemLinkNailTheBasic",
+          "itemLinkNailTheBasic": [
+            {
+              "id": 1,
+              "title": "The Connect"
+            },
+            {
+              "id": 2,
+              "title": "Claim-1-paper"
+            },
+            {
+              "id": 3,
+              "title": "Turn your car into a paycheck"
+            },
+            {
+              "id": 4,
+              "title": "Tips & Trick"
+            }
+          ]
+        },
+        "itemLink": [
           {
             "id": 1,
-            "title": "The Connect"
+            "title": "Maximize your earnings",
+            "to": "/"
           },
           {
             "id": 2,
-            "title": "Claim-1-paper"
+            "title": "Generate more bookings",
+            "to": "/"
           },
           {
             "id": 3,
-            "title": "Turn your car into a paycheck"
-          },
-          {
-            "id": 4,
-            "title": "Tips & Trick"
+            "title": "Power Host Playbook",
+            "to": "/"
           }
         ]
-      },
-      "itemLink": [
-        {
-          "id": 1,
-          "title": "Maximize your earnings",
-          "to": "/"
-        },
-        {
-          "id": 2,
-          "title": "Generate more bookings",
-          "to": "/"
-        },
-        {
-          "id": 3,
-          "title": "Power Host Playbook",
-          "to": "/"
-        }
-      ]
+      }
     }
   }
 }

@@ -11,8 +11,10 @@ export interface IItemNailTheBasic {
   id?: number
   iconSTT?: ReactNode
   title?: string
-  header?:string
-  content?:string
+  headerTheNailBasic?:string
+  contentNailTheBasic?:string
+  headerBusiness?:string
+  contentBusiness?:string
 }
 
 export interface IItemLink {

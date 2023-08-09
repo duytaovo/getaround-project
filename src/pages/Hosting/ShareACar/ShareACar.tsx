@@ -71,7 +71,7 @@ const ShareACar = () => {
         <ExploreHosting
           img={imgExploreHosting}
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          DataExploreHostingText={exploreHosting[0]}
+          DataExploreHostingText={exploreHosting}
           isEx={false}
           className={''}
         />
@@ -83,9 +83,10 @@ const ShareACar = () => {
           </div>
           <div className='w-1/2 py-6 lg:w-full lg:bg-white rounded-xl text-white'>
             <CustomeStep
-              classname='text-white'
-              textClassName='text-white'
+              classname='text-textCustom'
+              textClassName='text-textCustom'
               items={step}
+              titleClassName='text-textCustom'
               icons={[<TimeToLeaveOutlinedIcon />, <LinkedCameraOutlinedIcon />, <FileDownloadOutlinedIcon />]}
             />
           </div>
@@ -100,7 +101,7 @@ const ShareACar = () => {
             <CustomSlider
               classNameImage='rounded-lg'
               classNameTitle='text-[25px] text-mainColor ml-2'
-              classNameContent=' text-[25px] ml-2'
+              classNameContent=' text-[25px] ml-2 text-textCustom'
               data={sliders}
               isTime
               classNameTime='text-mainColor ml-2 text-base mt-[19px]'
@@ -115,7 +116,7 @@ const ShareACar = () => {
           </div>
         </div>
         <div className='w-1/2 md:w-full md:mb-2'>
-          <ContentSlider item={contentSlider} classNameTitle='text-[48px]' classNameContent='text-white' />
+          <ContentSlider item={contentSlider} classNameTitle='text-[48px]' classNameContent='text-textCustom' />
         </div>
       </div>
       {/* end body2 */}
@@ -132,7 +133,7 @@ const ShareACar = () => {
               <BodyCard
                 item={bodyCardTop}
                 classNameTitle='py-2 text-black'
-                classNameContent='text-black'
+                classNameContent='text-black text-[15px]'
                 icon={<VerifiedOutlinedIcon className=' text-mainColor leading-[22.4px] mb-4 ' />}
               />
             </div>
@@ -146,7 +147,7 @@ const ShareACar = () => {
               <BodyCard
                 item={bodyCardBottom}
                 classNameTitle='text-mainColor py-2'
-                classNameContent='text-black'
+                classNameContent='text-black/60 leading-[22.4px] text-bold  font-medium '
                 icon={<LocalOfferIcon className='text-mainColor leading-[22.4px] mb-4' />}
               />
             </div>
@@ -182,7 +183,7 @@ const ShareACar = () => {
             imgExploreHosting
           }
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          DataExploreHostingText={exploreHosting[0]}
+          DataExploreHostingText={exploreHosting}
           isEx={false}
           className=''
         />
@@ -197,7 +198,7 @@ const ShareACar = () => {
           data={carouselReview}
           numberItem={2}
           numberItemScroll={1}
-          classNameContent='text-[#727171]'
+          classNameContent='text-textCustomBgWhite'
         />
       </div>
       {/* end carousel review */}

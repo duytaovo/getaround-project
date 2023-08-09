@@ -75,7 +75,7 @@ const HostCominity = () => {
           </Col>
           <Col span={12}>
             <div className=' gap-y-4'>
-              <GettingStarted itemLinkNailTheBasic={itemLinkNailTheBasic} itemLink={itemLink} itemTopGettingStarted={topGettingStarted} itemGettingStarted={gettingStartedNailBasic} />
+              <GettingStarted  itemLinkNailTheBasic={itemLinkNailTheBasic} itemLink={itemLink} itemTopGettingStarted={topGettingStarted} itemGettingStarted={gettingStartedNailBasic} />
             </div>
           </Col>
         </Row>
@@ -119,7 +119,7 @@ const HostCominity = () => {
           <ExploreHosting
             img={imgExploreHosting}
             DataExploreHostingStyle={DataExploreHostingShareCar}
-            DataExploreHostingText={exploreHosting[0]}
+            DataExploreHostingText={exploreHosting}
             isEx={false}
             className=''
           />

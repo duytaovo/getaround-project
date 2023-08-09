@@ -43,25 +43,25 @@ const GettingStarted = ({ itemGettingStarted,itemTopGettingStarted,itemLinkNailT
       <TopGettingStarted item={itemTopGettingStarted} />
       <div className='mb-mbGettingStarted'>
         <CustomeCommonQuestions
-          titleClassName='text-white text-[18px] tracking-tight leading-[22.4px]'
+          titleClassName='text-textCustom text-[18px] tracking-tight leading-[22.4px]'
           items={commonQuestion}
-          className='text-white'
+          className='text-textCustom'
         />
       </div>
       <div className='mb-mbGettingStarted gap-y-3'>
         <h2 className='text-textSizeHostingTitle tracking-tight leading-8 text-left mb-mbGettingStarted'>
-          {itemGettingStarted.header}
+          {itemGettingStarted.headerTheNailBasic}
         </h2>
         <div>
-          <p className='text-white mb-mbGettingStarted flex flex-col flex-start leading-5 break-words line-clamp-4 text-ellipsis'>
-            {itemGettingStarted.content}
+          <p className='text-textCustom mb-mbGettingStarted flex flex-col flex-start leading-5 break-words text-base line-clamp-4 text-ellipsis'>
+            {itemGettingStarted.contentNailTheBasic}
           </p>
         </div>
         <div className='mb-mbGettingStarted'>{renderItemNailTheBasic()}</div>
         <div className='mb-mbGettingStarted'>
-          <h2 className='text-textSizeHostingTitle'>Grow your business</h2>
-          <p className='my-[29px]'>
-            Ready to grow your business even further? Here are resources and tools that will help you as you scale.
+          <h2 className='text-textSizeHostingTitle'>{itemGettingStarted.headerBusiness}</h2>
+          <p className='my-[29px] text-textCustom text-base ' >
+            {itemGettingStarted.contentBusiness}
           </p>
           {renderItemLink()}
         </div>
