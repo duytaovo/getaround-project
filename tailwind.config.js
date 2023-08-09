@@ -35,7 +35,9 @@ module.exports = {
       },
       colors: {
         mainColor: '#3699d3',
-        textMainColor: '#ffffff'
+        textMainColor: '#ffffff',
+        textCustom:"#ffffff99",
+        textCustomBgWhite:"#727171"
       },
       backgroundColor: {
         mainBackGroundColor: '#1c2635',
@@ -47,38 +49,6 @@ module.exports = {
         mbGettingStarted: '29px'
       },
       keyframes: {
-        fadeIn: {
-          '0%': {
-            scrollY: 0
-          },
-          '100%': {
-            scrollY: 100
-          }
-        },
-        fadeOut: {
-          '0%': {
-            opacity: 1
-          },
-          '100%': {
-            opacity: 0
-          }
-        },
-        zomOutControlThumB: {
-          '0%': {
-            opacity: 1,
-            height: '80px',
-            width: '80px',
-            transform: 'scale(1)'
-            // border: "1px solid rgba(255,255,255,0.4)",
-          },
-          '100%': {
-            opacity: 0,
-            height: '80px',
-            width: '80px',
-            transform: 'scale(2)'
-            // border: "1px solid rgba(255,255,255,0.4)",
-          }
-        },
         customBounce: {
           '0%, 100%': {
             transform: 'translateX(-25%)',
@@ -91,9 +61,6 @@ module.exports = {
         }
       },
       animation: {
-        zomOutControlThumB: 'zomOutControlThumB 0.5s ease-in-out',
-        fadeIn: 'fadeIn 1s ',
-        fadeOut: 'fadeOut 0.3s ease-in-out',
         customBounce: 'customBounce 1.5s infinite'
       },
       fontSize: {

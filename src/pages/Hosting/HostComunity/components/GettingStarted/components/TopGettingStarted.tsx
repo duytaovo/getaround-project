@@ -12,10 +12,10 @@ const TopGettingStarted = ({item}: Props) => {
         <span className='text-mainColor lg:text-center lg:mb-2  text-[11px] font-medium leading-3 text-center uppercase mb-mbGettingStarted'>
         {item.topHeader}
         </span>
-        <strong className='flex text-textSizeHostingTitle font-medium tracking-tight leading-8 text-left mb-mbGettingStarted mt-[29px]'>
+        <strong className='flex text-textSizeHostingTitle font-medium tracking-tight  leading-8 text-left mb-mbGettingStarted mt-[29px]'>
           {item.title}
         </strong>
-        <p className='text-white flex flex-start leading-[22.4px] line-clamp-3 text-ellipsis'>{item.content}</p>
+        <p className='text-textCustom text-base flex flex-start leading-[22.4px] line-clamp-3 text-ellipsis'>{item.content}</p>
       </div>
     </div>
   )

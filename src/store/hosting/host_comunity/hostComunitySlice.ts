@@ -34,7 +34,7 @@ interface ShareACarState {
   cardBodyReferFriend: IItemBodyBannerCard
   bannerCommunity: IItemBanner
   carouselCommunity: IItemCarousel[]
-  exploreHosting: ISelectItemsExploreHosting[]
+  exploreHosting: ISelectItemsExploreHosting
   ourHost: IItemGetAroundYourBack
   gettingStartedNailBasic: IItemNailTheBasic
   topGettingStarted: IItemTopGettingStarted

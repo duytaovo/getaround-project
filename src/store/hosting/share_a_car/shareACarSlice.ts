@@ -48,7 +48,7 @@ interface ShareACarState {
   step: ICustomeStep[]
   commonQuestion: ICommonQuestion[]
   commonQuestionImg: IBodyCommonQuestionImg
-  exploreHosting: ISelectItemsExploreHosting[]
+  exploreHosting: ISelectItemsExploreHosting
   ourHost: IItemGetAroundYourBack
   wrapperTitle:IIWrapContentTitle[]
   imgExploreHosting:string

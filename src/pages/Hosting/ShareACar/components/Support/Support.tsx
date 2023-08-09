@@ -21,13 +21,13 @@ const Support = ({item}: Props) => {
             className='w-[200px] h-[124px] rounded-full'
           />
         </div>
-        <div className='p-3'>
+        <div className='p-3 '>
           <h4 className='text-mainColor text-[24px] font-medium tracking-tight leading-7 text-left'>{changeColorBlackAndMain(item.title.split(' '))}</h4>
-          <p className='font-medium leading-[22.4px] '>{item.contentLeft}</p>
+          <p className='font-medium leading-[22.4px] mt-2 text-black/90 '>{item.contentLeft}</p>
         </div>
       </div>
       <div className='flex-1'>
-        <p className='#727272 rounded-2xl flex flex-start leading-[22.4px] text-ellipsis text-justify mt-6'>
+        <p className='text-black/60 rounded-2xl flex flex-start leading-[22.4px] text-ellipsis text-justify mt-6'>
         {item.contentRight}
         </p>
       </div>
