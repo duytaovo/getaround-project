@@ -1,5 +1,6 @@
 import { IConnectedCarSharing } from 'src/types/connectedCarSharing.type'
-
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
 interface Props {
   DataConnectedCarSharingHome: IConnectedCarSharing[]
   className?: string
@@ -14,12 +15,24 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
               {DataConnectedCarSharingHome.map((item: any, index: number) => (
                 <>
                   <div className='text-center flex-col justify-start items-center flex sm:w-[40%]' key={index}>
-                    <div className='mb-1 text-[32px] font-bold text-black sm:text-[20px]'>
+                    <Text
+                      id='id-textHsss'
+                      tag='div'
+                      content={DataConnectedCarSharingHome?.[index]?.total}
+                      className='mb-1 text-[32px] font-bold text-black sm:text-[20px]'
+                    />
+                    {/* <div className='mb-1 text-[32px] font-bold text-black sm:text-[20px]'>
                       {DataConnectedCarSharingHome?.[index]?.total}
-                    </div>
-                    <div className='text-[13px] font-bold text-black sm:text-[10px]'>
+                    </div> */}
+                    <Text
+                      id='id-textHwsss'
+                      tag='div'
+                      content={DataConnectedCarSharingHome?.[index]?.title}
+                      className='text-[13px] font-bold text-black sm:text-[10px]'
+                    />
+                    {/* <div className='text-[13px] font-bold text-black sm:text-[10px]'>
                       {DataConnectedCarSharingHome?.[index]?.title}
-                    </div>
+                    </div> */}
                   </div>
                   {index === DataConnectedCarSharingHome.length - 1 ? (
                     <></>

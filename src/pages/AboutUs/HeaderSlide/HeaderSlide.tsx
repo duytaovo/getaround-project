@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
 export const DataHeaderAboutUs = [
   {
     id: 'Header_AboutUs_AboutUs',
@@ -28,7 +31,13 @@ const HeaderSlide = () => {
           }}
         >
           <h1 className='max-w-[22ch] text-center mx-auto text-mainColor tracking-[-.04em] m-0 pd-0 text-[47px] font-bold leading-[106%] sm:text-[35px] sm:leading-[100%] '>
-            <span className='text-white font-normal '>{DataHeaderAboutUs?.[0]?.title}</span>
+            <Text
+              id='id-textSpanHeaderSlide_AboutUs'
+              tag='span'
+              content={DataHeaderAboutUs?.[0]?.title}
+              className='text-white font-normal '
+            />
+            {/* <span className='text-white font-normal '>{DataHeaderAboutUs?.[0]?.title}</span> */}
           </h1>
           <div
             className='w-full max-w-[1080px] bg-white rounded-2xl justify-between items-center mb-[-80px] p-[32px_60px] sm:p-[10px_20px]'
@@ -42,12 +51,19 @@ const HeaderSlide = () => {
             }}
           >
             {DataHeaderAboutUs?.[0]?.arrayImg?.map((item, index) => (
-              <img
+              <Image
+                id='img-idSliceAbouts'
                 className='w-full max-h-[23px] max-w-[150px] object-contain flex-[0_auto] align-middle border-none inline-block border-0'
-                style={{ filter: 'brightness(0%) grayscale()' }}
                 src={DataHeaderAboutUs?.[0]?.arrayImg?.[index]}
-                alt=''
+                style={{ filter: 'brightness(0%) grayscale()' }}
+                alt='Getaround Connect®'
               />
+              // <img
+              //   className='w-full max-h-[23px] max-w-[150px] object-contain flex-[0_auto] align-middle border-none inline-block border-0'
+              //   style={{ filter: 'brightness(0%) grayscale()' }}
+              //   src={DataHeaderAboutUs?.[0]?.arrayImg?.[index]}
+              //   alt=''
+              // />
             ))}
           </div>
         </div>
