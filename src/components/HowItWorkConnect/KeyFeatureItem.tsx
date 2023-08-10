@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'src/components/Edition/Text'
+import { iDGenerator } from 'src/utils/idGenerator'
 import { Image } from 'src/components/Edition/Image'
 interface ISelectBodyKeyFeatures {
   title?: string
@@ -28,7 +29,7 @@ const KeyFeatureItem: FC<Props> = ({ DataKeyFeatureItem }) => {
               />
             </div>
             <Text
-              id='howitwork-connect-keyfeatureitem-title'
+              id={iDGenerator(`titleKeyItemsConnect`)}
               tag='h3'
               content={DataKeyFeatureItem?.[index]?.title || ''}
               className='text-center mt-0 mb-[0.5em] text-white font-medium text-[36px] leading-[105%] sm:text-[20px] lg:text-[25px]'
@@ -37,7 +38,7 @@ const KeyFeatureItem: FC<Props> = ({ DataKeyFeatureItem }) => {
               {DataKeyFeatureItem?.[index]?.title}
             </h3> */}
             <Text
-              id='howitwork-connect-keyfeatureitem-description'
+              id={iDGenerator(`descriptionKeyItemsConnect`)}
               tag='p'
               content={DataKeyFeatureItem?.[index]?.description || ''}
               className='w-auto text-center max-w-[1279px] mt-0 mb-[10px] pl-0 text-[17px] font-light leading-[155%] block not-italic text-white sm:text-[10px]'

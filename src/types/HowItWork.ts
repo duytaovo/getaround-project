@@ -16,6 +16,7 @@ export interface ISelectItemsProprietary {
   description?: string
   description2?: string
   span?: string
+  img?: string
   Link?: string
 }
 export interface ISelectItemsHearCommunity {
