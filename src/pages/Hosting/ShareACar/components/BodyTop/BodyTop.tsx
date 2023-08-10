@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'src/components/Button'
+import { Image } from 'src/components/Edition/Image'
 import { Text } from 'src/components/Edition/Text'
 import {  changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import { IBodyTop } from 'src/types/hosting_shareACar.type'
+import { iDGenerator } from 'src/utils/idGenerator'
 
 interface Props {
   item:IBodyTop
@@ -27,16 +29,41 @@ const BodyTop = ({ item,className }: Props) => {
     >
        
       <div className='w-1/2 lg:w-full  h-full lg:h-full flex flex-col justify-between items-start'>
-        <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1>
-        <p className='w-[90%] text-ellipsis text-justify break-words'>{item.content}</p>
+        {/* <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1> */}
+        <Text
+        id={`txt-bodytop-shareACar_header}`}
+        tag='h1'
+        content={item.header || ''}
+        className={`text-[47px] text-mainColor`}
+      />
+        {/* <p className='w-[90%] text-ellipsis text-justify break-words'>{item.content}</p> */}
+        <Text
+        id={`txt-bodytop-shareACar_content}`}
+        tag='p'
+        content={item.content || ''}
+        className={`w-[90%] text-ellipsis text-justify break-words`}
+      />
         <Button
           onClick={onClick}
-          children={<span className='text-xl'>Share A Car</span>}
+          children={
+          <Text
+          id={`txt-buttonBodyTop-shareACar`}
+          tag='span'
+          content={item.infoButton || ''}
+          className={`text-xl`}
+        />
+        }
           isNext={true}
-          className='w-[200px] hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[70px]  rounded-lg bg-[#3699d3] hover:bg-black  '
+          className='w-[200px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[70px]  rounded-lg bg-[#3699d3] hover:bg-black  '
         ></Button>
       </div>
-      <img className='w-[45%] lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4' src={item.img} alt='' />
+      <Image
+          id={`img-bodyTop-shareACar`}
+          className='lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4 object-contain'
+          src={item.img|| ''}
+          alt='hosting-shareAcar'
+        />
+      {/* <img className=' lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4' src={item.img} alt='' /> */}
     </div>
   )
 }

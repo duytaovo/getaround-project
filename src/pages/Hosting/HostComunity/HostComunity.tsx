@@ -33,7 +33,6 @@ const HostCominity = () => {
     itemLinkNailTheBasic
   } = useAppSelector((state) => state.community)
 
-  const text = 'Featured news & updates'
   return (
     <div className='mt-[33px]'>
       {/* start slider */}

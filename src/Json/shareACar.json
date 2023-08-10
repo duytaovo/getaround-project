@@ -2,14 +2,17 @@
   "hosting": {
     "Hosting_ShareACar": {
       "id": "hosting_shareACar",
-      "bodyTop": {
-        "id": "bodyTop",
-        "header": "Turn your car into extra money",
-        "content": "When you list your car, you're earning money while helping others navigate your city. It's a win-win, and your next big opportunity.",
-        "image": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg"
+      "bodyTop":{
+        "id":"bodyTop",
+        "bodyTop": {
+          "infoButton":"Share a car",
+          "header": "Turn your car into extra money",
+          "content": "When you list your car, you're earning money while helping others navigate your city. It's a win-win, and your next big opportunity.",
+          "image": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg"
+        }
       },
       "sliders": {
-        "id": "Sliders",
+        "id": "Sliders_ShareACar",
         "slider": [
           {
             "id": 1,
@@ -34,14 +37,19 @@
           }
         ],
         "contentSlider": {
-          "id": "contentSlider",
           "headerTitle": "EARN",
           "title": "Discover how much you can earn each month",
           "content": "Car earnings differ by make, model, calendar availability, and market. Earnings numbers and car information shown are from real hosts on Getaround"
         }
       },
       "banner": {
+        "id":"banner_ShareACar",
         "imgBackGround": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d8276f5f590e8cd734e67c_shareacar2tiny.jpg",
+        "getAroundYourBack": {
+          "id": "getAroundYourBack",
+          "title": "PERKS OF HOSTING",
+          "content": "Getaround has your back"
+        },
         "bodyBannerCard": {
           "id": "bodyBannerCard",
           "title": "Digital key platform",
@@ -52,15 +60,17 @@
           "title": "Insurance on every trip",
           "content": "Rest easy knowing that you are covered whenever your car is in a trip booked on Getaround."
         },
-        "getAroundYourBack": {
-          "id": "getAroundYourBack",
-          "title": "PERKS OF HOSTING",
-          "content": "Getaround has your back"
-        },
         "bodyCardBottom": {
           "id": "bodyCardBottom",
           "title": "Predictive pricing",
           "content": "Let our data figure out exactly how to price bookings, so you can maximize your earnings."
+        },
+        "support": {
+          "id": "support",
+          "title": "24/7 support, prioritized for hosts.",
+          "contentLeft": "Don't hesitate to contact us if you ever have a problem.",
+          "contentRight": "Dedicated account managers for power hosts. As you grow your fleet, you'll get more personalized support from a Getaround team member assigned to you.",
+          "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6328bdb541c77f294bfb6e1e_aboutga-247-support-p-500.png"
         }
       },
       "carouselReview": {
@@ -97,16 +107,8 @@
           }
         ]
       },
-      "support": {
-        "id": "support",
-        "title": "24/7 support, prioritized for hosts.",
-        "contentLeft": "Don't hesitate to contact us if you ever have a problem.",
-        "contentRight": "Dedicated account managers for power hosts. As you grow your fleet, you'll get more personalized support from a Getaround team member assigned to you.",
-        "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6328bdb541c77f294bfb6e1e_aboutga-247-support-p-500.png"
-      },
-
       "step": {
-        "id": "step",
+        "id": "step_ShareACar",
         "step": [
           {
             "title": "Sign up and name your car.",
@@ -126,20 +128,30 @@
           }
         ]
       },
-      "exploreHosting": {
-        "id": "exploreHosting",
-        "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg",
+      "exploreHosting1": {
+        "id": "exploreHosting_ShareACar1",
+        "img1": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg",
         "shareACar_exploreHosting_1": {
           "mainTitle": "",
           "headerTitle": "HOST INCENTIVES",
           "Title": "Big-time bonuses to help you grow",
-
           "Description": "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
           "Link": "/"
         }
       },
-      "commonQuestion": {
-        "id": "commonQuestion",
+      "exploreHosting2": {
+        "id": "exploreHosting_ShareACar2",
+        "img2": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg",
+        "shareACar_exploreHosting_2": {
+          "mainTitle": "",
+          "headerTitle": "HOST INCENTIVES",
+          "Title": "Big-time bonuses to help you grow",
+          "Description": "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
+          "Link": "/"
+        }
+      },
+      "Question": {
+        "id": "Question_ShareACar",
         "commonQuestion": [
           {
             "key": "1",
@@ -179,8 +191,7 @@
           }
         ],
         "commonQuestionImg": {
-          "id": "commonQuestionImg",
-          "hostingShareACarCommonQuestionImg": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg"
+          "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea84651bd74658a3f37eac_ga-illustration-2.svg"
         }
       },
       "wrapperTitle": {
@@ -292,7 +303,7 @@
         ]
       },
       "exploreHosting": {
-        "id": "exploreHosting",
+        "id": "exploreHosting_Comunity",
         "img": "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg",
         "shareACar_exploreHosting_1": {
           "mainTitle": "",

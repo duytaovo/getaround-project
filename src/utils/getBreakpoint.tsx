@@ -18,16 +18,16 @@ const getRandomColorWhiteAndMain = () => {
   return colors[randomIndex]
 }
 
-export const changeColorWhiteAndMain =(arrContent:any | undefined)=>(
-   arrContent?.map((word:any, index:any) => (
+export const changeColorWhiteAndMain =(arrContent:string[] | undefined)=>(
+   arrContent?.map((word, index) => (
      <span key={index} style={{ color: getRandomColorWhiteAndMain() }}>
        {word}{' '}
      </span>
    ))
  ) 
 
- export const changeColorBlackAndMain =(arrContent:any | undefined)=>(
-  arrContent?.map((word:any, index:number) => (
+ export const changeColorBlackAndMain =(arrContent:string[] | undefined)=>(
+  arrContent?.map((word, index) => (
     <span key={index} style={{ color: getRandomColorBlackAndMain() }}>
       {word}{' '}
     </span>

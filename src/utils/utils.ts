@@ -6,3 +6,5 @@ export const payloadCreator = (asyncFunc:any) => async (arg:any, thunkAPI:any) =
         return thunkAPI.rejectWithValue(error);
     }
   };
+
+  
