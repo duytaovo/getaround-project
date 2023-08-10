@@ -24,18 +24,21 @@ export interface IItemLink {
 }
 
 export interface IItemCardBodyButton {
+  id?:string
   title:string
   infoButton:string
 }
 
 
 export interface IItemBanner {
+  id?:string
   title:string
   content:string
   infoButton:string
 }
 
 export interface IItemTopGettingStarted {
+  id?:string
   topHeader?:string
   title?:string
   content?:string  

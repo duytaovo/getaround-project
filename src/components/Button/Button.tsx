@@ -4,10 +4,11 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean
   isNext?: boolean
+  _className?:string
 }
 
 export default function Button(props: ButtonProps) {
-  const { className, isLoading, disabled, children, isNext, ...rest } = props
+  const { className, isLoading, disabled, children, isNext,_className, ...rest } = props
   const newClassName = disabled ? className + ' cursor-not-allowed' : className
   return (
     <button className={`${newClassName} group flex items-center justify-center`} disabled={disabled} {...rest}>
@@ -29,7 +30,7 @@ export default function Button(props: ButtonProps) {
           />
         </svg>
       )}
-      <div>
+      <div className=''>
         {children}
         {isNext == true && <ArrowCircleRightOutlinedIcon sx={{
           fontSize:"30px"

@@ -33,7 +33,8 @@ export const ItemBodyTop: IBodyTop = {
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg',
   content:
     " When you list your car, you're earning money while helping others navigate your city. It's a win-win, and your next big opportunity.",
-  header: 'Turn your car into extra money'
+  header: 'Turn your car into extra money',
+  infoButton:"Share a car"
 }
 
 export const itemBanner: IItemBodyBannerCard = {

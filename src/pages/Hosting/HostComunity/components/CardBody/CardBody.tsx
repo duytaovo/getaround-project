@@ -31,7 +31,7 @@ interface PropsCardBodyButton {
 }
 // w-[260px] h-[260px] xl:w-[300px] xl:h-[300px] lg:w-[350px] lg:h-[350px]
 export const CardBodyButton = ({ item }: PropsCardBodyButton) => (
-  <div className=' h-[260px] sm:-2h-[200px] text-mainColor  text-[20px] lg:text-[15px] break-words bg-white flex items-center  rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
+  <div className=' h-[260px] sm:h-[200px] text-mainColor  text-[20px] lg:text-[15px] break-words bg-white flex items-center  rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
     <div className='ml-5'>{item.title}</div>
     <Button
       children={<span className='text-xl'>{item.infoButton}</span>}

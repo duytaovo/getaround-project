@@ -22,6 +22,8 @@ import { addSlider, updateBodyTop, updateSlider } from 'src/store/hosting/share_
 import { useAppSelector } from 'src/hooks/useRedux'
 import GetAroundYourBack from './components/GetAroundYourBack/GetAroundYourBack'
 import OurHost from './components/OurHost/OurHost'
+import { Text } from 'src/components/Edition/Text'
+import { iDGenerator } from 'src/utils/idGenerator'
 
 const ShareACar = () => {
   const {
@@ -42,8 +44,6 @@ const ShareACar = () => {
     wrapperTitle,
     imgExploreHosting
   } = useAppSelector((state) => state.shareAcar)
-  console.log(bodyTop)
-
 
   const dispatch = useDispatch()
 
@@ -99,7 +99,7 @@ const ShareACar = () => {
         <div className='w-1/2 md:w-full md:flex md:justify-around md:mt-3'>
           <div className='w-[80%] '>
             <CustomSlider
-              classNameImage='rounded-lg'
+              classNameImage='rounded-lg h-[160px] w-[400px] '
               classNameTitle='text-[25px] text-mainColor ml-2'
               classNameContent=' text-[25px] ml-2 text-textCustom'
               data={sliders}
@@ -158,10 +158,14 @@ const ShareACar = () => {
       {/* start collapse 1 */}
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
       <div className=' rounded-2xl mb-bottom'>
-
-        <h2 className='text-[32px] font-medium tracking-tight leading-5'>{wrapperTitle[0].title}</h2>
+        <Text
+          id={`txt-wrapperTitle-shareACar-01`}
+          tag='h4'
+          content={wrapperTitle[0].title || ''}
+          className={`text-[32px] font-medium tracking-tight leading-5 `}
+        />
+        {/* <h2 className='text-[32px] font-medium tracking-tight leading-5'>{wrapperTitle[0].title}</h2> */}
         <WrapperContent titlePadding={5} textAlign='left' title={''} isBgTransparent={true} fontSize={20}>
-
           <div className='flex md:flex-col'>
             <CustomeCommonQuestions
               titleClassName='text-white/90 text-bold text-[18px]'
@@ -179,9 +183,7 @@ const ShareACar = () => {
 
       <div className='mb-bottom'>
         <ExploreHosting
-          img={
-            imgExploreHosting
-          }
+          img={imgExploreHosting}
           DataExploreHostingStyle={DataExploreHostingShareCar}
           DataExploreHostingText={exploreHosting}
           isEx={false}
@@ -211,7 +213,13 @@ const ShareACar = () => {
       {/* start collapse 2 */}
       {/* <WrapperContent titlePadding={5} textAlign='left' title='Learn more about the benefits of Getaround'> */}
       <div className='xl:flex xl:justify-center flex-col  rounded-2xl mb-bottom   text-black'>
-        <h2 className='flex  text-mainColor text-[26px] leading-8'>{wrapperTitle[1].title}</h2>
+        <Text
+          id={`txt-wrapperTitle-shareACar-02`}
+          tag='h2'
+          content={wrapperTitle[1].title || ''}
+          className={`flex  text-mainColor text-[26px] leading-8 `}
+        />
+        {/* <h2 className='flex  text-mainColor text-[26px] leading-8'>{wrapperTitle[1].title}</h2> */}
         <WrapperContent
           titlePadding={5}
           textAlign='left'

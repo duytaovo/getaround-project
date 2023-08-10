@@ -1,6 +1,5 @@
-import { Avatar, Card } from 'antd'
-import { Link } from 'react-router-dom'
-import { changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
+import { Image } from 'src/components/Edition/Image'
+import { Text } from 'src/components/Edition/Text'
 import { IItemSliderHostComunity } from 'src/types/hosting_comunity.type '
 
 interface Props {
@@ -25,16 +24,38 @@ const CardSlider = ({
 }: Props) => (
   <div className={className}>
     <div>
-      <img src={item?.img} alt='' className={classNameImage} />
+      {/* <Image
+        id={`'img-cardSlider_community'`}
+        className={classNameImage}
+        src={item?.img || ''}
+        alt='hosting-shareAcar'
+        style={{}}
+      /> */}
+      <Image
+        id='img-idHIWCLogo'
+        className={classNameImage}
+        src={item?.img || ''}
+        alt='Getaround Connect®'
+      />
+      {/* <img src={item?.img} alt='' className={classNameImage} /> */}
     </div>
-    {isContent == true && <div className={classNameContent}> {item?.content}</div>}
-    {isLink == true && (
-      <div className={classNameURL}>
-        <Link to={item?.url || ''}>
-          {item?.url}
-        </Link>
-      </div>
+    {isContent == true && (
+      <Text
+        id={`txt-cardSlider_community-content}`}
+        tag='p'
+        content={item?.content || ''}
+        className={`${classNameContent}`}
+      />
     )}
+    {/* {isContent == true && <div className={classNameContent}> {item?.content}</div>} */}
+    {isLink == true && (
+      <Text id={`txt-cardSlider_community-url}`} tag='p' content={item?.url || ''} className={`${classNameURL}`} />
+    )}
+    {/* {isLink == true && (
+      <div className={classNameURL}>
+        <Link to={item?.url || ''}>{item?.url}</Link>
+      </div>
+    )} */}
   </div>
 )
 
