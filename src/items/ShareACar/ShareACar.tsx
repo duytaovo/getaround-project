@@ -76,7 +76,7 @@ export const itemOurHost: IItemGetAroundYourBack = {
 export const wrapperTitle: IIWrapContentTitle[] = [
   {
     id: 1,
-    title: '...and more'
+    title: 'hosting_s10'
   },
   { id: 2, title: 'Need more info? Check out FAQs.' }
 ]
@@ -86,7 +86,7 @@ export const wrapperTitle: IIWrapContentTitle[] = [
 export const itemSliderHostComunity: IItemSliderHostComunity[] = [
   {
     id: 1,
-    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+    img: "hosting_s10",
     content: 'Getaround was featured on Crackle TV’s newest season of Going From Broke.',
     url: 'Watch free episode'
   },
