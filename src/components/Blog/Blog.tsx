@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
 export const DataBlogNewsRoom = {
   id: 'Blog_AboutUS_NewsRoom',
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63dc05d87b4b95cb44c4ef9f_getaroundblog%20Grande.jpeg',
@@ -21,6 +23,12 @@ export const DataBlogAboutUs = {
 const Blog = () => {
   return (
     <div className='flex justify-center h-auto w-full mb-16 md:mb-24 sm:flex-col sm:mb-20'>
+      {/* <Image
+        id='img-idBlog'
+        className='object-contain rounded-2xl w-1/2 flex justify-center mr-5 md:rounded-2xl sm:w-full'
+        src={DataBlogAboutUs.img}
+        alt='Getaround Connect®'
+      /> */}
       <img
         className='object-contain rounded-2xl w-1/2 flex justify-center mr-5 md:rounded-2xl sm:w-full'
         src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63dc05d87b4b95cb44c4ef9f_getaroundblog%20Grande.jpeg'
@@ -29,15 +37,32 @@ const Blog = () => {
 
       <div className='w-1/2  flex justify-center items-center sm:w-full sm:mt-6'>
         <div className='block h-[50%]'>
-          <p className='uppercase text-mainColor font-semibold mb-8 text-[10px]'>THE GETAROUND BLOG</p>
+          <Text
+            id='id-textBlogHeaderTitle'
+            tag='p'
+            content={DataBlogAboutUs.headerTitle}
+            className='uppercase text-mainColor font-semibold mb-8 text-[10px]'
+          />
+          {/* <p className='uppercase text-mainColor font-semibold mb-8 text-[10px]'>THE GETAROUND BLOG</p> */}
           <h2 className='text-3xl  font-bold mb-4 sm:text-xl'>
-            <span className='text-mainColor'>Discover the Getaround blog</span>
+            <Text
+              id='id-textBlogHeaderTitle'
+              tag='span'
+              content={DataBlogAboutUs.mainTitle}
+              className=' text-mainColor '
+            />
+            {/* <span className='text-mainColor'>Discover the Getaround blog</span> */}
           </h2>
-
-          <p className='text-white font-normal my-6 sm:text-[15px]'>
+          <Text
+            id='id-textBlogContent'
+            tag='p'
+            content={DataBlogAboutUs.content}
+            className='text-white font-normal my-6 sm:text-[15px]'
+          />
+          {/* <p className='text-white font-normal my-6 sm:text-[15px]'>
             Explore the collection of stories, news, and other resources for hosts, guests, and partners throughout the
             Getaround carsharing community.
-          </p>
+          </p> */}
           <Link
             to='/'
             className='text-mainColor underline hover:text-black hover:no-underline cursor-pointer duration-[0.5s]'

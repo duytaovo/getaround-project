@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
 export const DataJoinTeamAboutUs = {
   id: 'JoinTeam_AboutUS_AboutUs',
   title: 'Join the Getaround team',
+  img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea9fc9c0cafb2053ba37ac_ga-illustration-19.svg',
   content:
     'Want to work with us? Come join the team focused on empowering people to carshare everywhere. Explore open roles at Getaround.',
   linkTo: '/'

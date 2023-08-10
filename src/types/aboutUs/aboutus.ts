@@ -1,6 +1,7 @@
 export interface ISelectItemsJoinTeamAboutUs {
   id?: string
   title?: string
+  img?: string
   content?: string
   linkTo?: string
 }
