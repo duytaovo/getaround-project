@@ -175,9 +175,7 @@ export const ItemCarouselAboutUs_NewsRoom = [
   {
     id: 4,
     title: `Getaround Acquires HyreCar Assets
-    to Accelerate Profitability Path and
-    Fortify Worldwide Gig Carsharing
-    Leadership Position`,
+    to Accelerate Profitability `,
     date: 'May 11, 2023',
     description: ``,
     linkto: '/'

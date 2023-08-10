@@ -18,3 +18,10 @@ export interface ISelectHeaderAboutUs {
   title?: string
   arrayImg?: string[]
 }
+export interface IItemCarousel {
+  id: number
+  title?: string
+  date?: string
+  description?: string
+  linkTo?: string
+}

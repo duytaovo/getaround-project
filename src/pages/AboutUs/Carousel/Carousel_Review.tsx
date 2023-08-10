@@ -60,7 +60,7 @@ export default function Carousel_Review_Comunity({
       }
     ]
   }
-
+  console.log(data)
   return (
     <div className='flex justify-between sm:justify-center'>
       <div className='w-full sm:w-[80%] '>
