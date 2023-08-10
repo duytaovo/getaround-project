@@ -15,7 +15,7 @@ const HeaderSafeTrust = () => {
       <div className='flex justify-center px-[36px] sm:flex-col'>
         <div className='w-1/2 flex justify-center sm:w-[100%]'>
           <Image
-            id={DataHeaderST.id}
+            id='imgHEaderST'
             className='object-contain h-[500px]'
             src={DataHeaderST.img}
             alt='Getaround Connect®'
@@ -30,14 +30,24 @@ const HeaderSafeTrust = () => {
           <div className='block'>
             <div>
               <Text
-                id='id-textH'
+                id='textHeader_HeaderTitleST'
                 tag='span'
                 content={DataHeaderST.headerTitle}
                 className='text-mainColor text-4xl  font-bold'
               />{' '}
-              <Text id='id-textH' tag='h2' content={DataHeaderST.title} className='text-4xl text-black font-bold' />
+              <Text
+                id='textHeader_TitleST'
+                tag='h2'
+                content={DataHeaderST.title}
+                className='text-4xl text-black font-bold'
+              />
             </div>
-            <Text id='id-textH' tag='p' content={DataHeaderST.content} className='text-[#1e1e1e] font-normal mt-3' />
+            <Text
+              id='textHeader_contentST'
+              tag='p'
+              content={DataHeaderST.content}
+              className='text-[#1e1e1e] font-normal mt-3'
+            />
             {/* <p className='text-[#1e1e1e] font-normal mt-3'>
               Getaround prioritizes the safety and security of its community members by implementing proactive safety
               measures, verifying identities, maintaining insurance coverage, and using advanced technology to prevent

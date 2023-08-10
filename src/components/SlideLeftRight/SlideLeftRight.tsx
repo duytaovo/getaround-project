@@ -59,7 +59,7 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
                 <Text
                   id='Slide-content'
                   tag='div'
-                  content={Data?.[index]?.contents}
+                  content={Data?.[index]?.contents || ''}
                   className='text-[#fff] sm:text-[12px]'
                 />
                 {/* <div className='text-[#fff] sm:text-[12px]'>

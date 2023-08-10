@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { RightOutlined } from '@ant-design/icons'
 import { DataReadNewItem } from 'src/items/NewsRoom/DataNewsRoom'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
+
 const ReadNews = () => {
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>
@@ -23,12 +26,24 @@ const ReadNews = () => {
                     to=''
                     className='gap-x-[53px] text-black bg-[#f9f8f8] rounded-[18px] justify-between p-[40px] flex touch-manipulation outline-none cursor-pointer font-normal duration-[0.2s] group'
                   >
-                    <div className='group-hover:text-mainColor'>Jan 5, 2023</div>
+                    <Text
+                      id='dayReadnewNewsRoom'
+                      tag='div'
+                      content={DataReadNewItem?.[index]?.day || ''}
+                      className='group-hover:text-mainColor'
+                    />
+                    {/* <div className='group-hover:text-mainColor'>Jan 5, 2023</div> */}
                     <div className='my-0 ml-0 m-auto'>
                       <div className='max-w-[70ch]'>
-                        <div className='text-black mb-0 text-[24px] leading-[106%]'>
+                        <Text
+                          id='titleReadnewNewsRoom'
+                          tag='div'
+                          content={DataReadNewItem?.[index]?.title || ''}
+                          className='text-black mb-0 text-[24px] leading-[106%]'
+                        />
+                        {/* <div className='text-black mb-0 text-[24px] leading-[106%]'>
                           Car Sharing: What You Need To Know - Kelley Blue Book
-                        </div>
+                        </div> */}
                         <Link
                           to='/'
                           className='text-[20px] underline text-black hover:text-mainColor hover:no-underline duration-[0.3s] mt-2'

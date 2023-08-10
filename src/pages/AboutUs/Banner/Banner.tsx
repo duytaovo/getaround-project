@@ -16,14 +16,14 @@ const Banner = () => {
       <div className='w-1/2 sm:w-full  flex justify-center items-center'>
         <div className='block '>
           <Text
-            id='id-textHsw'
+            id='id-textBannerABoutUsHeaderTitle'
             tag='p'
             content={DataBannerAboutUs.headerTitle}
             className='uppercase text-mainColor font-bold mb-3'
           />
           {/* <p className='uppercase text-mainColor font-bold mb-3'>OUR MISSION</p> */}
           <Text
-            id='id-textHs'
+            id='id-textBannerABoutUsTitle'
             tag='h2'
             content={DataBannerAboutUs.title}
             className='text-2xl sm:text-[15px] text-black sm:font-semibold'
@@ -33,7 +33,7 @@ const Banner = () => {
             vehicles when they need them.
           </h2> */}
           <Text
-            id='id-textHsw'
+            id='id-textBannerABoutUsContent'
             tag='p'
             content={DataBannerAboutUs.content}
             className='text-[#808795] font-normal mt-3 sm:text-[12px]'
