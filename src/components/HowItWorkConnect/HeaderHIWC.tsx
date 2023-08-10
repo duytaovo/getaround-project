@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { iDGenerator } from 'src/utils/idGenerator'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
 export const DataHeaderConnect = {
@@ -39,7 +40,7 @@ const HeaderHIWC = () => {
       >
         <div className='self-auto w-auto max-w-[1279px] sm:text-center text-left '>
           <Image
-            id='img-idHIWCLogo'
+            id={iDGenerator(`imgHeaderConnect`)}
             className='w-[100px] block align-middle border-none max-w-[100%] border-[0]'
             src={DataHeaderConnect.imgLogo}
             alt='Getaround Connect®'
@@ -52,7 +53,7 @@ const HeaderHIWC = () => {
             className='w-[100px] block align-middle border-none max-w-[100%] border-[0]'
           /> */}
           <Text
-            id='id-textH'
+            id={iDGenerator(`titleLogoHeaderConnect`)}
             tag='p'
             content={DataHeaderConnect.titleLogo}
             className='w-auto max-w-[1279px] text-left text-mainColor uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'
@@ -61,7 +62,7 @@ const HeaderHIWC = () => {
             A SAFER, MORE CONVENIENT WAY TO CARSHARE
           </p> */}
           <Text
-            id='id-textH'
+            id={iDGenerator(`maintitleHeaderConnect`)}
             tag='p'
             content={DataHeaderConnect.mainTitleHeader}
             className='w-auto max-w-[1279px] text-left mt-0 mb-[0.5em] text-white font-medium pb-[20px] text-[50px] leading-[105%] m-[0.67em_0] sm:text-center sm:text-[40px]'
@@ -70,7 +71,7 @@ const HeaderHIWC = () => {
             Getaround Connect
           </h1> */}
           <Text
-            id='id-textH'
+            id={iDGenerator(`contentHeaderConnect`)}
             tag='p'
             content={DataHeaderConnect.contentHeader}
             className='w-auto text-white text-[22px] font-light leading-[145%] block max-w-[1279px] text-left mt-0 mb-[10px] pl-0 not-italic sm:text-[15px]'
@@ -83,7 +84,7 @@ const HeaderHIWC = () => {
         </div>
         <div className='self-end justify-end'>
           <Image
-            id='img-idHIWC'
+            id={iDGenerator(`imgHeaderConnect`)}
             className='mb-0 align-middle not-italic max-w-[100%] inline-block border-0 w-[638px]'
             src={DataHeaderConnect.imgContentHeader}
             alt='Getaround Connect®'

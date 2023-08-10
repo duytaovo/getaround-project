@@ -15,7 +15,7 @@ import { ISelectPowerFull } from 'src/types/SafeTrust'
 import { DataPowerFullSafeTrust } from 'src/pages/SafetyTrust/PowerfulVetting/PowerfulVetting'
 interface SafeTrustState {
   ExploreST: ISelectItemsExploreHosting
-  ProprietaryST: ISelectItemsProprietary[]
+  ProprietaryST: ISelectItemsProprietary
   SlideLeftRightST: ISelectItemsSlideLeftRight[]
   BookUnlockCar: ISelectBookUnlockCar
   HeaderST: ISelectItemsHeaderHostRefernal
@@ -39,7 +39,7 @@ const SafeTrustSlice = createSlice({
       state.ExploreST = action.payload
     },
     updateProprietaryST: (state, action: PayloadAction<ISelectItemsProprietary>) => {
-      state.ProprietaryST.push(action.payload)
+      state.ProprietaryST = action.payload
     },
 
     updateSlideLeftRightST: (state, action: PayloadAction<ISelectItemsSlideLeftRight>) => {

@@ -1,6 +1,8 @@
 import React, { useEffect, useState, FC } from 'react'
 import { Link } from 'react-router-dom'
-
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
+import { iDGenerator } from 'src/utils/idGenerator'
 interface IProprietary {
   id?: string
   headerTitle?: string
@@ -12,7 +14,7 @@ interface IProprietary {
 }
 
 type Props = {
-  Data?: IProprietary[]
+  Data?: IProprietary
 }
 
 const Proprietary: FC<Props> = ({ Data }) => {
@@ -66,20 +68,20 @@ const Proprietary: FC<Props> = ({ Data }) => {
                 className='max-w-[30ch] text-mainColor text-left uppercase m-[0_0_24px] text-[11px] font-bold
                leading-[13px]'
               >
-                {Data?.[0]?.headerTitle}
+                {Data?.headerTitle}
               </div>
               <h2 className='max-w-full text-white tracking-[-.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em]'>
-                <strong className='font-bold'> {Data?.[0]?.title}</strong>
+                <strong className='font-bold'> {Data?.title}</strong>
               </h2>
               <div className='text-[#e9ebec] mt-[30px] text-sm'>
-                {Data?.[0]?.description}
+                {Data?.description}
                 <br /> <br />
-                <strong className='text-mainColor font-bold'>{Data?.[0]?.span}</strong>
-                {Data?.[0]?.description2}
+                <strong className='text-mainColor font-bold'>{Data?.span}</strong>
+                {Data?.description2}
                 <br />
                 <br />
                 <Link
-                  to={Data?.[0]?.Link || ''}
+                  to={Data?.Link || ''}
                   className='text-mainColor delay-[0.2s] underline touch-manipulation bg-transparent cursor-pointer outline-none hover:text-mainColor hover:none-underline leading-4'
                 >
                   <strong className='font-bold'>Read more</strong>
@@ -88,7 +90,13 @@ const Proprietary: FC<Props> = ({ Data }) => {
             </div>
           </div>
           <div className='w-1/2 sm:w-[80%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
-            <img
+            <Image
+              id={iDGenerator(`imgST`)}
+              className='object-cover rounded-[22px] align-middle border-none max-w-[100%] inline-block border-0 h-[412px]'
+              src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg'
+              alt='Getaround Connect®'
+            />
+            {/* <img
               src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg'
               loading='lazy'
               sizes='(max-width: 479px) 100vw, 272.671875px'
@@ -96,7 +104,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
               srcSet='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201-p-500.jpg 500w, https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg 822w'
               alt=''
               className='object-cover rounded-[22px] align-middle border-none max-w-[100%] inline-block border-0'
-            />
+            /> */}
             <div
               data-w-id='d68abdf6-cac5-7051-6406-ec9a6d19ef9a'
               data-is-ix2-target='1'

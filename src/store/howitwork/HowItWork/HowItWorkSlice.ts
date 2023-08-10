@@ -11,7 +11,7 @@ import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 interface HowItWorkState {
   ExploreHowItWork: ISelectItemsExploreHosting
-  ProprietaryHowItWork: ISelectItemsProprietary[]
+  ProprietaryHowItWork: ISelectItemsProprietary
   HearCommunityHowItWork: ISelectItemsHearCommunity
   SlideHowItWork: ISelectItemsSlide
   SlideLeftRightHowItWork: ISelectItemsSlideLeftRight[]
@@ -33,7 +33,7 @@ const HowItWorkSlice = createSlice({
       state.ExploreHowItWork = action.payload
     },
     updateProprietaryHIW: (state, action: PayloadAction<ISelectItemsProprietary>) => {
-      state.ProprietaryHowItWork.push(action.payload)
+      state.ProprietaryHowItWork = action.payload
     },
     updateCommunityHIW: (state, action: PayloadAction<ISelectItemsHearCommunity>) => {
       state.HearCommunityHowItWork = action.payload
