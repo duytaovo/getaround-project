@@ -2,7 +2,7 @@ import React, { useEffect, useState, FC } from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
-import { iDGenerator } from 'src/utils/idGenerator'
+
 interface IProprietary {
   id?: string
   headerTitle?: string
@@ -64,20 +64,29 @@ const Proprietary: FC<Props> = ({ Data }) => {
         <div className='gap-x-[56px] flex-row w-full max-w-[1080px] mx-auto flex sm:flex-col'>
           <div className='w-1/2 sm:w-[80%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <div>
-              <div
+              <Text
+                id='headerTitleEnvent'
+                tag='div'
+                content={Data?.headerTitle || ''}
+                className='w-auto max-w-[1279px] text-left text-mainColor uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'
+              />
+              {/* <div
                 className='max-w-[30ch] text-mainColor text-left uppercase m-[0_0_24px] text-[11px] font-bold
                leading-[13px]'
               >
                 {Data?.headerTitle}
-              </div>
+              </div> */}
               <h2 className='max-w-full text-white tracking-[-.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em]'>
-                <strong className='font-bold'> {Data?.title}</strong>
+                <Text id='TitleEnvent' tag='div' content={Data?.title || ''} className='font-bold' />
+                {/* <strong className='font-bold'> {Data?.title}</strong> */}
               </h2>
               <div className='text-[#e9ebec] mt-[30px] text-sm'>
-                {Data?.description}
+                <Text id='DesEnvent' tag='span' content={Data?.description || ''} className='' />
+                {/* {Data?.description} */}
                 <br /> <br />
-                <strong className='text-mainColor font-bold'>{Data?.span}</strong>
-                {Data?.description2}
+                <Text id='SpanEnvent' tag='span' content={Data?.span || ''} className='text-mainColor font-bold' />
+                <Text id='Des2Envent' tag='span' content={Data?.description2 || ''} className='' />
+                {/* {Data?.description2} */}
                 <br />
                 <br />
                 <Link
@@ -91,7 +100,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
           </div>
           <div className='w-1/2 sm:w-[80%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <Image
-              id={iDGenerator(`imgST`)}
+              id='imgST'
               className='object-cover rounded-[22px] align-middle border-none max-w-[100%] inline-block border-0 h-[412px]'
               src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg'
               alt='Getaround Connect®'

@@ -15,7 +15,7 @@ const KeyFeature = () => {
       <div className='max-w-[1140px] mx-auto block'>
         <div className='max-w-[1140px] flex-col justify-center items-center mb-[40px] mx-auto flex '>
           <Text
-            id={iDGenerator(`titleConnect`)}
+            id='titleConnect'
             tag='p'
             content={DataHeaderKeyFeatures.title}
             className='max-w-none text-mainColor text-left uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em] sm:text-[10px]'
@@ -24,7 +24,7 @@ const KeyFeature = () => {
             key features
           </p> */}
           <Text
-            id={iDGenerator(`maintitleConnect`)}
+            id='maintitleConnect'
             tag='h2'
             content={DataHeaderKeyFeatures.mainTitle}
             className='text-center mt-0 mb-[0.5em] text-white font-medium max-w-fullm-[20px_auto_10px] text-[42px] leading-[105%] sm:text-[30px]'
@@ -33,7 +33,7 @@ const KeyFeature = () => {
             The ultimate in carsharing connectivity
           </h2> */}
           <Text
-            id={iDGenerator(`subtitleConnect`)}
+            id='subtitleConnect'
             tag='p'
             content={DataHeaderKeyFeatures.subTitle}
             className='w-auto text-white text-[22px] font-light leading-[145%] block max-w-full text-left mt-0 mb-[10px] pl-0 not-italic	sm:text-[15px]'

@@ -1,4 +1,7 @@
 import React from 'react'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
+import { iDGenerator } from 'src/utils/idGenerator'
 export const DataHeaderNewsRoom = {
   id: 'header_AboutUs_NewsRoom',
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c98c83e7bffe6581cd4811_AdobeStock_516425442%202%20compress.jpg',
@@ -24,14 +27,29 @@ const HeaderNewsRoom = () => {
             <div className='w-[50%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'></div>
             <div className='w-[60%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
               <h1 className='tracking-[-.04em] mb-0 mx-0 pb-0 text-[52px] font-semibold leading-[99%] mt-0 text-left max-w-[40ch]'>
-                <span className='text-white'>Explore Getaround in the news</span>
+                <Text id='titleHeaderNEwsRoom' tag='span' content={DataHeaderNewsRoom.title} className='text-white' />
+                {/* <span className='text-white'>Explore Getaround in the news</span> */}
               </h1>
-              <div className='text-white font-normal max-w-[40ch] mt-8'>
+              <Text
+                id='contentHeaderNEwsRoom'
+                tag='div'
+                content={DataHeaderNewsRoom.content}
+                className='text-white font-normal max-w-[40ch] mt-8'
+              />
+              {/* <div className='text-white font-normal max-w-[40ch] mt-8'>
                 Welcome to our press room. Find our latest press releases and new media coverage of our company.
-              </div>
+              </div> */}
               <div className='bg-white h-[100px] py-5 px-10 rounded-xl max-w-[45ch] flex items-center mt-10'>
                 <p className='text-black'>
-                  For media inquiries, <span className='text-mainColor'>please contact us at press@getaround.com.</span>
+                  <Text id='titlebuttonHeaderNEwsRoom' tag='p' content={DataHeaderNewsRoom.titleButton} className='' />
+                  {/* {DataHeaderNewsRoom.titleButton} */}
+                  <Text
+                    id='emailHeaderNEwsRoom'
+                    tag='span'
+                    content={DataHeaderNewsRoom.email}
+                    className='text-mainColor'
+                  />
+                  {/* <span className='text-mainColor'>please contact us at press@getaround.com.</span> */}
                 </p>
               </div>
             </div>

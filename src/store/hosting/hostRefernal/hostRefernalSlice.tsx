@@ -13,7 +13,7 @@ import { DataImgCustomeStepHostRF } from 'src/pages/HostRefernal/HostRefernal'
 import { ICommonQuestions } from 'src/types/commonQuestion.type'
 import { DataitemsHostRefernal } from 'src/items/CommonQuestionItems/CommonQuestionItems'
 interface hostRefernalState {
-  ExplorehostRefernal: ISelectItemsExploreHosting[]
+  ExplorehostRefernal: ISelectItemsExploreHosting
   SlideLeftRighthostRefernal: ISelectItemsSlideLeftRight[]
   HeaderhostRefernal: ISelectItemsHeaderHostRefernal
   customeSteps: ICustomeSteps[]
@@ -35,7 +35,7 @@ const hostRefernalSlice = createSlice({
   initialState,
   reducers: {
     updateExploreHostRefernal: (state, action: PayloadAction<ISelectItemsExploreHosting>) => {
-      state.ExplorehostRefernal.push(action.payload)
+      state.ExplorehostRefernal = action.payload
     },
     updateSlideLeftRightHostRefernal: (state, action: PayloadAction<ISelectItemsSlideLeftRight>) => {
       state.SlideLeftRighthostRefernal.push(action.payload)

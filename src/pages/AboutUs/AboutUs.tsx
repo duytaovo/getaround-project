@@ -17,6 +17,9 @@ import Carousel_Review_Comunity from './Carousel/Carousel_Review'
 import { ItemCarousel, ItemCarouselAboutUs_NewsRoom } from 'src/items/Carousel/Carouseltems'
 import JoinTeam from './JoinTeam/JoinTeam'
 import Banner from './Banner/Banner'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
+
 export const DataTitleCarouselAboutUs = {
   id: 'Carousel_Title_AboutUs_AboutUs',
   headerTitle: 'OUR LATEST UPDATES',
@@ -45,10 +48,22 @@ const AboutUs = () => {
 
       <div className='mb-[60px] sm:mb-[30px]'>
         <div>
-          <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
+          <Text
+            id='headertitleAboutUs'
+            tag='span'
+            content={DataTitleCarouselAboutUs.headerTitle}
+            className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'
+          />
+          {/* <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
             OUR LATEST UPDATES
-          </span>
-          <h2 className=' flex text-[32px] text-center  justify-center mb-2'>News room: Press releases</h2>
+          </span> */}
+          <Text
+            id='titleAboutUs'
+            tag='h2'
+            content={DataTitleCarouselAboutUs.title}
+            className=' flex text-[32px] text-center  justify-center mb-2'
+          />
+          {/* <h2 className=' flex text-[32px] text-center  justify-center mb-2'>News room: Press releases</h2> */}
         </div>
         <Carousel_Review_Comunity
           className='m-4'

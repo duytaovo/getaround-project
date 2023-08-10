@@ -16,7 +16,7 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
                 <>
                   <div className='text-center flex-col justify-start items-center flex sm:w-[40%]' key={index}>
                     <Text
-                      id='id-textHsss'
+                      id='id-texttotalConnected'
                       tag='div'
                       content={DataConnectedCarSharingHome?.[index]?.total}
                       className='mb-1 text-[32px] font-bold text-black sm:text-[20px]'
@@ -25,7 +25,7 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
                       {DataConnectedCarSharingHome?.[index]?.total}
                     </div> */}
                     <Text
-                      id='id-textHwsss'
+                      id='id-texttitleConnected'
                       tag='div'
                       content={DataConnectedCarSharingHome?.[index]?.title}
                       className='text-[13px] font-bold text-black sm:text-[10px]'
