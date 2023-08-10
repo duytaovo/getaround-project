@@ -1,5 +1,8 @@
+import { Avatar, Card } from 'antd'
+import { Link } from 'react-router-dom'
 import { Image } from 'src/components/Edition/Image'
 import { Text } from 'src/components/Edition/Text'
+import { changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import { IItemSliderHostComunity } from 'src/types/hosting_comunity.type '
 
 interface Props {

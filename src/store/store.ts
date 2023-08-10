@@ -13,8 +13,10 @@ import hostRefernalReducer from './hosting/hostRefernal/hostRefernalSlice'
 import SafeTrustReducer from './howitwork/SafeTrust/SafeTrustSlice'
 import driveWithUberSlice from './app/partners/driveWithUber/driveWithUber.slice'
 import partnersWithUsSlice from './app/partners/partnerWithUs/partnersWithUs.slice'
+import dataReducer from './dataSlice'
 export const store = configureStore({
   reducer: {
+    data:dataReducer,
     loading: appReducer,
     shareAcar: shareAcarReducer,
     howitwork: HowItWorkReducer,

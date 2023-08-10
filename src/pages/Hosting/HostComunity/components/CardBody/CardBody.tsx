@@ -12,7 +12,8 @@ interface PropsCardBodyImg {
 export const CardBodyImg = ({ itemCardBodyImg }: PropsCardBodyImg) => (
   <div className=' h-[260px] sm:h-[200px] text-black font-medium text-[20px] break-words hover:text-mainColor  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
     <div>
-      {itemCardBodyImg.title}
+      
+      <span>{itemCardBodyImg.title}</span>
       <span>
         <ArrowForwardIcon />
       </span>
@@ -55,7 +56,9 @@ export const CardBodyParnerDeal = ({ itemCardBodyParnerDeal }: PropsCardBodyParn
     </div>
     <div className='w-1/2 lg:w-2/3'>
       <strong className='text-[26px] font-medium leading-8 tracking-tight'>{itemCardBodyParnerDeal.title}</strong>
-      <p className='py-5 text-base gap-y-3 tracking-tight leading-6 xl text-textCustomBgWhite font-medium'>{itemCardBodyParnerDeal.content}</p>
+      <p className='py-5 text-base gap-y-3 tracking-tight leading-6 xl text-textCustomBgWhite font-medium'>
+        {itemCardBodyParnerDeal.content}
+      </p>
       <Button
         children={<span className='text-base'>{itemCardBodyParnerDeal.infoButton}</span>}
         isNext={true}
@@ -71,7 +74,9 @@ interface PropsCardBodyReferFriend {
 export const CardBodyReferFriend = ({ itemCardBodyReferFriend }: PropsCardBodyReferFriend) => (
   <div className='flex flex-col items-start justify-center w-full h-[300px]   text-black font-medium text-[20px] break-words bg-white rounded-2xl border border-solid  px-10 leading-5 border-[#d2d2d2]'>
     <strong className='text-[26px] font-medium leading-8 tracking-tight'>{itemCardBodyReferFriend.title}</strong>
-    <p className='py-5 text-base gap-y-3 tracking-tight leading-6 text-textCustomBgWhite'>{itemCardBodyReferFriend.content}</p>
+    <p className='py-5 text-base gap-y-3 tracking-tight leading-6 text-textCustomBgWhite'>
+      {itemCardBodyReferFriend.content}
+    </p>
     <Link to={itemCardBodyReferFriend.to || ''} className='text-mainColor underline hover:text-black'>
       {itemCardBodyReferFriend.infoLink}
     </Link>
