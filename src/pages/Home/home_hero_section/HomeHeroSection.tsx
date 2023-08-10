@@ -76,7 +76,8 @@ const HomeHeroSection: FC<IHeroSection> = ({
             className='min-w-[140px] h-[52px] rounded-[10px] text-white/80 lg:w-full bg-mainColor grow'
             isNext={true}
           >
-            {buttonSearchText}
+            {/* {buttonSearchText} */}
+            <Text id={`txt-${crypto.randomUUID().substring(0, 8)}`} tag='button' content={buttonSearchText} />
           </CustomeButton>
         </Space>
       </div>

@@ -18,12 +18,16 @@ import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCar
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { useAppSelector } from 'src/hooks/useRedux'
+import { Text } from 'src/components/Edition/Text'
+import { iDGenerator } from 'src/utils/idGenerator'
 
 type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
-  console.log(homePageData)
+  // console.log(homePageData)
+  // console.log(iDGenerator(''))
+
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
