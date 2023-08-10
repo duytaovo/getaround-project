@@ -109,6 +109,8 @@ const initialState: HomePageType = {
         name: 'Sheri and Adam, Oahu, HI'
       },
       {
+
+        // data[...itemsData.title]
         id: 2,
         title: 'We make sharing cars simple.',
         content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
