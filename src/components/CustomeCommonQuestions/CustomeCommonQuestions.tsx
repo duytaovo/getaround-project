@@ -3,6 +3,7 @@ import { Collapse, CollapseProps } from 'antd'
 import SingleCommonQuestion from '../SingleCommonQuestion/SingleCommonQuestion'
 import { Text } from '../Edition/Text'
 import { iDGenerator } from 'src/utils/idGenerator'
+import { useAppSelector } from 'src/hooks/useRedux'
 
 interface ICommonQuestion {
   key: string
@@ -23,11 +24,12 @@ const CustomeCommonQuestions: FC<CommonQuestionProps> = ({
   className,
   paddingRightSingleCommonQuestion
 }) => {
+  const data = useAppSelector((state) => state.data)
   const itemsForColapse: CollapseProps['items'] = items.map((item) => ({
     key: item.key,
 
     // label: <h1 className={titleClassName}>{item.label}</h1>,
-    label: <Text className={titleClassName} content={item.label} id={iDGenerator('txt')} tag='h1' />,
+    label: <Text className={titleClassName} content={data[item.label]} id={item.label} tag='h1' />,
 
     children: (
       <SingleCommonQuestion

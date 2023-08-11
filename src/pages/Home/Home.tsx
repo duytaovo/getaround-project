@@ -204,7 +204,7 @@ const Home = (props: Props) => {
       <WrapperContent
         titlePadding={5}
         textAlign='left'
-        title={homePageData.qAndASection.wrapperTitle}
+        title={data[homePageData.qAndASection.wrapperTitle]}
         isBgTransparent={true}
         fontSize={12}
       >

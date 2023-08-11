@@ -22,89 +22,72 @@ type DriveWithUberType = {
 const initialState: DriveWithUberType = {
   heroSection: {
     id: 'drive_hero_s-01',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d82ff7ba27e7ee16cce7de_dwuguest1tiny.jpeg',
-    logos: ['Unlock', 'UBer'],
-    titles: ['Drive Getaround cars.', 'Earn with Uber.'],
-    paragraphs: [
-      "Want to drive for Uber, but don't have the right car? Getaround offers pre-approved and inspected vehicles, ready for you to book by the hour, day or week.",
-      "Find the right car and start earning with Uber and Uber Eats. The Getaround and Uber apps are seamlessly connected. It's trusted tech that makes life easier for guests and hosts."
-    ],
-    buttonTitle: 'Get Started Now',
-    link: 'Share you car with Uber'
+    img: 'drive_with_uber_hero_img',
+    logos: ['drive_with_uber_hero_logo_unlock', 'drive_with_uber_hero_logo_another'],
+    titles: ['drive_with_uber_hero_title_1', 'drive_with_uber_hero_title_2'],
+    paragraphs: ['drive_with_uber_hero_para_1', 'drive_with_uber_hero_para_2'],
+    buttonTitle: 'drive_with_uber_hero_btn',
+    link: 'drive_with_uber_hero_link'
   },
   introduceSection: {
     id: 'drive_introduce_s_02',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f913e7a34806823acdff1a_ga-illustration-16.svg',
-    title: 'Book by the hour, day, or week*',
-    paragraphs: [
-      'Experience the ultimate convenience in car bookings with our flexible options tailored to your needs. Whether you require a car for a few hours, a full day, an entire week, or even longer durations, we have you covered.',
-      'Embrace a lifestyle that revolves around your schedule, giving you the freedom to choose the perfect vehicle and trip length that suits your plans.'
-    ]
+    img: 'drive_with_uber_intro_img',
+    title: 'drive_with_uber_intro_title_1',
+    paragraphs: ['drive_with_uber_intro_para_1', 'drive_with_uber_intro_para_2']
   },
   perksSection: {
     id: 'drive_perks_s_03',
-    headingTitle: 'The perks of Getaround x Uber',
+    headingTitle: 'drive_with_uber_perk_heading',
     itemsData: [
       {
-        title: 'Uber-approved options',
-        descriptions:
-          "Seamless integration between the Getaround and Uber apps makes your life simple. Pick from cars ready for Uber rides, whenever's best for you."
+        title: 'drive_with_uber_perk_title_1',
+        descriptions: 'drive_with_uber_perk_desc_1'
       },
       {
-        title: 'Affordable cars',
-        descriptions:
-          'Book by the hour or up to 28 days! More cities now offer affordable daily and weekly options, for your flexibility'
+        title: 'drive_with_uber_perk_title_2',
+        descriptions: 'drive_with_uber_perk_desc_2'
       },
       {
-        title: 'Worry-free driving',
-        descriptions:
-          'Insurance, unlimited mileage, 24/7 support, and roadside assistance come with every booking. You can even extend a reservation if you want to keep driving.'
+        title: 'drive_with_uber_perk_title_3',
+        descriptions: 'drive_with_uber_perk_desc_3'
       },
       {
-        title: 'Design your schedule',
-        descriptions:
-          'Instantly book, unlock, and return a car from your phone.No need to wait in line or meet in person for a key hand off.'
+        title: 'drive_with_uber_perk_title_4',
+        descriptions: 'drive_with_uber_perk_desc_4'
       }
     ]
   },
   driveStepsSection: {
     id: 'drive_step_s_04',
-    wrapperTitle: 'HOW IT WORKS',
-    headingTitle: "It's easy to drive with Uber",
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63cef76977f95804643dc7b4_howitworks-guest%20c-p-500.jpg',
+    wrapperTitle: 'drive_with_uber_step_title',
+    headingTitle: 'drive_with_uber_step_heading',
+    img: 'drive_with_uber_step_img',
     itemsData: [
       {
-        title: 'Sign up and name your car.',
-        images: [
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/636580091db0b72179b2c1ab_appstore-icon.svg',
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63657fca094cac0e19c45708_googleplay-icon.svg'
-        ],
-        subTitle:
-          " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!"
+        title: 'drive_with_uber_step_item_title_1',
+        subTitle: 'drive_with_uber_step_item_sub_title_1'
       },
       {
-        title: 'Create a profile and upload photos.',
-        subTitle:
-          " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!"
+        title: 'drive_with_uber_step_item_title_2',
+        subTitle: 'drive_with_uber_step_item_sub_title_2'
       },
       {
-        title: 'Install Getaround Connect®',
-        subTitle:
-          " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!"
+        title: 'drive_with_uber_step_item_title_3',
+        subTitle: 'drive_with_uber_step_item_sub_title_3'
       }
     ]
   },
   getStatedSection: {
     id: 'get_stated_s_05',
-    wrapperContent: 'Get started now',
+    wrapperContent: 'drive_with_uber_getStatedTitle_title_1',
     buttonTitle: [
-      { title: 'alreay an uber driver?', subTitle: 'Log in with Uber' },
-      { title: 'not an uber driver yet?', subTitle: 'Sign up with Uber' }
+      { title: 'drive_with_uber_getStatedTitle_btn_sub_lbl_1', subTitle: 'drive_with_uber_getStatedTitle_btn_lbl_1' },
+      { title: 'drive_with_uber_getStatedTitle_btn_sub_lbl_2', subTitle: 'drive_with_uber_getStatedTitle_btn_lbl_2' }
     ],
     contents: [
-      'Link your Uber driver and Getaround account to book',
-      'Link your Uber driver and Getaround account to book',
-      'Link your Uber driver and Getaround account to book'
+      'drive_with_uber_getStatedTitle_sentence_1',
+      'drive_with_uber_getStatedTitle_sentence_2',
+      'drive_with_uber_getStatedTitle_sentence_3'
     ]
   },
   driveWithUberExploreHosting: {
@@ -122,44 +105,27 @@ const initialState: DriveWithUberType = {
   },
   diriveQAndASection: {
     id: 'drive_q_a_s_06',
-
-    wrapperTitle: 'Need more info? Check out our FAQs',
+    wrapperTitle: 'drive_with_uber_q7a_title_1',
     itemsData: [
       {
         key: '1',
-        label: 'How do I find a car and book a trip?',
-        contents: [
-          'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class.',
-          "After creating your account or logging in, click on the 'Find cars' text at the top of the screen.",
-          'Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown'
-        ]
+        label: 'drive_with_uber_q7q_lbl_1',
+        contents: ['drive_with_uber_q7q_content_1', 'drive_with_uber_q7q_content_2', 'drive_with_uber_q7q_content_3']
       },
       {
         key: '2',
-        label: 'How do I find a car and book a trip?',
-        contents: [
-          'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class.',
-          "After creating your account or logging in, click on the 'Find cars' text at the top of the screen.",
-          'Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown'
-        ]
+        label: 'drive_with_uber_q7q_lbl_2',
+        contents: ['drive_with_uber_q7q_content_4', 'drive_with_uber_q7q_content_5', 'drive_with_uber_q7q_content_6']
       },
       {
         key: '3',
-        label: 'How do I find a car and book a trip?',
-        contents: [
-          'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class.',
-          "After creating your account or logging in, click on the 'Find cars' text at the top of the screen.",
-          'Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown'
-        ]
+        label: 'drive_with_uber_q7q_lbl_3',
+        contents: ['drive_with_uber_q7q_content_7', 'drive_with_uber_q7q_content_8', 'drive_with_uber_q7q_content_9']
       },
       {
         key: '4',
-        label: 'How do I find a car and book a trip?',
-        contents: [
-          'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class.',
-          "After creating your account or logging in, click on the 'Find cars' text at the top of the screen.",
-          'Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown'
-        ]
+        label: 'drive_with_uber_q7q_lbl_4',
+        contents: ['drive_with_uber_q7q_content_10', 'drive_with_uber_q7q_content_11', 'drive_with_uber_q7q_content_12']
       }
     ]
   }

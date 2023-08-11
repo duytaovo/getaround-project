@@ -5,6 +5,7 @@ import { Image } from 'src/components/Edition/Image'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
+
 interface IExploreHosting {
   id?: string
   mainTitle: string
@@ -24,8 +25,10 @@ type Props = {
 
 const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
   const data = useAppSelector((state) => state.data)
+
   const dispatch = useDispatch()
   console.log(data[DataExploreHostingText.Description])
+
   return (
     <div className={className}>
       {isEx === true ? (
