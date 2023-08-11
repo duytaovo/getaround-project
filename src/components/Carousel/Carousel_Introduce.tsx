@@ -18,6 +18,7 @@ interface Props {
   classNameHeader?: string
   classNameImage?: string
   isCustomDot?: boolean
+  prefix:string
 }
 
 export default function Carousel_Introduce({
@@ -28,7 +29,8 @@ export default function Carousel_Introduce({
   classNameContent,
   classNameImage,
   classNameHeader,
-  classNameTitle
+  classNameTitle,
+  prefix
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
@@ -83,6 +85,8 @@ export default function Carousel_Introduce({
               classNameTitle={classNameTitle}
               classNameContent={classNameContent}
               className={className}
+              id={index}
+              prefix={prefix}
             />
           </div>
         ))}

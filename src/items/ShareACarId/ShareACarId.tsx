@@ -54,15 +54,15 @@ export const CustomeStepItems: ICustomeSteps[] = [
   {
     title: 'txtCustomStepItemsTitle_1',
     images: ['txtCustomStepImages1', 'txtCustomStepImages2'],
-    subTitle: ' txtCustomStepSubTitle_1'
+    subTitle: 'txtCustomStepSubTitle_1'
   },
   {
     title: 'txtCustomStepTitle_2',
-    subTitle: ' txtCustomStepSubTitle_2'
+    subTitle: 'txtCustomStepSubTitle_2'
   },
   {
     title: 'txtCustomStepTitle_3',
-    subTitle: ' txtCustomStepSubTitle_3'
+    subTitle: 'txtCustomStepSubTitle_3'
   }
 ]
 export const items: ICommonQuestions[] = [
