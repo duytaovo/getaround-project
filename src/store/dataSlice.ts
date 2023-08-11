@@ -329,7 +329,7 @@ const data: IdynamicData<string> = {
   txtHeaderCommunity: 'HOST INCENTIVES',
   txtTitleCommunity: 'Big-time bonuses to help you grow',
   txtDescriptionCommunity: "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
-=======
+
   mainTitle_Slide_HowItWork: 'OUT MISSION',
   title_Slide_HowItWork: 'Chúng tôi kết nối những chiếc xe an toàn, tiện lợi với mọi người',
   img1_Slide_HowItWork:
