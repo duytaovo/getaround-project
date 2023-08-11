@@ -2,6 +2,7 @@ import { FC, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useAppSelector } from 'src/hooks/useRedux'
 interface IExploreHosting {
   id?: string
   mainTitle?: string
@@ -20,6 +21,7 @@ type Props = {
 }
 
 const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
+  const data = useAppSelector((state) => state.data)
   return (
     <div className={className}>
       {isEx === true ? (

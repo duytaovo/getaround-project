@@ -2,11 +2,13 @@ import longLogo from 'src/assets/images/longLogo.png'
 import HostBenefitsCard from './components/HostBenefitsCard/HostBenefitsCard'
 import { secondSectionData } from 'src/items/PartnerWithUs/SecondSection/secondSectionData'
 import { useAppSelector } from 'src/hooks/useRedux'
+import { Text } from 'src/components/Edition/Text'
 
 type Props = {}
 
 const PartnerWithUs = (props: Props) => {
   const { partnerBenefits, partnersHero } = useAppSelector((state) => state.partnersWithUs)
+  const data = useAppSelector((state) => state.data)
   return (
     <div>
       <section
@@ -19,9 +21,12 @@ const PartnerWithUs = (props: Props) => {
           <div>
             <img src={longLogo} alt='short logo' className='w-2/12' />
           </div>
-          <div className='text-[50px] font-bold text-mainColor sm:text-[30px]'>{partnersHero.title}</div>
+          <div className='text-[50px] font-bold text-mainColor sm:text-[30px]'>
+            {/* {partnersHero.title} */}
+            <Text id={partnersHero.title} tag='span' content={data[partnersHero.title]} className='' />
+          </div>
           <div className='text-[22px] font-extralight leading-[30px text-white/80] sm:text-[20px]'>
-            {partnersHero.content}
+            <Text id={partnersHero.content} content={data[partnersHero.content]} tag='span' />
           </div>
         </div>
       </section>

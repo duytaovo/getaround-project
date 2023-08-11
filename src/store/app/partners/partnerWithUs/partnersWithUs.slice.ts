@@ -11,9 +11,8 @@ const initialState: PartnersWithUsType = {
     id: 'partner_hero-s01',
     imgLogo:
       'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/610ef9dd8b2b17d8489ead9c_multiracial-colleagues-giving-high-five.jpg',
-    title: 'Partner with Unlock',
-    content:
-      'Carsharing attracts all sorts of organizations — from governments to auto body shops. Partnerships are part of why the carsharing ecosystem is growing at the rate it is. For more information about partnering with Getaround®, choose your business category below.'
+    title: 'partner_with_us_hero_title',
+    content: 'partner_with_us_hero_content'
   },
   partnerBenefits: {
     id: 'benefits_s_02',
