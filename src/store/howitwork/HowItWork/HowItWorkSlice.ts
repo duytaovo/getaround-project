@@ -7,83 +7,82 @@ import { ISelectItemsHearCommunity } from 'src/types/HowItWork'
 import { DataCommunity } from 'src/pages/howitwork/HearCommunity/HearCommunity'
 import { ISelectItemsSlide } from 'src/types/HowItWork'
 import { DataSlideHowItWork } from 'src/pages/howitwork/SlideHowItWork/SlideHowItWork'
-import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
+import { ISelectItemsSlideLeftRight, ISelectImglideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideLeftRight'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
+import axios from 'axios'
 interface HowItWorkState {
   ExploreHowItWork: ISelectItemsExploreHosting
   ProprietaryHowItWork: ISelectItemsProprietary
   HearCommunityHowItWork: ISelectItemsHearCommunity
-  SlideHowItWork: ISelectItemsSlide
+  SlideHowItWorkR: ISelectItemsSlide
   SlideLeftRightHowItWork: ISelectItemsSlideLeftRight[]
+  ImgSlideLeftRight_HowItWork: ISelectImglideLeftRight
 }
 
 const initialState: HowItWorkState = {
+  ImgSlideLeftRight_HowItWork: {
+    img: 'ImgSlideLeftRight_HowITWork',
+    mainTitle: 'MainTirleLeftRight_HowITWork'
+  },
   ExploreHowItWork: {
-    mainTitle: 'EXPLORE HOSTING',
-    headerTitle: '',
-    Title: 'Have a car? Start sharing',
+    mainTitle: 'mainTitle_Explore_HowItWork',
+    headerTitle: 'headerTitle_Explore_HowItWork',
+    Title: 'title_Explore_HowItWork',
 
-    Description:
-      "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
-    Link: ''
+    Description: 'description_Explore_HowItWork',
+    Link: 'link_Explore_HowItWork'
   },
   ProprietaryHowItWork: {
     id: 'Proprietary_HowItWork',
-    headerTitle: 'out proprietary hardware',
-    title: 'Explore the power of Getaround Connect®',
-    description:
-      '  Getaround vehicles are powered by our proprietary Connect® technology. To make sharing a car as easy as owning one, we built the only hardware designed specifically for contactless, peer-to-peer car sharing. ',
-    description2:
-      ' allows you to find, book, and unlock cars directly from your phone, and avoid meeting up with anyone  throughout the process to exchange keys.',
-    span: 'Getaround Connect®',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg',
-    Link: '/'
+    headerTitle: 'headerTitle_Propritary_HowItWork',
+    title: 'headerTitle_Propritary_HowItWork',
+    description: 'description_Propritary_HowItWork',
+    description2: 'description2_Propritary_HowItWork',
+    span: 'span_Propritary_HowItWork',
+    img: 'img_Propritary_HowItWork',
+    Link: 'link_Propritary_HowItWork'
   },
   HearCommunityHowItWork: {
     id: 'Community_HowItWork',
-    title: 'Hear from the community',
-    content: 'Stories from Getaround community members, in their own words.',
-    link: '/'
+    title: 'title_HearCommunity_HowItWork',
+    content: 'content_HearCommunity_HowItWork',
+    link: 'link_HearCommunity_HowItWork'
   },
-  SlideHowItWork: {
+  SlideHowItWorkR: {
     id: 'Slide_HowItWork',
-    mainTitle: 'Out mission',
-    title: 'Chúng tôi kết nối những chiếc xe an toàn, tiện lợi với mọi người',
-    img1: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63cef76977f95804643dc7b4_howitworks-guest%20c.jpg',
-    content1: 'Người chia sẻ xe hưởng lợi bằng việc tiếp cận linh hoạt đến một phương tiện xe hơi.',
-    img2: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63cef77225a91196b5c06fe7_howitworks-host-c.jpg',
-    content2: 'Chủ xe hơi kiếm tiền từ những khoảng thời gian họ không lái xe dù sao.'
+    mainTitle: 'mainTitle_Slide_HowItWork',
+    title: 'title_Slide_HowItWork',
+    img1: 'img1_Slide_HowItWork',
+    content1: 'content1_Slide_HowItWork',
+    img2: 'img2_Slide_HowItWork',
+    content2: 'content2_Slide_HowItWork'
   },
   SlideLeftRightHowItWork: [
     {
       id: 'SlideLeftRight_HowItWork_01',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
-      label: 'Trip insurance',
-      Linkto: '',
-      Link: 'Peace of mind by design.',
-      contents: [
-        ` Getaround trips include insurance for the length of your reservation. You shouldn't have to stress if something doesn't go according to plan.`
-      ]
+      img: 'img1_SlideLeftRight_HowItWork',
+      label: 'label1_SlideLeftRight_HowItWork',
+      Linkto: 'linkto1_SlideLeftRight_HowItWork',
+      Link: 'link_SlideLeftRight_HowItWork',
+      contents: [`contents1_SlideLeftRight_HowItWork`]
     },
     {
       id: 'SlideLeftRight_HowItWork_02',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
-      label: 'Customer support',
-      Linkto: '',
-      Link: 'Help standing by, 24/7.',
-      contents: [
-        ` We're here to solve problems at any point of your trip, from the wee hours of the morning to late at night.`
-      ]
+      img: 'img2_SlideLeftRight_HowItWork',
+      label: 'label2_SlideLeftRight_HowItWork',
+      Linkto: 'linkto2_SlideLeftRight_HowItWork',
+      Link: 'link2_SlideLeftRight_HowItWork',
+      contents: [`contents2_SlideLeftRight_HowItWork`]
     },
     {
       id: 'SlideLeftRight_HowItWork_03',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
-      label: 'Wiggle room for changes',
-      Linkto: '',
-      Link: 'Flexible cancellations.',
-      contents: [
-        `Plans changed? Cancel within 1 hour of booking or more than 24 hours before the start of your trip, and you won't be charged any fees.`
-      ]
+      img: 'img3_SlideLeftRight_HowItWork',
+      label: 'label3_SlideLeftRight_HowItWork',
+      Linkto: 'linkto3_SlideLeftRight_HowItWork',
+      Link: 'link3_SlideLeftRight_HowItWork',
+      contents: [`contents3_SlideLeftRight_HowItWork`]
     }
   ]
 }
@@ -102,7 +101,7 @@ const HowItWorkSlice = createSlice({
       state.HearCommunityHowItWork = action.payload
     },
     updateSlideHIW: (state, action: PayloadAction<ISelectItemsSlide>) => {
-      state.SlideHowItWork = action.payload
+      state.SlideHowItWorkR = action.payload
     },
     updateSlideLeftRightHIW: (state, action: PayloadAction<ISelectItemsSlideLeftRight>) => {
       state.SlideLeftRightHowItWork.push(action.payload)

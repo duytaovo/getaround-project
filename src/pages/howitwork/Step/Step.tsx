@@ -6,8 +6,12 @@ import {
   CustomeStepItemsHowItWork2
 } from 'src/items/CustomeStepItem/CustomeStepItem'
 import { MobileOutlined, CarOutlined, RiseOutlined, DollarOutlined, WalletOutlined } from '@ant-design/icons'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 import { Link } from 'react-router-dom'
 const Step = () => {
+  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
+    useSelector((state: RootState) => state.howitwork)
   const [step, setStep] = useState(true)
   return (
     <div>

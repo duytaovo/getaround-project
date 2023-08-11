@@ -1,6 +1,9 @@
 import React from 'react'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useAppSelector } from 'src/hooks/useRedux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 export const DataHeaderHostrefernal = {
   id: 'header_hosting_hostRefernal',
   headerTitle: 'Make even more',
@@ -10,6 +13,8 @@ export const DataHeaderHostrefernal = {
   img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63ec0f79defe6c3903d84ee4_ga-illustration-2.svg'
 }
 const HeaderhostRefernal = () => {
+  const data = useAppSelector((state) => state.data)
+  const { HeaderhostRefernal } = useSelector((state: RootState) => state.hostingReferral)
   return (
     <div className='flex justify-center px-[36px] sm:flex-col'>
       <div className='w-1/2  flex justify-center items-center sm:w-[100%]'>
@@ -17,7 +22,7 @@ const HeaderhostRefernal = () => {
           <Text
             id='hosting-hostrefernal-header-headerTitle'
             tag='p'
-            content={DataHeaderHostrefernal.title}
+            content={data[HeaderhostRefernal.headerTitle]}
             className='text-3xl text-black font-bold'
           ></Text>
           {/* <h2 className='text-3xl text-black font-bold'>
@@ -26,7 +31,7 @@ const HeaderhostRefernal = () => {
           <Text
             id='hosting-hostrefernal-header-content'
             tag='p'
-            content={DataHeaderHostrefernal.content}
+            content={data[HeaderhostRefernal.content]}
             className='text-[#1e1e1e] font-normal mt-3'
           />
           {/* <p className='text-[#1e1e1e] font-normal mt-3'>
@@ -39,7 +44,7 @@ const HeaderhostRefernal = () => {
         <Image
           id='hosting-hostrefernal-header-img'
           className='object-contain h-[500px]'
-          src={DataHeaderHostrefernal.img}
+          src={data[HeaderhostRefernal.img]}
           alt='Getaround Connect®'
         />
         {/* <img

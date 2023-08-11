@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
 import { DataExploreHostingHostRefernalText } from 'src/items/ExploreHosting/DataExploreHostingText'
-import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
+import { ISelectItemsSlideLeftRight, ISelectImglideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightHostRefernal } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 import { ISelectItemsHeaderHostRefernal } from 'src/types/hostRefernal/hostRefernal'
 import { DataHeaderHostrefernal } from 'src/pages/HostRefernal/HeaderhostRefernal'
@@ -19,133 +19,102 @@ interface hostRefernalState {
   customeSteps: ICustomeSteps[]
   imgcustomeSteps: ISelectItemsImgCustomeSteps
   QuestionhostRefernal: ICommonQuestions[]
+  ImgSlideLeftRight_HostRefernal: ISelectImglideLeftRight
 }
 
 const initialState: hostRefernalState = {
+  ImgSlideLeftRight_HostRefernal: {
+    img: 'ImgSlideLeftRight_HostRefernal',
+    mainTitle: 'MainTirleLeftRight_HostRefernal'
+  },
   ExplorehostRefernal: {
     id: 'ExploreHosting_hostRefernal',
-    mainTitle: '',
-    headerTitle: 'OTHER HOST BONUSES',
-    Title: 'Explore more bonuses',
+    mainTitle: 'mainTitle_Explore_hostRefernal',
+    headerTitle: 'headerTitle_Explore_hostRefernal',
+    Title: 'title_Explore_hostRefernal',
 
-    Description:
-      "Referrals aren't the only way to make extra money as a Getaround Host. Explore more ways to earn more.",
-    Link: '/'
+    Description: 'description_Explore_hostRefernal',
+    Link: 'link_Explore_hostRefernal'
   },
   SlideLeftRighthostRefernal: [
     {
       id: 'SlideLeftRight_hostRefernal_01',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
-      label: 'The details',
-      Linkto: '/',
-      Link: 'Referrals must be made with your custom referral link on this page',
-      contents: [
-        `not with the link you'll find in the Getaround app. If you don't want to share the link directly with a friend, you can submit their information through the form above.`,
-
-        `With each host you refer, you can earn a maximum of a $1000 referral bonus. Refer more friends or family to earn more. All referred Hosts must list cars that meet Getaround's standard vehicle eligibility requirements`
-      ]
+      img: 'img_SlideLeftRight_hostRefernal',
+      label: 'label_SlideLeftRight_hostRefernal',
+      Linkto: 'linkTo_SlideLeftRight_hostRefernal',
+      Link: 'link_SlideLeftRight_hostRefernal',
+      contents: [`content1_SlideLeftRight_hostRefernal`, `content2_SlideLeftRight_hostRefernal`]
     }
   ],
   HeaderhostRefernal: {
     id: 'header_hosting_hostRefernal',
-    headerTitle: 'Make even more',
-    title: 'when you refer your friends',
-    content:
-      "You already know how powerful hosting can be. Time to share the love. Don't delay—this is a limited-time offer.",
-    img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63ec0f79defe6c3903d84ee4_ga-illustration-2.svg'
+    headerTitle: 'headerTitle_Header_hostRefernal',
+    title: 'title_Header_hostRefernal',
+    content: 'content_Header_hostRefernal',
+    img: 'img_Header_hostRefernal'
   },
   customeSteps: [
     {
-      title: 'Think of friends to refer',
+      title: 'title1_customeSteps',
 
-      subTitle: "You've got this. Who do you know with a car that  might like to list it?"
+      subTitle: 'subtitle1_customeSteps'
     },
     {
-      title: 'Copy your custom referral link',
-      subTitle: `Generate your link in the tool on this page. Share it with your friends via email or text. Make sure to use your link, since it's the only way for us to credit you for referrals.`
+      title: 'title2_customeSteps',
+
+      subTitle: 'subtitle2_customeSteps'
     },
     {
-      title: 'Follow up with your friends',
-      subTitle:
-        "Don't stop with just sending the link. Talk to your friends, share the Host handbook, and see how you can help them get started."
+      title: 'title3_customeSteps',
+
+      subTitle: 'subtitle3_customeSteps'
     }
   ],
   imgcustomeSteps: {
     id: 'ImgCustomeSteps_HostRF',
-    img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg',
-    title: 'Make it happen in seconds'
+    img: 'img_imgcustomeSteps',
+    title: 'title_imgcustomeSteps',
+    headerTitle: 'Headertitle_imgcustomeSteps'
   },
   QuestionhostRefernal: [
     {
-      key: '1',
-      label: 'When and how will I receive my referral bonus?',
+      key: 'key1_Question_hostRefernal',
+      label: 'label1_Question_hostRefernal',
       contents: [
-        'Initial $200',
-        "‍When: After your referral's first vehicle goes live for bookings",
-        'How: Earnings adjustment in your account',
-        '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
-        `‍When: 60 days after the referral's first vehicle goes live for bookings`,
-        'How: Earnings adjustment in your account'
+        'content1_1_Question_hostRefernal',
+        'content1_2_Question_hostRefernal',
+        'content1_3_Question_hostRefernal',
+        'content1_4_Question_hostRefernal'
       ]
     },
     {
-      key: '2',
-      label: 'When and how will I receive my referral bonus?',
+      key: 'key2_Question_hostRefernal',
+      label: 'label2_Question_hostRefernal',
       contents: [
-        'Initial $200',
-        "‍When: After your referral's first vehicle goes live for bookings",
-        'How: Earnings adjustment in your account',
-        '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
-        `‍When: 60 days after the referral's first vehicle goes live for bookings`,
-        'How: Earnings adjustment in your account'
+        'content2_1_Question_hostRefernal',
+        'content2_2_Question_hostRefernal',
+        'content2_3_Question_hostRefernal',
+        'content2_4_Question_hostRefernal'
       ]
     },
     {
-      key: '3',
-      label: 'When and how will I receive my referral bonus?',
+      key: 'key3_Question_hostRefernal',
+      label: 'label3_Question_hostRefernal',
       contents: [
-        'Initial $200',
-        "‍When: After your referral's first vehicle goes live for bookings",
-        'How: Earnings adjustment in your account',
-        '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
-        `‍When: 60 days after the referral's first vehicle goes live for bookings`,
-        'How: Earnings adjustment in your account'
+        'content3_1_Question_hostRefernal',
+        'content3_2_Question_hostRefernal',
+        'content3_3_Question_hostRefernal',
+        'content3_4_Question_hostRefernal'
       ]
     },
     {
-      key: '4',
-      label: 'When and how will I receive my referral bonus?',
+      key: 'key4_Question_hostRefernal',
+      label: 'label4_Question_hostRefernal',
       contents: [
-        'Initial $200',
-        "‍When: After your referral's first vehicle goes live for bookings",
-        'How: Earnings adjustment in your account',
-        '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
-        `‍When: 60 days after the referral's first vehicle goes live for bookings`,
-        'How: Earnings adjustment in your account'
-      ]
-    },
-    {
-      key: '5',
-      label: 'When and how will I receive my referral bonus?',
-      contents: [
-        'Initial $200',
-        "‍When: After your referral's first vehicle goes live for bookings",
-        'How: Earnings adjustment in your account',
-        '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
-        `‍When: 60 days after the referral's first vehicle goes live for bookings`,
-        'How: Earnings adjustment in your account'
-      ]
-    },
-    {
-      key: '6',
-      label: 'When and how will I receive my referral bonus?',
-      contents: [
-        'Initial $200',
-        "‍When: After your referral's first vehicle goes live for bookings",
-        'How: Earnings adjustment in your account',
-        '‍Revenue sharing (25% of the referral"s first 60 days of earnings)',
-        `‍When: 60 days after the referral's first vehicle goes live for bookings`,
-        'How: Earnings adjustment in your account'
+        'content4_1_Question_hostRefernal',
+        'content4_2_Question_hostRefernal',
+        'content4_3_Question_hostRefernal',
+        'content4_4_Question_hostRefernal'
       ]
     }
   ]

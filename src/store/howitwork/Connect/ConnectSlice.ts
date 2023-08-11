@@ -9,7 +9,7 @@ import { ISelectItemsBodykeyFeatures } from 'src/types/HowItWorkConnect'
 import { DataKeyFeatureItem } from 'src/items/KeyFeatureItem/DataKeyFeatureItem'
 interface ConnectHIWState {
   HeaderConnect: ISelectItemsConnectHeader
-  SlideHIWC: ISelectItemSlideHIWC[]
+  SlideHIWCR: ISelectItemSlideHIWC[]
   HeaderKeyFeatures: ISelectItemsHeaderkeyFeatures
   BodyKeyFeatures: ISelectItemsBodykeyFeatures[]
 }
@@ -17,66 +17,58 @@ interface ConnectHIWState {
 const initialState: ConnectHIWState = {
   HeaderConnect: {
     id: 'Header_HowItWork_Connect',
-    imgLogo:
-      'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/600754c5a561bdd9d1f4a065_badge-getaround%C2%AE%401X.png',
-    titleLogo: ' A SAFER, MORE CONVENIENT WAY TO CARSHARE',
-    mainTitleHeader: 'Getaround Connect',
-    contentHeader: `No other carsharing service offers contactless sharing using Getaround Connect®. With your Android or iOS
-    phone and the Getaround app, you can find, book, and unlock a car, truck, or van near you. Getaround is the
-    leading global and digital carsharing marketplace. Try it today.`,
-    imgContentHeader:
-      'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6064908339a45b8d2297f2c9_feature-contactless-booking.svg'
+    imgLogo: 'imgLogo_header_Connnect',
+    titleLogo: 'titleLogo_header_Connnect',
+    mainTitleHeader: 'mainTitleHeader_header_Connnect',
+    contentHeader: `content_header_Connnect`,
+    imgContentHeader: 'imgContent_header_Connnect'
   },
-  SlideHIWC: [
+  SlideHIWCR: [
     {
       id: 'SlideButton_HowItWork_Connect_01',
-      nameButton: 'Share A Car',
-      linkTo: '/'
+      nameButton: 'nameButton1_Slide_Connect',
+      linkTo: 'linkto1_Slide_Connect'
     },
     {
       id: 'SlideButton_HowItWork_Connect_02',
-      nameButton: 'Book A Car',
-      linkTo: '/'
+      nameButton: 'nameButton2_Slide_Connect',
+      linkTo: 'linkto2_Slide_Connect'
     }
   ],
   HeaderKeyFeatures: {
     id: 'HeaderKeyFeatures_HowItWork_Connect',
-    title: 'key features',
-    mainTitle: 'The ultimate in carsharing connectivity',
-    subTitle: 'For iOS and Android devices.'
+    title: 'title_HeaderkeyFeatures_Connect',
+    mainTitle: 'maintitle_HeaderkeyFeatures_Connect',
+    subTitle: 'subtitle_HeaderkeyFeatures_Connect'
   },
   BodyKeyFeatures: [
     {
       id: 'BodykeyFeatures_01',
-      title: 'GPS tracking',
-      description:
-        "Getaround Connect® enables us to securely track each car's location during Getaround trips, which means we can provide roadside assistance to guests in real-time if they experience any mechanical troubles during their trips.",
-      linkSecurity: '',
-      linkTo: '/'
+      title: 'title1_BodyKeyFeatures_Connect',
+      description: 'description1_BodyKeyFeatures_Connect',
+      linkSecurity: 'linkSecurity1_BodyKeyFeatures_Connect',
+      linkTo: 'linkTo1_BodyKeyFeatures_Connect'
     },
     {
       id: 'BodykeyFeatures_02',
-      title: 'Security',
-      description:
-        "Theft-deterrent functionality disables the car's starter when the vehicle is not in use by the host or by a verified guest, so long as the host has enabled",
-      linkSecurity: ' Enhanced Security.',
-      linkTo: '/'
+      title: 'title2_BodyKeyFeatures_Connect',
+      description: 'description2_BodyKeyFeatures_Connect',
+      linkSecurity: 'linkSecurity2_BodyKeyFeatures_Connect',
+      linkTo: 'linkTo2_BodyKeyFeatures_Connect'
     },
     {
       id: 'BodykeyFeatures_03',
-      title: 'Contactless sharing',
-      description:
-        "Book and unlock with confidence. Getaround Connect® means you don't need a physical hand-off of keys.",
-      linkSecurity: '',
-      linkTo: '/'
+      title: 'title3_BodyKeyFeatures_Connect',
+      description: 'description3_BodyKeyFeatures_Connect',
+      linkSecurity: 'linkSecurity3_BodyKeyFeatures_Connect',
+      linkTo: 'linkTo3_BodyKeyFeatures_Connect'
     },
     {
-      id: 'BodykeyFeatures_04',
-      title: 'Location',
-      description:
-        'Getaround Connect® helps hosts find their cars quickly if they’re street-parked without a designated parking space.',
-      linkSecurity: '',
-      linkTo: '/'
+      id: 'BodykeyFeatures_03',
+      title: 'title3_BodyKeyFeatures_Connect',
+      description: 'description3_BodyKeyFeatures_Connect',
+      linkSecurity: 'linkSecurity3_BodyKeyFeatures_Connect',
+      linkTo: 'linkTo3_BodyKeyFeatures_Connect'
     }
   ]
 }
@@ -89,7 +81,7 @@ const ConnectHIWSlice = createSlice({
       state.HeaderConnect = action.payload
     },
     updateSliceHIWC: (state, action: PayloadAction<ISelectItemSlideHIWC>) => {
-      state.SlideHIWC.push(action.payload)
+      state.SlideHIWCR.push(action.payload)
     },
     updateHeaderKeyFeatures: (state, action: PayloadAction<ISelectItemsHeaderkeyFeatures>) => {
       state.HeaderKeyFeatures = action.payload
