@@ -13,6 +13,7 @@ import OurHost from './components/OurHost/OurHost'
 import TopHostComunity from './components/TopHostCommunity/OurHost'
 import { itemTopHostComunity } from 'src/items/ShareACar/ShareACar'
 import { Grid } from '@mui/material'
+import { Image } from 'src/components/Edition/Image'
 
 const HostCominity = () => {
   const {
@@ -33,7 +34,7 @@ const HostCominity = () => {
     itemLinkNailTheBasic
   } = useAppSelector((state) => state.community)
 
-  const data = useAppSelector((state) =>state.data)
+  const data = useAppSelector((state) => state.data)
 
   return (
     <div className='mt-[33px]'>
@@ -67,16 +68,27 @@ const HostCominity = () => {
         <Row gutter={16}>
           <Col span={12} className='relative ml-auto mr-auto mt-[36px] '>
             {/* <div className=' bg-white rounded-md relative ml-auto mr-auto mt-[36px]'> */}
-            <img
+            <Image
+              id={`img_gettingStarted_hostCommunity`}
+              className='sticky bg-white rounded-2xl  object-contain max-h-[400px] w-[95%] top-1/3'
+              src={data[imgGettingStarted || '']}
+              alt='hosting-community'
+            />
+            {/* <img
               src={imgGettingStarted}
               alt=''
               className='sticky bg-white rounded-2xl  object-contain max-h-[400px] w-[95%] top-1/3'
-            />
+            /> */}
             {/* </div> */}
           </Col>
           <Col span={12}>
             <div className=' gap-y-4'>
-              <GettingStarted  itemLinkNailTheBasic={itemLinkNailTheBasic} itemLink={itemLink} itemTopGettingStarted={topGettingStarted} itemGettingStarted={gettingStartedNailBasic} />
+              <GettingStarted
+                itemLinkNailTheBasic={itemLinkNailTheBasic}
+                itemLink={itemLink}
+                itemTopGettingStarted={topGettingStarted}
+                itemGettingStarted={gettingStartedNailBasic}
+              />
             </div>
           </Col>
         </Row>
@@ -110,7 +122,13 @@ const HostCominity = () => {
         /* start card Partner,deal*/
         <div className='mb-bottom gap-x-5'>
           <OurHost item={ourHost} />
-          <Carousel_Review_Comunity className='m-4' data={carouselCommunity} numberItem={2} numberItemScroll={1} />
+          <Carousel_Review_Comunity
+            prefix='reviewCommunity'
+            className='m-4'
+            data={carouselCommunity}
+            numberItem={2}
+            numberItemScroll={1}
+          />
         </div>
       }
 

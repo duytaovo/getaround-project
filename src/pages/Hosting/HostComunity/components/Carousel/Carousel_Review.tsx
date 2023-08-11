@@ -13,7 +13,8 @@ export interface IPropsCarouselReview {
   numberItemScroll: number
   data: IItemCarousel[]
   className?: string
-  classNameContent?: string
+  classNameContent?: string,
+  prefix:string
 }
 
 export default function Carousel_Review_Comunity({
@@ -21,7 +22,8 @@ export default function Carousel_Review_Comunity({
   numberItemScroll,
   data,
   className,
-  classNameContent
+  classNameContent,
+  prefix
 }: IPropsCarouselReview) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
@@ -72,7 +74,7 @@ export default function Carousel_Review_Comunity({
                   '
             >
               {' '}
-              <Review item={item} classNameContent={classNameContent} className={className} />
+              <Review  item={item} classNameContent={classNameContent} className={className} />
             </div>
           ))}
         </Slider>

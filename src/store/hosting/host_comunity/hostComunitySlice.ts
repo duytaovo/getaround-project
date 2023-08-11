@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
-import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import {
+  DataExploreHostingShareCarText,
+  DataExploreHostingShareCarText_Community,
   itemBannerCommunity,
   itemCardBodyButton,
   itemCardBodyImg,
@@ -15,7 +16,7 @@ import {
   itemSliderHostComunity,
   itemTopGettingStarted,
   theNailBasicContent
-} from 'src/items/ShareACar/ShareACar'
+} from 'src/items/ShareACarId/ShareACarId'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
 import {
   IItemBanner,
@@ -55,7 +56,7 @@ const initialState: ShareACarState = {
   cardBodyButton: itemCardBodyButton,
   bannerCommunity: itemBannerCommunity,
   carouselCommunity: ItemCarouselCommunity,
-  exploreHosting: DataExploreHostingShareCarText,
+  exploreHosting: DataExploreHostingShareCarText_Community,
   ourHost: itemOurHost,
   gettingStartedNailBasic: theNailBasicContent,
   topGettingStarted: itemTopGettingStarted,
