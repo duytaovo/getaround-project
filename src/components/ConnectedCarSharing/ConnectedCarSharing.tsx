@@ -1,11 +1,13 @@
 import { IConnectedCarSharing } from 'src/types/connectedCarSharing.type'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useAppSelector } from 'src/hooks/useRedux'
 interface Props {
   DataConnectedCarSharingHome: IConnectedCarSharing[]
   className?: string
 }
 const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, className }) => {
+  const data = useAppSelector((state) => state.data)
   return (
     <div className={className}>
       <div className='w-full flex-col max-w-[1272px] self-center items-stretch px-auto flex'>
@@ -18,7 +20,7 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
                     <Text
                       id='id-texttotalConnected'
                       tag='div'
-                      content={DataConnectedCarSharingHome?.[index]?.total}
+                      content={data[DataConnectedCarSharingHome?.[index]?.total]}
                       className='mb-1 text-[32px] font-bold text-black sm:text-[20px]'
                     />
                     {/* <div className='mb-1 text-[32px] font-bold text-black sm:text-[20px]'>
@@ -27,7 +29,7 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
                     <Text
                       id='id-texttitleConnected'
                       tag='div'
-                      content={DataConnectedCarSharingHome?.[index]?.title}
+                      content={data[DataConnectedCarSharingHome?.[index]?.title]}
                       className='text-[13px] font-bold text-black sm:text-[10px]'
                     />
                     {/* <div className='text-[13px] font-bold text-black sm:text-[10px]'>

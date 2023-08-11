@@ -39,7 +39,7 @@ const ReadNews = () => {
                           id='titleReadnewNewsRoom'
                           tag='div'
                           content={DataReadNewItem?.[index]?.title || ''}
-                          className='text-black mb-0 text-[24px] leading-[106%]'
+                          className='text-black mb-0 text-[24px] leading-[106%] sm:text-[15px]'
                         />
                         {/* <div className='text-black mb-0 text-[24px] leading-[106%]'>
                           Car Sharing: What You Need To Know - Kelley Blue Book
@@ -52,7 +52,7 @@ const ReadNews = () => {
                         </Link>
                       </div>
                     </div>
-                    <div className='text-[24px] group-hover:text-mainColor'>
+                    <div className='text-[24px] group-hover:text-mainColor sm:text-[15px]'>
                       <RightOutlined />
                     </div>
                   </Link>

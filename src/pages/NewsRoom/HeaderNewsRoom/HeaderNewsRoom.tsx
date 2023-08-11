@@ -24,8 +24,7 @@ const HeaderNewsRoom = () => {
           }}
         >
           <div className='gap-x-[56px] flex-row w-[100%] mx-auto flex'>
-            <div className='w-[50%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'></div>
-            <div className='w-[60%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
+            <div className='w-[60%] sm:w-full flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
               <h1 className='tracking-[-.04em] mb-0 mx-0 pb-0 text-[52px] font-semibold leading-[99%] mt-0 text-left max-w-[40ch]'>
                 <Text id='titleHeaderNEwsRoom' tag='span' content={DataHeaderNewsRoom.title} className='text-white' />
                 {/* <span className='text-white'>Explore Getaround in the news</span> */}

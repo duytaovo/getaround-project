@@ -26,14 +26,110 @@ interface AboutUSState {
 }
 
 const initialState: AboutUSState = {
-  BlogNewsRoom: DataBlogAboutUs,
-  ExploreAboutUs: DataExploreHostingAboutUsText,
-  CarouselNewsRoom: ItemCarouselAboutUs_NewsRoom,
-  TitleCarouselAboutUs: DataTitleCarouselAboutUs,
-  JoinTeamAboutUs: DataJoinTeamAboutUs,
-  BannerAboutUS: DataBannerAboutUs,
-  ConnectedCarSharing: DataConnectedCarSharingHome,
-  HeaderAboutUs: DataHeaderAboutUs
+  BlogNewsRoom: {
+    id: 'Blog_AboutUS_AboutUs',
+    img: 'img_Blog_About',
+    headerTitle: 'headerTitle_Blog_About',
+    mainTitle: 'mainTitle_Blog_About',
+    content: 'content_Blog_About',
+    linkTo: 'linkTo_Blog_About'
+  },
+  ExploreAboutUs: {
+    id: 'ExploreHosting_AboutUs_AboutUs',
+    mainTitle: 'mainTitle_Explore_AboutUs',
+    headerTitle: 'header_Explore_AboutUs',
+    Title: 'title_Explore_AboutUs',
+
+    Description: 'description_Explore_AboutUs',
+    Link: 'link_Explore_AboutUs'
+  },
+  CarouselNewsRoom: [
+    {
+      id: 1,
+      title: 'title1_Carousel_AboutUS',
+      date: 'date1_Carousel_AboutUS',
+      description: `description1_Carousel_AboutUS`,
+      linkto: 'linkTo1_Carousel_AboutUS'
+    },
+    {
+      id: 2,
+      title: `title2_Carousel_AboutUS`,
+      date: 'date2_Carousel_AboutUS',
+      description: `description2_Carousel_AboutUS`,
+      linkto: 'linkTo2_Carousel_AboutUS'
+    },
+    {
+      id: 3,
+      title: `title3_Carousel_AboutUS`,
+      date: 'date3_Carousel_AboutUS',
+      description: `description3_Carousel_AboutUS`,
+      linkto: 'linkTo3_Carousel_AboutUS'
+    },
+    {
+      id: 4,
+      title: `title4_Carousel_AboutUS`,
+      date: 'date4_Carousel_AboutUS',
+      description: `description4_Carousel_AboutUS`,
+      linkto: 'linkTo4_Carousel_AboutUS'
+    }
+  ],
+  TitleCarouselAboutUs: {
+    id: 'Carousel_Title_AboutUs_AboutUs',
+    headerTitle: 'headerTitle_TitleCarousel_AboutUs',
+    title: 'title_TitleCarousel_AboutUs',
+    linkTo: 'linkTo_TitleCarousel_AboutUs'
+  },
+  JoinTeamAboutUs: {
+    id: 'JoinTeam_AboutUS_AboutUs',
+    title: 'title_JoinTeam_AboutUs',
+    img: 'img_JoinTeam_AboutUs',
+    content: 'content_JoinTeam_AboutUs',
+    linkTo: 'linkTo_JoinTeam_AboutUs'
+  },
+  BannerAboutUS: {
+    id: 'Banner_AboutUs_AboutUS',
+
+    title: 'title_Banner_AboutUS',
+    content: 'content_Banner_AboutUS',
+    img: 'img_Banner_AboutUS'
+  },
+  ConnectedCarSharing: [
+    {
+      id: 'Connected_AboutUs_AboutUs',
+      total: 'total1_ConnectedCarSharing_AboutUs',
+      title: 'title1_ConnectedCarSharing_AboutUs'
+    },
+    {
+      id: 'Connected_AboutUs_AboutUs',
+      total: 'total2_ConnectedCarSharing_AboutUs',
+      title: 'title2_ConnectedCarSharing_AboutUs'
+    },
+    {
+      id: 'Connected_AboutUs_AboutUs',
+      total: 'total3_ConnectedCarSharing_AboutUs',
+      title: 'title3_ConnectedCarSharing_AboutUs'
+    },
+    {
+      id: 'Connected_AboutUs_AboutUs',
+      total: 'total4_ConnectedCarSharing_AboutUs',
+      title: 'title34_ConnectedCarSharing_AboutUs'
+    }
+  ],
+  HeaderAboutUs: [
+    {
+      id: 'Header_AboutUs_AboutUs',
+      title: 'title_Header_AboutUs',
+      arrayImg: [
+        'img1_Header_AboutUs',
+        'img2_Header_AboutUs',
+        'img3_Header_AboutUs',
+        'img4_Header_AboutUs',
+        'img5_Header_AboutUs',
+        'img6_Header_AboutUs',
+        'img7_Header_AboutUs'
+      ]
+    }
+  ]
 }
 
 const AboutUSSlice = createSlice({

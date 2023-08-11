@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { Steps } from 'antd'
 import { Text } from '../Edition/Text'
+import { useAppSelector } from 'src/hooks/useRedux'
 
 interface ICustomeStep {
   title: string
@@ -20,12 +21,13 @@ type Props = {
 const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName, titleClassName }) => {
   const stepRef = useRef<HTMLDivElement | null>(null)
   const [current, setCurrent] = useState<number>(-1)
+  const data = useAppSelector((state) => state.data)
 
   const itemsForSteps = items.map((item, index) => ({
     icon: icons[index],
-    title: <Text id='id-text' tag='p' content={item.title} className={titleClassName} />,
+    title: <Text id={item.title} tag='p' content={data[item.title]} className={titleClassName} />,
     subTitle: (
-      <Text id='id-text' tag='h1' content={item.subTitle} className={textClassName} />
+      <Text id={item.subTitle} tag='h1' content={data[item.subTitle]} className={textClassName} />
       // <h1 key={index} className={textClassName}>
       //   {item.subTitle}
       // </h1>
