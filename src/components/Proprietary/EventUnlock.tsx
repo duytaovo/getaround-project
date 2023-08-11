@@ -2,7 +2,9 @@ import React, { useEffect, useState, FC } from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { useAppSelector } from 'src/hooks/useRedux'
+import { RootState } from 'src/store/store'
 interface IProprietary {
   id?: string
   headerTitle?: string
@@ -58,6 +60,9 @@ const Proprietary: FC<Props> = ({ Data }) => {
     }
     return () => clearTimeout(timer)
   }, [isOnScreen])
+  const { ProprietaryST } = useSelector((state: RootState) => state.safetrust)
+  const dispatch = useDispatch()
+  const data = useAppSelector((state) => state.data)
   return (
     <div id='proprietary-component' className={`flex-col items-stretch mb-[104px] flex `}>
       <div className='w-full max-w-[1272px] flex-col self-center items-stretch flex relative'>
@@ -67,7 +72,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
               <Text
                 id='headerTitleEnvent'
                 tag='div'
-                content={Data?.headerTitle || ''}
+                content={data[ProprietaryST.headerTitle] || ''}
                 className='w-auto max-w-[1279px] text-left text-mainColor uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'
               />
               {/* <div
@@ -77,20 +82,25 @@ const Proprietary: FC<Props> = ({ Data }) => {
                 {Data?.headerTitle}
               </div> */}
               <h2 className='max-w-full text-white tracking-[-.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em]'>
-                <Text id='TitleEnvent' tag='div' content={Data?.title || ''} className='font-bold' />
+                <Text id='TitleEnvent' tag='div' content={data[ProprietaryST.title] || ''} className='font-bold' />
                 {/* <strong className='font-bold'> {Data?.title}</strong> */}
               </h2>
               <div className='text-[#e9ebec] mt-[30px] text-sm'>
-                <Text id='DesEnvent' tag='span' content={Data?.description || ''} className='' />
+                <Text id='DesEnvent' tag='span' content={data[ProprietaryST.description] || ''} className='' />
                 {/* {Data?.description} */}
                 <br /> <br />
-                <Text id='SpanEnvent' tag='span' content={Data?.span || ''} className='text-mainColor font-bold' />
-                <Text id='Des2Envent' tag='span' content={Data?.description2 || ''} className='' />
+                <Text
+                  id='SpanEnvent'
+                  tag='span'
+                  content={data[ProprietaryST.span] || ''}
+                  className='text-mainColor font-bold'
+                />
+                <Text id='Des2Envent' tag='span' content={data[ProprietaryST.description2] || ''} className='' />
                 {/* {Data?.description2} */}
                 <br />
                 <br />
                 <Link
-                  to={Data?.Link || ''}
+                  to={data[ProprietaryST.Link] || ''}
                   className='text-mainColor delay-[0.2s] underline touch-manipulation bg-transparent cursor-pointer outline-none hover:text-mainColor hover:none-underline leading-4'
                 >
                   <strong className='font-bold'>Read more</strong>
@@ -102,7 +112,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
             <Image
               id='imgST'
               className='object-cover rounded-[22px] align-middle border-none max-w-[100%] inline-block border-0 h-[412px]'
-              src='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg'
+              src={data[ProprietaryST.img]}
               alt='Getaround Connect®'
             />
             {/* <img

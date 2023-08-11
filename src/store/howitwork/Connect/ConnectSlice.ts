@@ -9,16 +9,68 @@ import { ISelectItemsBodykeyFeatures } from 'src/types/HowItWorkConnect'
 import { DataKeyFeatureItem } from 'src/items/KeyFeatureItem/DataKeyFeatureItem'
 interface ConnectHIWState {
   HeaderConnect: ISelectItemsConnectHeader
-  SlideHIWC: ISelectItemSlideHIWC[]
+  SlideHIWCR: ISelectItemSlideHIWC[]
   HeaderKeyFeatures: ISelectItemsHeaderkeyFeatures
   BodyKeyFeatures: ISelectItemsBodykeyFeatures[]
 }
 
 const initialState: ConnectHIWState = {
-  HeaderConnect: DataHeaderConnect,
-  SlideHIWC: DataSliceHIWC,
-  HeaderKeyFeatures: DataHeaderKeyFeatures,
-  BodyKeyFeatures: DataKeyFeatureItem
+  HeaderConnect: {
+    id: 'Header_HowItWork_Connect',
+    imgLogo: 'imgLogo_header_Connnect',
+    titleLogo: 'titleLogo_header_Connnect',
+    mainTitleHeader: 'mainTitleHeader_header_Connnect',
+    contentHeader: `content_header_Connnect`,
+    imgContentHeader: 'imgContent_header_Connnect'
+  },
+  SlideHIWCR: [
+    {
+      id: 'SlideButton_HowItWork_Connect_01',
+      nameButton: 'nameButton1_Slide_Connect',
+      linkTo: 'linkto1_Slide_Connect'
+    },
+    {
+      id: 'SlideButton_HowItWork_Connect_02',
+      nameButton: 'nameButton2_Slide_Connect',
+      linkTo: 'linkto2_Slide_Connect'
+    }
+  ],
+  HeaderKeyFeatures: {
+    id: 'HeaderKeyFeatures_HowItWork_Connect',
+    title: 'title_HeaderkeyFeatures_Connect',
+    mainTitle: 'maintitle_HeaderkeyFeatures_Connect',
+    subTitle: 'subtitle_HeaderkeyFeatures_Connect'
+  },
+  BodyKeyFeatures: [
+    {
+      id: 'BodykeyFeatures_01',
+      title: 'title1_BodyKeyFeatures_Connect',
+      description: 'description1_BodyKeyFeatures_Connect',
+      linkSecurity: 'linkSecurity1_BodyKeyFeatures_Connect',
+      linkTo: 'linkTo1_BodyKeyFeatures_Connect'
+    },
+    {
+      id: 'BodykeyFeatures_02',
+      title: 'title2_BodyKeyFeatures_Connect',
+      description: 'description2_BodyKeyFeatures_Connect',
+      linkSecurity: 'linkSecurity2_BodyKeyFeatures_Connect',
+      linkTo: 'linkTo2_BodyKeyFeatures_Connect'
+    },
+    {
+      id: 'BodykeyFeatures_03',
+      title: 'title3_BodyKeyFeatures_Connect',
+      description: 'description3_BodyKeyFeatures_Connect',
+      linkSecurity: 'linkSecurity3_BodyKeyFeatures_Connect',
+      linkTo: 'linkTo3_BodyKeyFeatures_Connect'
+    },
+    {
+      id: 'BodykeyFeatures_03',
+      title: 'title3_BodyKeyFeatures_Connect',
+      description: 'description3_BodyKeyFeatures_Connect',
+      linkSecurity: 'linkSecurity3_BodyKeyFeatures_Connect',
+      linkTo: 'linkTo3_BodyKeyFeatures_Connect'
+    }
+  ]
 }
 
 const ConnectHIWSlice = createSlice({
@@ -29,7 +81,7 @@ const ConnectHIWSlice = createSlice({
       state.HeaderConnect = action.payload
     },
     updateSliceHIWC: (state, action: PayloadAction<ISelectItemSlideHIWC>) => {
-      state.SlideHIWC.push(action.payload)
+      state.SlideHIWCR.push(action.payload)
     },
     updateHeaderKeyFeatures: (state, action: PayloadAction<ISelectItemsHeaderkeyFeatures>) => {
       state.HeaderKeyFeatures = action.payload

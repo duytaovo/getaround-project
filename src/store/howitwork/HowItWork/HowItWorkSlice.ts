@@ -7,22 +7,84 @@ import { ISelectItemsHearCommunity } from 'src/types/HowItWork'
 import { DataCommunity } from 'src/pages/howitwork/HearCommunity/HearCommunity'
 import { ISelectItemsSlide } from 'src/types/HowItWork'
 import { DataSlideHowItWork } from 'src/pages/howitwork/SlideHowItWork/SlideHowItWork'
-import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
+import { ISelectItemsSlideLeftRight, ISelectImglideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideLeftRight'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
+import axios from 'axios'
 interface HowItWorkState {
   ExploreHowItWork: ISelectItemsExploreHosting
   ProprietaryHowItWork: ISelectItemsProprietary
   HearCommunityHowItWork: ISelectItemsHearCommunity
-  SlideHowItWork: ISelectItemsSlide
+  SlideHowItWorkR: ISelectItemsSlide
   SlideLeftRightHowItWork: ISelectItemsSlideLeftRight[]
+  ImgSlideLeftRight_HowItWork: ISelectImglideLeftRight
 }
 
 const initialState: HowItWorkState = {
-  ExploreHowItWork: DataExploreHostingHomeText,
-  ProprietaryHowItWork: DataProprietaryHowItWork,
-  HearCommunityHowItWork: DataCommunity,
-  SlideHowItWork: DataSlideHowItWork,
-  SlideLeftRightHowItWork: DataSlideLeftRightHowItWork
+  ImgSlideLeftRight_HowItWork: {
+    img: 'ImgSlideLeftRight_HowITWork',
+    mainTitle: 'MainTirleLeftRight_HowITWork'
+  },
+  ExploreHowItWork: {
+    mainTitle: 'mainTitle_Explore_HowItWork',
+    headerTitle: 'headerTitle_Explore_HowItWork',
+    Title: 'title_Explore_HowItWork',
+
+    Description: 'description_Explore_HowItWork',
+    Link: 'link_Explore_HowItWork'
+  },
+  ProprietaryHowItWork: {
+    id: 'Proprietary_HowItWork',
+    headerTitle: 'headerTitle_Propritary_HowItWork',
+    title: 'headerTitle_Propritary_HowItWork',
+    description: 'description_Propritary_HowItWork',
+    description2: 'description2_Propritary_HowItWork',
+    span: 'span_Propritary_HowItWork',
+    img: 'img_Propritary_HowItWork',
+    Link: 'link_Propritary_HowItWork'
+  },
+  HearCommunityHowItWork: {
+    id: 'Community_HowItWork',
+    title: 'title_HearCommunity_HowItWork',
+    content: 'content_HearCommunity_HowItWork',
+    link: 'link_HearCommunity_HowItWork'
+  },
+  SlideHowItWorkR: {
+    id: 'Slide_HowItWork',
+    mainTitle: 'mainTitle_Slide_HowItWork',
+    title: 'title_Slide_HowItWork',
+    img1: 'img1_Slide_HowItWork',
+    content1: 'content1_Slide_HowItWork',
+    img2: 'img2_Slide_HowItWork',
+    content2: 'content2_Slide_HowItWork'
+  },
+  SlideLeftRightHowItWork: [
+    {
+      id: 'SlideLeftRight_HowItWork_01',
+      img: 'img1_SlideLeftRight_HowItWork',
+      label: 'label1_SlideLeftRight_HowItWork',
+      Linkto: 'linkto1_SlideLeftRight_HowItWork',
+      Link: 'link_SlideLeftRight_HowItWork',
+      contents: [`contents1_SlideLeftRight_HowItWork`]
+    },
+    {
+      id: 'SlideLeftRight_HowItWork_02',
+      img: 'img2_SlideLeftRight_HowItWork',
+      label: 'label2_SlideLeftRight_HowItWork',
+      Linkto: 'linkto2_SlideLeftRight_HowItWork',
+      Link: 'link2_SlideLeftRight_HowItWork',
+      contents: [`contents2_SlideLeftRight_HowItWork`]
+    },
+    {
+      id: 'SlideLeftRight_HowItWork_03',
+      img: 'img3_SlideLeftRight_HowItWork',
+      label: 'label3_SlideLeftRight_HowItWork',
+      Linkto: 'linkto3_SlideLeftRight_HowItWork',
+      Link: 'link3_SlideLeftRight_HowItWork',
+      contents: [`contents3_SlideLeftRight_HowItWork`]
+    }
+  ]
 }
 
 const HowItWorkSlice = createSlice({
@@ -39,7 +101,7 @@ const HowItWorkSlice = createSlice({
       state.HearCommunityHowItWork = action.payload
     },
     updateSlideHIW: (state, action: PayloadAction<ISelectItemsSlide>) => {
-      state.SlideHowItWork = action.payload
+      state.SlideHowItWorkR = action.payload
     },
     updateSlideLeftRightHIW: (state, action: PayloadAction<ISelectItemsSlideLeftRight>) => {
       state.SlideLeftRightHowItWork.push(action.payload)

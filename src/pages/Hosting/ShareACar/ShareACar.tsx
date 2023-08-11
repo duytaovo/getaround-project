@@ -44,6 +44,7 @@ const ShareACar = () => {
     wrapperTitle,
     imgExploreHosting
   } = useAppSelector((state) => state.shareAcar)
+  const data = useAppSelector((state) =>state.data)
 
   const dispatch = useDispatch()
 
@@ -161,7 +162,7 @@ const ShareACar = () => {
         <Text
           id={`txt-wrapperTitle-shareACar-01`}
           tag='h4'
-          content={wrapperTitle[0].title || ''}
+          content={data[wrapperTitle[0].title] || ''}
           className={`text-[32px] font-medium tracking-tight leading-5 `}
         />
         {/* <h2 className='text-[32px] font-medium tracking-tight leading-5'>{wrapperTitle[0].title}</h2> */}

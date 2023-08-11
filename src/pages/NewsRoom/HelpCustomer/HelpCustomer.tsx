@@ -14,14 +14,14 @@ export const DataHelpCUstomerNewsroom = {
 }
 const HelpCustomer = () => {
   return (
-    <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10'>
-      <div className='w-1/2  flex items-center'>
+    <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10 sm:flex-col-reverse'>
+      <div className='w-1/2  flex items-center sm:w-[80%] sm:text-center sm:mx-auto'>
         <div className='block h-[50%]'>
           <Text
             id='titleHelpCustomerNewsRoom'
             tag='p'
             content={DataHelpCUstomerNewsroom.title}
-            className='uppercase text-black font-semibold mb-3 text-2xl mt-10'
+            className='uppercase text-black font-semibold mb-3 text-2xl mt-10 sm:text-[18px] sm:font-normal'
           />
           {/* <p className='uppercase text-black font-semibold mb-3 text-2xl mt-10'>
             We're helping consumers shift away from car ownership.
@@ -45,7 +45,7 @@ const HelpCustomer = () => {
           </div>
         </div>
       </div>
-      <div className='w-[35%] flex justify-center'>
+      <div className='w-[35%] flex justify-center sm:w-[80%]'>
         <Image
           id='imgHelpCustomerNewsRoom'
           className='object-contain h-[500px]'
