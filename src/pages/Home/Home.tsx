@@ -20,30 +20,30 @@ import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { Text } from 'src/components/Edition/Text'
 import { iDGenerator } from 'src/utils/idGenerator'
+import { Image } from 'src/components/Edition/Image'
 
 type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
-  // console.log(homePageData)
-  // console.log(iDGenerator(''))
+  const data = useAppSelector((state) => state.data)
 
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
-        title={homePageData.heroSection.title}
+        title={data[homePageData.heroSection.title]}
+        mainText={data[homePageData.heroSection.mainText]}
+        startDateTimePikerTitle={data[homePageData.heroSection.startDateTimePikerTitle]}
+        endDateTimePikerTitle={data[homePageData.heroSection.endDateTimePikerTitle]}
+        buttonSearchText={data[homePageData.heroSection.buttonSearchText]}
         img={homePageData.heroSection.img}
         addressPlaceholder={homePageData.heroSection.addressPlaceholder}
-        buttonSearchText={homePageData.heroSection.buttonSearchText}
-        mainText={homePageData.heroSection.mainText}
         datePickerPlaceholder={homePageData.heroSection.datePickerPlaceholder}
-        endDateTimePikerTitle={homePageData.heroSection.endDateTimePikerTitle}
-        startDateTimePikerTitle={homePageData.heroSection.startDateTimePikerTitle}
         timePickerPlaceholder={homePageData.heroSection.timePickerPlaceholder}
       />
 
       <WrapperContent
-        title={homePageData.perfectCarSliderSection.wrapperTitle}
+        title={data[homePageData.perfectCarSliderSection.wrapperTitle]}
         textAlign='center'
         isBgTransparent={true}
         classname='w-full'
@@ -79,7 +79,7 @@ const Home = (props: Props) => {
       </section>
 
       <WrapperContent
-        title={homePageData.sharingMaketPlaceSection.wrapperTitle}
+        title={data[homePageData.sharingMaketPlaceSection.wrapperTitle]}
         textAlign='center'
         isBgTransparent={true}
         classname='z-[10] pt-4'
@@ -87,11 +87,26 @@ const Home = (props: Props) => {
         <ConnectedCarSharing DataConnectedCarSharingHome={homePageData.sharingMaketPlaceSection.itemsData} />
       </WrapperContent>
 
-      <WrapperContent textAlign='center' title={homePageData.homeStepSection.wrapperTitle} classname='flex flex-col'>
-        <Heading title={homePageData.homeStepSection.heading} breakLineAt={3} fontSize={30} className='text-center' />
+      <WrapperContent
+        textAlign='center'
+        title={data[homePageData.homeStepSection.wrapperTitle]}
+        classname='flex flex-col'
+      >
+        <Heading
+          title={data[homePageData.homeStepSection.heading]}
+          breakLineAt={3}
+          fontSize={30}
+          className='text-center'
+        />
         <div className='flex justify-center px-[36px] xl:flex-col-reverse'>
           <div className='w-1/2 flex justify-center xl:w-full'>
-            <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' />
+            {/* <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' /> */}
+            <Image
+              alt='Image thumb'
+              id={iDGenerator('img')}
+              src={homePageData.homeStepSection.img}
+              className='object-contain h-[500px]'
+            />
           </div>
 
           <CustomeStep
@@ -201,7 +216,15 @@ const Home = (props: Props) => {
             paddingRightSingleCommonQuestion={10}
           />
           <div className='w-1/2 p-4 flex justify-center items-center xl:w-full'>
-            <img width='50%' src={homePageData.qAndASection.img} alt='' />
+            {/* <img width='50%' src={homePageData.qAndASection.img} alt='' /> */}
+            <Image
+              id={iDGenerator('img')}
+              alt='image-thumb'
+              src={homePageData.qAndASection.img ? homePageData.qAndASection.img : ''}
+              style={{
+                width: '100%'
+              }}
+            />
           </div>
         </div>
       </WrapperContent>

@@ -16,6 +16,8 @@ import { SecondSection } from 'src/items/DriveWithUberSectionItems/SecondSection
 import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { FifthSetionData } from 'src/items/DriveWithUberSectionItems/FifthSection/FifthSection'
 import { useAppSelector } from 'src/hooks/useRedux'
+import { useState, useEffect } from 'react'
+
 type Props = {}
 
 const DriveWithUber = (props: Props) => {
