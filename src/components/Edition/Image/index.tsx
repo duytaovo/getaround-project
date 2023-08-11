@@ -115,7 +115,7 @@ export const Image: FC<Iprops> = ({ id, className, src, alt, ...props }) => {
             {...props}
           />
 
-          <div className='flex h-7 absolute -top-8 -right-[2px]'>
+          <div className='flex h-7 absolute -right-[2px]'>
             {editOptions.map((option, index) => {
               const body: IBody = {
                 id: id,

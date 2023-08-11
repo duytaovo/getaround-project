@@ -6,6 +6,7 @@ import {
   IItemSliderHostComunity,
   IItemTopGettingStarted
 } from 'src/types/hosting_comunity.type '
+
 import {
   IBodyCommonQuestionImg,
   IBodyTop,
@@ -76,7 +77,7 @@ export const itemOurHost: IItemGetAroundYourBack = {
 export const wrapperTitle: IIWrapContentTitle[] = [
   {
     id: 1,
-    title: 'hosting_s10'
+    title: '...and more'
   },
   { id: 2, title: 'Need more info? Check out FAQs.' }
 ]
@@ -86,7 +87,7 @@ export const wrapperTitle: IIWrapContentTitle[] = [
 export const itemSliderHostComunity: IItemSliderHostComunity[] = [
   {
     id: 1,
-    img: "hosting_s10",
+    img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
     content: 'Getaround was featured on Crackle TV’s newest season of Going From Broke.',
     url: 'Watch free episode'
   },

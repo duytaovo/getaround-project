@@ -82,7 +82,7 @@ export default function SliderHostComunity({
   }
 
   return (
-    <div className=''>
+    <div className='bg-mainColor/20 rounded-md p-2 overflow-hidden object-cover h-[360px]'>
       <Slider {...settings}>
         {data?.map((item, index: number) => (
           <div
@@ -105,6 +105,7 @@ export default function SliderHostComunity({
               classNameContent={classNameContent}
               className={className}
               classNameURL={classNameURL}
+              id={index}
             />
           </div>
         ))}

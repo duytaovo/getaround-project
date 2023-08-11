@@ -85,10 +85,15 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       {permision == -1 && enable ? (
         <div className='flex justify-center relative'>
           <textarea
-            style={{ width: iOffset?.w, height: iOffset?.h }}
+            // style={{ width: iOffset?.w, height: iOffset?.h }}
             ref={iRef}
             value={val}
             onChange={handleChangeInput}
+            onResize={() => {
+              true
+            }}
+            rows={5}
+            cols={20}
             className={`${className || ''} rounded outline-none bg-transparent border border-slate-400 px-2`}
           ></textarea>
           <div className='flex h-7 absolute -top-8 -right-[2px]'>

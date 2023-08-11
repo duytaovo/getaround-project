@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 export interface IItemSlider {
-  id: number
+  id: string
   title?: string
   img: string
   content?: string
@@ -9,7 +9,7 @@ export interface IItemSlider {
 }
 
 export interface IItemCarousel {
-  id: number
+  id: string
   title?: string
   header?: string
   content?: string
