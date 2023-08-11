@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
+import { ISelectItemsExploreHosting, ISelectItemsImgExploreHosting } from 'src/types/HowItWork'
 import { DataExploreHostingHostRefernalText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { ISelectItemsSlideLeftRight, ISelectImglideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightHostRefernal } from 'src/items/SlideLeftRight/DataSlideLeftRight'
@@ -20,9 +20,13 @@ interface hostRefernalState {
   imgcustomeSteps: ISelectItemsImgCustomeSteps
   QuestionhostRefernal: ICommonQuestions[]
   ImgSlideLeftRight_HostRefernal: ISelectImglideLeftRight
+  ImgExploreHR: ISelectItemsImgExploreHosting
 }
 
 const initialState: hostRefernalState = {
+  ImgExploreHR: {
+    img: 'ImgExploreHR'
+  },
   ImgSlideLeftRight_HostRefernal: {
     img: 'ImgSlideLeftRight_HostRefernal',
     mainTitle: 'MainTirleLeftRight_HostRefernal'

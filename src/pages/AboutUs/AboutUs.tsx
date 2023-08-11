@@ -22,13 +22,10 @@ import { Image } from 'src/components/Edition/Image'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
-export const DataTitleCarouselAboutUs = {
-  id: 'Carousel_Title_AboutUs_AboutUs',
-  headerTitle: 'OUR LATEST UPDATES',
-  title: 'News room: Press releases',
-  linkTo: ''
-}
+
 const AboutUs = () => {
+  const { ExploreAboutUs, ConnectedCarSharingR, CarouselNewsRoom, TitleCarouselAboutUs, ImgExploreAboutUs } =
+    useSelector((state: RootState) => state.AboutUs)
   const data = useAppSelector((state) => state.data)
   const dispatch = useDispatch()
   return (
@@ -37,7 +34,7 @@ const AboutUs = () => {
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <Banner />
       </WrapperContent>
-      <CustomeCard mainTitle={`WHAT WE'RE DOING`} DataCustomeCard={DataCustomeCard} />
+      {/* <CustomeCard mainTitle={`WHAT WE'RE DOING`} DataCustomeCard={DataCustomeCard} /> */}
 
       <WrapperContent
         title="WE'RE SCALING OUR OPERATIONS TO SCALE OUR MISSION."
@@ -45,7 +42,7 @@ const AboutUs = () => {
         isBgTransparent={true}
       >
         <ConnectedCarSharing
-          DataConnectedCarSharingHome={DataConnectedCarSharingHome}
+          DataConnectedCarSharingHome={ConnectedCarSharingR}
           className={'flex-col items-stretch flex py-10 sm:py-3'}
         />
       </WrapperContent>
@@ -55,7 +52,7 @@ const AboutUs = () => {
           <Text
             id='headertitleAboutUs'
             tag='span'
-            content={DataTitleCarouselAboutUs.headerTitle}
+            content={data[TitleCarouselAboutUs.headerTitle]}
             className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'
           />
           {/* <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
@@ -64,14 +61,14 @@ const AboutUs = () => {
           <Text
             id='titleAboutUs'
             tag='h2'
-            content={DataTitleCarouselAboutUs.title}
+            content={data[TitleCarouselAboutUs.title]}
             className=' flex text-[32px] text-center  justify-center mb-2'
           />
           {/* <h2 className=' flex text-[32px] text-center  justify-center mb-2'>News room: Press releases</h2> */}
         </div>
         <Carousel_Review_Comunity
           className='m-4'
-          data={ItemCarouselAboutUs_NewsRoom}
+          data={CarouselNewsRoom}
           numberItem={2}
           numberItemScroll={1}
           classNameContent='text-[#727171]'
@@ -83,11 +80,9 @@ const AboutUs = () => {
       <JoinTeam />
 
       <ExploreHosting
-        img={
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63979f2e27eb83339d24e451_AdobeStock_488832115.jpg'
-        }
+        img={data[ImgExploreAboutUs.img]}
         DataExploreHostingStyle={DataExploreHostingAboutUs}
-        DataExploreHostingText={DataExploreHostingAboutUsText}
+        DataExploreHostingText={ExploreAboutUs}
         isEx={false}
         className='flex-col items-center flex w-full mb-[66px]'
       />

@@ -30,7 +30,9 @@ const HowItWork = () => {
     HearCommunityHowItWork,
     SlideLeftRightHowItWork,
     SlideHowItWorkR,
-    ImgSlideLeftRight_HowItWork
+    ImgExploreHowItWork,
+    ImgSlideLeftRight_HowItWork,
+    customeSteps
   } = useSelector((state: RootState) => state.howitwork)
   const data = useAppSelector((state) => state.data)
   const howitwork = useAppSelector((state) => state.howitwork)
@@ -64,11 +66,9 @@ const HowItWork = () => {
       />
       <HearCommunity />
       <ExploreHosting
-        img={
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
-        }
+        img={data[ImgExploreHowItWork.img]}
         DataExploreHostingStyle={DataExploreHostingHome}
-        DataExploreHostingText={DataExploreHostingHomeText}
+        DataExploreHostingText={ExploreHowItWork}
         isEx={true}
         className='flex-col items-center flex w-full mb-[66px]'
       />

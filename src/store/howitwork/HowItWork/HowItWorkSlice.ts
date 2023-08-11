@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
+import { ISelectItemsExploreHosting, ISelectItemsImgExploreHosting } from 'src/types/HowItWork'
 import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { DataProprietaryHowItWork } from 'src/items/Proprietary/DataProprietary'
 import { ISelectItemsProprietary } from 'src/types/HowItWork'
@@ -12,6 +12,7 @@ import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideL
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
 import axios from 'axios'
+import { ICustomeSteps } from 'src/types/customeSteps.type'
 interface HowItWorkState {
   ExploreHowItWork: ISelectItemsExploreHosting
   ProprietaryHowItWork: ISelectItemsProprietary
@@ -19,9 +20,54 @@ interface HowItWorkState {
   SlideHowItWorkR: ISelectItemsSlide
   SlideLeftRightHowItWork: ISelectItemsSlideLeftRight[]
   ImgSlideLeftRight_HowItWork: ISelectImglideLeftRight
+  ImgExploreHowItWork: ISelectItemsImgExploreHosting
+  customeSteps: ICustomeSteps[]
+  customeSteps2: ICustomeSteps[]
 }
 
 const initialState: HowItWorkState = {
+  customeSteps: [
+    {
+      title: 'title4_customeSteps',
+
+      subTitle: 'subtitle4_customeSteps'
+    },
+    {
+      title: 'title5_customeSteps',
+
+      subTitle: 'subtitle5_customeSteps'
+    },
+    {
+      title: 'title6_customeSteps',
+
+      subTitle: 'subtitle6_customeSteps'
+    }
+  ],
+  customeSteps2: [
+    {
+      title: 'title7_customeSteps',
+
+      subTitle: 'subtitle7_customeSteps'
+    },
+    {
+      title: 'title8_customeSteps',
+
+      subTitle: 'subtitle8_customeSteps'
+    },
+    {
+      title: 'title9_customeSteps',
+
+      subTitle: 'subtitle9_customeSteps'
+    },
+    {
+      title: 'title10_customeSteps',
+
+      subTitle: 'subtitle10_customeSteps'
+    }
+  ],
+  ImgExploreHowItWork: {
+    img: 'ImgExploreHowItWork'
+  },
   ImgSlideLeftRight_HowItWork: {
     img: 'ImgSlideLeftRight_HowITWork',
     mainTitle: 'MainTirleLeftRight_HowITWork'

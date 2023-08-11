@@ -5,11 +5,13 @@ import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
-
+import { useAppSelector } from 'src/hooks/useRedux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 import '../styles.css'
 import { ReactNode } from 'react'
 interface Props {
-  item?: IItemCarousel
+  item: IItemCarousel
   className?: string
   classNameContent?: string
 }
@@ -19,26 +21,29 @@ const Carousel_About = ({
   className,
   classNameContent = 'text-lg text-[#727272] flex flex-start align-left wrap flex-column leading-[22px]'
 }: Props) => {
+  const { CarouselNewsRoom, TitleCarouselNewsRoom } = useSelector((state: RootState) => state.newsroom)
+  const data = useAppSelector((state) => state.data)
+  const dispatch = useDispatch()
   return (
     <div className={`${className} `}>
       <div className='w-auto h-auto bg-white rounded-2xl'>
         <div className='block px-8 py-10'>
           <Text
-            id='dateCarouselNewsRoom'
+            id={data[item.title]}
             tag='h2'
-            content={item?.date || ''}
+            content={data[item.title] || ''}
             className='text-[10px] font-normal text-[#000000] my-4'
           />
           {/* <h2 className='text-[10px] font-normal text-[#000000] my-4'>{item?.date}</h2> */}
           <Text
-            id='desCarouselNewsRoom'
+            id={data[item.description]}
             tag='h3'
-            content={item?.description || ''}
+            content={data[item.description] || ''}
             className='text-[14px] font-sans text-[#727272] my-4'
           />
           {/* <h3 className='text-[14px] font-sans text-[#727272] my-4'>{item?.description}</h3> */}
           <Link
-            to='/'
+            to={data[item.linkTo]}
             className='text-[14px] font-semibold text-mainColor mt-3 underline hover:no-underline hover:text-black duration-100'
           >
             Read more
