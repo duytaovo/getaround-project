@@ -2,6 +2,8 @@ import React from 'react'
 import { CarOutlined, KeyOutlined, ReloadOutlined } from '@ant-design/icons'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 export const DataPowerFullSafeTrust = {
   id: 'PowerFullSafeTrust',
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/648380f3f2fadb5289320a68_ga-illustration-4.svg',
@@ -27,6 +29,9 @@ export const DataPowerFullSafeTrust = {
 }
 
 const PowerfulVetting = () => {
+  const { ExploreST, SlideLeftRightST, BookUnlockCar, HeaderST, PowerFullST, ProprietaryST } = useSelector(
+    (state: RootState) => state.safetrust
+  )
   return (
     <div
       className='opacity-[1] flex-col items-stretch mb-[104px] flex text-[16px] font-normal leading-[140%]'

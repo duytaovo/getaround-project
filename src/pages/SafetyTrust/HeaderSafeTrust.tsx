@@ -1,6 +1,8 @@
 import React from 'react'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 export const DataHeaderST = {
   id: 'header_HowItWork_SafeTrust',
   headerTitle: 'Safety and trust',
@@ -10,6 +12,9 @@ export const DataHeaderST = {
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/641a1bcc9cff2052158af235_ga-illustration-6.svg'
 }
 const HeaderSafeTrust = () => {
+  const { ExploreST, SlideLeftRightST, BookUnlockCar, HeaderST, PowerFullST, ProprietaryST } = useSelector(
+    (state: RootState) => state.safetrust
+  )
   return (
     <div>
       <div className='flex justify-center px-[36px] sm:flex-col'>
@@ -17,7 +22,7 @@ const HeaderSafeTrust = () => {
           <Image
             id='imgHEaderST'
             className='object-contain h-[500px]'
-            src={DataHeaderST.img}
+            src={HeaderST?.img || ''}
             alt='Getaround Connect®'
           />
           {/* <img
@@ -32,13 +37,13 @@ const HeaderSafeTrust = () => {
               <Text
                 id='textHeader_HeaderTitleST'
                 tag='span'
-                content={DataHeaderST.headerTitle}
+                content={HeaderST.headerTitle || ''}
                 className='text-mainColor text-4xl  font-bold'
               />{' '}
               <Text
                 id='textHeader_TitleST'
                 tag='h2'
-                content={DataHeaderST.title}
+                content={HeaderST.title || ''}
                 className='text-4xl text-black font-bold'
               />
             </div>

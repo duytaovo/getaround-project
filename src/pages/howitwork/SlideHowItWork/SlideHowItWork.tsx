@@ -1,6 +1,8 @@
 import React from 'react'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 export const DataSlideHowItWork = {
   id: 'Slide_HowItWork',
   mainTitle: 'Out mission',
@@ -11,6 +13,8 @@ export const DataSlideHowItWork = {
   content2: 'Chủ xe hơi kiếm tiền từ những khoảng thời gian họ không lái xe dù sao.'
 }
 const SlideHowItWork = () => {
+  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
+    useSelector((state: RootState) => state.howitwork)
   return (
     <div className='flex-col items-stretch mb-28 flex'>
       <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative'>

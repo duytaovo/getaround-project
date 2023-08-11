@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 export const DataCommunity = {
   id: 'Community_HowItWork',
   title: 'Hear from the community',
@@ -9,6 +11,8 @@ export const DataCommunity = {
   link: '/'
 }
 const HearCommunity = () => {
+  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
+    useSelector((state: RootState) => state.howitwork)
   return (
     <div className='flex-col items-stretch mb-[104px] flex '>
       <div className='w-full  flex-col self-center items-stretch  flex relative'>

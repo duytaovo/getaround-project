@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+import axios from 'axios'
 interface IdynamicData<T> {
   [key: string]: T
 }
@@ -33,12 +33,12 @@ const data: IdynamicData<string> = {
   hosting_s16: 'value26',
   hosting_s17: 'value27',
   hosting_s18: 'value28',
-  hosting_s19: 'value29',
+  hosting_s19: 'value29'
 }
 
 const dataSlice = createSlice({
   name: 'dataSlice',
-  initialState:data,
+  initialState: data,
   reducers: {},
   extraReducers: (builder) => {}
 })

@@ -11,6 +11,8 @@ import { AiFillStar } from 'react-icons/ai'
 import CustomDatetimePicker from 'src/components/CustomDatetimePicker/CustomDatetimePicker'
 import RatingStar from 'src/components/RatingStar'
 import CustomeAddressAutocomplete from 'src/components/CustomeAddressAutocomplete/CustomeAddressAutocomplete'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 dayjs.extend(customParseFormat)
 
 const { RangePicker } = DatePicker
@@ -37,6 +39,8 @@ const options = [
   }
 ]
 const HeaderHowItWord = () => {
+  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
+    useSelector((state: RootState) => state.howitwork)
   // eslint-disable-next-line arrow-body-style
   const disabledDate: RangePickerProps['disabledDate'] = (current) => {
     // Can not select days before today and today

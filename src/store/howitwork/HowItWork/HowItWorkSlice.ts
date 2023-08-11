@@ -9,11 +9,14 @@ import { ISelectItemsSlide } from 'src/types/HowItWork'
 import { DataSlideHowItWork } from 'src/pages/howitwork/SlideHowItWork/SlideHowItWork'
 import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightHowItWork } from 'src/items/SlideLeftRight/DataSlideLeftRight'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
+import axios from 'axios'
 interface HowItWorkState {
   ExploreHowItWork: ISelectItemsExploreHosting
   ProprietaryHowItWork: ISelectItemsProprietary
   HearCommunityHowItWork: ISelectItemsHearCommunity
-  SlideHowItWork: ISelectItemsSlide
+  SlideHowItWorkR: ISelectItemsSlide
   SlideLeftRightHowItWork: ISelectItemsSlideLeftRight[]
 }
 
@@ -45,7 +48,7 @@ const initialState: HowItWorkState = {
     content: 'Stories from Getaround community members, in their own words.',
     link: '/'
   },
-  SlideHowItWork: {
+  SlideHowItWorkR: {
     id: 'Slide_HowItWork',
     mainTitle: 'Out mission',
     title: 'Chúng tôi kết nối những chiếc xe an toàn, tiện lợi với mọi người',
@@ -102,7 +105,7 @@ const HowItWorkSlice = createSlice({
       state.HearCommunityHowItWork = action.payload
     },
     updateSlideHIW: (state, action: PayloadAction<ISelectItemsSlide>) => {
-      state.SlideHowItWork = action.payload
+      state.SlideHowItWorkR = action.payload
     },
     updateSlideLeftRightHIW: (state, action: PayloadAction<ISelectItemsSlideLeftRight>) => {
       state.SlideLeftRightHowItWork.push(action.payload)

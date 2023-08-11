@@ -23,10 +23,10 @@ import { RootState } from 'src/store/store'
 import { updateExploreHIW, updateProprietaryHIW } from 'src/store/howitwork/HowItWork/HowItWorkSlice'
 import { ISelectItemsExploreHosting, ISelectItemsProprietary } from 'src/types/HowItWork'
 const HowItWork = () => {
-  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork } = useSelector(
-    (state: RootState) => state.howitwork
-  )
-  console.log(ExploreHowItWork)
+  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
+    useSelector((state: RootState) => state.howitwork)
+  const data = useSelector((state: RootState) => state)
+  console.log(ExploreHowItWork, data)
   const dispatch = useDispatch()
 
   const handleExploreHIW = (newExploreHostring: ISelectItemsExploreHosting) => {
