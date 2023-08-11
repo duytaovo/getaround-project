@@ -23,6 +23,7 @@ interface Props {
   autoPlay?: boolean
   breakPoint: Array<number>
   breakPointScroll: Array<number>
+  prefix?:string
 }
 // breackPoint = {[1,1,2,2,3]}
 export default function CustomSlider({
@@ -38,7 +39,7 @@ export default function CustomSlider({
   isTime,
   isTitle,
   autoPlay,
-
+  prefix,
   breakPoint,
   breakPointScroll
 }: Props) {
@@ -109,6 +110,8 @@ export default function CustomSlider({
               classNameContent={classNameContent}
               classNameTime={classNameTime}
               className={className}
+              prefix={prefix}
+              id={index}
             />
           </div>
         ))}

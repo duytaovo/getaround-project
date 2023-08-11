@@ -1,11 +1,12 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
-import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
-import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
-import { DataExploreHostingShareCarText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import {
+  CustomeStepItems,
+  DataExploreHostingShareCarText,
+  DataExploreHostingShareCarText_bottom,
   ItemBodyTop,
   ItemContentSlider,
+  ItemSliderShareCar,
   itemBanner,
   itemBodyCardBottom,
   itemBodyCardTop,
@@ -14,9 +15,9 @@ import {
   itemImgExploreHosting,
   itemOurHost,
   itemSupport,
+  items,
   wrapperTitle
-} from 'src/items/ShareACar/ShareACar'
-import { ItemSliderShareCar } from 'src/items/SliderItem/Slider'
+} from 'src/items/ShareACarId/ShareACarId'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
 import { IBodyCommonQuestionImg, IBodyTop, IIWrapContentTitle, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemGetAroundYourBack, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
 import { payloadCreator } from 'src/utils/utils'
@@ -49,6 +50,7 @@ interface ShareACarState {
   commonQuestion: ICommonQuestion[]
   commonQuestionImg: IBodyCommonQuestionImg
   exploreHosting: ISelectItemsExploreHosting
+  exploreHosting_bottom: ISelectItemsExploreHosting
   ourHost: IItemGetAroundYourBack
   wrapperTitle:IIWrapContentTitle[]
   imgExploreHosting:string
@@ -67,6 +69,7 @@ const initialState: ShareACarState = {
   step: CustomeStepItems,
   commonQuestion: items,
   exploreHosting: DataExploreHostingShareCarText,
+  exploreHosting_bottom:DataExploreHostingShareCarText_bottom,
   ourHost: itemOurHost,
   commonQuestionImg:itemCommonQuestionBody,
   imgExploreHosting:itemImgExploreHosting,

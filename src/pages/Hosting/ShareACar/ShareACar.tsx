@@ -23,7 +23,7 @@ import { useAppSelector } from 'src/hooks/useRedux'
 import GetAroundYourBack from './components/GetAroundYourBack/GetAroundYourBack'
 import OurHost from './components/OurHost/OurHost'
 import { Text } from 'src/components/Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
+import { Image } from 'src/components/Edition/Image'
 
 const ShareACar = () => {
   const {
@@ -42,9 +42,10 @@ const ShareACar = () => {
     sliders,
     support,
     wrapperTitle,
-    imgExploreHosting
+    imgExploreHosting,
+    exploreHosting_bottom
   } = useAppSelector((state) => state.shareAcar)
-  const data = useAppSelector((state) =>state.data)
+  const data = useAppSelector((state) => state.data)
 
   const dispatch = useDispatch()
 
@@ -113,6 +114,7 @@ const ShareACar = () => {
               className='flex-col-reverse'
               breakPoint={[1, 1, 1, 1]}
               breakPointScroll={[1, 1, 1, 1]}
+              prefix={"sliderShareACar"}
             />
           </div>
         </div>
@@ -132,6 +134,7 @@ const ShareACar = () => {
             </div>
             <div className='w-[30%]  lg:w-full h-full justify-between'>
               <BodyCard
+                prefix='bodyCardTop'
                 item={bodyCardTop}
                 classNameTitle='py-2 text-black'
                 classNameContent='text-black text-[15px]'
@@ -146,6 +149,7 @@ const ShareACar = () => {
             </div>
             <div className='w-[30%] lg:w-full  h-max'>
               <BodyCard
+                prefix='bodyCardBottom'
                 item={bodyCardBottom}
                 classNameTitle='text-mainColor py-2'
                 classNameContent='text-black/60 leading-[22.4px] text-bold  font-medium '
@@ -174,7 +178,13 @@ const ShareACar = () => {
               className='w-1/2 md:w-full'
             />
             <div className='w-1/2 md:w-full md:mt-2 md:p-0 p-4 flex justify-center items-center bg-white rounded-2xl ml-4 md:ml-0'>
-              <img width='50% md:lg' src={commonQuestionImg.img} alt='' />
+              {/* <img width='50% md:lg' src={commonQuestionImg.img} alt='' /> */}
+              <Image
+                id={`img_commonQuestion-shareACar`}
+                className='50% md:lg object-contain'
+                src={data[commonQuestionImg.img || '']}
+                alt='hosting-shareAcar'
+              />
             </div>
           </div>
         </WrapperContent>
@@ -186,7 +196,7 @@ const ShareACar = () => {
         <ExploreHosting
           img={imgExploreHosting}
           DataExploreHostingStyle={DataExploreHostingShareCar}
-          DataExploreHostingText={exploreHosting}
+          DataExploreHostingText={exploreHosting_bottom}
           isEx={false}
           className=''
         />
@@ -197,6 +207,7 @@ const ShareACar = () => {
           <OurHost item={ourHost} />
         </div>
         <Carousel_Review_Comunity
+          prefix='reviewComunity'
           className='m-4'
           data={carouselReview}
           numberItem={2}
@@ -217,7 +228,7 @@ const ShareACar = () => {
         <Text
           id={`txt-wrapperTitle-shareACar-02`}
           tag='h2'
-          content={wrapperTitle[1].title || ''}
+          content={data[wrapperTitle[1].title || '']}
           className={`flex  text-mainColor text-[26px] leading-8 `}
         />
         {/* <h2 className='flex  text-mainColor text-[26px] leading-8'>{wrapperTitle[1].title}</h2> */}

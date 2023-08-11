@@ -4,6 +4,7 @@ import Button from 'src/components/Button'
 import { Image } from 'src/components/Edition/Image'
 import { Text } from 'src/components/Edition/Text'
 import {  changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
+import { useAppSelector } from 'src/hooks/useRedux'
 import { IBodyTop } from 'src/types/hosting_shareACar.type'
 import { iDGenerator } from 'src/utils/idGenerator'
 
@@ -13,6 +14,7 @@ interface Props {
 }
 
 const BodyTop = ({ item,className }: Props) => {
+  const data = useAppSelector((state) => state.data)
   const _header = item.header?.split(' ');
   const _content = item.content?.split(' ');
   const onClick = () => {
@@ -33,14 +35,14 @@ const BodyTop = ({ item,className }: Props) => {
         <Text
         id={`txt-bodytop-shareACar_header}`}
         tag='h1'
-        content={item.header || ''}
+        content={data[item.header|| 'abc']}
         className={`text-[47px] text-mainColor`}
       />
         {/* <p className='w-[90%] text-ellipsis text-justify break-words'>{item.content}</p> */}
         <Text
         id={`txt-bodytop-shareACar_content}`}
         tag='p'
-        content={item.content || ''}
+        content={data[item.content || '']}
         className={`w-[90%] text-ellipsis text-justify break-words`}
       />
         <Button
@@ -49,7 +51,7 @@ const BodyTop = ({ item,className }: Props) => {
           <Text
           id={`txt-buttonBodyTop-shareACar`}
           tag='span'
-          content={item.infoButton || ''}
+          content={data[item.infoButton || '']}
           className={`text-xl`}
         />
         }
@@ -60,7 +62,7 @@ const BodyTop = ({ item,className }: Props) => {
       <Image
           id={`img-bodyTop-shareACar`}
           className='lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4 object-contain'
-          src={item.img|| ''}
+          src={data[item.img|| '']}
           alt='hosting-shareAcar'
         />
       {/* <img className=' lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4' src={item.img} alt='' /> */}
