@@ -23,95 +23,81 @@ interface NewsRoomState {
 const initialState: NewsRoomState = {
   BlogNewsRoom: {
     id: 'Blog_AboutUS_NewsRoom',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63dc05d87b4b95cb44c4ef9f_getaroundblog%20Grande.jpeg',
-    headerTitle: 'THE GETAROUND BLOG',
-    mainTitle: 'Discover the Getaround blog',
-    content:
-      ' Explore the collection of stories, news, and other resources for hosts, guests, and partners throughout the  Getaround carsharing community.',
-    linkTo: '/'
+    img: 'img_Blog_NewsRoom',
+    headerTitle: 'headerTitle_Blog_NewsRoom',
+    mainTitle: 'mainTitle_Blog_NewsRoom',
+    content: 'content_Blog_NewsRoom',
+    linkTo: 'linkTo_Blog_NewsRoom'
   },
   HelpCustomerNewsRoom: {
     id: 'helpCustomer_AboutUs_NewsRoom',
-    title: ` We're helping consumers shift away from car ownership.`,
-    linkTo: `/`,
-    nameButton: 'Down the media kit for logos, media assets, and more.',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0b73b2f4fb34b18ddb8a_ga-illustration-8.svg'
+    title: `title_HelpCustomer_NewsRoom`,
+    linkTo: `linkTo_HelpCustomer_NewsRoom`,
+    nameButton: 'nameButton_HelpCustomer_NewsRoom',
+    img: 'img_HelpCustomer_NewsRoom'
   },
   HeaderNewsRoom: {
     id: 'header_AboutUs_NewsRoom',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c98c83e7bffe6581cd4811_AdobeStock_516425442%202%20compress.jpg',
-    title: 'Explore Getaround in the news',
-    content: 'Welcome to our press room. Find our latest press releases and new media coverage of our company.',
-    titleButton: 'For media inquiries,',
-    email: 'please contact us at press@getaround.com.'
+    img: 'img_Header_NewsRoom',
+    title: 'title_Header_NewsRoom',
+    content: 'content_Header_NewsRoom',
+    titleButton: 'titleButton_Header_NewsRoom',
+    email: 'email_Header_NewsRoom'
   },
   ReadNewsRoom: [
     {
       id: 'readNews_AboutUs_NewsRoom_1',
-      day: 'Jan 5, 2023',
-      title: 'Car Sharing: What You Need To Know - Kelley Blue Book',
-      link: '/'
+      day: 'date1_Read_NewsRoom',
+      title: 'title1_Read_NewsRoom',
+      link: 'link1_Read_NewsRoom'
     },
     {
       id: 'readNews_AboutUs_NewsRoom_2',
-      day: 'Dec 16, 2022',
-      title: 'Why This Company Went Public In a Bear Market - TheStreet',
-      link: '/'
+      day: 'date2_Read_NewsRoom',
+      title: 'title2_Read_NewsRoom',
+      link: 'link2_Read_NewsRoom'
     },
     {
       id: 'readNews_AboutUs_NewsRoom_3',
-      day: 'Dec 8, 2022',
-      title: 'Sam Zaid —On Leadership Styles, Decision-Making, Going Public via SPAC at $1.2 Billion Value - Vunela',
-      link: '/'
+      day: 'date3_Read_NewsRoom',
+      title: 'title3_Read_NewsRoom',
+      link: 'link3_Read_NewsRoom'
     }
   ],
   CarouselNewsRoom: [
     {
       id: 1,
-      title: 'Getaround Reaffirms Commitment as the True Open Carsharing   Marketplace with New Onboarding Incentives',
-      date: 'April 28, 2023',
-      description: `Following recent news of industry competitor's plans to shut down access to third-party vendors including CarSync, Getaround is ramping up its onboarding incentives`,
-      linkto: '/'
+      title: 'title1_Carousel_NewsRoom',
+      date: 'date1_Carousel_NewsRoom',
+      description: `description1_Carousel_NewsRoom`,
+      linkto: 'linkTo1_Carousel_NewsRoom'
     },
     {
       id: 2,
-      title: `Getaround Reveals Earth Day Plans to Support Guests' Wallets and The Planet`,
-      date: 'April 13, 2023',
-      description: `Industry pioneer and world's first connected carsharing
-      marketplace is offering new U.S. guests up to $100 in
-      savings`,
-      linkto: '/'
+      title: 'title2_Carousel_NewsRoom',
+      date: 'date2_Carousel_NewsRoom',
+      description: `description2_Carousel_NewsRoom`,
+      linkto: 'linkTo2_Carousel_NewsRoom'
     },
     {
       id: 3,
-      title: `Getaround Acquires HyreCar Assets
-      to Accelerate Profitability Path and
-      Fortify Worldwide Gig Carsharing
-      Leadership Position`,
-      date: 'May 11, 2023',
-      description: `Getaround anticipates that the acquisition will
-      contribute up to $75 million of run-rate annualized
-      Gross Booking Value and positive Adjusted EBITDA,
-      accelerating its path to profitability
-      Transaction is expected to be synergistic as Getaround
-      expands its global market footprint`,
-      linkto: '/'
+      title: 'title3_Carousel_NewsRoom',
+      date: 'date3_Carousel_NewsRoom',
+      description: `description3_Carousel_NewsRoom`,
+      linkto: 'linkTo3_Carousel_NewsRoom'
     },
     {
       id: 4,
-      title: `Getaround Acquires HyreCar Assets
-      to Accelerate Profitability Path and
-      Fortify Worldwide Gig Carsharing
-      Leadership Position`,
-      date: 'May 11, 2023',
-      description: ``,
-      linkto: '/'
+      title: 'title4_Carousel_NewsRoom',
+      date: 'date4_Carousel_NewsRoom',
+      description: `description4_Carousel_NewsRoom`,
+      linkto: 'linkTo4_Carousel_NewsRoom'
     }
   ],
   TitleCarouselNewsRoom: {
-    headerTitle: 'NEWS FROM GETAROUND',
-    title: 'Press releases',
-    linkTo: '/'
+    headerTitle: 'headerTitle_TitleCarousel_NewsRoom',
+    title: 'title_TitleCarousel_NewsRoom',
+    linkTo: 'linkTo_TitleCarousel_NewsRoom'
   }
 }
 

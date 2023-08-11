@@ -2,24 +2,30 @@ import { FC, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useAppSelector } from 'src/hooks/useRedux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 interface IExploreHosting {
   id?: string
-  mainTitle?: string
-  headerTitle?: string
-  Title?: string
-  Description?: string
-  Link?: string
+  mainTitle: string
+  headerTitle: string
+  Title: string
+  Description: string
+  Link: string
 }
 
 type Props = {
   img?: string
   isEx?: boolean
   DataExploreHostingStyle?: any
-  DataExploreHostingText?: IExploreHosting
+  DataExploreHostingText: IExploreHosting
   className?: string
 }
 
 const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
+  const data = useAppSelector((state) => state.data)
+  const dispatch = useDispatch()
+  console.log(data[DataExploreHostingText.Description])
   return (
     <div className={className}>
       {isEx === true ? (
@@ -27,7 +33,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
           <Text
             id='Explore-mainTitle'
             tag='div'
-            content={DataExploreHostingText?.mainTitle || ''}
+            content={data[DataExploreHostingText?.mainTitle] || ''}
             className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'
           />
           {/* <div className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
@@ -52,7 +58,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
             <Text
               id='Explore-headerTitle'
               tag='div'
-              content={DataExploreHostingText?.headerTitle || ''}
+              content={data[DataExploreHostingText?.headerTitle] || ''}
               className='text-black max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'
             />
           ) : (
@@ -66,7 +72,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
               <Text
                 id='Explore-headerTitle'
                 tag='strong'
-                content={DataExploreHostingText?.Title || ''}
+                content={data[DataExploreHostingText?.Title] || ''}
                 // className='text-black max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'
               />
               {/* <strong className=''>{DataExploreHostingText?.[0]?.Title}</strong> */}
@@ -75,7 +81,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
           <Text
             id='Explore-Description'
             tag='div'
-            content={DataExploreHostingText?.Description || ''}
+            content={data[DataExploreHostingText?.Description] || ''}
             className='text-[#727272] mt-[30px]  text-[16px] md:text-13px font-normal mb-4'
           />
           {/* <div className='text-[#727272] mt-[30px]  text-[16px] md:text-13px font-normal mb-4'>

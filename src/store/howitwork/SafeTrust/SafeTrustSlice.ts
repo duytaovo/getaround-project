@@ -5,7 +5,7 @@ import { DataExploreHostingSafetyTrustText } from 'src/items/ExploreHosting/Data
 import { DataProprietarySafetyTrust } from 'src/items/Proprietary/DataProprietary'
 import { ISelectItemsProprietary } from 'src/types/HowItWork'
 
-import { ISelectItemsSlideLeftRight } from 'src/types/HowItWork'
+import { ISelectItemsSlideLeftRight, ISelectImglideLeftRight } from 'src/types/HowItWork'
 import { DataSlideLeftRightSafetyTrust } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 import { ISelectBookUnlockCar } from 'src/types/SafeTrust'
 import { DataBookUnlockCar } from 'src/pages/SafetyTrust/BookUnlocknearCar/BookUnlocknearCar'
@@ -20,86 +20,80 @@ interface SafeTrustState {
   BookUnlockCar: ISelectBookUnlockCar
   HeaderST: ISelectItemsHeaderHostRefernal
   PowerFullST: ISelectPowerFull
+  ImgSlideLeftRightST: ISelectImglideLeftRight
 }
 
 const initialState: SafeTrustState = {
+  ImgSlideLeftRightST: {
+    img: 'ImgSlideLeftRightST',
+    mainTitle: 'MainTirleLeftRightST'
+  },
   ExploreST: {
     id: 'ExploreHosting_SafeTrust',
-    mainTitle: 'EXPLORE HOSTING',
-    headerTitle: '',
-    Title: 'Have a car? Start sharing',
+    mainTitle: 'mainTitle_Explore_SafeTrust',
+    headerTitle: 'headerTitle_Explore_SafeTrust',
+    Title: 'title_Explore_SafeTrust',
 
-    Description:
-      "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
-    Link: '/'
+    Description: 'description_Explore_SafeTrust',
+    Link: 'link_Explore_SafeTrust'
   },
   ProprietaryST: {
     id: 'Proprietary_safety-trust',
-    headerTitle: '',
-    title: 'Getaround Connect® - as an option',
-    description:
-      '  Getaround vehicles are powered by our proprietary Connect® technology. To make sharing a car as easy as owning one, we built the only hardware designed specifically for contactless, peer-to-peer car sharing. ',
-    description2:
-      ' allows you to find, book, and unlock cars directly from your phone, and avoid meeting up with anyone  throughout the process to exchange keys.',
-    span: 'Getaround Connect®',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg',
-    Link: '/'
+    headerTitle: 'headerTitle_Proprietary_ST',
+    title: 'title_Proprietary_ST',
+    description: 'description_Proprietary_ST',
+    description2: 'description2_Proprietary_ST',
+    span: 'span_Proprietary_ST',
+    img: 'img_Proprietary_ST',
+    Link: 'link_Proprietary_ST'
   },
   SlideLeftRightST: [
     {
       id: 'SlideLeftRight_SafeTrust_01',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
-      label: 'Insurance on every trip',
-      Linkto: '',
-      Link: '',
-      contents: [
-        `Protection for your car in the event of damage. Hosts are covered up to $1,000,00 in liability insurance`
-      ]
+      img: 'img1_SlideLeftRight_ST',
+      label: 'label1_SlideLeftRight_ST',
+      Linkto: 'linkTo1_SlideLeftRight_ST',
+      Link: 'link1_SlideLeftRight_ST',
+      contents: [`contents1_SlideLeftRight_ST`]
     },
     {
       id: 'SlideLeftRight_SafeTrust_02',
-      img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cde6f148fb8b21d20e3_ga-illustration-7.svg',
-      label: 'Real-time trip monitoring',
-      Linkto: '',
-      Link: '',
-      contents: [
-        `Our team receives and monitors real-time alerts for late returns and other renter behavior that may indicate a safety event.  We monitor these events on a 24/7 basis and our team takes prompt and appropriate action.`
-      ]
+      img: 'img2_SlideLeftRight_ST',
+      label: 'label2_SlideLeftRight_ST',
+      Linkto: 'linkTo2_SlideLeftRight_ST',
+      Link: 'lin2k_SlideLeftRight_ST',
+      contents: [`contents2_SlideLeftRight_ST`]
     }
   ],
   BookUnlockCar: {
     id: 'BookUnlockCar',
-    title: ' Book - Unlock and Drive  nearby cars',
-    link: '/'
+    title: 'title_bookUnlockCar_ST',
+    link: 'link_bookUnlockCar_ST'
   },
   HeaderST: {
     id: 'header_HowItWork_SafeTrust',
-    headerTitle: 'Safety and trust',
-    title: ' at every level',
-    content:
-      'Getaround prioritizes the safety and security of its community members by implementing proactive safety  measures, verifying identities, maintaining insurance coverage, and using advanced technology to prevent fraud. Additionally, Getaround has a dedicated team available 24/7 to investigate any safety or security  concerns.',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/641a1bcc9cff2052158af235_ga-illustration-6.svg'
+    headerTitle: 'headerTitle_header_ST',
+    title: 'title_header_ST',
+    content: 'content_header_ST',
+    img: 'img_header_ST'
   },
   PowerFullST: {
     id: 'PowerFullSafeTrust',
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/648380f3f2fadb5289320a68_ga-illustration-4.svg',
-    headerTitle: 'For Hosts',
-    title: 'POWERFUL VETTING & FRAUD DETECTION SYSTEM',
+    img: 'img_powerfull_ST',
+    headerTitle: 'headerTitle_powerfull_ST',
+    title: 'title_powerfull_ST',
     content: [
       {
-        titleSpan: 'Getaround uses advanced identity verification ',
-        titleH2:
-          'technologies and a thorough screening process to ensure that every Getaround guest meets our guidelines.'
+        titleSpan: 'content_titlespan1__powerfull_ST',
+        titleH2: 'content_titleh21_powerfull_ST'
       },
       {
-        titleSpan: 'Every Getaround guest must meet our eligibility criteria ',
-        titleH2:
-          ' in order to rent. To verify guests’ eligibility, we obtain their driving records from the Department of Motor Vehicles. ‍'
+        titleSpan: 'content_titlespan2__powerfull_ST',
+        titleH2: 'content_titleh22_powerfull_ST'
       },
       {
-        titleSpan: 'A team of dedicated experts agents the latest ',
-        titleH2:
-          'risk detection technologies to protect hosts by identifying and preventing fraudulent activity on our platform.'
+        titleSpan: 'content_titlespan3__powerfull_ST',
+        titleH2: 'content_titleh23_powerfull_ST'
       }
     ]
   }
@@ -127,12 +121,21 @@ const SafeTrustSlice = createSlice({
     },
     updatePowerST: (state, action: PayloadAction<ISelectPowerFull>) => {
       state.PowerFullST = action.payload
+    },
+    updateImgSlideLeftRightST: (state, action: PayloadAction<ISelectImglideLeftRight>) => {
+      state.ImgSlideLeftRightST = action.payload
     }
   },
   extraReducers: (builder) => {}
 })
 
-export const { updateExploreST, updateProprietaryST, updateSlideLeftRightST, updateBookUnlockCarST, updateHeaderST } =
-  SafeTrustSlice.actions
+export const {
+  updateExploreST,
+  updateProprietaryST,
+  updateSlideLeftRightST,
+  updateBookUnlockCarST,
+  updateHeaderST,
+  updateImgSlideLeftRightST
+} = SafeTrustSlice.actions
 const SafeTrustReducer = SafeTrustSlice.reducer
 export default SafeTrustReducer

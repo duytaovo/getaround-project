@@ -13,11 +13,15 @@ import BookUnlocknearCar from './BookUnlocknearCar/BookUnlocknearCar'
 import PowerfulVetting from './PowerfulVetting/PowerfulVetting'
 import HeaderSafeTrust from './HeaderSafeTrust'
 import { useDispatch, useSelector } from 'react-redux'
+import { useAppSelector } from 'src/hooks/useRedux'
 import { RootState } from 'src/store/store'
 const SafetyTrust = () => {
-  const { ExploreST, SlideLeftRightST, BookUnlockCar, HeaderST, PowerFullST, ProprietaryST } = useSelector(
-    (state: RootState) => state.safetrust
-  )
+  const { ExploreST, SlideLeftRightST, BookUnlockCar, HeaderST, PowerFullST, ProprietaryST, ImgSlideLeftRightST } =
+    useSelector((state: RootState) => state.safetrust)
+
+  const dispatch = useDispatch()
+  const data = useAppSelector((state) => state.data)
+  console.log(data[ImgSlideLeftRightST.img])
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
@@ -30,8 +34,8 @@ const SafetyTrust = () => {
       <Proprietary Data={ProprietaryST} />
       <SlideLeftRight
         Data={SlideLeftRightST}
-        img='https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ea9fc9c0cafb2053ba37ac_ga-illustration-19.svg'
-        mainTitle=''
+        img={data[ImgSlideLeftRightST.img]}
+        mainTitle={data[ImgSlideLeftRightST.mainTitle]}
       />
 
       <ExploreHosting

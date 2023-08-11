@@ -4,6 +4,7 @@ import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
+import { useAppSelector } from 'src/hooks/useRedux'
 export const DataCommunity = {
   id: 'Community_HowItWork',
   title: 'Hear from the community',
@@ -13,6 +14,9 @@ export const DataCommunity = {
 const HearCommunity = () => {
   const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
     useSelector((state: RootState) => state.howitwork)
+  const howitwork = useAppSelector((state) => state.howitwork)
+  const data = useAppSelector((state) => state.data)
+  console.log(data[howitwork.HearCommunityHowItWork.title])
   return (
     <div className='flex-col items-stretch mb-[104px] flex '>
       <div className='w-full  flex-col self-center items-stretch  flex relative'>
@@ -21,7 +25,7 @@ const HearCommunity = () => {
             <Text
               id='titleHearCommunity'
               tag='div'
-              content={DataCommunity.title}
+              content={data[howitwork.HearCommunityHowItWork.title]}
               className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'
             />
             {/* <div className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'>
@@ -30,14 +34,17 @@ const HearCommunity = () => {
             <Text
               id='contentHearCommunity'
               tag='h2'
-              content={DataCommunity.content}
+              content={data[howitwork.HearCommunityHowItWork.content]}
               className='max-w-[40ch] text-center mx-auto mt-[6px] text-[20px] font-bold leading-[110%] text-black'
             />
             {/* <h2 className='max-w-[40ch] text-center mx-auto mt-[6px] text-[20px] font-bold leading-[110%] text-black'>
               {DataCommunity.content}
             </h2> */}
             <div className='text-[#727272] mt-[30px] text-[16px] font-normal '>
-              <Link to={DataCommunity.link} className='text-[#000] underline hover:text-mainColor hover:no-underline'>
+              <Link
+                to={data[howitwork.HearCommunityHowItWork.link]}
+                className='text-[#000] underline hover:text-mainColor hover:no-underline'
+              >
                 Read now
               </Link>
             </div>

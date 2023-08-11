@@ -4,6 +4,7 @@ import { Image } from 'src/components/Edition/Image'
 import { iDGenerator } from 'src/utils/idGenerator'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
+import { useAppSelector } from 'src/hooks/useRedux'
 export const DataHeaderConnect = {
   id: 'Header_HowItWork_Connect',
   imgLogo:
@@ -19,7 +20,7 @@ export const DataHeaderConnect = {
 const HeaderHIWC = () => {
   const { HeaderConnect } = useSelector((state: RootState) => state.connecthiw)
   const dispatch = useDispatch()
-
+  const data = useAppSelector((state) => state.data)
   return (
     <div className='max-w-full mt-[0%] mx-auto mb-10'>
       <div
@@ -42,7 +43,7 @@ const HeaderHIWC = () => {
           <Image
             id='imgHeaderConnect'
             className='w-[100px] block align-middle border-none max-w-[100%] border-[0]'
-            src={DataHeaderConnect.imgLogo}
+            src={data[HeaderConnect.imgLogo]}
             alt='Getaround Connect®'
           />
           {/* <img
@@ -55,7 +56,7 @@ const HeaderHIWC = () => {
           <Text
             id='titleLogoHeaderConnect'
             tag='p'
-            content={DataHeaderConnect.titleLogo}
+            content={data[HeaderConnect.titleLogo]}
             className='w-auto max-w-[1279px] text-left text-mainColor uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'
           />
           {/* <p className='w-auto max-w-[1279px] text-left text-mainColor uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'>
@@ -64,7 +65,7 @@ const HeaderHIWC = () => {
           <Text
             id='maintitleHeaderConnect'
             tag='p'
-            content={DataHeaderConnect.mainTitleHeader}
+            content={data[HeaderConnect.mainTitleHeader]}
             className='w-auto max-w-[1279px] text-left mt-0 mb-[0.5em] text-white font-medium pb-[20px] text-[50px] leading-[105%] m-[0.67em_0] sm:text-center sm:text-[40px]'
           />
           {/* <h1 className='w-auto max-w-[1279px] text-left mt-0 mb-[0.5em] text-white font-medium pb-[20px] text-[50px] leading-[105%] m-[0.67em_0] sm:text-center sm:text-[40px]'>
@@ -73,7 +74,7 @@ const HeaderHIWC = () => {
           <Text
             id='contentHeaderConnect'
             tag='p'
-            content={DataHeaderConnect.contentHeader}
+            content={data[HeaderConnect.contentHeader]}
             className='w-auto text-white text-[22px] font-light leading-[145%] block max-w-[1279px] text-left mt-0 mb-[10px] pl-0 not-italic sm:text-[15px]'
           />
           {/* <p className='w-auto text-white text-[22px] font-light leading-[145%] block max-w-[1279px] text-left mt-0 mb-[10px] pl-0 not-italic sm:text-[15px]'>
@@ -86,7 +87,7 @@ const HeaderHIWC = () => {
           <Image
             id='imgHeaderConnect'
             className='mb-0 align-middle not-italic max-w-[100%] inline-block border-0 w-[638px]'
-            src={DataHeaderConnect.imgContentHeader}
+            src={data[HeaderConnect.imgContentHeader]}
             alt='Getaround Connect®'
           />
           {/* <img

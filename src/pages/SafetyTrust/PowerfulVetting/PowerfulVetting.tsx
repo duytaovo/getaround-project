@@ -3,6 +3,7 @@ import { CarOutlined, KeyOutlined, ReloadOutlined } from '@ant-design/icons'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 import { useDispatch, useSelector } from 'react-redux'
+import { useAppSelector } from 'src/hooks/useRedux'
 import { RootState } from 'src/store/store'
 export const DataPowerFullSafeTrust = {
   id: 'PowerFullSafeTrust',
@@ -29,9 +30,9 @@ export const DataPowerFullSafeTrust = {
 }
 
 const PowerfulVetting = () => {
-  const { ExploreST, SlideLeftRightST, BookUnlockCar, HeaderST, PowerFullST, ProprietaryST } = useSelector(
-    (state: RootState) => state.safetrust
-  )
+  const { PowerFullST } = useSelector((state: RootState) => state.safetrust)
+  const dispatch = useDispatch()
+  const data = useAppSelector((state) => state.data)
   return (
     <div
       className='opacity-[1] flex-col items-stretch mb-[104px] flex text-[16px] font-normal leading-[140%]'
@@ -40,7 +41,7 @@ const PowerfulVetting = () => {
       <Text
         id='titleHeaderPowefull'
         tag='h2'
-        content={DataPowerFullSafeTrust?.headerTitle}
+        content={data[PowerFullST.headerTitle]}
         className='text-mainColor font-semibold text-4xl text-center mb-[40px]'
       />
       {/* <h2 className='text-mainColor font-semibold text-4xl text-center mb-[40px]'>For Hosts</h2> */}
@@ -50,7 +51,7 @@ const PowerfulVetting = () => {
             <Image
               id='imgPowerFull'
               className='h-full w-full max-h-[316px] object-contain max-w-full align-middle inline-block border-0 '
-              src={DataPowerFullSafeTrust.img}
+              src={data[PowerFullST.img]}
               alt='Getaround Connect®'
             />
             {/* <img
@@ -64,19 +65,19 @@ const PowerfulVetting = () => {
             <Text
               id='titlePowefull'
               tag='h2'
-              content={DataPowerFullSafeTrust.title}
+              content={data[PowerFullST.title]}
               className='pb-0 text-mainColor text-left uppercase m-[0_0_24px] text-[30px] font-bold leading-[32px] sm:text-[20px] sm:leading-[20px] sm:text-center'
             />
             {/* <h2 className='pb-0 text-mainColor text-left uppercase m-[0_0_24px] text-[30px] font-bold leading-[32px] sm:text-[20px] sm:leading-[20px] sm:text-center'>
               Powerful vetting & fraud detection system
             </h2> */}
             <ul>
-              {DataPowerFullSafeTrust?.content?.map((item, index) => (
+              {PowerFullST?.content?.map((item, index) => (
                 <li className='text-white mb-3 sm:text-[15px]'>
                   <Text
                     id='titleSpanPowefull'
                     tag='span'
-                    content={DataPowerFullSafeTrust?.content?.[index]?.titleSpan}
+                    content={data[PowerFullST.content?.[index]?.titleSpan]}
                     className='text-mainColor sm:text-[15px]'
                   />
                   {/* <span className='text-mainColor sm:text-[15px]'>
@@ -86,7 +87,7 @@ const PowerfulVetting = () => {
                   <Text
                     id='contentPowefull'
                     tag='span'
-                    content={DataPowerFullSafeTrust?.content?.[index]?.titleH2}
+                    content={data[PowerFullST.content?.[index]?.titleH2]}
                     className=''
                   />
                   {/* {DataPowerFullSafeTrust?.content?.[index]?.titleH2} */}
