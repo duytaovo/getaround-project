@@ -16,8 +16,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { RootState } from 'src/store/store'
 const SafetyTrust = () => {
-  const { ExploreST, SlideLeftRightST, BookUnlockCar, HeaderST, PowerFullST, ProprietaryST, ImgSlideLeftRightST } =
-    useSelector((state: RootState) => state.safetrust)
+  const {
+    ExploreST,
+    SlideLeftRightST,
+    BookUnlockCar,
+    HeaderST,
+    PowerFullST,
+    ProprietaryST,
+    ImgSlideLeftRightST,
+    ImgExploreST
+  } = useSelector((state: RootState) => state.safetrust)
 
   const dispatch = useDispatch()
   const data = useAppSelector((state) => state.data)
@@ -39,9 +47,7 @@ const SafetyTrust = () => {
       />
 
       <ExploreHosting
-        img={
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg'
-        }
+        img={data[ImgExploreST.img]}
         DataExploreHostingStyle={DataExploreHostingSafetyTrust}
         DataExploreHostingText={ExploreST}
         isEx={false}

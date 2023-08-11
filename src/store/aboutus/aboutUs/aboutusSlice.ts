@@ -1,12 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { ISelectItemsBlog } from 'src/types/aboutUs/newsRoom'
 import { DataBlogAboutUs } from 'src/components/Blog/Blog'
-import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
+import { ISelectItemsExploreHosting, ISelectItemsImgExploreHosting } from 'src/types/HowItWork'
 import { DataExploreHostingAboutUsText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { ISelectItemsCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
 import { ItemCarouselAboutUs_NewsRoom } from 'src/items/Carousel/Carouseltems'
 import { ISelectItemsTitleCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
-import { DataTitleCarouselAboutUs } from 'src/pages/AboutUs/AboutUs'
 import { ISelectItemsJoinTeamAboutUs, ISelectBannerAboutUs } from 'src/types/aboutUs/aboutus'
 import { DataJoinTeamAboutUs } from 'src/pages/AboutUs/JoinTeam/JoinTeam'
 import { DataBannerAboutUs } from 'src/pages/AboutUs/Banner/Banner'
@@ -21,11 +20,15 @@ interface AboutUSState {
   TitleCarouselAboutUs: ISelectItemsTitleCarouselNewsRoom
   JoinTeamAboutUs: ISelectItemsJoinTeamAboutUs
   BannerAboutUS: ISelectBannerAboutUs
-  ConnectedCarSharing: IConnectedCarSharing[]
+  ConnectedCarSharingR: IConnectedCarSharing[]
   HeaderAboutUs: ISelectHeaderAboutUs[]
+  ImgExploreAboutUs: ISelectItemsImgExploreHosting
 }
 
 const initialState: AboutUSState = {
+  ImgExploreAboutUs: {
+    img: 'ImgExploreAboutUs'
+  },
   BlogNewsRoom: {
     id: 'Blog_AboutUS_AboutUs',
     img: 'img_Blog_About',
@@ -88,12 +91,12 @@ const initialState: AboutUSState = {
   },
   BannerAboutUS: {
     id: 'Banner_AboutUs_AboutUS',
-
+    headertitle: 'sss',
     title: 'title_Banner_AboutUS',
     content: 'content_Banner_AboutUS',
     img: 'img_Banner_AboutUS'
   },
-  ConnectedCarSharing: [
+  ConnectedCarSharingR: [
     {
       id: 'Connected_AboutUs_AboutUs',
       total: 'total1_ConnectedCarSharing_AboutUs',
@@ -112,7 +115,7 @@ const initialState: AboutUSState = {
     {
       id: 'Connected_AboutUs_AboutUs',
       total: 'total4_ConnectedCarSharing_AboutUs',
-      title: 'title34_ConnectedCarSharing_AboutUs'
+      title: 'title4_ConnectedCarSharing_AboutUs'
     }
   ],
   HeaderAboutUs: [
@@ -155,7 +158,7 @@ const AboutUSSlice = createSlice({
       state.BannerAboutUS = action.payload
     },
     updateConnectAboutUs: (state, action: PayloadAction<IConnectedCarSharing>) => {
-      state.ConnectedCarSharing.push(action.payload)
+      state.ConnectedCarSharingR.push(action.payload)
     },
     updateHeaderAboutUs: (state, action: PayloadAction<ISelectHeaderAboutUs>) => {
       state.HeaderAboutUs.push(action.payload)

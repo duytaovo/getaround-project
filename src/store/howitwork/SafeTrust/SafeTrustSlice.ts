@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
+import { ISelectItemsExploreHosting, ISelectItemsImgExploreHosting } from 'src/types/HowItWork'
 import { DataExploreHostingSafetyTrustText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { DataProprietarySafetyTrust } from 'src/items/Proprietary/DataProprietary'
 import { ISelectItemsProprietary } from 'src/types/HowItWork'
@@ -21,9 +21,13 @@ interface SafeTrustState {
   HeaderST: ISelectItemsHeaderHostRefernal
   PowerFullST: ISelectPowerFull
   ImgSlideLeftRightST: ISelectImglideLeftRight
+  ImgExploreST: ISelectItemsImgExploreHosting
 }
 
 const initialState: SafeTrustState = {
+  ImgExploreST: {
+    img: 'ImgExploreST'
+  },
   ImgSlideLeftRightST: {
     img: 'ImgSlideLeftRightST',
     mainTitle: 'MainTirleLeftRightST'

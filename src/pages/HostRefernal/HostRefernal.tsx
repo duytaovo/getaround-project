@@ -36,7 +36,8 @@ const HostRefernal = () => {
     customeSteps,
     imgcustomeSteps,
     SlideLeftRighthostRefernal,
-    ImgSlideLeftRight_HostRefernal
+    ImgSlideLeftRight_HostRefernal,
+    ImgExploreHR
   } = useSelector((state: RootState) => state.hostingReferral)
   const data = useAppSelector((state) => state.data)
   const dispatch = useDispatch()
@@ -98,9 +99,7 @@ const HostRefernal = () => {
         titleInput={'Input your information to see your referral progress!'}
       />{' '}
       <ExploreHosting
-        img={
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6324f5891e795a0a4cf1c346_AdobeStock_488832115.jpg'
-        }
+        img={data[ImgExploreHR.img]}
         DataExploreHostingStyle={DataExploreHostingHostRefernal}
         DataExploreHostingText={ExplorehostRefernal}
         isEx={false}

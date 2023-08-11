@@ -8,37 +8,43 @@ import { ItemCarousel, ItemCarouselAboutUs_NewsRoom } from 'src/items/Carousel/C
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 import { iDGenerator } from 'src/utils/idGenerator'
+import { useAppSelector } from 'src/hooks/useRedux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 export const DataTitleCarouselNR = {
   headerTitle: 'NEWS FROM GETAROUND',
   title: 'Press releases',
   linkTo: '/'
 }
 export const NewsRoom = () => {
+  const { CarouselNewsRoom, TitleCarouselNewsRoom } = useSelector((state: RootState) => state.newsroom)
+  const data = useAppSelector((state) => state.data)
+  const dispatch = useDispatch()
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <HeaderNewsRoom />
       <div className='mb-bottom'>
         <div>
           <Text
-            id='headerTitlelSlideNewsRoom'
+            id={data[TitleCarouselNewsRoom.headerTitle]}
             tag='span'
-            content={DataTitleCarouselNR.headerTitle}
+            content={data[TitleCarouselNewsRoom.headerTitle]}
             className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'
           />
           {/* <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
             NEWS FROM GETAROUND
           </span> */}
           <Text
-            id='TitlelSlideNewsRoom'
+            id={data[TitleCarouselNewsRoom.title]}
             tag='h2'
-            content={DataTitleCarouselNR.title}
+            content={data[TitleCarouselNewsRoom.title]}
             className=' flex text-[32px] text-center  justify-center mb-2'
           />
           {/* <h2 className=' flex text-[32px] text-center  justify-center mb-2'>Press releases</h2> */}
         </div>
         <Carousel_Review_Comunity
           className='m-4'
-          data={ItemCarouselAboutUs_NewsRoom}
+          data={CarouselNewsRoom}
           numberItem={3}
           numberItemScroll={1}
           classNameContent='text-[#727171]'

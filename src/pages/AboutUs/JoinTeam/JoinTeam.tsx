@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useAppSelector } from 'src/hooks/useRedux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 export const DataJoinTeamAboutUs = {
   id: 'JoinTeam_AboutUS_AboutUs',
   title: 'Join the Getaround team',
@@ -11,21 +14,24 @@ export const DataJoinTeamAboutUs = {
   linkTo: '/'
 }
 const JoinTeam = () => {
+  const { JoinTeamAboutUs } = useSelector((state: RootState) => state.AboutUs)
+  const data = useAppSelector((state) => state.data)
+  const dispatch = useDispatch()
   return (
     <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10 sm:flex-col'>
       <div className='w-1/2  flex items-center sm:w-full'>
         <div className='block'>
           <Text
-            id='id-textTitleJoinTeam'
+            id={data[JoinTeamAboutUs.title]}
             tag='p'
-            content={DataJoinTeamAboutUs.title}
+            content={data[JoinTeamAboutUs.title]}
             className='uppercase text-mainColor font-bold mb-3 text-3xl sm:text-xl'
           />
           {/* <p className='uppercase text-mainColor font-bold mb-3 text-3xl mt-10 sm:text-xl'>Join the Getaround team </p> */}
           <Text
-            id='id-textTitleJoinTeam'
+            id={data[JoinTeamAboutUs.content]}
             tag='p'
-            content={DataJoinTeamAboutUs.content}
+            content={data[JoinTeamAboutUs.content]}
             className='text-[#808795] font-normal mt-3 sm:text-[15px]'
           />
           {/* <p className='text-[#808795] font-normal mt-3 sm:text-[15px]'>
@@ -42,9 +48,9 @@ const JoinTeam = () => {
       </div>
       <div className='w-[35%] flex justify-center sm:w-full'>
         <Image
-          id='img-idJoinTeam'
+          id={data[JoinTeamAboutUs.img]}
           className='object-contain h-[500px]'
-          src={DataJoinTeamAboutUs.img}
+          src={data[JoinTeamAboutUs.img]}
           alt='Getaround Connect®'
         />
         {/* <img

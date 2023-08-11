@@ -6,7 +6,7 @@ import { ISelectItemsHelpCustomer } from 'src/types/aboutUs/newsRoom'
 import { ISelectItemsHeader } from 'src/types/aboutUs/newsRoom'
 import { DataHeaderNewsRoom } from 'src/pages/NewsRoom/HeaderNewsRoom/HeaderNewsRoom'
 import { DataReadNewItem } from 'src/items/NewsRoom/DataNewsRoom'
-import { ISelectItemsReadNews } from 'src/types/aboutUs/newsRoom'
+import { ISelectItemsReadNews, ISelectItemsTitleReadNews } from 'src/types/aboutUs/newsRoom'
 import { ISelectItemsCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
 import { ItemCarouselNewsRoom_NewsRoom } from 'src/items/Carousel/Carouseltems'
 import { ISelectItemsTitleCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
@@ -18,9 +18,15 @@ interface NewsRoomState {
   ReadNewsRoom: ISelectItemsReadNews[]
   CarouselNewsRoom: ISelectItemsCarouselNewsRoom[]
   TitleCarouselNewsRoom: ISelectItemsTitleCarouselNewsRoom
+  TitleReadNewsRoom: ISelectItemsTitleReadNews
 }
 
 const initialState: NewsRoomState = {
+  TitleReadNewsRoom: {
+    id: 'readNewsRoom_AboutUs_NewsRoom',
+    headerTitle: 'headerTitle_ReadNewsRoom',
+    title: 'title_ReadNewsRoom'
+  },
   BlogNewsRoom: {
     id: 'Blog_AboutUS_NewsRoom',
     img: 'img_Blog_NewsRoom',
@@ -95,6 +101,7 @@ const initialState: NewsRoomState = {
     }
   ],
   TitleCarouselNewsRoom: {
+    id: 's',
     headerTitle: 'headerTitle_TitleCarousel_NewsRoom',
     title: 'title_TitleCarousel_NewsRoom',
     linkTo: 'linkTo_TitleCarousel_NewsRoom'
@@ -121,7 +128,10 @@ const NewsRoomSlice = createSlice({
       state.HeaderNewsRoom = action.payload
     },
     updateHelpCustomerNewsroom: (state, action: PayloadAction<ISelectItemsHelpCustomer>) => {
-      state.HeaderNewsRoom = action.payload
+      state.HelpCustomerNewsRoom = action.payload
+    },
+    updateTitleReadNewsRoomNewsroom: (state, action: PayloadAction<ISelectItemsTitleReadNews>) => {
+      state.TitleReadNewsRoom = action.payload
     }
   },
   extraReducers: (builder) => {}

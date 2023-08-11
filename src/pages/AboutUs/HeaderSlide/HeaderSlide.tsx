@@ -2,6 +2,9 @@ import React from 'react'
 
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useAppSelector } from 'src/hooks/useRedux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
 export const DataHeaderAboutUs = [
   {
     id: 'Header_AboutUs_AboutUs',
@@ -18,6 +21,9 @@ export const DataHeaderAboutUs = [
   }
 ]
 const HeaderSlide = () => {
+  const { ExploreAboutUs, ConnectedCarSharingR, HeaderAboutUs } = useSelector((state: RootState) => state.AboutUs)
+  const data = useAppSelector((state) => state.data)
+  const dispatch = useDispatch()
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>
       <div className='w-full  flex-col self-center items-stretch  flex relative'>
@@ -32,9 +38,9 @@ const HeaderSlide = () => {
         >
           <h1 className='max-w-[22ch] text-center mx-auto text-mainColor tracking-[-.04em] m-0 pd-0 text-[47px] font-bold leading-[106%] sm:text-[35px] sm:leading-[100%] '>
             <Text
-              id='id-textSpanHeaderSlide_AboutUs'
+              id={data[HeaderAboutUs?.[0]?.title]}
               tag='span'
-              content={DataHeaderAboutUs?.[0]?.title}
+              content={data[HeaderAboutUs?.[0]?.title]}
               className='text-white font-normal '
             />
             {/* <span className='text-white font-normal '>{DataHeaderAboutUs?.[0]?.title}</span> */}
@@ -50,11 +56,11 @@ const HeaderSlide = () => {
               display: 'grid'
             }}
           >
-            {DataHeaderAboutUs?.[0]?.arrayImg?.map((item, index) => (
+            {HeaderAboutUs?.[0]?.arrayImg?.map((item, index) => (
               <Image
                 id='img-idSliceAbouts'
                 className='w-full max-h-[23px] max-w-[150px] object-contain flex-[0_auto] align-middle border-none inline-block border-0'
-                src={DataHeaderAboutUs?.[0]?.arrayImg?.[index]}
+                src={data[HeaderAboutUs?.[0]?.arrayImg?.[index]]}
                 style={{ filter: 'brightness(0%) grayscale()' }}
                 alt='Getaround Connect®'
               />

@@ -7,11 +7,20 @@ import {
 } from 'src/items/CustomeStepItem/CustomeStepItem'
 import { MobileOutlined, CarOutlined, RiseOutlined, DollarOutlined, WalletOutlined } from '@ant-design/icons'
 import { useDispatch, useSelector } from 'react-redux'
+import { useAppSelector } from 'src/hooks/useRedux'
 import { RootState } from 'src/store/store'
 import { Link } from 'react-router-dom'
 const Step = () => {
-  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
-    useSelector((state: RootState) => state.howitwork)
+  const {
+    ExploreHowItWork,
+    ProprietaryHowItWork,
+    HearCommunityHowItWork,
+    SlideLeftRightHowItWork,
+    SlideHowItWorkR,
+    customeSteps,
+    customeSteps2
+  } = useSelector((state: RootState) => state.howitwork)
+  const data = useAppSelector((state) => state.data)
   const [step, setStep] = useState(true)
   return (
     <div>
@@ -82,7 +91,7 @@ const Step = () => {
             <CustomeStep
               icons={[<MobileOutlined />, <CarOutlined />, <RiseOutlined />]}
               classname='w-1/2 sm:w-full'
-              items={CustomeStepItemsHowItWork1}
+              items={customeSteps}
             />
           </>
         ) : (
@@ -97,7 +106,7 @@ const Step = () => {
             <CustomeStep
               icons={[<CarOutlined />, <WalletOutlined />, <WalletOutlined />, <DollarOutlined />]}
               classname='w-1/2'
-              items={CustomeStepItemsHowItWork2}
+              items={customeSteps2}
             />
           </>
         )}

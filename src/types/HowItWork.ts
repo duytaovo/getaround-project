@@ -8,7 +8,9 @@ export interface ISelectItemsExploreHosting {
   Description: string
   Link: string
 }
-
+export interface ISelectItemsImgExploreHosting {
+  img: string
+}
 export interface ISelectItemsProprietary {
   id?: string
   headerTitle: string

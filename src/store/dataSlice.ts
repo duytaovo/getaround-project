@@ -684,6 +684,20 @@ const data: IdynamicData<string> = {
   title3_customeSteps: 'Follow up with your friend',
   subtitle3_customeSteps:
     "Don't stop with just sending the link. Talk to your friends, share the Host handbook, and see how you can help them get started.",
+  title4_customeSteps: 'Think of friends to refer',
+  subtitle4_customeSteps: "You've got this. Who do you know with a car that  might like to list it?",
+  title5_customeSteps: 'Think of friends to refer',
+  subtitle5_customeSteps: "You've got this. Who do you know with a car that  might like to list it?",
+  title6_customeSteps: 'Think of friends to refer',
+  subtitle6_customeSteps: "You've got this. Who do you know with a car that  might like to list it?",
+  title7_customeSteps: 'Think of friends to refer',
+  subtitle7_customeSteps: "You've got this. Who do you know with a car that  might like to list it?",
+  title8_customeSteps: 'Think of friends to refer',
+  subtitle8_customeSteps: "You've got this. Who do you know with a car that  might like to list it?",
+  title9_customeSteps: 'Think of friends to refer',
+  subtitle9_customeSteps: "You've got this. Who do you know with a car that  might like to list it?",
+  title10_customeSteps: 'Think of friends to refer',
+  subtitle10_customeSteps: "You've got this. Who do you know with a car that  might like to list it?",
   key1_Question_hostRefernal: '1',
   label1_Question_hostRefernal: 'When and how will I receive my referral bonus?',
   content1_1_Question_hostRefernal: 'Initial $20',
@@ -710,7 +724,25 @@ const data: IdynamicData<string> = {
   content4_1_Question_hostRefernal: 'Initial $20',
   content4_2_Question_hostRefernal: "‍When: After your referral's first vehicle goes live for bookings",
   content4_3_Question_hostRefernal: 'How: Earnings adjustment in your account',
-  content4_4_Question_hostRefernal: 'How: Earnings adjustment in your account'
+  content4_4_Question_hostRefernal: 'How: Earnings adjustment in your account',
+
+  headerTitle_ReadNewsRoom: 'MEDIA COVERAGE',
+  title_ReadNewsRoom: 'Getaround in the news',
+
+  ImgExploreHowItWork:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg',
+  ImgExploreST:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg',
+  ImgExploreAboutUs:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg',
+  ImgExploreHR:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg',
+
+  mainNotice_notice1:
+    'We use cookies (and other similar technologies) to collect data to improve your experience on our site. By using our website, you՚re agreeing to the collection of data as described in our',
+  subNotice_notice1: 'Privacy Policy You can change your preferences at any time.',
+  mainNotice_notice2: 'Exciting News: Getaround Acquires HyreCar!',
+  noticeContent_notice2: 'Read the announcement'
 }
 
 const dataSlice = createSlice({
