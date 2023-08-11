@@ -5,7 +5,6 @@ interface IdynamicData<T> {
 }
 
 const data: IdynamicData<string> = {
-  home_explore_item_txt_2: 'ssss',
   home_hero_t1: 'value1',
   home_hero_t2: 'value2',
   home_hero_t3: 'value3',
