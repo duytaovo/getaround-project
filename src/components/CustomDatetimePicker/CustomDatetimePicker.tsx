@@ -1,5 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import { DatePicker, TimePicker } from 'antd'
+import { Text } from '../Edition/Text'
+import { iDGenerator } from 'src/utils/idGenerator'
 
 type CustomeDateTimeProps = {
   title: string
@@ -9,7 +11,7 @@ type CustomeDateTimeProps = {
 const CustomDatetimePicker: FC<CustomeDateTimeProps> = ({ className, title }) => {
   return (
     <div className='lg:grow'>
-      <p className='pl-2 text-[#a49da7] text-xs'>{title}</p>
+      <Text id={iDGenerator('txt')} content={title} tag='p' className='pl-2 text-[#a49da7] text-xs' />
       <div
         className={className}
         style={{
@@ -31,6 +33,7 @@ const CustomDatetimePicker: FC<CustomeDateTimeProps> = ({ className, title }) =>
             minuteStep={15}
             format='HH:mm'
             showNow={false}
+            // placeholder=''
           />
         </div>
       </div>

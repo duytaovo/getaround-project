@@ -50,20 +50,20 @@ type HomePageType = {
 const initialState: HomePageType = {
   heroSection: {
     id: 'p-001',
-    title: 'Drive on your schedule Nam',
-    mainText: 'Instantly rent and unlock nearby cars',
+    title: 'home_hero_t1',
+    mainText: 'home_hero_t2',
+    startDateTimePikerTitle: 'home_hero_t3',
+    endDateTimePikerTitle: 'home_hero_t4',
+    buttonSearchText: 'home_hero_t5',
     addressPlaceholder: 'Address',
-    startDateTimePikerTitle: 'Start trip',
-    endDateTimePikerTitle: 'End trip',
     datePickerPlaceholder: 'Select date',
     timePickerPlaceholder: 'SelectTime',
-    buttonSearchText: 'Search a car',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b095e7bfaba115ba5ccd_homepage-bg-picnic.webp'
   },
   perfectCarSliderSection: {
     id: 'p-002',
     heading: '',
-    wrapperTitle: 'THE PERFECT CAR FOR YOUR TRIP IS JUST AROUND THE CORNER',
+    wrapperTitle: 'home_perfect_car_t6',
     itemsData: [
       {
         id: 1,
@@ -138,65 +138,61 @@ const initialState: HomePageType = {
   },
   sharingMaketPlaceSection: {
     id: 'p-004',
-    wrapperTitle: "The World's First🌐Connected Car Sharing Marketplace",
+    wrapperTitle: 'home_sharing_market_title_1',
     itemsData: [
       {
         id: '1',
-        total: '1.7M',
-        title: 'Worldwide guests sdhsdhasdhk'
+        total: 'home_sharing_market_item_1',
+        title: 'home_sharing_market_item_2'
       },
       {
         id: '2',
-        total: '6M',
-        title: 'Trips taken'
+        total: 'home_sharing_maket_item_3',
+        title: 'home_sharing_maket_item_4'
       },
       {
         id: '3',
-        total: '1,000+',
-        title: 'Cities covered'
+        total: 'home_sharing_maket_item_5',
+        title: 'home_sharing_maket_item_6'
       },
       {
         id: '4',
-        total: '8',
-        title: 'Countries'
+        total: 'home_sharing_maket_item_7',
+        title: 'home_sharing_maket_item_8'
       }
     ]
   },
   homeStepSection: {
     id: 'p-005',
-    heading: 'Find your drive in 3 easy steps',
-    wrapperTitle: 'HOW IT WORKS',
+    wrapperTitle: 'home_step_title_1',
+    heading: 'home_step_heading_1',
     itemsData: [
       {
-        title: 'Sign up and name your car.',
+        title: 'home_step_item_txt_1',
         images: [
           'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/636580091db0b72179b2c1ab_appstore-icon.svg',
           'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63657fca094cac0e19c45708_googleplay-icon.svg'
         ],
-        subTitle:
-          " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!"
+        subTitle: 'home_step_item_txt_2'
       },
       {
-        title: 'Sign up and name your car.',
-        subTitle:
-          " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!"
+        title: 'home_step_item_txt_3',
+        subTitle: 'home_step_item_txt_4'
       },
       {
-        title: 'Sign up and name your car.',
-        subTitle:
-          " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!"
+        title: 'home_step_item_txt_5',
+        subTitle: 'home_step_item_txt_6'
       }
     ],
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar.jpg'
   },
   exploreHostingSection: {
     id: 'p-006',
-    wrapperTitle: 'EXPLORE HOSTING',
+    wrapperTitle: 'home_explore_txt_1',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg',
     itemData: {
-      Title: 'Have a car? Start sharing',
-      Description:
-        "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month. >> was changed",
+      Title: 'home_explore_item_txt_1',
+      Description: 'home_explore_item_txt_2',
       headerTitle: '',
       Link: '',
       mainTitle: ''
@@ -302,45 +298,29 @@ const initialState: HomePageType = {
   },
   qAndASection: {
     id: 'p-009',
-    heading: 'LEARN MORE ABOUT THE BENEFITS OF GETAROUND',
-    wrapperTitle: 'LEARN MORE ABOUT THE BENEFITS OF GETAROUND',
+    wrapperTitle: 'home_q_and_a_title_txt_1',
+    heading: 'home_q_and_a_heading_txt_1',
     img: 'http://localhost:3000/src/assets/images/commonQuestionRight.svg',
     itemsData: [
       {
         key: '1',
-        label: 'How do I find a car and book a trip?',
-        contents: [
-          'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class.',
-          "After creating your account or logging in, click on the 'Find cars' text at the top of the screen.",
-          'Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown'
-        ]
+        label: 'home_q_and_a_label_txt_1',
+        contents: ['home_q_and_a_desc_txt_1', 'home_q_and_a_desc_txt_2', 'home_q_and_a_desc_txt_3']
       },
       {
         key: '2',
-        label: 'How do I find a car and book a trip?',
-        contents: [
-          'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class.',
-          "After creating your account or logging in, click on the 'Find cars' text at the top of the screen.",
-          'Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown'
-        ]
+        label: 'home_q_and_a_label_txt_2',
+        contents: ['home_q_and_a_desc_txt_4', 'home_q_and_a_desc_txt_5', 'home_q_and_a_desc_txt_6']
       },
       {
         key: '3',
-        label: 'How do I find a car and book a trip?',
-        contents: [
-          'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class.',
-          "After creating your account or logging in, click on the 'Find cars' text at the top of the screen.",
-          'Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown'
-        ]
+        label: 'home_q_and_a_label_txt_3',
+        contents: ['home_q_and_a_desc_txt_7', 'home_q_and_a_desc_txt_8', 'home_q_and_a_desc_txt_9']
       },
       {
         key: '4',
-        label: 'How do I find a car and book a trip?',
-        contents: [
-          'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class.',
-          "After creating your account or logging in, click on the 'Find cars' text at the top of the screen.",
-          'Enter your address into the search bar, if it doesn’t already appear.Select your pickup and return times. Cars that are available for booking during that time will be shown'
-        ]
+        label: 'home_q_and_a_label_txt_4',
+        contents: ['home_q_and_a_label_txt_10', 'home_q_and_a_label_txt_11', 'home_q_and_a_label_txt_12']
       }
     ]
   }
