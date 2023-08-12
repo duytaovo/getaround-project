@@ -71,7 +71,7 @@ export const items: ICommonQuestions[] = [
     label: 'commonQuestion_shareACar_label_01',
     contents: [
       'commonQuestion_shareACar_content_01',
-      "commonQuestion_shareACar_content_02",
+      'commonQuestion_shareACar_content_02',
       'commonQuestion_shareACar_content_03'
     ]
   },
@@ -80,7 +80,7 @@ export const items: ICommonQuestions[] = [
     label: 'commonQuestion_shareACar_label_02',
     contents: [
       'commonQuestion_shareACar_content_04',
-      "commonQuestion_shareACar_content_05",
+      'commonQuestion_shareACar_content_05',
       'commonQuestion_shareACar_content_06'
     ]
   },
@@ -89,7 +89,7 @@ export const items: ICommonQuestions[] = [
     label: 'commonQuestion_shareACar_label_03',
     contents: [
       'commonQuestion_shareACar_content_07',
-      "commonQuestion_shareACar_content_08",
+      'commonQuestion_shareACar_content_08',
       'commonQuestion_shareACar_content_09'
     ]
   },
@@ -98,7 +98,7 @@ export const items: ICommonQuestions[] = [
     label: 'commonQuestion_shareACar_label_04',
     contents: [
       'commonQuestion_shareACar_content_10',
-      "commonQuestion_shareACar_content_11",
+      'commonQuestion_shareACar_content_11',
       'commonQuestion_shareACar_content_12'
     ]
   }
@@ -110,7 +110,7 @@ export const itemsBottom: ICommonQuestions[] = [
     label: 'commonQuestionBottom_shareACar_label_01',
     contents: [
       'commonQuestionBottom_shareACar_content_01',
-      "commonQuestionBottom_shareACar_content_02",
+      'commonQuestionBottom_shareACar_content_02',
       'commonQuestionBottom_shareACar_content_03'
     ]
   },
@@ -119,7 +119,7 @@ export const itemsBottom: ICommonQuestions[] = [
     label: 'commonQuestionBottom_shareACar_label_02',
     contents: [
       'commonQuestionBottom_shareACar_content_04',
-      "commonQuestionBottom_shareACar_content_05",
+      'commonQuestionBottom_shareACar_content_05',
       'commonQuestionBottom_shareACar_content_06'
     ]
   },
@@ -128,7 +128,7 @@ export const itemsBottom: ICommonQuestions[] = [
     label: 'commonQuestionBottom_shareACar_label_03',
     contents: [
       'commonQuestionBottom_shareACar_content_07',
-      "commonQuestionBottom_shareACar_content_08",
+      'commonQuestionBottom_shareACar_content_08',
       'commonQuestionBottom_shareACar_content_09'
     ]
   },
@@ -137,7 +137,7 @@ export const itemsBottom: ICommonQuestions[] = [
     label: 'commonQuestion_shareACar_label_04',
     contents: [
       'commonQuestion_shareACar_content_10',
-      "commonQuestion_shareACar_content_11",
+      'commonQuestion_shareACar_content_11',
       'commonQuestion_shareACar_content_12'
     ]
   }
@@ -196,6 +196,7 @@ export const ItemBodyTop: IBodyTop = {
 }
 
 export const itemBanner: IItemBodyBannerCard = {
+  img: 'img_bodyBanner-shareACar',
   title: 'txt-bodyBaner-shareACar-title',
   content: 'txt-bodyBaner-shareACar-content'
 }
@@ -377,7 +378,7 @@ export const itemsCommonQuestionCommunity: ICommonQuestions[] = [
     label: 'commonQuestion_Community_label_01',
     contents: [
       'commonQuestion_Community_content_01',
-      "commonQuestion_Community_content_02",
+      'commonQuestion_Community_content_02',
       'commonQuestion_Community_content_03'
     ]
   },
@@ -386,7 +387,7 @@ export const itemsCommonQuestionCommunity: ICommonQuestions[] = [
     label: 'commonQuestion_Community_label_02',
     contents: [
       'commonQuestion_Community_content_04',
-      "commonQuestion_Community_content_05",
+      'commonQuestion_Community_content_05',
       'commonQuestion_Community_content_06'
     ]
   },
@@ -395,7 +396,7 @@ export const itemsCommonQuestionCommunity: ICommonQuestions[] = [
     label: 'commonQuestion_Community_label_03',
     contents: [
       'commonQuestion_Community_content_07',
-      "commonQuestion_Community_content_08",
+      'commonQuestion_Community_content_08',
       'commonQuestion_Community_content_09'
     ]
   },
@@ -404,7 +405,7 @@ export const itemsCommonQuestionCommunity: ICommonQuestions[] = [
     label: 'commonQuestion_Community_label_04',
     contents: [
       'commonQuestion_Community_content_10',
-      "commonQuestion_Community_content_11",
+      'commonQuestion_Community_content_11',
       'commonQuestion_Community_content_12'
     ]
   }

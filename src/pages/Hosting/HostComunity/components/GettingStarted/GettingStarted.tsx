@@ -102,7 +102,7 @@ const GettingStarted = ({
           {renderItemLink()}
         </div>
         <CustomSelect
-          width='400px'
+          width='200px'
           defaultValue='Pháp'
           options={selectItems}
           className='text-black border-none outline-none rounded-md h-10'

@@ -6,7 +6,6 @@ import { payloadCreator } from 'src/utils/utils'
 
 export const _getData = createAsyncThunk('data/getData', payloadCreator(dataApi.getData))
 
-
 interface IdynamicData<T> {
   [key: string]: T
 }
@@ -328,6 +327,8 @@ const data: IdynamicData<string> = {
     ' Car earnings differ by make, model, calendar availability, and market. Earnings numbers and car information shown are from real hosts on Getaround',
 
   //itemBanner
+  'img_bodyBanner-shareACar':
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d8276f5f590e8cd734e67c_shareacar2tiny.jpg',
   'txt-bodyBaner-shareACar-title': 'Digital key platform',
   'txt-bodyBaner-shareACar-content':
     'Experience a seamless, hands-off, and secure experience. Getaround Connect® hardware lets guests unlock your car from the app, and gives you data about the usage and location of your vehicle.',
@@ -951,7 +952,6 @@ const data: IdynamicData<string> = {
   noticeContent_notice2: 'Read the announcement'
 }
 
-
 interface DataState {
   data: IdynamicData<string>
 }
@@ -973,7 +973,6 @@ const dataSlice = createSlice({
       state.data = payload.data.data
     })
   }
-
 })
 
 // export const { update } = dataSlice.actions

@@ -19,7 +19,7 @@ const editOptions = [
     id: 0,
     title: 'Lưu',
     callback: ({ id, value, setEnable, imgFile }: IBody) => {
-      console.log({ id, imgFile })
+      console.log({ id, value, imgFile })
     }
   },
   {

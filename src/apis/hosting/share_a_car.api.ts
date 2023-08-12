@@ -8,7 +8,7 @@ const shareACarApi = {
     return http.get<SuccessResponse<any>>(URL_SHARE_A_CAR, {})
   },
 
-  addText(data: any) {
+  updateText(data: any) {
     return http.post(`${URL_ADD_TEXT}/`, data)
   }
 }
