@@ -18,13 +18,13 @@ const OurHost = ({ item }: Props) => {
   }, [dispatch])
   return (
     <div>
-      {/* <Text
+      <Text
         id={`txt_OurHost_community_title`}
         tag='span'
         content={data[item.title || '']}
         className={`text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2 `}
-      /> */}
-      <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>abc</span>
+      />
+      {/* <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>abc</span> */}
       <Text
         id={`txt_OurHost_community_content`}
         tag='h2'

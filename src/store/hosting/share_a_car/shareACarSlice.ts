@@ -1,4 +1,5 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import shareACarApi from 'src/apis/hosting/share_a_car.api'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
 import {
   CustomeStepItems,
@@ -20,10 +21,21 @@ import {
   wrapperTitle
 } from 'src/items/ShareACarId/ShareACarId'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
-import { IBodyCommonQuestionImg, IBodyTop, IIWrapContentTitle, IItemBodyBannerCard, IItemCarousel, IItemContentSlider, IItemGetAroundYourBack, IItemSlider, IItemSupport } from 'src/types/hosting_shareACar.type'
+import {
+  IBodyCommonQuestionImg,
+  IBodyTop,
+  IIWrapContentTitle,
+  IItemBodyBannerCard,
+  IItemCarousel,
+  IItemContentSlider,
+  IItemGetAroundYourBack,
+  IItemSlider,
+  IItemSupport
+} from 'src/types/hosting_shareACar.type'
 import { payloadCreator } from 'src/utils/utils'
 
 export const getShareACar = createAsyncThunk('shareACar/getShareACar', payloadCreator(''))
+export const updateText = createAsyncThunk('shareACar/updateText', payloadCreator(shareACarApi.updateText))
 
 interface ICustomeStep {
   title: string
@@ -54,8 +66,8 @@ interface ShareACarState {
   exploreHosting: ISelectItemsExploreHosting
   exploreHosting_bottom: ISelectItemsExploreHosting
   ourHost: IItemGetAroundYourBack
-  wrapperTitle:IIWrapContentTitle[]
-  imgExploreHosting:string
+  wrapperTitle: IIWrapContentTitle[]
+  imgExploreHosting: string
 }
 
 const initialState: ShareACarState = {
@@ -72,11 +84,11 @@ const initialState: ShareACarState = {
   commonQuestion: items,
   commonQuestionBottom: itemsBottom,
   exploreHosting: DataExploreHostingShareCarText,
-  exploreHosting_bottom:DataExploreHostingShareCarText_bottom,
+  exploreHosting_bottom: DataExploreHostingShareCarText_bottom,
   ourHost: itemOurHost,
-  commonQuestionImg:itemCommonQuestionBody,
-  imgExploreHosting:itemImgExploreHosting,
-  wrapperTitle:wrapperTitle
+  commonQuestionImg: itemCommonQuestionBody,
+  imgExploreHosting: itemImgExploreHosting,
+  wrapperTitle: wrapperTitle
 }
 
 const shareACarSlice = createSlice({

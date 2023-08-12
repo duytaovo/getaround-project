@@ -12,7 +12,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 //   // other theme properties
 // })
 
-
 function App() {
   const routeElements = useRouteElements()
 
@@ -20,6 +19,7 @@ function App() {
     // <ThemeProvider theme={theme}>
     <HelmetProvider>
       <ErrorBoundary>{routeElements}</ErrorBoundary>
+      <ToastContainer />
     </HelmetProvider>
     // </ThemeProvider>
   )

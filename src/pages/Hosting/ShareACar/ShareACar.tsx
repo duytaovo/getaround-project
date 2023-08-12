@@ -18,14 +18,16 @@ import BodyBanner from './components/BodyBanner/BodyBanner'
 import BodyCard from './components/BodyCard/BodyCard'
 import { useDispatch } from 'react-redux'
 import { IBodyTop, IItemSlider } from 'src/types/hosting_shareACar.type'
-import { addSlider, updateBodyTop, updateSlider } from 'src/store/hosting/share_a_car/shareACarSlice'
+import { addSlider, updateBodyTop, updateSlider, updateText } from 'src/store/hosting/share_a_car/shareACarSlice'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import GetAroundYourBack from './components/GetAroundYourBack/GetAroundYourBack'
 import OurHost from './components/OurHost/OurHost'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
-import { useEffect } from 'react'
 import { _getData } from 'src/store/dataSlice'
+import { toast } from 'react-toastify'
+import { unwrapResult } from '@reduxjs/toolkit'
+import { useState } from 'react'
 
 const ShareACar = () => {
   const {
@@ -48,6 +50,8 @@ const ShareACar = () => {
     exploreHosting_bottom,
     commonQuestionBottom
   } = useAppSelector((state) => state.shareAcar)
+  const [idText, setIdText] = useState<string>('')
+  const [valueText, setValueText] = useState<string>('')
   const data = useAppSelector((state) => state.data.data)
 
   const dispatch = useAppDispatch()
@@ -64,18 +68,18 @@ const ShareACar = () => {
     dispatch(updateSlider({ index, slider: newSlider }))
   }
 
-  // const handleUpdateText = async () => {
-  //   const body = {
-  //     _id: id,
-  //     buy_count:
-  //   }
-  //   const res = await dispatch(addToCart(body)).then(unwrapResult)
-  //   await dispatch(getCartPurchases()).then(unwrapResult)
-  //   toast.success(res.message, {
-  //     position: 'top-center',
-  //     autoClose: 4000
-  //   })
-  // }
+  const handleUpdateText = async () => {
+    const body = {
+      _id: idText,
+      body: valueText
+    }
+    const res = await dispatch(updateText(body)).then(unwrapResult)
+    await dispatch(_getData('')).then(unwrapResult)
+    toast.success(res.message, {
+      position: 'top-center',
+      autoClose: 4000
+    })
+  }
   return (
     <div className='pt-[84px]'>
       {/* start top */}

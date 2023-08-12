@@ -36,14 +36,14 @@ module.exports = {
       colors: {
         mainColor: '#3699d3',
         textMainColor: '#ffffff',
-        textCustom:"#ffffff99",
-        textCustomBgWhite:"#727171"
+        textCustom: '#ffffff99',
+        textCustomBgWhite: '#727171'
       },
       backgroundColor: {
         mainBackGroundColor: '#1c2635',
-        bgHeaderMobile :'rgb(249 248 248 / 80%)'
+        bgHeaderMobile: 'rgb(249 248 248 / 80%)'
       },
-      
+
       margin: {
         bottom: '105px',
         mbGettingStarted: '29px'

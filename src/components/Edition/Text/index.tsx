@@ -1,5 +1,9 @@
+import { unwrapResult } from '@reduxjs/toolkit'
 import { FC, useState, useEffect, useRef } from 'react'
-import { useAppSelector } from 'src/hooks/useRedux'
+import { toast } from 'react-toastify'
+import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
+import { _getData } from 'src/store/dataSlice'
+import { updateText } from 'src/store/hosting/share_a_car/shareACarSlice'
 
 interface IBody {
   id: string
@@ -12,30 +16,6 @@ interface IiOffset {
   w: number
   h: number
 }
-const editOptions = [
-  {
-    id: 0,
-    title: 'Lưu',
-    callback: ({ id, value, setEnable }: IBody) => {
-      console.log({ id, value })
-    }
-  },
-  {
-    id: 1,
-    title: 'Đặt lại',
-    callback: ({ setVal, content }: IBody) => {
-      console.log('sss')
-      setVal(content)
-    }
-  },
-  {
-    id: 3,
-    title: 'Huỷ',
-    callback: ({ id, value, setEnable }: IBody) => {
-      setEnable(false)
-    }
-  }
-]
 
 interface Iprops {
   id: string
@@ -46,18 +26,43 @@ interface Iprops {
 }
 
 export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
+  const editOptions = [
+    {
+      id: 0,
+      title: 'Lưu',
+      callback: ({ id, value, setEnable }: IBody) => {
+        console.log({ id, value })
+        _updateText(id, value)
+      }
+    },
+    {
+      id: 1,
+      title: 'Đặt lại',
+      callback: ({ setVal, content }: IBody) => {
+        setVal(content)
+      }
+    },
+    {
+      id: 3,
+      title: 'Huỷ',
+      callback: ({ id, value, setEnable }: IBody) => {
+        setEnable(false)
+      }
+    }
+  ]
   const Wrapper = tag
 
   const iRef = useRef<HTMLTextAreaElement>(null)
   const cRef = useRef<HTMLDivElement>(null)
 
-  const { permision } = useAppSelector((state) => state?.user)
+  const { permision } = useAppSelector((state: any) => state?.user)
   const [iOffset, setIOffset] = useState<IiOffset>({
     w: 100,
     h: 100
   })
   const [val, setVal] = useState<string>(content)
   const [enable, setEnable] = useState<boolean>(false)
+  const dispatch = useAppDispatch()
 
   const show = () => setEnable(true)
   const hidden = () => setEnable(false)
@@ -80,6 +85,24 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
     const h = cRef?.current?.offsetHeight || 100
     setIOffset({ w, h })
   }, [])
+
+  var _updateText = async (id: string, value: string) => {
+    const body = {
+      _id: id,
+      body: value
+    }
+    try {
+      const res = await dispatch(updateText(body)).then(unwrapResult)
+      await dispatch(_getData(''))
+
+      toast.success(res.message, {
+        position: 'top-center',
+        autoClose: 4000
+      })
+
+      console.log(res)
+    } catch (error) {}
+  }
 
   return (
     <div>
