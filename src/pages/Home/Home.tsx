@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
 import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
 import { ItemSlider } from '../../items/SliderItem/Slider'
@@ -7,6 +7,9 @@ import CommonQuestionRightImg from 'src/assets/images/commonQuestionRight.svg'
 import { DataConnectedCarSharingHome } from 'src/items/ConnectedCarSharing/DataConnectedCarSharing'
 import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import HomeHeroSection from './home_hero_section/HomeHeroSection'
+import Filter1OutlinedIcon from '@mui/icons-material/Filter1Outlined'
+import Filter2OutlinedIcon from '@mui/icons-material/Filter2Outlined'
+import Filter3OutlinedIcon from '@mui/icons-material/Filter3Outlined'
 import CustomeStep from 'src/components/CustomeStep/CustomeStep'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import Heading from 'src/components/Heading/Heading'
@@ -17,16 +20,22 @@ import CustomeCarousel from 'src/components/Carousel/index'
 import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCarSharing'
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
-import { useAppSelector } from 'src/hooks/useRedux'
+import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { Text } from 'src/components/Edition/Text'
 import { iDGenerator } from 'src/utils/idGenerator'
 import { Image } from 'src/components/Edition/Image'
+import { _getData } from 'src/store/dataSlice'
 
 type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(_getData(''))
+  }, [dispatch])
 
   return (
     <div className='overflow-x-hidden'>
@@ -111,7 +120,7 @@ const Home = (props: Props) => {
 
           <CustomeStep
             classname='w-1/2 xl:w-full'
-            icons={[<UserOutlined />, <SolutionOutlined />, <SmileOutlined />]}
+            icons={[<Filter1OutlinedIcon />, <Filter2OutlinedIcon />, <Filter3OutlinedIcon />]}
             textClassName='text-justify'
             items={homePageData.homeStepSection.itemsData}
           />
@@ -136,7 +145,7 @@ const Home = (props: Props) => {
       </WrapperContent> */}
 
       <WrapperContent
-        title={homePageData.exploreHostingSection.wrapperTitle}
+        title={data[homePageData.exploreHostingSection.wrapperTitle]}
         textAlign='center'
         classname='pt-4'
         isBgTransparent
@@ -149,9 +158,9 @@ const Home = (props: Props) => {
         />
       </WrapperContent>
 
-      <WrapperContent title={homePageData.localFavouriteSection.wrapperTitle} isBgTransparent textAlign='center'>
+      <WrapperContent title={data[homePageData.localFavouriteSection.wrapperTitle]} isBgTransparent textAlign='center'>
         <Heading
-          title={homePageData.localFavouriteSection.heading}
+          title={data[homePageData.localFavouriteSection.heading]}
           fontSize={30}
           breakLineAt={4}
           className='text-center'
@@ -173,9 +182,9 @@ const Home = (props: Props) => {
         </div>
       </WrapperContent>
 
-      <WrapperContent title={homePageData.blogSilerSection.wrapperTitle} isBgTransparent textAlign='center'>
+      <WrapperContent title={data[homePageData.blogSilerSection.wrapperTitle]} isBgTransparent textAlign='center'>
         <Heading
-          title={homePageData.blogSilerSection.heading}
+          title={data[homePageData.blogSilerSection.heading]}
           fontSize={30}
           breakLineAt={6}
           className='text-center'
@@ -183,6 +192,7 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
+            prefix='home'
             breakPointScroll={[1, 2, 2, 2]}
             breakPoint={[1, 2, 3, 3]}
             numberItem={3}
@@ -218,9 +228,9 @@ const Home = (props: Props) => {
           <div className='w-1/2 p-4 flex justify-center items-center xl:w-full'>
             {/* <img width='50%' src={homePageData.qAndASection.img} alt='' /> */}
             <Image
-              id={iDGenerator('img')}
+              id={homePageData.qAndASection.img || 'xxx'}
               alt='image-thumb'
-              src={homePageData.qAndASection.img ? homePageData.qAndASection.img : ''}
+              src={homePageData.qAndASection.img ? data[homePageData.qAndASection.img] : ''}
               style={{
                 width: '100%'
               }}

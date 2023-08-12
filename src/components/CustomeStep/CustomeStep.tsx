@@ -21,7 +21,7 @@ type Props = {
 const CustomeStep: FC<Props> = ({ items, classname, icons, textClassName, titleClassName }) => {
   const stepRef = useRef<HTMLDivElement | null>(null)
   const [current, setCurrent] = useState<number>(-1)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   const itemsForSteps = items.map((item, index) => ({
     icon: icons[index],

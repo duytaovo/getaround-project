@@ -24,7 +24,7 @@ const CustomeCommonQuestions: FC<CommonQuestionProps> = ({
   className,
   paddingRightSingleCommonQuestion
 }) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const itemsForColapse: CollapseProps['items'] = items.map((item) => ({
     key: item.key,
 

@@ -1,126 +1,259 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
+
+import dataApi from 'src/apis/data/data.api'
+import { payloadCreator } from 'src/utils/utils'
+
+export const _getData = createAsyncThunk('data/getData', payloadCreator(dataApi.getData))
+
+
 interface IdynamicData<T> {
   [key: string]: T
 }
 
 const data: IdynamicData<string> = {
-  home_hero_t1: 'value1',
-  home_hero_t2: 'value2',
-  home_hero_t3: 'value3',
-  home_hero_t4: 'value4',
-  home_hero_t5: 'value5',
-  home_perfect_car_t6: 'value6',
-  home_perfect_car_t7: 'value7',
-  home_perfect_car_t8: 'value8',
-  home_perfect_car_t9: 'value9',
-  home_perfect_car_t10: 'value10',
+  home_hero_t1: 'Edit here...',
+  home_hero_t2: 'Edit here...',
+  home_hero_t3: 'Edit here...',
+  home_hero_t4: 'Edit here...',
+  home_hero_t5: 'Edit here...',
 
-  home_sharing_market_title_1: 'sharing-market',
-  home_sharing_market_item_1: 'A',
-  home_sharing_market_item_2: 'B',
-  home_sharing_maket_item_3: 'C',
-  home_sharing_maket_item_4: 'D',
-  home_sharing_maket_item_5: 'E',
-  home_sharing_maket_item_6: 'F',
-  home_sharing_maket_item_7: 'G',
-  home_sharing_maket_item_8: 'H',
+  home_perfect_car_t6: 'Edit here...',
+  home_perfect_car_t7: 'Edit here...',
+  home_perfect_car_t8: 'Edit here...',
+  home_perfect_car_t9: 'Edit here...',
+  home_perfect_car_t10: 'Edit here...',
 
-  home_step_title_1: 'Phan Ngoc Nam',
+  home_sharing_market_title_1: 'Edit here...',
+  home_sharing_market_item_1: 'Edit here...',
+  home_sharing_market_item_2: 'Edit here...',
+  home_sharing_maket_item_3: 'Edit here...',
+  home_sharing_maket_item_4: 'Edit here...',
+  home_sharing_maket_item_5: 'Edit here...',
+  home_sharing_maket_item_6: 'Edit here...',
+  home_sharing_maket_item_7: 'Edit here...',
+  home_sharing_maket_item_8: 'Edit here...',
+
+  home_step_title_1: 'Edit here...',
   home_step_heading_1: 'Phan Ngoc Nam v2',
-  home_step_item_txt_1: 'Nam child',
-  home_step_item_txt_2: 'sub title 1',
-  home_step_item_txt_3: 'Luu so em di',
-  home_step_item_txt_4: 'Khi nao ma co can con dau thi goi cho em',
-  home_step_item_txt_5: 'Khong nho loi nua',
-  home_step_item_txt_6: 'what do you ussually do after work?',
+  home_step_item_txt_1: 'Edit here...',
+  home_step_item_txt_2: 'Edit here...',
+  home_step_item_txt_3: 'Edit here...',
+  home_step_item_txt_4: 'Edit here...',
+  home_step_item_txt_5: 'Edit here...',
+  home_step_item_txt_6: 'Edit here...',
 
-  home_q_and_a_title_txt_1: 'Questions mark?',
-  home_q_and_a_label_txt_1: 'Hello guy!',
-  home_q_and_a_desc_txt_1: 'Nice!',
-  home_q_and_a_desc_txt_2: 'Keep it simple, stupid.',
-  home_q_and_a_desc_txt_3: 'okela!',
-  home_q_and_a_label_txt_2: 'nope!',
-  home_q_and_a_desc_txt_4: 'Move forward!',
-  home_q_and_a_desc_txt_5: '...',
-  home_q_and_a_desc_txt_6: '...',
-  home_q_and_a_label_txt_3: '...',
-  home_q_and_a_desc_txt_7: '...',
-  home_q_and_a_desc_txt_8: '...',
-  home_q_and_a_desc_txt_9: '...',
-  home_q_and_a_label_txt_4: '...',
-  home_q_and_a_label_txt_10: '...',
-  home_q_and_a_label_txt_11: '...',
-  home_q_and_a_label_txt_12: '...',
+  home_carousel_intro_txt_title_1: 'Edit here...',
+  home_carousel_intro_txt_content_1: 'Edit here...',
+  home_carousel_intro_txt_header_1: 'Edit here...',
+  home_carousel_intro_txt_img_1:
+    'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg 1x, https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
 
-  home_explore_txt_1: '...',
-  home_explore_item_txt_1: '...',
-  home_explore_item_txt_2: '...',
+  home_carousel_intro_txt_title_2: 'Edit here...',
+  home_carousel_intro_txt_content_2: 'Edit here...',
+  home_carousel_intro_txt_header_2: 'Edit here...',
+  home_carousel_intro_txt_img_2: 'Edit here...',
 
-  drive_with_uber_q7a_title_1: '...',
-  drive_with_uber_q7q_lbl_1: '...',
-  drive_with_uber_q7q_content_1: '...',
-  drive_with_uber_q7q_content_2: '...',
-  drive_with_uber_q7q_content_3: '...',
-  drive_with_uber_q7q_lbl_2: '...',
-  drive_with_uber_q7q_content_4: '...',
-  drive_with_uber_q7q_content_5: '...',
-  drive_with_uber_q7q_content_6: '...',
-  drive_with_uber_q7q_lbl_3: '...',
-  drive_with_uber_q7q_content_7: '...',
-  drive_with_uber_q7q_content_8: '...',
-  drive_with_uber_q7q_content_9: '...',
-  drive_with_uber_q7q_lbl_4: '...',
-  drive_with_uber_q7q_content_10: '...',
-  drive_with_uber_q7q_content_11: '...',
-  drive_with_uber_q7q_content_12: '...',
-  drive_with_uber_getStatedTitle_title_1: '...',
-  drive_with_uber_getStatedTitle_btn_sub_lbl_1: '...',
-  drive_with_uber_getStatedTitle_btn_lbl_1: '...',
-  drive_with_uber_getStatedTitle_btn_sub_lbl_2: '...',
-  drive_with_uber_getStatedTitle_btn_lbl_2: '...',
-  drive_with_uber_getStatedTitle_sentence_1: '...',
-  drive_with_uber_getStatedTitle_sentence_2: '...',
-  drive_with_uber_getStatedTitle_sentence_3: '...',
+  home_carousel_intro_txt_title_3: 'Edit here...',
+  home_carousel_intro_txt_content_3: 'Edit here...',
+  home_carousel_intro_txt_header_3: 'Edit here...',
+  home_carousel_intro_txt_img_3: 'Edit here...',
+
+  home_carousel_intro_txt_title_4: 'Edit here...',
+  home_carousel_intro_txt_content_4: 'Edit here...',
+  home_carousel_intro_txt_header_4: 'Edit here...',
+  home_carousel_intro_txt_img_4: 'Edit here...',
+
+  home_local_favourite_section_title: 'Edit here...',
+  home_local_favourite_section_heading: 'Edit here...',
+  'sliderHome_txt-card_slider_title_7': 'SUV/Jeep',
+  'sliderHome_img-card_slider_7':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_8': 'SUV/Jeep',
+  'sliderHome_img-card_slider_8':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_9': 'SUV/Jeep',
+  'sliderHome_img-card_slider_9':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_10': 'SUV/Jeep',
+  'sliderHome_img-card_slider_10':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_11': 'SUV/Jeep',
+  'sliderHome_img-card_slider_11':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_12': 'SUV/Jeep',
+  'sliderHome_img-card_slider_12':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  home_blog_section_title: 'Edit here...',
+  home_blog_section_heading: 'Edit here...',
+  'sliderHome_txt-card_slider_title_13': 'SUV/Jeep',
+  'sliderHome_txt-card_slider_content_13': 'Maximize your host earnings',
+  'sliderHome_txt-card_slider_time_13': 'August-25-2023',
+  'sliderHome_img-card_slider_13':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_14': 'SUV/Jeep',
+  'sliderHome_txt-card_slider_content_14': 'Maximize your host earnings',
+  'sliderHome_txt-card_slider_time_14': 'August-25-2023',
+  'sliderHome_img-card_slider_14':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_15': 'SUV/Jeep',
+  'sliderHome_txt-card_slider_content_15': 'Maximize your host earnings',
+  'sliderHome_txt-card_slider_time_15': 'August-25-2023',
+  'sliderHome_img-card_slider_15':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_16': 'SUV/Jeep',
+  'sliderHome_txt-card_slider_content_16': 'Maximize your host earnings',
+  'sliderHome_txt-card_slider_time_16': 'August-25-2023',
+  'sliderHome_img-card_slider_16':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_17': 'SUV/Jeep',
+  'sliderHome_txt-card_slider_content_17': 'Maximize your host earnings',
+  'sliderHome_txt-card_slider_time_17': 'August-25-2023',
+  'sliderHome_img-card_slider_17':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_18': 'SUV/Jeep',
+  'sliderHome_txt-card_slider_content_18': 'Maximize your host earnings',
+  'sliderHome_txt-card_slider_time_18': 'August-25-2023',
+  'sliderHome_img-card_slider_18':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_1': 'SUV/Jeep',
+  'sliderHome_img-card_slider_1':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_2': 'SUV/Jeep',
+  'sliderHome_img-card_slider_2':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_3': 'SUV/Jeep',
+  'sliderHome_img-card_slider_3':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_4': 'SUV/Jeep',
+  'sliderHome_img-card_slider_4':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_5': 'SUV/Jeep',
+  'sliderHome_img-card_slider_5':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  'sliderHome_txt-card_slider_title_6': 'SUV/Jeep',
+  'sliderHome_img-card_slider_6':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+
+  home_q_and_a_title_txt_1: 'Edit here...',
+  home_q_and_a_label_txt_1: 'Edit here...',
+  home_q_and_a_desc_txt_1: 'Edit here...',
+  home_q_and_a_desc_txt_2: 'Edit here...',
+  home_q_and_a_desc_txt_3: 'Edit here...',
+  home_q_and_a_label_txt_2: 'Edit here...',
+  home_q_and_a_desc_txt_4: 'Edit here...',
+  home_q_and_a_desc_txt_5: 'Edit here...',
+  home_q_and_a_desc_txt_6: 'Edit here...',
+  home_q_and_a_label_txt_3: 'Edit here...',
+  home_q_and_a_desc_txt_7: 'Edit here...',
+  home_q_and_a_desc_txt_8: 'Edit here...',
+  home_q_and_a_desc_txt_9: 'Edit here...',
+  home_q_and_a_label_txt_4: 'Edit here...',
+  home_q_and_a_label_txt_10: 'Edit here...',
+  home_q_and_a_label_txt_11: 'Edit here...',
+  home_q_and_a_label_txt_12: 'Edit here...',
+  home_q_and_a_img: 'Edit here...',
+
+  home_explore_txt_1: 'Edit here...',
+  home_explore_item_txt_1: 'Edit here...',
+  home_explore_item_txt_2: 'Edit here...',
+
+  drive_with_uber_q7a_title_1: 'Edit here...',
+  drive_with_uber_q7q_lbl_1: 'Edit here...',
+  drive_with_uber_q7q_content_1: 'Edit here...',
+  drive_with_uber_q7q_content_2: 'Edit here...',
+  drive_with_uber_q7q_content_3: 'Edit here...',
+  drive_with_uber_q7q_lbl_2: 'Edit here...',
+  drive_with_uber_q7q_content_4: 'Edit here...',
+  drive_with_uber_q7q_content_5: 'Edit here...',
+  drive_with_uber_q7q_content_6: 'Edit here...',
+  drive_with_uber_q7q_lbl_3: 'Edit here...',
+  drive_with_uber_q7q_content_7: 'Edit here...',
+  drive_with_uber_q7q_content_8: 'Edit here...',
+  drive_with_uber_q7q_content_9: 'Edit here...',
+  drive_with_uber_q7q_lbl_4: 'Edit here...',
+  drive_with_uber_q7q_content_10: 'Edit here...',
+  drive_with_uber_q7q_content_11: 'Edit here...',
+  drive_with_uber_q7q_content_12: 'Edit here...',
+  drive_with_uber_getStatedTitle_title_1: 'Edit here...',
+  drive_with_uber_getStatedTitle_btn_sub_lbl_1: 'Edit here...',
+  drive_with_uber_getStatedTitle_btn_lbl_1: 'Edit here...',
+  drive_with_uber_getStatedTitle_btn_sub_lbl_2: 'Edit here...',
+  drive_with_uber_getStatedTitle_btn_lbl_2: 'Edit here...',
+  drive_with_uber_getStatedTitle_sentence_1: 'Edit here...',
+  drive_with_uber_getStatedTitle_sentence_2: 'Edit here...',
+  drive_with_uber_getStatedTitle_sentence_3: 'Edit here...',
   drive_with_uber_hero_img:
     'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63d82ff7ba27e7ee16cce7de_dwuguest1tiny.jpeg ',
-  drive_with_uber_hero_logo_unlock: '...',
-  drive_with_uber_hero_logo_another: '...',
-  drive_with_uber_hero_title_1: '...',
-  drive_with_uber_hero_title_2: '...',
-  drive_with_uber_hero_para_1: '...',
-  drive_with_uber_hero_para_2: '...',
-  drive_with_uber_hero_btn: '...',
-  drive_with_uber_hero_link: '...',
+  drive_with_uber_hero_logo_unlock: 'Edit here...',
+  drive_with_uber_hero_logo_another: 'Edit here...',
+  drive_with_uber_hero_title_1: 'Edit here...',
+  drive_with_uber_hero_title_2: 'Edit here...',
+  drive_with_uber_hero_para_1: 'Edit here...',
+  drive_with_uber_hero_para_2: 'Edit here...',
+  drive_with_uber_hero_btn: 'Edit here...',
+  drive_with_uber_hero_link: 'Edit here...',
   drive_with_uber_intro_img:
     'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f913e7a34806823acdff1a_ga-illustration-16.svg',
-  drive_with_uber_intro_title_1: '...',
-  drive_with_uber_intro_para_1: '...',
-  drive_with_uber_intro_para_2: '...',
-  drive_with_uber_perk_heading: '...',
-  drive_with_uber_perk_title_1: '...',
-  drive_with_uber_perk_desc_1: '...',
-  drive_with_uber_perk_title_2: '...',
-  drive_with_uber_perk_desc_2: '...',
-  drive_with_uber_perk_title_3: '...',
-  drive_with_uber_perk_desc_3: '...',
-  drive_with_uber_perk_title_4: '...',
-  drive_with_uber_perk_desc_4: '...',
-  drive_with_uber_step_title: '...',
-  drive_with_uber_step_heading: '...',
+  drive_with_uber_intro_title_1: 'Edit here...',
+  drive_with_uber_intro_para_1: 'Edit here...',
+  drive_with_uber_intro_para_2: 'Edit here...',
+  drive_with_uber_perk_heading: 'Edit here...',
+  drive_with_uber_perk_title_1: 'Edit here...',
+  drive_with_uber_perk_desc_1: 'Edit here...',
+  drive_with_uber_perk_title_2: 'Edit here...',
+  drive_with_uber_perk_desc_2: 'Edit here...',
+  drive_with_uber_perk_title_3: 'Edit here...',
+  drive_with_uber_perk_desc_3: 'Edit here...',
+  drive_with_uber_perk_title_4: 'Edit here...',
+  drive_with_uber_perk_desc_4: 'Edit here...',
+  drive_with_uber_step_title: 'Edit here...',
+  drive_with_uber_step_heading: 'Edit here...',
   drive_with_uber_step_img:
     'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63cef76977f95804643dc7b4_howitworks-guest%20c-p-500.jpg',
-  drive_with_uber_step_item_title_1: '...',
-  drive_with_uber_step_item_sub_title_1: '...',
-  drive_with_uber_step_item_title_2: '...',
-  drive_with_uber_step_item_sub_title_2: '...',
-  drive_with_uber_step_item_title_3: '...',
-  drive_with_uber_step_item_sub_title_3: '...',
+  drive_with_uber_step_item_title_1: 'Edit here...',
+  drive_with_uber_step_item_sub_title_1: 'Edit here...',
+  drive_with_uber_step_item_title_2: 'Edit here...',
+  drive_with_uber_step_item_sub_title_2: 'Edit here...',
+  drive_with_uber_step_item_title_3: 'Edit here...',
+  drive_with_uber_step_item_sub_title_3: 'Edit here...',
+  drive_with_uber_explore_img: 'Edit here...',
+  drive_with_uber_explore_wrap_title: 'Edit here...',
+  drive_with_uber_explore_title: 'Edit here...',
+  drive_with_uber_explore_desc: 'Edit here...',
 
-  partner_with_us_hero_img: '...',
-  partner_with_us_hero_title: '...',
-  partner_with_us_hero_content: '...',
+  partner_with_us_hero_img: 'Edit hereEdit here...',
+  partner_with_us_hero_title: 'Edit here...',
+  partner_with_us_hero_content: 'Edit here...',
+  partner_with_us_benefits_card_title_1: 'Edit here...',
+  partner_with_us_benefits_card_desc_1: 'Edit here...',
+  partner_with_us_benefits_card_btn_1: 'Edit here...',
+  partner_with_us_benefits_card_title_2: 'Edit here...',
+  partner_with_us_benefits_card_desc_2: 'Edit here...',
+  partner_with_us_benefits_card_btn_2: 'Edithere...',
+  partner_with_us_benefits_card_title_3: 'Edit here...',
+  partner_with_us_benefits_card_desc_3: 'Edit here...',
+  partner_with_us_benefits_card_btn_3: 'Edit here...',
+  partner_with_us_benefits_card_title_4: 'Edit here...',
+  partner_with_us_benefits_card_desc_4: 'Edit here...',
+  partner_with_us_benefits_card_btn_4: 'Edit here...',
 
   hosting_s1: 'value11',
   hosting_s2: 'value12',
@@ -145,7 +278,7 @@ const data: IdynamicData<string> = {
   //shareACar
   //itemBodyTop
   'img-bodyTop-shareACar':
-    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg',
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
   'txt-bodytop-shareACar_content':
     "When you list your car, you're earning money while helping others navigate your city. It's a win-win, and your next big opportunity.",
   'txt-bodytop-shareACar_header': 'Turn your car into extra money',
@@ -262,22 +395,64 @@ const data: IdynamicData<string> = {
     " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!",
 
   //commonQuestion
-  commonQuestion_shareACar_label_01: '...',
-  commonQuestion_shareACar_content_01: '...',
-  commonQuestion_shareACar_content_02: '...',
-  commonQuestion_shareACar_content_03: '...',
-  commonQuestion_shareACar_label_02: '...',
-  commonQuestion_shareACar_content_04: '...',
-  commonQuestion_shareACar_content_05: '...',
-  commonQuestion_shareACar_content_06: '...',
-  commonQuestion_shareACar_label_03: '...',
-  commonQuestion_shareACar_content_07: '...',
-  commonQuestion_shareACar_content_08: '...',
-  commonQuestion_shareACar_content_09: '...',
-  commonQuestion_shareACar_label_04: '...',
-  commonQuestion_shareACar_content_10: '...',
-  commonQuestion_shareACar_content_11: '...',
-  commonQuestion_shareACar_content_12: '...',
+  commonQuestion_shareACar_label_01: 'How do I find a car and book a trip?',
+  commonQuestion_shareACar_content_01:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_02:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_03:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_label_02: 'How do I find a car and book a trip?',
+  commonQuestion_shareACar_content_04:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_05:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_06:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_label_03: 'How do I find a car and book a trip?',
+  commonQuestion_shareACar_content_07:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_08:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_09:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_label_04: 'How do I find a car and book a trip?',
+  commonQuestion_shareACar_content_10:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_11:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_12:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+
+  //commonQuestionBottom
+  commonQuestionBottom_shareACar_label_01: 'How do I find a car and book a trip?',
+  commonQuestionBottom_shareACar_content_01:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_02:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_03:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_label_02: 'How do I find a car and book a trip?',
+  commonQuestionBottom_shareACar_content_04:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_05:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_06:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_label_03: 'How do I find a car and book a trip?',
+  commonQuestionBottom_shareACar_content_07:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_08:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_09:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_label_04: 'How do I find a car and book a trip?',
+  commonQuestionBottom_shareACar_content_10:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_11:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_12:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
 
   ////////////////////
   // host community
@@ -368,6 +543,36 @@ const data: IdynamicData<string> = {
   txtDescriptionCommunity:
     "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
 
+  //commonQuestionCommunity
+  commonQuestion_Community_label_01: 'How do I find a car and book a trip?',
+  commonQuestion_Community_content_01:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_02:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_03:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_label_02: 'How do I find a car and book a trip?',
+  commonQuestion_Community_content_04:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_05:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_06:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_label_03: 'How do I find a car and book a trip?',
+  commonQuestion_Community_content_07:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_08:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_09:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_label_04: 'How do I find a car and book a trip?',
+  commonQuestion_Community_content_10:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_11:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_12:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  //////////////////
   mainTitle_Slide_HowItWork: 'OUT MISSION',
   title_Slide_HowItWork: 'Chúng tôi kết nối những chiếc xe an toàn, tiện lợi với mọi người',
   img1_Slide_HowItWork:
@@ -745,33 +950,32 @@ const data: IdynamicData<string> = {
   mainNotice_notice2: 'Getaround Acquires HyreCar!',
   noticeContent_notice2: 'Read the announcement'
 }
-// Thực hiện cuộc gọi API và cập nhật dữ liệu trong Redux slice
-export const fetchData = () => async (dispatcha: any) => {
-  try {
-    const response = await axios.get('http://landing.ult.unlockcar.co/page/get/config/interface')
-    const apiData = response.data // Dữ liệu từ API
-    const dispatch = useDispatch()
-    // Dispatch một action để cập nhật dữ liệu trong Redux slice
-    dispatch(dataSlice.actions.updateData(apiData))
-    console.log(apiData)
-    return apiData
-  } catch (error) {
-    // Xử lý lỗi nếu có
-    console.error('Lỗi khi gọi API:', error)
-  }
+
+
+interface DataState {
+  data: IdynamicData<string>
 }
+
+const initialState: DataState = {
+  data: data
+}
+
 const dataSlice = createSlice({
-  name: 'dataSlice',
-  initialState: data,
+  name: 'data',
+  initialState: initialState,
   reducers: {
-    updateData: (state, action) => {
-      // Cập nhật dữ liệu trong Redux state
-      return { ...state, ...action.payload }
-    }
+    // update:(state,action:PayloadAction<any>) =>{
+    //   state = action.payload
+    // },
   },
-  extraReducers: (builder) => {}
+  extraReducers: (builder) => {
+    builder.addCase(_getData.fulfilled, (state, { payload }) => {
+      state.data = payload.data.data
+    })
+  }
+
 })
 
-export const {} = dataSlice.actions
+// export const { update } = dataSlice.actions
 const dataReducer = dataSlice.reducer
 export default dataReducer

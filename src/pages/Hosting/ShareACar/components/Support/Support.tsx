@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Support = ({ item }: Props) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className='flex items-center justify-between bg-white text-black rounded-2xl pt-[28px] px-[32px] pb-[36px] lg:flex-col'>

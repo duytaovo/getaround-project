@@ -15,7 +15,7 @@ interface Props {
   classNameContent?: string
   classNameURL?: string
   classNameImage?: string
-  id:number
+  id: number
 }
 
 const CardSlider = ({
@@ -28,7 +28,7 @@ const CardSlider = ({
   classNameURL = ' text-sm leading-5 text-mainColor hover:text-white px-4 py-2 duration:500 cursor-pointer transition-all',
   classNameImage = 'rounded-2xl object-contain w-[324px] h-[300px] mb-3'
 }: Props) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className={className}>
       <div>
@@ -39,7 +39,12 @@ const CardSlider = ({
         alt='hosting-shareAcar'
         style={{}}
       /> */}
-        <Image id={`img_sliderTopComunity_${id}`} className={classNameImage} src={data[item?.img || '']} alt='Getaround Connect®' />
+        <Image
+          id={`img_sliderTopComunity_${id}`}
+          className={classNameImage}
+          src={data[item?.img || '']}
+          alt='Getaround Connect®'
+        />
         {/* <img src={item?.img} alt='' className={classNameImage} /> */}
       </div>
       {isContent == true && (

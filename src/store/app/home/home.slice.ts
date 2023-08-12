@@ -66,34 +66,34 @@ const initialState: HomePageType = {
     wrapperTitle: 'home_perfect_car_t6',
     itemsData: [
       {
-        id: "1",
-        title: 'SUV/Jeep',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+        id: '1',
+        title: 'sliderHome_txt-card_slider_title_1',
+        img: 'sliderHome_img-card_slider_1'
       },
       {
-        id: "2",
-        title: 'SUV/Jeep',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+        id: '2',
+        title: 'sliderHome_txt-card_slider_title_2',
+        img: 'sliderHome_img-card_slider_2'
       },
       {
-        id: "3",
-        title: 'SUV/Jeep',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+        id: '3',
+        title: 'sliderHome_txt-card_slider_title_3',
+        img: 'sliderHome_img-card_slider_3'
       },
       {
-        id: "4",
-        title: 'SUV/Jeep',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+        id: '4',
+        title: 'sliderHome_txt-card_slider_title_4',
+        img: 'sliderHome_img-card_slider_4'
       },
       {
-        id: "5",
-        title: 'SUV/Jeep',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+        id: '5',
+        title: 'sliderHome_txt-card_slider_title_5',
+        img: 'sliderHome_img-card_slider_5'
       },
       {
-        id: "6",
-        title: 'SUV/Jeep',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+        id: '6',
+        title: 'sliderHome_txt-card_slider_title_6',
+        img: 'sliderHome_img-card_slider_6'
       }
     ]
   },
@@ -101,37 +101,36 @@ const initialState: HomePageType = {
     id: 'p-003',
     itemsData: [
       {
-        id: "1",
-        title: 'We make sharing cars simple.',
-        content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
-        header: 'WHAT IS GETAROUND?',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e93194b43a1163b71ff_613d0738270e9b84f99c22ae_atlanta-georgia.jpeg',
+        id: '1',
+        title: 'home_carousel_intro_txt_title_1',
+        content: `home_carousel_intro_txt_content_1`,
+        header: 'home_carousel_intro_txt_header_1',
+        img: 'home_carousel_intro_txt_img_1',
         name: 'Sheri and Adam, Oahu, HI'
       },
       {
-
         // data[...itemsData.title]
-        id: "2",
-        title: 'We make sharing cars simple.',
-        content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
-        header: 'WHAT IS GETAROUND?',
-        img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6424a42fa7a5e299086ca951_yasminehostga%20Pequena.png',
+        id: '2',
+        title: 'home_carousel_intro_txt_title_2',
+        content: `home_carousel_intro_txt_content_2`,
+        header: 'home_carousel_intro_txt_header_2',
+        img: 'home_carousel_intro_txt_img_2',
         name: 'Sheri and Adam, Oahu, HI'
       },
       {
-        id: "3",
-        title: 'We make sharing cars simple.',
-        content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
-        header: 'WHAT IS GETAROUND?',
-        img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0bdc7fffbd39d91b6d46_ga-illustration-11.svg',
+        id: '3',
+        title: 'home_carousel_intro_txt_title_3',
+        content: `home_carousel_intro_txt_content_3`,
+        header: 'home_carousel_intro_txt_header_3',
+        img: 'home_carousel_intro_txt_img_3',
         name: 'Sheri and Adam, Oahu, HI'
       },
       {
-        id: "4",
-        title: 'We make sharing cars simple.',
-        content: `Getaround is the world's first carsharing marketplace to offer a 100% digital experience.`,
-        header: 'WHAT IS GETAROUND?',
-        img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0bdc7fffbd39d91b6d46_ga-illustration-11.svg',
+        id: '4',
+        title: 'home_carousel_intro_txt_title_4',
+        content: `home_carousel_intro_txt_content_4`,
+        header: 'home_carousel_intro_txt_header_4',
+        img: 'home_carousel_intro_txt_img_4',
         name: 'Sheri and Adam, Oahu, HI'
       }
     ]
@@ -169,10 +168,6 @@ const initialState: HomePageType = {
     itemsData: [
       {
         title: 'home_step_item_txt_1',
-        images: [
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/636580091db0b72179b2c1ab_appstore-icon.svg',
-          'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63657fca094cac0e19c45708_googleplay-icon.svg'
-        ],
         subTitle: 'home_step_item_txt_2'
       },
       {
@@ -200,99 +195,87 @@ const initialState: HomePageType = {
   },
   localFavouriteSection: {
     id: 'p-007',
-    wrapperTitle: 'CARS IN YOUR CITY',
-    heading: 'Local favorites near you',
+    wrapperTitle: 'home_local_favourite_section_title',
+    heading: 'home_local_favourite_section_heading',
     itemsData: [
       {
-        id: "1",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151560314aa5369291e7a_homesuv-p-500.jpg'
+        id: '1',
+        title: 'sliderHome_txt-card_slider_title_7',
+        img: 'sliderHome_img-card_slider_7'
       },
       {
-        id: "2",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63604de17a48638f8bcbfdd5_AdobeStock_519954384_Editorial_Use_Only%206.jpg'
+        id: '2',
+        title: 'sliderHome_txt-card_slider_title_8',
+        img: 'sliderHome_img-card_slider_8'
       },
       {
-        id: "3",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151a269cfc056b53bff66_homepuckuptruck-p-500.jpg'
+        id: '3',
+        title: 'sliderHome_txt-card_slider_title_9',
+        img: 'sliderHome_img-card_slider_9'
       },
       {
-        id: "4",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+        id: '4',
+        title: 'sliderHome_txt-card_slider_title_10',
+        img: 'sliderHome_img-card_slider_10'
       },
       {
-        id: "5",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e93194b43a1163b71ff_613d0738270e9b84f99c22ae_atlanta-georgia.jpeg'
+        id: '5',
+        title: 'sliderHome_txt-card_slider_title_11',
+        img: 'sliderHome_img-card_slider_11'
       },
       {
-        id: "6",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e93194b43a1163b71ff_613d0738270e9b84f99c22ae_atlanta-georgia.jpeg'
+        id: '6',
+        title: 'sliderHome_txt-card_slider_title_12',
+        img: 'sliderHome_img-card_slider_12'
       }
     ]
   },
   blogSilerSection: {
     id: 'p-008',
-    wrapperTitle: 'THE GETAROUND BLOG',
-    heading: 'The Road Ahead: Discover our Blog',
+    wrapperTitle: 'home_blog_section_title',
+    heading: 'home_blog_section_heading',
     itemsData: [
       {
-        id: "1",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151560314aa5369291e7a_homesuv-p-500.jpg'
+        id: '1',
+        title: 'sliderHome_txt-card_slider_title_13',
+        content: 'sliderHome_txt-card_slider_content_13',
+        time: 'sliderHome_txt-card_slider_time_13',
+        img: 'sliderHome_img-card_slider_13'
       },
       {
-        id: "2",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63604de17a48638f8bcbfdd5_AdobeStock_519954384_Editorial_Use_Only%206.jpg'
+        id: '2',
+        title: 'sliderHome_txt-card_slider_title_14',
+        content: 'sliderHome_txt-card_slider_content_14',
+        time: 'sliderHome_txt-card_slider_time_14',
+        img: 'sliderHome_img-card_slider_14'
       },
       {
-        id: "3",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151a269cfc056b53bff66_homepuckuptruck-p-500.jpg'
+        id: '3',
+        title: 'sliderHome_txt-card_slider_title_15',
+        content: 'sliderHome_txt-card_slider_content_15',
+        time: 'sliderHome_txt-card_slider_time_15',
+        img: 'sliderHome_img-card_slider_15'
       },
       {
-        id: "4",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/63f151630314aae858291f3f_homehatchback-p-500.jpg'
+        id: '4',
+        title: 'sliderHome_txt-card_slider_title_16',
+        content: 'sliderHome_txt-card_slider_content_16',
+        time: 'sliderHome_txt-card_slider_time_16',
+        img: 'sliderHome_img-card_slider_16'
       },
       {
-        id: "5",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e93194b43a1163b71ff_613d0738270e9b84f99c22ae_atlanta-georgia.jpeg'
+        id: '5',
+        title: 'sliderHome_txt-card_slider_title_17',
+        content: 'sliderHome_txt-card_slider_content_17',
+        time: 'sliderHome_txt-card_slider_time_17',
+        img: 'sliderHome_img-card_slider_17'
       },
       {
-        id: "6",
-        title: 'SUV/Jeep',
-        content: 'Maximize your host earnings',
-        time: 'August-25-2023',
-        img: 'https://assets-global.website-files.com/5c19140f997c250869180aa0/61423e93194b43a1163b71ff_613d0738270e9b84f99c22ae_atlanta-georgia.jpeg'
+        id: '6',
+        title: 'sliderHome_txt-card_slider_title_18',
+        content: 'sliderHome_txt-card_slider_content_18',
+        time: 'sliderHome_txt-card_slider_time_18',
+        img: 'sliderHome_img-card_slider_18'
       }
     ]
   },
@@ -300,7 +283,7 @@ const initialState: HomePageType = {
     id: 'p-009',
     wrapperTitle: 'home_q_and_a_title_txt_1',
     heading: 'home_q_and_a_heading_txt_1',
-    img: 'http://localhost:3000/src/assets/images/commonQuestionRight.svg',
+    img: 'home_q_and_a_img',
     itemsData: [
       {
         key: '1',

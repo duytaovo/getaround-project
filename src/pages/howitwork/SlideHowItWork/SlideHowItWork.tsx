@@ -16,8 +16,10 @@ export const DataSlideHowItWork = {
 const SlideHowItWork = () => {
   const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
     useSelector((state: RootState) => state.howitwork)
+
   const data = useAppSelector((state) => state.data)
   console.log(SlideHowItWorkR.mainTitle)
+
   console.log(data[SlideHowItWorkR.content1])
   return (
     <div className='flex-col items-stretch mb-28 flex'>

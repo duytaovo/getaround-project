@@ -9,8 +9,7 @@ type Props = {
 }
 
 const TopHostComunity = ({ item }: Props) => {
-  const data = useAppSelector((state) => state.data)
-
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div>
       <div className='flex flex-col justify-center items-center text-center'>

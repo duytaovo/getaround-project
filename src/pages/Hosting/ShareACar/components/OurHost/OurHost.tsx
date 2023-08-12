@@ -5,12 +5,12 @@ import { IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
 import { iDGenerator } from 'src/utils/idGenerator'
 
 type Props = {
-  item: IItemGetAroundYourBack,
-  prefix?:string
+  item: IItemGetAroundYourBack
+  prefix?: string
 }
 
-const OurHost = ({ item,prefix }: Props) => {
-  const data = useAppSelector((state) => state.data)
+const OurHost = ({ item, prefix }: Props) => {
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div>

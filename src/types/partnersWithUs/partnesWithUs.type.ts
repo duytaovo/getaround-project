@@ -10,5 +10,6 @@ export interface IHostBenefitsSection {
   itemsData: {
     title: string
     description: string
+    btn_title: string
   }[]
 }

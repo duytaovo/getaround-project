@@ -8,7 +8,7 @@ type Props = {}
 
 const PartnerWithUs = (props: Props) => {
   const { partnerBenefits, partnersHero } = useAppSelector((state) => state.partnersWithUs)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div>
       <section

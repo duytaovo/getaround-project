@@ -25,7 +25,7 @@ const BookUnlocknearCar = () => {
   }
   const { BookUnlockCar } = useSelector((state: RootState) => state.safetrust)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>
       <div className='w-full flex-col items-stretch flex relative'>

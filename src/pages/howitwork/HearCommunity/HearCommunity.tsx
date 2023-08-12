@@ -15,7 +15,7 @@ const HearCommunity = () => {
   const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
     useSelector((state: RootState) => state.howitwork)
   const howitwork = useAppSelector((state) => state.howitwork)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   console.log(data[howitwork.HearCommunityHowItWork.title])
   return (
     <div className='flex-col items-stretch mb-[104px] flex '>

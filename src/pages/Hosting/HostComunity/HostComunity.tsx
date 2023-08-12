@@ -11,7 +11,6 @@ import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExplore
 import { useAppSelector } from 'src/hooks/useRedux'
 import OurHost from './components/OurHost/OurHost'
 import TopHostComunity from './components/TopHostCommunity/OurHost'
-import { itemTopHostComunity } from 'src/items/ShareACar/ShareACar'
 import { Grid } from '@mui/material'
 import { Image } from 'src/components/Edition/Image'
 
@@ -31,16 +30,17 @@ const HostCominity = () => {
     imgExploreHosting,
     cardBodyButton,
     itemLink,
-    itemLinkNailTheBasic
+    itemLinkNailTheBasic,
+    topHostCommunity
   } = useAppSelector((state) => state.community)
 
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className='mt-[33px]'>
       {/* start slider */}
       <div className=' mb-bottom py-5 rounded-2xl'>
-        <TopHostComunity item={itemTopHostComunity} />
+        <TopHostComunity item={topHostCommunity} />
         <SliderHostComunity breakPoint={[2, 2, 2.5, 3]} breakPointScroll={[1, 1, 1, 1]} data={sliderHostComunity} />
       </div>
       {/* end slider */}

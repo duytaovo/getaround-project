@@ -18,24 +18,24 @@ const initialState: PartnersWithUsType = {
     id: 'benefits_s_02',
     itemsData: [
       {
-        title: 'Government partnerships',
-        description:
-          'Getaround partners with cities, agencies, and others on shared goals. Our vision is to make cities and communities better places to live. Getaround has a long history of collaborating with public-private partners to create innovative solutions.'
+        title: 'partner_with_us_benefits_card_title_1',
+        description: 'partner_with_us_benefits_card_desc_1',
+        btn_title: 'partner_with_us_benefits_card_btn_1'
       },
       {
-        title: 'Real estate partnerships',
-        description:
-          'Getaround works with all different types and classes of real estate assets to provide car sharing as an amenity. Our mission is to connect safe, convenient, and affordable cars with people who need them to live and work.'
+        title: 'partner_with_us_benefits_card_title_2',
+        description: 'partner_with_us_benefits_card_desc_2',
+        btn_title: 'partner_with_us_benefits_card_btn_2'
       },
       {
-        title: 'Strategic partnerships',
-        description:
-          'Getaround can help your enterprise grow or become more efficient through a strategic partnership. We can provide access to affordable, on-demand transportation to your customers, employees, or marketplace. Our team will work on a specialized operational plan for your organization by aligning our goals and initiatives.'
+        title: 'partner_with_us_benefits_card_title_3',
+        description: 'partner_with_us_benefits_card_desc_3',
+        btn_title: 'partner_with_us_benefits_card_btn_3'
       },
       {
-        title: 'Vehicle service & technology partnerships',
-        description:
-          'Getaround was founded in 2009 and operates in over 950 cities across the U.S. and Europe. Our community of car-owning hosts who share their cars with guests for on-demand mobility often require assistance in the form of service or technology partners to help them run their businesses. If you provide a service that you feel would be beneficial for our host community, reach out to discuss how we connect your service to our ecosystem of Getaround hosts.'
+        title: 'partner_with_us_benefits_card_title_4',
+        description: 'partner_with_us_benefits_card_desc_4',
+        btn_title: 'partner_with_us_benefits_card_btn_4'
       }
     ]
   }

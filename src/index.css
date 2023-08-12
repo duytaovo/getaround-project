@@ -20,7 +20,9 @@ html {
   justify-content: center;
   box-sizing: border-box;
 }
-
+textarea {
+  resize: both; /* or horizontal, vertical, none */
+}
 body {
   background: #1c2635;
   font-family: 'Brown-pro', sans-serif !important;

@@ -20,7 +20,7 @@ type Props = {
 const KeyFeatureItem: FC<Props> = ({ DataKeyFeatureItem }) => {
   const { BodyKeyFeatures } = useSelector((state: RootState) => state.connecthiw)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className='md:mt-0 mt-10 mb-[25px]'>
       {' '}
