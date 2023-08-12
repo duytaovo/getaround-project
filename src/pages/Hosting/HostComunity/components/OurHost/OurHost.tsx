@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { Text } from 'src/components/Edition/Text'
-import { useAppSelector } from 'src/hooks/useRedux'
+import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
+import { _getData } from 'src/store/dataSlice'
 import { IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
 
 type Props = {
@@ -8,19 +10,21 @@ type Props = {
 }
 
 const OurHost = ({ item }: Props) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
+  const dispatch = useAppDispatch()
 
+  useEffect(() => {
+    dispatch(_getData(''))
+  }, [dispatch])
   return (
     <div>
-      <Text
+      {/* <Text
         id={`txt_OurHost_community_title`}
         tag='span'
         content={data[item.title || '']}
         className={`text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2 `}
-      />
-      {/* <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>
-            {item.title}
-          </span> */}
+      /> */}
+      <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>abc</span>
       <Text
         id={`txt_OurHost_community_content`}
         tag='h2'

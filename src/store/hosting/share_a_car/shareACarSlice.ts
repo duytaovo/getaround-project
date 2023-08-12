@@ -16,6 +16,7 @@ import {
   itemOurHost,
   itemSupport,
   items,
+  itemsBottom,
   wrapperTitle
 } from 'src/items/ShareACarId/ShareACarId'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
@@ -48,6 +49,7 @@ interface ShareACarState {
   getAroundYourBack: IItemGetAroundYourBack
   step: ICustomeStep[]
   commonQuestion: ICommonQuestion[]
+  commonQuestionBottom: ICommonQuestion[]
   commonQuestionImg: IBodyCommonQuestionImg
   exploreHosting: ISelectItemsExploreHosting
   exploreHosting_bottom: ISelectItemsExploreHosting
@@ -68,6 +70,7 @@ const initialState: ShareACarState = {
   support: itemSupport,
   step: CustomeStepItems,
   commonQuestion: items,
+  commonQuestionBottom: itemsBottom,
   exploreHosting: DataExploreHostingShareCarText,
   exploreHosting_bottom:DataExploreHostingShareCarText_bottom,
   ourHost: itemOurHost,

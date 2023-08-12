@@ -20,7 +20,7 @@ const SafetyTrust = () => {
     useSelector((state: RootState) => state.safetrust)
 
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   console.log(data[ImgSlideLeftRightST.img])
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>

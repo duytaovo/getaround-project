@@ -8,7 +8,7 @@ interface PropsBanner {
   item: IItemBanner
 }
 const Banner = ({ item }: PropsBanner) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className='bg-white  h-[425px] flex flex-col justify-center bg-bannerComunity bg-no-repeat object-fill '>
@@ -20,22 +20,17 @@ const Banner = ({ item }: PropsBanner) => {
           className={`text-[32px] font-medium tracking-tight leading-8`}
         />
         {/* <strong className='text-[32px] font-medium tracking-tight leading-8'>{item.title}</strong> */}
-        <Text
-          id={`txt_banner_community_content`}
-          tag='p'
-          content={data[item.content || '']}
-          className={`py-5`}
-        />
+        <Text id={`txt_banner_community_content`} tag='p' content={data[item.content || '']} className={`py-5`} />
         {/* <p className='py-5'>{item.content}</p> */}
         <Button
           children={
-          <Text
-          id={`txt_banner_community_infoButton`}
-          tag='span'
-          content={data[item.infoButton || '']}
-          className={`text-xl`}
-        />
-        }
+            <Text
+              id={`txt_banner_community_infoButton`}
+              tag='span'
+              content={data[item.infoButton || '']}
+              className={`text-xl`}
+            />
+          }
           isNext={true}
           className='w-[200px] [&>*]:flex hover:duration-500 duration-500 hover:transition-all  text-black h-[70px]  rounded-lg bg-white hover:bg-mainColor  hover:text-white'
         ></Button>

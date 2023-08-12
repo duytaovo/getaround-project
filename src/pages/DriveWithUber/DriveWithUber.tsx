@@ -33,7 +33,7 @@ const DriveWithUber = (props: Props) => {
     driveWithUberExploreHosting,
     diriveQAndASection
   } = useAppSelector((state) => state.driveWithUberData)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div>
       <WrapperContent title='' classname='flex' isBgTransparent>

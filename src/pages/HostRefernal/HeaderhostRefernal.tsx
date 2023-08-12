@@ -13,7 +13,7 @@ export const DataHeaderHostrefernal = {
   img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63ec0f79defe6c3903d84ee4_ga-illustration-2.svg'
 }
 const HeaderhostRefernal = () => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const { HeaderhostRefernal } = useSelector((state: RootState) => state.hostingReferral)
   return (
     <div className='flex justify-center px-[36px] sm:flex-col'>

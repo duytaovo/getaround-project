@@ -11,7 +11,7 @@ type Props = {
 }
 
 const SingleCommonQuestion: FC<Props> = ({ contents, path, paddingRight }) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div
       style={{

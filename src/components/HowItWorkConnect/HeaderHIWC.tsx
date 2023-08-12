@@ -20,7 +20,7 @@ export const DataHeaderConnect = {
 const HeaderHIWC = () => {
   const { HeaderConnect } = useSelector((state: RootState) => state.connecthiw)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className='max-w-full mt-[0%] mx-auto mb-10'>
       <div

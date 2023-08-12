@@ -32,7 +32,7 @@ const CustomCardSlider = ({
   prefix,
   id
 }: Props) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className={className}>

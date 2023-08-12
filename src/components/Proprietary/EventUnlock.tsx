@@ -62,7 +62,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
   }, [isOnScreen])
   const { ProprietaryST } = useSelector((state: RootState) => state.safetrust)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div id='proprietary-component' className={`flex-col items-stretch mb-[104px] flex `}>
       <div className='w-full max-w-[1272px] flex-col self-center items-stretch flex relative'>

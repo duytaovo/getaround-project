@@ -7,7 +7,7 @@ interface Props {
   className?: string
 }
 const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, className }) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className={className}>
       <div className='w-full flex-col max-w-[1272px] self-center items-stretch px-auto flex'>

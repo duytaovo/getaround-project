@@ -15,6 +15,8 @@ import {
   itemOurHost,
   itemSliderHostComunity,
   itemTopGettingStarted,
+  itemTopHostComunity,
+  itemsCommonQuestionCommunity,
   theNailBasicContent
 } from 'src/items/ShareACarId/ShareACarId'
 import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
@@ -27,6 +29,11 @@ import {
   IItemTopGettingStarted
 } from 'src/types/hosting_comunity.type '
 import { IItemBodyBannerCard, IItemCarousel, IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
+interface ICommonQuestion {
+  key: string
+  label: string
+  contents: string[]
+}
 
 interface ShareACarState {
   sliderHostComunity: IItemSliderHostComunity[]
@@ -41,11 +48,11 @@ interface ShareACarState {
   topGettingStarted: IItemTopGettingStarted
   imgGettingStarted: string
   imgExploreHosting: string
-  cardBodyButton:IItemCardBodyButton
-
-  itemLinkNailTheBasic:IItemNailTheBasic[]
-  itemLink:IItemLink[]
-
+  cardBodyButton: IItemCardBodyButton
+  commonQuestion: ICommonQuestion[]
+  itemLinkNailTheBasic: IItemNailTheBasic[]
+  itemLink: IItemLink[]
+  topHostCommunity: IItemGetAroundYourBack
 }
 
 const initialState: ShareACarState = {
@@ -60,11 +67,12 @@ const initialState: ShareACarState = {
   ourHost: itemOurHost,
   gettingStartedNailBasic: theNailBasicContent,
   topGettingStarted: itemTopGettingStarted,
-  imgGettingStarted:itemImgGettingStarted,
-  imgExploreHosting:itemImgExploreHosting,
-  itemLinkNailTheBasic:itemLinkNailTheBasic,
-  itemLink:itemLink
-
+  imgGettingStarted: itemImgGettingStarted,
+  imgExploreHosting: itemImgExploreHosting,
+  itemLinkNailTheBasic: itemLinkNailTheBasic,
+  itemLink: itemLink,
+  commonQuestion: itemsCommonQuestionCommunity,
+  topHostCommunity: itemTopHostComunity
 }
 
 const communitySlice = createSlice({

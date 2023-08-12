@@ -19,11 +19,13 @@ import BodyCard from './components/BodyCard/BodyCard'
 import { useDispatch } from 'react-redux'
 import { IBodyTop, IItemSlider } from 'src/types/hosting_shareACar.type'
 import { addSlider, updateBodyTop, updateSlider } from 'src/store/hosting/share_a_car/shareACarSlice'
-import { useAppSelector } from 'src/hooks/useRedux'
+import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import GetAroundYourBack from './components/GetAroundYourBack/GetAroundYourBack'
 import OurHost from './components/OurHost/OurHost'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { useEffect } from 'react'
+import { _getData } from 'src/store/dataSlice'
 
 const ShareACar = () => {
   const {
@@ -43,11 +45,12 @@ const ShareACar = () => {
     support,
     wrapperTitle,
     imgExploreHosting,
-    exploreHosting_bottom
+    exploreHosting_bottom,
+    commonQuestionBottom
   } = useAppSelector((state) => state.shareAcar)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const handleBodyTopChange = (newBodyTop: IBodyTop) => {
     dispatch(updateBodyTop(newBodyTop))
@@ -114,7 +117,7 @@ const ShareACar = () => {
               className='flex-col-reverse'
               breakPoint={[1, 1, 1, 1]}
               breakPointScroll={[1, 1, 1, 1]}
-              prefix={"sliderShareACar"}
+              prefix={'sliderShareACar'}
             />
           </div>
         </div>
@@ -177,11 +180,11 @@ const ShareACar = () => {
               items={commonQuestion}
               className='w-1/2 md:w-full'
             />
-            <div className='w-1/2 md:w-full md:mt-2 md:p-0 p-4 flex justify-center items-center bg-white rounded-2xl ml-4 md:ml-0'>
+            <div className='w-1/2 md:w-full md:mt-2 md:p-0 p-4 flex justify-center bg-white items-center  rounded-2xl ml-4 md:ml-0'>
               {/* <img width='50% md:lg' src={commonQuestionImg.img} alt='' /> */}
               <Image
                 id={`img_commonQuestion-shareACar`}
-                className='50% md:lg object-contain'
+                className='w-full md:lg object-contain  '
                 src={data[commonQuestionImg.img || '']}
                 alt='hosting-shareAcar'
               />
@@ -243,7 +246,7 @@ const ShareACar = () => {
           <div className='flex'>
             <CustomeCommonQuestions
               titleClassName='text-white/90 text-bold text-[18px]'
-              items={commonQuestion}
+              items={commonQuestionBottom}
               className='w-full'
             />
           </div>

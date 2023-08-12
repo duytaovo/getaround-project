@@ -32,7 +32,7 @@ const HowItWork = () => {
     SlideHowItWorkR,
     ImgSlideLeftRight_HowItWork
   } = useSelector((state: RootState) => state.howitwork)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const howitwork = useAppSelector((state) => state.howitwork)
 
   const dispatch = useDispatch()

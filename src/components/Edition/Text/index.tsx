@@ -96,7 +96,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
             cols={20}
             className={`${className || ''} rounded outline-none bg-transparent border border-slate-400 px-2`}
           ></textarea>
-          <div className='flex h-7 absolute -top-8 -right-[2px]'>
+          <div className='flex h-7 absolute -top-8 '>
             {editOptions.map((option, index) => {
               const body: IBody = {
                 id: id,

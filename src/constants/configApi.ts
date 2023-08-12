@@ -1,5 +1,5 @@
 const config = {
-    baseUrl: '',
+    baseUrl: 'http://landing.ult.unlockcar.co/',
   }
   
   export default config
