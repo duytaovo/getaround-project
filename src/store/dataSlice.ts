@@ -1,9 +1,11 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+
 import dataApi from 'src/apis/data/data.api'
 import { payloadCreator } from 'src/utils/utils'
 
 export const _getData = createAsyncThunk('data/getData', payloadCreator(dataApi.getData))
+
 
 interface IdynamicData<T> {
   [key: string]: T
@@ -944,10 +946,11 @@ const data: IdynamicData<string> = {
 
   mainNotice_notice1:
     'We use cookies (and other similar technologies) to collect data to improve your experience on our site. By using our website, you՚re agreeing to the collection of data as described in our',
-  subNotice_notice1: 'Privacy Policy You can change your preferences at any time.',
-  mainNotice_notice2: 'Exciting News: Getaround Acquires HyreCar!',
+  subNotice_notice1: 'You can change your preferences at any time.',
+  mainNotice_notice2: 'Getaround Acquires HyreCar!',
   noticeContent_notice2: 'Read the announcement'
 }
+
 
 interface DataState {
   data: IdynamicData<string>
@@ -970,6 +973,7 @@ const dataSlice = createSlice({
       state.data = payload.data.data
     })
   }
+
 })
 
 // export const { update } = dataSlice.actions
