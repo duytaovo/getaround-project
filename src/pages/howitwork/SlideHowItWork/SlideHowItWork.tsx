@@ -18,9 +18,7 @@ const SlideHowItWork = () => {
     useSelector((state: RootState) => state.howitwork)
 
   const data = useAppSelector((state) => state.data.data)
-  console.log(SlideHowItWorkR.mainTitle)
 
-  console.log(data[SlideHowItWorkR.img1])
   return (
     <div className='flex-col items-stretch mb-28 flex '>
       <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative'>
@@ -61,7 +59,7 @@ const SlideHowItWork = () => {
               alt=''
               className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block'
             /> */}
-            <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] bottom-0'>
+            <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] bottom-0 '>
               <div className='max-w-[45ch] text-center mt-0 mx-auto text-[#727272] font-normal'>
                 <Text
                   id={SlideHowItWorkR.content1}
@@ -90,7 +88,7 @@ const SlideHowItWork = () => {
               className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block 
               (max-width: 479px) 100vw, (max-width: 767px) 45vw, (max-width: 991px) 33vw, 329.078125px'
             /> */}
-            <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] left-44 sm:left-[45px] bottom-0 md:left-[90px]'>
+            <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] left-44 sm:left-[45px] bottom-0'>
               <div className='max-w-[45ch] text-center mt-0 mx-auto text-[#727272] font-normal'>
                 <Text
                   id={SlideHowItWorkR.content2}
