@@ -15,7 +15,7 @@ export const DataHeaderKeyFeatures = {
 const KeyFeature = () => {
   const { HeaderKeyFeatures } = useSelector((state: RootState) => state.connecthiw)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className='flex-col items-center mt-[5%] p-[5%] flex'>
       <div className='max-w-[1140px] mx-auto block'>

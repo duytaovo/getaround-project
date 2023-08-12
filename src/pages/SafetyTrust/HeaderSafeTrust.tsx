@@ -18,7 +18,7 @@ const HeaderSafeTrust = () => {
   // )
   const { HeaderST } = useSelector((state: RootState) => state.safetrust)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div>
       <div className='flex justify-center px-[36px] sm:flex-col'>

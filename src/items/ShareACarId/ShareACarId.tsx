@@ -103,6 +103,45 @@ export const items: ICommonQuestions[] = [
     ]
   }
 ]
+
+export const itemsBottom: ICommonQuestions[] = [
+  {
+    key: '1',
+    label: 'commonQuestionBottom_shareACar_label_01',
+    contents: [
+      'commonQuestionBottom_shareACar_content_01',
+      "commonQuestionBottom_shareACar_content_02",
+      'commonQuestionBottom_shareACar_content_03'
+    ]
+  },
+  {
+    key: '2',
+    label: 'commonQuestionBottom_shareACar_label_02',
+    contents: [
+      'commonQuestionBottom_shareACar_content_04',
+      "commonQuestionBottom_shareACar_content_05",
+      'commonQuestionBottom_shareACar_content_06'
+    ]
+  },
+  {
+    key: '3',
+    label: 'commonQuestionBottom_shareACar_label_03',
+    contents: [
+      'commonQuestionBottom_shareACar_content_07',
+      "commonQuestionBottom_shareACar_content_08",
+      'commonQuestionBottom_shareACar_content_09'
+    ]
+  },
+  {
+    key: '4',
+    label: 'commonQuestion_shareACar_label_04',
+    contents: [
+      'commonQuestion_shareACar_content_10',
+      "commonQuestion_shareACar_content_11",
+      'commonQuestion_shareACar_content_12'
+    ]
+  }
+]
 ////
 export const ItemSliderShareCar: IItemSlider[] = [
   {
@@ -331,3 +370,42 @@ export const DataExploreHostingShareCarText_Community: IExploreHostingText = {
   Description: 'txtDescriptionCommunity',
   Link: '/'
 }
+
+export const itemsCommonQuestionCommunity: ICommonQuestions[] = [
+  {
+    key: '1',
+    label: 'commonQuestion_Community_label_01',
+    contents: [
+      'commonQuestion_Community_content_01',
+      "commonQuestion_Community_content_02",
+      'commonQuestion_Community_content_03'
+    ]
+  },
+  {
+    key: '2',
+    label: 'commonQuestion_Community_label_02',
+    contents: [
+      'commonQuestion_Community_content_04',
+      "commonQuestion_Community_content_05",
+      'commonQuestion_Community_content_06'
+    ]
+  },
+  {
+    key: '3',
+    label: 'commonQuestion_Community_label_03',
+    contents: [
+      'commonQuestion_Community_content_07',
+      "commonQuestion_Community_content_08",
+      'commonQuestion_Community_content_09'
+    ]
+  },
+  {
+    key: '4',
+    label: 'commonQuestion_Community_label_04',
+    contents: [
+      'commonQuestion_Community_content_10',
+      "commonQuestion_Community_content_11",
+      'commonQuestion_Community_content_12'
+    ]
+  }
+]

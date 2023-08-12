@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
 import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
 import { ItemSlider } from '../../items/SliderItem/Slider'
@@ -20,16 +20,22 @@ import CustomeCarousel from 'src/components/Carousel/index'
 import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCarSharing'
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
-import { useAppSelector } from 'src/hooks/useRedux'
+import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { Text } from 'src/components/Edition/Text'
 import { iDGenerator } from 'src/utils/idGenerator'
 import { Image } from 'src/components/Edition/Image'
+import { _getData } from 'src/store/dataSlice'
 
 type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(_getData(''))
+  }, [dispatch])
 
   return (
     <div className='overflow-x-hidden'>

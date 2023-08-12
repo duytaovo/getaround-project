@@ -32,7 +32,7 @@ export const DataPowerFullSafeTrust = {
 const PowerfulVetting = () => {
   const { PowerFullST } = useSelector((state: RootState) => state.safetrust)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div
       className='opacity-[1] flex-col items-stretch mb-[104px] flex text-[16px] font-normal leading-[140%]'

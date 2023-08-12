@@ -14,7 +14,7 @@ interface Props {
 
 const ContentSlider = ({ classNameHeader, classNameTitle, classNameContent, item }: Props) => {
   const _title = item.title?.split(' ')
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div>
@@ -33,12 +33,12 @@ const ContentSlider = ({ classNameHeader, classNameTitle, classNameContent, item
       />
       {/* <h2 className={` text-mainColor text-[52px] font-medium spacing tracking-tight	leading-[52px] text-left text-ellipsis ${classNameTitle}`}>{changeColorWhiteAndMain(_title)}</h2> */}
       <div>
-      <Text
-        id={`txt-contentSlider-shareACar-content`}
-        tag='p'
-        content={data[item.content || '']}
-        className={`${classNameContent} text-[#727272] text-justify flex flex-col flex-start leading-[22px] mt-7 md:mt-2 `}
-      />
+        <Text
+          id={`txt-contentSlider-shareACar-content`}
+          tag='p'
+          content={data[item.content || '']}
+          className={`${classNameContent} text-[#727272] text-justify flex flex-col flex-start leading-[22px] mt-7 md:mt-2 `}
+        />
         {/* <p
           className={`${classNameContent} text-[#727272] text-justify flex flex-col flex-start leading-[22px] mt-7 md:mt-2`}
         >

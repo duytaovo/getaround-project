@@ -1,5 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+import dataApi from 'src/apis/data/data.api'
+import { payloadCreator } from 'src/utils/utils'
+
+export const _getData = createAsyncThunk('data/getData', payloadCreator(dataApi.getData))
+
 interface IdynamicData<T> {
   [key: string]: T
 }
@@ -271,7 +276,7 @@ const data: IdynamicData<string> = {
   //shareACar
   //itemBodyTop
   'img-bodyTop-shareACar':
-    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0cc59fa56f9bb02ee62f_ga-illustration-13.svg',
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
   'txt-bodytop-shareACar_content':
     "When you list your car, you're earning money while helping others navigate your city. It's a win-win, and your next big opportunity.",
   'txt-bodytop-shareACar_header': 'Turn your car into extra money',
@@ -388,22 +393,64 @@ const data: IdynamicData<string> = {
     " We'll reach out to have our proprietary hardware, Getaround Connect®, installed in your car. Connect® lets guests unlock the car with their phone, and gives you insights about the car, trips, and vehicle security. Once Connect® is installed, you're ready for bookings!",
 
   //commonQuestion
-  commonQuestion_shareACar_label_01: '...',
-  commonQuestion_shareACar_content_01: '...',
-  commonQuestion_shareACar_content_02: '...',
-  commonQuestion_shareACar_content_03: '...',
-  commonQuestion_shareACar_label_02: '...',
-  commonQuestion_shareACar_content_04: '...',
-  commonQuestion_shareACar_content_05: '...',
-  commonQuestion_shareACar_content_06: '...',
-  commonQuestion_shareACar_label_03: '...',
-  commonQuestion_shareACar_content_07: '...',
-  commonQuestion_shareACar_content_08: '...',
-  commonQuestion_shareACar_content_09: '...',
-  commonQuestion_shareACar_label_04: '...',
-  commonQuestion_shareACar_content_10: '...',
-  commonQuestion_shareACar_content_11: '...',
-  commonQuestion_shareACar_content_12: '...',
+  commonQuestion_shareACar_label_01: 'How do I find a car and book a trip?',
+  commonQuestion_shareACar_content_01:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_02:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_03:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_label_02: 'How do I find a car and book a trip?',
+  commonQuestion_shareACar_content_04:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_05:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_06:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_label_03: 'How do I find a car and book a trip?',
+  commonQuestion_shareACar_content_07:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_08:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_09:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_label_04: 'How do I find a car and book a trip?',
+  commonQuestion_shareACar_content_10:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_11:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_shareACar_content_12:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+
+  //commonQuestionBottom
+  commonQuestionBottom_shareACar_label_01: 'How do I find a car and book a trip?',
+  commonQuestionBottom_shareACar_content_01:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_02:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_03:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_label_02: 'How do I find a car and book a trip?',
+  commonQuestionBottom_shareACar_content_04:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_05:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_06:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_label_03: 'How do I find a car and book a trip?',
+  commonQuestionBottom_shareACar_content_07:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_08:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_09:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_label_04: 'How do I find a car and book a trip?',
+  commonQuestionBottom_shareACar_content_10:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_11:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestionBottom_shareACar_content_12:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
 
   ////////////////////
   // host community
@@ -494,6 +541,36 @@ const data: IdynamicData<string> = {
   txtDescriptionCommunity:
     "Lock in a bonus for adding your vehicle to Getaround, and another that's based on your earnings over time.",
 
+  //commonQuestionCommunity
+  commonQuestion_Community_label_01: 'How do I find a car and book a trip?',
+  commonQuestion_Community_content_01:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_02:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_03:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_label_02: 'How do I find a car and book a trip?',
+  commonQuestion_Community_content_04:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_05:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_06:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_label_03: 'How do I find a car and book a trip?',
+  commonQuestion_Community_content_07:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_08:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_09:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_label_04: 'How do I find a car and book a trip?',
+  commonQuestion_Community_content_10:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_11:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  commonQuestion_Community_content_12:
+    'Browse thousands of cars in our 300+ U.S. cities, filter by date, car style and class',
+  //////////////////
   mainTitle_Slide_HowItWork: 'OUT MISSION',
   title_Slide_HowItWork: 'Chúng tôi kết nối những chiếc xe an toàn, tiện lợi với mọi người',
   img1_Slide_HowItWork:
@@ -872,13 +949,29 @@ const data: IdynamicData<string> = {
   noticeContent_notice2: 'Read the announcement'
 }
 
+interface DataState {
+  data: IdynamicData<string>
+}
+
+const initialState: DataState = {
+  data: data
+}
+
 const dataSlice = createSlice({
-  name: 'dataSlice',
-  initialState: data,
-  reducers: {},
-  extraReducers: (builder) => {}
+  name: 'data',
+  initialState: initialState,
+  reducers: {
+    // update:(state,action:PayloadAction<any>) =>{
+    //   state = action.payload
+    // },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(_getData.fulfilled, (state, { payload }) => {
+      state.data = payload.data.data
+    })
+  }
 })
 
-export const {} = dataSlice.actions
+// export const { update } = dataSlice.actions
 const dataReducer = dataSlice.reducer
 export default dataReducer

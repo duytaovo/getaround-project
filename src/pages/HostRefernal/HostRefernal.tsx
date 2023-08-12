@@ -39,7 +39,7 @@ const HostRefernal = () => {
     ImgSlideLeftRight_HostRefernal,
     ImgExploreHR
   } = useSelector((state: RootState) => state.hostingReferral)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
 
   // const handleExploreHIW = (newExploreHostring: ISelectItemsExploreHosting) => {

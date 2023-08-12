@@ -24,7 +24,7 @@ type Props = {
 }
 
 const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   const dispatch = useDispatch()
   console.log(data[DataExploreHostingText.Description])

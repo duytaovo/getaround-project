@@ -4,17 +4,16 @@ import { useAppSelector } from 'src/hooks/useRedux'
 import { IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
 import { iDGenerator } from 'src/utils/idGenerator'
 
-
 type Props = {
-    item:IItemGetAroundYourBack
+  item: IItemGetAroundYourBack
 }
 
-const GetAroundYourBack = ({item}: Props) => {
-  const data = useAppSelector((state) => state.data)
+const GetAroundYourBack = ({ item }: Props) => {
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div>
-       <Text
+      <Text
         id={`txt-getAroundYourBack-shareACar-title`}
         tag='span'
         content={data[item.title || '']}

@@ -5,19 +5,16 @@ import { useAppSelector } from 'src/hooks/useRedux'
 import { IItemBodyBannerCard } from 'src/types/hosting_shareACar.type'
 import { iDGenerator } from 'src/utils/idGenerator'
 
-
-
 interface Props {
   item: IItemBodyBannerCard
 }
 
-
-const BodyBanner = ({item}: Props) => {
-  const data = useAppSelector((state) => state.data)
+const BodyBanner = ({ item }: Props) => {
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className='bg-shareACar object-cover flex flex-start bg-cover rounded-lg flex-col justify-between leading-[22.4px] pt-[38px] px-[54px] pb-[54px]'>
-       <Text
+      <Text
         id={`txt-bodyBaner-shareACar-title`}
         tag='h3'
         content={data[item.title || '']}

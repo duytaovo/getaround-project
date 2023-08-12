@@ -9,7 +9,7 @@ import { useAppSelector } from 'src/hooks/useRedux'
 const HowItWorkConnect = () => {
   const { SlideHIWCR } = useSelector((state: RootState) => state.connecthiw)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className='bg-mainBackGroundColor'>
       <HeaderHIWC />

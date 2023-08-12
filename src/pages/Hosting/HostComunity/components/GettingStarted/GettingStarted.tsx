@@ -24,8 +24,8 @@ const GettingStarted = ({
   itemLinkNailTheBasic,
   itemLink
 }: PropsGettingStarted) => {
-  const { commonQuestion } = useAppSelector((state) => state.shareAcar)
-  const data = useAppSelector((state) => state.data)
+  const { commonQuestion } = useAppSelector((state) => state.community)
+  const data = useAppSelector((state) => state.data.data)
 
   const renderItemNailTheBasic = () => {
     return itemLinkNailTheBasic?.map((item: any, index: number) => (

@@ -17,7 +17,7 @@ type Props = {
 const SlideHIWC: FC<Props> = ({ DataSliceHIWC }) => {
   const { SlideHIWCR } = useSelector((state: RootState) => state.connecthiw)
   const dispatch = useDispatch()
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   // console.log(SlideHIWCR?.[0]?.linkTo)
   // console.log([ in data)
   return (

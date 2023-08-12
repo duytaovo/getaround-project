@@ -13,7 +13,7 @@ interface PropsCardBodyImg {
 }
 // w-[260px] h-[260px] lg:w-[350px] lg:h-[350px] xl:w-[300px] xl:h-[300px] md:w-auto
 export const CardBodyImg = ({ itemCardBodyImg }: PropsCardBodyImg) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className=' h-[260px] sm:h-[200px] text-black font-medium text-[20px] break-words hover:text-mainColor  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
@@ -49,7 +49,7 @@ interface PropsCardBodyButton {
 }
 // w-[260px] h-[260px] xl:w-[300px] xl:h-[300px] lg:w-[350px] lg:h-[350px]
 export const CardBodyButton = ({ item }: PropsCardBodyButton) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className=' h-[260px] sm:h-[200px] text-mainColor  text-[20px] lg:text-[15px] break-words bg-white flex items-center  rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
@@ -75,7 +75,7 @@ interface PropsCardBodyParnerDeal {
   itemCardBodyParnerDeal: IItemBodyBannerCard
 }
 export const CardBodyParnerDeal = ({ itemCardBodyParnerDeal }: PropsCardBodyParnerDeal) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className='w-full h-[300px] text-black font-medium text-[20px] break-words bg-white flex items-center rounded-2xl border border-solid flex-row justify-around px-10 leading-5 border-[#d2d2d2]'>
@@ -130,8 +130,8 @@ interface PropsCardBodyReferFriend {
   itemCardBodyReferFriend: IItemBodyRefer
 }
 export const CardBodyReferFriend = ({ itemCardBodyReferFriend }: PropsCardBodyReferFriend) => {
-  const data = useAppSelector((state) => state.data)
-  
+  const data = useAppSelector((state) => state.data.data)
+
   return (
     <div className='flex flex-col items-start justify-center w-full h-[300px]   text-black font-medium text-[20px] break-words bg-white rounded-2xl border border-solid  px-10 leading-5 border-[#d2d2d2]'>
       <Text
