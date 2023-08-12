@@ -27,7 +27,6 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
   const data = useAppSelector((state) => state.data.data)
 
   const dispatch = useDispatch()
-  console.log(data[DataExploreHostingText.Description])
 
   return (
     <div className={className}>
@@ -50,7 +49,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
         <div className={`${DataExploreHostingStyle.styleImg}`}>
           <Image
             id={img || ''}
-            className='w-full h-full object-fit-cover object-[50%_22%]'
+            className='w-full h-full object-fit-cover object-[50%_22%] sm:rounded-b-none'
             src={img || ''}
             alt='Getaround Connect®'
           />

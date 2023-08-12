@@ -22,7 +22,7 @@ const SlideHowItWork = () => {
 
   console.log(data[SlideHowItWorkR.img1])
   return (
-    <div className='flex-col items-stretch mb-28 flex'>
+    <div className='flex-col items-stretch mb-28 flex '>
       <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative'>
         <Text
           id={SlideHowItWorkR.mainTitle}
@@ -43,12 +43,12 @@ const SlideHowItWork = () => {
           Chúng tôi kết nối <span className='text-white'>những chiếc xe an toàn, tiện lợi </span> với mọi người
         </h2> */}
       </div>
-      <div className='relative'>
-        <div className='max-w-[900px] flex justify-center mx-auto ' style={{ gridColumnGap: '34px' }}>
-          <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
+      <div className='relative sm:flex-col'>
+        <div className='max-w-[900px] flex justify-center mx-auto sm:flex-col' style={{ gridColumnGap: '34px' }}>
+          <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative sm:w-full'>
             <Image
               id={SlideHowItWorkR.img1}
-              className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block'
+              className='ml-auto w-full max-w-[76%] sm:max-w-full rounded-[20px] mb-10 align-middle border-none inline-block'
               // sizes='(max-width: 479px) 100vw, (max-width: 767px) 45vw, (max-width: 991px) 33vw, 329.078125px'
               src={data[SlideHowItWorkR.img1]}
               alt='Getaround Connect®'
@@ -74,10 +74,10 @@ const SlideHowItWork = () => {
               </div>
             </div>
           </div>
-          <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
+          <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative sm:w-full'>
             <Image
               id={SlideHowItWorkR.img2}
-              className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block 
+              className='ml-auto w-full max-w-[76%] sm:max-w-full rounded-[20px] mb-10 align-middle border-none inline-block 
               (max-width: 479px) 100vw, (max-width: 767px) 45vw, (max-width: 991px) 30vw, 300.078125px'
               src={data[SlideHowItWorkR.img2]}
               alt='Getaround Connect®'
@@ -90,7 +90,7 @@ const SlideHowItWork = () => {
               className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block 
               (max-width: 479px) 100vw, (max-width: 767px) 45vw, (max-width: 991px) 33vw, 329.078125px'
             /> */}
-            <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] left-44 md:left-[90px] bottom-0 '>
+            <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] left-44 sm:left-[45px] bottom-0 md:left-[90px]'>
               <div className='max-w-[45ch] text-center mt-0 mx-auto text-[#727272] font-normal'>
                 <Text
                   id={SlideHowItWorkR.content2}

@@ -9,6 +9,7 @@ const ConsentManager = () => {
   const [memo, setMemo] = useState(true)
   const { Notice1 } = useSelector((state: RootState) => state.notice)
   const data = useAppSelector((state) => state.data.data)
+  console.log(<Text id={Notice1.noticeMain} tag='span' content={data[Notice1.noticeMain]} className='' />)
   return (
     <div className={`${memo === true ? ' w-full  bg-[#1f4160]' : 'hidden'}`}>
       <div className='text-white bg-scroll flex p-[7px_10px]'>
