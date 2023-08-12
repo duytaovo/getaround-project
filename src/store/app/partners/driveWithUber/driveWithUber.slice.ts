@@ -93,13 +93,12 @@ const initialState: DriveWithUberType = {
   driveWithUberExploreHosting: {
     id: 'drive_explore_s_05',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6324f5891e795a0a4cf1c346_AdobeStock_488832115-p-1080.jpg',
-    wrapperTitle: '',
+    wrapperTitle: 'drive_with_uber_explore_wrap_title',
     itemData: {
       mainTitle: 'EXPLORE HOSTING',
       headerTitle: '',
-      Title: 'Have a car? Start sharing',
-      Description:
-        "Become a Host and list your car on Getaround. You'll help your neighbors travel easier while making extra money each month.",
+      Title: 'drive_with_uber_explore_title',
+      Description: 'drive_with_uber_explore_desc',
       Link: ''
     }
   },
