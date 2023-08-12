@@ -64,6 +64,18 @@ const ShareACar = () => {
     dispatch(updateSlider({ index, slider: newSlider }))
   }
 
+  // const handleUpdateText = async () => {
+  //   const body = {
+  //     _id: id,
+  //     buy_count:
+  //   }
+  //   const res = await dispatch(addToCart(body)).then(unwrapResult)
+  //   await dispatch(getCartPurchases()).then(unwrapResult)
+  //   toast.success(res.message, {
+  //     position: 'top-center',
+  //     autoClose: 4000
+  //   })
+  // }
   return (
     <div className='pt-[84px]'>
       {/* start top */}
