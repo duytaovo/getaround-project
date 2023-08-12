@@ -25,7 +25,7 @@ const Carousel_About = ({
   const { ExploreAboutUs, ConnectedCarSharingR, CarouselNewsRoom, TitleCarouselAboutUs } = useSelector(
     (state: RootState) => state.AboutUs
   )
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className={`${className} `}>

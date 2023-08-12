@@ -20,7 +20,7 @@ const Step = () => {
     customeSteps,
     customeSteps2
   } = useSelector((state: RootState) => state.howitwork)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const [step, setStep] = useState(true)
   return (
     <div>

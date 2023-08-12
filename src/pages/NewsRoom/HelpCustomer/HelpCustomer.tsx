@@ -18,7 +18,7 @@ const HelpCustomer = () => {
   const { CarouselNewsRoom, TitleCarouselNewsRoom, HelpCustomerNewsRoom } = useSelector(
     (state: RootState) => state.newsroom
   )
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10 sm:flex-col-reverse'>
