@@ -13,8 +13,8 @@ export interface IPropsCarouselReview {
   numberItemScroll: number
   data: IItemCarousel[]
   className?: string
-  classNameContent?: string,
-  prefix:string
+  classNameContent?: string
+  prefix: string
 }
 
 export default function Carousel_Review_Comunity({
@@ -63,8 +63,8 @@ export default function Carousel_Review_Comunity({
   }
 
   return (
-    <div className='flex justify-between'>
-      <div className='w-full '>
+    <div className='flex justify-between sm:justify-center'>
+      <div className='w-full sm:w-[86%]'>
         <Slider {...settings}>
           {data?.map((item, index: number) => (
             <div
@@ -74,7 +74,7 @@ export default function Carousel_Review_Comunity({
                   '
             >
               {' '}
-              <Review  item={item} classNameContent={classNameContent} className={className} />
+              <Review item={item} classNameContent={classNameContent} className={className} />
             </div>
           ))}
         </Slider>

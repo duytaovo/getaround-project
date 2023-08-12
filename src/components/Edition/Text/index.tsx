@@ -24,6 +24,7 @@ const editOptions = [
     id: 1,
     title: 'Đặt lại',
     callback: ({ setVal, content }: IBody) => {
+      console.log('sss')
       setVal(content)
     }
   },
