@@ -14,9 +14,10 @@ import SafeTrustReducer from './howitwork/SafeTrust/SafeTrustSlice'
 import driveWithUberSlice from './app/partners/driveWithUber/driveWithUber.slice'
 import partnersWithUsSlice from './app/partners/partnerWithUs/partnersWithUs.slice'
 import dataReducer from './dataSlice'
+import NoticeReducer from './notice/noticeSlice'
 export const store = configureStore({
   reducer: {
-    data:dataReducer,
+    data: dataReducer,
     loading: appReducer,
     shareAcar: shareAcarReducer,
     howitwork: HowItWorkReducer,
@@ -29,7 +30,8 @@ export const store = configureStore({
     community: communityReducer,
     hostingReferral: hostRefernalReducer,
     safetrust: SafeTrustReducer,
-    user: UserReducer
+    user: UserReducer,
+    notice: NoticeReducer
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]

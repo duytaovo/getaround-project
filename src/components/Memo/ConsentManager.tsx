@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { useAppSelector } from 'src/hooks/useRedux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
 const ConsentManager = () => {
   const [memo, setMemo] = useState(true)
-
+  const { Notice1 } = useSelector((state: RootState) => state.notice)
+  const data = useAppSelector((state) => state.data)
   return (
     <div className={`${memo === true ? ' w-full  bg-[#1f4160]' : 'hidden'}`}>
       <div className='text-white bg-scroll flex p-[7px_10px]'>
         <div className='w-[97%]'>
           <p className='m-0 text-[14px] font-normal leading-[140%] text-center mt-2'>
             <span>
-              We use cookies (and other similar technologies) to collect data to improve your experience on our site. By
-              using our website, you՚re agreeing to the collection of data as described in our{' '}
+              <Text id={Notice1.noticeMain} tag='span' content={data[Notice1.noticeMain]} className='' />
               <Link to='/' className='inline p-0 border-0 underline cursor-pointer'>
                 Privacy Policy
               </Link>
@@ -20,7 +24,7 @@ const ConsentManager = () => {
           <p className='m-0  text-[14px] font-normal leading-[140%] text-center mt-2'>
             <span>
               <Link to='/' className='inline p-0 border-0 underline cursor-pointer'>
-                You can change your preferences at any time.
+                <Text id={Notice1.noticeSub} tag='span' content={data[Notice1.noticeSub]} className='' />
               </Link>
             </span>
           </p>

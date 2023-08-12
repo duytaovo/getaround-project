@@ -17,12 +17,13 @@ const SlideHowItWork = () => {
   const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
     useSelector((state: RootState) => state.howitwork)
   const data = useAppSelector((state) => state.data)
+  console.log(SlideHowItWorkR.mainTitle)
   console.log(data[SlideHowItWorkR.content1])
   return (
     <div className='flex-col items-stretch mb-28 flex'>
       <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative'>
         <Text
-          id='mainTitleHIW'
+          id={SlideHowItWorkR.mainTitle}
           tag='div'
           content={data[SlideHowItWorkR.mainTitle]}
           className='max-w-1.5 text-center mx-auto text-mainColor uppercase text-xs font-bold leading-3 mb-6'
@@ -31,7 +32,7 @@ const SlideHowItWork = () => {
           Out mission
         </div> */}
         <Text
-          id='TitleHIW'
+          id={SlideHowItWorkR.title}
           tag='h2'
           content={data[SlideHowItWorkR.title]}
           className='max-w-xl text-center mx-auto text-mainColor font-bold text-4xl :selection:bg-mainColor sm:text-sm'
@@ -44,7 +45,7 @@ const SlideHowItWork = () => {
         <div className='max-w-[900px] flex justify-center mx-auto ' style={{ gridColumnGap: '34px' }}>
           <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <Image
-              id='img1SlideHIW'
+              id={SlideHowItWorkR.img1}
               className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block'
               // sizes='(max-width: 479px) 100vw, (max-width: 767px) 45vw, (max-width: 991px) 33vw, 329.078125px'
               src={data[SlideHowItWorkR.img1]}
@@ -61,7 +62,7 @@ const SlideHowItWork = () => {
             <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] bottom-0'>
               <div className='max-w-[45ch] text-center mt-0 mx-auto text-[#727272] font-normal'>
                 <Text
-                  id='content1HIW'
+                  id={SlideHowItWorkR.content1}
                   tag='span'
                   content={data[SlideHowItWorkR.content1]}
                   className='text-mainColor '
@@ -73,7 +74,7 @@ const SlideHowItWork = () => {
           </div>
           <div className='w-1/2 flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <Image
-              id='img2SlideHIW'
+              id={SlideHowItWorkR.img2}
               className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block 
               (max-width: 479px) 100vw, (max-width: 767px) 45vw, (max-width: 991px) 30vw, 300.078125px'
               src={data[SlideHowItWorkR.img2]}
@@ -90,7 +91,7 @@ const SlideHowItWork = () => {
             <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] left-44 md:left-[90px] bottom-0 '>
               <div className='max-w-[45ch] text-center mt-0 mx-auto text-[#727272] font-normal'>
                 <Text
-                  id='content2HIW'
+                  id={SlideHowItWorkR.content2}
                   tag='span'
                   content={data[SlideHowItWorkR.content2]}
                   className='text-mainColor '

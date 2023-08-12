@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
 interface IdynamicData<T> {
   [key: string]: T
 }
@@ -740,15 +741,34 @@ const data: IdynamicData<string> = {
 
   mainNotice_notice1:
     'We use cookies (and other similar technologies) to collect data to improve your experience on our site. By using our website, you՚re agreeing to the collection of data as described in our',
-  subNotice_notice1: 'Privacy Policy You can change your preferences at any time.',
-  mainNotice_notice2: 'Exciting News: Getaround Acquires HyreCar!',
+  subNotice_notice1: 'You can change your preferences at any time.',
+  mainNotice_notice2: 'Getaround Acquires HyreCar!',
   noticeContent_notice2: 'Read the announcement'
 }
-
+// Thực hiện cuộc gọi API và cập nhật dữ liệu trong Redux slice
+export const fetchData = () => async (dispatcha: any) => {
+  try {
+    const response = await axios.get('http://landing.ult.unlockcar.co/page/get/config/interface')
+    const apiData = response.data // Dữ liệu từ API
+    const dispatch = useDispatch()
+    // Dispatch một action để cập nhật dữ liệu trong Redux slice
+    dispatch(dataSlice.actions.updateData(apiData))
+    console.log(apiData)
+    return apiData
+  } catch (error) {
+    // Xử lý lỗi nếu có
+    console.error('Lỗi khi gọi API:', error)
+  }
+}
 const dataSlice = createSlice({
   name: 'dataSlice',
   initialState: data,
-  reducers: {},
+  reducers: {
+    updateData: (state, action) => {
+      // Cập nhật dữ liệu trong Redux state
+      return { ...state, ...action.payload }
+    }
+  },
   extraReducers: (builder) => {}
 })
 
