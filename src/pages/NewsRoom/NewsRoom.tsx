@@ -18,7 +18,7 @@ export const DataTitleCarouselNR = {
 }
 export const NewsRoom = () => {
   const { CarouselNewsRoom, TitleCarouselNewsRoom } = useSelector((state: RootState) => state.newsroom)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>

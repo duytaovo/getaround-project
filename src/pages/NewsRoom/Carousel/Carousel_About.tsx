@@ -22,7 +22,7 @@ const Carousel_About = ({
   classNameContent = 'text-lg text-[#727272] flex flex-start align-left wrap flex-column leading-[22px]'
 }: Props) => {
   const { CarouselNewsRoom, TitleCarouselNewsRoom } = useSelector((state: RootState) => state.newsroom)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className={`${className} `}>

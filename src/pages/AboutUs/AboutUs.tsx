@@ -26,7 +26,7 @@ import { RootState } from 'src/store/store'
 const AboutUs = () => {
   const { ExploreAboutUs, ConnectedCarSharingR, CarouselNewsRoom, TitleCarouselAboutUs, ImgExploreAboutUs } =
     useSelector((state: RootState) => state.AboutUs)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>

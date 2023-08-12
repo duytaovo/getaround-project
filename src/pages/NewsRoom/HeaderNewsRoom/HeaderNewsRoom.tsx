@@ -15,7 +15,7 @@ export const DataHeaderNewsRoom = {
 }
 const HeaderNewsRoom = () => {
   const { CarouselNewsRoom, TitleCarouselNewsRoom, HeaderNewsRoom } = useSelector((state: RootState) => state.newsroom)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>

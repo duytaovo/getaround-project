@@ -15,7 +15,7 @@ export const DataBannerAboutUs = {
 }
 const Banner = () => {
   const { ExploreAboutUs, ConnectedCarSharingR, BannerAboutUS } = useSelector((state: RootState) => state.AboutUs)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className='flex justify-center sm:flex-col sm:px-3'>

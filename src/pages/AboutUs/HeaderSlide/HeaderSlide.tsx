@@ -22,7 +22,7 @@ export const DataHeaderAboutUs = [
 ]
 const HeaderSlide = () => {
   const { ExploreAboutUs, ConnectedCarSharingR, HeaderAboutUs } = useSelector((state: RootState) => state.AboutUs)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className='flex-col items-stretch mb-[104px] flex'>

@@ -25,7 +25,7 @@ export const DataBlogAboutUs = {
 }
 const Blog = () => {
   const { BlogNewsRoom } = useSelector((state: RootState) => state.AboutUs)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className='flex justify-center h-auto w-full mb-16 md:mb-24 sm:flex-col sm:mb-20'>
