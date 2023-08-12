@@ -8,7 +8,8 @@ import { Image } from 'src/components/Edition/Image'
 const ConsentManager = () => {
   const [memo, setMemo] = useState(true)
   const { Notice1 } = useSelector((state: RootState) => state.notice)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
+
   return (
     <div className={`${memo === true ? ' w-full  bg-[#1f4160]' : 'hidden'}`}>
       <div className='text-white bg-scroll flex p-[7px_10px]'>

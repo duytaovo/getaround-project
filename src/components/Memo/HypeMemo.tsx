@@ -8,7 +8,7 @@ import { Image } from 'src/components/Edition/Image'
 const HypeMemo = () => {
   const [memo, setMemo] = useState(true)
   const { Notice2 } = useSelector((state: RootState) => state.notice)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className={`${memo === true ? ' w-80 h-28 bg-white rounded-xl flex mb-2 ml-5 justify-around' : 'hidden'}`}>
       <div className='w-[20%] h-full text-white bg-mainColor flex justify-center items-center rounded-l-xl'>
@@ -19,7 +19,6 @@ const HypeMemo = () => {
       </div>
       <div className='w-[70%] pl-6 h-full'>
         <h1 className='font-semibold text-[13px] mt-3 text-black'>
-          Exciting News: <br />{' '}
           <Text id={Notice2.noticeMain} tag='span' content={data[Notice2.noticeMain]} className='' />
         </h1>
         <Link to='/' className='font-semibold text-[13px] text-mainColor mt-8 underline '>

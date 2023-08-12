@@ -15,7 +15,7 @@ export const DataJoinTeamAboutUs = {
 }
 const JoinTeam = () => {
   const { JoinTeamAboutUs } = useSelector((state: RootState) => state.AboutUs)
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
     <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10 sm:flex-col'>
