@@ -49,7 +49,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
         <div className={`${DataExploreHostingStyle.styleImg}`}>
           <Image
             id={img || ''}
-            className='w-full h-full object-fit-cover object-[50%_22%] sm:rounded-b-none'
+            className='w-full h-full object-fit-cover object-[50%_22%] sm:sm:rounded-t-none'
             src={img || ''}
             alt='Getaround Connect®'
           />

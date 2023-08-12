@@ -19,7 +19,6 @@ const HypeMemo = () => {
       </div>
       <div className='w-[70%] pl-6 h-full'>
         <h1 className='font-semibold text-[13px] mt-3 text-black'>
-          Exciting News: <br />{' '}
           <Text id={Notice2.noticeMain} tag='span' content={data[Notice2.noticeMain]} className='' />
         </h1>
         <Link to='/' className='font-semibold text-[13px] text-mainColor mt-8 underline '>
