@@ -29,9 +29,7 @@ const BodyTop = ({ item, className }: Props) => {
   //   dispatch(_getData(''))
   // }, [dispatch])
   return (
-    <div
-      className={`${className} text-textCustom space-x-5 lg:space-x-0 flex items-center lg:flex-col-reverse justify-between`}
-    >
+    <div className={`${className} text-textCustom space-x-5 lg:space-x-0 flex  lg:flex-col-reverse justify-between`}>
       <div className='w-1/2 lg:w-full  h-full lg:h-full flex flex-col justify-between items-start'>
         {/* <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1> */}
         <Text
@@ -54,7 +52,7 @@ const BodyTop = ({ item, className }: Props) => {
               id={`txt-buttonBodyTop-shareACar`}
               tag='span'
               content={data[item.infoButton || '']}
-              className={`text-xl`}
+              className={`text-xl -translate-y-3`}
             />
           }
           isNext={true}
@@ -66,6 +64,7 @@ const BodyTop = ({ item, className }: Props) => {
         className='lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4 object-contain'
         src={data[item.img || '']}
         alt='hosting-shareAcar'
+        classNameContainer='w-fit'
       />
       {/* <img className=' lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4' src={item.img} alt='' /> */}
     </div>

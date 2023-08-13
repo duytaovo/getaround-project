@@ -18,14 +18,11 @@ interface Props {
   isLink?: boolean
   classNameContent?: string
   classNameImage?: string
-  classNameURL?:string
+  classNameURL?: string
   autoPlay?: boolean
   breakPoint: Array<number>
-  breakPointScroll:Array<number>
+  breakPointScroll: Array<number>
 }
-
-
-
 
 export default function SliderHostComunity({
   numberItem,
@@ -82,7 +79,7 @@ export default function SliderHostComunity({
   }
 
   return (
-    <div className='bg-mainColor/20 rounded-md p-2 overflow-hidden object-cover h-[360px]'>
+    <div className=' rounded-md  py-2 px-7 overflow-hidden object-cover h-full'>
       <Slider {...settings}>
         {data?.map((item, index: number) => (
           <div

@@ -16,17 +16,17 @@ const BodyBanner = ({ item }: Props) => {
     <div
       className={`bg-[url(${
         data[item.img || '']
-      })] object-cover w-full flex flex-start  bg-cover rounded-lg flex-col justify-between leading-[22.4px] pt-[38px] px-[54px] pb-[54px]`}
+      })] object-cover w-full flex flex-start  bg-cover rounded-lg flex-col justify-between leading-[22.4px] `}
     >
       {' '}
       <Image
         id={`img_bodyBanner-shareACar`}
-        className='relative object-cover lg:h-[250px] md:h-[320px]'
+        className='relative object-cover md:h-[320px] rounded-2xl'
         src={data[item.img || '']}
         alt='hosting-shareAcar'
       />
       <div
-        className='absolute lg:w-2/3 md:w-1/3 p-6 lg:bg-white sm:bg-black
+        className='absolute lg:w-2/3 md:w-1/3 p-6
       '
       >
         <Text
