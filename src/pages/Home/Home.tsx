@@ -61,11 +61,11 @@ const Home = (props: Props) => {
           <CustomeSlider
             breakPointScroll={[1, 1, 1, 1]}
             breakPoint={[2, 3, 3, 5]}
-            classNameContainer='px-6 w-full'
+            classNameContainer='px-6'
             classNameTitle='text-center py-2 text-white/80 justify-center'
-            className='bg-mainColor/20 flex flex-col items-center justify-center
-             rounded-md overflow-hidden h-full p-1'
-            classNameImage='rounded-md w-[100%] h-[100%] object-cover'
+            className='bg-mainColor/20
+             rounded-md h-fit p-1 box-border'
+            classNameImage='rounded-md w-[100%] h-[100px] object-cover'
             numberItem={5}
             numberItemScroll={1}
             isTitle={true}

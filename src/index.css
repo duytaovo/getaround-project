@@ -23,6 +23,10 @@ html {
 textarea {
   resize: both; /* or horizontal, vertical, none */
 }
+
+.slick-list {
+  min-height: 150px;
+}
 body {
   background: #1c2635;
   font-family: 'Brown-pro', sans-serif !important;

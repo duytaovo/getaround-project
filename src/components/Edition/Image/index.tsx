@@ -93,7 +93,7 @@ export const Image: FC<Iprops> = ({ id, className, src, alt, ...props }) => {
   }, [])
 
   return (
-    <div>
+    <div className='w-full'>
       <input
         ref={iRef}
         type='file'
