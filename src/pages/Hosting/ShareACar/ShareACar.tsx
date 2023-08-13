@@ -68,18 +68,6 @@ const ShareACar = () => {
     dispatch(updateSlider({ index, slider: newSlider }))
   }
 
-  const handleUpdateText = async () => {
-    const body = {
-      _id: idText,
-      body: valueText
-    }
-    const res = await dispatch(updateText(body)).then(unwrapResult)
-    await dispatch(_getData('')).then(unwrapResult)
-    toast.success(res.message, {
-      position: 'top-center',
-      autoClose: 4000
-    })
-  }
   return (
     <div className='pt-[84px]'>
       {/* start top */}
@@ -98,16 +86,16 @@ const ShareACar = () => {
         />
       </div>
       <div className='mb-bottom' id='getstarted'>
-        <div className='flex items-center justify-between lg:bg-transparent flex-wrap lg:flex-col lg:space-y-3 flex-auto rounded-2xl '>
-          <div className='w-1/2 p-4 h-full lg:w-full bg-white lg:bg-white  rounded-xl'>
+        <div className='flex items-center justify-between space-x-1 lg:bg-transparent flex-wrap lg:flex-col lg:space-y-3 flex-auto rounded-2xl '>
+          <div className='w-[45%] p-4 h-full lg:w-full bg-white lg:bg-white  rounded-xl'>
             <CustomForm />
           </div>
           <div className='w-1/2 py-6 lg:w-full lg:bg-white rounded-xl text-white'>
             <CustomeStep
-              classname='text-textCustom'
-              textClassName='text-textCustom'
+              classname='text-textCustom lg:text-black'
+              textClassName='text-textCustom lg:text-black'
               items={step}
-              titleClassName='text-textCustom'
+              titleClassName='text-textCustom lg:text-black'
               icons={[<TimeToLeaveOutlinedIcon />, <LinkedCameraOutlinedIcon />, <FileDownloadOutlinedIcon />]}
             />
           </div>
@@ -147,11 +135,11 @@ const ShareACar = () => {
       <div className=' p-5 mb-bottom'>
         <GetAroundYourBack item={getAroundYourBack} />
         <div className='lg:flex lg:flex-col '>
-          <div className='flex gap-10 mt-3 h-full mb-5  lg:flex-col'>
+          <div className='flex gap-10 mt-3 h-2/3 mb-5  lg:flex-col'>
             <div className='w-[70%]  lg:w-full  '>
               <BodyBanner item={bodyBannerCard} />
             </div>
-            <div className='w-[30%]  lg:w-full h-full justify-between'>
+            <div className='w-[30%] flex  lg:w-full  justify-between'>
               <BodyCard
                 prefix='bodyCardTop'
                 item={bodyCardTop}

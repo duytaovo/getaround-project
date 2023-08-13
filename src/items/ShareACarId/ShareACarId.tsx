@@ -53,7 +53,7 @@ export const DataExploreHostingShareCarText_bottom: IExploreHostingText = {
 export const CustomeStepItems: ICustomeSteps[] = [
   {
     title: 'txtCustomStepItemsTitle_1',
-    images: ['txtCustomStepImages1', 'txtCustomStepImages2'],
+    // images: ['txtCustomStepImages1', 'txtCustomStepImages2'],
     subTitle: 'txtCustomStepSubTitle_1'
   },
   {

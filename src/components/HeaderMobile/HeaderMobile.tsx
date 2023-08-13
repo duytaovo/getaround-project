@@ -1,9 +1,9 @@
-import{ useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from 'src/assets/images/logo.jpg'
 import MenuIcon from '@mui/icons-material/Menu'
 import { IconButton, Tooltip } from '@mui/material'
-import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined'
 import CustomeCollapseHeader from './CustomItemHeader'
 import { itemsHeaderMobile } from 'src/items/HeaderItem/HeaderItem'
 import { useTranslation } from 'react-i18next'
@@ -11,12 +11,12 @@ type Props = {}
 
 const HeaderMobile = (props: Props) => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [iconRotated, setIconRotated] = useState(false);
-  const toggleMenu = (e:React.MouseEvent<HTMLElement>) => {
+  const [iconRotated, setIconRotated] = useState(false)
+  const toggleMenu = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
     e.stopPropagation()
     setMenuOpen(!menuOpen)
-    setIconRotated(!menuOpen);
+    setIconRotated(!menuOpen)
   }
   return (
     <div className='mb-bottom z-[1500] bg-bgHeaderMobile backdrop-blur-md fixed w-[100vw] backdrop-saturate-[180%]'>
@@ -25,28 +25,34 @@ const HeaderMobile = (props: Props) => {
           <img src={logo} alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
         </Link>
         {menuOpen ? (
-          <Tooltip title='Hide menu' >
-            <IconButton onClick={(e)=>toggleMenu(e)}>
-              <ClearOutlinedIcon className={`text-black  transition-transform duration-300  ${iconRotated ? 'rotate-180' : 'rotate-0'} transition-transform duration-300`}></ClearOutlinedIcon>
+          <Tooltip title='Hide menu'>
+            <IconButton onClick={(e) => toggleMenu(e)}>
+              <ClearOutlinedIcon
+                className={`text-black  transition-transform duration-300  ${
+                  iconRotated ? 'rotate-180' : 'rotate-0'
+                } transition-transform duration-300`}
+              ></ClearOutlinedIcon>
             </IconButton>
           </Tooltip>
-          
         ) : (
-          <Tooltip title='Show menu' >
-          <IconButton onClick={(e)=>toggleMenu(e)}>
-            <MenuIcon className={`text-black  transition-transform duration-300`}></MenuIcon>
-          </IconButton>
-        </Tooltip>
+          <Tooltip title='Show menu'>
+            <IconButton onClick={(e) => toggleMenu(e)}>
+              <MenuIcon className={`text-black  transition-transform duration-300`}></MenuIcon>
+            </IconButton>
+          </Tooltip>
         )}
       </div>
       <div
         className={`${
           menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        } left-0   overflow-hidden transition-all  h-[803px] flex px-11`}
+        } left-0   overflow-hidden transition-all  h-[803px] flex px-8`}
       >
-        <CustomeCollapseHeader titleClassName='text-black/90 text-bold text-[18px] ' items={itemsHeaderMobile} className='w-full' />
+        <CustomeCollapseHeader
+          titleClassName='text-black/90 text-bold text-[18px] '
+          items={itemsHeaderMobile}
+          className='w-full'
+        />
       </div>
-      
     </div>
   )
 }

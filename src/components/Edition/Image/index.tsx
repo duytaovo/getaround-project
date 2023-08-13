@@ -52,9 +52,10 @@ interface Iprops {
   src: string
   style?: React.CSSProperties
   alt: string
+  classNameContainer?: string
 }
 
-export const Image: FC<Iprops> = ({ id, className, src, alt, ...props }) => {
+export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt, ...props }) => {
   const iRef = useRef<HTMLInputElement>(null)
   const cRef = useRef<HTMLDivElement>(null)
 
@@ -93,7 +94,7 @@ export const Image: FC<Iprops> = ({ id, className, src, alt, ...props }) => {
   }, [])
 
   return (
-    <div className='w-full'>
+    <div className={` ${classNameContainer}`}>
       <input
         ref={iRef}
         type='file'

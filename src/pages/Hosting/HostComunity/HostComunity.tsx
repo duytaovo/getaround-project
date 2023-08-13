@@ -68,17 +68,17 @@ const HostCominity = () => {
         <Row gutter={16}>
           <Col span={12} className='relative ml-auto mr-auto mt-[36px] '>
             {/* <div className=' bg-white rounded-md relative ml-auto mr-auto mt-[36px]'> */}
-            <Image
+            {/* <Image
               id={`img_gettingStarted_hostCommunity`}
               className='sticky bg-white rounded-2xl  object-contain max-h-[400px] w-[95%] top-1/3'
               src={data[imgGettingStarted || '']}
               alt='hosting-community'
-            />
-            {/* <img
-              src={imgGettingStarted}
+            /> */}
+            <img
+              src={data[imgGettingStarted || '']}
               alt=''
               className='sticky bg-white rounded-2xl  object-contain max-h-[400px] w-[95%] top-1/3'
-            /> */}
+            />
             {/* </div> */}
           </Col>
           <Col span={12}>
