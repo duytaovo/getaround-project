@@ -23,7 +23,7 @@ interface Props {
   autoPlay?: boolean
   breakPoint: Array<number>
   breakPointScroll: Array<number>
-  prefix?:string
+  prefix?: string
 }
 // breackPoint = {[1,1,2,2,3]}
 export default function CustomSlider({

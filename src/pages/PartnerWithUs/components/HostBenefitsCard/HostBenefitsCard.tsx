@@ -13,7 +13,7 @@ type HostBenefitsCardProps = {
 }
 
 const HostBenefitsCard = ({ item }: HostBenefitsCardProps) => {
-  const data = useAppSelector((state) => state.data)
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className='flex flex-col items-center'>
       <PartnerIcon size={40} />
