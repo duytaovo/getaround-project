@@ -957,7 +957,7 @@ interface DataState {
 }
 
 const initialState: DataState = {
-  data: {}
+  data: data
 }
 
 const dataSlice = createSlice({
