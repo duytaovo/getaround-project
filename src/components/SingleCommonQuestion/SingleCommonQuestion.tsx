@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from '../Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
 import { useAppSelector } from 'src/hooks/useRedux'
 
 type Props = {

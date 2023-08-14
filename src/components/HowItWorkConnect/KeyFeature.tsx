@@ -1,7 +1,6 @@
 import React from 'react'
 import KeyFeatureItem from './KeyFeatureItem'
 import { Text } from 'src/components/Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
 import { DataKeyFeatureItem } from 'src/items/KeyFeatureItem/DataKeyFeatureItem'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'

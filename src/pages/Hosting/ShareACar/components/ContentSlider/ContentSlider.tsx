@@ -3,7 +3,6 @@ import { Text } from 'src/components/Edition/Text'
 import { changeColorBlackAndMain, changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { IItemContentSlider } from 'src/types/hosting_shareACar.type'
-import { iDGenerator } from 'src/utils/idGenerator'
 
 interface Props {
   classNameHeader?: string

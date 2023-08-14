@@ -6,7 +6,6 @@ import { Text } from 'src/components/Edition/Text'
 import { changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { IBodyTop } from 'src/types/hosting_shareACar.type'
-import { iDGenerator } from 'src/utils/idGenerator'
 
 interface Props {
   item: IBodyTop

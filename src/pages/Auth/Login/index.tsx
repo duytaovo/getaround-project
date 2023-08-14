@@ -9,7 +9,6 @@ import { toast } from 'react-toastify'
 import Input from 'src/components/Input'
 import { Schema, schema } from 'src/utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
-import logo from 'src/assets/images/logo.jpg'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { login } from 'src/store/user/userSlice'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
@@ -61,7 +60,7 @@ const Login = () => {
     <div className='w-full flex justify-center'>
       <div className='lg:col-span-2 lg:col-start-4 bg-white w-1/2 justify-center m-10 rounded-2xl'>
         <div className='flex items-center justify-center rounded-2xl mt-3'>
-          <img src={logo} alt='logo' className='w-30 h-20'></img>
+          <img src='/public/logo.jpg' alt='logo' className='w-30 h-20'></img>
         </div>
         <form className='rounded p-10 shadow-sm' onSubmit={onSubmit} noValidate>
           <div className=' flex items-center justify-center text-[25px] text-black'>Đăng nhập</div>
