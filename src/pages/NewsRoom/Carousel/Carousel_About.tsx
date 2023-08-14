@@ -4,6 +4,7 @@ import DriveEtaIcon from '@mui/icons-material/DriveEta'
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined'
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined'
 import { Text } from 'src/components/Edition/Text'
+import { ISelectItemsCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
 import { Image } from 'src/components/Edition/Image'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,7 +12,7 @@ import { RootState } from 'src/store/store'
 import '../styles.css'
 import { ReactNode } from 'react'
 interface Props {
-  item: IItemCarousel
+  item: ISelectItemsCarouselNewsRoom
   className?: string
   classNameContent?: string
 }
@@ -43,7 +44,7 @@ const Carousel_About = ({
           />
           {/* <h3 className='text-[14px] font-sans text-[#727272] my-4'>{item?.description}</h3> */}
           <Link
-            to={data[item.linkTo]}
+            to={data[item.linkto]}
             className='text-[14px] font-semibold text-mainColor mt-3 underline hover:no-underline hover:text-black duration-100'
           >
             Read more

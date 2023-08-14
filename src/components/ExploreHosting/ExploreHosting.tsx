@@ -33,7 +33,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
       {isEx === true ? (
         <div className='w-full  self-center items-stretch  flex relative'>
           <Text
-            id={data[DataExploreHostingText?.mainTitle]}
+            id={DataExploreHostingText?.mainTitle}
             tag='div'
             content={data[DataExploreHostingText?.mainTitle] || ''}
             className='max-w-[37ch] text-center mx-auto text-mainColor uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'
@@ -48,7 +48,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
       <div className='w-full mx-auto flex-col items-start  flex relative sm:flex-col'>
         <div className={`${DataExploreHostingStyle.styleImg}`}>
           <Image
-            id={img || ''}
+            id={'ImgExploreAboutUs' || ''}
             className='w-full h-full object-fit-cover object-[50%_22%] sm:rounded-t-none'
             src={img || ''}
             alt='Getaround Connect®'
@@ -58,7 +58,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
         <div className={`${DataExploreHostingStyle.styleDivRight}`}>
           {isEx === false ? (
             <Text
-              id={data[DataExploreHostingText?.headerTitle] || ''}
+              id={DataExploreHostingText?.headerTitle || ''}
               tag='div'
               content={data[DataExploreHostingText?.headerTitle] || ''}
               className='text-black max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'
@@ -72,7 +72,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
           <div>
             <h2 className={`${DataExploreHostingStyle.styleTitle} md:text-[20px]`}>
               <Text
-                id={data[DataExploreHostingText?.Title] || ''}
+                id={DataExploreHostingText?.Title || ''}
                 tag='strong'
                 content={data[DataExploreHostingText?.Title] || ''}
                 // className='text-black max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] font-bold leading-[13px]'
@@ -81,7 +81,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
             </h2>
           </div>
           <Text
-            id={data[DataExploreHostingText?.Description] || ''}
+            id={DataExploreHostingText?.Description || ''}
             tag='div'
             content={data[DataExploreHostingText?.Description] || ''}
             className='text-[#727272] mt-[30px]  text-[16px] md:text-13px font-normal mb-4'

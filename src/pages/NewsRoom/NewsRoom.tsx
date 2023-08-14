@@ -26,7 +26,7 @@ export const NewsRoom = () => {
       <div className='mb-bottom'>
         <div>
           <Text
-            id={data[TitleCarouselNewsRoom.headerTitle]}
+            id={TitleCarouselNewsRoom.headerTitle}
             tag='span'
             content={data[TitleCarouselNewsRoom.headerTitle]}
             className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'
@@ -35,7 +35,7 @@ export const NewsRoom = () => {
             NEWS FROM GETAROUND
           </span> */}
           <Text
-            id={data[TitleCarouselNewsRoom.title]}
+            id={TitleCarouselNewsRoom.title}
             tag='h2'
             content={data[TitleCarouselNewsRoom.title]}
             className=' flex text-[32px] text-center  justify-center mb-2'

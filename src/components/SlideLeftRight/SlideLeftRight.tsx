@@ -20,7 +20,6 @@ type Props = {
 const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
   const dispatch = useDispatch()
   const data = useAppSelector((state) => state.data.data)
-
   return (
     <div
       className='opacity-[1] flex-col items-stretch mb-[104px] flex text-[16px] font-normal leading-[140%]'

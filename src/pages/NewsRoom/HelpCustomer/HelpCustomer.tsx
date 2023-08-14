@@ -54,7 +54,7 @@ const HelpCustomer = () => {
       </div>
       <div className='w-[35%] flex justify-center sm:w-[80%]'>
         <Image
-          id='imgHelpCustomerNewsRoom'
+          id={HelpCustomerNewsRoom.img}
           className='object-contain h-[500px]'
           src={data[HelpCustomerNewsRoom.img]}
           alt='Getaround Connect®'
