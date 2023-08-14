@@ -2,7 +2,7 @@ import { unwrapResult } from '@reduxjs/toolkit'
 import { FC, useState, useEffect, useRef } from 'react'
 import { toast } from 'react-toastify'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
-import { _getData } from 'src/store/dataSlice'
+import { _getData, updateData } from 'src/store/dataSlice'
 import { updateText } from 'src/store/hosting/share_a_car/shareACarSlice'
 
 interface IBody {
@@ -31,8 +31,17 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       id: 0,
       title: 'Lưu',
       callback: ({ id, value, setEnable }: IBody) => {
-        console.log({ id, value })
-        _updateText(id, value)
+        // console.log({ id, value })
+        _updateText(id, value).then((fb) => {
+          if (fb?.data?.result == 1) {
+            dispatch(updateData({ [id]: value }))
+            toast.success('Đã lưu thay đổi', {
+              position: 'top-right',
+              autoClose: 4000
+            })
+          }
+          hidden()
+        })
       }
     },
     {
@@ -88,19 +97,18 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
 
   var _updateText = async (id: string, value: string) => {
     const body = {
-      _id: id,
-      body: value
+      id: id,
+      text: value
     }
     try {
       const res = await dispatch(updateText(body)).then(unwrapResult)
-      await dispatch(_getData(''))
 
       toast.success(res.message, {
         position: 'top-center',
         autoClose: 4000
       })
 
-      console.log(res)
+      return res
     } catch (error) {}
   }
 

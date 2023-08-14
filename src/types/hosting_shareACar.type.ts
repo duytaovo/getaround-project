@@ -22,7 +22,7 @@ export interface IItemCarousel2 {
   linkTo: string
 }
 export interface IItemCarousel {
-  id: number
+  id: number | string
   title?: string
   header?: string
   content?: string

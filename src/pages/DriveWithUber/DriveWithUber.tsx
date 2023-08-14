@@ -19,7 +19,6 @@ import { useAppSelector } from 'src/hooks/useRedux'
 import { useState, useEffect } from 'react'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
-import { iDGenerator } from 'src/utils/idGenerator'
 
 type Props = {}
 
@@ -190,7 +189,7 @@ const DriveWithUber = (props: Props) => {
               // <p key={index} className='leading-[22px] text-white/80 text-[15px]'>
               //   {sentence}
               // </p>
-              <Text key={iDGenerator('txt')} id={sentence} tag='p' content={data[sentence]} className='' />
+              <Text key={getStatedSection.wrapperContent} id={sentence} tag='p' content={data[sentence]} className='' />
             ))}
           </div>
           <div className='flex pt-4 text-white/80 sm:flex-col'>

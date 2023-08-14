@@ -13,9 +13,7 @@ const OurHost = ({ item }: Props) => {
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(_getData(''))
-  }, [dispatch])
+  useEffect(() => {}, [dispatch])
   return (
     <div>
       <Text

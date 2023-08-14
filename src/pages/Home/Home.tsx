@@ -32,11 +32,8 @@ const Home = (props: Props) => {
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(_getData(''))
-  }, [dispatch])
+  useEffect(() => {}, [dispatch])
 
-  console.log(data)
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
@@ -84,6 +81,7 @@ const Home = (props: Props) => {
           numberItem={1}
           numberItemScroll={1}
           data={homePageData.homeIntoduceCarouselSection.itemsData}
+          prefix='home'
         />
       </section>
 

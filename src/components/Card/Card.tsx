@@ -2,7 +2,6 @@ import { Avatar, Card } from 'antd'
 import { IItemSlider } from 'src/types/hosting_shareACar.type'
 import { Image } from '../Edition/Image'
 import { Text } from '../Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
 import { useAppSelector } from 'src/hooks/useRedux'
 
 interface Props {

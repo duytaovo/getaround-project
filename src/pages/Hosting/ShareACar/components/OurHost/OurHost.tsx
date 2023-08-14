@@ -2,7 +2,6 @@ import React from 'react'
 import { Text } from 'src/components/Edition/Text'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { IItemGetAroundYourBack } from 'src/types/hosting_shareACar.type'
-import { iDGenerator } from 'src/utils/idGenerator'
 
 type Props = {
   item: IItemGetAroundYourBack
