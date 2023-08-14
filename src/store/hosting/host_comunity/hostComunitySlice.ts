@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
 import {
-  DataExploreHostingShareCarText,
   DataExploreHostingShareCarText_Community,
   itemBannerCommunity,
   itemCardBodyButton,

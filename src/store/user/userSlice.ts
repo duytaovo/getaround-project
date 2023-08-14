@@ -12,7 +12,7 @@ interface IUser {
 const initialState: IUser = {
   name: 'admin',
   token: '123',
-  permision: 0
+  permision: -1
 }
 
 const userSlice = createSlice({

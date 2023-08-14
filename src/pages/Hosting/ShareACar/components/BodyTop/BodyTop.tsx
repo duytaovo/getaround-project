@@ -33,14 +33,14 @@ const BodyTop = ({ item, className }: Props) => {
       <div className='w-1/2 lg:w-full  h-full lg:h-full flex flex-col justify-between items-start'>
         {/* <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1> */}
         <Text
-          id={`txt-bodytop-shareACar_header}`}
+          id={`txt-bodytop-shareACar_header`}
           tag='h1'
           content={data[item.header || 'abc']}
           className={`text-[47px] text-mainColor`}
         />
         {/* <p className='w-[90%] text-ellipsis text-justify break-words'>{item.content}</p> */}
         <Text
-          id={`txt-bodytop-shareACar_content}`}
+          id={`txt-bodytop-shareACar_content`}
           tag='p'
           content={data[item.content || '']}
           className={`w-[90%] text-ellipsis text-justify break-words`}
