@@ -1,9 +1,10 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { IItemCarousel, IItemSlider } from 'src/types/hosting_shareACar.type'
+import { IItemCarousel, IItemSlider, IItemCarousel2 } from 'src/types/hosting_shareACar.type'
 import { ISelectItemsCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
 import getBreakpoint from 'src/helpers/getBreakpoint'
+
 import { Col, Row } from 'antd'
 import NextArrow from 'src/components/NextArrow'
 import PrevArrow from 'src/components/PreArrow/PreArrow'
@@ -12,7 +13,7 @@ import { ReactNode } from 'react'
 interface Props {
   numberItem: number
   numberItemScroll: number
-  data: IItemCarousel[]
+  data: ISelectItemsCarouselNewsRoom[]
   className?: string
   classNameContent?: string
 }
@@ -60,7 +61,7 @@ export default function Carousel_Review_Comunity({
       }
     ]
   }
-  console.log(data)
+
   return (
     <div className='flex justify-between sm:justify-center'>
       <div className='w-full sm:w-[80%] '>

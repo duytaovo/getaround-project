@@ -1,7 +1,8 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { IItemCarousel, IItemSlider } from 'src/types/hosting_shareACar.type'
+import { IItemCarousel1, IItemSlider } from 'src/types/hosting_shareACar.type'
+import { ISelectItemsCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
 import getBreakpoint from 'src/helpers/getBreakpoint'
 import { Col, Row } from 'antd'
 import NextArrow from 'src/components/NextArrow'
@@ -11,7 +12,7 @@ import { ReactNode } from 'react'
 interface Props {
   numberItem: number
   numberItemScroll: number
-  data: IItemCarousel[]
+  data: ISelectItemsCarouselNewsRoom[]
   className?: string
   classNameContent?: string
 }

@@ -7,7 +7,20 @@ export interface IItemSlider {
   content?: string
   time?: string
 }
-
+export interface IItemCarousel1 {
+  id: number
+  title: string
+  date: string
+  description: string
+  linkTo: string
+}
+export interface IItemCarousel2 {
+  id: number
+  title: string
+  date: string
+  description: string
+  linkTo: string
+}
 export interface IItemCarousel {
   id: number
   title?: string
@@ -39,7 +52,7 @@ export interface IBodyTop {
   header?: string
   content?: string
   img?: string
-  infoButton?:string
+  infoButton?: string
 }
 
 export interface IBodyCommonQuestionImg {

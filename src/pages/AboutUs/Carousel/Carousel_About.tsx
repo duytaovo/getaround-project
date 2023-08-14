@@ -10,10 +10,10 @@ import { ReactNode } from 'react'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
-
+import { ISelectItemsCarouselNewsRoom } from 'src/types/aboutUs/CarouselNewsRoom'
 import { Link } from 'react-router-dom'
 interface Props {
-  item: IItemCarousel
+  item: ISelectItemsCarouselNewsRoom
   className?: string
   classNameContent?: string
 }
@@ -59,7 +59,7 @@ const Carousel_About = ({
             - $30 million on nnualized run-rate basis
           </h3> */}
           <Link
-            to={data[item.linkTo]}
+            to={data[item.linkto]}
             className='text-[14px] font-semibold text-mainColor mt-3 underline hover:no-underline hover:text-black duration-100'
           >
             Read more
