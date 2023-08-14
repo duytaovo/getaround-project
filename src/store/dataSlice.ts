@@ -41,6 +41,8 @@ const data: IdynamicData<string> = {
   home_step_item_txt_4: 'Edit here...',
   home_step_item_txt_5: 'Edit here...',
   home_step_item_txt_6: 'Edit here...',
+  home_step_item_img:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar.jpg',
 
   home_carousel_intro_txt_title_1: 'Edit here...',
   home_carousel_intro_txt_content_1: 'Edit here...',
