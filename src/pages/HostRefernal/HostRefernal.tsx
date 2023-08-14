@@ -37,7 +37,8 @@ const HostRefernal = () => {
     imgcustomeSteps,
     SlideLeftRighthostRefernal,
     ImgSlideLeftRight_HostRefernal,
-    ImgExploreHR
+    ImgExploreHR,
+    QuestionhostRefernal
   } = useSelector((state: RootState) => state.hostingReferral)
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
@@ -107,7 +108,7 @@ const HostRefernal = () => {
       />
       <WrapperContent titlePadding={8} textAlign='left' title='Need more info? Check out FAQs.'>
         <div>
-          <CustomeCommonQuestions items={DataitemsHostRefernal} className='w-full p-4' />
+          <CustomeCommonQuestions items={QuestionhostRefernal} className='w-full p-4' />
         </div>
       </WrapperContent>
     </div>

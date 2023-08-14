@@ -31,7 +31,8 @@ const Blog = () => {
     <div className='flex justify-center h-auto w-full mb-16 md:mb-24 sm:flex-col sm:mb-20'>
       <Image
         id={data[BlogNewsRoom.img]}
-        className='object-contain rounded-2xl w-1/2 flex justify-center mr-5 md:rounded-2xl sm:w-full'
+        style={{ width: '500px' }}
+        className='object-contain rounded-2xl w-full flex justify-center mr-5 md:rounded-2xl sm:w-full'
         src={data[BlogNewsRoom.img]}
         alt='Getaround Connect®'
       />

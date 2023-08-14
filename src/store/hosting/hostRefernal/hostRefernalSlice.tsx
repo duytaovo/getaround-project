@@ -1,17 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-
 import { ISelectItemsExploreHosting, ISelectItemsImgExploreHosting } from 'src/types/HowItWork'
-import { DataExploreHostingHostRefernalText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import { ISelectItemsSlideLeftRight, ISelectImglideLeftRight } from 'src/types/HowItWork'
-import { DataSlideLeftRightHostRefernal } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 import { ISelectItemsHeaderHostRefernal } from 'src/types/hostRefernal/hostRefernal'
-import { DataHeaderHostrefernal } from 'src/pages/HostRefernal/HeaderhostRefernal'
 import { ICustomeSteps } from 'src/types/customeSteps.type'
-import { CustomeStepItemHostRefernal } from 'src/items/CustomeStepItem/CustomeStepItem'
 import { ISelectItemsImgCustomeSteps } from 'src/types/hostRefernal/hostRefernal'
-import { DataImgCustomeStepHostRF } from 'src/pages/HostRefernal/HostRefernal'
 import { ICommonQuestions } from 'src/types/commonQuestion.type'
-import { DataitemsHostRefernal } from 'src/items/CommonQuestionItems/CommonQuestionItems'
+import { ISelectItemsCustomeCard } from 'src/types/customeCard'
 interface hostRefernalState {
   ExplorehostRefernal: ISelectItemsExploreHosting
   SlideLeftRighthostRefernal: ISelectItemsSlideLeftRight[]
@@ -21,6 +15,7 @@ interface hostRefernalState {
   QuestionhostRefernal: ICommonQuestions[]
   ImgSlideLeftRight_HostRefernal: ISelectImglideLeftRight
   ImgExploreHR: ISelectItemsImgExploreHosting
+  CustomeCard: ISelectItemsCustomeCard[]
 }
 
 const initialState: hostRefernalState = {
@@ -120,6 +115,13 @@ const initialState: hostRefernalState = {
         'content4_3_Question_hostRefernal',
         'content4_4_Question_hostRefernal'
       ]
+    }
+  ],
+  CustomeCard: [
+    {
+      header: 'header_hostRefernal',
+      title: 'title_hostRefernal',
+      description: 'description_hostRefernal'
     }
   ]
 }
