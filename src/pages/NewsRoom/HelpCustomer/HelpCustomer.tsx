@@ -25,7 +25,7 @@ const HelpCustomer = () => {
       <div className='w-1/2  flex items-center sm:w-[80%] sm:text-center sm:mx-auto'>
         <div className='block h-[50%]'>
           <Text
-            id={data[HelpCustomerNewsRoom.title]}
+            id={HelpCustomerNewsRoom.title}
             tag='p'
             content={data[HelpCustomerNewsRoom.title]}
             className='uppercase text-black font-semibold mb-3 text-2xl mt-10 sm:text-[18px] sm:font-normal'
@@ -42,7 +42,7 @@ const HelpCustomer = () => {
           </Link>
           <div className='bg-white h-[100px] py-5 px-10 rounded-xl max-w-[45ch] flex items-center mt-10 cursor-pointer hover:border-solid hover:border-[1px] hover:border-mainColor duration-[0.5s]'>
             <Text
-              id={data[HelpCustomerNewsRoom.nameButton]}
+              id={HelpCustomerNewsRoom.nameButton}
               tag='p'
               content={data[HelpCustomerNewsRoom.nameButton]}
               className=' text-black'

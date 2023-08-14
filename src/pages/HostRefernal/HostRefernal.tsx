@@ -38,7 +38,8 @@ const HostRefernal = () => {
     SlideLeftRighthostRefernal,
     ImgSlideLeftRight_HostRefernal,
     ImgExploreHR,
-    QuestionhostRefernal
+    QuestionhostRefernal,
+    CustomeCard
   } = useSelector((state: RootState) => state.hostingReferral)
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
@@ -52,7 +53,7 @@ const HostRefernal = () => {
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderhostRefernal />
       </WrapperContent>
-      <CustomeCard mainTitle={`When you refer a friend`} DataCustomeCard={DataCustomeCardHostRefernal} />
+      {/* <CustomeCard mainTitle={`When you refer a friend`} DataCustomeCard={DataCustomeCardHostRefernal} /> */}
       <WrapperContent textAlign='center' title={data[imgcustomeSteps.headerTitle]} classname='flex flex-col'>
         <div className='justify-center items-center flex relative'>
           <div className='flex justify-center px-[36px] sm:flex-col'>
@@ -72,7 +73,7 @@ const HostRefernal = () => {
             </div>
             {/* <div className='w-1/2 flex justify-center rounded-[16px] items-center'> */}
             <Image
-              id='imgRightCustome'
+              id={imgcustomeSteps.img}
               className='object-cover w-[310px] md:w-[230px] min-h-[260px] md:min-h-[400px] mb-auto mx-auto  rounded-[16px]'
               src={data[imgcustomeSteps.img]}
               alt='Getaround Connect®'

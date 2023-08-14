@@ -30,7 +30,7 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
         <div className='flex-row w-full max-w-[1080px] mx-auto flex sm:flex-col' style={{ gridColumnGap: '26px' }}>
           <div className='items-center flex w-full flex-col relative'>
             <Image
-              id='slide-leftright'
+              id={img || ''}
               className='h-full w-full max-h-[316px] sm:w-[70%] object-contain max-w-full align-middle inline-block border-0'
               src={img || ''}
               alt='Getaround Connect®'
@@ -43,7 +43,7 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
           </div>
           <div className='items-start flex w-full flex-col relative'>
             <Text
-              id='Slide-mainTitle'
+              id={mainTitle || ''}
               tag='h2'
               content={mainTitle || ''}
               className='pb-0 text-mainColor max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] sm:text-[12px] font-bold leading-[13px]'
@@ -54,7 +54,7 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
             {Data?.map((item: any, index: any) => (
               <div className='block mb-9'>
                 <Text
-                  id='Slide-label'
+                  id={Data?.[index]?.label}
                   tag='h2'
                   content={data[Data?.[index]?.label] || ''}
                   className='text-[#fff] mt-0 mb-[10px] text-[32px] sm:text-[15px] font-medium leading-[106%]'
@@ -64,7 +64,7 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
                 </h2> */}
                 {Data?.[index]?.contents.map((item: any, indexx: any) => (
                   <Text
-                    id='Slide-content'
+                    id={Data?.[index]?.contents?.[indexx]}
                     tag='div'
                     content={data[Data?.[index]?.contents?.[indexx]] || ''}
                     className='text-[#fff] sm:text-[12px]'

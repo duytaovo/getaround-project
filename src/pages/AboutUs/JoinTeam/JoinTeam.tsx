@@ -22,14 +22,14 @@ const JoinTeam = () => {
       <div className='w-1/2  flex items-center sm:w-full'>
         <div className='block'>
           <Text
-            id={data[JoinTeamAboutUs.title]}
+            id={JoinTeamAboutUs.title}
             tag='p'
             content={data[JoinTeamAboutUs.title]}
             className='uppercase text-mainColor font-bold mb-3 text-3xl sm:text-xl'
           />
           {/* <p className='uppercase text-mainColor font-bold mb-3 text-3xl mt-10 sm:text-xl'>Join the Getaround team </p> */}
           <Text
-            id={data[JoinTeamAboutUs.content]}
+            id={JoinTeamAboutUs.content}
             tag='p'
             content={data[JoinTeamAboutUs.content]}
             className='text-[#808795] font-normal mt-3 sm:text-[15px]'
@@ -48,7 +48,7 @@ const JoinTeam = () => {
       </div>
       <div className='w-[35%] flex justify-center sm:w-full'>
         <Image
-          id={data[JoinTeamAboutUs.img]}
+          id={JoinTeamAboutUs.img}
           className='object-contain h-[500px]'
           src={data[JoinTeamAboutUs.img]}
           alt='Getaround Connect®'

@@ -24,7 +24,7 @@ const HeaderSafeTrust = () => {
       <div className='flex justify-center px-[36px] sm:flex-col'>
         <div className='w-1/2 flex justify-center sm:w-[100%]'>
           <Image
-            id='imgHEaderST'
+            id={HeaderST.img}
             className='object-contain h-[500px]'
             src={data[HeaderST.img] || ''}
             alt='Getaround Connect®'
@@ -39,7 +39,7 @@ const HeaderSafeTrust = () => {
           <div className='block'>
             <div>
               <Text
-                id='textHeader_HeaderTitleST'
+                id={HeaderST.headerTitle}
                 tag='span'
                 content={data[HeaderST.headerTitle] || ''}
                 className='text-mainColor text-4xl  font-bold'
@@ -52,7 +52,7 @@ const HeaderSafeTrust = () => {
               />
             </div>
             <Text
-              id='textHeader_contentST'
+              id={HeaderST.content}
               tag='p'
               content={data[HeaderST.content]}
               className='text-[#1e1e1e] font-normal mt-3'
