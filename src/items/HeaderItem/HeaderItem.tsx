@@ -16,18 +16,18 @@ export const itemsFirst: MenuProps['items'] = [
       </CustomLink>
     )
   },
-  {
-    key: '2',
-    label: (
-      <CustomLink to={'/'}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all '>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
-            Bảo hiểm
-          </span>
-        </div>
-      </CustomLink>
-    )
-  },
+  // {
+  //   key: '2',
+  //   label: (
+  //     <CustomLink to={'/'}>
+  //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all '>
+  //         <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
+  //           Bảo hiểm
+  //         </span>
+  //       </div>
+  //     </CustomLink>
+  //   )
+  // },
   {
     key: '3',
     label: (
@@ -78,18 +78,18 @@ export const itemsSecond: MenuProps['items'] = [
       </CustomLink>
     )
   },
-  {
-    key: '3',
-    label: (
-      <CustomLink to={'/'}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-            Tổ chức Bonus
-          </span>
-        </div>
-      </CustomLink>
-    )
-  },
+  // {
+  //   key: '3',
+  //   label: (
+  //     <CustomLink to={'/'}>
+  //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
+  //         <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+  //           Tổ chức Bonus
+  //         </span>
+  //       </div>
+  //     </CustomLink>
+  //   )
+  // },
   {
     key: '4',
     label: (
@@ -165,19 +165,19 @@ export const itemsFour: MenuProps['items'] = [
         </div>
       </CustomLink>
     )
-  },
-  {
-    key: '4',
-    label: (
-      <CustomLink to={'/'}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-            Blog
-          </span>
-        </div>
-      </CustomLink>
-    )
   }
+  // {
+  //   key: '4',
+  //   label: (
+  //     <CustomLink to={'/'}>
+  //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
+  //         <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+  //           Blog
+  //         </span>
+  //       </div>
+  //     </CustomLink>
+  //   )
+  // }
 ]
 
 export const itemAcount: MenuProps['items'] = [
@@ -212,18 +212,18 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
           </CustomLink>
         )
       },
-      {
-        id: 2,
-        link: (
-          <CustomLink to={'/'}>
-            <div className='inline-block px-5 text-black  hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black  hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Bảo hiểm
-              </span>
-            </div>
-          </CustomLink>
-        )
-      },
+      // {
+      //   id: 2,
+      //   link: (
+      //     <CustomLink to={'/'}>
+      //       <div className='inline-block px-5 text-black  hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+      //         <span className='cursor-pointer justify-between text-black  hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
+      //           Bảo hiểm
+      //         </span>
+      //       </div>
+      //     </CustomLink>
+      //   )
+      // },
       {
         id: 3,
         link: (
@@ -278,18 +278,18 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
           </CustomLink>
         )
       },
-      {
-        id: 3,
-        link: (
-          <CustomLink to={'/'}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Tổ chức bonus
-              </span>
-            </div>
-          </CustomLink>
-        )
-      },
+      // {
+      //   id: 3,
+      //   link: (
+      //     <CustomLink to={'/'}>
+      //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+      //         <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
+      //           Tổ chức bonus
+      //         </span>
+      //       </div>
+      //     </CustomLink>
+      //   )
+      // },
       {
         id: 4,
         link: (
@@ -373,19 +373,19 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
             </div>
           </CustomLink>
         )
-      },
-      {
-        id: 4,
-        link: (
-          <CustomLink to={path.howitwork}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer mb-2 justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Blog
-              </span>
-            </div>
-          </CustomLink>
-        )
       }
+      // {
+      //   id: 4,
+      //   link: (
+      //     <CustomLink to={path.howitwork}>
+      //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+      //         <span className='cursor-pointer mb-2 justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
+      //           Blog
+      //         </span>
+      //       </div>
+      //     </CustomLink>
+      //   )
+      // }
     ]
   }
 ]
@@ -463,5 +463,3 @@ export const itemsHostRefernal = [
     ]
   }
 ]
-
-

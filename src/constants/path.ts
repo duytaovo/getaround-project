@@ -1,6 +1,6 @@
 const path = {
   home: '/',
-  login: '/login',
+  login: '/admin/login',
   register: '/register',
   howitwork: '/how-it-work',
   howitworkconnect: '/how-it-work/connect',
@@ -12,7 +12,7 @@ const path = {
   hostCommunity: '/host/community',
   newsroom: '/news-room',
   safetytrust: '/how-it-work/safety-trust',
-  test:'/test'
+  test: '/test'
 } as const
 
 export default path
