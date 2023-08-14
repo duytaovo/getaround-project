@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { Text } from 'src/components/Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
+import { useAppSelector } from 'src/hooks/useRedux'
 import { text } from 'stream/consumers'
 
 type HeadingPropsType = {
@@ -20,6 +20,7 @@ const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize
     const secondSentence = words.slice(breakLineAt, words.length).join(' ')
     setSentences([firstSentence, secondSentence])
   }, [title, breakLineAt])
+  const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className={className}>
@@ -31,15 +32,7 @@ const Heading: FC<HeadingPropsType> = ({ title, className, breakLineAt, fontSize
         className={`w-full mx-auto h-full text-black/90 font-bold py-4`}
       >
         {sentences.map((sentence, index) => {
-          return (
-            <Text
-              key={iDGenerator('key')}
-              id={iDGenerator('txt')}
-              content={sentence}
-              tag='p'
-              className={`mb-1 leading-[100%]`}
-            />
-          )
+          return <Text key={index} id={sentence} content={data[sentence]} tag='p' className={`mb-1 leading-[100%]`} />
         })}
       </h1>
     </div>

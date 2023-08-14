@@ -6,6 +6,7 @@ import { Space } from 'antd'
 import RatingStar from 'src/components/RatingStar'
 import { IHeroSection } from 'src/store/app/home/HomeTypes/Hero.type'
 import { Text } from 'src/components/Edition/Text'
+import { useAppSelector } from 'src/hooks/useRedux'
 
 const options = [
   {
@@ -34,6 +35,7 @@ const HomeHeroSection: FC<IHeroSection> = ({
   addressPlaceholder,
   mainText
 }) => {
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div
       style={{
@@ -46,18 +48,18 @@ const HomeHeroSection: FC<IHeroSection> = ({
         <div className='flex flex-col justify-center items-center pb-8'>
           <div>
             <Text
-              id='id-text'
+              id={title}
               tag='h2'
-              content={title}
+              content={data[title]}
               className='py-4 leading-5 text-lg font-bold my-0 text-black/80'
             />
             {/* <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>{title}</h2> */}
           </div>
           <div>
             <Text
-              id='id-text-2'
+              id={mainText}
               tag='h1'
-              content={mainText}
+              content={data[mainText]}
               className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'
             />
           </div>
@@ -77,12 +79,7 @@ const HomeHeroSection: FC<IHeroSection> = ({
             isNext={true}
           >
             {/* {buttonSearchText} */}
-            <Text
-              id={`txt-${crypto.randomUUID().substring(0, 8)}`}
-              tag='span'
-              className='flex'
-              content={buttonSearchText}
-            />
+            <Text id={buttonSearchText} tag='span' className='flex' content={data[buttonSearchText]} />
           </CustomeButton>
         </Space>
       </div>
