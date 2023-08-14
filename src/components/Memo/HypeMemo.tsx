@@ -9,6 +9,7 @@ const HypeMemo = () => {
   const [memo, setMemo] = useState(true)
   const { Notice2 } = useSelector((state: RootState) => state.notice)
   const data = useAppSelector((state) => state.data.data)
+
   return (
     <div className={`${memo === true ? ' w-80 h-28 bg-white rounded-xl flex mb-2 ml-5 justify-around' : 'hidden'}`}>
       <div className='w-[20%] h-full text-white bg-mainColor flex justify-center items-center rounded-l-xl'>

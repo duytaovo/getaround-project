@@ -18,13 +18,20 @@ const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
                 className='w-[33%] sm:w-[100%] sm:mb-2 gap-x-[18px] bg-white rounded-[28px] flex-col items-start p-[42px_42px_56px] flex md:p-[30px_30px_45px] '
                 key={index}
               >
-                <div>{DataCustomeCard?.[index]?.header}</div>
+                <div>
+                  <div className='mt-[6px] text-[30px] md:text-[25px] font-bold block  box-border leading-[140%] text-mainColor '>
+                    {DataCustomeCard?.[index]?.header}
+                  </div>
+                </div>
                 <h3 className={`${DataCustomeCard?.[index]?.styleTitle} md:text-[20px]`}>
                   <strong>
                     {DataCustomeCard?.[index]?.title} <br />
                   </strong>
                 </h3>
-                <div className={`${DataCustomeCard?.[index]?.styleDes}`}>{DataCustomeCard?.[index]?.description}</div>
+                <div className={`${DataCustomeCard?.[index]?.styleDes}`}>
+                  {' '}
+                  <p className=' no-underline bg-transparent'>{DataCustomeCard?.[index]?.description}</p>
+                </div>
                 <Link to={DataCustomeCard?.[index]?.LinkFooter} className='text-mainColor font-light mt-3'>
                   {DataCustomeCard?.[index]?.Footer}
                 </Link>
