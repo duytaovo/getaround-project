@@ -32,7 +32,7 @@ const Carousel_About = ({
       <div className='w-auto h-auto bg-white rounded-2xl'>
         <div className='block px-8 py-10'>
           <Text
-            id={data[item.title]}
+            id={item.title}
             tag='h1'
             content={data[item.title] || ''}
             className='text-black text-[20px] font-semibold'
@@ -41,14 +41,14 @@ const Carousel_About = ({
             Getaround Announces Restructuring Plan to Reduce Costs and Streamline Operations
           </h1> */}
           <Text
-            id={data[item.date]}
+            id={item.date}
             tag='h2'
             content={data[item.date] || ''}
             className='text-[10px] font-normal text-[#000000] my-4'
           />
           {/* <h2 className='text-[10px] font-normal text-[#000000] my-4'>February 22, 2023</h2> */}
           <Text
-            id={data[item.description]}
+            id={item.description}
             tag='h3'
             content={data[item.description] || ''}
             className='text-[14px] font-sans text-[#727272] my-4'

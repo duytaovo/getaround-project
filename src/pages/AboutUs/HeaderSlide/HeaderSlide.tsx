@@ -38,7 +38,7 @@ const HeaderSlide = () => {
         >
           <h1 className='max-w-[22ch] text-center mx-auto text-mainColor tracking-[-.04em] m-0 pd-0 text-[47px] font-bold leading-[106%] sm:text-[35px] sm:leading-[100%] '>
             <Text
-              id={data[HeaderAboutUs?.[0]?.title]}
+              id={HeaderAboutUs?.[0]?.title}
               tag='span'
               content={data[HeaderAboutUs?.[0]?.title]}
               className='text-white font-normal '
@@ -58,7 +58,7 @@ const HeaderSlide = () => {
           >
             {HeaderAboutUs?.[0]?.arrayImg?.map((item, index) => (
               <Image
-                id='img-idSliceAbouts'
+                id={HeaderAboutUs?.[0]?.arrayImg?.[index]}
                 className='w-full max-h-[23px] max-w-[150px] object-contain flex-[0_auto] align-middle border-none inline-block border-0'
                 src={data[HeaderAboutUs?.[0]?.arrayImg?.[index]]}
                 style={{ filter: 'brightness(0%) grayscale()' }}

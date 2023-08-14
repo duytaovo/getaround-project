@@ -33,7 +33,7 @@ const HeaderNewsRoom = () => {
             <div className='w-[60%] sm:w-full flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
               <h1 className='tracking-[-.04em] mb-0 mx-0 pb-0 text-[52px] font-semibold leading-[99%] mt-0 text-left max-w-[40ch]'>
                 <Text
-                  id={data[HeaderNewsRoom.title]}
+                  id={HeaderNewsRoom.title}
                   tag='span'
                   content={data[HeaderNewsRoom.title]}
                   className='text-white'
@@ -41,7 +41,7 @@ const HeaderNewsRoom = () => {
                 {/* <span className='text-white'>Explore Getaround in the news</span> */}
               </h1>
               <Text
-                id={data[HeaderNewsRoom.content]}
+                id={HeaderNewsRoom.content}
                 tag='div'
                 content={data[HeaderNewsRoom.content]}
                 className='text-white font-normal max-w-[40ch] mt-8'
@@ -52,14 +52,14 @@ const HeaderNewsRoom = () => {
               <div className='bg-white h-[100px] py-5 px-10 rounded-xl max-w-[45ch] flex items-center mt-10'>
                 <p className='text-black'>
                   <Text
-                    id={data[HeaderNewsRoom.titleButton]}
+                    id={HeaderNewsRoom.titleButton}
                     tag='p'
                     content={data[HeaderNewsRoom.titleButton]}
                     className=''
                   />
                   {/* {DataHeaderNewsRoom.titleButton} */}
                   <Text
-                    id={data[HeaderNewsRoom.email]}
+                    id={HeaderNewsRoom.email}
                     tag='span'
                     content={data[HeaderNewsRoom.email]}
                     className='text-mainColor'

@@ -50,7 +50,7 @@ const AboutUs = () => {
       <div className='mb-[60px] sm:mb-[30px]'>
         <div>
           <Text
-            id='headertitleAboutUs'
+            id={TitleCarouselAboutUs.headerTitle}
             tag='span'
             content={data[TitleCarouselAboutUs.headerTitle]}
             className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'
@@ -59,7 +59,7 @@ const AboutUs = () => {
             OUR LATEST UPDATES
           </span> */}
           <Text
-            id='titleAboutUs'
+            id={TitleCarouselAboutUs.title}
             tag='h2'
             content={data[TitleCarouselAboutUs.title]}
             className=' flex text-[32px] text-center  justify-center mb-2'

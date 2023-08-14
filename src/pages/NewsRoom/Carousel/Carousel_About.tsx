@@ -29,14 +29,14 @@ const Carousel_About = ({
       <div className='w-auto h-auto bg-white rounded-2xl'>
         <div className='block px-8 py-10'>
           <Text
-            id={data[item.title]}
+            id={item.title}
             tag='h2'
             content={data[item.title] || ''}
             className='text-[10px] font-normal text-[#000000] my-4'
           />
           {/* <h2 className='text-[10px] font-normal text-[#000000] my-4'>{item?.date}</h2> */}
           <Text
-            id={data[item.description]}
+            id={item.description}
             tag='h3'
             content={data[item.description] || ''}
             className='text-[14px] font-sans text-[#727272] my-4'

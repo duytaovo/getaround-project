@@ -41,7 +41,7 @@ const HeaderHIWC = () => {
       >
         <div className='self-auto w-auto max-w-[1279px] sm:text-center text-left '>
           <Image
-            id='imgHeaderConnect'
+            id={HeaderConnect.imgLogo}
             className='w-[100px] block align-middle border-none max-w-[100%] border-[0]'
             src={data[HeaderConnect.imgLogo]}
             alt='Getaround Connect®'
@@ -54,7 +54,7 @@ const HeaderHIWC = () => {
             className='w-[100px] block align-middle border-none max-w-[100%] border-[0]'
           /> */}
           <Text
-            id='titleLogoHeaderConnect'
+            id={HeaderConnect.titleLogo}
             tag='p'
             content={data[HeaderConnect.titleLogo]}
             className='w-auto max-w-[1279px] text-left text-mainColor uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'
@@ -63,7 +63,7 @@ const HeaderHIWC = () => {
             A SAFER, MORE CONVENIENT WAY TO CARSHARE
           </p> */}
           <Text
-            id='maintitleHeaderConnect'
+            id={HeaderConnect.mainTitleHeader}
             tag='p'
             content={data[HeaderConnect.mainTitleHeader]}
             className='w-auto max-w-[1279px] text-left mt-0 mb-[0.5em] text-white font-medium pb-[20px] text-[50px] leading-[105%] m-[0.67em_0] sm:text-center sm:text-[40px]'
@@ -72,7 +72,7 @@ const HeaderHIWC = () => {
             Getaround Connect
           </h1> */}
           <Text
-            id='contentHeaderConnect'
+            id={HeaderConnect.contentHeader}
             tag='p'
             content={data[HeaderConnect.contentHeader]}
             className='w-auto text-white text-[22px] font-light leading-[145%] block max-w-[1279px] text-left mt-0 mb-[10px] pl-0 not-italic sm:text-[15px]'
@@ -85,7 +85,7 @@ const HeaderHIWC = () => {
         </div>
         <div className='self-end justify-end'>
           <Image
-            id='imgHeaderConnect'
+            id={HeaderConnect.imgContentHeader}
             className='mb-0 align-middle not-italic max-w-[100%] inline-block border-0 w-[638px]'
             src={data[HeaderConnect.imgContentHeader]}
             alt='Getaround Connect®'

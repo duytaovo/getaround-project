@@ -20,7 +20,7 @@ const HeaderhostRefernal = () => {
       <div className='w-1/2  flex justify-center items-center sm:w-[100%]'>
         <div className='block'>
           <Text
-            id='hosting-hostrefernal-header-headerTitle'
+            id={HeaderhostRefernal.headerTitle}
             tag='p'
             content={data[HeaderhostRefernal.headerTitle]}
             className='text-3xl text-black font-bold'
@@ -29,7 +29,7 @@ const HeaderhostRefernal = () => {
             <span className='text-mainColor'> Make even more</span> when you refer your friends
           </h2> */}
           <Text
-            id='hosting-hostrefernal-header-content'
+            id={HeaderhostRefernal.content}
             tag='p'
             content={data[HeaderhostRefernal.content]}
             className='text-[#1e1e1e] font-normal mt-3'
@@ -42,7 +42,7 @@ const HeaderhostRefernal = () => {
       </div>
       <div className='w-1/2 flex justify-center sm:w-[100%]'>
         <Image
-          id='hosting-hostrefernal-header-img'
+          id={HeaderhostRefernal.img}
           className='object-contain h-[500px]'
           src={data[HeaderhostRefernal.img]}
           alt='Getaround Connect®'

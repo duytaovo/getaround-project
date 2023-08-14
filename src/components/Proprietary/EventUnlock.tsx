@@ -70,7 +70,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
           <div className='w-1/2 sm:w-[80%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <div>
               <Text
-                id='headerTitleEnvent'
+                id={ProprietaryST.headerTitle}
                 tag='div'
                 content={data[ProprietaryST.headerTitle] || ''}
                 className='w-auto max-w-[1279px] text-left text-mainColor uppercase mt-[20px] text-[14px] font-bold leading-[25px] mb-[1em]'
@@ -82,7 +82,12 @@ const Proprietary: FC<Props> = ({ Data }) => {
                 {Data?.headerTitle}
               </div> */}
               <h2 className='max-w-full text-white tracking-[-.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em]'>
-                <Text id='TitleEnvent' tag='div' content={data[ProprietaryST.title] || ''} className='font-bold' />
+                <Text
+                  id={ProprietaryST.title}
+                  tag='div'
+                  content={data[ProprietaryST.title] || ''}
+                  className='font-bold'
+                />
                 {/* <strong className='font-bold'> {Data?.title}</strong> */}
               </h2>
               <div className='text-[#e9ebec] mt-[30px] text-sm'>
@@ -90,7 +95,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
                 {/* {Data?.description} */}
                 <br /> <br />
                 <Text
-                  id='SpanEnvent'
+                  id={ProprietaryST.span}
                   tag='span'
                   content={data[ProprietaryST.span] || ''}
                   className='text-mainColor font-bold'
@@ -110,7 +115,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
           </div>
           <div className='w-1/2 sm:w-[80%] flex-col flex-[0_auto] justify-start self-auto items-start mt-9 mx-auto pl-0 flex relative'>
             <Image
-              id='imgST'
+              id={ProprietaryST.img}
               className='object-cover rounded-[22px] align-middle border-none max-w-[100%] inline-block border-0 h-[412px]'
               src={data[ProprietaryST.img]}
               alt='Getaround Connect®'

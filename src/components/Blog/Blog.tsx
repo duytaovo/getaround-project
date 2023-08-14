@@ -30,7 +30,7 @@ const Blog = () => {
   return (
     <div className='flex justify-center h-auto w-full mb-16 md:mb-24 sm:flex-col sm:mb-20'>
       <Image
-        id={data[BlogNewsRoom.img]}
+        id={BlogNewsRoom.img}
         style={{ width: '500px' }}
         className='object-contain rounded-2xl w-full flex justify-center mr-5 md:rounded-2xl sm:w-full'
         src={data[BlogNewsRoom.img]}
@@ -45,7 +45,7 @@ const Blog = () => {
       <div className='w-1/2  flex justify-center items-center sm:w-full sm:mt-6'>
         <div className='block h-[50%]'>
           <Text
-            id={data[BlogNewsRoom.headerTitle]}
+            id={BlogNewsRoom.headerTitle}
             tag='p'
             content={data[BlogNewsRoom.headerTitle]}
             className='uppercase text-mainColor font-semibold mb-8 text-[10px]'
@@ -53,7 +53,7 @@ const Blog = () => {
           {/* <p className='uppercase text-mainColor font-semibold mb-8 text-[10px]'>THE GETAROUND BLOG</p> */}
           <h2 className='text-3xl  font-bold mb-4 sm:text-xl'>
             <Text
-              id={data[BlogNewsRoom.mainTitle]}
+              id={BlogNewsRoom.mainTitle}
               tag='span'
               content={data[BlogNewsRoom.mainTitle]}
               className=' text-mainColor '
@@ -61,7 +61,7 @@ const Blog = () => {
             {/* <span className='text-mainColor'>Discover the Getaround blog</span> */}
           </h2>
           <Text
-            id={data[BlogNewsRoom.content]}
+            id={BlogNewsRoom.content}
             tag='p'
             content={data[BlogNewsRoom.content]}
             className='text-white font-normal my-6 sm:text-[15px]'
