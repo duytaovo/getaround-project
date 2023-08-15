@@ -23,7 +23,6 @@ const dataSlice = createSlice({
   initialState: initialState,
   reducers: {
     updateData: (state, action: { payload: IdynamicData<string> }) => {
-      console.log('dp:  ', action?.payload)
       state.data = { ...state?.data, ...action?.payload }
     }
   },

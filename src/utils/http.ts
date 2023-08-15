@@ -2,8 +2,7 @@ import axios, { AxiosError, type AxiosInstance } from 'axios'
 import { toast } from 'react-toastify'
 import HttpStatusCode from 'src/constants/httpStatusCode.enum'
 import { ErrorResponse } from 'src/types/utils.type'
-import config from 'src/constants/configApi';
-
+import config from 'src/constants/configApi'
 
 export class Http {
   instance: AxiosInstance
@@ -17,8 +16,9 @@ export class Http {
       timeout: 10000,
       headers: {
         'Content-Type': 'application/json',
-        'expire-access-token': 60*60*24, // 1 ngày
-        'expire-refresh-token': 60 * 60 * 24 * 160 // 160 ngày
+        'expire-access-token': 60 * 60 * 24, // 1 ngày
+        'expire-refresh-token': 60 * 60 * 24 * 160, // 160 ngày
+        authorization: `Bearer ${localStorage.getItem('token')}`
       }
     })
     this.instance.interceptors.request.use(

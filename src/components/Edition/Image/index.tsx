@@ -59,7 +59,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   const iRef = useRef<HTMLInputElement>(null)
   const cRef = useRef<HTMLDivElement>(null)
 
-  const { permision } = useAppSelector((state) => state?.user)
+  const { permission, isActiveEdit } = useAppSelector((state) => state?.user)
   const [iOffset, setIOffset] = useState<IiOffset>({
     w: 100,
     h: 100
@@ -104,14 +104,14 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         onChange={handleChangeInput}
         className={`hidden`}
       />
-      {permision == -1 && enable ? (
+      {permission == -1 && enable && isActiveEdit ? (
         <div className='flex justify-center relative'>
           <img
             src={val}
             alt={alt}
             onClick={show}
             className={`${className} border border-transparent ${
-              permision == -1 ? 'border-dashed hover:border-slate-400' : ''
+              permission == -1 ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           />
@@ -147,7 +147,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             alt={alt}
             onClick={show}
             className={`${className} border border-transparent ${
-              permision == -1 ? 'border-dashed hover:border-slate-400' : ''
+              permission == -1 && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           />
