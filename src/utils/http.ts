@@ -5,6 +5,7 @@ import { clearLS, getAccessTokenFromLS, getRefreshTokenFromLS, setAccessTokenToL
 import { isAxiosExpiredTokenError, isAxiosUnauthorizedError } from './utils'
 import { ErrorResponse } from 'src/types/utils.type'
 import { AuthResponse } from 'src/types/auth.type'
+
 import config from 'src/constants/configApi'
 
 export class Http {
@@ -22,7 +23,9 @@ export class Http {
       headers: {
         'Content-Type': 'application/json',
         'expire-access-token': 60 * 60 * 24, // 1 ngày
-        'expire-refresh-token': 60 * 60 * 24 * 160 // 160 ngày
+        'expire-refresh-token': 60 * 60 * 24 * 160, // 160 ngày
+        authorization: `Bearer ${localStorage.getItem('token')}`
+
       }
     })
     this.instance.interceptors.request.use(

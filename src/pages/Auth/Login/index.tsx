@@ -10,7 +10,7 @@ import Input from 'src/components/Input'
 import { Schema, schema } from 'src/utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { unwrapResult } from '@reduxjs/toolkit'
-import { login } from 'src/store/user/userSlice'
+import { login, updateUser } from 'src/store/user/userSlice'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 
 type FormData = Pick<Schema, 'email' | 'password'>
@@ -35,8 +35,16 @@ const Login = () => {
       password: data.password
     }
     try {
-      // console.log(body)
       const res = await dispatch(login(body))
+
+      const d = res?.payload?.data
+
+      if (d?.result == 0) return toast.error(d?.message)
+
+      localStorage.setItem('token', d?.token)
+      localStorage.setItem('permission', d?.permission)
+      dispatch(updateUser(d))
+
       unwrapResult(res)
       setIsAuthenticated(true)
       navigate('/')

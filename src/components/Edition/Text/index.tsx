@@ -64,7 +64,8 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   const iRef = useRef<HTMLTextAreaElement>(null)
   const cRef = useRef<HTMLDivElement>(null)
 
-  const { permision } = useAppSelector((state: any) => state?.user)
+  const { permission, isActiveEdit } = useAppSelector((state: any) => state?.user)
+
   const [iOffset, setIOffset] = useState<IiOffset>({
     w: 100,
     h: 100
@@ -73,7 +74,9 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   const [enable, setEnable] = useState<boolean>(false)
   const dispatch = useAppDispatch()
 
-  const show = () => setEnable(true)
+  const show = () => {
+    permission == -1 && isActiveEdit && setEnable(true)
+  }
   const hidden = () => setEnable(false)
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -114,10 +117,10 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
 
   return (
     <div>
-      {permision == -1 && enable ? (
+      {permission == -1 && enable && isActiveEdit ? (
         <div className='flex justify-center relative'>
           <textarea
-            // style={{ width: iOffset?.w, height: iOffset?.h }}
+            style={{ width: iOffset?.w + 100, height: iOffset?.h }}
             ref={iRef}
             value={val}
             onChange={handleChangeInput}
@@ -128,7 +131,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
             cols={20}
             className={`${className || ''} rounded outline-none bg-transparent border border-slate-400 px-2`}
           ></textarea>
-          <div className='flex h-7 absolute -top-8 '>
+          <div className='flex h-7 absolute -bottom-7 right-0 '>
             {editOptions.map((option, index) => {
               const body: IBody = {
                 id: id,
@@ -155,7 +158,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
           <Wrapper
             onClick={show}
             className={`${className} border border-transparent ${
-              permision == -1 ? 'border-dashed hover:border-slate-400' : ''
+              permission == -1 && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           >

@@ -2,7 +2,7 @@ import http from 'src/utils/http'
 
 const authApi = {
   login(data) {
-    return http.post('login', data)
+    return http.post('/auth/login', data)
   }
 }
 
