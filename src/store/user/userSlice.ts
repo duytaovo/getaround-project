@@ -31,8 +31,8 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, { payload }) => {
-      state.token = payload.data
-      localStorage.setItem('accessToken', state.token)
+      // state.token = payload.data
+      // localStorage.setItem('accessToken', state.token)
       state.permission = -1
     })
   }

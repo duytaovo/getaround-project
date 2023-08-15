@@ -1,7 +1,7 @@
 import http from 'src/utils/http'
 
 const authApi = {
-  login(data) {
+  login(data: any) {
     return http.post('/auth/login', data)
   }
 }

@@ -23,15 +23,13 @@ export class Http {
       headers: {
         'Content-Type': 'application/json',
         'expire-access-token': 60 * 60 * 24, // 1 ngày
-        'expire-refresh-token': 60 * 60 * 24 * 160, // 160 ngày
-        authorization: `Bearer ${localStorage.getItem('token')}`
-
+        'expire-refresh-token': 60 * 60 * 24 * 160 // 160 ngày,
       }
     })
     this.instance.interceptors.request.use(
       (config) => {
         if (this.accessToken && config.headers) {
-          config.headers.authorization = this.accessToken
+          config.headers.authorization = `Bearer ${this.accessToken}`
           return config
         }
         return config
