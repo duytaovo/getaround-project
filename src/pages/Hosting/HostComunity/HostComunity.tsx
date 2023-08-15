@@ -17,7 +17,9 @@ const HostCominity = () => {
     carouselCommunity,
     ourHost,
     bannerCommunity,
-    cardBodyImg,
+    cardBodyImg1,
+    cardBodyImg2,
+    cardBodyImg3,
     cardBodyParnerDeal,
     cardBodyReferFriend,
     sliderHostComunity,
@@ -46,13 +48,13 @@ const HostCominity = () => {
       <div className='mb-bottom flex justify-around  flex-wrap '>
         <Grid container spacing={2}>
           <Grid item xs={6} sm={6} md={3}>
-            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg1} id={1} />
           </Grid>
           <Grid item xs={6} sm={6} md={3}>
-            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg2} id={2} />
           </Grid>
           <Grid item xs={6} sm={6} md={3}>
-            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg3} id={3} />
           </Grid>
           <Grid item xs={6} sm={6} md={3}>
             <CardBody.CardBodyButton item={cardBodyButton} />

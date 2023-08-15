@@ -10,16 +10,17 @@ import { useAppSelector } from 'src/hooks/useRedux'
 
 interface PropsCardBodyImg {
   itemCardBodyImg: IItemBodyBannerCard
+  id: number
 }
 // w-[260px] h-[260px] lg:w-[350px] lg:h-[350px] xl:w-[300px] xl:h-[300px] md:w-auto
-export const CardBodyImg = ({ itemCardBodyImg }: PropsCardBodyImg) => {
+export const CardBodyImg = ({ itemCardBodyImg, id }: PropsCardBodyImg) => {
   const data = useAppSelector((state) => state.data.data)
 
   return (
     <div className=' h-[260px] sm:h-[200px] text-black font-medium text-[20px] break-words hover:text-mainColor  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
       <div className='flex'>
         <Text
-          id={`txt_cardBodyImg_community_title`}
+          id={`txt_cardBodyImg_community_title_${id}`}
           tag='span'
           content={data[itemCardBodyImg.title || '']}
           // className={`${classNameContent} font-bold  `}
@@ -30,7 +31,7 @@ export const CardBodyImg = ({ itemCardBodyImg }: PropsCardBodyImg) => {
         </span>
       </div>
       <Image
-        id={`img_cardBodyImg_shareACar`}
+        id={`img_cardBodyImg_shareACar_${id}`}
         className='w-[140px] h-[140px] rounded-full border-solid border border-[#d2d2d2]'
         src={data[itemCardBodyImg.img || '']}
         alt='hosting-community'
