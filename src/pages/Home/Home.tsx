@@ -162,7 +162,7 @@ const Home = (props: Props) => {
             breakPoint={[2, 4, 4, 5]}
             numberItem={5}
             numberItemScroll={4}
-            isTitle
+            isTitle={true}
             classNameContainer='px-4'
             classNameImage='w-[100px] h-[100px] rounded-full object-cover'
             className='flex flex-col justify-center items-center'
@@ -194,9 +194,9 @@ const Home = (props: Props) => {
             classNameTitle='text-[14px] leading-[22px] text-white/40 pt-6'
             classNameContent='text-white/90 text-[24px] leading-[25px] break-words py-6'
             classNameTime='text-[14px] leading-[22px] text-white/40'
-            isContent
-            isTime
-            isTitle
+            isContent={true}
+            isTime={true}
+            isTitle={true}
             data={homePageData.blogSilerSection.itemsData}
           />
         </div>

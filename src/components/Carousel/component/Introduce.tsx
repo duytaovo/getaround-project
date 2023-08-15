@@ -51,7 +51,6 @@ const Introduce = ({
         {/* <span
           className={`flex justify-start leading-[13px] font-medium uppercase text-mainColor text-[11px] ${classNameHeader} `}
         >
-          
           {data[item?.header || '']}
         </span> */}
         <Text

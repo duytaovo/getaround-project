@@ -35,25 +35,30 @@ const data = {
   home_txtCardCarouselTitle_1: 'Edit here...',
   home_txtCardCarouselContent_1: 'Edit here...',
   home_txtCardCarouselHeader_1: 'Edit here...',
-  home_imgCardCarousel_1: 'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
+  home_imgCardCarousel_1:
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
   home_txtCardCarouselTitle_2: 'Edit here...',
-  home_txtCardCarouselContent_2: 'Edit here...',
+  home_txtCardCarouselContent_: 'Edit here...',
   home_txtCardCarouselHeader_2: 'Edit here...',
-  home_imgCardCarousel_2: 'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
+  home_imgCardCarousel_2:
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
   home_txtCardCarouselTitle_3: 'Edit here...',
   home_txtCardCarouselContent_3: 'Edit here...',
   home_txtCardCarouselHeader_3: 'Edit here...',
-  home_imgCardCarousel_3: 'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
+  home_imgCardCarousel_3:
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
   home_txtCardCarouselTitle_4: 'Edit here...',
   home_txtCardCarouselContent_4: 'Edit here...',
   home_txtCardCarouselHeader_4: 'Edit here...',
-  home_imgCardCarousel_4: 'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
+  home_imgCardCarousel_4:
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
   home_local_favourite_section_title: 'Edit here...',
   home_local_favourite_section_heading: 'Edit here...',
+
   'home_localFavorite_txt-card_slider_title_1': 'SUV/Jeep',
   'home_localFavorite_img-card_slider_1':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
@@ -470,9 +475,19 @@ const data = {
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
   txt_cardSlider_community_content_4: 'Getaround was featured on Crackle TV’s newest season of Going From Broke.',
   txt_cardSlider_community_url_4: 'Watch free episode',
-  //itemCardBodyImg
-  txt_cardBodyImg_community_title: 'Offer & Bonus',
-  img_cardBodyImg_shareACar:
+  //itemCardBodyImg1
+  txt_cardBodyImg_community_title_1: 'Offer & Bonus',
+  img_cardBodyImg_shareACar_1:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg',
+
+  //itemCardBodyImg2
+  txt_cardBodyImg_community_title_2: 'Offer & Bonus',
+  img_cardBodyImg_shareACar_2:
+    'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg',
+
+  //itemCardBodyImg3
+  txt_cardBodyImg_community_title_3: 'Offer & Bonus',
+  img_cardBodyImg_shareACar_3:
     'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63f39125b1910bf39b1880a3_ga-illustration-20.svg',
 
   //itemCardBodyParnerDeal

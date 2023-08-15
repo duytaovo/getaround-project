@@ -268,10 +268,18 @@ export const itemSliderHostComunity: IItemSliderHostComunity[] = [
 ]
 
 export const itemCardBodyImg: IItemBodyBannerCard = {
-  title: 'txt_cardBodyImg_community_title',
-  img: 'img_cardBodyImg_shareACar'
+  title: 'txt_cardBodyImg_community_title_1',
+  img: 'img_cardBodyImg_shareACar_1'
+}
+export const itemCardBodyImg2: IItemBodyBannerCard = {
+  title: 'txt_cardBodyImg_community_title_2',
+  img: 'img_cardBodyImg_shareACar_3'
 }
 
+export const itemCardBodyImg3: IItemBodyBannerCard = {
+  title: 'txt_cardBodyImg_community_title_3',
+  img: 'img_cardBodyImg_shareACar_3'
+}
 export const itemCardBodyParnerDeal: IItemBodyBannerCard = {
   title: 'txt_CardBodyParner_community_title',
   infoButton: 'txt_cardBodyParnerDeal_community_infoButton',
