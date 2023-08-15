@@ -1,23 +1,12 @@
 import React from 'react'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingHostRefernal } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingHostRefernalText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import FormContact from 'src/components/FormContact/FormContact'
-import CustomeCard from 'src/components/CustomeCard/CustomeCard'
-import { DataCustomeCardHostRefernal } from 'src/Data/DataCustomeCard'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
-import { DataitemsHostRefernal } from 'src/items/CommonQuestionItems/CommonQuestionItems'
-import { Link } from 'react-router-dom'
 import SlideLeftRight from 'src/components/SlideLeftRight/SlideLeftRight'
-import { DataSlideLeftRightHostRefernal } from 'src/items/SlideLeftRight/DataSlideLeftRight'
 import CustomeStep from 'src/components/CustomeStep/CustomeStep'
 import HeaderhostRefernal from './HeaderhostRefernal'
-import {
-  CustomeStepItems,
-  CustomeStepItemsHowItWork1,
-  CustomeStepItemHostRefernal
-} from 'src/items/CustomeStepItem/CustomeStepItem'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
@@ -43,10 +32,6 @@ const HostRefernal = () => {
   } = useSelector((state: RootState) => state.hostingReferral)
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
-
-  // const handleExploreHIW = (newExploreHostring: ISelectItemsExploreHosting) => {
-  //   dispatch(updateExploreHIW(newExploreHostring))
-  // }
 
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
@@ -95,6 +80,8 @@ const HostRefernal = () => {
         Data={SlideLeftRighthostRefernal}
         img={data[ImgSlideLeftRight_HostRefernal.img]}
         mainTitle={data[ImgSlideLeftRight_HostRefernal.mainTitle]}
+        idTitle={ImgSlideLeftRight_HostRefernal.mainTitle}
+        idimg={ImgSlideLeftRight_HostRefernal.img}
       />
       <FormContact
         titleForm={'Track your Referrals'}
