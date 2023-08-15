@@ -46,7 +46,7 @@ const HowItWork = () => {
         <Step />
       </WrapperContent>
 
-      <CustomeCard mainTitle={`WHAT WE'RE DOING`} DataCustomeCard={DataCustomeCard} />
+      {/* <CustomeCard mainTitle={`WHAT WE'RE DOING`} DataCustomeCard={DataCustomeCard} /> */}
       {/* <CustomeCard mainTitle={`EARN EXTRA WITH BONUSES`} DataCustomeCard={DataCustomeCardHostBonus} /> */}
 
       <Proprietary Data={ProprietaryHowItWork} />
@@ -54,6 +54,8 @@ const HowItWork = () => {
         Data={SlideLeftRightHowItWork}
         img={data[ImgSlideLeftRight_HowItWork.img]}
         mainTitle={data[ImgSlideLeftRight_HowItWork.mainTitle]}
+        idTitle={ImgSlideLeftRight_HowItWork.mainTitle}
+        idimg={ImgSlideLeftRight_HowItWork.img}
       />
       <HearCommunity />
       <ExploreHosting

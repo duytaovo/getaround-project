@@ -91,7 +91,12 @@ const Proprietary: FC<Props> = ({ Data }) => {
                 {/* <strong className='font-bold'> {Data?.title}</strong> */}
               </h2>
               <div className='text-[#e9ebec] mt-[30px] text-sm'>
-                <Text id='DesEnvent' tag='span' content={data[ProprietaryST.description] || ''} className='' />
+                <Text
+                  id={ProprietaryST.description}
+                  tag='span'
+                  content={data[ProprietaryST.description] || ''}
+                  className=''
+                />
                 {/* {Data?.description} */}
                 <br /> <br />
                 <Text
