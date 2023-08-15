@@ -16,8 +16,11 @@ type Props = {
   Data: ISlideLR[]
   img?: string
   mainTitle?: string
+  idimg: string
+  idTitle: string
 }
-const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
+const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle, idimg, idTitle }) => {
+  console.log(idTitle, idimg)
   const dispatch = useDispatch()
   const data = useAppSelector((state) => state.data.data)
   return (
@@ -29,7 +32,7 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
         <div className='flex-row w-full max-w-[1080px] mx-auto flex sm:flex-col' style={{ gridColumnGap: '26px' }}>
           <div className='items-center flex w-full flex-col relative'>
             <Image
-              id={img || ''}
+              id={idimg || ''}
               className='h-full w-full max-h-[316px] sm:w-[70%] object-contain max-w-full align-middle inline-block border-0'
               src={img || ''}
               alt='Getaround Connect®'
@@ -42,7 +45,7 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle }) => {
           </div>
           <div className='items-start flex w-full flex-col relative'>
             <Text
-              id={mainTitle || ''}
+              id={idTitle || ''}
               tag='h2'
               content={mainTitle || ''}
               className='pb-0 text-mainColor max-w-[30ch] text-left uppercase m-[0_0_24px] text-[11px] sm:text-[12px] font-bold leading-[13px]'

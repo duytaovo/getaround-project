@@ -44,6 +44,8 @@ const SafetyTrust = () => {
         Data={SlideLeftRightST}
         img={data[ImgSlideLeftRightST.img]}
         mainTitle={data[ImgSlideLeftRightST.mainTitle]}
+        idTitle={ImgSlideLeftRightST.mainTitle}
+        idimg={ImgSlideLeftRightST.img}
       />
 
       <ExploreHosting
