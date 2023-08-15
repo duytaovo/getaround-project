@@ -195,6 +195,13 @@ export const ItemBodyTop: IBodyTop = {
   infoButton: 'txt-buttonBodyTop-shareACar'
 }
 
+export const ItemBodyTop2: IBodyTop = {
+  img: 'img-bodyTop-shareACar2',
+  content: ' txt-bodytop-shareACar_content2',
+  header: 'txt-bodytop-shareACar_header2',
+  infoButton: 'txt-buttonBodyTop-shareACar2'
+}
+
 export const itemBanner: IItemBodyBannerCard = {
   img: 'img_bodyBanner-shareACar',
   title: 'txt-bodyBaner-shareACar-title',

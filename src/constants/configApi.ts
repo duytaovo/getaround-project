@@ -1,6 +1,6 @@
 const config = {
-  baseUrl: 'https://landing.ult.unlockcar.co/'
-  // baseUrl: 'http://localhost:5026/'
+  baseUrl: 'https://landing.ult.unlockcar.co/',
+  baseUrl2: 'http://localhost:8080/api/'
 }
 
 export default config

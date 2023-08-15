@@ -6,6 +6,7 @@ import {
   DataExploreHostingShareCarText,
   DataExploreHostingShareCarText_bottom,
   ItemBodyTop,
+  ItemBodyTop2,
   ItemContentSlider,
   ItemSliderShareCar,
   itemBanner,
@@ -51,6 +52,7 @@ interface ICommonQuestion {
 
 interface ShareACarState {
   bodyTop: IBodyTop
+  bodyTop2: IBodyTop
   sliders: IItemSlider[]
   contentSlider: IItemContentSlider
   bodyBannerCard: IItemBodyBannerCard
@@ -72,6 +74,7 @@ interface ShareACarState {
 
 const initialState: ShareACarState = {
   bodyTop: ItemBodyTop,
+  bodyTop2: ItemBodyTop2,
   sliders: ItemSliderShareCar,
   contentSlider: ItemContentSlider,
   bodyBannerCard: itemBanner,

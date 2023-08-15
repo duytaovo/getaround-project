@@ -31,8 +31,9 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       id: 0,
       title: 'Lưu',
       callback: ({ id, value, setEnable }: IBody) => {
-        // console.log({ id, value })
+        console.log({ id, value })
         _updateText(id, value).then((fb) => {
+          console.log('abc')
           if (fb?.data?.result == 1) {
             dispatch(updateData({ [id]: value }))
             toast.success('Đã lưu thay đổi', {
@@ -102,6 +103,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
     }
     try {
       const res = await dispatch(updateText(body)).then(unwrapResult)
+      console.log(res)
 
       toast.success(res.message, {
         position: 'top-center',
@@ -109,7 +111,9 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       })
 
       return res
-    } catch (error) {}
+    } catch (error) {
+      console.log('lỗi' + error)
+    }
   }
 
   return (

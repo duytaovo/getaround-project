@@ -32,6 +32,7 @@ import { useState } from 'react'
 const ShareACar = () => {
   const {
     bodyTop,
+    bodyTop2,
     ourHost,
     commonQuestionImg,
     getAroundYourBack,
@@ -225,7 +226,7 @@ const ShareACar = () => {
       {/* end carousel review */}
       {/* start start hoisting increase income */}
       <div className='mb-bottom'>
-        <BodyTop item={bodyTop} className='flex-row-reverse ' />
+        <BodyTop item={bodyTop2} className='flex-row-reverse ' />
       </div>
       {/* end start hoisting increase income */}
 

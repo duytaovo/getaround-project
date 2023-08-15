@@ -12,7 +12,7 @@ export class Http {
   private accessToken: string
   private refreshToken: string
   private refreshTokenRequest: Promise<string> | null
-  constructor() {
+  constructor(url?: string) {
     this.accessToken = getAccessTokenFromLS()
     this.refreshToken = getRefreshTokenFromLS()
     this.refreshTokenRequest = null
@@ -27,6 +27,7 @@ export class Http {
     })
     this.instance.interceptors.request.use(
       (config) => {
+        console.log(config)
         if (this.accessToken && config.headers) {
           config.headers.authorization = this.accessToken
           return config
@@ -63,7 +64,7 @@ export class Http {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const data: any | undefined = error.response?.data
           const message = data?.message || error.message
-          toast.error(message + '🥹')
+          toast.error(message)
         }
 
         if (isAxiosUnauthorizedError<ErrorResponse<{ name: string; message: string }>>(error)) {
@@ -117,5 +118,5 @@ export class Http {
   // }
 }
 const http = new Http().instance
-// export const http_auth = new Http(config.baseUrl).instance
+export const http_auth = new Http(config.baseUrl2).instance
 export default http

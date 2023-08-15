@@ -277,6 +277,12 @@ const data = {
   'txt-bodytop-shareACar_header': 'Turn your car into extra money',
   'txt-buttonBodyTop-shareACar': 'Share a car',
 
+  'img-bodyTop-shareACar2':
+    'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
+  'txt-bodytop-shareACar_content2':
+    "When you list your car, you're earning money while helping others navigate your city. It's a win-win, and your next big opportunity.",
+  'txt-bodytop-shareACar_header2': 'Turn your car into extra money',
+  'txt-buttonBodyTop-shareACar2': 'Share a car',
   // slider
   'sliderShareACar_txt-card_slider_title_1': 'SUV/Jeep',
   'sliderShareACar_txt-card_slider_content_1': 'Maximize your host earnings',
