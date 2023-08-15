@@ -32,89 +32,88 @@ const data = {
   home_step_item_img:
     'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar.jpg',
 
-  home_carousel_intro_txt_title_1: 'Edit here...',
-  home_carousel_intro_txt_content_1: 'Edit here...',
-  home_carousel_intro_txt_header_1: 'Edit here...',
-  home_carousel_intro_txt_img_1:
-    'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg 1x, https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
+  home_txtCardCarouselTitle_1: 'Edit here...',
+  home_txtCardCarouselContent_1: 'Edit here...',
+  home_txtCardCarouselHeader_1: 'Edit here...',
+  home_imgCardCarousel_1: 'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
 
-  home_carousel_intro_txt_title_2: 'Edit here...',
-  home_carousel_intro_txt_content_2: 'Edit here...',
-  home_carousel_intro_txt_header_2: 'Edit here...',
-  home_carousel_intro_txt_img_2: 'Edit here...',
+  home_txtCardCarouselTitle_2: 'Edit here...',
+  home_txtCardCarouselContent_2: 'Edit here...',
+  home_txtCardCarouselHeader_2: 'Edit here...',
+  home_imgCardCarousel_2: 'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
 
-  home_carousel_intro_txt_title_3: 'Edit here...',
-  home_carousel_intro_txt_content_3: 'Edit here...',
-  home_carousel_intro_txt_header_3: 'Edit here...',
-  home_carousel_intro_txt_img_3: 'Edit here...',
+  home_txtCardCarouselTitle_3: 'Edit here...',
+  home_txtCardCarouselContent_3: 'Edit here...',
+  home_txtCardCarouselHeader_3: 'Edit here...',
+  home_imgCardCarousel_3: 'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
 
-  home_carousel_intro_txt_title_4: 'Edit here...',
-  home_carousel_intro_txt_content_4: 'Edit here...',
-  home_carousel_intro_txt_header_4: 'Edit here...',
-  home_carousel_intro_txt_img_4: 'Edit here...',
+  home_txtCardCarouselTitle_4: 'Edit here...',
+  home_txtCardCarouselContent_4: 'Edit here...',
+  home_txtCardCarouselHeader_4: 'Edit here...',
+  home_imgCardCarousel_4: 'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg',
 
   home_local_favourite_section_title: 'Edit here...',
   home_local_favourite_section_heading: 'Edit here...',
-  'sliderHome_txt-card_slider_title_7': 'SUV/Jeep',
-  'sliderHome_img-card_slider_7':
+  'home_localFavorite_txt-card_slider_title_1': 'SUV/Jeep',
+  'home_localFavorite_img-card_slider_1':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_8': 'SUV/Jeep',
-  'sliderHome_img-card_slider_8':
+  'home_localFavorite_txt-card_slider_title_2': 'SUV/Jeep',
+  'home_localFavorite_img-card_slider_2':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_9': 'SUV/Jeep',
-  'sliderHome_img-card_slider_9':
+  'home_localFavorite_txt-card_slider_title_3': 'SUV/Jeep',
+  'home_localFavorite_img-card_slider_3':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_10': 'SUV/Jeep',
-  'sliderHome_img-card_slider_10':
+  'home_localFavorite_txt-card_slider_title_4': 'SUV/Jeep',
+  'home_localFavorite_img-card_slider_4':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_11': 'SUV/Jeep',
-  'sliderHome_img-card_slider_11':
+  'home_localFavorite_txt-card_slider_title_5': 'SUV/Jeep',
+  'home_localFavorite_img-card_slider_5':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_12': 'SUV/Jeep',
-  'sliderHome_img-card_slider_12':
+  'home_localFavorite_txt-card_slider_title_6': 'SUV/Jeep',
+  'home_localFavorite_img-card_slider_6':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
   home_blog_section_title: 'Edit here...',
   home_blog_section_heading: 'Edit here...',
-  'sliderHome_txt-card_slider_title_13': 'SUV/Jeep',
-  'sliderHome_txt-card_slider_content_13': 'Maximize your host earnings',
-  'sliderHome_txt-card_slider_time_13': 'August-25-2023',
-  'sliderHome_img-card_slider_13':
+  'blogSlider_txt-card_slider_title_1': 'SUV/Jeep',
+  'blogSlider_txt-card_slider_content_1': 'Maximize your host earnings',
+  'blogSlider_txt-card_slider_time_1': 'August-25-2023',
+  'blogSlider_img-card_slider_1':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_14': 'SUV/Jeep',
-  'sliderHome_txt-card_slider_content_14': 'Maximize your host earnings',
-  'sliderHome_txt-card_slider_time_14': 'August-25-2023',
-  'sliderHome_img-card_slider_14':
+  'blogSlider_txt-card_slider_title_2': 'SUV/Jeep',
+  'blogSlider_txt-card_slider_content_2': 'Maximize your host earnings',
+  'blogSlider_txt-card_slider_time_2': 'August-25-2023',
+  'blogSlider_img-card_slider_2':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_15': 'SUV/Jeep',
-  'sliderHome_txt-card_slider_content_15': 'Maximize your host earnings',
-  'sliderHome_txt-card_slider_time_15': 'August-25-2023',
-  'sliderHome_img-card_slider_15':
+  'blogSlider_txt-card_slider_title_3': 'SUV/Jeep',
+  'blogSlider_txt-card_slider_content_3': 'Maximize your host earnings',
+  'blogSlider_txt-card_slider_time_3': 'August-25-2023',
+  'blogSlider_img-card_slider_3':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_16': 'SUV/Jeep',
-  'sliderHome_txt-card_slider_content_16': 'Maximize your host earnings',
-  'sliderHome_txt-card_slider_time_16': 'August-25-2023',
-  'sliderHome_img-card_slider_16':
+  'blogSlider_txt-card_slider_title_4': 'SUV/Jeep',
+  'blogSlider_txt-card_slider_content_4': 'Maximize your host earnings',
+  'blogSlider_txt-card_slider_time_4': 'August-25-2023',
+  'blogSlider_img-card_slider_4':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_17': 'SUV/Jeep',
-  'sliderHome_txt-card_slider_content_17': 'Maximize your host earnings',
-  'sliderHome_txt-card_slider_time_17': 'August-25-2023',
-  'sliderHome_img-card_slider_17':
+  'blogSlider_txt-card_slider_title_5': 'SUV/Jeep',
+  'blogSlider_txt-card_slider_content_5': 'Maximize your host earnings',
+  'blogSlider_txt-card_slider_time_5': 'August-25-2023',
+  'blogSlider_img-card_slider_5':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
-  'sliderHome_txt-card_slider_title_18': 'SUV/Jeep',
-  'sliderHome_txt-card_slider_content_18': 'Maximize your host earnings',
-  'sliderHome_txt-card_slider_time_18': 'August-25-2023',
-  'sliderHome_img-card_slider_18':
+  'blogSlider_txt-card_slider_title_6': 'SUV/Jeep',
+  'blogSlider_txt-card_slider_content_6': 'Maximize your host earnings',
+  'blogSlider_txt-card_slider_time_6': 'August-25-2023',
+  'blogSlider_img-card_slider_6':
     'https://assets-global.website-files.com/5c19140f997c250869180aa0/642c5727f0b7763cbb82c314_onboardbonus.png',
 
   'sliderHome_txt-card_slider_title_1': 'SUV/Jeep',

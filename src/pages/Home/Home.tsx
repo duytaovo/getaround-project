@@ -67,6 +67,7 @@ const Home = (props: Props) => {
             numberItemScroll={1}
             isTitle={true}
             data={homePageData.perfectCarSliderSection.itemsData}
+            prefix='sliderHome'
           />
         </div>
       </WrapperContent>
@@ -167,6 +168,7 @@ const Home = (props: Props) => {
             className='flex flex-col justify-center items-center'
             classNameTitle='pt-3 text-white/80'
             data={homePageData.localFavouriteSection.itemsData}
+            prefix='home_localFavorite'
           />
         </div>
       </WrapperContent>
@@ -181,7 +183,7 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
-            prefix='home'
+            prefix='blogSlider'
             breakPointScroll={[1, 2, 2, 2]}
             breakPoint={[1, 2, 3, 3]}
             numberItem={3}

@@ -102,7 +102,7 @@ export default function SliderHostComunity({
               classNameContent={classNameContent}
               className={className}
               classNameURL={classNameURL}
-              id={index}
+              id={index + 1}
             />
           </div>
         ))}

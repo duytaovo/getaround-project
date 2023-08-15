@@ -35,7 +35,7 @@ const Login = () => {
       password: data.password
     }
     try {
-      console.log(body)
+      // console.log(body)
       const res = await dispatch(login(body))
       unwrapResult(res)
       setIsAuthenticated(true)

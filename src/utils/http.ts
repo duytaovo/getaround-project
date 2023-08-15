@@ -2,8 +2,7 @@ import axios, { AxiosError, type AxiosInstance } from 'axios'
 import { toast } from 'react-toastify'
 import HttpStatusCode from 'src/constants/httpStatusCode.enum'
 import { ErrorResponse } from 'src/types/utils.type'
-import config from 'src/constants/configApi';
-
+import config from 'src/constants/configApi'
 
 export class Http {
   instance: AxiosInstance
@@ -17,7 +16,7 @@ export class Http {
       timeout: 10000,
       headers: {
         'Content-Type': 'application/json',
-        'expire-access-token': 60*60*24, // 1 ngày
+        'expire-access-token': 60 * 60 * 24, // 1 ngày
         'expire-refresh-token': 60 * 60 * 24 * 160 // 160 ngày
       }
     })
@@ -59,7 +58,7 @@ export class Http {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const data: any | undefined = error.response?.data
           const message = data?.message || error.message
-          toast.error(message + '🥹')
+          toast.error(message)
         }
 
         // if (isAxiosUnauthorizedError<ErrorResponse<{ name: string; message: string }>>(error)) {
