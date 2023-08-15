@@ -102,36 +102,31 @@ const initialState: HomePageType = {
     itemsData: [
       {
         id: '1',
-        title: 'home_carousel_intro_txt_title_1',
-        content: `home_carousel_intro_txt_content_1`,
-        header: 'home_carousel_intro_txt_header_1',
-        img: 'home_carousel_intro_txt_img_1',
-        name: 'Sheri and Adam, Oahu, HI'
+        title: 'home_txtCardCarouselTitle_1',
+        content: `home_txtCardCarouselContent_1`,
+        header: 'home_txtCardCarouselHeader_1',
+        img: 'home_imgCardCarousel_1'
       },
       {
-        // data[...itemsData.title]
         id: '2',
-        title: 'home_carousel_intro_txt_title_2',
-        content: `home_carousel_intro_txt_content_2`,
-        header: 'home_carousel_intro_txt_header_2',
-        img: 'home_carousel_intro_txt_img_2',
-        name: 'Sheri and Adam, Oahu, HI'
+        title: 'home_txtCardCarouselTitle_2',
+        content: `home_txtCardCarouselContent_2`,
+        header: 'home_txtCardCarouselHeader_2',
+        img: 'home_imgCardCarousel_2'
       },
       {
         id: '3',
-        title: 'home_carousel_intro_txt_title_3',
-        content: `home_carousel_intro_txt_content_3`,
-        header: 'home_carousel_intro_txt_header_3',
-        img: 'home_carousel_intro_txt_img_3',
-        name: 'Sheri and Adam, Oahu, HI'
+        title: 'home_txtCardCarouselTitle_3',
+        content: `home_txtCardCarouselContent_3`,
+        header: 'home_txtCardCarouselHeader_3',
+        img: 'home_imgCardCarousel_3'
       },
       {
         id: '4',
-        title: 'home_carousel_intro_txt_title_4',
-        content: `home_carousel_intro_txt_content_4`,
-        header: 'home_carousel_intro_txt_header_4',
-        img: 'home_carousel_intro_txt_img_4',
-        name: 'Sheri and Adam, Oahu, HI'
+        title: 'home_txtCardCarouselTitle_4',
+        content: `home_txtCardCarouselContent_4`,
+        header: 'home_txtCardCarouselHeader_4',
+        img: 'home_imgCardCarousel_4'
       }
     ]
   },
@@ -200,33 +195,33 @@ const initialState: HomePageType = {
     itemsData: [
       {
         id: '1',
-        title: 'sliderHome_txt-card_slider_title_7',
-        img: 'sliderHome_img-card_slider_7'
+        title: 'home_localFavorite_txt-card_slider_title_1',
+        img: 'home_localFavorite_img-card_slider_1'
       },
       {
         id: '2',
-        title: 'sliderHome_txt-card_slider_title_8',
-        img: 'sliderHome_img-card_slider_8'
+        title: 'home_localFavorite_txt-card_slider_title_2',
+        img: 'home_localFavorite_img-card_slider_2'
       },
       {
         id: '3',
-        title: 'sliderHome_txt-card_slider_title_9',
-        img: 'sliderHome_img-card_slider_9'
+        title: 'home_localFavorite_txt-card_slider_title_3',
+        img: 'home_localFavorite_img-card_slider_3'
       },
       {
         id: '4',
-        title: 'sliderHome_txt-card_slider_title_10',
-        img: 'sliderHome_img-card_slider_10'
+        title: 'home_localFavorite_txt-card_slider_title_4',
+        img: 'home_localFavorite_img-card_slider_4'
       },
       {
         id: '5',
-        title: 'sliderHome_txt-card_slider_title_11',
-        img: 'sliderHome_img-card_slider_11'
+        title: 'home_localFavorite_txt-card_slider_title_5',
+        img: 'home_localFavorite_img-card_slider_5'
       },
       {
         id: '6',
-        title: 'sliderHome_txt-card_slider_title_12',
-        img: 'sliderHome_img-card_slider_12'
+        title: 'home_localFavorite_txt-card_slider_title_6',
+        img: 'home_localFavorite_img-card_slider_6'
       }
     ]
   },
@@ -237,45 +232,45 @@ const initialState: HomePageType = {
     itemsData: [
       {
         id: '1',
-        title: 'sliderHome_txt-card_slider_title_13',
-        content: 'sliderHome_txt-card_slider_content_13',
-        time: 'sliderHome_txt-card_slider_time_13',
-        img: 'sliderHome_img-card_slider_13'
+        title: 'blogSlider_txt-card_slider_title_1',
+        content: 'blogSlider_txt-card_slider_content_1',
+        time: 'blogSlider_txt-card_slider_time_1',
+        img: 'blogSlider_img-card_slider_1'
       },
       {
         id: '2',
-        title: 'sliderHome_txt-card_slider_title_14',
-        content: 'sliderHome_txt-card_slider_content_14',
-        time: 'sliderHome_txt-card_slider_time_14',
-        img: 'sliderHome_img-card_slider_14'
+        title: 'blogSlider_txt-card_slider_title_2',
+        content: 'blogSlider_txt-card_slider_content_2',
+        time: 'blogSlider_txt-card_slider_time_2',
+        img: 'blogSlider_img-card_slider_2'
       },
       {
         id: '3',
-        title: 'sliderHome_txt-card_slider_title_15',
-        content: 'sliderHome_txt-card_slider_content_15',
-        time: 'sliderHome_txt-card_slider_time_15',
-        img: 'sliderHome_img-card_slider_15'
+        title: 'blogSlider_txt-card_slider_title_3',
+        content: 'blogSlider_txt-card_slider_content_3',
+        time: 'blogSlider_txt-card_slider_time_3',
+        img: 'blogSlider_img-card_slider_3'
       },
       {
         id: '4',
-        title: 'sliderHome_txt-card_slider_title_16',
-        content: 'sliderHome_txt-card_slider_content_16',
-        time: 'sliderHome_txt-card_slider_time_16',
-        img: 'sliderHome_img-card_slider_16'
+        title: 'blogSlider_txt-card_slider_title_4',
+        content: 'blogSlider_txt-card_slider_content_4',
+        time: 'blogSlider_txt-card_slider_time_4',
+        img: 'blogSlider_img-card_slider_4'
       },
       {
         id: '5',
-        title: 'sliderHome_txt-card_slider_title_17',
-        content: 'sliderHome_txt-card_slider_content_17',
-        time: 'sliderHome_txt-card_slider_time_17',
-        img: 'sliderHome_img-card_slider_17'
+        title: 'blogSlider_txt-card_slider_title_5',
+        content: 'blogSlider_txt-card_slider_content_5',
+        time: 'blogSlider_txt-card_slider_time_5',
+        img: 'blogSlider_img-card_slider_5'
       },
       {
         id: '6',
-        title: 'sliderHome_txt-card_slider_title_18',
-        content: 'sliderHome_txt-card_slider_content_18',
-        time: 'sliderHome_txt-card_slider_time_18',
-        img: 'sliderHome_img-card_slider_18'
+        title: 'blogSlider_txt-card_slider_title_6',
+        content: 'blogSlider_txt-card_slider_content_6',
+        time: 'blogSlider_txt-card_slider_time_6',
+        img: 'blogSlider_img-card_slider_6'
       }
     ]
   },

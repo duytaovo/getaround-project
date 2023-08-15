@@ -18,7 +18,7 @@ interface Props {
   classNameHeader?: string
   classNameImage?: string
   isCustomDot?: boolean
-  prefix:string
+  prefix: string
 }
 
 export default function Carousel_Introduce({
@@ -85,7 +85,7 @@ export default function Carousel_Introduce({
               classNameTitle={classNameTitle}
               classNameContent={classNameContent}
               className={className}
-              id={index}
+              id={index + 1}
               prefix={prefix}
             />
           </div>

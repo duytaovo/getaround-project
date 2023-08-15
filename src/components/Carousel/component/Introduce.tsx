@@ -43,7 +43,7 @@ const Introduce = ({
       </div>
       <div className='flex justify-center flex-col h-[260px] w-fit m-[15px]  md:overflow-hidden p-6'>
         <Text
-          id={`${prefix}_txtCardCarousel${id}`}
+          id={`${prefix}_txtCardCarouselHeader_${id}`}
           tag='span'
           content={data[item?.header || '']}
           className={`flex justify-start leading-[13px] font-medium uppercase text-mainColor text-[11px] ${classNameHeader} `}
@@ -55,14 +55,14 @@ const Introduce = ({
           {data[item?.header || '']}
         </span> */}
         <Text
-          id={`${prefix}_txtCardCarouselTitle${id}`}
+          id={`${prefix}_txtCardCarouselTitle_${id}`}
           tag='div'
           content={data[item?.title || '']}
           className={`font-medium text-black leading-[32px] text-[32px] ${classNameTitle} `}
         />
         {/* <div className={`font-medium text-black leading-[32px] text-[32px] ${classNameTitle} `}>{data[item?.title || '']}</div> */}
         <Text
-          id={`${prefix}_txtCardCarouselContent${id}`}
+          id={`${prefix}_txtCardCarouselContent_${id}`}
           tag='p'
           content={data[item?.content || '']}
           className={`text-[#727272] flex flex-start align-left wrap font-medium flex-column leading-[22px] ${classNameContent}`}
