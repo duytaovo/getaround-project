@@ -1,4 +1,5 @@
 import { FC, useState, useEffect, useRef } from 'react'
+import TransitionsModalText from 'src/components/Modal/ModalText'
 import { useAppSelector } from 'src/hooks/useRedux'
 
 interface IBody {
@@ -62,7 +63,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   const { permission, isActiveEdit } = useAppSelector((state) => state?.user)
   const [iOffset, setIOffset] = useState<IiOffset>({
     w: 100,
-    h: 100
+    h: 1000
   })
   const [val, setVal] = useState<string>(src)
   const [imgFile, setImgFile] = useState<File>()
@@ -89,7 +90,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
 
   useEffect(() => {
     const w = cRef?.current?.offsetWidth || 100
-    const h = cRef?.current?.offsetHeight || 100
+    const h = cRef?.current?.offsetHeight || 1000
     setIOffset({ w, h })
   }, [])
 
@@ -105,41 +106,43 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         className={`hidden`}
       />
       {permission == -1 && enable && isActiveEdit ? (
-        <div className='flex justify-center relative'>
-          <img
-            src={val}
-            alt={alt}
-            onClick={show}
-            className={`${className} border border-transparent ${
-              permission == -1 ? 'border-dashed hover:border-slate-400' : ''
-            }`}
-            {...props}
-          />
+        <TransitionsModalText>
+          <div className='flex justify-center relative'>
+            <img
+              src={val}
+              alt={alt}
+              onClick={show}
+              className={`${className} border border-transparent ${
+                permission == -1 ? 'border-dashed hover:border-slate-400' : ''
+              }`}
+              {...props}
+            />
 
-          <div className='flex h-7 absolute -bottom-0'>
-            {editOptions.map((option, index) => {
-              const body: IBody = {
-                id: id,
-                value: val,
-                src,
-                setEnable,
-                setVal,
-                iRef: iRef.current,
-                imgFile
-              }
+            <div className='flex h-7 absolute -bottom-0'>
+              {editOptions.map((option, index) => {
+                const body: IBody = {
+                  id: id,
+                  value: val,
+                  src,
+                  setEnable,
+                  setVal,
+                  iRef: iRef.current,
+                  imgFile
+                }
 
-              return (
-                <div
-                  key={index}
-                  onClick={() => option?.callback(body)}
-                  className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
-                >
-                  {option?.title}
-                </div>
-              )
-            })}
+                return (
+                  <div
+                    key={index}
+                    onClick={() => option?.callback(body)}
+                    className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
+                  >
+                    {option?.title}
+                  </div>
+                )
+              })}
+            </div>
           </div>
-        </div>
+        </TransitionsModalText>
       ) : (
         <div ref={cRef}>
           <img

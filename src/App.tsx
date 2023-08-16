@@ -7,6 +7,7 @@ import { useContext, useEffect } from 'react'
 import './App.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { SwitchMode } from './components/SwitchMode'
+import TransitionsModalText from './components/Modal/ModalText'
 
 // const theme = createTheme({
 //   direction: 'rtl'

@@ -184,7 +184,7 @@ export const itemAcount: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={'/admin/login'}>
         <div className='flex flex-col px-5 text-black  duration-300 group-hover:text-mainColor'>
           <span className='cursor-pointer group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
             <span className='group-hover:text-mainColor'>Đăng nhập</span>

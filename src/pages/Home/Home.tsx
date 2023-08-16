@@ -62,7 +62,7 @@ const Home = (props: Props) => {
             classNameTitle='text-center py-2 text-white/80 justify-center'
             className='bg-mainColor/20
              rounded-md h-fit p-1 box-border'
-            classNameImage='rounded-md w-[100%] h-[100px] object-cover'
+            classNameImage='rounded-md  h-[100px] object-cover'
             numberItem={5}
             numberItemScroll={1}
             isTitle={true}

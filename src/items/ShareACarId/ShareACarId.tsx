@@ -282,7 +282,7 @@ export const itemCardBodyImg3: IItemBodyBannerCard = {
 }
 export const itemCardBodyParnerDeal: IItemBodyBannerCard = {
   title: 'txt_CardBodyParner_community_title',
-  infoButton: 'txt_cardBodyParnerDeal_community_infoButton',
+  infoButton: 'txt_cardBodyButton_community_infoButton_parnelDeal',
   img: 'img_cardBodyParner_shareACar',
   content: 'txt_CardBodyParner_community_content'
 }
