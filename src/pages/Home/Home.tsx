@@ -103,7 +103,7 @@ const Home = (props: Props) => {
             {/* <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' /> */}
             <Image
               alt='Image thumb'
-              id={data[homePageData.homeStepSection.img]}
+              id={homePageData.homeStepSection.img}
               src={homePageData.homeStepSection.img}
               className='object-contain h-[500px]'
             />
