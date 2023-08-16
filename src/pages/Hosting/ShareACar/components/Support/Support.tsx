@@ -46,7 +46,7 @@ const Support = ({ item }: Props) => {
           id={`support_shareACar-Right`}
           tag='p'
           content={data[item.contentRight || '']}
-          className={`text-black/60 rounded-2xl flex flex-start leading-[22.4px] text-ellipsis text-justify mt-6 `}
+          className={`text-black/60 rounded-2xl flex flex-start leading-[22.4px] text-ellipsis mt-6 `}
         />
         {/* <p className='text-black/60 rounded-2xl flex flex-start leading-[22.4px] text-ellipsis text-justify mt-6'>
           {item.contentRight}
