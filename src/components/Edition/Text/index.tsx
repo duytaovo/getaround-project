@@ -35,7 +35,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       callback: ({ id, value, setEnable }: IBody) => {
         console.log({ id, value })
         _updateText(id, value).then((fb) => {
-          if (fb?.data?.status === 200) {
+          if (fb?.data?.status == 200) {
             dispatch(updateData({ [id]: value }))
             toast.success('Đã lưu thay đổi', {
               position: 'top-right',

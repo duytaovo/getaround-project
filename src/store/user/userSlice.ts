@@ -51,7 +51,6 @@ const userSlice = createSlice({
 
       console.log(payload.data)
       localStorage.setItem('accessToken', payload.data.accessToken)
-
       state.permission = Number(payload.data.permission || '0')
       // console.log()
     })
