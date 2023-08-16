@@ -198,7 +198,7 @@ export const itemAcount: MenuProps['items'] = [
 export const itemsHeaderMobile: ICommonQuestion[] = [
   {
     key: '1',
-    label: 'How it works',
+    label: 'Cách thức hoạt động',
     contents: [
       {
         id: 1,
@@ -252,7 +252,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
   },
   {
     key: '2',
-    label: 'Hoisting',
+    label: 'Tổ chức',
     contents: [
       {
         id: 1,
@@ -306,7 +306,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
   },
   {
     key: '3',
-    label: 'Partners',
+    label: 'Cộng tác',
     contents: [
       {
         id: 1,
@@ -336,7 +336,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
   },
   {
     key: '4',
-    label: 'About Us',
+    label: 'Về chúng tôi',
     contents: [
       {
         id: 1,

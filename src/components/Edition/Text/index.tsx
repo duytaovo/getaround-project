@@ -31,7 +31,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       id: 0,
       title: 'Lưu',
       callback: ({ id, value, setEnable }: IBody) => {
-        // console.log({ id, value })
+        console.log({ id, value })
         _updateText(id, value).then((fb) => {
           if (fb?.data?.result == 1) {
             dispatch(updateData({ [id]: value }))
@@ -120,7 +120,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       {permission == -1 && enable && isActiveEdit ? (
         <div className='flex justify-center relative'>
           <textarea
-            style={{ width: iOffset?.w + 100, height: iOffset?.h }}
+            style={{ width: iOffset?.w + 10, height: iOffset?.h }}
             ref={iRef}
             value={val}
             onChange={handleChangeInput}

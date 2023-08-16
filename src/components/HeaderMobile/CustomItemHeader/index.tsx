@@ -5,6 +5,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { IconButton } from '@mui/material'
 import Button from 'src/components/Button'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
+import path from 'src/constants/path'
 
 export interface ICommonQuestion {
   key: string
@@ -39,8 +41,8 @@ const CustomeCollapseHeader: FC<CommonQuestionProps> = ({ titleClassName, items,
           bordered={false}
         />
         <div className='flex items-center text-black space-x-2 text-[20px]'>
-            <AccountCircleIcon onClick={() => {}} className='' />
-          <span>Login - Signup</span>
+          <AccountCircleIcon onClick={() => {}} className='' />
+          <Link to={path.login}>Login - Signup</Link>
         </div>
       </div>
       <div className=' flex flex-col items-center  space-y-3 mb-3'>
