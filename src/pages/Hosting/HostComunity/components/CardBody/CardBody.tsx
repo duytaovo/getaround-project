@@ -113,7 +113,7 @@ export const CardBodyParnerDeal = ({ itemCardBodyParnerDeal }: PropsCardBodyParn
         <Button
           children={
             <Text
-              id={`txt_cardBodyButton_community_infoButton`}
+              id={`txt_cardBodyButton_community_infoButton_parnelDeal`}
               tag='span'
               content={data[itemCardBodyParnerDeal.infoButton || '']}
               className={`text-base `}
@@ -152,7 +152,7 @@ export const CardBodyReferFriend = ({ itemCardBodyReferFriend }: PropsCardBodyRe
         {itemCardBodyReferFriend.content}
       </p> */}
       <Text
-        id={`txt_CardBodyReferFrient_community_content`}
+        id={`txt_CardBodyReferFrient_community_infoLink`}
         tag='a'
         content={data[itemCardBodyReferFriend.infoLink || '']}
         className={`text-mainColor underline hover:text-black`}

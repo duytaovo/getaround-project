@@ -36,7 +36,7 @@ const Login = () => {
     }
     try {
       const res = await dispatch(login(body))
-
+      console.log(res)
       const d = res?.payload?.data
 
       if (d?.result == 0) return toast.error(d?.message)
