@@ -35,7 +35,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       callback: ({ id, value, setEnable }: IBody) => {
         console.log({ id, value })
         _updateText(id, value).then((fb) => {
-          if (fb?.data?.result == 1) {
+          if (fb?.data?.status === 200) {
             dispatch(updateData({ [id]: value }))
             toast.success('Đã lưu thay đổi', {
               position: 'top-right',
@@ -103,8 +103,8 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
 
   var _updateText = async (id: string, value: string) => {
     const body = {
-      id: id,
-      text: value
+      part_id: id,
+      content: value
     }
     try {
       const res = await dispatch(updateText(body)).then(unwrapResult)
@@ -121,7 +121,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   return (
     <div>
       {permission == -1 && enable && isActiveEdit ? (
-        <TransitionsModalText>
+        <div>
           <div className='flex justify-center relative'>
             <textarea
               style={{ width: '1000px', color: 'black' }}
@@ -159,7 +159,46 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
               })}
             </div>
           </div>
-        </TransitionsModalText>
+          <TransitionsModalText>
+            <div className='flex justify-center relative'>
+              <textarea
+                style={{ width: '1000px', color: 'black' }}
+                ref={iRef}
+                value={val}
+                onChange={handleChangeInput}
+                onResize={() => {
+                  true
+                }}
+                rows={5}
+                cols={20}
+                className={`${
+                  className || ''
+                } rounded outline-none text-black bg-transparent border border-slate-400 px-2`}
+              ></textarea>
+              <div className='flex h-7 absolute -bottom-0 w-max '>
+                {editOptions.map((option, index) => {
+                  const body: IBody = {
+                    id: id,
+                    value: val,
+                    content,
+                    setEnable,
+                    setVal
+                  }
+
+                  return (
+                    <div
+                      key={index}
+                      onClick={() => option?.callback(body)}
+                      className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
+                    >
+                      {option?.title}
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </TransitionsModalText>
+        </div>
       ) : (
         <div ref={cRef}>
           <Wrapper
