@@ -13,8 +13,8 @@ import { unwrapResult } from '@reduxjs/toolkit'
 import { login, updateUser } from 'src/store/user/userSlice'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 
-type FormData = Pick<Schema, 'username' | 'password'>
-const loginSchema = schema.pick(['username', 'password'])
+type FormData = Pick<Schema, 'email' | 'password'>
+const loginSchema = schema.pick(['email', 'password'])
 
 const Login = () => {
   const dispatch = useAppDispatch()
@@ -31,7 +31,7 @@ const Login = () => {
 
   const onSubmit = handleSubmit(async (data) => {
     const body = {
-      username: data.username,
+      email: data.email,
       password: data.password
     }
     try {
@@ -74,11 +74,11 @@ const Login = () => {
           <div className=' flex items-center justify-center text-[25px] text-black'>Đăng nhập</div>
 
           <Input
-            name='username'
+            name='email'
             register={register}
             type='text'
             className='mt-8'
-            errorMessage={errors.username?.message}
+            errorMessage={errors.email?.message}
             placeholder='User name'
           />
           <Input

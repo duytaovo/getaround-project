@@ -49,10 +49,10 @@ const userSlice = createSlice({
       // state.token = payload.data
       // localStorage.setItem('accessToken', state.token)
 
-      // console.log(payload.data.permission)
+      console.log(payload.data)
       localStorage.setItem('accessToken', payload.data.accessToken)
       state.permission = Number(payload.data.permission || '0')
-
+      // console.log()
     })
   }
 })
