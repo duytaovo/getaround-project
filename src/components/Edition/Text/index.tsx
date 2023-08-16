@@ -35,7 +35,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       callback: ({ id, value, setEnable }: IBody) => {
         console.log({ id, value })
         _updateText(id, value).then((fb) => {
-          if (fb?.data?.result == 1) {
+          if (fb?.data?.status == 200) {
             dispatch(updateData({ [id]: value }))
             toast.success('Đã lưu thay đổi', {
               position: 'top-right',
@@ -103,8 +103,8 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
 
   var _updateText = async (id: string, value: string) => {
     const body = {
-      id: id,
-      text: value
+      part_id: id,
+      content: value
     }
     try {
       const res = await dispatch(updateText(body)).then(unwrapResult)

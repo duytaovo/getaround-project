@@ -16,7 +16,7 @@ export const clearLS = () => {
   LocalStorageEventTarget.dispatchEvent(clearLSEvent)
 }
 
-export const getAccessTokenFromLS = () => localStorage.getItem('token') || ''
+export const getAccessTokenFromLS = () => localStorage.getItem('accessToken') || ''
 
 export const getRefreshTokenFromLS = () => localStorage.getItem('refresh_token') || ''
 
