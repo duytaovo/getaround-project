@@ -30,6 +30,7 @@ type Props = {}
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
   const data = useAppSelector((state) => state.data.data)
+  // console.log('Home', data)
   const dispatch = useAppDispatch()
 
   useEffect(() => {}, [dispatch])

@@ -2,6 +2,14 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import authApi from 'src/apis/auth/auth.api'
 import { payloadCreator } from 'src/utils/utils'
 export const login = createAsyncThunk('auth/login', payloadCreator(authApi.login))
+import jwtDecode from 'jwt-decode'
+
+interface DecodedToken {
+  userID: number
+  permissions: string
+  username: string
+  // Add other properties as needed
+}
 
 interface IUser {
   name: string
@@ -10,10 +18,17 @@ interface IUser {
   isActiveEdit?: boolean
 }
 
+const decodeToken = jwtDecode(localStorage.getItem('accessToken') || '') as DecodedToken
+
+// console.log(decodeToken.permissions)
+
 const initialState: IUser = {
   name: 'admin',
   token: '123',
-  permission: Number(localStorage?.getItem('permission') || 0) || 0,
+  permission: 0,
+  // permission: Number(decodeToken.permissions) || 0,
+  // permission: Number(localStorage?.getItem('permission') || 0) || 0,
+  // permission: Number(permissions = jwtDecode(localStorage?.getItem('accessToken') || 'no_access_token_here')) || 0,
   isActiveEdit: false
 }
 
@@ -33,7 +48,12 @@ const userSlice = createSlice({
     builder.addCase(login.fulfilled, (state, { payload }) => {
       // state.token = payload.data
       // localStorage.setItem('accessToken', state.token)
-      // state.permission = -1
+
+      // console.log(payload.data.permission)
+      localStorage.setItem('accessToken', payload.data.accessToken)
+
+      state.permission = Number(payload.data.permission || '0')
+
     })
   }
 })
