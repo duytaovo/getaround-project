@@ -49,3 +49,12 @@ export interface ISelectImglideLeftRight {
   img: string
   mainTitle: string
 }
+export interface ISelectHeaderHIW {
+  img: string
+  mainTitle: string
+}
+export interface ISelectmainTitleStepHIW {
+  mainTitle: string
+  imgSlide1: string
+  imgSlide2: string
+}
