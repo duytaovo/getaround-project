@@ -1,5 +1,6 @@
 import { FC, useState, useEffect, useRef } from 'react'
 import { useAppSelector } from 'src/hooks/useRedux'
+import axios from 'axios'
 
 interface IBody {
   id: string
@@ -18,8 +19,15 @@ const editOptions = [
   {
     id: 0,
     title: 'Lưu',
-    callback: ({ id, value, setEnable, imgFile }: IBody) => {
-      console.log({ id, value, imgFile })
+    callback: async ({ id, value, setEnable, imgFile }: IBody) => {
+      // console.log(imgFile)
+      const formData = new FormData()
+      formData.append('id', id)
+      formData.append('file', imgFile)
+      const data = await axios.put('http://localhost:8080/upImage', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      })
+      console.log(data.data)
     }
   },
   {
