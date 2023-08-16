@@ -9,7 +9,7 @@ import { Loader } from './components/Loader'
 
 export default function useRouteElements() {
   const data = useAppSelector((state) => state?.data?.data)
-  const dataLength = Object?.values(data)?.length
+  // const dataLength = Object?.values(data)?.length
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const dispatch = useAppDispatch()
 
@@ -26,11 +26,11 @@ export default function useRouteElements() {
     dispatch(_getData(''))
   }, [])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
-  }, [dataLength])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false)
+  //   }, 2000)
+  // }, [dataLength])
 
   const renderRouter = useMemo(() => {
     return routeMain.map(({ path, Component }, index) => {
@@ -58,8 +58,9 @@ export default function useRouteElements() {
 
   return (
     <>
-      {dataLength ? routeElements : <div></div>}
-      <div
+      {routeElements}
+      {/* {dataLength ? routeElements : <div></div>} */}
+      {/* <div
         className={`duration-700 transition-all fixed w-full bottom-0 overflow-hidden z-[9999999] bg-mainL1 flex justify-center items-center ${
           !isLoading ? 'h-0 rounded-tl-[100%] rounded-tr-[100%]' : 'h-full'
         }`}
@@ -70,7 +71,7 @@ export default function useRouteElements() {
           </div>
           <div className='py-2'>Loading...</div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
