@@ -25,7 +25,7 @@ const MainLayoutInner = (props: Props) => {
       <div className='pt-[110px] container px-[96px] lg:px-2'>
         <Outlet />
       </div>
-      <div className='bg-white'>
+      <div className='bg-white '>
         <Hidden mdDown>
           <Footer />
         </Hidden>

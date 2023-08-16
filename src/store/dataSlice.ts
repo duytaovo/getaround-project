@@ -28,6 +28,7 @@ const dataSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(_getData.fulfilled, (state, { payload }) => {
+      console.log(payload.data)
       state.data = payload.data.data
     })
   }
