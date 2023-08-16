@@ -1,9 +1,11 @@
 import { unwrapResult } from '@reduxjs/toolkit'
-import { FC, useState, useEffect, useRef } from 'react'
+import { FC, useState, useEffect, useRef, useContext } from 'react'
 import { toast } from 'react-toastify'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { _getData, updateData } from 'src/store/dataSlice'
 import { updateText } from 'src/store/hosting/share_a_car/shareACarSlice'
+import TransitionsModalText from '../../Modal/ModalText'
+import { AppContext } from 'src/contexts/app.context'
 
 interface IBody {
   id: string
@@ -72,6 +74,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   })
   const [val, setVal] = useState<string>(content)
   const [enable, setEnable] = useState<boolean>(false)
+  // var { enable, setEnable } = useContext(AppContext)
   const dispatch = useAppDispatch()
 
   const show = () => {
@@ -118,41 +121,45 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   return (
     <div>
       {permission == -1 && enable && isActiveEdit ? (
-        <div className='flex justify-center relative'>
-          <textarea
-            style={{ width: iOffset?.w + 100, height: iOffset?.h }}
-            ref={iRef}
-            value={val}
-            onChange={handleChangeInput}
-            onResize={() => {
-              true
-            }}
-            rows={5}
-            cols={20}
-            className={`${className || ''} rounded outline-none bg-transparent border border-slate-400 px-2`}
-          ></textarea>
-          <div className='flex h-7 absolute -bottom-7 right-0 '>
-            {editOptions.map((option, index) => {
-              const body: IBody = {
-                id: id,
-                value: val,
-                content,
-                setEnable,
-                setVal
-              }
+        <TransitionsModalText>
+          <div className='flex justify-center relative'>
+            <textarea
+              style={{ width: '1000px', color: 'black' }}
+              ref={iRef}
+              value={val}
+              onChange={handleChangeInput}
+              onResize={() => {
+                true
+              }}
+              rows={5}
+              cols={20}
+              className={`${
+                className || ''
+              } rounded outline-none text-black bg-transparent border border-slate-400 px-2`}
+            ></textarea>
+            <div className='flex h-7 absolute -bottom-0 w-max '>
+              {editOptions.map((option, index) => {
+                const body: IBody = {
+                  id: id,
+                  value: val,
+                  content,
+                  setEnable,
+                  setVal
+                }
 
-              return (
-                <div
-                  key={index}
-                  onClick={() => option?.callback(body)}
-                  className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
-                >
-                  {option?.title}
-                </div>
-              )
-            })}
+                return (
+                  <div
+                    key={index}
+                    onClick={() => option?.callback(body)}
+                    className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
+                  >
+                    {option?.title}
+                  </div>
+                )
+              })}
+            </div>
           </div>
-        </div>
+        </TransitionsModalText>
       ) : (
         <div ref={cRef}>
           <Wrapper

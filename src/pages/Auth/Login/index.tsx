@@ -13,8 +13,8 @@ import { unwrapResult } from '@reduxjs/toolkit'
 import { login, updateUser } from 'src/store/user/userSlice'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 
-type FormData = Pick<Schema, 'email' | 'password'>
-const loginSchema = schema.pick(['email', 'password'])
+type FormData = Pick<Schema, 'username' | 'password'>
+const loginSchema = schema.pick(['username', 'password'])
 
 const Login = () => {
   const dispatch = useAppDispatch()
@@ -31,12 +31,12 @@ const Login = () => {
 
   const onSubmit = handleSubmit(async (data) => {
     const body = {
-      email: data.email,
+      username: data.username,
       password: data.password
     }
     try {
       const res = await dispatch(login(body))
-
+      console.log(res)
       const d = res?.payload?.data
 
       if (d?.result == 0) return toast.error(d?.message)
@@ -66,7 +66,7 @@ const Login = () => {
 
   return (
     <div className='w-full flex justify-center'>
-      <div className='lg:col-span-2 lg:col-start-4 bg-white w-1/2 justify-center m-10 rounded-2xl'>
+      <div className='lg:col-span-2 lg:col-start-4 bg-white w-1/2 md:w-full justify-center m-10 rounded-2xl'>
         <div className='flex items-center justify-center rounded-2xl mt-3'>
           <img src='/public/logo.jpg' alt='logo' className='w-30 h-20'></img>
         </div>
@@ -74,12 +74,12 @@ const Login = () => {
           <div className=' flex items-center justify-center text-[25px] text-black'>Đăng nhập</div>
 
           <Input
-            name='email'
+            name='username'
             register={register}
-            type='email'
+            type='text'
             className='mt-8'
-            errorMessage={errors.email?.message}
-            placeholder='Email'
+            errorMessage={errors.username?.message}
+            placeholder='User name'
           />
           <Input
             name='password'

@@ -203,12 +203,12 @@ export const itemBanner: IItemBodyBannerCard = {
 
 export const itemBodyCardTop: IItemBodyBannerCard = {
   title: 'bodyCardTop_txt-bodyCard-shareACar-title',
-  content: 'bodyCarTop_txt-bodyCard-shareACar-content'
+  content: 'bodyCardTop_txt-bodyCard-shareACar-content'
 }
 
 export const itemBodyCardBottom: IItemBodyBannerCard = {
-  content: 'bodyCardBottom_txt-bodyCard-shareACar-title',
-  title: 'bodyCarBottom_txt-bodyCard-shareACar-content'
+  title: 'bodyCardBottom_txt-bodyCard-shareACar-title',
+  content: 'bodyCardBottom_txt-bodyCard-shareACar-content'
 }
 
 export const itemSupport: IItemSupport = {
@@ -282,7 +282,7 @@ export const itemCardBodyImg3: IItemBodyBannerCard = {
 }
 export const itemCardBodyParnerDeal: IItemBodyBannerCard = {
   title: 'txt_CardBodyParner_community_title',
-  infoButton: 'txt_cardBodyParnerDeal_community_infoButton',
+  infoButton: 'txt_cardBodyButton_community_infoButton_parnelDeal',
   img: 'img_cardBodyParner_shareACar',
   content: 'txt_CardBodyParner_community_content'
 }

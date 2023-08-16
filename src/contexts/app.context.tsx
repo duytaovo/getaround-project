@@ -6,13 +6,17 @@ interface AppContextInterface {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
   isAuthenticated: boolean
   setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>
+  setEnable: React.Dispatch<React.SetStateAction<boolean>>
+  enable: boolean
 }
 
 export const getInitialAppContext: () => AppContextInterface = () => ({
   openModal: false,
   setOpenModal: () => {},
   isAuthenticated: Boolean(getAccessTokenFromLS()),
-  setIsAuthenticated: () => null
+  setIsAuthenticated: () => null,
+  setEnable: () => null,
+  enable: false
 })
 
 const initialAppContext = getInitialAppContext()
@@ -28,6 +32,7 @@ export const AppProvider = ({
 }) => {
   const [openModal, setOpenModal] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(defaultValue.isAuthenticated)
+  const [enable, setEnable] = useState<boolean>(false)
 
   return (
     <AppContext.Provider
@@ -35,7 +40,9 @@ export const AppProvider = ({
         openModal,
         setOpenModal,
         isAuthenticated,
-        setIsAuthenticated
+        setIsAuthenticated,
+        setEnable,
+        enable
       }}
     >
       {children}

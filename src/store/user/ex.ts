@@ -333,7 +333,8 @@ const data = {
     'Rest easy knowing that you are covered whenever your car is in a trip booked on Getaround.',
 
   //itemBodyCardBottom
-  'bodyCardBottom_txt-bodyCard-shareACar-title':
+  'bodyCardBottom_txt-bodyCard-shareACar-title': 'Edit here',
+  'bodyCardBottom_txt-bodyCard-shareACar-content':
     'Let our data figure out exactly how to price bookings, so you can maximize your earnings.',
   'bodyCarBottom_txt-bodyCard-shareACar-content': 'Predictive pricing',
 

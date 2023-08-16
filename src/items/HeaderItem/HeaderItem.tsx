@@ -184,7 +184,7 @@ export const itemAcount: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={'/'}>
+      <CustomLink to={'/admin/login'}>
         <div className='flex flex-col px-5 text-black  duration-300 group-hover:text-mainColor'>
           <span className='cursor-pointer group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
             <span className='group-hover:text-mainColor'>Đăng nhập</span>
@@ -198,7 +198,7 @@ export const itemAcount: MenuProps['items'] = [
 export const itemsHeaderMobile: ICommonQuestion[] = [
   {
     key: '1',
-    label: 'How it works',
+    label: 'Cách thức hoạt động',
     contents: [
       {
         id: 1,
@@ -252,7 +252,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
   },
   {
     key: '2',
-    label: 'Hoisting',
+    label: 'Tổ chức',
     contents: [
       {
         id: 1,
@@ -306,7 +306,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
   },
   {
     key: '3',
-    label: 'Partners',
+    label: 'Cộng tác',
     contents: [
       {
         id: 1,
@@ -336,7 +336,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
   },
   {
     key: '4',
-    label: 'About Us',
+    label: 'Về chúng tôi',
     contents: [
       {
         id: 1,
