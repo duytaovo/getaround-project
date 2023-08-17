@@ -78,7 +78,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   const dispatch = useAppDispatch()
 
   const show = () => {
-    permission == -1 && isActiveEdit && setEnable(true)
+    permission == '-1' && isActiveEdit && setEnable(true)
   }
   const hidden = () => setEnable(false)
 
@@ -120,44 +120,23 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
 
   return (
     <div>
-      {permission == -1 && enable && isActiveEdit ? (
+      {permission == '-1' && enable && isActiveEdit ? (
         <div>
           <div className='flex justify-center relative'>
             <textarea
-              style={{ width: '1000px', color: 'black' }}
+              style={{ width: '100px', height: '', color: '' }}
               ref={iRef}
               value={val}
-              onChange={handleChangeInput}
-              onResize={() => {
-                true
-              }}
+              // onChange={handleChangeInput}
+              // onResize={() => {
+              //   true
+              // }}
               rows={5}
-              cols={20}
+              // cols={20}
               className={`${
                 className || ''
               } rounded outline-none text-black bg-transparent border border-slate-400 px-2`}
             ></textarea>
-            <div className='flex h-7 absolute -bottom-0 w-max '>
-              {editOptions.map((option, index) => {
-                const body: IBody = {
-                  id: id,
-                  value: val,
-                  content,
-                  setEnable,
-                  setVal
-                }
-
-                return (
-                  <div
-                    key={index}
-                    onClick={() => option?.callback(body)}
-                    className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
-                  >
-                    {option?.title}
-                  </div>
-                )
-              })}
-            </div>
           </div>
           <TransitionsModalText>
             <div className='flex justify-center relative'>
@@ -175,7 +154,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
                   className || ''
                 } rounded outline-none text-black bg-transparent border border-slate-400 px-2`}
               ></textarea>
-              <div className='flex h-7 absolute -bottom-0 w-max '>
+              <div className='flex h-17 absolute -top-7  justify-center w-max '>
                 {editOptions.map((option, index) => {
                   const body: IBody = {
                     id: id,
@@ -204,7 +183,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
           <Wrapper
             onClick={show}
             className={`${className} border border-transparent ${
-              permission == -1 && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
+              permission == '-1' && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           >
