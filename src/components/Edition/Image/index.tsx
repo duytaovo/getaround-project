@@ -25,7 +25,7 @@ const editOptions = [
       const formData = new FormData()
       formData.append('id', id)
       formData.append('file', imgFile || '')
-      const data = await axios.put('http://localhost:8080/api/v1/updateImage', formData, {
+      const data = await axios.put('http://localhost:8080/api/v1/pageElement/updateImageElement', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`
