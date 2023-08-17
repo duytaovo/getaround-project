@@ -35,6 +35,8 @@ const Home = (props: Props) => {
 
   useEffect(() => {}, [dispatch])
 
+  console.log(homePageData.homeStepSection.img)
+
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
@@ -103,8 +105,8 @@ const Home = (props: Props) => {
             {/* <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' /> */}
             <Image
               alt='Image thumb'
-              id={data[homePageData.homeStepSection.img]}
-              src={homePageData.homeStepSection.img}
+              id={homePageData.homeStepSection.img}
+              src={data[homePageData.homeStepSection.img]}
               className='object-contain h-[500px]'
             />
           </div>
