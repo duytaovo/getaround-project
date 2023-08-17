@@ -8,7 +8,7 @@ import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 interface Props {
   mainTitle: string
-  DataCustomeCard?: any
+  DataCustomeCard: any
 }
 const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
   const {
@@ -43,32 +43,32 @@ const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
               >
                 <div>
                   <Text
-                    id={CustomeCardR?.[index]?.header}
+                    id={DataCustomeCard?.[index]?.header}
                     tag='div'
-                    content={data[CustomeCardR?.[index]?.description]}
+                    content={data[DataCustomeCard?.[index]?.header]}
                     className='mt-[6px] text-[30px] md:text-[25px] font-bold block  box-border leading-[140%] text-mainColor '
                   />
                   {/* <div className='mt-[6px] text-[30px] md:text-[25px] font-bold block  box-border leading-[140%] text-mainColor '>
                     {DataCustomeCard?.[index]?.header}
                   </div> */}
                 </div>
-                <h3 className={`${DataCustomeCard?.[index]?.styleTitle} md:text-[20px]`}>
-                  <Text
-                    id={CustomeCardR?.[index]?.title}
-                    tag='strong'
-                    content={data[CustomeCardR?.[index]?.title]}
-                    className=''
-                  />
-                  {/* <strong>
+                {/* <h3 className={`${DataCustomeCard?.[index]?.styleTitle} md:text-[20px]`}> */}
+                <Text
+                  id={DataCustomeCard?.[index]?.title}
+                  tag='h3'
+                  content={data[DataCustomeCard?.[index]?.title]}
+                  className='mt-[6px] text-[18px] md:text-[25px] font-bold block  box-border leading-[140%] text-black '
+                />
+                {/* <strong>
                     {DataCustomeCard?.[index]?.title} <br />
                   </strong> */}
-                </h3>
+                {/* </h3> */}
                 <div className={`${DataCustomeCard?.[index]?.styleDes}`}>
                   <Text
-                    id={CustomeCardR?.[index]?.description}
+                    id={DataCustomeCard?.[index]?.description}
                     tag='p'
-                    content={data[CustomeCardR?.[index]?.description]}
-                    className=' no-underline bg-transparent'
+                    content={data[DataCustomeCard?.[index]?.description]}
+                    className='mt-[6px] text-[15px] md:text-[25px] font-normal block  box-border leading-[140%] text-[#a8a8a8] '
                   />
                   {/* <p className=' no-underline bg-transparent'>{DataCustomeCard?.[index]?.description}</p> */}
                 </div>

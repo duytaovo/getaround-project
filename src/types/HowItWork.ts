@@ -42,6 +42,7 @@ export interface ISelectItemsSlideLeftRight {
   label: string
   Linkto: string
   Link: string
+
   contents: any[]
 }
 export interface ISelectImglideLeftRight {
