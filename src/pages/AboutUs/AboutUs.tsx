@@ -73,7 +73,7 @@ const AboutUs = () => {
       <JoinTeam />
 
       <ExploreHosting
-        img={data[ImgExploreAboutUs.img]}
+        img={ImgExploreAboutUs.img}
         DataExploreHostingStyle={DataExploreHostingAboutUs}
         DataExploreHostingText={ExploreAboutUs}
         isEx={false}

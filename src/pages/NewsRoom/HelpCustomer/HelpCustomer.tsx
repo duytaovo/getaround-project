@@ -22,7 +22,7 @@ const HelpCustomer = () => {
   const dispatch = useDispatch()
   return (
     <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10 sm:flex-col-reverse'>
-      <div className='w-1/2  flex items-center sm:w-[80%] sm:text-center sm:mx-auto'>
+      <div className='w-1/2  flex items-center sm:w-[80%] sm:text-center sm:mx-auto sm:mb-4'>
         <div className='block h-[50%]'>
           <Text
             id={HelpCustomerNewsRoom.title}
@@ -52,10 +52,10 @@ const HelpCustomer = () => {
           </div>
         </div>
       </div>
-      <div className='w-[35%] flex justify-center sm:w-[80%]'>
+      <div className='w-[35%] flex justify-center sm:w-[80%] sm:justify-center'>
         <Image
           id={HelpCustomerNewsRoom.img}
-          className='object-contain h-[500px]'
+          className='object-contain h-[500px] sm:h-[300px]'
           src={data[HelpCustomerNewsRoom.img]}
           alt='Getaround Connect®'
         />

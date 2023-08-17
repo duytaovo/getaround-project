@@ -3,7 +3,6 @@ import Proprietary from 'src/components/Proprietary/EventUnlock'
 import { DataProprietarySafetyTrust } from 'src/items/Proprietary/DataProprietary'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingSafetyTrust } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingSafetyTrustText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import CustomeCard from 'src/components/CustomeCard/CustomeCard'
 import { DataCustomeCardSafetyTrust } from 'src/Data/DataCustomeCard'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
@@ -24,7 +23,9 @@ const SafetyTrust = () => {
     PowerFullST,
     ProprietaryST,
     ImgSlideLeftRightST,
-    ImgExploreST
+    ImgExploreST,
+    CustomeCardR,
+    titleCustomeCardR
   } = useSelector((state: RootState) => state.safetrust)
 
   const dispatch = useDispatch()
@@ -35,7 +36,7 @@ const SafetyTrust = () => {
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderSafeTrust />
       </WrapperContent>
-      <CustomeCard mainTitle={`For Guests`} DataCustomeCard={DataCustomeCardSafetyTrust} />
+      <CustomeCard mainTitle={titleCustomeCardR.mainTitle} DataCustomeCard={CustomeCardR} />
       <BookUnlocknearCar />
 
       <PowerfulVetting />
@@ -49,7 +50,7 @@ const SafetyTrust = () => {
       />
 
       <ExploreHosting
-        img={data[ImgExploreST.img]}
+        img={ImgExploreST.img}
         DataExploreHostingStyle={DataExploreHostingSafetyTrust}
         DataExploreHostingText={ExploreST}
         isEx={false}

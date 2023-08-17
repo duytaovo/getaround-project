@@ -23,7 +23,8 @@ const HowItWork = () => {
     SlideHowItWorkR,
     ImgExploreHowItWork,
     ImgSlideLeftRight_HowItWork,
-    customeSteps
+    customeSteps,
+    titleimgSide
   } = useSelector((state: RootState) => state.howitwork)
   const data = useAppSelector((state) => state.data.data)
   const howitwork = useAppSelector((state) => state.howitwork)
@@ -42,7 +43,7 @@ const HowItWork = () => {
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <HeaderHowItWord />
       <SlideHowItWork />
-      <WrapperContent textAlign='center' title='DISCOVER HOW IT WORKS' classname='flex flex-col'>
+      <WrapperContent textAlign='center' title={data[titleimgSide.mainTitle]} classname='flex flex-col'>
         <Step />
       </WrapperContent>
 
@@ -59,7 +60,7 @@ const HowItWork = () => {
       />
       <HearCommunity />
       <ExploreHosting
-        img={data[ImgExploreHowItWork.img]}
+        img={ImgExploreHowItWork.img}
         DataExploreHostingStyle={DataExploreHostingHome}
         DataExploreHostingText={ExploreHowItWork}
         isEx={true}

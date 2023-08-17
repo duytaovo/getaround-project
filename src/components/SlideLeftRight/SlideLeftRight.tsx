@@ -20,7 +20,6 @@ type Props = {
   idTitle: string
 }
 const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle, idimg, idTitle }) => {
-  console.log(idTitle, idimg)
   const dispatch = useDispatch()
   const data = useAppSelector((state) => state.data.data)
   return (
@@ -81,6 +80,9 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle, idimg, idTitle }) => 
                 </div> */}
               </div>
             ))}
+            <Link to={data[Data?.[0]?.Linkto]} className='underline text-mainColor font-semibold'>
+              {data[Data?.[0]?.Link]}
+            </Link>
           </div>
         </div>
       </div>
