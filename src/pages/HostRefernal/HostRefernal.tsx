@@ -89,7 +89,7 @@ const HostRefernal = () => {
         titleInput={'Input your information to see your referral progress!'}
       />{' '}
       <ExploreHosting
-        img={data[ImgExploreHR.img]}
+        img={ImgExploreHR.img}
         DataExploreHostingStyle={DataExploreHostingHostRefernal}
         DataExploreHostingText={ExplorehostRefernal}
         isEx={false}
