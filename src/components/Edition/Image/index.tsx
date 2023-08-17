@@ -21,14 +21,17 @@ const editOptions = [
     id: 0,
     title: 'Lưu',
     callback: async ({ id, value, setEnable, imgFile }: IBody) => {
-      // console.log(imgFile)
+      console.log({ id, imgFile })
       const formData = new FormData()
       formData.append('id', id)
-      formData.append('file', imgFile)
-      const data = await axios.put('http://localhost:8080/upImage', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
+      formData.append('file', imgFile || '')
+      const data = await axios.put('http://localhost:8080/api/v1/updateImage', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
       })
-      console.log(data.data)
+      console.log('What about this: ', data.data)
     }
   },
   {

@@ -174,7 +174,7 @@ const initialState: HomePageType = {
         subTitle: 'home_step_item_txt_6'
       }
     ],
-    img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b4afd9423e2cac7f6cde_how-it-works-image%20copiar.jpg'
+    img: 'home_step_item_img'
   },
   exploreHostingSection: {
     id: 'p-006',
