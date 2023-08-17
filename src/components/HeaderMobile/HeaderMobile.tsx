@@ -29,6 +29,11 @@ const HeaderMobile = (props: Props) => {
       setMenuOpen(false)
     }, 300)
   }, [url])
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 1000)
+  }, [url])
   return (
     <div className='mb-bottom z-[1500] bg-bgHeaderMobile backdrop-blur-md fixed w-[100vw] backdrop-saturate-[180%]'>
       <div className='bg-white cursor-pointer z-50  flex items-center justify-between h-[100px] px-10'>

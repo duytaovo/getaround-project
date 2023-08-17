@@ -1,6 +1,6 @@
 import { Hidden } from '@mui/material'
-import React, { memo } from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { memo, useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import Footer from 'src/components/Footer'
 import CustomeCollapseFooter from 'src/components/FooterMobile/CustomItemHeader'
 import Header from 'src/components/Header'
@@ -9,6 +9,7 @@ import HeaderMobile from 'src/components/HeaderMobile/HeaderMobile'
 import ConsentManager from 'src/components/Memo/ConsentManager'
 import HypeMemo from 'src/components/Memo/HypeMemo'
 import { itemsHeaderMobile } from 'src/items/HeaderItem/HeaderItem'
+import { clearLS } from 'src/utils/auth'
 type Props = {}
 
 const MainLayoutInner = (props: Props) => {

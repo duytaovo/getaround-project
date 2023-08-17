@@ -1,16 +1,20 @@
 import CustomDropDown from '../Dropdown/Dropdown'
-import { itemAcount, itemsFirst, itemsFour, itemsSecond, itemsThird } from 'src/items/HeaderItem/HeaderItem'
+import { itemAcount, itemsFirst, itemsFive, itemsFour, itemsSecond, itemsThird } from 'src/items/HeaderItem/HeaderItem'
 import Button from '../Button'
 import { Avatar, IconButton, Popover } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { locales } from 'src/i18n/i18n'
 import { useTranslation } from 'react-i18next'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import LanguageIcon from '@mui/icons-material/Language'
 import { AppContext } from 'src/contexts/app.context'
 import TransitionsModal from '../Modal'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Dropdown, MenuProps } from 'antd'
+import ComponentHeader from './components/HeaderItem'
+import CustomLink from '../CustomLink'
+import path from 'src/constants/path'
+import { clearLS } from 'src/utils/auth'
 type Props = {}
 
 const Header = (props: Props) => {
@@ -18,13 +22,19 @@ const Header = (props: Props) => {
   const { i18n } = useTranslation()
   const currentLanguage = locales[i18n.language as keyof typeof locales]
   const { setOpenModal } = useContext(AppContext)
+  const navigate = useNavigate()
   const handleOpenModal = () => {
     setOpenModal(true)
   }
   const changeLanguage = (lng: 'en' | 'vi') => {
     i18n.changeLanguage(lng)
   }
-
+  const url = useLocation()
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 1000)
+  }, [url.pathname])
   const items: MenuProps['items'] = [
     {
       key: '1',
@@ -43,6 +53,38 @@ const Header = (props: Props) => {
       )
     }
   ]
+  const itemAcount: MenuProps['items'] = [
+    {
+      key: '1',
+      label: (
+        <CustomLink to={path.login}>
+          <div className='flex flex-col px-5 text-black  duration-300 group-hover:text-mainColor'>
+            <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
+              <span className='group-hover:text-mainColor'>{t('header.login')}</span>
+            </span>
+          </div>
+        </CustomLink>
+      )
+    },
+    {
+      key: '2',
+      label: (
+        <CustomLink to={path.home}>
+          <div
+            onClick={() => {
+              clearLS()
+              navigate('/')
+            }}
+            className='flex flex-col px-5 text-black mt-1 duration-300 group-hover:text-mainColor'
+          >
+            <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
+              <span className='group-hover:text-mainColor'>{t('header.logout')}</span>
+            </span>
+          </div>
+        </CustomLink>
+      )
+    }
+  ]
 
   return (
     <div>
@@ -54,36 +96,7 @@ const Header = (props: Props) => {
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
-          <div className='ml-6  flex items-center cursor-pointer justify-between text-black font-medium font-sans text-sm'>
-            <CustomDropDown
-              arrow={false}
-              isOnClick={false}
-              children={<span>{t('header.howItWork')}</span>}
-              items={itemsFirst}
-              className='p-2 xl:p-0 xl:mr-0 hover:text-mainColor '
-            />
-            <CustomDropDown
-              arrow={false}
-              isOnClick={false}
-              children={<span>{t('header.hoisting')}</span>}
-              items={itemsSecond}
-              className='p-2 xl:p-0 xl:mr-0 mx-2  hover:text-mainColor'
-            />
-            <CustomDropDown
-              arrow={false}
-              isOnClick={false}
-              children={<span>{t('header.partners')}</span>}
-              items={itemsThird}
-              className='p-2 xl:p-0 xl:mr-0 mx-2 hover:text-mainColor'
-            />
-            <CustomDropDown
-              arrow={false}
-              isOnClick={false}
-              children={<span>{t('header.aboutUs')}</span>}
-              items={itemsFour}
-              className='p-2 xl:p-0 xl:mr-0 mx-2 hover:text-mainColor'
-            />
-          </div>
+          <ComponentHeader />
         </div>
         <div className='flex items-center justify-between'>
           <Button
@@ -96,7 +109,7 @@ const Header = (props: Props) => {
             children={<span>{t('header.bookACar')}</span>}
           />
           <CustomDropDown
-            arrow={false}
+            arrow={true}
             isOnClick={false}
             children={
               <div className='flex items-center justify-around cursor-pointer '>
@@ -109,6 +122,7 @@ const Header = (props: Props) => {
           />
           <div className=''>
             <Dropdown
+              arrow
               menu={{
                 items
               }}

@@ -1,28 +1,40 @@
 {
-    "header": {
-      "howItWork": "How it works",
-      "hoisting": "Hosting",
-      "partners": "Partners",
-      "aboutUs": "About us",
-      "bookACar":"Book a Car",
-      "login":"Login"
-    },
-    "howItWork":{
-      "howItWork":"How it Works",
-      "insurance":"Insurance",
-      "trust&safe":"Trust & safe",
-      "getAround":"Get around connect"
-    },
-    "hosting":{
-        "shareaCar":"Share a Car",
-        "hostComunity":"Host Community"
-    },
-    "partners":{
-      "driveWithUber":"Drive With Uber",
-      "partnerWithUs":"Parter With Us"
-    },
-    "about us":{
-      "aboutUs":"About us"
-    }
+  "header": {
+    "howItWork": "Our Solution",
+    "hoisting": "Carshare",
+    "partners": "Partners",
+    "newrooms": "Newsroom",
+    "aboutUs": "About Us",
+    "bookACar": "Book a Car",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "solution": {
+    "insurance": "Insurance",
+    "trust&safe": "Safey & Trust",
+    "technology": "Technology",
+    "term": "Terms & Conditions"
+  },
+  "shareCar": {
+    "shareaCar": "Share a Car",
+    "term": "Terms & Conditions",
+    "benefit": "Sharer Benefits",
+    "refer": "Refer a Sharer"
+  },
+  "partners": {
+    "partnerWithUs": "Parter with us",
+    "partnerWithOur": "Our Partners",
+    "driveWithUber": "Grab/Be Drivers"
+  },
+  "newsroom": {
+    "news": "News",
+    "blogs": "Blogs",
+    "policy": "Policy & Regulations",
+    "eligibilities": "Eligibilities"
+  },
+  "about us": {
+    "unlockTeam": "Unlock Team",
+    "contact": "Contact Us",
+    "movetoLive": "Move to Live Server"
   }
-  
+}
