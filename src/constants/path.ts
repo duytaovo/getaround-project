@@ -12,7 +12,8 @@ const path = {
   hostCommunity: '/host/community',
   newsroom: '/news-room',
   safetytrust: '/how-it-work/safety-trust',
-  test: '/test'
+  test: '/test',
+  hostBobus: '/host/host-bonus'
 } as const
 
 export default path

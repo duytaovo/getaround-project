@@ -23,7 +23,9 @@ const SafetyTrust = () => {
     PowerFullST,
     ProprietaryST,
     ImgSlideLeftRightST,
-    ImgExploreST
+    ImgExploreST,
+    CustomeCardR,
+    titleCustomeCardR
   } = useSelector((state: RootState) => state.safetrust)
 
   const dispatch = useDispatch()
@@ -34,7 +36,7 @@ const SafetyTrust = () => {
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderSafeTrust />
       </WrapperContent>
-      <CustomeCard mainTitle={`For Guests`} DataCustomeCard={DataCustomeCardSafetyTrust} />
+      <CustomeCard mainTitle={titleCustomeCardR.mainTitle} DataCustomeCard={CustomeCardR} />
       <BookUnlocknearCar />
 
       <PowerfulVetting />

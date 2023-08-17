@@ -15,6 +15,7 @@ const PartnerWithUs = lazy(() => import('src/pages/PartnerWithUs'))
 
 const NewsRoom = lazy(() => import('src/pages/NewsRoom/NewsRoom'))
 const SafetyTrust = lazy(() => import('src/pages/SafetyTrust/SafetyTrust'))
+const HostBonus = lazy(() => import('src/pages/HostBonus/HostBonus'))
 const Test = lazy(() => import('src/pages/Hosting/Test'))
 const Login = lazy(() => import('src/pages/Auth/Login'))
 export const routeMain = [
@@ -65,6 +66,10 @@ export const routeMain = [
   {
     path: path.safetytrust,
     Component: SafetyTrust
+  },
+  {
+    path: path.hostBobus,
+    Component: HostBonus
   },
   {
     path: path.login,
