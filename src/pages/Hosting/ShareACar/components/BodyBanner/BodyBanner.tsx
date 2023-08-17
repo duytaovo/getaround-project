@@ -4,7 +4,6 @@ import { Text } from 'src/components/Edition/Text'
 import { changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { IItemBodyBannerCard } from 'src/types/hosting_shareACar.type'
-import { iDGenerator } from 'src/utils/idGenerator'
 
 interface Props {
   item: IItemBodyBannerCard
@@ -40,7 +39,7 @@ const BodyBanner = ({ item }: Props) => {
           id={`txt-bodyBaner-shareACar-content`}
           tag='h3'
           content={data[item.content || '']}
-          className={`text-textMainColor  text-ellipsis flex justify-start leading-[22.4px] mt-[30px] break-words w-1/3 lg:w-full  lg:text-start `}
+          className={`text-textMainColor  text-ellipsis flex  leading-[22.4px] mt-[30px] break-words w-1/3 lg:w-full  lg:text-start `}
         />
       </div>
       {/* <p className='text-textMainColor text-ellipsis flex justify-start leading-[22.4px] mt-[30px] break-words w-1/2 lg:w-full text-justify lg:text-start'>{item.content}</p> */}

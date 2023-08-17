@@ -9,7 +9,7 @@ export interface IItemSlider {
 }
 
 export interface IItemCarousel {
-  id: string
+  id: string | number
   title?: string
   header?: string
   content?: string

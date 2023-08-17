@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import logo from 'src/assets/images/logo.jpg'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu'
 import { IconButton, Tooltip } from '@mui/material'
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined'
@@ -8,8 +7,15 @@ import CustomeCollapseHeader from './CustomItemHeader'
 import { itemsHeaderMobile } from 'src/items/HeaderItem/HeaderItem'
 import { useTranslation } from 'react-i18next'
 type Props = {}
-
+export interface IPath {
+  hash?: string
+  key?: string
+  pathname?: string
+  search?: string
+}
 const HeaderMobile = (props: Props) => {
+  const path = useLocation()
+  const url = path.pathname
   const [menuOpen, setMenuOpen] = useState(false)
   const [iconRotated, setIconRotated] = useState(false)
   const toggleMenu = (e: React.MouseEvent<HTMLElement>) => {
@@ -18,11 +24,16 @@ const HeaderMobile = (props: Props) => {
     setMenuOpen(!menuOpen)
     setIconRotated(!menuOpen)
   }
+  useEffect(() => {
+    setTimeout(() => {
+      setMenuOpen(false)
+    }, 300)
+  }, [url])
   return (
     <div className='mb-bottom z-[1500] bg-bgHeaderMobile backdrop-blur-md fixed w-[100vw] backdrop-saturate-[180%]'>
       <div className='bg-white cursor-pointer z-50  flex items-center justify-between h-[100px] px-10'>
         <Link to='/'>
-          <img src={logo} alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
+          <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
         </Link>
         {menuOpen ? (
           <Tooltip title='Hide menu'>

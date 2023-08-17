@@ -2,7 +2,6 @@ import React, { FC } from 'react'
 import { Collapse, CollapseProps } from 'antd'
 import SingleCommonQuestion from '../SingleCommonQuestion/SingleCommonQuestion'
 import { Text } from '../Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
 import { useAppSelector } from 'src/hooks/useRedux'
 
 interface ICommonQuestion {

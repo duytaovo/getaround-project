@@ -1,5 +1,7 @@
 import { FC, useState, useEffect, useRef } from 'react'
+import TransitionsModalText from 'src/components/Modal/ModalText'
 import { useAppSelector } from 'src/hooks/useRedux'
+import axios from 'axios'
 
 interface IBody {
   id: string
@@ -18,8 +20,18 @@ const editOptions = [
   {
     id: 0,
     title: 'Lưu',
-    callback: ({ id, value, setEnable, imgFile }: IBody) => {
-      console.log({ id, value, imgFile })
+    callback: async ({ id, value, setEnable, imgFile }: IBody) => {
+      console.log({ id, imgFile })
+      const formData = new FormData()
+      formData.append('id', id)
+      formData.append('file', imgFile || '')
+      const data = await axios.put('http://localhost:8080/api/v1/updateImage', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+      })
+      console.log('What about this: ', data.data)
     }
   },
   {
@@ -59,10 +71,10 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   const iRef = useRef<HTMLInputElement>(null)
   const cRef = useRef<HTMLDivElement>(null)
 
-  const { permision } = useAppSelector((state) => state?.user)
+  const { permission, isActiveEdit } = useAppSelector((state) => state?.user)
   const [iOffset, setIOffset] = useState<IiOffset>({
     w: 100,
-    h: 100
+    h: 1000
   })
   const [val, setVal] = useState<string>(src)
   const [imgFile, setImgFile] = useState<File>()
@@ -89,7 +101,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
 
   useEffect(() => {
     const w = cRef?.current?.offsetWidth || 100
-    const h = cRef?.current?.offsetHeight || 100
+    const h = cRef?.current?.offsetHeight || 1000
     setIOffset({ w, h })
   }, [])
 
@@ -104,42 +116,44 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         onChange={handleChangeInput}
         className={`hidden`}
       />
-      {permision == -1 && enable ? (
-        <div className='flex justify-center relative'>
-          <img
-            src={val}
-            alt={alt}
-            onClick={show}
-            className={`${className} border border-transparent ${
-              permision == -1 ? 'border-dashed hover:border-slate-400' : ''
-            }`}
-            {...props}
-          />
+      {permission == -1 && enable && isActiveEdit ? (
+        <TransitionsModalText>
+          <div className='flex justify-center relative'>
+            <img
+              src={val}
+              alt={alt}
+              onClick={show}
+              className={`${className} border border-transparent ${
+                permission == -1 ? 'border-dashed hover:border-slate-400' : ''
+              }`}
+              {...props}
+            />
 
-          <div className='flex h-7 absolute -bottom-0'>
-            {editOptions.map((option, index) => {
-              const body: IBody = {
-                id: id,
-                value: val,
-                src,
-                setEnable,
-                setVal,
-                iRef: iRef.current,
-                imgFile
-              }
+            <div className='flex h-7 absolute -bottom-0'>
+              {editOptions.map((option, index) => {
+                const body: IBody = {
+                  id: id,
+                  value: val,
+                  src,
+                  setEnable,
+                  setVal,
+                  iRef: iRef.current,
+                  imgFile
+                }
 
-              return (
-                <div
-                  key={index}
-                  onClick={() => option?.callback(body)}
-                  className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
-                >
-                  {option?.title}
-                </div>
-              )
-            })}
+                return (
+                  <div
+                    key={index}
+                    onClick={() => option?.callback(body)}
+                    className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
+                  >
+                    {option?.title}
+                  </div>
+                )
+              })}
+            </div>
           </div>
-        </div>
+        </TransitionsModalText>
       ) : (
         <div ref={cRef}>
           <img
@@ -147,7 +161,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             alt={alt}
             onClick={show}
             className={`${className} border border-transparent ${
-              permision == -1 ? 'border-dashed hover:border-slate-400' : ''
+              permission == -1 && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           />

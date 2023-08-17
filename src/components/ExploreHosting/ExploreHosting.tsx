@@ -13,7 +13,6 @@ interface IExploreHosting {
   Description: string
   Link: string
 }
-
 type Props = {
   img?: string
   isEx?: boolean
@@ -24,9 +23,7 @@ type Props = {
 
 const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExploreHostingText, className }) => {
   const data = useAppSelector((state) => state.data.data)
-
   const dispatch = useDispatch()
-
   return (
     <div className={className}>
       {isEx === true ? (
@@ -105,5 +102,4 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
     </div>
   )
 }
-
 export default ExploreHosting

@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import { DatePicker, TimePicker } from 'antd'
 import { Text } from '../Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
+import { useAppSelector } from 'src/hooks/useRedux'
 
 type CustomeDateTimeProps = {
   title: string
@@ -9,9 +9,10 @@ type CustomeDateTimeProps = {
 }
 
 const CustomDatetimePicker: FC<CustomeDateTimeProps> = ({ className, title }) => {
+  const data = useAppSelector((state) => state.data.data)
   return (
     <div className='lg:grow'>
-      <Text id={iDGenerator('txt')} content={title} tag='p' className='pl-2 text-[#a49da7] text-xs' />
+      <Text id={title} content={data[title]} tag='p' className='pl-2 text-[#a49da7] text-xs' />
       <div
         className={className}
         style={{

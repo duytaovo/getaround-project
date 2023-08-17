@@ -13,15 +13,13 @@ const OurHost = ({ item }: Props) => {
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(_getData(''))
-  }, [dispatch])
+  useEffect(() => {}, [dispatch])
   return (
     <div>
       <Text
         id={`txt_OurHost_community_title`}
         tag='span'
-        content={data[item.title || '']}
+        content={data['txt_OurHost_community_title' || '']}
         className={`text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2 `}
       />
       {/* <span className='text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2'>abc</span> */}

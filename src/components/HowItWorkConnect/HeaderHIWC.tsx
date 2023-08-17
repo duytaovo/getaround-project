@@ -1,7 +1,6 @@
 import React from 'react'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
-import { iDGenerator } from 'src/utils/idGenerator'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
 import { useAppSelector } from 'src/hooks/useRedux'

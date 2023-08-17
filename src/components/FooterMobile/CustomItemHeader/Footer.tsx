@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { firstColumn, fourColumn, secondColumn, selectItems, thirdColumn } from 'src/items/FooterItem/FooterItem'
 import { Col, Row, Space } from 'antd'
 import { IconButton } from '@mui/material'
@@ -7,7 +7,7 @@ import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import ggplay from './ggPlay.jpeg'
 import appstore from './appstore.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from 'src/assets/images/logo.jpg'
 import CustomSelect from 'src/components/Select'
 import ComponentFooter from 'src/components/Footer/ComponentFooter'
@@ -17,10 +17,16 @@ type Props = {}
 const style: React.CSSProperties = { padding: '8px 0' }
 
 const Footer = (props: Props) => {
+  const url = useLocation()
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 1000)
+  }, [url.pathname])
   return (
     <div className='p-10 bg-white'>
       <div className='flex items-start justify-between  '>
-      <img src={logo} alt='logo' className='fill-current bg-none h-[36px] w-[120px]'/>
+        <img src={logo} alt='logo' className='fill-current bg-none h-[36px] w-[120px]' />
 
         <CustomSelect
           width='200px'
@@ -30,26 +36,25 @@ const Footer = (props: Props) => {
         />
       </div>
       <div className='mt-8 flex flex-grow justify-between flex-wrap'>
-
-            <div style={style}>
-              <ComponentFooter header='Cách thức hoạt động' tabContent={firstColumn} />
-            </div>
-            <div style={style}>
-              <ComponentFooter header='Tổ chức' tabContent={secondColumn} />
-            </div>
-            <div style={style}>
-              <ComponentFooter header='Cộng tác' tabContent={thirdColumn} />
-            </div>
-            <div style={style}>
-              <ComponentFooter header='Về chúng tôi' tabContent={fourColumn} />
-            </div>
-            <div style={style}>
-              <ComponentFooter header='Top city' tabContent={firstColumn} />
-            </div>
-            <div style={style}>
-              <ComponentFooter header='Top city' tabContent={firstColumn} />
-            </div>
-            {/* <div style={style}>
+        <div style={style}>
+          <ComponentFooter header='Cách thức hoạt động' tabContent={firstColumn} />
+        </div>
+        <div style={style}>
+          <ComponentFooter header='Tổ chức' tabContent={secondColumn} />
+        </div>
+        <div style={style}>
+          <ComponentFooter header='Cộng tác' tabContent={thirdColumn} />
+        </div>
+        <div style={style}>
+          <ComponentFooter header='Về chúng tôi' tabContent={fourColumn} />
+        </div>
+        <div style={style}>
+          <ComponentFooter header='Top city' tabContent={firstColumn} />
+        </div>
+        <div style={style}>
+          <ComponentFooter header='Top city' tabContent={firstColumn} />
+        </div>
+        {/* <div style={style}>
               <ComponentFooter header='Top city' tabContent={firstColumn} />
             </div> */}
       </div>
@@ -57,22 +62,22 @@ const Footer = (props: Props) => {
         <div>
           <Space>
             <IconButton>
-              <TwitterIcon className='text-mainColor'/>
+              <TwitterIcon className='text-mainColor' />
             </IconButton>
             <IconButton>
-              <FacebookIcon className='text-mainColor'/>
+              <FacebookIcon className='text-mainColor' />
             </IconButton>
             <IconButton>
-              <InstagramIcon className='text-mainColor'/>
+              <InstagramIcon className='text-mainColor' />
             </IconButton>
           </Space>
         </div>
         <div className='flex items-center justify-center'>
           <Link to='/' className='rounded-lg'>
-            <img src={ggplay} alt='' className='m-5 h-[50px] object-contain rounded-lg'/>
+            <img src={ggplay} alt='' className='m-5 h-[50px] object-contain rounded-lg' />
           </Link>
           <Link to='/'>
-            <img src={appstore} alt='' className='h-[50px] object-contain '/>
+            <img src={appstore} alt='' className='h-[50px] object-contain ' />
           </Link>
         </div>
       </div>

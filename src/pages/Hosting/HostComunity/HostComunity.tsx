@@ -1,25 +1,25 @@
-import React from 'react'
-import SliderHostComunity from './components/Slider/Slider'
-import CardBody from './components/CardBody'
-import GettingStarted from './components/GettingStarted/GettingStarted'
+import { Grid } from '@mui/material'
 import { Col, Row } from 'antd'
+import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
+import { useAppSelector } from 'src/hooks/useRedux'
+import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import Banner from './components/Banner/Banner'
+import CardBody from './components/CardBody'
 import { CardBodyParnerDeal, CardBodyReferFriend } from './components/CardBody/CardBody'
 import Carousel_Review_Comunity from './components/Carousel/Carousel_Review'
-import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
-import { DataExploreHostingShareCar } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { useAppSelector } from 'src/hooks/useRedux'
+import GettingStarted from './components/GettingStarted/GettingStarted'
 import OurHost from './components/OurHost/OurHost'
+import SliderHostComunity from './components/Slider/Slider'
 import TopHostComunity from './components/TopHostCommunity/OurHost'
-import { Grid } from '@mui/material'
-import { Image } from 'src/components/Edition/Image'
 
 const HostCominity = () => {
   const {
     carouselCommunity,
     ourHost,
     bannerCommunity,
-    cardBodyImg,
+    cardBodyImg1,
+    cardBodyImg2,
+    cardBodyImg3,
     cardBodyParnerDeal,
     cardBodyReferFriend,
     sliderHostComunity,
@@ -48,13 +48,13 @@ const HostCominity = () => {
       <div className='mb-bottom flex justify-around  flex-wrap '>
         <Grid container spacing={2}>
           <Grid item xs={6} sm={6} md={3}>
-            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg1} id={1} />
           </Grid>
           <Grid item xs={6} sm={6} md={3}>
-            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg2} id={2} />
           </Grid>
           <Grid item xs={6} sm={6} md={3}>
-            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg} />
+            <CardBody.CardBodyImg itemCardBodyImg={cardBodyImg3} id={3} />
           </Grid>
           <Grid item xs={6} sm={6} md={3}>
             <CardBody.CardBodyButton item={cardBodyButton} />

@@ -22,7 +22,6 @@ import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHost
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { Text } from 'src/components/Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
 import { Image } from 'src/components/Edition/Image'
 import { _getData } from 'src/store/dataSlice'
 
@@ -31,20 +30,21 @@ type Props = {}
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
   const data = useAppSelector((state) => state.data.data)
+  // console.log('Home', data)
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(_getData(''))
-  }, [dispatch])
+  useEffect(() => {}, [dispatch])
+
+  console.log(homePageData.homeStepSection.img)
 
   return (
     <div className='overflow-x-hidden'>
       <HomeHeroSection
-        title={data[homePageData.heroSection.title]}
-        mainText={data[homePageData.heroSection.mainText]}
-        startDateTimePikerTitle={data[homePageData.heroSection.startDateTimePikerTitle]}
-        endDateTimePikerTitle={data[homePageData.heroSection.endDateTimePikerTitle]}
-        buttonSearchText={data[homePageData.heroSection.buttonSearchText]}
+        title={homePageData.heroSection.title}
+        mainText={homePageData.heroSection.mainText}
+        startDateTimePikerTitle={homePageData.heroSection.startDateTimePikerTitle}
+        endDateTimePikerTitle={homePageData.heroSection.endDateTimePikerTitle}
+        buttonSearchText={homePageData.heroSection.buttonSearchText}
         img={homePageData.heroSection.img}
         addressPlaceholder={homePageData.heroSection.addressPlaceholder}
         datePickerPlaceholder={homePageData.heroSection.datePickerPlaceholder}
@@ -52,7 +52,7 @@ const Home = (props: Props) => {
       />
 
       <WrapperContent
-        title={data[homePageData.perfectCarSliderSection.wrapperTitle]}
+        title={homePageData.perfectCarSliderSection.wrapperTitle}
         textAlign='center'
         isBgTransparent={true}
         classname='w-full'
@@ -65,11 +65,12 @@ const Home = (props: Props) => {
             classNameTitle='text-center py-2 text-white/80 justify-center'
             className='bg-mainColor/20
              rounded-md h-fit p-1 box-border'
-            classNameImage='rounded-md w-[100%] h-[100px] object-cover'
+            classNameImage='rounded-md  h-[100px] object-cover'
             numberItem={5}
             numberItemScroll={1}
             isTitle={true}
             data={homePageData.perfectCarSliderSection.itemsData}
+            prefix='sliderHome'
           />
         </div>
       </WrapperContent>
@@ -84,11 +85,12 @@ const Home = (props: Props) => {
           numberItem={1}
           numberItemScroll={1}
           data={homePageData.homeIntoduceCarouselSection.itemsData}
+          prefix='home'
         />
       </section>
 
       <WrapperContent
-        title={data[homePageData.sharingMaketPlaceSection.wrapperTitle]}
+        title={homePageData.sharingMaketPlaceSection.wrapperTitle}
         textAlign='center'
         isBgTransparent={true}
         classname='z-[10] pt-4'
@@ -96,24 +98,15 @@ const Home = (props: Props) => {
         <ConnectedCarSharing DataConnectedCarSharingHome={homePageData.sharingMaketPlaceSection.itemsData} />
       </WrapperContent>
 
-      <WrapperContent
-        textAlign='center'
-        title={data[homePageData.homeStepSection.wrapperTitle]}
-        classname='flex flex-col'
-      >
-        <Heading
-          title={data[homePageData.homeStepSection.heading]}
-          breakLineAt={3}
-          fontSize={30}
-          className='text-center'
-        />
+      <WrapperContent textAlign='center' title={homePageData.homeStepSection.wrapperTitle} classname='flex flex-col'>
+        <Heading title={homePageData.homeStepSection.heading} breakLineAt={3} fontSize={30} className='text-center' />
         <div className='flex justify-center px-[36px] xl:flex-col-reverse'>
           <div className='w-1/2 flex justify-center xl:w-full'>
             {/* <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' /> */}
             <Image
               alt='Image thumb'
-              id={iDGenerator('img')}
-              src={homePageData.homeStepSection.img}
+              id={homePageData.homeStepSection.img}
+              src={data[homePageData.homeStepSection.img]}
               className='object-contain h-[500px]'
             />
           </div>
@@ -145,7 +138,7 @@ const Home = (props: Props) => {
       </WrapperContent> */}
 
       <WrapperContent
-        title={data[homePageData.exploreHostingSection.wrapperTitle]}
+        title={homePageData.exploreHostingSection.wrapperTitle}
         textAlign='center'
         classname='pt-4'
         isBgTransparent
@@ -158,9 +151,9 @@ const Home = (props: Props) => {
         />
       </WrapperContent>
 
-      <WrapperContent title={data[homePageData.localFavouriteSection.wrapperTitle]} isBgTransparent textAlign='center'>
+      <WrapperContent title={homePageData.localFavouriteSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
-          title={data[homePageData.localFavouriteSection.heading]}
+          title={homePageData.localFavouriteSection.heading}
           fontSize={30}
           breakLineAt={4}
           className='text-center'
@@ -172,19 +165,20 @@ const Home = (props: Props) => {
             breakPoint={[2, 4, 4, 5]}
             numberItem={5}
             numberItemScroll={4}
-            isTitle
+            isTitle={true}
             classNameContainer='px-4'
             classNameImage='w-[100px] h-[100px] rounded-full object-cover'
             className='flex flex-col justify-center items-center'
             classNameTitle='pt-3 text-white/80'
             data={homePageData.localFavouriteSection.itemsData}
+            prefix='home_localFavorite'
           />
         </div>
       </WrapperContent>
 
-      <WrapperContent title={data[homePageData.blogSilerSection.wrapperTitle]} isBgTransparent textAlign='center'>
+      <WrapperContent title={homePageData.blogSilerSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
-          title={data[homePageData.blogSilerSection.heading]}
+          title={homePageData.blogSilerSection.heading}
           fontSize={30}
           breakLineAt={6}
           className='text-center'
@@ -192,7 +186,7 @@ const Home = (props: Props) => {
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
-            prefix='home'
+            prefix='blogSlider'
             breakPointScroll={[1, 2, 2, 2]}
             breakPoint={[1, 2, 3, 3]}
             numberItem={3}
@@ -203,9 +197,9 @@ const Home = (props: Props) => {
             classNameTitle='text-[14px] leading-[22px] text-white/40 pt-6'
             classNameContent='text-white/90 text-[24px] leading-[25px] break-words py-6'
             classNameTime='text-[14px] leading-[22px] text-white/40'
-            isContent
-            isTime
-            isTitle
+            isContent={true}
+            isTime={true}
+            isTitle={true}
             data={homePageData.blogSilerSection.itemsData}
           />
         </div>
@@ -214,7 +208,7 @@ const Home = (props: Props) => {
       <WrapperContent
         titlePadding={5}
         textAlign='left'
-        title={data[homePageData.qAndASection.wrapperTitle]}
+        title={homePageData.qAndASection.wrapperTitle}
         isBgTransparent={true}
         fontSize={12}
       >

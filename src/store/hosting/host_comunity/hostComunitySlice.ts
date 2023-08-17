@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
 import {
-  DataExploreHostingShareCarText,
   DataExploreHostingShareCarText_Community,
   itemBannerCommunity,
   itemCardBodyButton,
   itemCardBodyImg,
+  itemCardBodyImg2,
+  itemCardBodyImg3,
   itemCardBodyParnerDeal,
   itemCardBodyReferFriend,
   itemImgExploreHosting,
@@ -37,7 +38,9 @@ interface ICommonQuestion {
 
 interface ShareACarState {
   sliderHostComunity: IItemSliderHostComunity[]
-  cardBodyImg: IItemBodyBannerCard
+  cardBodyImg1: IItemBodyBannerCard
+  cardBodyImg2: IItemBodyBannerCard
+  cardBodyImg3: IItemBodyBannerCard
   cardBodyParnerDeal: IItemBodyBannerCard
   cardBodyReferFriend: IItemBodyBannerCard
   bannerCommunity: IItemBanner
@@ -57,7 +60,9 @@ interface ShareACarState {
 
 const initialState: ShareACarState = {
   sliderHostComunity: itemSliderHostComunity,
-  cardBodyImg: itemCardBodyImg,
+  cardBodyImg1: itemCardBodyImg,
+  cardBodyImg2: itemCardBodyImg2,
+  cardBodyImg3: itemCardBodyImg3,
   cardBodyParnerDeal: itemCardBodyParnerDeal,
   cardBodyReferFriend: itemCardBodyReferFriend,
   cardBodyButton: itemCardBodyButton,

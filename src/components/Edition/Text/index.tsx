@@ -1,9 +1,11 @@
 import { unwrapResult } from '@reduxjs/toolkit'
-import { FC, useState, useEffect, useRef } from 'react'
+import { FC, useState, useEffect, useRef, useContext } from 'react'
 import { toast } from 'react-toastify'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
-import { _getData } from 'src/store/dataSlice'
+import { _getData, updateData } from 'src/store/dataSlice'
 import { updateText } from 'src/store/hosting/share_a_car/shareACarSlice'
+import TransitionsModalText from '../../Modal/ModalText'
+import { AppContext } from 'src/contexts/app.context'
 
 interface IBody {
   id: string
@@ -32,7 +34,16 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       title: 'Lưu',
       callback: ({ id, value, setEnable }: IBody) => {
         console.log({ id, value })
-        _updateText(id, value)
+        _updateText(id, value).then((fb) => {
+          if (fb?.data?.status == 200) {
+            dispatch(updateData({ [id]: value }))
+            toast.success('Đã lưu thay đổi', {
+              position: 'top-right',
+              autoClose: 4000
+            })
+          }
+          hidden()
+        })
       }
     },
     {
@@ -55,16 +66,20 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   const iRef = useRef<HTMLTextAreaElement>(null)
   const cRef = useRef<HTMLDivElement>(null)
 
-  const { permision } = useAppSelector((state: any) => state?.user)
+  const { permission, isActiveEdit } = useAppSelector((state: any) => state?.user)
+
   const [iOffset, setIOffset] = useState<IiOffset>({
     w: 100,
     h: 100
   })
   const [val, setVal] = useState<string>(content)
   const [enable, setEnable] = useState<boolean>(false)
+  // var { enable, setEnable } = useContext(AppContext)
   const dispatch = useAppDispatch()
 
-  const show = () => setEnable(true)
+  const show = () => {
+    permission == -1 && isActiveEdit && setEnable(true)
+  }
   const hidden = () => setEnable(false)
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -88,66 +103,108 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
 
   var _updateText = async (id: string, value: string) => {
     const body = {
-      _id: id,
-      body: value
+      part_id: id,
+      content: value
     }
     try {
       const res = await dispatch(updateText(body)).then(unwrapResult)
-      await dispatch(_getData(''))
 
       toast.success(res.message, {
         position: 'top-center',
         autoClose: 4000
       })
 
-      console.log(res)
+      return res
     } catch (error) {}
   }
 
   return (
     <div>
-      {permision == -1 && enable ? (
-        <div className='flex justify-center relative'>
-          <textarea
-            // style={{ width: iOffset?.w, height: iOffset?.h }}
-            ref={iRef}
-            value={val}
-            onChange={handleChangeInput}
-            onResize={() => {
-              true
-            }}
-            rows={5}
-            cols={20}
-            className={`${className || ''} rounded outline-none bg-transparent border border-slate-400 px-2`}
-          ></textarea>
-          <div className='flex h-7 absolute -top-8 '>
-            {editOptions.map((option, index) => {
-              const body: IBody = {
-                id: id,
-                value: val,
-                content,
-                setEnable,
-                setVal
-              }
+      {permission == -1 && enable && isActiveEdit ? (
+        <div>
+          <div className='flex justify-center relative'>
+            <textarea
+              style={{ width: '1000px', color: 'black' }}
+              ref={iRef}
+              value={val}
+              onChange={handleChangeInput}
+              onResize={() => {
+                true
+              }}
+              rows={5}
+              cols={20}
+              className={`${
+                className || ''
+              } rounded outline-none text-black bg-transparent border border-slate-400 px-2`}
+            ></textarea>
+            <div className='flex h-7 absolute -bottom-0 w-max '>
+              {editOptions.map((option, index) => {
+                const body: IBody = {
+                  id: id,
+                  value: val,
+                  content,
+                  setEnable,
+                  setVal
+                }
 
-              return (
-                <div
-                  key={index}
-                  onClick={() => option?.callback(body)}
-                  className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
-                >
-                  {option?.title}
-                </div>
-              )
-            })}
+                return (
+                  <div
+                    key={index}
+                    onClick={() => option?.callback(body)}
+                    className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
+                  >
+                    {option?.title}
+                  </div>
+                )
+              })}
+            </div>
           </div>
+          <TransitionsModalText>
+            <div className='flex justify-center relative'>
+              <textarea
+                style={{ width: '1000px', color: 'black' }}
+                ref={iRef}
+                value={val}
+                onChange={handleChangeInput}
+                onResize={() => {
+                  true
+                }}
+                rows={5}
+                cols={20}
+                className={`${
+                  className || ''
+                } rounded outline-none text-black bg-transparent border border-slate-400 px-2`}
+              ></textarea>
+              <div className='flex h-7 absolute -bottom-0 w-max '>
+                {editOptions.map((option, index) => {
+                  const body: IBody = {
+                    id: id,
+                    value: val,
+                    content,
+                    setEnable,
+                    setVal
+                  }
+
+                  return (
+                    <div
+                      key={index}
+                      onClick={() => option?.callback(body)}
+                      className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
+                    >
+                      {option?.title}
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </TransitionsModalText>
         </div>
       ) : (
         <div ref={cRef}>
           <Wrapper
             onClick={show}
             className={`${className} border border-transparent ${
-              permision == -1 ? 'border-dashed hover:border-slate-400' : ''
+              permission == -1 && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           >

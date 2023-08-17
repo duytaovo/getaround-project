@@ -37,7 +37,8 @@ module.exports = {
         mainColor: '#3699d3',
         textMainColor: '#ffffff',
         textCustom: '#ffffff99',
-        textCustomBgWhite: '#727171'
+        textCustomBgWhite: '#727171',
+        mainL1: '#1f4160'
       },
       backgroundColor: {
         mainBackGroundColor: '#1c2635',

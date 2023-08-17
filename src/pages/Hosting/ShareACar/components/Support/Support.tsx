@@ -4,7 +4,6 @@ import { Text } from 'src/components/Edition/Text'
 import { changeColorBlackAndMain, changeColorWhiteAndMain } from 'src/helpers/getBreakpoint'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { IItemSupport } from 'src/types/hosting_shareACar.type'
-import { iDGenerator } from 'src/utils/idGenerator'
 
 interface Props {
   item: IItemSupport
@@ -47,7 +46,7 @@ const Support = ({ item }: Props) => {
           id={`support_shareACar-Right`}
           tag='p'
           content={data[item.contentRight || '']}
-          className={`text-black/60 rounded-2xl flex flex-start leading-[22.4px] text-ellipsis text-justify mt-6 `}
+          className={`text-black/60 rounded-2xl flex flex-start leading-[22.4px] text-ellipsis mt-6 `}
         />
         {/* <p className='text-black/60 rounded-2xl flex flex-start leading-[22.4px] text-ellipsis text-justify mt-6'>
           {item.contentRight}

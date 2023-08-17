@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'src/components/Edition/Text'
-import { iDGenerator } from 'src/utils/idGenerator'
 import { Image } from 'src/components/Edition/Image'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'

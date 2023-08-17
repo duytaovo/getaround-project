@@ -7,7 +7,6 @@ import { locales } from 'src/i18n/i18n'
 import { useTranslation } from 'react-i18next'
 import { useContext, useState } from 'react'
 import LanguageIcon from '@mui/icons-material/Language'
-import logo from 'src/assets/images/logo.jpg'
 import { AppContext } from 'src/contexts/app.context'
 import TransitionsModal from '../Modal'
 import { Link } from 'react-router-dom'
@@ -51,7 +50,7 @@ const Header = (props: Props) => {
         <div className='flex  '>
           <div>
             <Link to='/'>
-              <img src={logo} alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
+              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
@@ -128,7 +127,6 @@ const Header = (props: Props) => {
               </IconButton>
             </Dropdown>
             <span className='mx-1 text-mainColor text-sm'>{currentLanguage}</span>
-
           </div>
         </div>
       </div>

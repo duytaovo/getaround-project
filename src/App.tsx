@@ -6,6 +6,8 @@ import { HelmetProvider } from 'react-helmet-async'
 import { useContext, useEffect } from 'react'
 import './App.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
+import { SwitchMode } from './components/SwitchMode'
+import TransitionsModalText from './components/Modal/ModalText'
 
 // const theme = createTheme({
 //   direction: 'rtl'
@@ -20,6 +22,7 @@ function App() {
     <HelmetProvider>
       <ErrorBoundary>{routeElements}</ErrorBoundary>
       <ToastContainer />
+      <SwitchMode />
     </HelmetProvider>
     // </ThemeProvider>
   )

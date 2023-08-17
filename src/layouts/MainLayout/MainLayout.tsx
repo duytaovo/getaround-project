@@ -25,7 +25,7 @@ const MainLayoutInner = (props: Props) => {
       <div className='pt-[110px] container px-[96px] lg:px-2'>
         <Outlet />
       </div>
-      <div className='bg-white'>
+      <div className='bg-white '>
         <Hidden mdDown>
           <Footer />
         </Hidden>
@@ -38,10 +38,10 @@ const MainLayoutInner = (props: Props) => {
         </Hidden>
       </div>
 
-      <div className='fixed left-0 right-0 bottom-0 z-[20000]'>
+      {/* <div className='fixed left-0 right-0 bottom-0 z-[20000]'>
         <HypeMemo />
         <ConsentManager />
-      </div>
+      </div> */}
     </div>
   )
 }

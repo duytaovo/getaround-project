@@ -33,7 +33,7 @@ const GettingStarted = ({
         {' '}
         {item.iconSTT}
         <Text
-          id={`txt_GettingStarted_community_itemNailTheBasic${index}`}
+          id={`txt_GettingStarted_community_itemNailTheBasic_${index + 1}`}
           tag='span'
           content={data[item.title || '']}
           className={`ml-3`}

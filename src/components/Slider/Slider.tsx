@@ -111,7 +111,7 @@ export default function CustomSlider({
               classNameTime={classNameTime}
               className={className}
               prefix={prefix}
-              id={index}
+              id={index + 1}
             />
           </div>
         ))}
