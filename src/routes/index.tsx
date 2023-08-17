@@ -18,6 +18,7 @@ const SafetyTrust = lazy(() => import('src/pages/SafetyTrust/SafetyTrust'))
 const HostBonus = lazy(() => import('src/pages/HostBonus/HostBonus'))
 const Test = lazy(() => import('src/pages/Hosting/Test'))
 const Login = lazy(() => import('src/pages/Auth/Login'))
+const CommingSoon = lazy(() => import('src/pages/CommingSoon/CommingSoon'))
 export const routeMain = [
   {
     path: path.home,
@@ -78,5 +79,49 @@ export const routeMain = [
   {
     path: path.test,
     Component: Test
+  },
+  {
+    path: path.insurance,
+    Component: CommingSoon
+  },
+  {
+    path: path.technology,
+    Component: HowItWork
+  },
+  {
+    path: path.termSolution,
+    Component: CommingSoon
+  },
+  {
+    path: path.termCarShare,
+    Component: CommingSoon
+  },
+  {
+    path: path.termPartner,
+    Component: CommingSoon
+  },
+  {
+    path: path.benefit,
+    Component: CommingSoon
+  },
+  {
+    path: path.blogs,
+    Component: CommingSoon
+  },
+  {
+    path: path.eligibilitis,
+    Component: CommingSoon
+  },
+  // {
+  //   path: path.unlockTeam,
+  //   Component: CommingSoon
+  // },
+  {
+    path: path.contact,
+    Component: CommingSoon
+  },
+  {
+    path: path.moveServer,
+    Component: CommingSoon
   }
 ]

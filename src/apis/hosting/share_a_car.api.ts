@@ -2,8 +2,8 @@ import { SuccessResponse } from 'src/types/utils.type'
 import http from 'src/utils/http'
 
 const URL_SHARE_A_CAR = '/'
-const URL_ADD_TEXT = '/v1/updatePages'
-const URL_ADD_IMAGE = 'v1/updateImage'
+const URL_ADD_TEXT = '/pageElement/updateTextElement'
+const URL_ADD_IMAGE = '/pageElement/updateImageElement'
 const shareACarApi = {
   getShareACar() {
     return http.get<SuccessResponse<any>>(URL_SHARE_A_CAR, {})

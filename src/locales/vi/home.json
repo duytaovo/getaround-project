@@ -1,28 +1,40 @@
 {
-    "header": {
-      "howItWork": "Cách thức hoạt động",
-      "hoisting": "Lưu trữ",
-      "partners": "Đối tác",
-      "aboutUs": "Về chúng tôi",
-      "bookACar":"Đặt xe",
-      "login":"Đăng nhập"
-    },
-    "howItWork":{
-      "howItWork":"Cách thức hoạt động",
-      "insurance":"Bảo hiển",
-      "trust&safe":"Tin cậy và an toàn",
-      "getAround":"Kết nối"
-    },
-    "hosting":{
-        "shareaCar":"Chia sẻ Xe",
-        "hostComunity":"Tổ chức cộng đồng"
-    },
-    "partners":{
-      "driveWithUber":"Lái xe với Uber",
-      "partnerWithUs":"Cộng tác với chúng tôi"
-    },
-    "about us":{
-      "aboutUs":"Về chúng tôi"
-    }
+  "header": {
+    "howItWork": "Giải pháp của chúng tôi",
+    "hoisting": "Chia sẻ xe",
+    "partners": "Cộng tác",
+    "newrooms": "Tòa soạn",
+    "aboutUs": "Về chúng tôi",
+    "bookACar": "Đặt xe",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất"
+  },
+  "solution": {
+    "insurance": "Bảo hiểm",
+    "trust&safe": "An toàn và tin cậy",
+    "technology": "Công nghệ",
+    "term": "Điều khoản và điều kiện"
+  },
+  "shareCar": {
+    "shareaCar": "Chia sẻ xe",
+    "term": "Điều khoản và điều kiện",
+    "benefit": "Chia sẻ lợi ích",
+    "refer": "Giới thiệu Xe"
+  },
+  "partners": {
+    "partnerWithUs": "Công tác với chúng tôi",
+    "partnerWithOur": "Những cộng sự của chúng tôi",
+    "driveWithUber": "Lái xe với grab/be"
+  },
+  "newsroom": {
+    "news": "Tin tức mới",
+    "blogs": "Blogs",
+    "policy": "Điều khoản và nguyên tắc",
+    "eligibilities": "Đủ điều kiện"
+  },
+  "about us": {
+    "unlockTeam": "Đội ngũ Unlock",
+    "contact": "Kết nối với chúng tôi",
+    "movetoLive": "Di chuyển đến trực tiếp máy chủ"
   }
-  
+}
