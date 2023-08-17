@@ -15,6 +15,7 @@ import ComponentHeader from './components/HeaderItem'
 import CustomLink from '../CustomLink'
 import path from 'src/constants/path'
 import { clearLS } from 'src/utils/auth'
+import { toast } from 'react-toastify'
 type Props = {}
 
 const Header = (props: Props) => {
@@ -35,6 +36,7 @@ const Header = (props: Props) => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }, 1000)
   }, [url.pathname])
+
   const items: MenuProps['items'] = [
     {
       key: '1',
@@ -73,6 +75,7 @@ const Header = (props: Props) => {
           <div
             onClick={() => {
               clearLS()
+              toast.success('Đăng xuất thành công 😌😣😏')
               navigate('/')
             }}
             className='flex flex-col px-5 text-black mt-1 duration-300 group-hover:text-mainColor'
