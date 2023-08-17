@@ -179,6 +179,7 @@ const initialState: HomePageType = {
   exploreHostingSection: {
     id: 'p-006',
     wrapperTitle: 'home_explore_txt_1',
+    // img: 'imgExploredHostingSection',
     img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63c5b458858ce546324e6786_636056a89c0f36b634f4dc4e_AdobeStock_488832115%20copiar.jpg',
     itemData: {
       Title: 'home_explore_item_txt_1',

@@ -13,6 +13,9 @@ import RatingStar from 'src/components/RatingStar'
 import CustomeAddressAutocomplete from 'src/components/CustomeAddressAutocomplete/CustomeAddressAutocomplete'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
+import { Text } from 'src/components/Edition/Text'
+import { Image } from 'src/components/Edition/Image'
+import { useAppSelector } from 'src/hooks/useRedux'
 dayjs.extend(customParseFormat)
 
 const { RangePicker } = DatePicker
@@ -39,13 +42,21 @@ const options = [
   }
 ]
 const HeaderHowItWord = () => {
-  const { ExploreHowItWork, ProprietaryHowItWork, HearCommunityHowItWork, SlideLeftRightHowItWork, SlideHowItWorkR } =
-    useSelector((state: RootState) => state.howitwork)
+  const {
+    ExploreHowItWork,
+    ProprietaryHowItWork,
+    HearCommunityHowItWork,
+    SlideLeftRightHowItWork,
+    SlideHowItWorkR,
+    HeaderHIW
+  } = useSelector((state: RootState) => state.howitwork)
   // eslint-disable-next-line arrow-body-style
   const disabledDate: RangePickerProps['disabledDate'] = (current) => {
     // Can not select days before today and today
     return current && current < dayjs().endOf('day')
   }
+  const data = useAppSelector((state) => state.data.data)
+  console.log(data)
   return (
     <div className='mb-28 flex flex-col items-stretch m-full h-101 sm:mb-0'>
       <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative  h-full'>
@@ -60,6 +71,12 @@ const HeaderHowItWord = () => {
         >
           <div className=' w-full max-with max-w-5xl mx-auto flex-col px-9 flex '>
             <div className='w-6/13   ml-0 px-9 bg-[#efeff0] rounded-3xl sm:w-full sm:px-2'>
+              {/* <Text
+                id={HeaderHIW.mainTitle}
+                tag='h2'
+                content={data[HeaderHIW.mainTitle]}
+                className='text-black text-5xl font-bold mt-6 sm:text-xl'
+              /> */}
               <h1 className='text-black text-5xl font-bold mt-6 sm:text-xl'>
                 Rent and unlock a <span className='text-mainColor'>nearby car</span> in seconds
               </h1>

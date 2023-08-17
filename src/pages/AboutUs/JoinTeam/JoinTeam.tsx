@@ -18,9 +18,9 @@ const JoinTeam = () => {
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
-    <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10 sm:flex-col'>
-      <div className='w-1/2  flex items-center sm:w-full'>
-        <div className='block'>
+    <div className='flex justify-center bg-[#e9eaeb] rounded-2xl mb-10 sm:flex-col sm:px-3'>
+      <div className='w-1/2  flex items-center sm:w-full sm:h-[100px]'>
+        <div className='block h-[50%]'>
           <Text
             id={JoinTeamAboutUs.title}
             tag='p'
@@ -32,7 +32,7 @@ const JoinTeam = () => {
             id={JoinTeamAboutUs.content}
             tag='p'
             content={data[JoinTeamAboutUs.content]}
-            className='text-[#808795] font-normal mt-3 sm:text-[15px]'
+            className='text-[#808795] font-normal mt-3 sm:text-[15px] mb-5'
           />
           {/* <p className='text-[#808795] font-normal mt-3 sm:text-[15px]'>
             Want to work with us? Come join the team focused on empowering people to carshare everywhere. Explore open
@@ -40,7 +40,7 @@ const JoinTeam = () => {
           </p> */}
           <Link
             to=''
-            className='bg-black mt-[20px] border py-2 px-4 hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[135px] h-[40px] text-sm font-bold leading-5  '
+            className='bg-black border py-2 px-4 hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[135px] h-[40px] text-sm font-bold leading-5  mt-10'
           >
             See open roles
           </Link>
@@ -49,7 +49,7 @@ const JoinTeam = () => {
       <div className='w-[35%] flex justify-center sm:w-full'>
         <Image
           id={JoinTeamAboutUs.img}
-          className='object-contain h-[500px]'
+          className='object-contain h-[500px] sm:h-[400px]'
           src={data[JoinTeamAboutUs.img]}
           alt='Getaround Connect®'
         />
