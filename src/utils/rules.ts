@@ -1,18 +1,18 @@
 import type { RegisterOptions, UseFormGetValues } from 'react-hook-form'
 import * as yup from 'yup'
 
-type Rules = { [key in 'username' | 'password' | 'confirm_password']?: RegisterOptions }
+type Rules = { [key in 'email' | 'password' | 'confirm_password']?: RegisterOptions }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getRules = (getValues?: UseFormGetValues<any>): Rules => ({
-  username: {
+  email: {
     required: {
       value: true,
-      message: 'Usename là bắt buộc'
+      message: 'Email là bắt buộc'
     },
     pattern: {
       value: /^\S+@\S+\.\S+$/,
-      message: 'Username không đúng định dạng'
+      message: 'Email không đúng định dạng'
     },
     maxLength: {
       value: 160,
@@ -67,7 +67,7 @@ const handleConfirmPasswordYup = (refString: string) => {
 }
 
 export const schema = yup.object({
-  username: yup
+  email: yup
     .string()
     .required('Email là bắt buộc')
     .email('Email không đúng định dạng')

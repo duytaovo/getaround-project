@@ -12,6 +12,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { login, updateUser } from 'src/store/user/userSlice'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
+import { getAccessTokenFromLS, setAccessTokenToLS } from 'src/utils/auth'
+import jwtDecode from 'jwt-decode'
 
 type FormData = Pick<Schema, 'email' | 'password'>
 const loginSchema = schema.pick(['email', 'password'])
@@ -36,16 +38,13 @@ const Login = () => {
     }
     try {
       const res = await dispatch(login(body))
-      console.log(res)
-      const d = res?.payload?.data
-
-      if (d?.result == 0) return toast.error(d?.message)
-
-      localStorage.setItem('token', d?.token)
-      localStorage.setItem('permission', d?.permission)
-      dispatch(updateUser(d))
-
       unwrapResult(res)
+
+      const d = res?.payload?.data
+      if (d?.result == 0) return toast.error(d?.message)
+      setAccessTokenToLS(d?.accessToken)
+      getAccessTokenFromLS()
+      dispatch(updateUser(d))
       setIsAuthenticated(true)
       navigate('/')
       toast.success('Đăng nhập thành công ')

@@ -13,7 +13,8 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 600,
+  heigt: 400,
   bgcolor: 'background.paper',
   border: '1px solid #000',
   boxShadow: 24,
@@ -70,7 +71,7 @@ export default function TransitionsModalText({ children, setEnable }: ModalTextP
               component='h2'
               color={'black'}
               sx={{
-                marginBottom: 2
+                marginBottom: 5
               }}
               className=''
             >
