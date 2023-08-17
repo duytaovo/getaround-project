@@ -60,7 +60,7 @@ const HowItWork = () => {
       />
       <HearCommunity />
       <ExploreHosting
-        img={data[ImgExploreHowItWork.img]}
+        img={ImgExploreHowItWork.img}
         DataExploreHostingStyle={DataExploreHostingHome}
         DataExploreHostingText={ExploreHowItWork}
         isEx={true}

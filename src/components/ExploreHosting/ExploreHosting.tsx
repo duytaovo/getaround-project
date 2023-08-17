@@ -14,7 +14,7 @@ interface IExploreHosting {
   Link: string
 }
 type Props = {
-  img?: string
+  img: string
   isEx?: boolean
   DataExploreHostingStyle?: any
   DataExploreHostingText: IExploreHosting
@@ -44,9 +44,9 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
       <div className='w-full mx-auto flex-col items-start  flex relative sm:flex-col'>
         <div className={`${DataExploreHostingStyle.styleImg}`}>
           <Image
-            id={'ImgExploreAboutUs' || ''}
+            id={img || ''}
             className='w-full h-full object-fit-cover object-[50%_22%] sm:rounded-t-none'
-            src={img || ''}
+            src={data[img] || ''}
             alt='Getaround Connect®'
           />
           {/* <img src={img} loading='lazy' alt='' className='w-full h-full object-fit-cover object-[50%_22%]' /> */}

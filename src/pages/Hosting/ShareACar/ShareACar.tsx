@@ -78,7 +78,7 @@ const ShareACar = () => {
       {/* start body 1 */}
       <div className='mb-[200px]'>
         <ExploreHosting
-          img={imgExploreHosting}
+          img={imgExploreHosting.img}
           DataExploreHostingStyle={DataExploreHostingShareCar}
           DataExploreHostingText={exploreHosting}
           isEx={false}
@@ -201,7 +201,7 @@ const ShareACar = () => {
 
       <div className='mb-bottom'>
         <ExploreHosting
-          img={imgExploreHosting}
+          img={imgExploreHosting.img}
           DataExploreHostingStyle={DataExploreHostingShareCar}
           DataExploreHostingText={exploreHosting_bottom}
           isEx={false}

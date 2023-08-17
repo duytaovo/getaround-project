@@ -3,7 +3,6 @@ import Proprietary from 'src/components/Proprietary/EventUnlock'
 import { DataProprietarySafetyTrust } from 'src/items/Proprietary/DataProprietary'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { DataExploreHostingSafetyTrust } from 'src/items/ExploreHosting/DataExploreHostingStyle'
-import { DataExploreHostingSafetyTrustText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import CustomeCard from 'src/components/CustomeCard/CustomeCard'
 import { DataCustomeCardSafetyTrust } from 'src/Data/DataCustomeCard'
 import WrapperContent from 'src/components/WrapperContent/WrapperContent'
@@ -49,7 +48,7 @@ const SafetyTrust = () => {
       />
 
       <ExploreHosting
-        img={data[ImgExploreST.img]}
+        img={ImgExploreST.img}
         DataExploreHostingStyle={DataExploreHostingSafetyTrust}
         DataExploreHostingText={ExploreST}
         isEx={false}
