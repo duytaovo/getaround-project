@@ -11,8 +11,6 @@ import { OptionWrapper } from '../OptionWrapper'
 import Button from '@mui/material/Button'
 import { updateImage } from 'src/store/hosting/share_a_car/shareACarSlice'
 import { unwrapResult } from '@reduxjs/toolkit'
-import config from 'src/constants/configApi'
-
 
 interface IBody {
   id: string
@@ -128,6 +126,8 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         const formData = new FormData()
         formData.append('id', id)
         formData.append('file', imgFile || '')
+        const data = await dispatch(updateImage(formData))
+          .then(unwrapResult)
           .then((fb) => {
             if (fb?.data?.status == 200) {
               dispatch(updateData({ [id]: value }))
@@ -138,9 +138,6 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             }
           })
         hidden()
-      }
-    } catch (error) {}
-
       } else {
         toast.warn('Bạn chưa chọn file ảnh', {
           position: 'top-right',
@@ -154,7 +151,6 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         autoClose: 4000
       })
     }
-
   }
 
   return (

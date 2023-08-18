@@ -67,7 +67,7 @@ export default function useRouteElements() {
       >
         <div className='flex flex-col items-center '>
           <div className='px-2 py-1 bg-white w-[150px]'>
-            <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[36px] w-full ' />
+            <img src='/logo.jpg' alt='logo' className='fill-current bg-none h-[36px] w-full ' />
           </div>
           <div className='py-2'>Loading...</div>
         </div>
