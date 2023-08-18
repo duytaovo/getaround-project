@@ -44,13 +44,11 @@ export class Http {
         const { url } = response.config
         if (url === '/admin/login') {
           const data = response.data as AuthResponse
-          console.log(data)
           this.accessToken = data.data.accessToken
           this.refreshToken = data?.data?.refreshToken || ''
           setAccessTokenToLS(this.accessToken)
           setRefreshTokenToLS(this.refreshToken)
-          // setProfileToLS(data.data.user)
-        } else if (url === '/logout') {
+        } else if (url === '/admin/logout') {
           this.accessToken = ''
           this.refreshToken = ''
           clearLS()

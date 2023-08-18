@@ -20,7 +20,6 @@ type Props = {
   idTitle: string
 }
 const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle, idimg, idTitle }) => {
-  console.log(idTitle, idimg)
   const dispatch = useDispatch()
   const data = useAppSelector((state) => state.data.data)
   return (

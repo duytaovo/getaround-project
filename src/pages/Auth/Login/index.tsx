@@ -10,10 +10,9 @@ import Input from 'src/components/Input'
 import { Schema, schema } from 'src/utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { unwrapResult } from '@reduxjs/toolkit'
-import { login, updateUser } from 'src/store/user/userSlice'
+import { isAccessTokenExpired, login, updateUser } from 'src/store/user/userSlice'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { getAccessTokenFromLS, setAccessTokenToLS } from 'src/utils/auth'
-import jwtDecode from 'jwt-decode'
 
 type FormData = Pick<Schema, 'email' | 'password'>
 const loginSchema = schema.pick(['email', 'password'])
@@ -42,12 +41,12 @@ const Login = () => {
 
       const d = res?.payload?.data
       if (d?.result == 0) return toast.error(d?.message)
-      setAccessTokenToLS(d?.accessToken)
-      getAccessTokenFromLS()
-      dispatch(updateUser(d))
-      setIsAuthenticated(true)
-      navigate('/')
-      toast.success('Đăng nhập thành công ')
+      await setAccessTokenToLS(d?.accessToken)
+      // await getAccessTokenFromLS()
+      await dispatch(updateUser(isAccessTokenExpired()))
+      await setIsAuthenticated(true)
+      await navigate('/')
+      await toast.success('Đăng nhập thành công ')
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
         const formError = error.response?.data.data

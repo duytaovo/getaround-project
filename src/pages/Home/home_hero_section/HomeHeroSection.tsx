@@ -7,6 +7,7 @@ import RatingStar from 'src/components/RatingStar'
 import { IHeroSection } from 'src/store/app/home/HomeTypes/Hero.type'
 import { Text } from 'src/components/Edition/Text'
 import { useAppSelector } from 'src/hooks/useRedux'
+import Button from '../../../components/Button/Button'
 
 const options = [
   {
@@ -73,14 +74,25 @@ const HomeHeroSection: FC<IHeroSection> = ({
             <div style={{ width: '10px' }} />
             <CustomDatetimePicker className='h-[52px] lg:grow' title={endDateTimePikerTitle} />
           </div>
-
-          <CustomeButton
+          <Button
+            // onClick={onClick}
+            children={
+              <Text
+                id={`txt-buttonBodyTop-shareACar`}
+                tag='span'
+                content={data[buttonSearchText || '']}
+                className={`text-base `}
+              />
+            }
+            isNext={true}
+            className='min-w-[140px] h-[52px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white   rounded-lg bg-[#3699d3] hover:bg-black  '
+          ></Button>
+          {/* <CustomeButton
             className='min-w-[140px] h-[52px] rounded-[10px] text-white/80 lg:w-full bg-mainColor grow [&>*]:flex'
             isNext={true}
           >
-            {/* {buttonSearchText} */}
             <Text id={buttonSearchText} tag='span' className='flex' content={data[buttonSearchText]} />
-          </CustomeButton>
+          </CustomeButton> */}
         </Space>
       </div>
       {/* <RatingStar rating={4} review='Shoppee' classReview='text-white' activeClassname='h-20' /> */}

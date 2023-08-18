@@ -50,23 +50,10 @@ const ShareACar = () => {
     exploreHosting_bottom,
     commonQuestionBottom
   } = useAppSelector((state) => state.shareAcar)
-  const [idText, setIdText] = useState<string>('')
-  const [valueText, setValueText] = useState<string>('')
+
   const data = useAppSelector((state) => state.data.data)
 
   const dispatch = useAppDispatch()
-
-  const handleBodyTopChange = (newBodyTop: IBodyTop) => {
-    dispatch(updateBodyTop(newBodyTop))
-  }
-
-  const handleAddSlider = (newSlider: IItemSlider) => {
-    dispatch(addSlider(newSlider))
-  }
-
-  const handleSliderChange = (index: number, newSlider: IItemSlider) => {
-    dispatch(updateSlider({ index, slider: newSlider }))
-  }
 
   return (
     <div className='pt-[84px]'>

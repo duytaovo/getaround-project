@@ -13,8 +13,12 @@ const shareACarApi = {
     return http.put(`${URL_ADD_TEXT}`, data)
   },
 
-  updateImage(data: any) {
-    return http.put(`${URL_ADD_IMAGE}`, data)
+  uploadImage(body: FormData) {
+    return http.put<SuccessResponse<string>>(URL_ADD_IMAGE, body, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
   }
 }
 
