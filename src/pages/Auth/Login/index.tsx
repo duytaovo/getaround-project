@@ -48,8 +48,8 @@ const Login = () => {
       await toast.success('Đăng nhập thành công ')
 
       setTimeout(async () => {
-        await window.location.reload()
         await navigate('/')
+        await window.location.reload()
       }, 1000)
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
