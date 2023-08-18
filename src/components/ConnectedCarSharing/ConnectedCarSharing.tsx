@@ -13,9 +13,9 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
       <div className='w-full flex-col max-w-[1272px] self-center items-stretch px-auto flex'>
         <div className='w-full flex-col mx-auto flex items-center'>
           <div className='w-full max-w-[1272px] bg-white/90 rounded-[22px] flex-col justify-center mt-auto mx-auto p-[10px_36px] flex'>
-            <div className='w-full max-w-[1072px] justify-around items-center flex sm:flex-wrap'>
+            <div className='w-full max-w-[1072px] justify-around items-center flex md:flex-wrap md:w-[80%] md:mx-auto'>
               {DataConnectedCarSharingHome.map((item: any, index: number) => (
-                <div key={index}>
+                <div key={index} className='flex'>
                   <div className='text-center flex-col justify-start items-center flex sm:w-[40%]'>
                     <Text
                       id={DataConnectedCarSharingHome?.[index]?.total}
@@ -39,7 +39,7 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
                   {index === DataConnectedCarSharingHome.length - 1 ? (
                     <></>
                   ) : (
-                    <div className='w-[1px] h-16 bg-[#c9c9c9] self-strech sm:hidden'></div>
+                    <div className='w-[1px] h-16 bg-[#c9c9c9] self-strech ml-16 md:hidden my-auto  mx-auto'></div>
                   )}
                 </div>
               ))}
