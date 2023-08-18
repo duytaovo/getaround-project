@@ -59,3 +59,7 @@ export interface ISelectmainTitleStepHIW {
   imgSlide1: string
   imgSlide2: string
 }
+export interface ISelectHeaderTitleStepHIWs {
+  HeaderTitle1: string
+  HeaderTitle2: string
+}

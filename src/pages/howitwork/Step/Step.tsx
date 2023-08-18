@@ -21,7 +21,8 @@ const Step = () => {
     SlideHowItWorkR,
     customeSteps,
     customeSteps2,
-    titleimgSide
+    titleimgSide,
+    headerTitles
   } = useSelector((state: RootState) => state.howitwork)
   const data = useAppSelector((state) => state.data.data)
   const [step, setStep] = useState(true)
@@ -38,12 +39,18 @@ const Step = () => {
           aria-controls='bookingtab'
           aria-selected='true'
         >
-          <h3
+          <Text
+            id={`ttStepHIWDX`}
+            tag='h3'
+            content={data[headerTitles.HeaderTitle1] || 's'}
+            className='text-mainColor my-0 text-[24px] font-bold text-left leading-[105%] sm:leading-[50%] sm:text-[15px] sm:font-medium'
+          />
+          {/* <h3
             data-w-id='19b49919-2a64-d52b-9a28-bb8f08bfcea8'
             className='text-mainColor my-0 text-[24px] font-bold text-left leading-[105%] sm:leading-[50%] sm:text-[15px] sm:font-medium'
           >
             Đặt xe
-          </h3>
+          </h3> */}
           <div className='w-[30px] h-[30px] bg-[#3699d3] p-[6px] rounded-l-[30px]'></div>
         </Link>
         <Link
@@ -70,12 +77,19 @@ const Step = () => {
               }}
             ></div>
           </div>
-          <h3
+          <Text
+            id={`ttStepHIWTX`}
+            tag='h3'
+            content={data[headerTitles.HeaderTitle2] || 'Thue xe'}
+            data-w-id='19b49919-2a64-d52b-9a28-bb8f08bfcea8'
+            className='text-black my-0 text-[24px] font-bold text-left leading-[105%] sm:leading-[50%] sm:text-[15px] sm:font-medium'
+          />
+          {/* <h3
             data-w-id='19b49919-2a64-d52b-9a28-bb8f08bfcea8'
             className='text-black my-0 text-[24px] font-bold text-left leading-[105%] sm:leading-[50%] sm:text-[15px] sm:font-medium'
           >
             Thuê xe
-          </h3>
+          </h3> */}
         </Link>
       </div>
       <div className='flex justify-center px-[36px] sm:flex-col'>
