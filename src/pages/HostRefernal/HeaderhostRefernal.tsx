@@ -19,12 +19,21 @@ const HeaderhostRefernal = () => {
     <div className='flex justify-center px-[36px] sm:flex-col'>
       <div className='w-1/2  flex justify-center items-center sm:w-[100%]'>
         <div className='block'>
-          <Text
-            id={HeaderhostRefernal.headerTitle}
-            tag='p'
-            content={data[HeaderhostRefernal.headerTitle]}
-            className='text-3xl text-black font-bold'
-          ></Text>
+          <div className='flex'>
+            {' '}
+            <Text
+              id={HeaderhostRefernal.headerTitle}
+              tag='p'
+              content={data[HeaderhostRefernal.headerTitle]}
+              className='text-3xl text-black font-bold'
+            ></Text>
+            <Text
+              id={HeaderhostRefernal.title}
+              tag='p'
+              content={data[HeaderhostRefernal.title]}
+              className='text-3xl text-mainColor font-bold'
+            ></Text>
+          </div>
           {/* <h2 className='text-3xl text-black font-bold'>
             <span className='text-mainColor'> Make even more</span> when you refer your friends
           </h2> */}

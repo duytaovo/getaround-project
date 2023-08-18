@@ -11,16 +11,6 @@ interface Props {
   DataCustomeCard: any
 }
 const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
-  const {
-    ExplorehostRefernal,
-    customeSteps,
-    imgcustomeSteps,
-    SlideLeftRighthostRefernal,
-    ImgSlideLeftRight_HostRefernal,
-    ImgExploreHR,
-    QuestionhostRefernal,
-    CustomeCardR
-  } = useSelector((state: RootState) => state.hostingReferral)
   const data = useAppSelector((state) => state.data.data)
   return (
     <div className='flex-col items-stretch mb-[104px] flex w-full sm:flex-row'>
@@ -72,8 +62,8 @@ const CustomeCard: React.FC<Props> = ({ mainTitle, DataCustomeCard }) => {
                   />
                   {/* <p className=' no-underline bg-transparent'>{DataCustomeCard?.[index]?.description}</p> */}
                 </div>
-                <Link to={DataCustomeCard?.[index]?.LinkFooter} className='text-mainColor font-light mt-3'>
-                  {DataCustomeCard?.[index]?.Footer}
+                <Link to={DataCustomeCard?.[index]?.linkTo} className='text-mainColor font-light mt-3'>
+                  {DataCustomeCard?.[index]?.link}
                 </Link>
               </div>
             ))}

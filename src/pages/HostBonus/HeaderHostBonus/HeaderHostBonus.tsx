@@ -7,24 +7,31 @@ import { RootState } from 'src/store/store'
 
 const HeaderHostBonus = () => {
   const data = useAppSelector((state) => state.data.data)
-  const { HeaderhostRefernal } = useSelector((state: RootState) => state.hostingReferral)
+  const { HeaderhostBonus } = useSelector((state: RootState) => state.hostBonus)
   return (
     <div className='flex justify-center px-[36px] sm:flex-col'>
       <div className='w-1/2  flex justify-center items-center sm:w-[100%]'>
         <div className='block'>
+          {' '}
           <Text
-            id={HeaderhostRefernal.headerTitle}
+            id={HeaderhostBonus.headerTitle}
             tag='p'
-            content={data[HeaderhostRefernal.headerTitle]}
+            content={data[HeaderhostBonus.headerTitle]}
             className='text-3xl text-black font-bold'
+          ></Text>
+          <Text
+            id={HeaderhostBonus.title}
+            tag='p'
+            content={data[HeaderhostBonus.title]}
+            className='text-3xl text-mainColor font-bold'
           ></Text>
           {/* <h2 className='text-3xl text-black font-bold'>
               <span className='text-mainColor'> Make even more</span> when you refer your friends
             </h2> */}
           <Text
-            id={HeaderhostRefernal.content}
+            id={HeaderhostBonus.content}
             tag='p'
-            content={data[HeaderhostRefernal.content]}
+            content={data[HeaderhostBonus.content]}
             className='text-[#1e1e1e] font-normal mt-3'
           />
           {/* <p className='text-[#1e1e1e] font-normal mt-3'>
@@ -35,9 +42,9 @@ const HeaderHostBonus = () => {
       </div>
       <div className='w-1/2 flex justify-center sm:w-[100%]'>
         <Image
-          id={HeaderhostRefernal.img}
+          id={HeaderhostBonus.img}
           className='object-contain h-[500px]'
-          src={data[HeaderhostRefernal.img]}
+          src={data[HeaderhostBonus.img]}
           alt='Getaround Connect®'
         />
         {/* <img

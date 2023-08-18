@@ -15,6 +15,7 @@ import driveWithUberSlice from './app/partners/driveWithUber/driveWithUber.slice
 import partnersWithUsSlice from './app/partners/partnerWithUs/partnersWithUs.slice'
 import dataReducer from './dataSlice'
 import NoticeReducer from './notice/noticeSlice'
+import hostBonusReducer from './hosting/host_bonus/hostbonusSlice'
 export const store = configureStore({
   reducer: {
     data: dataReducer,
@@ -31,7 +32,8 @@ export const store = configureStore({
     hostingReferral: hostRefernalReducer,
     safetrust: SafeTrustReducer,
     user: UserReducer,
-    notice: NoticeReducer
+    notice: NoticeReducer,
+    hostBonus: hostBonusReducer
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]
