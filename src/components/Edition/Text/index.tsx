@@ -121,7 +121,12 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       })
 
       return res
-    } catch (error) {}
+    } catch (error) {
+      toast.error('có lỗi' + '' + error, {
+        position: 'top-center',
+        autoClose: 4000
+      })
+    }
   }
 
   return (

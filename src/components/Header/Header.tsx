@@ -17,7 +17,7 @@ import path from 'src/constants/path'
 import { clearLS } from 'src/utils/auth'
 import { toast } from 'react-toastify'
 import { useAppDispatch } from 'src/hooks/useRedux'
-import { isAccessTokenExpired, updateUser } from 'src/store/user/userSlice'
+import { updateUser } from 'src/store/user/userSlice'
 type Props = {}
 
 const Header = (props: Props) => {
@@ -78,10 +78,14 @@ const Header = (props: Props) => {
           <div
             onClick={async () => {
               clearLS()
-
-              await toast.success('Đăng xuất thành công')
-              await navigate('/')
               await dispatch(updateUser('0'))
+              await toast.success('Đăng xuất thành công')
+
+              setTimeout(async () => {
+                await window.location.reload()
+                await navigate('/')
+              }, 1000)
+              // setTimeout(async () => {}, 2000)
             }}
             className='flex flex-col px-5 text-black mt-1 duration-300 group-hover:text-mainColor'
           >
@@ -100,7 +104,7 @@ const Header = (props: Props) => {
         <div className='flex  '>
           <div>
             <Link to='/'>
-              <img src='/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] ' />
+              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
