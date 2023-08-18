@@ -19,7 +19,7 @@ const HeaderhostRefernal = () => {
     <div className='flex justify-center px-[36px] sm:flex-col'>
       <div className='w-1/2  flex justify-center items-center sm:w-[100%]'>
         <div className='block'>
-          <div className='flex'>
+          <div className=''>
             {' '}
             <Text
               id={HeaderhostRefernal.headerTitle}
