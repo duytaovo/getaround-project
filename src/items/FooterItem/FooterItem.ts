@@ -1,8 +1,8 @@
-import { ISelectItems } from "src/types/Footer.type"
+import { ISelectItems } from 'src/types/Footer.type'
 
-export const selectItems:ISelectItems[] = [
+export const selectItems: ISelectItems[] = [
   {
-    value: "Pháp",
+    value: 'Pháp',
     icon: '	https://assets-global.website-files.com/5c16e90c8f…98f834e5/612412c4691bb97eac3bd71c_flag-france.png'
   },
   {
@@ -29,86 +29,81 @@ export const selectItems:ISelectItems[] = [
 
 export const firstColumn = [
   {
-    link: '/',
-    content: 'Cách thức hoạt động'
+    link: '/solution/insurance',
+    content: 'Bảo hiểm'
   },
   {
-    link: '/',
-    content: 'Ứng dụng'
+    link: '/our-solution/safety-trust',
+    content: 'An toàn và tin cậy'
   },
   {
-    link: '/',
-    content: 'Tin cậy và an toàn'
-  },
-  {
-    link: '/',
-    content: 'Hỗ trợ'
+    link: '/our-solution/technology',
+    content: 'Công nghệ của chúng tôi'
   }
 ]
 
 export const secondColumn = [
   {
-    link: '/',
+    link: '/carshare/share-a-car',
     content: 'Chia sẻ xe'
   },
   {
-    link: '/',
-    content: 'Tổ chức trung tâm'
+    link: '/carshare/term-condition',
+    content: 'Điều khoản và điều kiện'
   },
   {
-    link: '/',
-    content: 'Giới thiệu tổ chức'
+    link: '/carshare/benefits',
+    content: 'Chia sẻ lợi ích'
   },
   {
-    link: '/',
-    content: 'Bảo hiểm'
+    link: '/carshare/referral',
+    content: 'Giới thiệu xe'
   }
 ]
 export const thirdColumn = [
   {
-    link: '/',
+    link: '/partners/partner-with-us',
     content: 'Cộng tác với chúng tôi'
   },
   {
-    link: '/',
-    content: 'Lái xe với Uber'
+    link: '/partners/our-partners',
+    content: 'Đối tác của chúng tôi'
   },
-  
+  {
+    link: '/partners/grab-be-drivers',
+    content: 'Lái xe với grab/be'
+  }
 ]
 export const fourColumn = [
   {
-    link: '/',
-    content: 'Về chúng tôi'
+    link: '/about-us/unlock-team',
+    content: 'Đội ngũ Unlock'
   },
   {
-    link: '/',
-    content: 'Sự nghiệp'
+    link: '/about-us/contact-us',
+    content: 'Kết nối với chúng tôi'
   },
   {
-    link: '/',
-    content: 'Quan hệ đầu tư'
-  },
-  {
-    link: '/',
-    content: 'Trung tâm trợ giúp'
+    link: '/about-us/move-to-server',
+    content: 'Di chuyển đến trực tiếp máy chủ'
   }
 ]
 
 export const fiveColumn = [
   {
-    link: '/',
-    content: 'Cách thức hoạt động'
+    link: '/newsroom/news',
+    content: 'Tin tức mới'
   },
   {
-    link: '/',
-    content: 'Ứng dụng'
+    link: '/newsroom/blogs',
+    content: 'Blogs'
   },
   {
-    link: '/',
-    content: 'Tin cậy và an toàn'
+    link: '/newsroom/policy',
+    content: 'Điều khoản và nguyên tắc'
   },
   {
-    link: '/',
-    content: 'Hỗ trợ'
+    link: '/newsrooms/eligibilities',
+    content: 'Đủ điều kiện'
   }
 ]

@@ -13,10 +13,8 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
-  heigt: 400,
+  width: '80%',
   bgcolor: 'background.paper',
-  border: '1px solid #000',
   boxShadow: 24,
   p: 4,
   color: 'black',
@@ -26,9 +24,10 @@ const style = {
 interface ModalTextProps {
   children: React.ReactNode
   setEnable?: React.Dispatch<React.SetStateAction<boolean>>
+  title?: string
 }
 
-export default function TransitionsModalText({ children, setEnable }: ModalTextProps) {
+export default function TransitionsModalText({ children, setEnable, title }: ModalTextProps) {
   const [open, setOpen] = React.useState(true)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
@@ -42,7 +41,7 @@ export default function TransitionsModalText({ children, setEnable }: ModalTextP
         aria-labelledby='transition-modal-title'
         aria-describedby='transition-modal-description'
         open={open}
-        // onClose={handleClose}
+        onClose={() => setEnable && setEnable(false)}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
@@ -53,34 +52,20 @@ export default function TransitionsModalText({ children, setEnable }: ModalTextP
       >
         <Fade in={open}>
           <Box sx={style}>
-            {/* <IconButton
-              aria-label='close'
-              onClick={handleClose}
-              sx={{
-                position: 'absolute',
-                right: 8,
-                top: 8,
-                color: (theme) => theme.palette.grey[500]
-              }}
-            >
-              <CloseCircleOutlined />
-            </IconButton> */}
             <Typography
               id='transition-modal-title'
               variant='h6'
               component='h2'
               color={'black'}
               sx={{
-                marginBottom: 5
+                marginBottom: 1,
+                fontWeight: 600
               }}
               className=''
             >
-              Chỉnh sửa ở đây
+              {title || 'Chỉnh sửa'}
             </Typography>
-            {/* <Typography id='transition-modal-description' sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography> */}
-            {children}
+            <div className='max-h-96 w-full overflow-auto'>{children}</div>
           </Box>
         </Fade>
       </Modal>
