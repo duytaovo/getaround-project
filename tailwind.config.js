@@ -41,7 +41,7 @@ module.exports = {
         mainL1: '#1f4160'
       },
       backgroundColor: {
-        mainBackGroundColor: '#1c2635',
+        mainBackGroundColor: '#ffffff',
         bgHeaderMobile: 'rgb(249 248 248 / 80%)'
       },
 

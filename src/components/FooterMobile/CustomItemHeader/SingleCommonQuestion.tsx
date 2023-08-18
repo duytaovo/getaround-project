@@ -1,21 +1,16 @@
 import { FC, ReactNode, memo } from 'react'
 import { Link } from 'react-router-dom'
-import AccountCircleIcon  from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 type Props = {
-  contents: Object[] 
+  contents: Object[]
   path?: string
 }
 
 const SingleCommonQuestion: FC<Props> = ({ contents, path }) => {
   return (
-    <div className='text-ellipsis text-white/50 space-y-2 rounded-md'>
-      {contents?.map((sentence:any,index) => (
-        <div key={index}>
-          {sentence?.link}
-        </div>
-      ))}
-     
+    <div className='text-ellipsis text-black/50 space-y-2 rounded-md'>
+      {contents?.map((sentence: any, index) => <div key={index}>{sentence?.link}</div>)}
     </div>
   )
 }

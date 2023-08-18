@@ -268,7 +268,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '1',
         label: (
           <CustomLink to={path.insurance}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+            <div className='inline-block mt-3 w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
                 Bảo hiểm
               </span>
@@ -305,7 +305,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '4',
         label: (
           <CustomLink to={path.termSolution}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all'>
+            <div className='inline-block w-full mb-3 group px-5 text-black hover:translate-x-2 duration-300 transition-all'>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
                 Điều khoản và điều kiện
               </span>
@@ -323,7 +323,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '1',
         label: (
           <CustomLink to={path.sharACar}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+            <div className='inline-block w-full mt-3 group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
                 Chia sẻ xe
               </span>
@@ -360,7 +360,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '4',
         label: (
           <CustomLink to={path.hostrefernal}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+            <div className='inline-block w-full mb-3 group px-5 text-black hover:translate-x-2 duration-300'>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
                 Giới thiệu 1 nhà xe
               </span>
@@ -378,7 +378,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '1',
         label: (
           <CustomLink to={path.partnerWithUs}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+            <div className='inline-block w-full mt-3 group px-5 text-black hover:translate-x-2 duration-300 '>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
                 Đối tác với chúng tôi
               </span>
@@ -402,7 +402,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '3',
         label: (
           <CustomLink to={path.driveWithUber}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+            <div className='inline-block w-full mb-3  group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
                 Lái xe với Grab/Be
               </span>
@@ -420,7 +420,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '1',
         label: (
           <CustomLink to={path.newsroom}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+            <div className='inline-block w-full mt-3 group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
                 Tin tức mới
               </span>
@@ -456,7 +456,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '4',
         label: (
           <CustomLink to={path.eligibilitis}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+            <div className='inline-block w-full mb-3 group px-5 text-black hover:translate-x-2 duration-300'>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
                 Đủ điều kiện
               </span>
@@ -474,7 +474,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '1',
         label: (
           <CustomLink to={path.unlockTeam}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+            <div className='inline-block w-full mt-3 group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
                 Đội ngũ Unlock
               </span>
@@ -498,7 +498,7 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         key: '3',
         label: (
           <CustomLink to={path.moveServer}>
-            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+            <div className='inline-block w-full mb-3 group px-5 text-black hover:translate-x-2 duration-300'>
               <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
                 Di chuyển đến trực tiếp máy chủ
               </span>

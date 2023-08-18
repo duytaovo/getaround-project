@@ -146,7 +146,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         hidden()
       }
     } catch (error) {
-      toast.error('Có lỗi' + error, {
+      toast.error('Có lỗi' + ' ' + error, {
         position: 'top-right',
         autoClose: 4000
       })

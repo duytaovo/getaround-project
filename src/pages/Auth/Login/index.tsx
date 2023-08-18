@@ -45,8 +45,12 @@ const Login = () => {
       // await getAccessTokenFromLS()
       await dispatch(updateUser(isAccessTokenExpired()))
       await setIsAuthenticated(true)
-      await navigate('/')
       await toast.success('Đăng nhập thành công ')
+
+      setTimeout(async () => {
+        await window.location.reload()
+        await navigate('/')
+      }, 1000)
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
         const formError = error.response?.data.data
