@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
 import axios from 'axios'
 import { ICustomeSteps } from 'src/types/customeSteps.type'
+import { ISelectHeaderHIW, ISelectmainTitleStepHIW } from 'src/types/HowItWork'
 interface HowItWorkState {
   ExploreHowItWork: ISelectItemsExploreHosting
   ProprietaryHowItWork: ISelectItemsProprietary
@@ -23,9 +24,16 @@ interface HowItWorkState {
   ImgExploreHowItWork: ISelectItemsImgExploreHosting
   customeSteps: ICustomeSteps[]
   customeSteps2: ICustomeSteps[]
+  HeaderHIW: ISelectHeaderHIW
+  titleimgSide: ISelectmainTitleStepHIW
 }
 
 const initialState: HowItWorkState = {
+  titleimgSide: {
+    mainTitle: 'mainTitleSlideStepHIW',
+    imgSlide1: 'img1SlideHIW',
+    imgSlide2: 'img2SlideHIW'
+  },
   customeSteps: [
     {
       title: 'title4_customeSteps',
@@ -130,7 +138,11 @@ const initialState: HowItWorkState = {
       Link: 'link3_SlideLeftRight_HowItWork',
       contents: [`contents3_SlideLeftRight_HowItWork`]
     }
-  ]
+  ],
+  HeaderHIW: {
+    img: 'imgHeader_HIW',
+    mainTitle: 'mainTitleHeader_HIW'
+  }
 }
 
 const HowItWorkSlice = createSlice({

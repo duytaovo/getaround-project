@@ -1608,6 +1608,13 @@ debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
   dependencies:
     ms "2.1.2"
 
+decode@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/decode/-/decode-0.3.0.tgz#e00e12d3fab2d59b1f160d71e751474bcb1964bf"
+  integrity sha512-EObmIlvteR80byfLOe5S6XsxD1HFs0kDUVaQ+9pSj3o/gnzPh6YB86iXEZLj2ShALRF6N6fSIRjAFv5sKp6evg==
+  dependencies:
+    kung-fu "^0.2.0"
+
 deep-equal@^1.0.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/deep-equal/-/deep-equal-1.1.1.tgz"
@@ -2711,6 +2718,11 @@ jwt-decode@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
   integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
+
+kung-fu@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/kung-fu/-/kung-fu-0.2.1.tgz#1c664928b09564e93b9a13e6b3d720070fa2b449"
+  integrity sha512-aVHQku/PdKruvKwQ5r8zsCtIPeNz3nwM+o1RPoS+jR7rdE6mCla5GVIqSCWJ8ATYlajaAmaMh/qxczFQ//MW8g==
 
 language-subtag-registry@~0.3.2:
   version "0.3.22"

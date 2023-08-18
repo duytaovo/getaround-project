@@ -66,12 +66,12 @@ export const DataExploreHostingAboutUs = {
   styleImg: `h-[330px]  w-[60%] rounded-[20px] relative overflow-hidden sm:h-full sm:w-full sm:rounded-b-none`,
 
   styleTitle:
-    'w-1/2 text-white p-3 rounded-[10px]  duration-[0.5s] cursor-pointer tracking-[-0.025em] mt-0 mx-0 text-[32px] md:text-[20px] md:w-[65%] font-normal leading-[106%] mb-[0.5em] text-left  hover:bg-mainColor bg-black',
+    'w-1/2 text-white p-3 rounded-[10px]  duration-[0.5s] cursor-pointer tracking-[-0.025em] mt-0 mx-0 text-[32px] lg:text-[20px]  md:text-[20px] md:w-[50%] font-normal leading-[106%] mb-[0.5em] text-left  hover:bg-mainColor bg-black ',
 
   Button: {
     href: '',
     className:
-      'text-mainColor underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
+      'text-mainColor underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline ',
     text: '‍Learn more about hosting'
   }
 }

@@ -1,6 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import shareACarApi from 'src/apis/hosting/share_a_car.api'
 import { ItemCarouselCommunity } from 'src/items/Carousel/Carouseltems'
+
 import {
   CustomeStepItems,
   DataExploreHostingShareCarText,
@@ -20,7 +21,7 @@ import {
   itemsBottom,
   wrapperTitle
 } from 'src/items/ShareACarId/ShareACarId'
-import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
+import { ISelectItemsExploreHosting, ISelectItemsImgExploreHosting } from 'src/types/HowItWork'
 import {
   IBodyCommonQuestionImg,
   IBodyTop,
@@ -68,7 +69,7 @@ interface ShareACarState {
   exploreHosting_bottom: ISelectItemsExploreHosting
   ourHost: IItemGetAroundYourBack
   wrapperTitle: IIWrapContentTitle[]
-  imgExploreHosting: string
+  imgExploreHosting: ISelectItemsImgExploreHosting
 }
 
 const initialState: ShareACarState = {
@@ -88,7 +89,9 @@ const initialState: ShareACarState = {
   exploreHosting_bottom: DataExploreHostingShareCarText_bottom,
   ourHost: itemOurHost,
   commonQuestionImg: itemCommonQuestionBody,
-  imgExploreHosting: itemImgExploreHosting,
+  imgExploreHosting: {
+    img: 'ImgExploreShareACar'
+  },
   wrapperTitle: wrapperTitle
 }
 

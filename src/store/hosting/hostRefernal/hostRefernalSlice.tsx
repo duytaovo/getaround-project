@@ -5,7 +5,7 @@ import { ISelectItemsHeaderHostRefernal } from 'src/types/hostRefernal/hostRefer
 import { ICustomeSteps } from 'src/types/customeSteps.type'
 import { ISelectItemsImgCustomeSteps } from 'src/types/hostRefernal/hostRefernal'
 import { ICommonQuestions } from 'src/types/commonQuestion.type'
-import { ISelectItemsCustomeCard } from 'src/types/customeCard'
+import { ISelectItemsCustomeCard, ISelectItemsTitleCustomeCard } from 'src/types/customeCard'
 interface hostRefernalState {
   ExplorehostRefernal: ISelectItemsExploreHosting
   SlideLeftRighthostRefernal: ISelectItemsSlideLeftRight[]
@@ -15,10 +15,14 @@ interface hostRefernalState {
   QuestionhostRefernal: ICommonQuestions[]
   ImgSlideLeftRight_HostRefernal: ISelectImglideLeftRight
   ImgExploreHR: ISelectItemsImgExploreHosting
-  CustomeCard: ISelectItemsCustomeCard[]
+  CustomeCardR: ISelectItemsCustomeCard[]
+  titleCustomeCardR: ISelectItemsTitleCustomeCard
 }
 
 const initialState: hostRefernalState = {
+  titleCustomeCardR: {
+    mainTitle: 'mainTitleCustomeCardHostEF'
+  },
   ImgExploreHR: {
     img: 'ImgExploreHR'
   },
@@ -117,11 +121,16 @@ const initialState: hostRefernalState = {
       ]
     }
   ],
-  CustomeCard: [
+  CustomeCardR: [
     {
-      header: 'header_hostRefernal',
-      title: 'title_hostRefernal',
-      description: 'description_hostRefernal'
+      header: 'header_hostRefernal1',
+      title: 'title_hostRefernal1',
+      description: 'description_hostRefernal1'
+    },
+    {
+      header: 'header_hostRefernal2',
+      title: 'title_hostRefernal2',
+      description: 'description_hostRefernal2'
     }
   ]
 }

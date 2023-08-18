@@ -63,8 +63,8 @@ export default function Carousel_Review_Comunity({
   }
 
   return (
-    <div className='flex justify-between sm:justify-center'>
-      <div className='w-full sm:w-[80%] '>
+    <div className='flex justify-between sm:justify-center md1:justify-center'>
+      <div className='w-full sm:w-[80%] md1:w-[90%]'>
         <Slider {...settings}>
           {data?.map((item, index: number) => (
             <div

@@ -25,7 +25,9 @@ const path = {
   eligibilitis: '/newsrooms/eligibilities',
   unlockTeam: '/about-us/unlock-team',
   contact: '/about-us/contact',
-  moveServer: '/about-us/move-to-server'
+  moveServer: '/about-us/move-to-server',
+  hostBobus: '/host/host-bonus'
+
 } as const
 
 export default path

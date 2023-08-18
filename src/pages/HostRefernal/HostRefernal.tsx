@@ -13,7 +13,7 @@ import { RootState } from 'src/store/store'
 import { MobileOutlined, CarOutlined, RiseOutlined, DollarOutlined, WalletOutlined } from '@ant-design/icons'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
-
+import CustomeCard from 'src/components/CustomeCard/CustomeCard'
 export const DataImgCustomeStepHostRF = {
   id: 'ImgCustomeSteps_HostRF',
   img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg',
@@ -28,7 +28,8 @@ const HostRefernal = () => {
     ImgSlideLeftRight_HostRefernal,
     ImgExploreHR,
     QuestionhostRefernal,
-    CustomeCard
+    CustomeCardR,
+    titleCustomeCardR
   } = useSelector((state: RootState) => state.hostingReferral)
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
@@ -38,13 +39,13 @@ const HostRefernal = () => {
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderhostRefernal />
       </WrapperContent>
-      {/* <CustomeCard mainTitle={`When you refer a friend`} DataCustomeCard={DataCustomeCardHostRefernal} /> */}
+      <CustomeCard mainTitle={titleCustomeCardR.mainTitle} DataCustomeCard={CustomeCardR} />
       <WrapperContent textAlign='center' title={data[imgcustomeSteps.headerTitle]} classname='flex flex-col'>
         <div className='justify-center items-center flex relative'>
           <div className='flex justify-center px-[36px] sm:flex-col'>
             <div className='w-1/2 md:w-[65%] sm:w-[100%]'>
               <Text
-                id='TitleHIW'
+                id={imgcustomeSteps.title}
                 tag='p'
                 content={data[imgcustomeSteps.title]}
                 className='text-black text-2xl mb-3 font-semibold'
@@ -88,7 +89,7 @@ const HostRefernal = () => {
         titleInput={'Input your information to see your referral progress!'}
       />{' '}
       <ExploreHosting
-        img={data[ImgExploreHR.img]}
+        img={ImgExploreHR.img}
         DataExploreHostingStyle={DataExploreHostingHostRefernal}
         DataExploreHostingText={ExplorehostRefernal}
         isEx={false}

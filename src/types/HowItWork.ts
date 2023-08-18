@@ -42,10 +42,20 @@ export interface ISelectItemsSlideLeftRight {
   label: string
   Linkto: string
   Link: string
+
   contents: any[]
 }
 export interface ISelectImglideLeftRight {
   id?: string
   img: string
   mainTitle: string
+}
+export interface ISelectHeaderHIW {
+  img: string
+  mainTitle: string
+}
+export interface ISelectmainTitleStepHIW {
+  mainTitle: string
+  imgSlide1: string
+  imgSlide2: string
 }
