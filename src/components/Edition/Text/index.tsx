@@ -33,7 +33,6 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       id: 0,
       title: 'Lưu',
       callback: ({ id, value, setEnable }: IBody) => {
-        console.log({ id, value })
         _updateText(id, value).then((fb) => {
           if (fb?.data?.status == 200) {
             dispatch(updateData({ [id]: value }))

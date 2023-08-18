@@ -5,6 +5,9 @@ import axios from 'axios'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { toast } from 'react-toastify'
 import { updateData } from 'src/store/dataSlice'
+import { updateImage } from 'src/store/hosting/share_a_car/shareACarSlice'
+import { unwrapResult } from '@reduxjs/toolkit'
+import config from 'src/constants/configApi'
 
 interface IBody {
   id: string
@@ -81,9 +84,13 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e?.target?.files ? e?.target?.files[0] : null
     if (!value) return
-    const s = window.URL.createObjectURL(value)
-    setImgFile(value)
-    setVal(s)
+    if (value && (value.size >= config.maxSizeUploadImage || !value.type.includes('image'))) {
+      toast.error(`Dụng lượng file tối đa 2 MB. Định dạng:.JPEG, .PNG, .JPG`, {})
+    } else {
+      const s = window.URL.createObjectURL(value)
+      setImgFile(value)
+      setVal(s)
+    }
   }
 
   useEffect(() => {
@@ -110,13 +117,9 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         const formData = new FormData()
         formData.append('id', id)
         formData.append('file', imgFile || '')
-        const data = await axios
-          .put('http://localhost:8080/api/v1/pageElement/updateImageElement', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-              Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-          })
+        const data = await dispatch(updateImage(formData))
+          .then(unwrapResult)
+
           .then((fb) => {
             if (fb?.data?.status == 200) {
               dispatch(updateData({ [id]: value }))
@@ -127,18 +130,19 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             }
           })
         hidden()
-        // toast.success('upload thành công', {
-        //   position: 'top-center',
-        //   autoClose: 4000
-        // })
-
-        console.log('What about this: ', data)
+      } else {
+        toast.warn('Bạn chưa chọn file ảnh', {
+          position: 'top-right',
+          autoClose: 4000
+        })
+        hidden()
       }
-      // esle{
-      //   hidden()
-
-      // }
-    } catch (error) {}
+    } catch (error) {
+      toast.error('Có lỗi' + error, {
+        position: 'top-right',
+        autoClose: 4000
+      })
+    }
   }
 
   return (
