@@ -119,6 +119,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         formData.append('file', imgFile || '')
         const data = await dispatch(updateImage(formData))
           .then(unwrapResult)
+
           .then((fb) => {
             if (fb?.data?.status == 200) {
               dispatch(updateData({ [id]: value }))
