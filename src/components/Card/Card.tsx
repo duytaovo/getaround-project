@@ -35,7 +35,7 @@ const CustomCardSlider = ({
 
   return (
     <div className={className}>
-      <div className='w-full  flex justify-center'>
+      <div className='w-full flex justify-center'>
         <Image
           id={`${prefix}_img-card_slider_${id}`}
           className={classNameImage}

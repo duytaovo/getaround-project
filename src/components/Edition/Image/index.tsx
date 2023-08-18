@@ -142,7 +142,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   }
 
   return (
-    <div className={` ${classNameContainer}`}>
+    <div className={` ${classNameContainer} flex-grow`}>
       <input
         ref={iRef}
         type='file'
