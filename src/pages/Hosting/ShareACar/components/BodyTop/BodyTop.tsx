@@ -10,9 +10,10 @@ import { IBodyTop } from 'src/types/hosting_shareACar.type'
 interface Props {
   item: IBodyTop
   className?: string
+  prefix: string
 }
 
-const BodyTop = ({ item, className }: Props) => {
+const BodyTop = ({ item, className, prefix }: Props) => {
   const data = useAppSelector((state) => state.data.data)
   const _header = item.header?.split(' ')
   const _content = item.content?.split(' ')
@@ -32,14 +33,14 @@ const BodyTop = ({ item, className }: Props) => {
       <div className='w-1/2 lg:w-full  h-full lg:h-full flex flex-col justify-between items-start'>
         {/* <h1 className=' text-[47px] text-mainColor'>{changeColorWhiteAndMain(_header)}</h1> */}
         <Text
-          id={`txt-bodytop-shareACar_header`}
+          id={prefix + '_txt-bodytop-shareACar_header'}
           tag='h1'
           content={data[item.header || 'abc']}
           className={`text-[47px] text-mainColor`}
         />
         {/* <p className='w-[90%] text-ellipsis text-justify break-words'>{item.content}</p> */}
         <Text
-          id={`txt-bodytop-shareACar_content`}
+          id={prefix + `_txt-bodytop-shareACar_content`}
           tag='p'
           content={data[item.content || '']}
           className={`w-[90%] text-ellipsis text-justify break-words`}
@@ -48,7 +49,7 @@ const BodyTop = ({ item, className }: Props) => {
           onClick={onClick}
           children={
             <Text
-              id={`txt-buttonBodyTop-shareACar`}
+              id={prefix + `_txt-buttonBodyTop-shareACar`}
               tag='span'
               content={data[item.infoButton || '']}
               className={`text-xl -translate-y-3`}
@@ -59,7 +60,7 @@ const BodyTop = ({ item, className }: Props) => {
         ></Button>
       </div>
       <Image
-        id={`img-bodyTop-shareACar`}
+        id={prefix + `_img-bodyTop-shareACar`}
         className='lg:w-full h-[300px]  bg-white rounded-2xl p-4 px-4 object-contain'
         src={data[item.img || '']}
         alt='hosting-shareAcar'

@@ -6,10 +6,7 @@ import CustomeCollapseFooter from 'src/components/FooterMobile/CustomItemHeader'
 import Header from 'src/components/Header'
 import CustomeCollapseHeader from 'src/components/HeaderMobile/CustomItemHeader'
 import HeaderMobile from 'src/components/HeaderMobile/HeaderMobile'
-import ConsentManager from 'src/components/Memo/ConsentManager'
-import HypeMemo from 'src/components/Memo/HypeMemo'
 import { itemsHeaderMobile } from 'src/items/HeaderItem/HeaderItem'
-import { clearLS } from 'src/utils/auth'
 type Props = {}
 
 const MainLayoutInner = (props: Props) => {
@@ -23,7 +20,7 @@ const MainLayoutInner = (props: Props) => {
           <HeaderMobile />
         </Hidden>
       </div>
-      <div className='pt-[110px] container px-[96px] lg:px-2'>
+      <div className='pt-[110px]  container px-[96px] lg:px-2'>
         <Outlet />
       </div>
       <div className='bg-white '>
