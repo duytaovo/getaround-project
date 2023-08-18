@@ -22,7 +22,7 @@ const AboutUs = () => {
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
-    <div className='w-full h-auto bg-mainBackGroundColor'>
+    <div className='w-full h-auto'>
       <HeaderSlide />
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <Banner />

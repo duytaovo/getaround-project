@@ -22,7 +22,7 @@ const HeaderSafeTrust = () => {
   return (
     <div>
       <div className='flex justify-center px-[36px] sm:flex-col'>
-        <div className='w-1/2 flex justify-center sm:w-[100%]'>
+        <div className='w-1/2 flex justify-center mr-4 sm:w-[100%]'>
           <Image
             id={HeaderST.img}
             className='object-contain h-[500px]'

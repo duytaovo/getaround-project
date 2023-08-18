@@ -20,7 +20,7 @@ export const NewsRoom = () => {
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
-    <div className='w-full h-auto bg-mainBackGroundColor'>
+    <div className='w-full h-auto '>
       <HeaderNewsRoom />
       <div className='mb-bottom'>
         <div>

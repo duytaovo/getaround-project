@@ -146,7 +146,8 @@ const initialState: HowItWorkState = {
   ],
   HeaderHIW: {
     img: 'imgHeader_HIW',
-    mainTitle: 'mainTitleHeader_HIW'
+    mainTitle: 'mainTitleHeader_HIW',
+    nameButton: 'nameButtonHeaderHIW'
   }
 }
 

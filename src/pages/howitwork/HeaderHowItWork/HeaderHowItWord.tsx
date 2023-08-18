@@ -7,6 +7,7 @@ import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { TimePicker } from 'antd'
 import './style.css'
+import Button from 'src/components/Button'
 import { AiFillStar } from 'react-icons/ai'
 import CustomDatetimePicker from 'src/components/CustomDatetimePicker/CustomDatetimePicker'
 import RatingStar from 'src/components/RatingStar'
@@ -93,7 +94,20 @@ const HeaderHowItWord = () => {
                           <CustomDatetimePicker className='h-[52px]' title='Ngày kết thúc' />
                         </div>
                       </div>
-                      <div className='h-14 w-full bg-mainColor mt-6 rounded-lg'>
+                      <Button
+                        // onClick={onClick}
+                        children={
+                          <Text
+                            id={HeaderHIW.nameButton}
+                            tag='span'
+                            content={data[HeaderHIW.nameButton] || 's'}
+                            className={`text-base `}
+                          />
+                        }
+                        isNext={true}
+                        className='min-w-[200px] w-full h-[52px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white   rounded-lg bg-[#3699d3] hover:bg-black   mx-auto'
+                      ></Button>
+                      {/* <div className='h-14 w-full bg-mainColor mt-6 rounded-lg'>
                         <div className='flex justify-center items-center h-full group cursor-pointer'>
                           <h2 className='text-white text-xl font-semibold mr-5'>Tìm kiếm xe</h2>
                           <svg
@@ -115,7 +129,7 @@ const HeaderHowItWord = () => {
                             ></path>
                           </svg>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

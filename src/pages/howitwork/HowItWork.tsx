@@ -40,7 +40,7 @@ const HowItWork = () => {
   }
 
   return (
-    <div className='w-full h-auto bg-mainBackGroundColor'>
+    <div className='w-full h-auto '>
       <HeaderHowItWord />
       <SlideHowItWork />
       <WrapperContent textAlign='center' title={data[titleimgSide.mainTitle]} classname='flex flex-col'>
