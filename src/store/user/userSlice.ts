@@ -44,8 +44,8 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    updateUser: (state, action: { payload: IUser }) => {
-      state.permission = action?.payload?.permission
+    updateUser: (state, action: { payload: string }) => {
+      state.permission = action?.payload
     },
 
     toggleActiveEdit: (state) => {

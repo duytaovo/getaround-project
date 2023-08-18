@@ -5,7 +5,8 @@ const config = {
   // host: 'http://192.168.102.28:8080/'
 
   baseUrl: 'http://localhost:8080/api/v1',
-  host: 'http://localhost:8080/'
+  host: 'http://localhost:8080/',
+  maxSizeUploadImage: 2048576 // bytes
 }
 
 export default config

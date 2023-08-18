@@ -16,6 +16,8 @@ import CustomLink from '../CustomLink'
 import path from 'src/constants/path'
 import { clearLS } from 'src/utils/auth'
 import { toast } from 'react-toastify'
+import { useAppDispatch } from 'src/hooks/useRedux'
+import { isAccessTokenExpired, updateUser } from 'src/store/user/userSlice'
 type Props = {}
 
 const Header = (props: Props) => {
@@ -24,6 +26,7 @@ const Header = (props: Props) => {
   const currentLanguage = locales[i18n.language as keyof typeof locales]
   const { setOpenModal } = useContext(AppContext)
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
   const handleOpenModal = () => {
     setOpenModal(true)
   }
@@ -73,10 +76,13 @@ const Header = (props: Props) => {
       label: (
         <CustomLink to={path.home}>
           <div
-            onClick={() => {
+            onClick={async () => {
               clearLS()
-              toast.success('Đăng xuất thành công')
-              navigate('/')
+
+              await toast.success('Đăng xuất thành công')
+              await navigate('/')
+              await dispatch(updateUser('0'))
+
             }}
             className='flex flex-col px-5 text-black mt-1 duration-300 group-hover:text-mainColor'
           >

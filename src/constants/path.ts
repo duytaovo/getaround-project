@@ -26,7 +26,7 @@ const path = {
   unlockTeam: '/about-us/unlock-team',
   contact: '/about-us/contact-us',
   moveServer: '/about-us/move-to-server',
-  hostBobus: '/host/host-bonus'
+  hostBobus: '/host-bonus'
 } as const
 
 export default path

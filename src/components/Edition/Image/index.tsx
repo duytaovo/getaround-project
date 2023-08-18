@@ -5,9 +5,14 @@ import axios from 'axios'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { toast } from 'react-toastify'
 import { updateData } from 'src/store/dataSlice'
+
 import config from 'src/constants/configApi'
 import { OptionWrapper } from '../OptionWrapper'
 import Button from '@mui/material/Button'
+import { updateImage } from 'src/store/hosting/share_a_car/shareACarSlice'
+import { unwrapResult } from '@reduxjs/toolkit'
+import config from 'src/constants/configApi'
+
 
 interface IBody {
   id: string
@@ -90,9 +95,13 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e?.target?.files ? e?.target?.files[0] : null
     if (!value) return
-    const s = window.URL.createObjectURL(value)
-    setImgFile(value)
-    setVal(s)
+    if (value && (value.size >= config.maxSizeUploadImage || !value.type.includes('image'))) {
+      toast.error(`Dụng lượng file tối đa 2 MB. Định dạng:.JPEG, .PNG, .JPG`, {})
+    } else {
+      const s = window.URL.createObjectURL(value)
+      setImgFile(value)
+      setVal(s)
+    }
   }
 
   useEffect(() => {
@@ -119,13 +128,6 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         const formData = new FormData()
         formData.append('id', id)
         formData.append('file', imgFile || '')
-        const data = await axios
-          .put(config.baseUrl + '/pageElement/updateImageElement', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-              Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-          })
           .then((fb) => {
             if (fb?.data?.status == 200) {
               dispatch(updateData({ [id]: value }))
@@ -136,14 +138,27 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             }
           })
         hidden()
-
-        console.log('What about this: ', data)
       }
     } catch (error) {}
+
+      } else {
+        toast.warn('Bạn chưa chọn file ảnh', {
+          position: 'top-right',
+          autoClose: 4000
+        })
+        hidden()
+      }
+    } catch (error) {
+      toast.error('Có lỗi' + error, {
+        position: 'top-right',
+        autoClose: 4000
+      })
+    }
+
   }
 
   return (
-    <div className={` ${classNameContainer}`}>
+    <div className={` ${classNameContainer} flex-grow`}>
       <input
         ref={iRef}
         type='file'

@@ -102,7 +102,7 @@ export const routeMain = [
   },
   {
     path: path.benefit,
-    Component: CommingSoon
+    Component: HostBonus
   },
   {
     path: path.blogs,

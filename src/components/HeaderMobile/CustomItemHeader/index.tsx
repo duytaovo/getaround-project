@@ -42,7 +42,7 @@ const CustomeCollapseHeader: FC<CommonQuestionProps> = ({ titleClassName, items,
         />
         <div className='flex items-center text-black space-x-2 text-[20px]'>
           <AccountCircleIcon onClick={() => {}} className='' />
-          <Link to={path.login}>Login - Signup</Link>
+          <Link to={path.login}>Đăng nhập</Link>
         </div>
       </div>
       <div className=' flex flex-col items-center  space-y-3 mb-3'>

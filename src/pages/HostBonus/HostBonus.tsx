@@ -14,18 +14,9 @@ import SlideLeftRight from 'src/components/SlideLeftRight/SlideLeftRight'
 import ElectricVehicle from './ElectricVehicle/ElectricVehicle'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
 import EarnUp from './EarnUp/EarnUp'
+import HostDeals from './HostDeals/HostDeals'
 const HostBonus = () => {
-  const {
-    ExplorehostRefernal,
-    customeSteps,
-    imgcustomeSteps,
-    SlideLeftRighthostRefernal,
-    ImgSlideLeftRight_HostRefernal,
-    ImgExploreHR,
-    QuestionhostRefernal,
-    CustomeCardR,
-    titleCustomeCardR
-  } = useSelector((state: RootState) => state.hostingReferral)
+  const { CustomeCardR, titleCustomeCardR, QuestionhostBonus } = useSelector((state: RootState) => state.hostBonus)
   const data = useAppSelector((state) => state.data.data)
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
@@ -39,16 +30,17 @@ const HostBonus = () => {
         titleInput={'Use the tool below to find out which zone your ZIP code belongs to.'}
       />
       <Secure />
-      <SlideLeftRight
+      {/* <SlideLeftRight
         Data={SlideLeftRighthostRefernal}
         img={data[ImgSlideLeftRight_HostRefernal.img]}
         mainTitle={data[ImgSlideLeftRight_HostRefernal.mainTitle]}
         idTitle={ImgSlideLeftRight_HostRefernal.mainTitle}
         idimg={ImgSlideLeftRight_HostRefernal.img}
-      />
-      <ElectricVehicle />
+      />*/}
+      {/* <ElectricVehicle /> */}
+      <HostDeals />
       <WrapperContent titlePadding={8} textAlign='left' title='Need more info? Check out FAQs.'>
-        <CustomeCommonQuestions items={QuestionhostRefernal} className='w-full p-4' />
+        <CustomeCommonQuestions items={QuestionhostBonus} className='w-full p-4' />
       </WrapperContent>
     </div>
   )

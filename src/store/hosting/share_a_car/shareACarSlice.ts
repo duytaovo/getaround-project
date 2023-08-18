@@ -37,6 +37,7 @@ import { payloadCreator } from 'src/utils/utils'
 
 export const getShareACar = createAsyncThunk('shareACar/getShareACar', payloadCreator(''))
 export const updateText = createAsyncThunk('shareACar/updateText', payloadCreator(shareACarApi.updateText))
+export const updateImage = createAsyncThunk('shareACar/updateImage', payloadCreator(shareACarApi.uploadImage))
 
 interface ICustomeStep {
   title: string
