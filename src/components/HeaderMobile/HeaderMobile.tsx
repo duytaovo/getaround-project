@@ -38,7 +38,7 @@ const HeaderMobile = (props: Props) => {
     <div className='mb-bottom z-[1500] bg-bgHeaderMobile backdrop-blur-md fixed w-[100vw] backdrop-saturate-[180%]'>
       <div className='bg-white cursor-pointer z-50  flex items-center justify-between h-[100px] px-10'>
         <Link to='/'>
-          <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
+          <img src='/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
         </Link>
         {menuOpen ? (
           <Tooltip title='Hide menu'>
