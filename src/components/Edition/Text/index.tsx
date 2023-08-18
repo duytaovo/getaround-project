@@ -6,6 +6,8 @@ import { _getData, updateData } from 'src/store/dataSlice'
 import { updateText } from 'src/store/hosting/share_a_car/shareACarSlice'
 import TransitionsModalText from '../../Modal/ModalText'
 import { AppContext } from 'src/contexts/app.context'
+import { OptionWrapper } from '../OptionWrapper'
+import Button from '@mui/material/Button'
 
 interface IBody {
   id: string
@@ -30,6 +32,24 @@ interface Iprops {
 export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   const editOptions = [
     {
+      id: 3,
+      title: 'Huỷ',
+      callback: ({ id, value, setEnable }: IBody) => {
+        setEnable(false)
+      },
+      variant: 'outlined'
+    },
+
+    {
+      id: 1,
+      title: 'Đặt lại',
+      callback: ({ setVal, content }: IBody) => {
+        setVal(content)
+      },
+      variant: 'contained'
+    },
+
+    {
       id: 0,
       title: 'Lưu',
       callback: ({ id, value, setEnable }: IBody) => {
@@ -44,21 +64,8 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
           }
           hidden()
         })
-      }
-    },
-    {
-      id: 1,
-      title: 'Đặt lại',
-      callback: ({ setVal, content }: IBody) => {
-        setVal(content)
-      }
-    },
-    {
-      id: 3,
-      title: 'Huỷ',
-      callback: ({ id, value, setEnable }: IBody) => {
-        setEnable(false)
-      }
+      },
+      variant: 'contained'
     }
   ]
   const Wrapper = tag
@@ -135,43 +142,47 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
               </Wrapper>
             </div>
           </div>
-          <TransitionsModalText>
-            <div className='flex justify-center relative'>
+          <TransitionsModalText setEnable={setEnable} title='Chỉnh sửa đoạn văn bản'>
+            <div className='flex flex-col item-center relative'>
+              <div className='flex justify-between'>
+                <div className='flex items-center text-gray-500'>Tổng cộng {val?.length || '?'} kí tự</div>
+                <OptionWrapper>
+                  {editOptions.map((option, index) => {
+                    const body: IBody = {
+                      id: id,
+                      value: val,
+                      content,
+                      setEnable,
+                      setVal
+                    }
+
+                    return (
+                      <Button
+                        sx={{ marginLeft: '4px' }}
+                        variant={
+                          option?.variant != 'outlined' && option?.variant != 'contained' ? 'outlined' : option?.variant
+                        }
+                        key={index}
+                        onClick={() => option?.callback(body)}
+                      >
+                        {option?.title}
+                      </Button>
+                    )
+                  })}
+                </OptionWrapper>
+              </div>
+
               <textarea
-                style={{ width: '1000px', color: 'black' }}
+                style={{ width: '100%', color: 'black' }}
                 ref={iRef}
                 value={val}
                 onChange={handleChangeInput}
-                onResize={() => {
-                  true
-                }}
                 rows={5}
                 cols={20}
                 className={`${
-                  className || ''
-                } rounded outline-none text-black bg-transparent border border-slate-400 px-2`}
+                  'className' || ''
+                } rounded resize-y outline-none text-black bg-transparent border border-slate-400 px-4 py-4`}
               ></textarea>
-              <div className='flex h-17 absolute -top-7  justify-center w-max '>
-                {editOptions.map((option, index) => {
-                  const body: IBody = {
-                    id: id,
-                    value: val,
-                    content,
-                    setEnable,
-                    setVal
-                  }
-
-                  return (
-                    <div
-                      key={index}
-                      onClick={() => option?.callback(body)}
-                      className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
-                    >
-                      {option?.title}
-                    </div>
-                  )
-                })}
-              </div>
             </div>
           </TransitionsModalText>
         </div>

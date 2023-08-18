@@ -5,6 +5,9 @@ import axios from 'axios'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { toast } from 'react-toastify'
 import { updateData } from 'src/store/dataSlice'
+import config from 'src/constants/configApi'
+import { OptionWrapper } from '../OptionWrapper'
+import Button from '@mui/material/Button'
 
 interface IBody {
   id: string
@@ -32,34 +35,39 @@ interface Iprops {
 export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt, ...props }) => {
   const editOptions = [
     {
-      id: 0,
-      title: 'Lưu',
-      callback: async ({ id, value, setEnable, imgFile }: IBody) => {
-        console.log({ id, imgFile })
-        handleUploadImage(id, imgFile, value)
-      }
+      id: 3,
+      title: 'Huỷ',
+      callback: ({ id, value, setEnable, src, setVal }: IBody) => {
+        setEnable(false)
+        setVal(src)
+      },
+      variant: 'outlined'
     },
     {
       id: 0,
       title: 'Chọn ảnh',
       callback: ({ id, src, setEnable, iRef }: IBody) => {
         iRef && iRef?.click()
-      }
+      },
+      variant: 'contained'
     },
     {
       id: 1,
       title: 'Đặt lại',
       callback: ({ setVal, src }: IBody) => {
         setVal(src)
-      }
+      },
+      variant: 'contained'
     },
+
     {
-      id: 3,
-      title: 'Huỷ',
-      callback: ({ id, value, setEnable, src, setVal }: IBody) => {
-        setEnable(false)
-        setVal(src)
-      }
+      id: 0,
+      title: 'Lưu',
+      callback: async ({ id, value, setEnable, imgFile }: IBody) => {
+        console.log({ id, imgFile })
+        handleUploadImage(id, imgFile, value)
+      },
+      variant: 'contained'
     }
   ]
 
@@ -67,6 +75,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   const cRef = useRef<HTMLDivElement>(null)
 
   const { permission, isActiveEdit } = useAppSelector((state) => state?.user)
+
   const [iOffset, setIOffset] = useState<IiOffset>({
     w: 100,
     h: 1000
@@ -75,7 +84,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   const [imgFile, setImgFile] = useState<File>()
   const [enable, setEnable] = useState<boolean>(false)
 
-  const show = () => setEnable(true)
+  const show = () => permission == '-1' && isActiveEdit && setEnable(true)
   const hidden = () => setEnable(false)
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -111,7 +120,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         formData.append('id', id)
         formData.append('file', imgFile || '')
         const data = await axios
-          .put('http://localhost:8080/api/v1/updateImage', formData, {
+          .put(config.baseUrl + '/pageElement/updateImageElement', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
               Authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -127,17 +136,9 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             }
           })
         hidden()
-        // toast.success('upload thành công', {
-        //   position: 'top-center',
-        //   autoClose: 4000
-        // })
 
         console.log('What about this: ', data)
       }
-      // esle{
-      //   hidden()
-
-      // }
     } catch (error) {}
   }
 
@@ -163,8 +164,44 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             }`}
             {...props}
           />
-          <TransitionsModalText>
-            <div className='flex justify-center relative '>
+          <TransitionsModalText title='Chỉnh sửa hình ảnh' setEnable={setEnable}>
+            <div className='flex flex-col item-center relative '>
+              <div className='flex justify-between'>
+                <div className='flex items-center text-gray-500'>
+                  Lưu ý: Dụng lượng file tối đa 2 MB, định dạng cho phép: .JPEG, .PNG, .JPG
+                </div>
+
+                <OptionWrapper>
+                  <>
+                    {editOptions.map((option, index) => {
+                      const body: IBody = {
+                        id: id,
+                        value: val,
+                        src,
+                        setEnable,
+                        setVal,
+                        iRef: iRef.current,
+                        imgFile
+                      }
+
+                      return (
+                        <Button
+                          sx={{ marginLeft: '4px' }}
+                          variant={
+                            option?.variant != 'outlined' && option?.variant != 'contained'
+                              ? 'outlined'
+                              : option?.variant
+                          }
+                          key={index}
+                          onClick={() => option?.callback(body)}
+                        >
+                          {option?.title}
+                        </Button>
+                      )
+                    })}
+                  </>
+                </OptionWrapper>
+              </div>
               <img
                 src={val}
                 alt={alt}
@@ -174,34 +211,10 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
                 }`}
                 {...props}
               />
-
-              <div className='flex h-17 absolute -top-7  justify-center'>
-                {editOptions.map((option, index) => {
-                  const body: IBody = {
-                    id: id,
-                    value: val,
-                    src,
-                    setEnable,
-                    setVal,
-                    iRef: iRef.current,
-                    imgFile
-                  }
-
-                  return (
-                    <div
-                      key={index}
-                      onClick={() => option?.callback(body)}
-                      className='text-sm text-white transition-all flex justify-center items-center rounded mx-[2px] overflow-hidden px-2 py-1 bg-mainColor cursor-pointer hover:opacity-80'
-                    >
-                      {option?.title}
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-            <div className='flex flex-col justify-center items-center text-gray-400 text-sm ml-5'>
+              {/* <div className='flex flex-col justify-center items-center text-gray-400 text-sm ml-5'>
               <div>Dụng lượng file tối đa 2 MB</div>
               <div>Định dạng:.JPEG, .PNG, .JPG</div>
+            </div> */}
             </div>
           </TransitionsModalText>
         </div>

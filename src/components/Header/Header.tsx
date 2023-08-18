@@ -75,7 +75,7 @@ const Header = (props: Props) => {
           <div
             onClick={() => {
               clearLS()
-              toast.success('Đăng xuất thành công 😌😣😏')
+              toast.success('Đăng xuất thành công')
               navigate('/')
             }}
             className='flex flex-col px-5 text-black mt-1 duration-300 group-hover:text-mainColor'
@@ -95,7 +95,7 @@ const Header = (props: Props) => {
         <div className='flex  '>
           <div>
             <Link to='/'>
-              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
+              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] ' />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
