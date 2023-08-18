@@ -42,7 +42,7 @@ const Blog = () => {
         alt='ss'
       /> */}
 
-      <div className='w-1/2  flex justify-center items-center sm:w-full sm:mt-6'>
+      <div className='w-1/2  flex justify-center items-center sm:w-full sm:mt-6 md1:ml-10 md1:items-start'>
         <div className='block h-[50%]'>
           <Text
             id={BlogNewsRoom.headerTitle}

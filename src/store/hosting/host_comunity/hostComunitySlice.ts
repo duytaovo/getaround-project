@@ -20,7 +20,7 @@ import {
   itemsCommonQuestionCommunity,
   theNailBasicContent
 } from 'src/items/ShareACarId/ShareACarId'
-import { ISelectItemsExploreHosting } from 'src/types/HowItWork'
+import { ISelectItemsExploreHosting, ISelectItemsImgExploreHosting } from 'src/types/HowItWork'
 import {
   IItemBanner,
   IItemCardBodyButton,
@@ -50,7 +50,7 @@ interface ShareACarState {
   gettingStartedNailBasic: IItemNailTheBasic
   topGettingStarted: IItemTopGettingStarted
   imgGettingStarted: string
-  imgExploreHosting: string
+  imgExploreHosting: ISelectItemsImgExploreHosting
   cardBodyButton: IItemCardBodyButton
   commonQuestion: ICommonQuestion[]
   itemLinkNailTheBasic: IItemNailTheBasic[]
@@ -73,7 +73,9 @@ const initialState: ShareACarState = {
   gettingStartedNailBasic: theNailBasicContent,
   topGettingStarted: itemTopGettingStarted,
   imgGettingStarted: itemImgGettingStarted,
-  imgExploreHosting: itemImgExploreHosting,
+  imgExploreHosting: {
+    img: 'ImgExploreHostingCom'
+  },
   itemLinkNailTheBasic: itemLinkNailTheBasic,
   itemLink: itemLink,
   commonQuestion: itemsCommonQuestionCommunity,

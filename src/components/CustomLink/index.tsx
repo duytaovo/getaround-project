@@ -3,18 +3,14 @@ import { Link } from 'react-router-dom'
 
 interface Props {
   children: React.ReactNode
-  to:string,
-  props?:any,
+  to: string
+  props?: any
 }
 
-
-const CustomLink = ({ children, to, ...props } : Props) => {
+const CustomLink = ({ children, to, ...props }: Props) => {
   return (
-    <li
-      className={`list-none hover:text-mainColor `}
-      style={{ cursor: 'pointer' }}
-    >
-      <Link className='hover:text-mainColor' to={to} {...props}>
+    <li className={`list-none hover:text-mainColor `} style={{ cursor: 'pointer' }}>
+      <Link className='hover:text-mainColor w-auto block' to={to} {...props}>
         {children}
       </Link>
     </li>

@@ -136,7 +136,7 @@ const HostCominity = () => {
         // start exploreHosting
         <div className='mb-[200px]'>
           <ExploreHosting
-            img={imgExploreHosting}
+            img={imgExploreHosting.img}
             DataExploreHostingStyle={DataExploreHostingShareCar}
             DataExploreHostingText={exploreHosting}
             isEx={false}

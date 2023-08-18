@@ -13,6 +13,7 @@ import { ISelectItemsHeaderHostRefernal } from 'src/types/hostRefernal/hostRefer
 import { DataHeaderST } from 'src/pages/SafetyTrust/HeaderSafeTrust'
 import { ISelectPowerFull } from 'src/types/SafeTrust'
 import { DataPowerFullSafeTrust } from 'src/pages/SafetyTrust/PowerfulVetting/PowerfulVetting'
+import { ISelectItemsCustomeCard, ISelectItemsTitleCustomeCard } from 'src/types/customeCard'
 interface SafeTrustState {
   ExploreST: ISelectItemsExploreHosting
   ProprietaryST: ISelectItemsProprietary
@@ -22,6 +23,8 @@ interface SafeTrustState {
   PowerFullST: ISelectPowerFull
   ImgSlideLeftRightST: ISelectImglideLeftRight
   ImgExploreST: ISelectItemsImgExploreHosting
+  CustomeCardR: ISelectItemsCustomeCard[]
+  titleCustomeCardR: ISelectItemsTitleCustomeCard
 }
 
 const initialState: SafeTrustState = {
@@ -100,7 +103,27 @@ const initialState: SafeTrustState = {
         titleH2: 'content_titleh23_powerfull_ST'
       }
     ]
-  }
+  },
+  titleCustomeCardR: {
+    mainTitle: 'mainTitleCustomeCardST'
+  },
+  CustomeCardR: [
+    {
+      header: 'header_hostRefernal1ST',
+      title: 'title_hostRefernal1ST',
+      description: 'description_hostRefernal1ST'
+    },
+    {
+      header: 'header_hostRefernal2ST',
+      title: 'title_hostRefernal2ST',
+      description: 'description_hostRefernal2ST'
+    },
+    {
+      header: 'header_hostRefernal3ST',
+      title: 'title_hostRefernal3ST',
+      description: 'description_hostRefernal3ST'
+    }
+  ]
 }
 
 const SafeTrustSlice = createSlice({

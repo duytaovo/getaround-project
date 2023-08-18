@@ -7,34 +7,35 @@ export const itemsFirst: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={path.howitwork}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-            Cách thức hoát động
+      <CustomLink to={path.insurance}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+          <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
+            Bảo hiểm
           </span>
         </div>
       </CustomLink>
     )
   },
-  // {
-  //   key: '2',
-  //   label: (
-  //     <CustomLink to={'/'}>
-  //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all '>
-  //         <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
-  //           Bảo hiểm
-  //         </span>
-  //       </div>
-  //     </CustomLink>
-  //   )
-  // },
+
+  {
+    key: '2',
+    label: (
+      <CustomLink to={path.safetytrust}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
+            Tin cậy & An toàn
+          </span>
+        </div>
+      </CustomLink>
+    )
+  },
   {
     key: '3',
     label: (
-      <CustomLink to={path.safetytrust}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
-            Tin cậy & An toàn
+      <CustomLink to={path.howitwork}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all '>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
+            Công nghệ
           </span>
         </div>
       </CustomLink>
@@ -44,9 +45,9 @@ export const itemsFirst: MenuProps['items'] = [
     key: '4',
     label: (
       <CustomLink to={path.howitworkconnect}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
-            Kết nối
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
+            Điều khoản và điều kiện
           </span>
         </div>
       </CustomLink>
@@ -58,8 +59,8 @@ export const itemsSecond: MenuProps['items'] = [
     key: '1',
     label: (
       <CustomLink to={path.sharACar}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
             Chia sẻ xe
           </span>
         </div>
@@ -69,34 +70,35 @@ export const itemsSecond: MenuProps['items'] = [
   {
     key: '2',
     label: (
-      <CustomLink to={path.hostCommunity}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 '>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-            Tổ chức cộng đồng
+      <CustomLink to={path.termCarShare}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Điều khoản và điều kiện
           </span>
         </div>
       </CustomLink>
     )
   },
-  // {
-  //   key: '3',
-  //   label: (
-  //     <CustomLink to={'/'}>
-  //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
-  //         <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-  //           Tổ chức Bonus
-  //         </span>
-  //       </div>
-  //     </CustomLink>
-  //   )
-  // },
+  {
+    key: '3',
+    label: (
+      <CustomLink to={path.hostCommunity}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Chia sẻ lợi ích
+          </span>
+        </div>
+      </CustomLink>
+    )
+  },
+
   {
     key: '4',
     label: (
       <CustomLink to={path.hostrefernal}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-            Giới thiệu 1 tổ chức
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Giới thiệu 1 nhà xe
           </span>
         </div>
       </CustomLink>
@@ -107,10 +109,10 @@ export const itemsThird: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={path.driveWithUber}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
-            Lái xe với Uber
+      <CustomLink to={path.partnerWithUs}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Đối tác với chúng tôi
           </span>
         </div>
       </CustomLink>
@@ -119,10 +121,22 @@ export const itemsThird: MenuProps['items'] = [
   {
     key: '2',
     label: (
-      <CustomLink to={path.partnerWithUs}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 '>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-            Cộng tác với US
+      <CustomLink to={path.partnerOur}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
+            Những cộng tác của chúng tôi
+          </span>
+        </div>
+      </CustomLink>
+    )
+  },
+  {
+    key: '3',
+    label: (
+      <CustomLink to={path.driveWithUber}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
+            Lái xe với Grab/Be
           </span>
         </div>
       </CustomLink>
@@ -133,10 +147,10 @@ export const itemsFour: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={path.aboutus}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
-            Về chúng tôi
+      <CustomLink to={path.newsroom}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
+            Tin tức mới
           </span>
         </div>
       </CustomLink>
@@ -145,10 +159,10 @@ export const itemsFour: MenuProps['items'] = [
   {
     key: '2',
     label: (
-      <CustomLink to={'/'}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 '>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-            Quan hệ đầu tư
+      <CustomLink to={path.blogs}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Blogs
           </span>
         </div>
       </CustomLink>
@@ -157,37 +171,87 @@ export const itemsFour: MenuProps['items'] = [
   {
     key: '3',
     label: (
-      <CustomLink to={path.newsroom}>
-        <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
-          <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-            Tòa soạn
+      <CustomLink to={path.termPartner}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Điều khoản và những nguyên tắc
+          </span>
+        </div>
+      </CustomLink>
+    )
+  },
+  {
+    key: '4',
+    label: (
+      <CustomLink to={path.eligibilitis}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Đủ điều kiện
           </span>
         </div>
       </CustomLink>
     )
   }
-  // {
-  //   key: '4',
-  //   label: (
-  //     <CustomLink to={'/'}>
-  //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300'>
-  //         <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-  //           Blog
-  //         </span>
-  //       </div>
-  //     </CustomLink>
-  //   )
-  // }
 ]
 
+export const itemsFive: MenuProps['items'] = [
+  {
+    key: '1',
+    label: (
+      <CustomLink to={path.aboutus}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
+            Đội ngũ Unlock
+          </span>
+        </div>
+      </CustomLink>
+    )
+  },
+  {
+    key: '2',
+    label: (
+      <CustomLink to={path.contact}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Kết nối với chúng tôi
+          </span>
+        </div>
+      </CustomLink>
+    )
+  },
+  {
+    key: '3',
+    label: (
+      <CustomLink to={path.moveServer}>
+        <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+            Di chuyển đến trực tiếp máy chủ
+          </span>
+        </div>
+      </CustomLink>
+    )
+  }
+]
 export const itemAcount: MenuProps['items'] = [
   {
     key: '1',
     label: (
-      <CustomLink to={'/admin/login'}>
+      <CustomLink to={path.login}>
         <div className='flex flex-col px-5 text-black  duration-300 group-hover:text-mainColor'>
-          <span className='cursor-pointer group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
+          <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
             <span className='group-hover:text-mainColor'>Đăng nhập</span>
+          </span>
+        </div>
+      </CustomLink>
+    )
+  },
+  {
+    key: '2',
+    label: (
+      <CustomLink to={path.logout}>
+        <div className='flex flex-col px-5 text-black mt-1 duration-300 group-hover:text-mainColor'>
+          <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
+            <span className='group-hover:text-mainColor'>Đăng xuất</span>
           </span>
         </div>
       </CustomLink>
@@ -198,51 +262,52 @@ export const itemAcount: MenuProps['items'] = [
 export const itemsHeaderMobile: ICommonQuestion[] = [
   {
     key: '1',
-    label: 'Cách thức hoạt động',
+    label: 'Giải pháp của chúng tôi',
     contents: [
       {
-        id: 1,
-        link: (
-          <CustomLink to={path.howitwork}>
-            <div className='inline-block mt-2 px-5 text-black  hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black  hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cách thức hoạt động
+        key: '1',
+        label: (
+          <CustomLink to={path.insurance}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+              <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
+                Bảo hiểm
               </span>
             </div>
           </CustomLink>
         )
       },
-      // {
-      //   id: 2,
-      //   link: (
-      //     <CustomLink to={'/'}>
-      //       <div className='inline-block px-5 text-black  hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-      //         <span className='cursor-pointer justify-between text-black  hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-      //           Bảo hiểm
-      //         </span>
-      //       </div>
-      //     </CustomLink>
-      //   )
-      // },
+
       {
-        id: 3,
-        link: (
+        key: '2',
+        label: (
           <CustomLink to={path.safetytrust}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Tin cậy và an toàn
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
+                Tin cậy & An toàn
               </span>
             </div>
           </CustomLink>
         )
       },
       {
-        id: 4,
-        link: (
-          <CustomLink to={path.howitworkconnect}>
-            <div className='inline-block px-5 mb-2 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Kết nối
+        key: '3',
+        label: (
+          <CustomLink to={path.howitwork}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all '>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
+                Công nghệ
+              </span>
+            </div>
+          </CustomLink>
+        )
+      },
+      {
+        key: '4',
+        label: (
+          <CustomLink to={path.termSolution}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
+                Điều khoản và điều kiện
               </span>
             </div>
           </CustomLink>
@@ -252,14 +317,14 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
   },
   {
     key: '2',
-    label: 'Tổ chức',
+    label: 'Chia sẻ xe',
     contents: [
       {
-        id: 1,
-        link: (
+        key: '1',
+        label: (
           <CustomLink to={path.sharACar}>
-            <div className='inline-block mt-2 px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
                 Chia sẻ xe
               </span>
             </div>
@@ -267,36 +332,37 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
         )
       },
       {
-        id: 2,
-        link: (
-          <CustomLink to={path.hostCommunity}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Tổ chức cộng đồng
+        key: '2',
+        label: (
+          <CustomLink to={path.termCarShare}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Điều khoản và điều kiện
               </span>
             </div>
           </CustomLink>
         )
       },
-      // {
-      //   id: 3,
-      //   link: (
-      //     <CustomLink to={'/'}>
-      //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-      //         <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-      //           Tổ chức bonus
-      //         </span>
-      //       </div>
-      //     </CustomLink>
-      //   )
-      // },
       {
-        id: 4,
-        link: (
+        key: '3',
+        label: (
+          <CustomLink to={path.hostCommunity}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Chia sẻ lợi ích
+              </span>
+            </div>
+          </CustomLink>
+        )
+      },
+
+      {
+        key: '4',
+        label: (
           <CustomLink to={path.hostrefernal}>
-            <div className='inline-block mb-2 px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Giới thiệu tổ chức
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Giới thiệu 1 nhà xe
               </span>
             </div>
           </CustomLink>
@@ -309,24 +375,36 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
     label: 'Cộng tác',
     contents: [
       {
-        id: 1,
-        link: (
-          <CustomLink to={path.driveWithUber}>
-            <div className='inline-block px-5 mt-2 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Lái xe với Uber
+        key: '1',
+        label: (
+          <CustomLink to={path.partnerWithUs}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Đối tác với chúng tôi
               </span>
             </div>
           </CustomLink>
         )
       },
       {
-        id: 2,
-        link: (
-          <CustomLink to={path.partnerWithUs}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Cộng tác với US
+        key: '2',
+        label: (
+          <CustomLink to={path.partnerOur}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
+                Những cộng tác của chúng tôi
+              </span>
+            </div>
+          </CustomLink>
+        )
+      },
+      {
+        key: '3',
+        label: (
+          <CustomLink to={path.driveWithUber}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
+                Lái xe với Grab/Be
               </span>
             </div>
           </CustomLink>
@@ -336,56 +414,98 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
   },
   {
     key: '4',
-    label: 'Về chúng tôi',
+    label: 'Tòa soạn',
     contents: [
       {
-        id: 1,
-        link: (
-          <CustomLink to={path.aboutus}>
-            <div className='inline-block px-5 mt-2 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Về chúng tôi
+        key: '1',
+        label: (
+          <CustomLink to={path.newsroom}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
+                Tin tức mới
               </span>
             </div>
           </CustomLink>
         )
       },
       {
-        id: 2,
-        link: (
-          <CustomLink to={'/'}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Quan hệ đầu tư
+        key: '2',
+        label: (
+          <CustomLink to={path.blogs}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Blogs
               </span>
             </div>
           </CustomLink>
         )
       },
       {
-        id: 3,
-        link: (
-          <CustomLink to={path.howitwork}>
-            <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-              <span className='cursor-pointer justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-                Tòa sạn
+        key: '3',
+        label: (
+          <CustomLink to={path.termPartner}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Điều khoản và những nguyên tắc
+              </span>
+            </div>
+          </CustomLink>
+        )
+      },
+      {
+        key: '4',
+        label: (
+          <CustomLink to={path.eligibilitis}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Đủ điều kiện
               </span>
             </div>
           </CustomLink>
         )
       }
-      // {
-      //   id: 4,
-      //   link: (
-      //     <CustomLink to={path.howitwork}>
-      //       <div className='inline-block px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-      //         <span className='cursor-pointer mb-2 justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-      //           Blog
-      //         </span>
-      //       </div>
-      //     </CustomLink>
-      //   )
-      // }
+    ]
+  },
+  {
+    key: '5',
+    label: 'Về chúng tôi',
+    contents: [
+      {
+        key: '1',
+        label: (
+          <CustomLink to={path.unlockTeam}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
+                Đội ngũ Unlock
+              </span>
+            </div>
+          </CustomLink>
+        )
+      },
+      {
+        key: '2',
+        label: (
+          <CustomLink to={path.contact}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Kết nối với chúng tôi
+              </span>
+            </div>
+          </CustomLink>
+        )
+      },
+      {
+        key: '3',
+        label: (
+          <CustomLink to={path.moveServer}>
+            <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
+              <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
+                Di chuyển đến trực tiếp máy chủ
+              </span>
+            </div>
+          </CustomLink>
+        )
+      }
     ]
   }
 ]
