@@ -189,10 +189,17 @@ export const ItemSliderShareCar: IItemSlider[] = [
 ]
 
 export const ItemBodyTop: IBodyTop = {
-  img: 'img-bodyTop-shareACar',
-  content: ' txt-bodytop-shareACar_content',
-  header: 'txt-bodytop-shareACar_header',
-  infoButton: 'txt-buttonBodyTop-shareACar'
+  img: 'top_img-bodyTop-shareACar',
+  content: ' top_txt-bodytop-shareACar_content',
+  header: 'top_txt-bodytop-shareACar_header',
+  infoButton: 'top_txt-buttonBodyTop-shareACar'
+}
+
+export const ItemBodyBottom: IBodyTop = {
+  img: 'bottom_img-bodyBottom-shareACar',
+  content: ' bottom_txt-bodyBottom-shareACar_content',
+  header: 'bottom_txt-bodyBottom-shareACar_header',
+  infoButton: 'bottom_txt-buttonBodyBottom-shareACar'
 }
 
 export const itemBanner: IItemBodyBannerCard = {

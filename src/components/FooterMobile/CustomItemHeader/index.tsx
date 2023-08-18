@@ -31,12 +31,13 @@ const CustomeCollapseFooter: FC<CommonQuestionProps> = ({ titleClassName, items,
 
     children: <SingleCommonQuestion contents={item.contents} />
   }))
+  console.log(items)
   return (
     <div className='flex flex-col justify-between p-4'>
       <div className=''>
         <Collapse
           expandIconPosition='end'
-          style={{ width: '100%', background: 'transparent' }}
+          style={{ width: '90%', background: 'transparent' }}
           accordion
           items={itemsForColapse}
           bordered={false}
@@ -65,7 +66,6 @@ const CustomeCollapseFooter: FC<CommonQuestionProps> = ({ titleClassName, items,
           </Link>
         </div>
       </div>
-     
     </div>
   )
 }

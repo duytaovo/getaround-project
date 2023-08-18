@@ -118,7 +118,7 @@ const Header = (props: Props) => {
           />
           <Button
             className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0 text-center'
-            children={<span>{t('header.bookACar')}</span>}
+            children={<span>{t('header.shareACar')}</span>}
           />
           <CustomDropDown
             arrow={true}
