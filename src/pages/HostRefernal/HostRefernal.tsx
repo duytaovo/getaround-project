@@ -14,6 +14,7 @@ import { MobileOutlined, CarOutlined, RiseOutlined, DollarOutlined, WalletOutlin
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 import CustomeCard from 'src/components/CustomeCard/CustomeCard'
+import { Helmet } from 'react-helmet-async'
 export const DataImgCustomeStepHostRF = {
   id: 'ImgCustomeSteps_HostRF',
   img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg',
@@ -35,7 +36,12 @@ const HostRefernal = () => {
   const dispatch = useDispatch()
 
   return (
-    <div className='w-full h-auto '>
+    <div className='w-full h-auto bg-mainBackGroundColor'>
+      <Helmet>
+        <title>Refer a Sharer</title>
+        <meta name='description' content='Trang giới thiệu tham gia ' />
+      </Helmet>
+
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderhostRefernal />
       </WrapperContent>
