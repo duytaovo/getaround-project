@@ -104,7 +104,7 @@ const Header = (props: Props) => {
         <div className='flex  '>
           <div>
             <Link to='/'>
-              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
+              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px]' />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
@@ -112,14 +112,15 @@ const Header = (props: Props) => {
         </div>
         <div className='flex items-center justify-between'>
           <Button
+            className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0 text-center'
+            children={<span>{t('header.shareACar')}</span>}
+          />
+          <Button
             className='bg-black border hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0
           '
             children={<span>{t('header.bookACar')}</span>}
           />
-          <Button
-            className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0 text-center'
-            children={<span>{t('header.bookACar')}</span>}
-          />
+
           <CustomDropDown
             arrow={true}
             isOnClick={false}

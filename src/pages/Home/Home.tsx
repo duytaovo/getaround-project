@@ -89,14 +89,14 @@ const Home = (props: Props) => {
         />
       </section>
 
-      <WrapperContent
+      {/* <WrapperContent
         title={homePageData.sharingMaketPlaceSection.wrapperTitle}
         textAlign='center'
         isBgTransparent={true}
         classname='z-[10] pt-4'
       >
         <ConnectedCarSharing DataConnectedCarSharingHome={homePageData.sharingMaketPlaceSection.itemsData} />
-      </WrapperContent>
+      </WrapperContent> */}
 
       <WrapperContent textAlign='center' title={homePageData.homeStepSection.wrapperTitle} classname='flex flex-col'>
         <Heading title={homePageData.homeStepSection.heading} breakLineAt={3} fontSize={30} className='text-center' />
@@ -151,7 +151,7 @@ const Home = (props: Props) => {
         />
       </WrapperContent>
 
-      <WrapperContent title={homePageData.localFavouriteSection.wrapperTitle} isBgTransparent textAlign='center'>
+      {/* <WrapperContent title={homePageData.localFavouriteSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
           title={homePageData.localFavouriteSection.heading}
           fontSize={30}
@@ -174,7 +174,7 @@ const Home = (props: Props) => {
             prefix='home_localFavorite'
           />
         </div>
-      </WrapperContent>
+      </WrapperContent> */}
 
       <WrapperContent title={homePageData.blogSilerSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
@@ -206,7 +206,7 @@ const Home = (props: Props) => {
       </WrapperContent>
 
       <WrapperContent
-        titlePadding={5}
+        titlePadding={0}
         textAlign='left'
         title={homePageData.qAndASection.wrapperTitle}
         isBgTransparent={true}

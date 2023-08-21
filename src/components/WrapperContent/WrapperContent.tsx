@@ -34,7 +34,7 @@ const WrapperContent: FC<WrapperProps> = ({
         id={title}
         tag='p'
         content={data[title]}
-        className={`text-${textAlign} text-mainColor text-[11px] ${isUpperCase ? 'uppercase' : ''} text-[${
+        className={`text-${textAlign} text-mainColor text-[25px] ${isUpperCase ? 'uppercase' : ''} text-[${
           fontSize + 'px'
         }] font-bold pt-2`}
         style={{
