@@ -14,6 +14,7 @@ import { MobileOutlined, CarOutlined, RiseOutlined, DollarOutlined, WalletOutlin
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 import CustomeCard from 'src/components/CustomeCard/CustomeCard'
+import { Helmet } from 'react-helmet-async'
 export const DataImgCustomeStepHostRF = {
   id: 'ImgCustomeSteps_HostRF',
   img: 'https://assets.website-files.com/581d2676fe18a07e43923cfc/63dc1685bdd5eaa356d17f23_6306804d1f0ca670cfa33eb5_iStock-688453812%202.jpg',
@@ -36,6 +37,11 @@ const HostRefernal = () => {
 
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
+      <Helmet>
+        <title>Refer a Sharer</title>
+        <meta name='description' content='Trang giới thiệu tham gia ' />
+      </Helmet>
+
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderhostRefernal />
       </WrapperContent>
@@ -95,11 +101,9 @@ const HostRefernal = () => {
         isEx={false}
         className='flex-col items-center flex w-full mb-[120px]'
       />
-      <WrapperContent titlePadding={8} textAlign='left' title='Need more info? Check out FAQs.'>
-        <div>
-          <CustomeCommonQuestions items={QuestionhostRefernal} className='w-full p-4' />
-        </div>
-      </WrapperContent>
+      <div>
+        <CustomeCommonQuestions items={QuestionhostRefernal} className='w-full p-4' />
+      </div>
     </div>
   )
 }

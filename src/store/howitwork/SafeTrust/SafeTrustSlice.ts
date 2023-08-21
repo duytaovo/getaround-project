@@ -52,7 +52,8 @@ const initialState: SafeTrustState = {
     description2: 'description2_Proprietary_ST',
     span: 'span_Proprietary_ST',
     img: 'img_Proprietary_ST',
-    Link: 'link_Proprietary_ST'
+    Link: 'link_Proprietary_ST',
+    linkText: 'linkText_Proprietary_ST'
   },
   SlideLeftRightST: [
     {
@@ -75,7 +76,8 @@ const initialState: SafeTrustState = {
   BookUnlockCar: {
     id: 'BookUnlockCar',
     title: 'title_bookUnlockCar_ST',
-    link: 'link_bookUnlockCar_ST'
+    link: 'link_bookUnlockCar_ST',
+    nameButton: 'nameButton_ST'
   },
   HeaderST: {
     id: 'header_HowItWork_SafeTrust',

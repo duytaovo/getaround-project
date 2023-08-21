@@ -3,14 +3,20 @@ import HostBenefitsCard from './components/HostBenefitsCard/HostBenefitsCard'
 import { secondSectionData } from 'src/items/PartnerWithUs/SecondSection/secondSectionData'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { Text } from 'src/components/Edition/Text'
+import { Helmet } from 'react-helmet-async'
 
 type Props = {}
 
 const PartnerWithUs = (props: Props) => {
   const { partnerBenefits, partnersHero } = useAppSelector((state) => state.partnersWithUs)
   const data = useAppSelector((state) => state.data.data)
+
   return (
     <div>
+      <Helmet>
+        <title>Patner With Us</title>
+        <meta name='description' content='Cộng tác với chúng tôi' />
+      </Helmet>
       <section
         className='absolute top-24 left-0 right-0 h-[80dvh] bg-cover bg-[center] pl-[96px] pb-[96px] pr-[40%] pt-[16%] lg:pr-[30%] md:p-[10%] sm:p-2'
         style={{

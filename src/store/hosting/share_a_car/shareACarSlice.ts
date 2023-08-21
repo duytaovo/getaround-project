@@ -6,6 +6,7 @@ import {
   CustomeStepItems,
   DataExploreHostingShareCarText,
   DataExploreHostingShareCarText_bottom,
+  ItemBodyBottom,
   ItemBodyTop,
   ItemContentSlider,
   ItemSliderShareCar,
@@ -53,6 +54,7 @@ interface ICommonQuestion {
 
 interface ShareACarState {
   bodyTop: IBodyTop
+  bodyBottom: IBodyTop
   sliders: IItemSlider[]
   contentSlider: IItemContentSlider
   bodyBannerCard: IItemBodyBannerCard
@@ -69,11 +71,12 @@ interface ShareACarState {
   exploreHosting_bottom: ISelectItemsExploreHosting
   ourHost: IItemGetAroundYourBack
   wrapperTitle: IIWrapContentTitle[]
-  imgExploreHosting: ISelectItemsImgExploreHosting
+  imgExploreHosting: any
 }
 
 const initialState: ShareACarState = {
   bodyTop: ItemBodyTop,
+  bodyBottom: ItemBodyBottom,
   sliders: ItemSliderShareCar,
   contentSlider: ItemContentSlider,
   bodyBannerCard: itemBanner,
@@ -90,7 +93,8 @@ const initialState: ShareACarState = {
   ourHost: itemOurHost,
   commonQuestionImg: itemCommonQuestionBody,
   imgExploreHosting: {
-    img: 'ImgExploreShareACar'
+    img_top: 'ImgExploreShareACar',
+    img_bottom: 'ImgExploreShareACar_bottom'
   },
   wrapperTitle: wrapperTitle
 }

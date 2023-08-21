@@ -101,13 +101,15 @@ const initialState: HowItWorkState = {
     description2: 'description2_Propritary_HowItWork',
     span: 'span_Propritary_HowItWork',
     img: 'img_Propritary_HowItWork',
-    Link: 'link_Propritary_HowItWork'
+    Link: 'link_Propritary_HowItWork',
+    linkText: 'linkText_Propritary_HowItWork'
   },
   HearCommunityHowItWork: {
     id: 'Community_HowItWork',
     title: 'title_HearCommunity_HowItWork',
     content: 'content_HearCommunity_HowItWork',
-    link: 'link_HearCommunity_HowItWork'
+    link: 'link_HearCommunity_HowItWork',
+    linkText: 'linkText_HearCommunity_HowItWork'
   },
   SlideHowItWorkR: {
     id: 'Slide_HowItWork',
@@ -146,7 +148,8 @@ const initialState: HowItWorkState = {
   ],
   HeaderHIW: {
     img: 'imgHeader_HIW',
-    mainTitle: 'mainTitleHeader_HIW'
+    mainTitle: 'mainTitleHeader_HIW',
+    nameButton: 'nameButtonHeaderHIW'
   }
 }
 

@@ -67,7 +67,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
       id: 0,
       title: 'Lưu',
       callback: async ({ id, value, setEnable, imgFile }: IBody) => {
-        console.log({ id, imgFile })
+        // console.log({ id, imgFile })
         handleUploadImage(id, imgFile, value)
       },
       variant: 'contained'

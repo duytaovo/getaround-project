@@ -14,6 +14,7 @@ import HeaderSafeTrust from './HeaderSafeTrust'
 import { useDispatch, useSelector } from 'react-redux'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { RootState } from 'src/store/store'
+import { Helmet } from 'react-helmet-async'
 const SafetyTrust = () => {
   const {
     ExploreST,
@@ -32,7 +33,13 @@ const SafetyTrust = () => {
   const data = useAppSelector((state) => state.data.data)
 
   return (
+
     <div className='w-full h-auto bg-mainBackGroundColor'>
+      <Helmet>
+        <title>SafetyTrust</title>
+        <meta name='description' content='Cộng an toàn và tin cậy' />
+      </Helmet>
+
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderSafeTrust />
       </WrapperContent>

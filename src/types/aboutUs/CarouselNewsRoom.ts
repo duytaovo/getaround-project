@@ -4,6 +4,7 @@ export interface ISelectItemsCarouselNewsRoom {
   date: string
   description: string
   linkto: string
+  link: string
 }
 export interface ISelectItemsTitleCarouselNewsRoom {
   id: string

@@ -109,12 +109,19 @@ const Proprietary: FC<Props> = ({ Data }) => {
                 {/* {Data?.description2} */}
                 <br />
                 <br />
-                <Link
+                {/* <Link
                   to={data[ProprietaryST.Link] || ''}
                   className='text-mainColor delay-[0.2s] underline touch-manipulation bg-transparent cursor-pointer outline-none hover:text-mainColor hover:none-underline leading-4'
-                >
-                  <strong className='font-bold'>Read more</strong>
-                </Link>
+                > */}
+                <Text
+                  id={ProprietaryST.linkText}
+                  tag='strong'
+                  content={data[ProprietaryST.linkText] || 'Read more'}
+                  className='text-mainColor delay-[0.2s] underline touch-manipulation bg-transparent cursor-pointer outline-none hover:text-mainColor hover:none-underline leading-4'
+                  // className='font-bold'
+                />
+                {/* <strong className='font-bold'>Read more</strong> */}
+                {/* </Link> */}
               </div>
             </div>
           </div>

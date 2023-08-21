@@ -7,7 +7,6 @@
     "aboutUs": "About Us",
     "bookACar": "Book a Car",
     "shareACar": "Share a Car",
-
     "login": "Login",
     "logout": "Logout"
   },
@@ -37,6 +36,6 @@
   "about us": {
     "unlockTeam": "Unlock Team",
     "contact": "Contact Us",
-    "movetoLive": "Move to Live Server"
+    "movetoLive": "Our vision"
   }
 }

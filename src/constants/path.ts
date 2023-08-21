@@ -10,6 +10,7 @@ const path = {
   driveWithUber: '/partners/grab-be-drivers',
   partnerWithUs: '/partners/partner-with-us',
   sharACar: '/carshare/share-a-car',
+  bookACar: '/carshare/book-a-car',
   hostCommunity: '/carshare/benefits',
   newsroom: 'newsroom/news',
   safetytrust: '/our-solution/safety-trust',
@@ -25,7 +26,7 @@ const path = {
   eligibilitis: '/newsrooms/eligibilities',
   unlockTeam: '/about-us/unlock-team',
   contact: '/about-us/contact-us',
-  moveServer: '/about-us/move-to-server',
+  moveServer: '/about-us/ourVision',
   hostBobus: '/host-bonus'
 } as const
 

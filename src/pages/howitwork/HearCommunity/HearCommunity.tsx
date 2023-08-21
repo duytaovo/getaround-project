@@ -40,12 +40,18 @@ const HearCommunity = () => {
               {DataCommunity.content}
             </h2> */}
             <div className='text-[#727272] mt-[30px] text-[16px] font-normal '>
-              <Link
+              <Text
+                id={howitwork.HearCommunityHowItWork.linkText}
+                tag='h2'
+                content={data[howitwork.HearCommunityHowItWork.linkText] || 'Read now'}
+                className='text-[#000] underline hover:text-mainColor hover:no-underline'
+              />
+              {/* <Link
                 to={data[howitwork.HearCommunityHowItWork.link]}
                 className='text-[#000] underline hover:text-mainColor hover:no-underline'
               >
                 Read now
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

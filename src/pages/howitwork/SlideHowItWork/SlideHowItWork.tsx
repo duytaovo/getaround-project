@@ -62,7 +62,7 @@ const SlideHowItWork = () => {
               alt=''
               className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block'
             /> */}
-            <div className='w-full bg-white rounded-lg p-10 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] bottom-0 lg:p-5 lg:text-[12px]'>
+            <div className='w-full bg-white rounded-lg p-8 md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] bottom-0 lg:p-5 lg:text-[12px]'>
               <div className='max-w-[45ch] text-center mt-0 mx-auto text-[#727272] font-normal'>
                 <Text
                   id={SlideHowItWorkR.content1}
@@ -91,7 +91,7 @@ const SlideHowItWork = () => {
               className='ml-auto w-full max-w-[76%] rounded-[20px] mb-10 align-middle border-none inline-block 
               (max-width: 479px) 100vw, (max-width: 767px) 45vw, (max-width: 991px) 33vw, 329.078125px'
             /> */}
-            <div className='w-full bg-white rounded-lg p-10  md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] left-36 sm:left-[45px] md1:left-28 bottom-0 lg:p-5 lg:text-[12px]'>
+            <div className='w-full bg-white rounded-lg p-8  md:p-5 absolute shadow-[10px_10px_20px_-6px_rgba(0,0,0,0.03)] max-w-[88%] left-36 sm:left-[45px] md1:left-28 bottom-0 lg:p-5 lg:text-[12px]'>
               <div className='max-w-[45ch] text-center mt-0 mx-auto text-[#727272] font-normal'>
                 <Text
                   id={SlideHowItWorkR.content2}

@@ -9,11 +9,25 @@ export const DataExploreHostingHome = {
   Button: {
     href: '',
     className:
-      'text-mainColor bg-[rgba(0,0,0,0)] border-solid border-2 border-mainColor rounded-[16px] p-[18px_22px_18px_30px] md:p-[13px_17px_13px_17px]  text-[20px] inline-block transition-all delay-[0.1s] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-mainColor hover:text-white',
+      ' rounded-[16px] p-[18px_22px_18px_30px] md:p-[13px_17px_13px_17px] border-[1px] border-[#c4e1c5] border-solid text-[20px] inline-block transition-all delay-[0.1s] ease-[cubic-bezier(0.23,1,0.32,1)] duration-[0.3s] text-mainColor cursor-pointer hover:bg-mainColor hover:text-white',
     text: 'Learn More'
   }
 }
+export const DataExploreHIW = {
+  styleDivRight: `will-change-transform transform translate-y-[0.86424%] scale-100 rotate-x-0 rotate-y-0 rotate-z-0 skew-x-0 skew-y-0  transform-style-preserve-3  w-[44%] right-[36px] shadow-[7px_7px_20px_rgba(0,0,0,0.01)]
+    bg-white rounded-[16px] p-[52px_6%] md:p-[30px_6%] absolute top-[70px] sm:relative sm:top-0 sm:left-0 sm:p-[30px-5%] sm:w-full sm:rounded-t-none `,
+  styleImg: `h-[400px]  w-full rounded-[20px] relative overflow-hidden sm:h-full sm:rounded-b-none`,
 
+  styleTitle:
+    'w-full text-black tracking-[-0.025em] mt-0 mx-0 text-[32px] font-normal leading-[106%] mb-[0.5em] text-left ',
+
+  Button: {
+    href: '',
+    className:
+      ' rounded-[16px] p-[18px_22px_18px_30px] md:p-[13px_17px_13px_17px] border-[1px] border-[#c4e1c5] border-solid text-[20px] inline-block transition-all delay-[0.1s] ease-[cubic-bezier(0.23,1,0.32,1)] duration-700 text-mainColor cursor-pointer hover:bg-mainColor hover:text-white',
+    text: 'TextHIWEX'
+  }
+}
 export const DataExploreHostingDriveWithUber = {
   styleDivRight: `will-change-transform transform translate-y-[0.86424%] scale-100 rotate-x-0 rotate-y-0 rotate-z-0 skew-x-0 skew-y-0  transform-style-preserve-3  w-[44%] right-[36px] shadow-[7px_7px_20px_rgba(0,0,0,0.01)]
     bg-white rounded-[16px] p-[52px_6%] absolute top-[70px] sm:relative sm:top-0 sm:left-0 sm:p-[30px-5%] sm:w-full sm:rounded-t-none`,
@@ -26,7 +40,7 @@ export const DataExploreHostingDriveWithUber = {
     href: '',
     className:
       'text-mainColor bg-[rgba(0,0,0,0)] border-solid border-2 border-mainColor rounded-[16px] p-[18px_22px_18px_30px] text-[20px] inline-block transition-all delay-[0.1s] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-mainColor hover:text-white',
-    text: 'Learn More'
+    text: 'TextHDWUEX'
   }
 }
 
@@ -42,7 +56,7 @@ export const DataExploreHostingShareCar = {
     href: '',
     className:
       'text-mainColor underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
-    text: 'Khám phá các phần thưởng'
+    text: 'TextHSCEX'
   }
 }
 export const DataExploreHostingHostRefernal = {
@@ -57,7 +71,7 @@ export const DataExploreHostingHostRefernal = {
     href: '',
     className:
       'text-mainColor underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline',
-    text: 'Find your bonuses'
+    text: 'TextHREX'
   }
 }
 export const DataExploreHostingAboutUs = {
@@ -72,7 +86,7 @@ export const DataExploreHostingAboutUs = {
     href: '',
     className:
       'text-mainColor underline duration-300 transition-all touch-manipulation bg-transparent cursor-pointer outline-none hover:text-black hover:no-underline ',
-    text: '‍Learn more about hosting'
+    text: 'TextHACEX'
   }
 }
 export const DataExploreHostingSafetyTrust = {
@@ -86,7 +100,7 @@ export const DataExploreHostingSafetyTrust = {
   Button: {
     href: '',
     className:
-      'text-mainColor bg-[rgba(0,0,0,0)] border-solid border-2 border-mainColor rounded-[16px] p-[18px_22px_18px_30px] text-[20px] inline-block transition-all delay-[0.1s] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-mainColor hover:text-white',
-    text: 'Share a car'
+      ' rounded-[16px] p-[18px_22px_18px_30px] md:p-[13px_17px_13px_17px] border-[1px] border-[#c4e1c5] border-solid text-[20px] inline-block transition-all delay-[0.1s] ease-[cubic-bezier(0.23,1,0.32,1)] duration-[0.3s] text-mainColor cursor-pointer hover:bg-mainColor hover:text-white',
+    text: 'TextHSTCEX'
   }
 }

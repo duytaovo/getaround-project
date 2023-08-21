@@ -64,10 +64,16 @@ const ReadNews = () => {
                           Car Sharing: What You Need To Know - Kelley Blue Book
                         </div> */}
                         <Link
-                          to={ReadNewsRoom?.[index]?.link}
+                          // to={ReadNewsRoom?.[index]?.link}
+                          to=''
                           className='text-[20px] underline text-black hover:text-mainColor hover:no-underline duration-[0.3s] mt-2'
                         >
-                          <strong>Read more</strong>
+                          <Text
+                            id={ReadNewsRoom?.[index]?.link}
+                            tag='strong'
+                            content={data[ReadNewsRoom?.[index]?.link] || 'Read more'}
+                            className=''
+                          />
                         </Link>
                       </div>
                     </div>

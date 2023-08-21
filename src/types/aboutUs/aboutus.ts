@@ -4,6 +4,7 @@ export interface ISelectItemsJoinTeamAboutUs {
   img: string
   content: string
   linkTo: string
+  link: string
 }
 
 export interface ISelectBannerAboutUs {

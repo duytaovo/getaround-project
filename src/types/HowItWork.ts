@@ -20,12 +20,14 @@ export interface ISelectItemsProprietary {
   span: string
   img: string
   Link: string
+  linkText: string
 }
 export interface ISelectItemsHearCommunity {
   id?: string
   title: string
   content: string
   link: string
+  linkText: string
 }
 export interface ISelectItemsSlide {
   id?: string
@@ -53,6 +55,7 @@ export interface ISelectImglideLeftRight {
 export interface ISelectHeaderHIW {
   img: string
   mainTitle: string
+  nameButton: string
 }
 export interface ISelectmainTitleStepHIW {
   mainTitle: string

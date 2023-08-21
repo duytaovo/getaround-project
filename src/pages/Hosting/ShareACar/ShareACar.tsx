@@ -28,10 +28,12 @@ import { _getData } from 'src/store/dataSlice'
 import { toast } from 'react-toastify'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const ShareACar = () => {
   const {
     bodyTop,
+    bodyBottom,
     ourHost,
     commonQuestionImg,
     getAroundYourBack,
@@ -58,14 +60,18 @@ const ShareACar = () => {
   return (
     <div className='pt-[84px]'>
       {/* start top */}
+      <Helmet>
+        <title>Share a car </title>
+        <meta name='description' content='Trang chia sẻ xe' />
+      </Helmet>
       <div className='mb-bottom transition-all duration-1000 delay-100'>
-        <BodyTop item={bodyTop} />
+        <BodyTop prefix='top' item={bodyTop} />
       </div>
       {/* end top */}
       {/* start body 1 */}
       <div className='mb-[200px]'>
         <ExploreHosting
-          img={imgExploreHosting.img}
+          img={imgExploreHosting.img_top}
           DataExploreHostingStyle={DataExploreHostingShareCar}
           DataExploreHostingText={exploreHosting}
           isEx={false}
@@ -188,7 +194,7 @@ const ShareACar = () => {
 
       <div className='mb-bottom'>
         <ExploreHosting
-          img={imgExploreHosting.img}
+          img={imgExploreHosting.img_bottom}
           DataExploreHostingStyle={DataExploreHostingShareCar}
           DataExploreHostingText={exploreHosting_bottom}
           isEx={false}
@@ -212,7 +218,7 @@ const ShareACar = () => {
       {/* end carousel review */}
       {/* start start hoisting increase income */}
       <div className='mb-bottom'>
-        <BodyTop item={bodyTop} className='flex-row-reverse ' />
+        <BodyTop prefix='bottom' item={bodyBottom} className='flex-row-reverse ' />
       </div>
       {/* end start hoisting increase income */}
 

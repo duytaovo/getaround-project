@@ -1,7 +1,7 @@
 import HeaderHowItWord from './HeaderHowItWork'
 import SlideHowItWork from 'src/pages/howitwork/SlideHowItWork/SlideHowItWork'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
-import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
+import { DataExploreHostingHome, DataExploreHIW } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import CustomeCard from 'src/components/CustomeCard/CustomeCard'
 import { DataCustomeCard } from 'src/Data/DataCustomeCard'
 import HearCommunity from './HearCommunity/HearCommunity'
@@ -14,6 +14,7 @@ import { RootState } from 'src/store/store'
 import { updateExploreHIW, updateProprietaryHIW } from 'src/store/howitwork/HowItWork/HowItWorkSlice'
 import { ISelectItemsExploreHosting, ISelectItemsProprietary } from 'src/types/HowItWork'
 import { useAppSelector } from 'src/hooks/useRedux'
+import { Helmet } from 'react-helmet-async'
 const HowItWork = () => {
   const {
     ExploreHowItWork,
@@ -41,6 +42,11 @@ const HowItWork = () => {
 
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
+      <Helmet>
+        <title>Technology</title>
+        <meta name='description' content='Trang công nghệ ' />
+      </Helmet>
+
       <HeaderHowItWord />
       <SlideHowItWork />
       <WrapperContent textAlign='center' title={data[titleimgSide.mainTitle]} classname='flex flex-col'>
@@ -61,7 +67,7 @@ const HowItWork = () => {
       <HearCommunity />
       <ExploreHosting
         img={ImgExploreHowItWork.img}
-        DataExploreHostingStyle={DataExploreHostingHome}
+        DataExploreHostingStyle={DataExploreHIW}
         DataExploreHostingText={ExploreHowItWork}
         isEx={true}
         className='flex-col items-center flex w-full mb-[66px]'

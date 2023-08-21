@@ -80,7 +80,6 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   })
   const [val, setVal] = useState<string>(content)
   const [enable, setEnable] = useState<boolean>(false)
-  // var { enable, setEnable } = useContext(AppContext)
   const dispatch = useAppDispatch()
 
   const show = () => {
@@ -112,14 +111,13 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       part_id: id,
       content: value
     }
+    console.log(body)
     try {
       const res = await dispatch(updateText(body)).then(unwrapResult)
-
       toast.success(res.message, {
         position: 'top-center',
         autoClose: 4000
       })
-
       return res
     } catch (error) {
       toast.error('có lỗi' + '' + error, {

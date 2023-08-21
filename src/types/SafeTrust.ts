@@ -2,6 +2,7 @@ export interface ISelectBookUnlockCar {
   id?: string
   title: string
   link: string
+  nameButton: string
 }
 
 export interface ISelectPowerFull {

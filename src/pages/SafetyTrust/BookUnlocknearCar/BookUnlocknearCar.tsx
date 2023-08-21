@@ -39,14 +39,27 @@ const BookUnlocknearCar = () => {
           {/* <div className='text-center tracking-[-0.03em] m-[0_auto] leading-[100%] text-mainColor self-start text-4xl font-bold max-w-[30ch]'>
             {DataBookUnlockCar.title}
           </div> */}
-          <Link
+          {/* <Link
             onClick={onClick}
             to={data[BookUnlockCar.link]}
             className='w-[260px] hover:duration-500 duration-500 hover:transition-all text-white h-[70px] rounded-lg bg-[#3699d3] hover:bg-black flex justify-center items-center'
           >
-            {/* <Text id='id-textButtonNameBookUnlockST' tag='span' content='Search and Book a Car' className='text-xl' /> */}
+         
             <span className='text-xl'>Search and Book a Car</span>
-          </Link>
+          </Link> */}
+          <Button
+            // onClick={onClick}
+            children={
+              <Text
+                id={BookUnlockCar.nameButton}
+                tag='span'
+                content={data[BookUnlockCar.nameButton] || 's'}
+                className={`text-base `}
+              />
+            }
+            isNext={false}
+            className='w-[260px] hover:duration-500 duration-500 hover:transition-all text-white h-[70px] rounded-lg bg-[#3699d3] hover:bg-black flex justify-center items-center'
+          ></Button>
         </div>
       </div>
     </div>

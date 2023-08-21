@@ -49,18 +49,18 @@ const HomeHeroSection: FC<IHeroSection> = ({
         <div className='flex flex-col justify-center items-center pb-8'>
           <div>
             <Text
-              id={title}
+              id={title || ''}
               tag='h2'
-              content={data[title]}
+              content={data[title || '']}
               className='py-4 leading-5 text-lg font-bold my-0 text-black/80'
             />
             {/* <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>{title}</h2> */}
           </div>
           <div>
             <Text
-              id={mainText}
+              id={mainText || ''}
               tag='h1'
-              content={data[mainText]}
+              content={data[mainText || '']}
               className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'
             />
           </div>
@@ -74,25 +74,18 @@ const HomeHeroSection: FC<IHeroSection> = ({
             <div style={{ width: '10px' }} />
             <CustomDatetimePicker className='h-[52px] lg:grow' title={endDateTimePikerTitle} />
           </div>
-          <Button
+          {/* <Button
             // onClick={onClick}
-            children={
-              <Text
-                id={`txt-buttonBodyTop-shareACar`}
-                tag='span'
-                content={data[buttonSearchText || '']}
-                className={`text-base `}
-              />
-            }
+            children={<Text id={``} tag='span' content={data[buttonSearchText || '']} className={`text-base `} />}
             isNext={true}
             className='min-w-[140px] h-[52px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white   rounded-lg bg-[#3699d3] hover:bg-black  '
-          ></Button>
-          {/* <CustomeButton
+          ></Button> */}
+          <CustomeButton
             className='min-w-[140px] h-[52px] rounded-[10px] text-white/80 lg:w-full bg-mainColor grow [&>*]:flex'
             isNext={true}
           >
-            <Text id={buttonSearchText} tag='span' className='flex' content={data[buttonSearchText]} />
-          </CustomeButton> */}
+            <Text id={buttonSearchText || ''} tag='span' className='flex' content={data[buttonSearchText || '']} />
+          </CustomeButton>
         </Space>
       </div>
       {/* <RatingStar rating={4} review='Shoppee' classReview='text-white' activeClassname='h-20' /> */}

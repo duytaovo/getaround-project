@@ -1,11 +1,4 @@
 import React, { useEffect } from 'react'
-import { CustomeStepItems } from 'src/items/CustomeStepItem/CustomeStepItem'
-import { items } from 'src/items/CommonQuestionItems/CommonQuestionItems'
-import { ItemSlider } from '../../items/SliderItem/Slider'
-import { ItemCarousel } from 'src/items/Carousel/Carouseltems'
-import CommonQuestionRightImg from 'src/assets/images/commonQuestionRight.svg'
-import { DataConnectedCarSharingHome } from 'src/items/ConnectedCarSharing/DataConnectedCarSharing'
-import { DataExploreHostingHomeText } from 'src/items/ExploreHosting/DataExploreHostingText'
 import HomeHeroSection from './home_hero_section/HomeHeroSection'
 import Filter1OutlinedIcon from '@mui/icons-material/Filter1Outlined'
 import Filter2OutlinedIcon from '@mui/icons-material/Filter2Outlined'
@@ -15,15 +8,14 @@ import WrapperContent from 'src/components/WrapperContent/WrapperContent'
 import Heading from 'src/components/Heading/Heading'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
 import CustomeSlider from '../../components/Slider/Slider'
-import { SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons'
 import CustomeCarousel from 'src/components/Carousel/index'
 import ConnectedCarSharing from 'src/components/ConnectedCarSharing/ConnectedCarSharing'
 import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
-import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 import { _getData } from 'src/store/dataSlice'
+import { Helmet } from 'react-helmet-async'
 
 type Props = {}
 
@@ -35,10 +27,12 @@ const Home = (props: Props) => {
 
   useEffect(() => {}, [dispatch])
 
-  console.log(homePageData.homeStepSection.img)
-
   return (
     <div className='overflow-x-hidden'>
+      <Helmet>
+        <title>Home </title>
+        <meta name='description' content='Trang chủ tìm kiếm và đặt xe' />
+      </Helmet>
       <HomeHeroSection
         title={homePageData.heroSection.title}
         mainText={homePageData.heroSection.mainText}
