@@ -53,9 +53,14 @@ export interface ISelectImglideLeftRight {
 export interface ISelectHeaderHIW {
   img: string
   mainTitle: string
+  nameButton: string
 }
 export interface ISelectmainTitleStepHIW {
   mainTitle: string
   imgSlide1: string
   imgSlide2: string
+}
+export interface ISelectHeaderTitleStepHIWs {
+  HeaderTitle1: string
+  HeaderTitle2: string
 }

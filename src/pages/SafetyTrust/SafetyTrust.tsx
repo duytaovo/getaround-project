@@ -33,11 +33,13 @@ const SafetyTrust = () => {
   const data = useAppSelector((state) => state.data.data)
 
   return (
+
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <Helmet>
         <title>SafetyTrust</title>
         <meta name='description' content='Cộng an toàn và tin cậy' />
       </Helmet>
+
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderSafeTrust />
       </WrapperContent>

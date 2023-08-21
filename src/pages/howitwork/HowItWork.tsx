@@ -46,6 +46,7 @@ const HowItWork = () => {
         <title>Technology</title>
         <meta name='description' content='Trang công nghệ ' />
       </Helmet>
+
       <HeaderHowItWord />
       <SlideHowItWork />
       <WrapperContent textAlign='center' title={data[titleimgSide.mainTitle]} classname='flex flex-col'>

@@ -7,6 +7,7 @@ import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { TimePicker } from 'antd'
 import './style.css'
+import Button from 'src/components/Button'
 import { AiFillStar } from 'react-icons/ai'
 import CustomDatetimePicker from 'src/components/CustomDatetimePicker/CustomDatetimePicker'
 import RatingStar from 'src/components/RatingStar'
@@ -56,7 +57,7 @@ const HeaderHowItWord = () => {
     return current && current < dayjs().endOf('day')
   }
   const data = useAppSelector((state) => state.data.data)
-  console.log(data)
+
   return (
     <div className='mb-28 flex flex-col items-stretch m-full h-101 sm:mb-0'>
       <div className='w-full max-w-7xl flex-col self-center items-stretch flex relative  h-full'>
@@ -71,15 +72,15 @@ const HeaderHowItWord = () => {
         >
           <div className=' w-full max-with max-w-5xl mx-auto flex-col px-9 flex '>
             <div className='w-6/13   ml-0 px-9 bg-[#efeff0] rounded-3xl sm:w-full sm:px-2'>
-              {/* <Text
+              <Text
                 id={HeaderHIW.mainTitle}
                 tag='h2'
                 content={data[HeaderHIW.mainTitle]}
                 className='text-black text-5xl font-bold mt-6 sm:text-xl'
-              /> */}
-              <h1 className='text-black text-5xl font-bold mt-6 sm:text-xl'>
+              />
+              {/* <h1 className='text-black text-5xl font-bold mt-6 sm:text-xl'>
                 Rent and unlock a <span className='text-mainColor'>nearby car</span> in seconds
-              </h1>
+              </h1> */}
               <div className=' h-8'></div>
               <div className='my-8'>
                 <div>
@@ -93,7 +94,20 @@ const HeaderHowItWord = () => {
                           <CustomDatetimePicker className='h-[52px]' title='Ngày kết thúc' />
                         </div>
                       </div>
-                      <div className='h-14 w-full bg-mainColor mt-6 rounded-lg'>
+                      <Button
+                        // onClick={onClick}
+                        children={
+                          <Text
+                            id={HeaderHIW.nameButton}
+                            tag='span'
+                            content={data[HeaderHIW.nameButton] || 's'}
+                            className={`text-base `}
+                          />
+                        }
+                        isNext={true}
+                        className='min-w-[200px] w-full h-[52px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white   rounded-lg bg-[#3699d3] hover:bg-black   mx-auto'
+                      ></Button>
+                      {/* <div className='h-14 w-full bg-mainColor mt-6 rounded-lg'>
                         <div className='flex justify-center items-center h-full group cursor-pointer'>
                           <h2 className='text-white text-xl font-semibold mr-5'>Tìm kiếm xe</h2>
                           <svg
@@ -115,7 +129,7 @@ const HeaderHowItWord = () => {
                             ></path>
                           </svg>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

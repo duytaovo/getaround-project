@@ -19,7 +19,7 @@ const HostBonus = () => {
   const { CustomeCardR, titleCustomeCardR, QuestionhostBonus } = useSelector((state: RootState) => state.hostBonus)
   const data = useAppSelector((state) => state.data.data)
   return (
-    <div className='w-full h-auto bg-mainBackGroundColor'>
+    <div className='w-full h-auto '>
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderHostBonus />
       </WrapperContent>

@@ -41,6 +41,7 @@ const HostRefernal = () => {
         <title>Refer a Sharer</title>
         <meta name='description' content='Trang giới thiệu tham gia ' />
       </Helmet>
+
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderhostRefernal />
       </WrapperContent>
@@ -100,11 +101,9 @@ const HostRefernal = () => {
         isEx={false}
         className='flex-col items-center flex w-full mb-[120px]'
       />
-      <WrapperContent titlePadding={8} textAlign='left' title='Need more info? Check out FAQs.'>
-        <div>
-          <CustomeCommonQuestions items={QuestionhostRefernal} className='w-full p-4' />
-        </div>
-      </WrapperContent>
+      <div>
+        <CustomeCommonQuestions items={QuestionhostRefernal} className='w-full p-4' />
+      </div>
     </div>
   )
 }

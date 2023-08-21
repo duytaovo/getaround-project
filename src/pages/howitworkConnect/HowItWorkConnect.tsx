@@ -12,13 +12,15 @@ const HowItWorkConnect = () => {
   const dispatch = useDispatch()
   const data = useAppSelector((state) => state.data.data)
   return (
+
     <div className='bg-mainBackGroundColor'>
       <Helmet>
         <title></title>
         <meta name='description' content='Trang công nghệ ' />
       </Helmet>
+
       <HeaderHIWC />
-      <SlideHIWC DataSliceHIWC={DataSliceHIWC} />
+      <SlideHIWC DataSliceHIWC={SlideHIWCR} />
       <KeyFeature />
     </div>
   )

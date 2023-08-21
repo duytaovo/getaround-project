@@ -75,7 +75,8 @@ const initialState: SafeTrustState = {
   BookUnlockCar: {
     id: 'BookUnlockCar',
     title: 'title_bookUnlockCar_ST',
-    link: 'link_bookUnlockCar_ST'
+    link: 'link_bookUnlockCar_ST',
+    nameButton: 'nameButton_ST'
   },
   HeaderST: {
     id: 'header_HowItWork_SafeTrust',

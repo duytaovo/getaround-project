@@ -19,11 +19,13 @@ export const NewsRoom = () => {
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
+
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <Helmet>
         <title>NewsRoom</title>
         <meta name='description' content='Phòng tin tức mới' />
       </Helmet>
+
       <HeaderNewsRoom />
       <div className='mb-bottom'>
         <div>
