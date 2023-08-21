@@ -213,15 +213,17 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
                   </>
                 </OptionWrapper>
               </div>
-              <img
-                src={val}
-                alt={alt}
-                onClick={show}
-                className={`${className} border border-transparent ${
-                  permission == '-1' ? 'border-dashed focus:border-slate-400 hover:border-slate-400' : ''
-                }`}
-                {...props}
-              />
+              <div className='w-full flex justify-center items-center mt-3'>
+                <img
+                  src={val}
+                  alt={alt}
+                  onClick={show}
+                  className={`h-80 w-auto border border-transparent ${
+                    permission == '-1' ? 'border-dashed focus:border-slate-400 hover:border-slate-400' : ''
+                  }`}
+                  {...props}
+                />
+              </div>
               {/* <div className='flex flex-col justify-center items-center text-gray-400 text-sm ml-5'>
               <div>Dụng lượng file tối đa 2 MB</div>
               <div>Định dạng:.JPEG, .PNG, .JPG</div>

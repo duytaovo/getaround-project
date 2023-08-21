@@ -104,7 +104,7 @@ const Header = (props: Props) => {
         <div className='flex  '>
           <div>
             <Link to='/'>
-              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px] w-[120px]' />
+              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px]' />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
@@ -122,6 +122,7 @@ const Header = (props: Props) => {
             className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0 text-center'
             children={<span>{t('header.shareACar')}</span>}
           />
+
           <CustomDropDown
             arrow={true}
             isOnClick={false}
