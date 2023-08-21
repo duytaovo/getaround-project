@@ -111,6 +111,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
       part_id: id,
       content: value
     }
+    console.log(body)
     try {
       const res = await dispatch(updateText(body)).then(unwrapResult)
       toast.success(res.message, {

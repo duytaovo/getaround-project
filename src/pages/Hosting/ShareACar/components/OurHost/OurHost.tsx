@@ -14,7 +14,7 @@ const OurHost = ({ item, prefix }: Props) => {
   return (
     <div>
       <Text
-        id={`${prefix}_ourHost-shareAcar-title`}
+        id={`ourHost-shareAcar-title`}
         tag='span'
         content={data[item.title || '']}
         className={`text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2`}
@@ -23,7 +23,7 @@ const OurHost = ({ item, prefix }: Props) => {
             {item.title}
           </span> */}
       <Text
-        id={`${prefix}_ourHost-shareAcar-content`}
+        id={`ourHost-shareAcar-content`}
         tag='h2'
         content={data[item.content || '']}
         className={`flex text-[32px] text-center  justify-center mb-2`}

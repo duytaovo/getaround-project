@@ -6,6 +6,7 @@ const NotFound = lazy(() => import('../pages/NotFound'))
 const HowItWork = lazy(() => import('../pages/howitwork'))
 const HowItWorkConnect = lazy(() => import('../pages/howitworkConnect'))
 const ShareACar = lazy(() => import('src/pages/Hosting/ShareACar'))
+const BookACar = lazy(() => import('src/pages/Hosting/BookACar'))
 const HostComunity = lazy(() => import('src/pages/Hosting/HostComunity'))
 const HostRefernal = lazy(() => import('src/pages/HostRefernal'))
 const AboutUs = lazy(() => import('src/pages/AboutUs'))
@@ -31,6 +32,10 @@ export const routeMain = [
   {
     path: path.sharACar,
     Component: ShareACar
+  },
+  {
+    path: path.bookACar,
+    Component: BookACar
   },
   {
     path: path.hostCommunity,
@@ -68,10 +73,10 @@ export const routeMain = [
     path: path.safetytrust,
     Component: SafetyTrust
   },
-  {
-    path: path.hostBobus,
-    Component: HostBonus
-  },
+  // {
+  //   path: path.hostBobus,
+  //   Component: HostBonus
+  // },
   {
     path: path.login,
     Component: Login

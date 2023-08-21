@@ -16,11 +16,13 @@ import partnersWithUsSlice from './app/partners/partnerWithUs/partnersWithUs.sli
 import dataReducer from './dataSlice'
 import NoticeReducer from './notice/noticeSlice'
 import hostBonusReducer from './hosting/host_bonus/hostbonusSlice'
+import bookAcarReducer from './hosting/book_a_car/BookACarSlice'
 export const store = configureStore({
   reducer: {
     data: dataReducer,
     loading: appReducer,
     shareAcar: shareAcarReducer,
+    bookAcar: bookAcarReducer,
     howitwork: HowItWorkReducer,
     connecthiw: ConnectHIWReducer,
     newsroom: NewsRoomReducer,

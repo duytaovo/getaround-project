@@ -12,10 +12,9 @@ const HowItWorkConnect = () => {
   const dispatch = useDispatch()
   const data = useAppSelector((state) => state.data.data)
   return (
-
     <div className='bg-mainBackGroundColor'>
       <Helmet>
-        <title></title>
+        <title>Connect</title>
         <meta name='description' content='Trang công nghệ ' />
       </Helmet>
 

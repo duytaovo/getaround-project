@@ -49,18 +49,18 @@ const HomeHeroSection: FC<IHeroSection> = ({
         <div className='flex flex-col justify-center items-center pb-8'>
           <div>
             <Text
-              id={title}
+              id={title || ''}
               tag='h2'
-              content={data[title]}
+              content={data[title || '']}
               className='py-4 leading-5 text-lg font-bold my-0 text-black/80'
             />
             {/* <h2 className='py-4 leading-5 text-lg font-bold my-0 text-black/80'>{title}</h2> */}
           </div>
           <div>
             <Text
-              id={mainText}
+              id={mainText || ''}
               tag='h1'
-              content={data[mainText]}
+              content={data[mainText || '']}
               className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'
             />
           </div>
@@ -84,7 +84,7 @@ const HomeHeroSection: FC<IHeroSection> = ({
             className='min-w-[140px] h-[52px] rounded-[10px] text-white/80 lg:w-full bg-mainColor grow [&>*]:flex'
             isNext={true}
           >
-            <Text id={buttonSearchText} tag='span' className='flex' content={data[buttonSearchText]} />
+            <Text id={buttonSearchText || ''} tag='span' className='flex' content={data[buttonSearchText || '']} />
           </CustomeButton>
         </Space>
       </div>
