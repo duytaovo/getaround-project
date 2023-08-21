@@ -4,6 +4,7 @@ import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { useDispatch, useSelector } from 'react-redux'
+import Button from 'src/components/Button'
 import { RootState } from 'src/store/store'
 export const DataJoinTeamAboutUs = {
   id: 'JoinTeam_AboutUS_AboutUs',
@@ -38,12 +39,30 @@ const JoinTeam = () => {
             Want to work with us? Come join the team focused on empowering people to carshare everywhere. Explore open
             roles at Getaround.
           </p> */}
-          <Link
+          {/* <Link
             to=''
             className='bg-black border py-2 px-4 hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[135px] h-[40px] text-sm font-bold leading-5  mt-10'
           >
-            See open roles
-          </Link>
+            <Text
+              id={JoinTeamAboutUs.link}
+              tag='strong'
+              content={data[JoinTeamAboutUs.link] || 'Read more'}
+              className=''
+            />
+          </Link> */}
+          <Button
+            // onClick={onClick}
+            children={
+              <Text
+                id={JoinTeamAboutUs.link}
+                tag='span'
+                content={data[JoinTeamAboutUs.link] || 's'}
+                className={`text-base`}
+              />
+            }
+            isNext={false}
+            className='bg-black border py-2 px-4 hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[135px] h-[40px] text-sm font-bold leading-5  mt-10'
+          ></Button>
         </div>
       </div>
       <div className='w-[35%] flex justify-center sm:w-full'>

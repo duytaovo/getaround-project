@@ -80,9 +80,15 @@ const SlideLeftRight: FC<Props> = ({ Data, img, mainTitle, idimg, idTitle }) => 
                 </div> */}
               </div>
             ))}
-            <Link to={data[Data?.[0]?.Linkto]} className='underline text-mainColor font-semibold'>
+            <Text
+              id={Data?.[0]?.Link}
+              tag='div'
+              content={data[Data?.[0]?.Link] || ''}
+              className='underline text-mainColor font-semibold'
+            />
+            {/* <Link to={data[Data?.[0]?.Linkto]} className='underline text-mainColor font-semibold'>
               {data[Data?.[0]?.Link]}
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

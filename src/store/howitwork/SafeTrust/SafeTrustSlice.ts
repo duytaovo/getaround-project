@@ -52,7 +52,8 @@ const initialState: SafeTrustState = {
     description2: 'description2_Proprietary_ST',
     span: 'span_Proprietary_ST',
     img: 'img_Proprietary_ST',
-    Link: 'link_Proprietary_ST'
+    Link: 'link_Proprietary_ST',
+    linkText: 'linkText_Proprietary_ST'
   },
   SlideLeftRightST: [
     {

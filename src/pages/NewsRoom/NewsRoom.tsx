@@ -19,7 +19,6 @@ export const NewsRoom = () => {
   const data = useAppSelector((state) => state.data.data)
   const dispatch = useDispatch()
   return (
-
     <div className='w-full h-auto bg-mainBackGroundColor'>
       <Helmet>
         <title>NewsRoom</title>
@@ -53,9 +52,9 @@ export const NewsRoom = () => {
           numberItemScroll={1}
           classNameContent='text-[#727171]'
         />
-        <h2 className='text-center mt-8 text-mainColor underline hover:no-underline hover:text-black duration-300 font-semibold cursor-pointer'>
+        {/* <h2 className='text-center mt-8 text-mainColor underline hover:no-underline hover:text-black duration-300 font-semibold cursor-pointer'>
           See more
-        </h2>
+        </h2> */}
       </div>
       <HelpCustomer />
       <ReadNews />

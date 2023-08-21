@@ -33,14 +33,16 @@ const initialState: NewsRoomState = {
     headerTitle: 'headerTitle_Blog_NewsRoom',
     mainTitle: 'mainTitle_Blog_NewsRoom',
     content: 'content_Blog_NewsRoom',
-    linkTo: 'linkTo_Blog_NewsRoom'
+    linkTo: 'linkTo_Blog_NewsRoom',
+    link: 'link_Blog_NewsRoom'
   },
   HelpCustomerNewsRoom: {
     id: 'helpCustomer_AboutUs_NewsRoom',
     title: `title_HelpCustomer_NewsRoom`,
     linkTo: `linkTo_HelpCustomer_NewsRoom`,
     nameButton: 'nameButton_HelpCustomer_NewsRoom',
-    img: 'img_HelpCustomer_NewsRoom'
+    img: 'img_HelpCustomer_NewsRoom',
+    link: 'link_HelpCustomer_NewsRoom'
   },
   HeaderNewsRoom: {
     id: 'header_AboutUs_NewsRoom',
@@ -76,28 +78,32 @@ const initialState: NewsRoomState = {
       title: 'title1_Carousel_NewsRoom',
       date: 'date1_Carousel_NewsRoom',
       description: `description1_Carousel_NewsRoom`,
-      linkto: 'linkTo1_Carousel_NewsRoom'
+      linkto: 'linkTo1_Carousel_NewsRoom',
+      link: 'link1_Carousel_NewsRoom'
     },
     {
       id: 2,
       title: 'title2_Carousel_NewsRoom',
       date: 'date2_Carousel_NewsRoom',
       description: `description2_Carousel_NewsRoom`,
-      linkto: 'linkTo2_Carousel_NewsRoom'
+      linkto: 'linkTo2_Carousel_NewsRoom',
+      link: 'link2_Carousel_NewsRoom'
     },
     {
       id: 3,
       title: 'title3_Carousel_NewsRoom',
       date: 'date3_Carousel_NewsRoom',
       description: `description3_Carousel_NewsRoom`,
-      linkto: 'linkTo3_Carousel_NewsRoom'
+      linkto: 'linkTo3_Carousel_NewsRoom',
+      link: 'link3_Carousel_NewsRoom'
     },
     {
       id: 4,
       title: 'title4_Carousel_NewsRoom',
       date: 'date4_Carousel_NewsRoom',
       description: `description4_Carousel_NewsRoom`,
-      linkto: 'linkTo4_Carousel_NewsRoom'
+      linkto: 'linkTo4_Carousel_NewsRoom',
+      link: 'link4_Carousel_NewsRoom'
     }
   ],
   TitleCarouselNewsRoom: {

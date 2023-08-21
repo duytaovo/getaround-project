@@ -33,13 +33,18 @@ const HelpCustomer = () => {
           {/* <p className='uppercase text-black font-semibold mb-3 text-2xl mt-10'>
             We're helping consumers shift away from car ownership.
           </p> */}
-
-          <Link to={data[HelpCustomerNewsRoom.linkTo]}>
+          <Text
+            id={HelpCustomerNewsRoom.link}
+            tag='p'
+            content={data[HelpCustomerNewsRoom.link] || 'Read more'}
+            className='text-mainColor hover:text-black hover:no-underline  duration-[0.5s] font-normal mt-3 underline'
+          />
+          {/* <Link to={data[HelpCustomerNewsRoom.linkTo]}>
             {' '}
             <p className='text-mainColor hover:text-black hover:no-underline  duration-[0.5s] font-normal mt-3 underline'>
               Learn more
             </p>
-          </Link>
+          </Link> */}
           <div className='bg-white h-[100px] py-5 px-10 rounded-xl max-w-[45ch] flex items-center mt-10 cursor-pointer hover:border-solid hover:border-[1px] hover:border-mainColor duration-[0.5s]'>
             <Text
               id={HelpCustomerNewsRoom.nameButton}

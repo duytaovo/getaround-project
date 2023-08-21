@@ -4,12 +4,14 @@ export interface ISelectItemsBlog {
   headerTitle: string
   mainTitle: string
   content: string
+  link: string
   linkTo: string
 }
 
 export interface ISelectItemsHelpCustomer {
   id?: string
   title: string
+  link: string
   linkTo: string
   nameButton: string
   img: string

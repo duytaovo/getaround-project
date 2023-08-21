@@ -121,7 +121,7 @@ const Step = () => {
           <>
             <div className='w-1/2 flex justify-center'>
               <Image
-                id={titleimgSide.imgSlide2 || ''}
+                id={titleimgSide.imgSlide2}
                 className='object-contain h-[500px]'
                 src={data[titleimgSide.imgSlide2] || ''}
                 alt='Getaround Connect®'

@@ -59,10 +59,11 @@ const Carousel_About = ({
             - $30 million on nnualized run-rate basis
           </h3> */}
           <Link
-            to={data[item.linkto]}
+            // to={data[item.linkto]}
+            to=''
             className='text-[14px] font-semibold text-mainColor mt-3 underline hover:no-underline hover:text-black duration-100'
           >
-            Read more
+            <Text id={item.link} tag='strong' content={data[item.link] || 'Read more'} className='' />
           </Link>
         </div>
       </div>
