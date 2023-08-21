@@ -26,7 +26,18 @@ import Looks4OutlinedIcon from '@mui/icons-material/Looks4Outlined'
 import { IExploreHostingText } from 'src/types/exploreHostingText.type'
 import { ICustomeSteps } from 'src/types/customeSteps.type'
 import { ICommonQuestions } from 'src/types/commonQuestion.type'
+import { IHeroSection } from 'src/store/app/home/HomeTypes/Hero.type'
 // Share a car
+
+export const heroSection: IHeroSection = {
+  id: 'bookACar_select_day',
+  startDateTimePikerTitle: 'bookACar_start_time',
+  endDateTimePikerTitle: 'bookACar_end_time',
+  addressPlaceholder: 'bookACar_address',
+  datePickerPlaceholder: 'Select date',
+  timePickerPlaceholder: 'Select Time'
+}
+
 export const ItemContentSlider: IItemContentSlider = {
   headerTitle: 'txt-contentSlider-shareACar-headerTitle',
   title: 'txt-contentSlider-shareACar-title',
@@ -190,17 +201,24 @@ export const ItemSliderShareCar: IItemSlider[] = [
 
 export const ItemBodyTop: IBodyTop = {
   img: 'top_img-bodyTop-shareACar',
-  content: ' top_txt-bodytop-shareACar_content',
   header: 'top_txt-bodytop-shareACar_header',
+  content: 'top_txt-bodytop-shareACar_content',
   infoButton: 'top_txt-buttonBodyTop-shareACar'
 }
 
 export const ItemBodyBottom: IBodyTop = {
-  img: 'bottom_img-bodyBottom-shareACar',
-  content: ' bottom_txt-bodyBottom-shareACar_content',
-  header: 'bottom_txt-bodyBottom-shareACar_header',
-  infoButton: 'bottom_txt-buttonBodyBottom-shareACar'
+  img: 'bottom_img-bodyTop-shareACar',
+  header: 'bottom_txt-bodytop-shareACar_header',
+  content: 'bottom_txt-bodytop-shareACar_content',
+  infoButton: 'bottom_txt-buttonBodyTop-shareACar'
 }
+
+// export const ItemBodyBottom: IBodyTop = {
+//   img: 'bottom_img-bodyBottom-shareACar',
+//   header: 'bottom_txt-bodyBottom-shareACar_header',
+//   content: 'bottom_txt-bodyBottom-shareACar_content',
+//   infoButton: 'bottom_txt-buttonBodyBottom-shareACar'
+// }
 
 export const itemBanner: IItemBodyBannerCard = {
   img: 'img_bodyBanner-shareACar',

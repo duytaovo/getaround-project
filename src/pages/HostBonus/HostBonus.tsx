@@ -15,11 +15,16 @@ import ElectricVehicle from './ElectricVehicle/ElectricVehicle'
 import CustomeCommonQuestions from 'src/components/CustomeCommonQuestions/CustomeCommonQuestions'
 import EarnUp from './EarnUp/EarnUp'
 import HostDeals from './HostDeals/HostDeals'
+import { Helmet } from 'react-helmet-async'
 const HostBonus = () => {
   const { CustomeCardR, titleCustomeCardR, QuestionhostBonus } = useSelector((state: RootState) => state.hostBonus)
   const data = useAppSelector((state) => state.data.data)
   return (
     <div className='w-full h-auto '>
+      <Helmet>
+        <title>Benefit </title>
+        <meta name='description' content='Trang chủ tìm kiếm và đặt xe' />
+      </Helmet>
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <HeaderHostBonus />
       </WrapperContent>

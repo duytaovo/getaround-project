@@ -19,6 +19,7 @@ import { useAppSelector } from 'src/hooks/useRedux'
 import { useState, useEffect } from 'react'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
+import { Helmet } from 'react-helmet-async'
 
 type Props = {}
 
@@ -35,6 +36,10 @@ const DriveWithUber = (props: Props) => {
   const data = useAppSelector((state) => state.data.data)
   return (
     <div>
+      <Helmet>
+        <title>Drive With Grab/Be </title>
+        <meta name='description' content='Trang lái xe với grab/be' />
+      </Helmet>
       <WrapperContent title='' classname='flex' isBgTransparent>
         <div className='bg-black w-2/3 py-10 pl-12 pr-[10%] text-justify md:pl-4 sm:w-full rounded-[20px]'>
           <div className='flex'>

@@ -15,6 +15,7 @@ import { Text } from 'src/components/Edition/Text'
 import { useAppSelector } from 'src/hooks/useRedux'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store/store'
+import { Helmet } from 'react-helmet-async'
 
 const AboutUs = () => {
   const { ExploreAboutUs, ConnectedCarSharingR, CarouselNewsRoom, TitleCarouselAboutUs, ImgExploreAboutUs } =
@@ -23,6 +24,10 @@ const AboutUs = () => {
   const dispatch = useDispatch()
   return (
     <div className='w-full h-auto'>
+      <Helmet>
+        <title>About Us </title>
+        <meta name='description' content='Trang về chúng tôi' />
+      </Helmet>
       <HeaderSlide />
       <WrapperContent textAlign='center' title='' classname='flex flex-col'>
         <Banner />

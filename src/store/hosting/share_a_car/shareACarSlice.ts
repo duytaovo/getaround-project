@@ -6,6 +6,7 @@ import {
   CustomeStepItems,
   DataExploreHostingShareCarText,
   DataExploreHostingShareCarText_bottom,
+  ItemBodyBottom,
   ItemBodyTop,
   ItemContentSlider,
   ItemSliderShareCar,
@@ -75,7 +76,7 @@ interface ShareACarState {
 
 const initialState: ShareACarState = {
   bodyTop: ItemBodyTop,
-  bodyBottom: ItemBodyTop,
+  bodyBottom: ItemBodyBottom,
   sliders: ItemSliderShareCar,
   contentSlider: ItemContentSlider,
   bodyBannerCard: itemBanner,

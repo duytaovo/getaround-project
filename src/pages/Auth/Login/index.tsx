@@ -13,6 +13,7 @@ import { unwrapResult } from '@reduxjs/toolkit'
 import { isAccessTokenExpired, login, updateUser } from 'src/store/user/userSlice'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { getAccessTokenFromLS, setAccessTokenToLS } from 'src/utils/auth'
+import { Helmet } from 'react-helmet-async'
 
 type FormData = Pick<Schema, 'email' | 'password'>
 const loginSchema = schema.pick(['email', 'password'])
@@ -68,6 +69,10 @@ const Login = () => {
 
   return (
     <div className='w-full flex justify-center'>
+      <Helmet>
+        <title>Login </title>
+        <meta name='description' content='Trang đăng nhập' />
+      </Helmet>
       <div className='lg:col-span-2 lg:col-start-4 bg-white w-1/2 md:w-full justify-center m-10 rounded-2xl'>
         <div className='flex items-center justify-center rounded-2xl mt-3'>
           <img src='/logo.jpg' alt='logo' className='w-30 h-20'></img>
