@@ -11,6 +11,7 @@ import GettingStarted from './components/GettingStarted/GettingStarted'
 import OurHost from './components/OurHost/OurHost'
 import SliderHostComunity from './components/Slider/Slider'
 import TopHostComunity from './components/TopHostCommunity/OurHost'
+import { Helmet } from 'react-helmet-async'
 
 const HostCominity = () => {
   const {
@@ -38,6 +39,10 @@ const HostCominity = () => {
 
   return (
     <div className='mt-[33px]'>
+      <Helmet>
+        <title>Benefit</title>
+        <meta name='description' content='Trang lợi ích xe' />
+      </Helmet>
       {/* start slider */}
       <div className=' mb-bottom py-5 rounded-2xl'>
         <TopHostComunity item={topHostCommunity} />

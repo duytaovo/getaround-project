@@ -14,6 +14,7 @@ import { RootState } from 'src/store/store'
 import { updateExploreHIW, updateProprietaryHIW } from 'src/store/howitwork/HowItWork/HowItWorkSlice'
 import { ISelectItemsExploreHosting, ISelectItemsProprietary } from 'src/types/HowItWork'
 import { useAppSelector } from 'src/hooks/useRedux'
+import { Helmet } from 'react-helmet-async'
 const HowItWork = () => {
   const {
     ExploreHowItWork,
@@ -41,6 +42,10 @@ const HowItWork = () => {
 
   return (
     <div className='w-full h-auto bg-mainBackGroundColor'>
+      <Helmet>
+        <title>Technology</title>
+        <meta name='description' content='Trang công nghệ ' />
+      </Helmet>
       <HeaderHowItWord />
       <SlideHowItWork />
       <WrapperContent textAlign='center' title={data[titleimgSide.mainTitle]} classname='flex flex-col'>

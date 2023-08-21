@@ -28,6 +28,7 @@ import { _getData } from 'src/store/dataSlice'
 import { toast } from 'react-toastify'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const ShareACar = () => {
   const {
@@ -59,6 +60,10 @@ const ShareACar = () => {
   return (
     <div className='pt-[84px]'>
       {/* start top */}
+      <Helmet>
+        <title>Share a car </title>
+        <meta name='description' content='Trang chia sẻ xe' />
+      </Helmet>
       <div className='mb-bottom transition-all duration-1000 delay-100'>
         <BodyTop prefix='top' item={bodyTop} />
       </div>

@@ -18,12 +18,12 @@ export const CardBodyImg = ({ itemCardBodyImg, id }: PropsCardBodyImg) => {
 
   return (
     <div className=' h-[260px] sm:h-[200px] text-black font-medium text-[20px] break-words hover:text-mainColor  bg-white flex items-center rounded-2xl border border-solid flex-col gap-3 justify-center leading-5 border-[#d2d2d2]'>
-      <div className='flex'>
+      <div className='flex mt-5 '>
         <Text
           id={`txt_cardBodyImg_community_title_${id}`}
           tag='span'
           content={data[itemCardBodyImg.title || '']}
-          // className={`${classNameContent} font-bold  `}
+          className={``}
         />
         {/* <span>{itemCardBodyImg.title}</span> */}
         <span>
