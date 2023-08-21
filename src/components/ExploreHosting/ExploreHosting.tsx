@@ -90,7 +90,7 @@ const ExploreHosting: FC<Props> = ({ img, isEx, DataExploreHostingStyle, DataExp
             id={DataExploreHostingStyle.Button.text || ''}
             // to=""
             tag='div'
-            content={DataExploreHostingStyle.Button.text || ''}
+            content={data[DataExploreHostingStyle.Button.text] || ''}
             className={DataExploreHostingStyle.Button.className}
           />
           {/* <Link to={DataExploreHostingText?.[0]?.Link || ''} className={DataExploreHostingStyle.Button.className}>

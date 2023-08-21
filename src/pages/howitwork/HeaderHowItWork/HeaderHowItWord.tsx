@@ -101,7 +101,7 @@ const HeaderHowItWord = () => {
                             id={HeaderHIW.nameButton}
                             tag='span'
                             content={data[HeaderHIW.nameButton] || 's'}
-                            className={`text-base `}
+                            className={`text-base`}
                           />
                         }
                         isNext={true}
