@@ -43,12 +43,18 @@ const Carousel_About = ({
             className='text-[14px] font-sans text-[#727272] my-4'
           />
           {/* <h3 className='text-[14px] font-sans text-[#727272] my-4'>{item?.description}</h3> */}
-          <Link
+          <Text
+            id={item.link}
+            tag='h3'
+            content={data[item.link] || 'Read more'}
+            className='text-[14px] font-semibold text-mainColor mt-3 underline hover:no-underline hover:text-black duration-100'
+          />
+          {/* <Link
             to={data[item.linkto]}
             className='text-[14px] font-semibold text-mainColor mt-3 underline hover:no-underline hover:text-black duration-100'
           >
             Read more
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

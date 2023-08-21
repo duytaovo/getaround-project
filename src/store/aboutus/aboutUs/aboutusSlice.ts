@@ -35,7 +35,8 @@ const initialState: AboutUSState = {
     headerTitle: 'headerTitle_Blog_About',
     mainTitle: 'mainTitle_Blog_About',
     content: 'content_Blog_About',
-    linkTo: 'linkTo_Blog_About'
+    linkTo: 'linkTo_Blog_About',
+    link: 'link_Blog_About'
   },
   ExploreAboutUs: {
     id: 'ExploreHosting_AboutUs_AboutUs',
@@ -52,28 +53,32 @@ const initialState: AboutUSState = {
       title: 'title1_Carousel_AboutUS',
       date: 'date1_Carousel_AboutUS',
       description: `description1_Carousel_AboutUS`,
-      linkto: 'linkTo1_Carousel_AboutUS'
+      linkto: 'linkTo1_Carousel_AboutUS',
+      link: 'link1_Carousel_AboutUS'
     },
     {
       id: 2,
       title: `title2_Carousel_AboutUS`,
       date: 'date2_Carousel_AboutUS',
       description: `description2_Carousel_AboutUS`,
-      linkto: 'linkTo2_Carousel_AboutUS'
+      linkto: 'linkTo2_Carousel_AboutUS',
+      link: 'link2_Carousel_AboutUS'
     },
     {
       id: 3,
       title: `title3_Carousel_AboutUS`,
       date: 'date3_Carousel_AboutUS',
       description: `description3_Carousel_AboutUS`,
-      linkto: 'linkTo3_Carousel_AboutUS'
+      linkto: 'linkTo3_Carousel_AboutUS',
+      link: 'link3_Carousel_AboutUS'
     },
     {
       id: 4,
       title: `title4_Carousel_AboutUS`,
       date: 'date4_Carousel_AboutUS',
       description: `description4_Carousel_AboutUS`,
-      linkto: 'linkTo4_Carousel_AboutUS'
+      linkto: 'linkTo4_Carousel_AboutUS',
+      link: 'link4_Carousel_AboutUS'
     }
   ],
   TitleCarouselAboutUs: {
@@ -87,7 +92,8 @@ const initialState: AboutUSState = {
     title: 'title_JoinTeam_AboutUs',
     img: 'img_JoinTeam_AboutUs',
     content: 'content_JoinTeam_AboutUs',
-    linkTo: 'linkTo_JoinTeam_AboutUs'
+    linkTo: 'linkTo_JoinTeam_AboutUs',
+    link: 'link_JoinTeam_AboutUs'
   },
   BannerAboutUS: {
     id: 'Banner_AboutUs_AboutUS',

@@ -1,7 +1,7 @@
 import HeaderHowItWord from './HeaderHowItWork'
 import SlideHowItWork from 'src/pages/howitwork/SlideHowItWork/SlideHowItWork'
 import ExploreHosting from 'src/components/ExploreHosting/ExploreHosting'
-import { DataExploreHostingHome } from 'src/items/ExploreHosting/DataExploreHostingStyle'
+import { DataExploreHostingHome, DataExploreHIW } from 'src/items/ExploreHosting/DataExploreHostingStyle'
 import CustomeCard from 'src/components/CustomeCard/CustomeCard'
 import { DataCustomeCard } from 'src/Data/DataCustomeCard'
 import HearCommunity from './HearCommunity/HearCommunity'
@@ -67,7 +67,7 @@ const HowItWork = () => {
       <HearCommunity />
       <ExploreHosting
         img={ImgExploreHowItWork.img}
-        DataExploreHostingStyle={DataExploreHostingHome}
+        DataExploreHostingStyle={DataExploreHIW}
         DataExploreHostingText={ExploreHowItWork}
         isEx={true}
         className='flex-col items-center flex w-full mb-[66px]'

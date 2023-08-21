@@ -70,12 +70,18 @@ const Blog = () => {
             Explore the collection of stories, news, and other resources for hosts, guests, and partners throughout the
             Getaround carsharing community.
           </p> */}
-          <Link
+          <Text
+            id={BlogNewsRoom.link}
+            tag='p'
+            content={data[BlogNewsRoom.link] || 'Read more'}
+            className='text-mainColor underline hover:text-black hover:no-underline cursor-pointer duration-[0.5s]'
+          />
+          {/* <Link
             to='/'
             className='text-mainColor underline hover:text-black hover:no-underline cursor-pointer duration-[0.5s]'
           >
             Read more
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
