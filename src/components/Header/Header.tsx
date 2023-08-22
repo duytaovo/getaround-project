@@ -5,7 +5,7 @@ import { Avatar, IconButton, Popover } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { locales } from 'src/i18n/i18n'
 import { useTranslation } from 'react-i18next'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useLayoutEffect, useState } from 'react'
 import LanguageIcon from '@mui/icons-material/Language'
 import { AppContext } from 'src/contexts/app.context'
 import TransitionsModal from '../Modal'
@@ -33,12 +33,10 @@ const Header = (props: Props) => {
   const changeLanguage = (lng: 'en' | 'vi') => {
     i18n.changeLanguage(lng)
   }
-  const url = useLocation()
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, 1000)
-  }, [url.pathname])
+  const location = useLocation()
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0)
+  }, [location.pathname])
 
   const items: MenuProps['items'] = [
     {

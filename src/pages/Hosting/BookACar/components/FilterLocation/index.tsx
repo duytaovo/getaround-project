@@ -12,7 +12,7 @@ const FillterLocationTime = (props: Props) => {
     <div>
       <div>
         <div className='grow flex justify-between  my-2 p-0'>
-          <div className='bg-white mb-0'>
+          <div className='bg-white mt-4 rounded-md'>
             <Location />
           </div>
           <CustomDatetimePicker className='h-[52px] lg:grow' title={data.heroSection.startDateTimePikerTitle} />
