@@ -31,7 +31,6 @@ const CustomeCollapseFooter: FC<CommonQuestionProps> = ({ titleClassName, items,
 
     children: <SingleCommonQuestion contents={item.contents} />
   }))
-  console.log(items)
   return (
     <div className='flex flex-col justify-between p-4'>
       <div className=''>

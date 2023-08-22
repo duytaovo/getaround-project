@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu'
 import { IconButton, Tooltip } from '@mui/material'
@@ -14,8 +14,8 @@ export interface IPath {
   search?: string
 }
 const HeaderMobile = (props: Props) => {
-  const path = useLocation()
-  const url = path.pathname
+  const location = useLocation()
+
   const [menuOpen, setMenuOpen] = useState(false)
   const [iconRotated, setIconRotated] = useState(false)
   const toggleMenu = (e: React.MouseEvent<HTMLElement>) => {
@@ -28,12 +28,10 @@ const HeaderMobile = (props: Props) => {
     setTimeout(() => {
       setMenuOpen(false)
     }, 300)
-  }, [url])
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, 1000)
-  }, [url])
+  }, [location.pathname])
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0)
+  }, [location.pathname])
   return (
     <div className='mb-bottom z-[1500] bg-bgHeaderMobile backdrop-blur-md fixed w-[100vw] backdrop-saturate-[180%]'>
       <div className='bg-white cursor-pointer z-50  flex items-center justify-between h-[100px] px-10'>
