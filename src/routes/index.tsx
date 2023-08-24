@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 import path from 'src/constants/path'
+import Register from 'src/pages/Auth/Register'
 
 const Home = lazy(() => import('../pages/Home'))
 const NotFound = lazy(() => import('../pages/NotFound'))
@@ -33,10 +34,7 @@ export const routeMain = [
     path: path.sharACar,
     Component: ShareACar
   },
-  {
-    path: path.bookACar,
-    Component: BookACar
-  },
+
   {
     path: path.hostCommunity,
     Component: HostComunity
@@ -80,6 +78,10 @@ export const routeMain = [
   {
     path: path.login,
     Component: Login
+  },
+  {
+    path: path.register,
+    Component: Register
   },
   {
     path: path.test,
@@ -128,5 +130,12 @@ export const routeMain = [
   {
     path: path.moveServer,
     Component: CommingSoon
+  }
+]
+
+export const routeUser = [
+  {
+    path: path.bookACar,
+    Component: BookACar
   }
 ]

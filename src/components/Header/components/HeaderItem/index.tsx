@@ -246,7 +246,7 @@ const ComponentHeader = (props: Props) => {
   ]
   return (
     <div>
-      <div className='ml-6  flex items-center cursor-pointer justify-between text-black font-medium font-sans text-sm'>
+      <div className='ml-6  flex items-center cursor-pointer justify-between text-white/70 font-medium font-sans text-sm'>
         <CustomDropDown
           arrow={true}
           isOnClick={false}

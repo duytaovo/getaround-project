@@ -5,10 +5,7 @@ const DropdownSecond: React.FC = () => {
   const [inputValue, setInputValue] = useState<number>(2.5)
   const [dropdownVisible, setDropdownVisible] = useState(false)
 
-  console.log(inputValue)
-
   const onChangeValueOnNull = () => {
-    console.log(inputValue)
     setInputValue(2.5)
   }
   //   const onChange = (checked: boolean) => {
@@ -21,28 +18,32 @@ const DropdownSecond: React.FC = () => {
     {
       key: '1',
       label: (
-        <>
-          <Rate allowHalf value={inputValue} />
-          <Button onClick={onChangeValueOnNull}>Đặt lại</Button>
-          <Button onClick={onSaveValue}>Lưu</Button>
-        </>
+        <div className='w-60 h-20 flex flex-col justify-between'>
+          <Rate allowHalf defaultValue={inputValue} />
+          <div className='flex justify-between gap-x-2'>
+            <Button className='w-1/2' onClick={onChangeValueOnNull}>
+              Đặt lại
+            </Button>
+            <Button className='w-1/2' onClick={onSaveValue}>
+              Lưu
+            </Button>
+          </div>
+        </div>
       )
     }
   ]
 
   return (
-    <div onBlur={onSaveValue}>
+    <div>
       <Dropdown
         menu={{ items }}
         open={dropdownVisible}
-        onOpenChange={() => {
-          ;() => setDropdownVisible(!dropdownVisible)
-        }}
+        onOpenChange={onSaveValue}
         placement='bottomLeft'
         arrow
-        className='text-white'
+        className='text-black/30'
       >
-        <Button onClick={() => setDropdownVisible(!dropdownVisible)} className='w-40'>
+        <Button onClick={() => setDropdownVisible(!dropdownVisible)} className='w-30'>
           Đánh giá
         </Button>
       </Dropdown>

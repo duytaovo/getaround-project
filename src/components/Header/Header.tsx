@@ -58,6 +58,18 @@ const Header = (props: Props) => {
   ]
   const itemAcount: MenuProps['items'] = [
     {
+      key: '0',
+      label: (
+        <CustomLink to={path.register}>
+          <div className='flex flex-col px-5 text-black  duration-300 group-hover:text-mainColor'>
+            <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
+              <span className='group-hover:text-mainColor'>{t('header.register')}</span>
+            </span>
+          </div>
+        </CustomLink>
+      )
+    },
+    {
       key: '1',
       label: (
         <CustomLink to={path.login}>
@@ -85,7 +97,7 @@ const Header = (props: Props) => {
               }, 1000)
               // setTimeout(async () => {}, 2000)
             }}
-            className='flex flex-col px-5 text-black mt-1 duration-300 group-hover:text-mainColor'
+            className='flex flex-col px-5 text-white/70  mt-1 duration-300 group-hover:text-mainColor'
           >
             <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
               <span className='group-hover:text-mainColor'>{t('header.logout')}</span>
@@ -98,7 +110,7 @@ const Header = (props: Props) => {
 
   return (
     <div>
-      <div className='bg-white fixed cur z-50 flex items-center justify-between h-[100px] inset-x-0 top-0 px-10'>
+      <div className='bg-mainBackGroundColor fixed cur z-50 flex items-center justify-between h-[100px] inset-x-0 top-0 px-10'>
         <div className='flex  '>
           <div>
             <Link to='/'>
@@ -111,13 +123,13 @@ const Header = (props: Props) => {
         <div className='flex items-center justify-between'>
           <Button
             onClick={() => navigate(path.bookACar)}
-            className='bg-black border hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0
+            className='bg-black border hover:duration-500 duration-500 hover:transition-all  text-white/70  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0
           '
             children={<span>{t('header.bookACar')}</span>}
           />
           <Button
             onClick={() => navigate(path.sharACar)}
-            className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0 text-center'
+            className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white/70 hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0 text-center'
             children={<span>{t('header.shareACar')}</span>}
           />
 
@@ -131,7 +143,7 @@ const Header = (props: Props) => {
               </div>
             }
             items={itemAcount}
-            className='p-2 mx-2  text-black hover:text-mainColor cursor-pointer group-hover:text-mainColor'
+            className='p-2 mx-2  text-white/70 hover:text-mainColor cursor-pointer group-hover:text-mainColor'
           />
           <div className=''>
             <Dropdown
@@ -143,12 +155,12 @@ const Header = (props: Props) => {
             >
               <IconButton
                 sx={{
-                  color: 'black',
+                  color: '#E4E5DC',
                   '&:hover': {
                     opacity: [0.9, 0.8, 0.7]
                   }
                 }}
-                className='hover:text-mainColor '
+                className='hover:text-mainColor text-white/70 '
               >
                 <LanguageIcon />
               </IconButton>

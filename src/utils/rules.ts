@@ -1,10 +1,28 @@
 import type { RegisterOptions, UseFormGetValues } from 'react-hook-form'
 import * as yup from 'yup'
 
-type Rules = { [key in 'email' | 'password' | 'confirm_password']?: RegisterOptions }
+type Rules = { [key in 'user_name' | 'email' | 'password' | 'confirm_password']?: RegisterOptions }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getRules = (getValues?: UseFormGetValues<any>): Rules => ({
+  user_name: {
+    required: {
+      value: true,
+      message: 'Username là bắt buộc'
+    },
+    // pattern: {
+    //   // value: /^\S+@\S+\.\S+$/,
+    //   message: 'Username không đúng định dạng'
+    // },
+    maxLength: {
+      value: 160,
+      message: 'Độ dài từ 6 - 160 ký tự'
+    },
+    minLength: {
+      value: 5,
+      message: 'Độ dài từ 6 - 160 ký tự'
+    }
+  },
   email: {
     required: {
       value: true,
@@ -67,12 +85,18 @@ const handleConfirmPasswordYup = (refString: string) => {
 }
 
 export const schema = yup.object({
+  user_name: yup
+    .string()
+    .required('Username là bắt buộc')
+    .email('Username không đúng định dạng')
+    .min(5, 'Độ dài từ 6 - 160 ký tự')
+    .max(160, 'Độ dài từ 6 - 160 ký tự'),
   email: yup
     .string()
     .required('Email là bắt buộc')
     .email('Email không đúng định dạng')
-    .min(5, 'Độ dài từ 5 - 160 ký tự')
-    .max(160, 'Độ dài từ 5 - 160 ký tự'),
+    .min(5, 'Độ dài từ 6 - 160 ký tự')
+    .max(160, 'Độ dài từ 6 - 160 ký tự'),
   password: yup
     .string()
     .required('Password là bắt buộc')
@@ -83,7 +107,6 @@ export const schema = yup.object({
 
 export const userSchema = yup.object({
   name: yup.string().max(160, 'Độ dài tối đa là 160 ký tự'),
-  avatar: yup.string().max(1000, 'Độ dài tối đa là 1000 ký tự'),
   password: schema.fields['password'],
   new_password: schema.fields['password'],
   confirm_password: handleConfirmPasswordYup('new_password')
