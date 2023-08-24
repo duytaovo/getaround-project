@@ -11,7 +11,7 @@ export default function Button(props: ButtonProps) {
   const { className, isLoading, disabled, children, isNext, _className, ...rest } = props
   const newClassName = disabled ? className + ' cursor-not-allowed' : className
   return (
-    <button className={` group flex items-center justify-center `} disabled={disabled} {...rest}>
+    <button className={`${newClassName} group flex items-center justify-center`} disabled={disabled} {...rest}>
       {isLoading && (
         <svg
           aria-hidden='true'

@@ -2,10 +2,11 @@ import path from 'src/constants/path'
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
-import { routeMain } from './routes'
+import { routeMain, routeUser } from './routes'
 import { useAppDispatch, useAppSelector } from './hooks/useRedux'
 import { _getData } from './store/dataSlice'
 import { Loader } from './components/Loader'
+import UserLayout from './layouts/UserLayout/MainLayout'
 
 export default function useRouteElements() {
   const data = useAppSelector((state) => state?.data?.data)
@@ -47,11 +48,29 @@ export default function useRouteElements() {
       )
     })
   }, [path])
+  const renderRouterBookACar = useMemo(() => {
+    return routeUser.map(({ path, Component }, index) => {
+      return (
+        <Route
+          key={index}
+          path={path}
+          element={
+            <Suspense>
+              <Component />
+            </Suspense>
+          }
+        />
+      )
+    })
+  }, [path])
 
   const routeElements = (
     <Routes>
       <Route path='' element={<MainLayout />}>
         {renderRouter}
+      </Route>
+      <Route path='' element={<UserLayout />}>
+        {renderRouterBookACar}
       </Route>
     </Routes>
   )

@@ -134,9 +134,9 @@ const DropdownFour = () => {
     {
       key: '1',
       label: (
-        <div className='max-h-[50vh] overflow-y-auto overflow-x-hidden'>
-          <div className='border-b'>
-            <span>Loại xe</span>
+        <div className='max-h-[50vh] w-60 m-2 gap-y-2 overflow-y-auto overflow-x-hidden'>
+          <div className='border-b-[1px] border-solid my-2'>
+            <span className='text-base'>Loại xe</span>
             <Checkbox.Group
               value={checkedValues}
               defaultValue={['Acura']}
@@ -151,8 +151,8 @@ const DropdownFour = () => {
               onChange={onChange}
             />
           </div>
-          <div className='border-b-2'>
-            <span>Lớp xe</span>
+          <div className='border-b-[1px] my-2'>
+            <span className='text-base'>Lớp xe</span>
             <Checkbox.Group
               value={checkedValues}
               defaultValue={['Acura']}
@@ -167,8 +167,8 @@ const DropdownFour = () => {
               onChange={onChange2}
             />
           </div>
-          <div className='border-b-2'>
-            <span>Bãi đậu xe</span>
+          <div className='border-b-[1px] my-2'>
+            <span className='text-base'>Bãi đậu xe</span>
             <Checkbox.Group
               value={checkedValues}
               defaultValue={['Acura']}
@@ -183,8 +183,8 @@ const DropdownFour = () => {
               onChange={onChange3}
             />
           </div>
-          <div className='border-b-2'>
-            <span>Tính năng xe</span>
+          <div className='border-b-[1px] my-2'>
+            <span className='text-base'>Tính năng xe</span>
             <Checkbox.Group
               value={checkedValues}
               defaultValue={['Acura']}
@@ -202,16 +202,21 @@ const DropdownFour = () => {
           {/* <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
             Check all
           </Checkbox> */}
-
-          <Button onClick={() => setDropdownVisible(false)}>Done</Button>
-          <Button onClick={onReset}>Reset</Button>
+          <div className='flex justify-between gap-x-2'>
+            <Button className='w-1/2' onClick={() => setDropdownVisible(false)}>
+              Done
+            </Button>
+            <Button className='w-1/2' onClick={onReset}>
+              Reset
+            </Button>
+          </div>
         </div>
       )
     }
   ]
   const onSaveValue = () => {
     console.log()
-    setDropdownVisible(!dropdownVisible)
+    setDropdownVisible(false)
   }
   return (
     <div>
@@ -219,13 +224,11 @@ const DropdownFour = () => {
         menu={{ items }}
         placement='bottomLeft'
         arrow
-        className='text-white'
+        className='text-black/30'
         open={dropdownVisible}
-        onOpenChange={() => {
-          ;() => setDropdownVisible(!dropdownVisible)
-        }}
+        onOpenChange={onSaveValue}
       >
-        <Button onClick={() => setDropdownVisible(!dropdownVisible)} className='w-40'>
+        <Button onClick={() => setDropdownVisible(!dropdownVisible)} className='w-30'>
           Nhiều lựa chọn
         </Button>
       </Dropdown>

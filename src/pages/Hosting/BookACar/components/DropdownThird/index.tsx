@@ -68,26 +68,44 @@ const DropdownThird = () => {
     {
       key: '1',
       label: (
-        <div className='max-h-[50vh] overflow-y-auto overflow-x-hidden'>
-          <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
-            Check all
-          </Checkbox>
-          <Checkbox.Group
-            value={checkedValues}
-            defaultValue={['Acura']}
-            onChange={(values: any) => setCheckedValues(values)}
-            className='flex flex-col'
-          ></Checkbox.Group>
-          <CheckboxGroup
-            className='flex flex-col flex-grow'
-            options={plainOptions}
-            defaultValue={['Acura']}
-            value={checkedList}
-            onChange={onChange}
-          />
-
-          <Button onClick={() => setDropdownVisible(false)}>Done</Button>
-          <Button onClick={() => setCheckedList([])}>Reset</Button>
+        <div className='max-h-[50vh] text-lg overflow-y-auto overflow-x-hidden w-52  flex flex-col justify-between'>
+          <div>
+            <Checkbox
+              className='mb-2 mt-2 '
+              indeterminate={indeterminate}
+              onChange={onCheckAllChange}
+              checked={checkAll}
+            >
+              Check all
+            </Checkbox>
+            <Checkbox.Group
+              value={checkedValues}
+              defaultValue={['Acura']}
+              onChange={(values: any) => setCheckedValues(values)}
+              className='flex flex-col text-lg'
+              style={{
+                fontSize: '50px'
+              }}
+            ></Checkbox.Group>
+            <CheckboxGroup
+              className='flex flex-col flex-grow gap-y-2 text-lg'
+              options={plainOptions}
+              defaultValue={['Acura']}
+              value={checkedList}
+              onChange={onChange}
+              style={{
+                fontSize: '50px'
+              }}
+            />
+          </div>
+          <div className='flex justify-between mt-3 gap-x-2'>
+            <Button className='w-1/2' onClick={() => setCheckedList([])}>
+              Đặt lại
+            </Button>
+            <Button className='w-1/2' onClick={() => setDropdownVisible(false)}>
+              Lưu
+            </Button>
+          </div>
         </div>
       )
     }
@@ -98,8 +116,15 @@ const DropdownThird = () => {
   }
   return (
     <div>
-      <Dropdown menu={{ items }} placement='bottomLeft' arrow className='text-white' open={dropdownVisible}>
-        <Button onClick={() => setDropdownVisible(!dropdownVisible)} className='w-40'>
+      <Dropdown
+        menu={{ items }}
+        onOpenChange={onSaveValue}
+        placement='bottomLeft'
+        arrow
+        className='text-black/30'
+        open={dropdownVisible}
+      >
+        <Button onClick={() => setDropdownVisible(!dropdownVisible)} className='w-30'>
           Chọn loại xe
         </Button>
       </Dropdown>
