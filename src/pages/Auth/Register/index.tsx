@@ -70,7 +70,7 @@ const Register = () => {
   return (
     <div className='w-full flex justify-center'>
       <Helmet>
-        <title>Login </title>
+        <title>Register</title>
         <meta name='description' content='Trang đăng nhập' />
       </Helmet>
       <div className='lg:col-span-2 lg:col-start-4 bg-white w-1/2 md:w-full justify-center m-10 rounded-2xl'>
@@ -80,13 +80,21 @@ const Register = () => {
         <form className='rounded p-10 shadow-sm' onSubmit={onSubmit} noValidate>
           <div className=' flex items-center justify-center text-[25px] text-black'>Đăng ký</div>
 
-          <Input
+          {/* <Input
             name='email'
             register={register}
             type='text'
             className='mt-8'
             errorMessage={errors.email?.message}
             placeholder='User name'
+          /> */}
+          <Input
+            name='email'
+            register={register}
+            type='text'
+            className='mt-8'
+            errorMessage={errors.email?.message}
+            placeholder='Email'
           />
           <Input
             name='password'
