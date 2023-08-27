@@ -8,6 +8,7 @@ import './App.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { SwitchMode } from './components/SwitchMode'
 import TransitionsModalText from './components/Modal/ModalText'
+import Chat from './components/Chat'
 
 // const theme = createTheme({
 //   direction: 'rtl'
@@ -23,6 +24,7 @@ function App() {
       <ErrorBoundary>{routeElements}</ErrorBoundary>
       <ToastContainer />
       <SwitchMode />
+      <Chat />
     </HelmetProvider>
     // </ThemeProvider>
   )

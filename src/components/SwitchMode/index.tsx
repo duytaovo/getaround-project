@@ -10,7 +10,7 @@ export const SwitchMode: React.FC = () => {
   return permission == '-1' ? (
     <div
       onClick={() => dispatch(toggleActiveEdit())}
-      className='transition-all text-2xl shadow-lg text-mainL1 flex justify-center items-center  fixed bottom-5 right-5 z-[999999999999999] bg-white h-12 w-12 rounded-full cursor-pointer hover:scale-110 active:scale-100'
+      className='transition-all text-2xl shadow-lg text-mainL1 flex justify-center items-center  fixed bottom-5 right-5 z-[999999999999999] bg-mainColor h-12 w-12 rounded-full cursor-pointer hover:scale-110 active:scale-100'
     >
       {isActiveEdit ? <BsEyeglasses /> : <AiOutlineEdit />}
     </div>

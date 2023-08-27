@@ -1,6 +1,8 @@
 import { lazy } from 'react'
 import path from 'src/constants/path'
 import Register from 'src/pages/Auth/Register'
+import OtpPage from 'src/pages/Otp'
+import OtpTest from 'src/pages/Otp/Otp'
 
 const Home = lazy(() => import('../pages/Home'))
 const NotFound = lazy(() => import('../pages/NotFound'))
@@ -71,10 +73,10 @@ export const routeMain = [
     path: path.safetytrust,
     Component: SafetyTrust
   },
-  // {
-  //   path: path.hostBobus,
-  //   Component: HostBonus
-  // },
+  {
+    path: path.otp,
+    Component: OtpTest
+  },
   {
     path: path.login,
     Component: Login

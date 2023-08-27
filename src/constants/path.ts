@@ -2,6 +2,7 @@ const path = {
   home: '/',
   login: '/login',
   logout: '/logout',
+  otp: '/otp',
   register: '/register',
   howitwork: '/our-solution/technology',
   howitworkconnect: '/our-solution/terms-conditions',
