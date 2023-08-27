@@ -3,6 +3,7 @@ import path from 'src/constants/path'
 import Register from 'src/pages/Auth/Register'
 
 const Home = lazy(() => import('../pages/Home'))
+const Car = lazy(() => import('../pages/User/Car'))
 const NotFound = lazy(() => import('../pages/NotFound'))
 const HowItWork = lazy(() => import('../pages/howitwork'))
 const HowItWorkConnect = lazy(() => import('../pages/howitworkConnect'))
@@ -137,5 +138,12 @@ export const routeUser = [
   {
     path: path.bookACar,
     Component: BookACar
+  }
+]
+
+export const routeManageCar = [
+  {
+    path: path.carUser,
+    Component: Car
   }
 ]

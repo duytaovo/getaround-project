@@ -110,7 +110,7 @@ const Header = (props: Props) => {
 
   return (
     <div>
-      <div className='bg-mainBackGroundColor fixed cur z-50 flex items-center justify-between h-[100px] inset-x-0 top-0 px-10'>
+      <div className='bg-mainBackGroundColor fixed cur z-50 flex items-center justify-between h-[80px] inset-x-0 top-0 px-10'>
         <div className='flex  '>
           <div>
             <Link to='/'>
