@@ -3,6 +3,7 @@ const path = {
   login: '/login',
   logout: '/logout',
   register: '/register',
+  carUser: '/host/cars',
   howitwork: '/our-solution/technology',
   howitworkconnect: '/our-solution/terms-conditions',
   hostrefernal: '/carshare/referral',
