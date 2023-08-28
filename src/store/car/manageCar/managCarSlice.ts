@@ -7,16 +7,22 @@ export const getCars = createAsyncThunk('Car/getCars', payloadCreator(CarApi.get
 
 interface CarState {
   carList: Car[]
+  indexCardActive: number
 }
 
 const initialState: CarState = {
-  carList: []
+  carList: [],
+  indexCardActive: 0
 }
 
 const CarSlice = createSlice({
   name: 'Car',
   initialState,
-  reducers: {},
+  reducers: {
+    updateIndexCardActive: (state, action) => {
+      state.indexCardActive = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(getCars.fulfilled, (state, { payload }) => {
       state.carList = payload.data.cars
@@ -25,4 +31,5 @@ const CarSlice = createSlice({
 })
 
 const carReducer = CarSlice.reducer
+export const { updateIndexCardActive } = CarSlice.actions
 export default carReducer

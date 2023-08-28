@@ -5,8 +5,11 @@ import LocalAtmIcon from '@mui/icons-material/LocalAtm'
 import ArticleIcon from '@mui/icons-material/Article'
 import SettingsIcon from '@mui/icons-material/Settings'
 import CustomLink from 'src/components/CustomLink'
-type Props = {}
+import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
+import { updateIndexCardActive } from 'src/store/car/manageCar/managCarSlice'
+
 interface IItem {
+  id: string
   icon: ReactNode
   title: string
   to: string
@@ -14,37 +17,53 @@ interface IItem {
 
 const items: IItem[] = [
   {
+    id: '1',
     icon: <LocalCarWashIcon />,
-    title: 'Car',
-    to: '/host/cars'
+    title: 'Xe',
+    to: '/host/xe'
   },
   {
+    id: '2',
+
     icon: <CalendarTodayIcon />,
-    title: 'Reservations',
-    to: '/host/reservations'
+    title: 'Đặt chỗ',
+    to: '/host/xe'
   },
   {
+    id: '3',
     icon: <LocalAtmIcon />,
-    title: 'Earnings',
-    to: '/host/earnings'
+    title: 'Thu nhập',
+    to: '/host/xe'
   },
   {
+    id: '4',
     icon: <ArticleIcon />,
-    title: 'Claims',
-    to: '/host/claims'
+    title: 'Xác nhận',
+    to: '/host/xe'
   },
   {
+    id: '5',
     icon: <SettingsIcon />,
-    title: 'Setting',
-    to: '/host/settings#payout'
+    title: 'Cài đặt',
+    to: '/host/xe'
   }
 ]
-const SideBar = (props: Props) => {
+const SideBar = () => {
+  const { indexCardActive } = useAppSelector((state) => state.car)
+  const dispatch = useAppDispatch()
+  const handleClick = (value: number) => {
+    dispatch(updateIndexCardActive(value))
+  }
   return (
     <div>
-      {items?.map((item, index: number) => (
+      {items?.map((item: IItem, index: number) => (
         <CustomLink key={index} to={item.to}>
-          <div className={`flex justify-start m-4 mt-0 rounded-sm py-2 px-1 ${index === 0 ? 'bg-mainColor' : ''} `}>
+          <div
+            onClick={() => handleClick(index)}
+            className={`flex justify-start hover:bg-slate-100 duration-300 transition-all m-4 mt-0 rounded-xl py-2 px-1 ${
+              index === indexCardActive ? 'bg-mainColor text-white' : ''
+            } `}
+          >
             {item.icon}
             <span className='ml-2'>{item.title}</span>
           </div>
