@@ -1,8 +1,9 @@
 export const theme = {
   token: {
-    colorPrimary: "#3699d3",
+    colorPrimary: '#3699d3',
     borderRadius: 2,
     // FontFace:"Inter",
-    fontFamily:"Brown Pro, sans-serif"
-  },
+    fontFamily: 'Mulish, sans-serif'
+    // fontFamily: 'Roboto, sans-serif'
+  }
 }
