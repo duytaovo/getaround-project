@@ -97,6 +97,7 @@ export class Http {
       }
     )
   }
+
   private handleRefreshToken() {
     return this.instance
       .post<RefreshTokenReponse>(URL_REFRESH_TOKEN, {
