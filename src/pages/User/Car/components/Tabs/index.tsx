@@ -50,14 +50,14 @@ export default function CustomTabs() {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label='basic tabs example'>
-          <Tab label='Cars summary' {...a11yProps(0)} />
+          <Tab label='Tất cả xe' {...a11yProps(0)} />
           {/* <Tab label='Item Two' {...a11yProps(1)} />
           <Tab label='Item Three' {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
         <div className='mb-4 '>
-          <Search onChange={() => {}} placeholder='Search...' width='300px' />
+          <Search onChange={() => {}} placeholder='Tìm kiếm...' width='300px' />
         </div>
         <div>
           <CarTable />

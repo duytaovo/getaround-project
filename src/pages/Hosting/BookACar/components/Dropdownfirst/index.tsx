@@ -13,7 +13,6 @@ const DropdownFirst: React.FC = () => {
     setInputValue([0, 100])
   }
   const onSaveValue = () => {
-    console.log()
     setDropdownVisible(false)
   }
   const items: MenuProps['items'] = [

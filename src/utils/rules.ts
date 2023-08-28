@@ -105,6 +105,25 @@ export const schema = yup.object({
   confirm_password: handleConfirmPasswordYup('password')
 })
 
+export const schemaAddCar = yup.object({
+  license_plate: yup
+    .string()
+    .required('Biển số xe là bắt buộc')
+    .min(5, 'Độ dài từ 6 - 160 ký tự')
+    .max(160, 'Độ dài từ 6 - 160 ký tự'),
+  phoneOwner: yup
+    .string()
+    .required('Số điện thoại là bắt buộc')
+    .min(5, 'Độ dài từ 6 - 160 ký tự')
+    .max(160, 'Độ dài từ 6 - 160 ký tự'),
+  vinNumber: yup.string().required('Số VIN là bắt buộc'),
+  carBrand: yup.string().required('Nhãn hiệu là bắt buộc'),
+  carModel: yup.string().required('Kiểu xe là bắt buộc'),
+  carSeri: yup.string().required('Dòng xe là bắt buộc'),
+  carType: yup.string().required('Loại xe là bắt buộc'),
+  carLicense: yup.string().required('Loại biển xe là bắt buộc')
+})
+
 export const userSchema = yup.object({
   name: yup.string().max(160, 'Độ dài tối đa là 160 ký tự'),
   password: schema.fields['password'],

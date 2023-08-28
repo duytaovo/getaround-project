@@ -1,10 +1,18 @@
 import { Grid } from '@mui/material'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import LocalCarWashIcon from '@mui/icons-material/LocalCarWash'
 import SideBar from './components/SideBar'
 import Header from './components/Main/Header'
 import Main from './components/Main/Main'
 import CustomModal from './components/Modal'
+import {
+  getCarsBrand,
+  getCarsLicense,
+  getCarsModel,
+  getCarsSeri,
+  getCarsType
+} from 'src/store/car/manageCar/managCarSlice'
+import { useAppDispatch } from 'src/hooks/useRedux'
 type Props = {}
 
 const Car = () => {
@@ -12,6 +20,14 @@ const Car = () => {
   const handleOpen = (value: boolean) => {
     setOpen(value)
   }
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(getCarsBrand(''))
+    dispatch(getCarsLicense(''))
+    dispatch(getCarsModel(''))
+    dispatch(getCarsSeri(''))
+    dispatch(getCarsType(''))
+  }, [])
   const handleClose = () => setOpen(false)
   return (
     <div className='h-screen'>

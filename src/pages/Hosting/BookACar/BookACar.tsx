@@ -39,8 +39,6 @@ const BookACar = (props: Props) => {
 
   const getValue = (value: PlaceType | null) => {
     setValueLocal(value)
-    console.log(valueLocal)
-    console.log(value)
   }
   const GOOGLE_MAPS_API_KEY = 'AIzaSyBI7135GTiX4YEAiKVqf-sD8DizXl0ONlQ'
   const { isLoaded } = useLoadScript({
@@ -49,7 +47,6 @@ const BookACar = (props: Props) => {
   })
 
   const [map, setMap] = React.useState<any>(null)
-  console.log(map)
   const onLoad = React.useCallback(function callback(map: any) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
     const bounds = new window.google.maps.LatLngBounds(center)
@@ -68,9 +65,7 @@ const BookACar = (props: Props) => {
   useEffect(() => {
     axios
       .get(url)
-      .then((res) => {
-        console.log(res.data)
-      })
+      .then((res) => {})
       .catch((error) => console.log('erorr'))
   }, [])
 

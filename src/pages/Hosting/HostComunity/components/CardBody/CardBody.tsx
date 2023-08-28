@@ -77,7 +77,6 @@ interface PropsCardBodyParnerDeal {
 }
 export const CardBodyParnerDeal = ({ itemCardBodyParnerDeal }: PropsCardBodyParnerDeal) => {
   const data = useAppSelector((state) => state.data.data)
-  console.log(data[itemCardBodyParnerDeal.infoButton || ''])
   return (
     <div className='w-full h-[300px] text-black font-medium text-[20px] break-words bg-white flex items-center rounded-2xl border border-solid flex-row justify-around px-10 leading-5 border-[#d2d2d2]'>
       <div className='w-1/2 mr-3 lg:w-1/3'>

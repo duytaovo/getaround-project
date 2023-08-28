@@ -20,12 +20,7 @@ const Header = ({ onClick }: Props) => {
       <Button
         onClick={handleOpen}
         children={
-          <Text
-            id={`txt-buttonManageCar`}
-            tag='span'
-            content={'Share a new Car'}
-            className={`text-xl -translate-y-3`}
-          />
+          <Text id={`txt-buttonManageCar`} tag='span' content={'Thêm xe mới'} className={`text-xl -translate-y-3`} />
         }
         isNext={true}
         className='w-[200px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[50px]  rounded-lg bg-[#3699d3] hover:bg-black  '

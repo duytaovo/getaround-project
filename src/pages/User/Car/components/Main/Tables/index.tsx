@@ -154,12 +154,12 @@ const CarTable = () => {
       width: 150
     },
     // { field: 'car', headerName: 'Car', width: 150 },
-    { field: 'location', headerName: 'Location', width: 150 },
-    { field: 'brand', headerName: 'Brand', width: 150 },
-    { field: 'model', headerName: 'Model', width: 150 },
-    { field: 'type', headerName: 'Type', width: 150 },
-    { field: 'license', headerName: 'License', width: 150 },
-    { field: 'seri', headerName: 'Seri', width: 150 },
+    { field: 'location', headerName: 'Vị trí', width: 150 },
+    { field: 'brand', headerName: 'Thuơng hiệu xe', width: 150 },
+    { field: 'model', headerName: 'Kiểu xe', width: 150 },
+    { field: 'type', headerName: 'Loại xe', width: 150 },
+    { field: 'license', headerName: 'Giấy phép lái xe', width: 150 },
+    { field: 'seri', headerName: 'Dòng xe', width: 150 },
     {
       field: 'regis',
       headerName: 'Regis',
@@ -210,9 +210,7 @@ const CarTable = () => {
       sortable: false,
       renderCell: (params: any) => {
         const { row } = params
-        const handleClick = () => {
-          console.log(row)
-        }
+        const handleClick = () => {}
         return (
           <>
             <IconButton className='text-mainColor' onClick={handleClick}>

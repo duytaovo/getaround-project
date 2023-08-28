@@ -52,9 +52,7 @@ const DropdownThird = () => {
   const checkAll = plainOptions.length === checkedList.length
   const indeterminate = checkedList.length > 0 && checkedList.length < plainOptions.length
 
-  const onChangeValue = (e: CheckboxChangeEvent) => {
-    console.log(`checked = ${e.target.checked}`)
-  }
+  const onChangeValue = (e: CheckboxChangeEvent) => {}
   const CheckboxGroup = Checkbox.Group
 
   const onChange = (list: CheckboxValueType[]) => {
@@ -111,7 +109,6 @@ const DropdownThird = () => {
     }
   ]
   const onSaveValue = () => {
-    console.log()
     setDropdownVisible(false)
   }
   return (
