@@ -43,7 +43,7 @@ const HomeHeroSection: FC<IHeroSection> = ({
         backgroundImage: `url(${img})`,
         backgroundPosition: '58%'
       }}
-      className='h-[478px] bg-no-repeat bg-[length:158%] p-9 pb-6 flex flex-col items-center mb-bottom 2xl:h-fit lg:bg-cover sm:p-0'
+      className='h-[478px] bg-no-repeat bg-[length:158%] p-9 pb-6 flex flex-col items-center mb-[48px] 2xl:h-fit lg:bg-cover sm:p-0'
     >
       <div className='w-full h-[90%] max-w-[980px] bg-white/90 m-auto rounded-[20px] py-9 px-14 flex flex-col justify-center sm:px-2'>
         <div className='flex flex-col justify-center items-center pb-8'>
@@ -61,7 +61,7 @@ const HomeHeroSection: FC<IHeroSection> = ({
               id={mainText || ''}
               tag='h1'
               content={data[mainText || '']}
-              className='text-5xl tracking-tigh leading-[50px] max-w-[18ch] text-center font-bold text-black/80'
+              className='text-[48px] tracking-tigh leading-[50px] max-w-[18ch] text-center font-[700] text-textMainColor'
             />
           </div>
         </div>

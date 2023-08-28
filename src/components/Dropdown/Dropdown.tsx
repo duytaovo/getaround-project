@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { ItemType } from 'antd/es/menu/hooks/useItems'
 import { Link } from 'react-router-dom'
 import { Dropdown, Space } from 'antd'
@@ -9,8 +9,9 @@ interface Props {
   className?: string
   isOnClick?: boolean
   arrow?: boolean
+  menuStyle?: React.CSSProperties
 }
-const CustomDropDown = ({ children, items, className, isOnClick, arrow }: Props) => (
+const CustomDropDown = ({ children, items, className, isOnClick, arrow, menuStyle = {} }: Props) => (
   <div>
     {isOnClick == true ? (
       <div className={className}>
@@ -22,7 +23,12 @@ const CustomDropDown = ({ children, items, className, isOnClick, arrow }: Props)
       </div>
     ) : (
       <div className={className}>
-        <Dropdown menu={{ items }} placement='bottom' arrow={arrow} className='cursor-pointer hover:text-mainColor'>
+        <Dropdown
+          menu={{ items, style: menuStyle }}
+          placement='bottom'
+          arrow={arrow}
+          className='cursor-pointer hover:text-mainColor'
+        >
           {children}
         </Dropdown>
       </div>
