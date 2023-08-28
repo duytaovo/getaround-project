@@ -117,8 +117,10 @@ const Header = (props: Props) => {
 
   return (
     <div>
+
       <div className='bg-white-main bg-opacity-80 blur-bg fixed cur z-50 flex items-center justify-between h-[100px] inset-x-0 top-0 px-10'>
         <div className='flex  justify-center items-center'>
+
           <div>
             <Link to='/'>
               <img src='/public/logo-main.png' alt='logo' className='fill-current bg-none h-[26px]' />

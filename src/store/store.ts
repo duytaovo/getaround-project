@@ -17,6 +17,7 @@ import dataReducer from './dataSlice'
 import NoticeReducer from './notice/noticeSlice'
 import hostBonusReducer from './hosting/host_bonus/hostbonusSlice'
 import bookAcarReducer from './hosting/book_a_car/BookACarSlice'
+import carReducer from './car/manageCar/managCarSlice'
 export const store = configureStore({
   reducer: {
     data: dataReducer,
@@ -35,7 +36,8 @@ export const store = configureStore({
     safetrust: SafeTrustReducer,
     user: UserReducer,
     notice: NoticeReducer,
-    hostBonus: hostBonusReducer
+    hostBonus: hostBonusReducer,
+    car: carReducer
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]
