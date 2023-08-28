@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect, useState } from 'react'
 import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
@@ -7,9 +7,21 @@ import Input from 'src/components/Input'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
+
 import SelectMUI, { SelectChangeEvent } from '@mui/material/Select'
 import type { CustomTagProps } from 'rc-select/lib/BaseSelect'
-import { Select, Tag } from 'antd'
+import { Select, Space } from 'antd'
+import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import SelectCustom from './Select'
+import { schemaAddCar } from 'src/utils/rules'
+import Button from 'src/components/Button'
+import { toast } from 'react-toastify'
+import { ErrorResponse } from 'src/types/utils.type'
+import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
+import { unwrapResult } from '@reduxjs/toolkit'
+import { addCars } from 'src/store/car/manageCar/managCarSlice'
 interface FadeProps {
   children: React.ReactElement
   in?: boolean
@@ -56,37 +68,78 @@ const style = {
   borderRadius: 2
 }
 
-const options = [{ value: 'gold' }, { value: 'lime' }, { value: 'green' }, { value: 'cyan' }]
-
-const tagRender = (props: CustomTagProps) => {
-  const { label, value, closable, onClose } = props
-  const onPreventMouseDown = (event: React.MouseEvent<HTMLSpanElement>) => {
-    event.preventDefault()
-    event.stopPropagation()
-  }
-  return (
-    <Tag
-      color={value}
-      onMouseDown={onPreventMouseDown}
-      closable={closable}
-      onClose={onClose}
-      style={{ marginRight: 3 }}
-    >
-      {label}
-    </Tag>
-  )
-}
 type Props = {
   open: boolean
   onChange: () => void
 }
+interface FormData {
+  license_plate: string
+  phoneOwner: string
+  vinNumber: string
+  carBrand: string
+  carModel: string
+  carSeri: string
+  carType: string
+  carLicense: string
+}
 export default function CustomModal({ open, onChange }: Props) {
-  const [age, setAge] = React.useState('')
+  const { carLicense, carType, carsBrand, carsModel, carsSeri } = useAppSelector((state) => state.car)
+  const { permission, userId, userUuid } = useAppSelector((state) => state?.user)
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value)
+  const {
+    handleSubmit,
+    formState: { errors },
+    setError,
+    register,
+    setValue
+  } = useForm<FormData>({
+    resolver: yupResolver(schemaAddCar)
+  })
+  const dispatch = useAppDispatch()
+
+  const handleChange = (value: string[]) => {
+    console.log(`selected ${value}`)
   }
-  const [selectedItems, setSelectedItems] = React.useState<string[]>([])
+
+  useEffect(() => {
+    // setValue("avatar", profile?.user.avatar);
+  }, [])
+  const onSubmit = handleSubmit(async (data) => {
+    const body = {
+      userUuid: userUuid,
+      currentLocationInHCM: 'Phú Nhuận',
+      license_plate: data.license_plate,
+      phone_owner: data.phoneOwner,
+      vin_number: data.vinNumber,
+      user_id: userId,
+      car_brand_id: data.carBrand,
+      car_model_id: data.carModel,
+      car_seri_id: data.carSeri,
+      vehicle_type_id: data.carType,
+      car_license_id: data.carLicense,
+      regis: [2, 3]
+    }
+    try {
+      const res = await dispatch(addCars(body))
+      unwrapResult(res)
+      console.log(res)
+      const d = res?.payload?.data
+      if (d?.status !== 200) return toast.error(d?.message)
+      await toast.success('Thêm xe thành công ')
+    } catch (error: any) {
+      if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
+        const formError = error.response?.data.data
+        if (formError) {
+          Object.keys(formError).forEach((key) => {
+            setError(key as keyof FormData, {
+              message: formError[key as keyof FormData],
+              type: 'Server'
+            })
+          })
+        }
+      }
+    }
+  })
   return (
     <div>
       <Modal
@@ -104,114 +157,142 @@ export default function CustomModal({ open, onChange }: Props) {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <span className='text-xl p-4 mb-4'>Thêm xe </span>
-            <div className='flex items-center w-full space-x-2'>
-              <div className='w-1/2'>
-                <Input
-                  classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
-                  name='license_plate'
-                  //   register={register}
-                  type='text'
-                  className=''
-                  //   errorMessage={errors.email?.message}
-                  placeholder='Biển số xe'
-                />
+            <form className='profile-form__wrapper' autoComplete='off' onSubmit={onSubmit} noValidate>
+              <span className='text-2xl p-4 pl-0  mb-8'>Thêm xe </span>
+              <p className='mb-3'>
+                (<span className='text-red-500 mb-2'> * </span>)Trường bắt buộc
+              </p>
+              <div className='flex items-center w-full space-x-2'>
+                <div className='w-1/2'>
+                  <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '></h1>
+                  <Input
+                    classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
+                    name='license_plate'
+                    register={register}
+                    type='text'
+                    className=''
+                    errorMessage={errors.license_plate?.message}
+                    placeholder='Biển số xe'
+                  />
+                </div>
+                <div className='w-1/2'>
+                  <Input
+                    classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
+                    name='phoneOwner'
+                    register={register}
+                    type='text'
+                    className=''
+                    errorMessage={errors.phoneOwner?.message}
+                    placeholder='Số điện thoại '
+                  />
+                </div>
               </div>
-              <div className='w-1/2'>
-                <Input
-                  classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
-                  name='phoneOwner'
-                  //   register={register}
-                  type='text'
-                  className=''
-                  //   errorMessage={errors.email?.message}
-                  placeholder='Số điện thoại '
-                />
-              </div>
-            </div>
-            <Input
-              classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
-              name='vinNumber'
-              //   register={register}
-              type='text'
-              className=''
-              //   errorMessage={errors.email?.message}
-              placeholder='Số VIN '
-            />
-            {/* <FormControl sx={{ m: 1 }} size='small'> */}
-            {/* <InputLabel id='demo-select-small-label' className='mb-5'>
-                Phương thức đăng ký
-              </InputLabel> */}
-            <div className='rounded-2xl m-2'>
-              <Select
-                placeholder='Phương thức Đk'
-                value={selectedItems}
-                onChange={setSelectedItems}
-                mode='multiple'
-                tagRender={tagRender}
-                defaultValue={['gold', 'cyan']}
-                style={{ width: '100%', margin: 1, borderRadius: '20px' }}
-                options={options}
-                className='rounded-2xl'
+              <Input
+                classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
+                name='vinNumber'
+                register={register}
+                type='text'
+                className=''
+                errorMessage={errors.vinNumber?.message}
+                placeholder='Số VIN '
               />
-            </div>
-            {/* </FormControl> */}
-            <FormControl sx={{ m: 1, minWidth: 200 }} size='small'>
-              <InputLabel id='demo-select-small-label'>Hãng xe</InputLabel>
-              <SelectMUI
-                labelId='demo-select-small-label'
-                id='demo-select-small'
-                value={age}
-                label='Age'
-                onChange={handleChange}
-              ></SelectMUI>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 200 }} size='small'>
-              <InputLabel id='demo-select-small-label'>Kiểu xe</InputLabel>
-              <SelectMUI
-                labelId='demo-select-small-label'
-                id='demo-select-small'
-                value={age}
-                label='Age'
-                onChange={handleChange}
-              ></SelectMUI>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 420 }} size='small'>
-              <InputLabel id='demo-select-small-label'>Chuỗi xe</InputLabel>
-              <SelectMUI
-                labelId='demo-select-small-label'
-                id='demo-select-small'
-                value={age}
-                label='Age'
-                onChange={handleChange}
-              ></SelectMUI>
-            </FormControl>
-            <div className='w-full flex'>
-              <div className='w-1/2'>
-                <FormControl sx={{ m: 1, minWidth: 200 }} size='small'>
-                  <InputLabel id='demo-select-small-label'>Loại phương tiện</InputLabel>
-                  <SelectMUI
-                    labelId='demo-select-small-label'
-                    id='demo-select-small'
-                    value={age}
-                    label='Age'
-                    onChange={handleChange}
-                  ></SelectMUI>
-                </FormControl>
+              <div className='rounded-2xl'>
+                <Select
+                  mode='multiple'
+                  style={{ width: '100%' }}
+                  placeholder='Lựa chọn phương thức đăng ký'
+                  defaultValue={['2', '3']}
+                  onChange={handleChange}
+                  optionLabelProp='label'
+                >
+                  <Select.Option value='2' label='Cho thuê có tài xế'>
+                    <Space>2</Space>
+                  </Select.Option>
+                  <Select.Option value='3' label='Cho thuê tự lái'>
+                    <Space>3</Space>
+                  </Select.Option>
+                </Select>
               </div>
-              <div className='w-1/2'>
-                <FormControl sx={{ m: 1, minWidth: 200 }} size='small'>
-                  <InputLabel id='demo-select-small-label'>Loại biển xe</InputLabel>
-                  <SelectMUI
-                    labelId='demo-select-small-label'
-                    id='demo-select-small'
-                    value={age}
-                    label='Age'
-                    onChange={handleChange}
-                  ></SelectMUI>
-                </FormControl>
+              <div className='space-x-2 flex flex-row justify-between mt-2'>
+                <SelectCustom
+                  className={''}
+                  id='carBrand'
+                  label='Hãng xe'
+                  placeholder='Vui lòng chọn'
+                  defaultValue={''}
+                  options={carsBrand}
+                  register={register}
+                  isBrand={true}
+                >
+                  {errors.carBrand?.message}
+                </SelectCustom>
+                <SelectCustom
+                  className={''}
+                  id='carModel'
+                  label='Kiểu xe'
+                  placeholder='Vui lòng chọn'
+                  defaultValue={''}
+                  options={carsModel}
+                  register={register}
+                  isModel={true}
+                >
+                  {errors.carModel?.message}
+                </SelectCustom>
               </div>
-            </div>
+              <SelectCustom
+                className={'mt-2'}
+                id='carSeri'
+                label='Dòng xe'
+                placeholder='Vui lòng chọn'
+                defaultValue={''}
+                options={carsSeri}
+                register={register}
+                isCarSeri={true}
+              >
+                {errors.carSeri?.message}
+              </SelectCustom>
+
+              <div className='space-x-2 mt-2 flex flex-row justify-between w-full'>
+                <SelectCustom
+                  className={''}
+                  id='carType'
+                  label='Loại phương tiện'
+                  placeholder='Vui lòng chọn'
+                  defaultValue={''}
+                  options={carType}
+                  register={register}
+                  isCarType={true}
+                >
+                  {errors.carType?.message}
+                </SelectCustom>
+                <SelectCustom
+                  className={''}
+                  id='carLicense'
+                  label='Loại biển xe'
+                  placeholder='Vui lòng chọn'
+                  defaultValue={''}
+                  options={carLicense}
+                  register={register}
+                  isCarLicense={true}
+                >
+                  {errors.carLicense?.message}
+                </SelectCustom>
+              </div>
+              <div className='flex space-x-2 mt-6'>
+                <Button
+                  type='submit'
+                  className='flex w-1/2 items-center justify-center rounded-xl bg-mainColor py-4 px-2 text-base text-white hover:opacity-80'
+                >
+                  Lưu
+                </Button>
+                <Button
+                  type='submit'
+                  className='flex w-1/2 items-center justify-center rounded-xl bg-red-500 py-4 px-2 text-base text-white hover:opacity-80'
+                >
+                  Hủy
+                </Button>
+              </div>
+            </form>
           </Box>
         </Fade>
       </Modal>

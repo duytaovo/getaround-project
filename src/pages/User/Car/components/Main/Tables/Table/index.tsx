@@ -37,7 +37,7 @@ const DataTable = ({ rows, columns, totalPages, totalItems = 0, handleOnChange }
         />
       </div>
       <div className=''>
-        <p className=''>{`Total: ${totalItems}`}</p>
+        {/* <p className=''>{`Total: ${totalItems}`}</p> */}
         {/* <PaginationCustom totalPages={totalPages} handleOnChange={handleOnChange} /> */}
       </div>
     </Paper>

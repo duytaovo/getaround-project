@@ -44,7 +44,8 @@ const Login = () => {
       if (d?.result == 0) return toast.error(d?.message)
       await setAccessTokenToLS(d?.accessToken)
       // await getAccessTokenFromLS()
-      await dispatch(updateUser(isAccessTokenExpired()))
+      const res2 = await dispatch(updateUser(isAccessTokenExpired()))
+      console.log(res2)
       await setIsAuthenticated(true)
       await toast.success('Đăng nhập thành công ')
 

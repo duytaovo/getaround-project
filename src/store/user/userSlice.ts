@@ -8,9 +8,10 @@ import { toast } from 'react-toastify'
 export const login = createAsyncThunk('auth/login', payloadCreator(authApi.login))
 
 interface DecodedToken {
-  userID: number
+  userId: number
   permissions: string
   username: string
+  userUuid: string
 }
 
 interface IUser {
@@ -18,6 +19,8 @@ interface IUser {
   accessToken: string
   permission: string
   isActiveEdit?: boolean
+  userUuid: any
+  userId: number
 }
 
 let decodeToken: DecodedToken
@@ -27,25 +30,35 @@ export const isAccessTokenExpired = (): any => {
   }
   try {
     decodeToken = jwtDecode(getAccessTokenFromLS() || '') as DecodedToken
-    return decodeToken.permissions
+    const decoded = {
+      permission: decodeToken.permissions,
+      userId: decodeToken.userId,
+      userUuid: decodeToken.userUuid
+    }
+    return decoded
   } catch (error) {
     toast.error('Invalid token format')
     return ''
   }
 }
+console.log(isAccessTokenExpired().userId)
 const initialState: IUser = {
   name: 'admin',
   accessToken: '123',
-  permission: isAccessTokenExpired() || '0',
-  isActiveEdit: false
+  permission: isAccessTokenExpired().permission || '0',
+  isActiveEdit: false,
+  userId: isAccessTokenExpired().userId | 0,
+  userUuid: isAccessTokenExpired().userUuid | 0
 }
-
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    updateUser: (state, action: { payload: string }) => {
-      state.permission = action?.payload
+    updateUser: (state, action: { payload: any }) => {
+      console.log(action.payload)
+      state.permission = action?.payload?.permissions
+      state.userId = action?.payload?.userId
+      state.userUuid = action?.payload?.userUuid
     },
 
     toggleActiveEdit: (state) => {

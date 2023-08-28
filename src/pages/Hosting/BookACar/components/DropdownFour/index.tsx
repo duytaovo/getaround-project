@@ -102,9 +102,7 @@ const DropdownFour = () => {
   const checkAll = plainOptionsLoaiXe.length === checkedList.length
   const indeterminate = checkedList.length > 0 && checkedList.length < plainOptionsLoaiXe.length
 
-  const onChangeValue = (e: CheckboxChangeEvent) => {
-    console.log(`checked = ${e.target.checked}`)
-  }
+  const onChangeValue = (e: CheckboxChangeEvent) => {}
   const CheckboxGroup = Checkbox.Group
 
   const onChange = (list: CheckboxValueType[]) => {
@@ -215,7 +213,6 @@ const DropdownFour = () => {
     }
   ]
   const onSaveValue = () => {
-    console.log()
     setDropdownVisible(false)
   }
   return (
