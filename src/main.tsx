@@ -9,11 +9,12 @@ import { Provider } from 'react-redux'
 import store from './store/store'
 import { ConfigProvider } from 'antd'
 import { theme } from './constants/antdConfig'
+import viVN from 'antd/locale/vi_VN'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ConfigProvider theme={theme}>
+      <ConfigProvider theme={theme} locale={viVN}>
         <Provider store={store}>
           <App />
         </Provider>

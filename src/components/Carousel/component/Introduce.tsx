@@ -41,7 +41,7 @@ const Introduce = ({
         />
         {/* <img src={data[item?.img || '']} alt='' className={`w-[410px] h-[290px] ${classNameImage}`} /> */}
       </div>
-      <div className='flex justify-center flex-col h-[260px] w-fit m-[15px]  md:overflow-hidden p-6'>
+      <div className='flex justify-center flex-col h-[260px] xl:p-0 w-fit m-[15px]  md:overflow-hidden p-6'>
         <Text
           id={`${prefix}_txtCardCarouselHeader_${id}`}
           tag='span'
