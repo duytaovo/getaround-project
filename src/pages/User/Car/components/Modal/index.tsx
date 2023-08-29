@@ -22,6 +22,7 @@ import { ErrorResponse } from 'src/types/utils.type'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { addCars } from 'src/store/car/manageCar/managCarSlice'
+import { Navigate, useNavigate } from 'react-router-dom'
 interface FadeProps {
   children: React.ReactElement
   in?: boolean
@@ -85,7 +86,7 @@ interface FormData {
 export default function CustomModal({ open, onChange }: Props) {
   const { carLicense, carType, carsBrand, carsModel, carsSeri } = useAppSelector((state) => state.car)
   const { permission, userId, userUuid } = useAppSelector((state) => state?.user)
-
+  const navigate = useNavigate()
   const {
     handleSubmit,
     formState: { errors },
@@ -126,6 +127,7 @@ export default function CustomModal({ open, onChange }: Props) {
       const d = res?.payload?.data
       if (d?.status !== 200) return toast.error(d?.message)
       await toast.success('Thêm xe thành công ')
+      navigate('/host/xe')
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
         const formError = error.response?.data.data
