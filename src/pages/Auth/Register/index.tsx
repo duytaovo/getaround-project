@@ -41,21 +41,13 @@ const Register = () => {
       confirmPass: data.confirm_password
     }
     try {
+      setIsSubmitting(true)
       const res = await dispatch(registerUser(body))
       unwrapResult(res)
 
       const d = res?.payload?.data
       if (d?.result == 0) return toast.error(d?.message)
-      // await setAccessTokenToLS(d?.accessToken)
-      // await getAccessTokenFromLS()
-      // await dispatch(updateUser(isAccessTokenExpired()))
-      // await setIsAuthenticated(true)
       await toast.success('Đăng ký thành công vui lòng kiểm tra email để xác thực tài khoản!')
-
-      // setTimeout(async () => {
-      //   await navigate('/login')
-      //   await window.location.reload()
-      // }, 1000)
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
         const formError = error.response?.data.data
@@ -68,6 +60,8 @@ const Register = () => {
           })
         }
       }
+    } finally {
+      setIsSubmitting(false)
     }
   })
 
