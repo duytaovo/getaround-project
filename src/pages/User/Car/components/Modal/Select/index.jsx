@@ -40,10 +40,7 @@ export default function SelectCustom({
   }
 
   // handle change district
-  const handleChange = (id) => {
-    console.log(id)
-    // dispatch(action(id))
-  }
+  const handleChange = (id) => {}
 
   return (
     <>

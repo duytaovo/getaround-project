@@ -26,12 +26,12 @@ const DataTable = ({ rows, columns, totalPages, totalItems = 0, handleOnChange }
           rowHeight={60}
           // disableColumnFilter={true}
           disableDensitySelector={true}
-          // initialState={{
-          //   pagination: {
-          //     paginationModel: { page: 0, pageSize: 15 }
-          //   }
-          // }}
-          // pageSizeOptions={[5, 10]}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 }
+            }
+          }}
+          pageSizeOptions={[5, 10]}
           // disableColumnMenu={true}
           // hideFooterPagination
         />

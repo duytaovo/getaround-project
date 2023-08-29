@@ -41,14 +41,13 @@ export const isAccessTokenExpired = (): any => {
     return ''
   }
 }
-console.log(isAccessTokenExpired().userId)
 const initialState: IUser = {
   name: 'admin',
   accessToken: '123',
   permission: isAccessTokenExpired().permission || '0',
   isActiveEdit: false,
   userId: isAccessTokenExpired().userId | 0,
-  userUuid: isAccessTokenExpired().userUuid | 0
+  userUuid: isAccessTokenExpired().userUuid
 }
 const userSlice = createSlice({
   name: 'user',

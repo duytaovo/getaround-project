@@ -8,6 +8,7 @@ const URL_GET_CAR_MODEL = '/carmodel/getcarmodel'
 const URL_GET_CAR_SERI = '/carseri/getcarseri'
 const URL_GET_CAR_TYPE = '/vehicletype/getvehicletype'
 const URL_GET_CAR_LICENSE = '/licensePlateType/getlicensePlateType'
+const URL_GET_CAR_REGIS = 'regiterMethods/getregistrationmethod'
 const CarApi = {
   getCar() {
     return http_auth.get<SuccessResponse<Car>>(URL_GET_CAR, {})
@@ -26,6 +27,9 @@ const CarApi = {
   },
   getCarLicense() {
     return http_auth.get<SuccessResponse<any>>(URL_GET_CAR_LICENSE, {})
+  },
+  getCarRegis() {
+    return http_auth.get<SuccessResponse<any>>(URL_GET_CAR_REGIS, {})
   },
   addCar(data: any) {
     return http_auth.post('/car/create-a-car', data)
