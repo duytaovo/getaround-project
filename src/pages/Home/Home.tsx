@@ -177,7 +177,7 @@ const Home = (props: Props) => {
           fontSize={30}
           breakLineAt={6}
           className='text-center'
-          color='rgba(255,255,255, .8)'
+          color='rgba(0,0,0, .8)'
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
@@ -187,11 +187,11 @@ const Home = (props: Props) => {
             numberItem={3}
             numberItemScroll={1}
             classNameContainer='px-6'
-            className='bg-mainColor/20 rounded-md p-2 overflow-hidden object-cover h-[360px]'
+            className='bg-white/75 rounded-md p-2 overflow-hidden object-cover h-[360px]'
             classNameImage='rounded-md w-full h-[160px] object-cover'
-            classNameTitle='text-[14px] leading-[22px] text-white/40 pt-6'
-            classNameContent='text-white/90 text-[24px] leading-[25px] break-words py-6'
-            classNameTime='text-[14px] leading-[22px] text-white/40'
+            classNameTitle='text-[14px] leading-[22px]  pt-6'
+            classNameContent=' text-[24px] leading-[25px] break-words py-6'
+            classNameTime='text-[14px] leading-[22px] '
             isContent={true}
             isTime={true}
             isTitle={true}
@@ -209,7 +209,7 @@ const Home = (props: Props) => {
       >
         <div className='flex xl:flex-col'>
           <CustomeCommonQuestions
-            titleClassName='text-white/90 text-bold text-[18px]'
+            titleClassName='text-bold text-[18px]'
             items={homePageData.qAndASection.itemsData}
             className='w-1/2 xl:w-full'
             paddingRightSingleCommonQuestion={10}

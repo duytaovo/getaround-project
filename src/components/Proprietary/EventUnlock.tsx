@@ -116,7 +116,7 @@ const Proprietary: FC<Props> = ({ Data }) => {
                 <Text
                   id={ProprietaryST.linkText}
                   tag='strong'
-                  content={data[ProprietaryST.linkText] || 'Read more'}
+                  content={data[ProprietaryST.linkText] || 'Xem thêm...'}
                   className='text-mainColor delay-[0.2s] underline touch-manipulation bg-transparent cursor-pointer outline-none hover:text-mainColor hover:none-underline leading-4'
                   // className='font-bold'
                 />

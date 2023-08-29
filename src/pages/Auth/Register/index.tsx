@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import { useAppDispatch } from 'src/hooks/useRedux'
@@ -10,10 +10,11 @@ import Input from 'src/components/Input'
 import { Schema, schema } from 'src/utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { unwrapResult } from '@reduxjs/toolkit'
-import { isAccessTokenExpired, login, updateUser } from 'src/store/user/userSlice'
+import { isAccessTokenExpired, login, registerUser, updateUser } from 'src/store/user/userSlice'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { getAccessTokenFromLS, setAccessTokenToLS } from 'src/utils/auth'
 import { Helmet } from 'react-helmet-async'
+import { CircularProgress } from '@mui/material'
 
 type FormData = Pick<Schema, 'email' | 'password' | 'confirm_password'>
 const loginSchema = schema.pick(['email', 'password', 'confirm_password'])
@@ -22,6 +23,8 @@ const Register = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const { setIsAuthenticated } = useContext(AppContext)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const {
     handleSubmit,
     formState: { errors },
@@ -34,24 +37,25 @@ const Register = () => {
   const onSubmit = handleSubmit(async (data) => {
     const body = {
       email: data.email,
-      password: data.password
+      password: data.password,
+      confirmPass: data.confirm_password
     }
     try {
-      const res = await dispatch(login(body))
+      const res = await dispatch(registerUser(body))
       unwrapResult(res)
 
       const d = res?.payload?.data
       if (d?.result == 0) return toast.error(d?.message)
-      await setAccessTokenToLS(d?.accessToken)
+      // await setAccessTokenToLS(d?.accessToken)
       // await getAccessTokenFromLS()
-      await dispatch(updateUser(isAccessTokenExpired()))
-      await setIsAuthenticated(true)
-      await toast.success('Đăng ký thành công ')
+      // await dispatch(updateUser(isAccessTokenExpired()))
+      // await setIsAuthenticated(true)
+      await toast.success('Đăng ký thành công vui lòng kiểm tra email để xác thực tài khoản!')
 
-      setTimeout(async () => {
-        await navigate('/')
-        await window.location.reload()
-      }, 1000)
+      // setTimeout(async () => {
+      //   await navigate('/login')
+      //   await window.location.reload()
+      // }, 1000)
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
         const formError = error.response?.data.data
@@ -80,14 +84,6 @@ const Register = () => {
         <form className='rounded p-10 shadow-sm' onSubmit={onSubmit} noValidate>
           <div className=' flex items-center justify-center text-[25px] text-black'>Đăng ký</div>
 
-          {/* <Input
-            name='email'
-            register={register}
-            type='text'
-            className='mt-8'
-            errorMessage={errors.email?.message}
-            placeholder='User name'
-          /> */}
           <Input
             name='email'
             register={register}
@@ -121,8 +117,14 @@ const Register = () => {
               type='submit'
               className='flex w-full items-center justify-center rounded-[30px] bg-mainColor py-4 px-2 text-sm uppercase text-white hover:opacity-80'
             >
-              Đăng nhập
+              {isSubmitting ? <CircularProgress sx={{ width: '25px', height: '25px' }} disableShrink /> : 'Đăng ký'}
             </Button>
+            <span className='text-base text-center flex w-full items-center justify-center mt-2 '>Hoặc</span>
+            <div onClick={() => navigate('/login')} className='mt-3'>
+              <Button className='flex w-full items-center justify-center rounded-[30px] bg-mainL1 py-4 px-2 text-sm uppercase text-white hover:opacity-80'>
+                Đăng nhập
+              </Button>
+            </div>
           </div>
         </form>
       </div>

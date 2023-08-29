@@ -83,7 +83,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
   const dispatch = useAppDispatch()
 
   const show = () => {
-    permission == '-1' && isActiveEdit && setEnable(true)
+    permission == -1 && isActiveEdit && setEnable(true)
   }
   const hidden = () => setEnable(false)
 
@@ -128,14 +128,14 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
 
   return (
     <div>
-      {permission == '-1' && enable && isActiveEdit ? (
+      {permission == -1 && enable && isActiveEdit ? (
         <div>
           <div className=''>
             <div ref={cRef} className=''>
               <Wrapper
                 onClick={show}
                 className={`${className}  border border-transparent ${
-                  permission == '-1' && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
+                  permission == -1 && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
                 }`}
                 {...props}
               >
@@ -192,7 +192,7 @@ export const Text: FC<Iprops> = ({ id, tag, className, content, ...props }) => {
           <Wrapper
             onClick={show}
             className={`${className} border border-transparent ${
-              permission == '-1' && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
+              permission == -1 && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           >

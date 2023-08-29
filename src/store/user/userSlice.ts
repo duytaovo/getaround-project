@@ -6,10 +6,11 @@ import { getAccessTokenFromLS } from 'src/utils/auth'
 import { toast } from 'react-toastify'
 
 export const login = createAsyncThunk('auth/login', payloadCreator(authApi.login))
+export const registerUser = createAsyncThunk('auth/registerUser', payloadCreator(authApi.register))
 
 interface DecodedToken {
   userId: number
-  permissions: string
+  permissions: number
   username: string
   userUuid: string
 }
@@ -17,7 +18,7 @@ interface DecodedToken {
 interface IUser {
   name: string
   accessToken: string
-  permission: string
+  permission: number
   isActiveEdit?: boolean
   userUuid: any
   userId: number
@@ -37,14 +38,16 @@ export const isAccessTokenExpired = (): any => {
     }
     return decoded
   } catch (error) {
-    toast.error('Invalid token format')
+    toast.error('Token không đúng định dạng')
     return ''
   }
 }
+
+console.log(isAccessTokenExpired())
 const initialState: IUser = {
   name: 'admin',
   accessToken: '123',
-  permission: isAccessTokenExpired().permission || '0',
+  permission: isAccessTokenExpired().permission || 0,
   isActiveEdit: false,
   userId: isAccessTokenExpired().userId | 0,
   userUuid: isAccessTokenExpired().userUuid
@@ -54,8 +57,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     updateUser: (state, action: { payload: any }) => {
-      console.log(action.payload)
-      state.permission = action?.payload?.permissions
+      state.permission = action?.payload?.permission
       state.userId = action?.payload?.userId
       state.userUuid = action?.payload?.userUuid
     },

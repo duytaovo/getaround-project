@@ -20,6 +20,7 @@ import { isAccessTokenExpired } from 'src/store/user/userSlice'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
+import { CircularProgress, OutlinedInput } from '@mui/material'
 interface FadeProps {
   children: React.ReactElement
   in?: boolean
@@ -107,6 +108,7 @@ interface FormData {
 export default function CustomModal({ open, onChange }: Props) {
   const { carLicense, carType, carsBrand, carsModel, carsSeri, carRegis } = useAppSelector((state) => state.car)
   const { userId } = useAppSelector((state) => state?.user)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const {
     handleSubmit,
     formState: { errors },
@@ -118,17 +120,6 @@ export default function CustomModal({ open, onChange }: Props) {
   })
   const dispatch = useAppDispatch()
   const [disabled, setDisabled] = useState<boolean>(false)
-  const [personName, setPersonName] = React.useState<string[]>([])
-
-  const handleChange = (event: any) => {
-    const {
-      target: { value }
-    } = event
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value
-    )
-  }
 
   useEffect(() => {
     setValue('carBrand', '')
@@ -157,8 +148,8 @@ export default function CustomModal({ open, onChange }: Props) {
       regis: data.regis
     }
     try {
+      setIsSubmitting(true)
       const res = await dispatch(addCars(body))
-      await setDisabled(true)
       unwrapResult(res)
       const d = res?.payload?.data
       if (d?.status !== 200) return toast.error(d?.message)
@@ -178,6 +169,8 @@ export default function CustomModal({ open, onChange }: Props) {
           })
         }
       }
+    } finally {
+      setIsSubmitting(false)
     }
   })
 
@@ -259,15 +252,18 @@ export default function CustomModal({ open, onChange }: Props) {
                 placeholder='Vị trí hiện tại'
               />
               <div className='rounded-2xl'>
-                <FormControl sx={{ m: 1 }} fullWidth>
+                <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '>
+                  Phương thức đăng ký
+                  <span className='text-red-500 text-sm font-medium '>*</span>
+                </h1>
+                <FormControl fullWidth>
                   <Select
                     // labelId='demo-multiple-checkbox-label'
                     multiple
-                    // placeholder='Chọn 1 hoặc nhiều phương thức ĐK'
+                    placeholder='Chọn 1 hoặc nhiều phương thức ĐK'
                     // value={personName}
-                    defaultValue={[2, 3]}
+                    defaultValue={[]}
                     // input={<OutlinedInput label='Phương thức đăng ký' />}
-
                     MenuProps={MenuProps}
                     {...register('regis')}
                     displayEmpty
@@ -291,6 +287,7 @@ export default function CustomModal({ open, onChange }: Props) {
                       )
                     })}
                   </Select>
+                  <p className='text-red-500 text-left text-sm'>{errors.regis?.message}</p>
                 </FormControl>
               </div>
 
@@ -366,7 +363,7 @@ export default function CustomModal({ open, onChange }: Props) {
                     disabled == true && 'disabled'
                   }`}
                 >
-                  Lưu
+                  {isSubmitting ? <CircularProgress sx={{ width: '25px', height: '25px' }} disableShrink /> : 'Lưu'}
                 </Button>
                 <Button
                   onClick={onClickHuy}

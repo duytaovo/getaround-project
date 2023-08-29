@@ -123,7 +123,7 @@ export const schemaAddCar = yup.object({
   carType: yup.string().required('Loại xe là bắt buộc'),
   carLicense: yup.string().required('Loại biển xe là bắt buộc'),
   currentLocation: yup.string().required('Địa điểm là bắt buộc'),
-  regis: yup.array()
+  regis: yup.array().required('Phương thức đăng ký là bắt buộc')
 })
 
 export const userSchema = yup.object({

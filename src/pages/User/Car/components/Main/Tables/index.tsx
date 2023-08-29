@@ -129,8 +129,10 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-
-const CarTable = () => {
+type Props = {
+  onClick: (value: boolean) => void
+}
+const CarTable = ({ onClick }: Props) => {
   const dispatch = useAppDispatch()
   const { carList } = useAppSelector((state) => state.car)
   useEffect(() => {
@@ -146,6 +148,9 @@ const CarTable = () => {
     headerName: string
     width: number
   }
+  const handleOpen = () => {
+    onClick && onClick(true)
+  }
   const columns = [
     // { field: 'id', headerName: 'ID', width: 70 },
     {
@@ -153,7 +158,6 @@ const CarTable = () => {
       headerName: 'Email',
       width: 150
     },
-    // { field: 'car', headerName: 'Car', width: 150 },
     { field: 'location', headerName: 'Vị trí', width: 150 },
     { field: 'brand', headerName: 'Thuơng hiệu xe', width: 150 },
     { field: 'model', headerName: 'Kiểu xe', width: 150 },
@@ -162,7 +166,7 @@ const CarTable = () => {
     { field: 'seri', headerName: 'Dòng xe', width: 150 },
     {
       field: 'regis',
-      headerName: 'Regis',
+      headerName: 'Phương thức đăng ký',
       width: 150,
       renderCell: (params: any) => {
         const { row } = params
@@ -177,35 +181,35 @@ const CarTable = () => {
         )
       }
     },
-    {
-      field: 'status',
-      headerName: 'Status',
-      width: 150,
-      renderCell: (params: any) => {
-        const { row } = params
-        const handleChangeStatus = (e: any) => {}
-        return (
-          <FormControl sx={{ m: 1, minWidth: 120 }} size='small'>
-            <InputLabel id='demo-select-small-label'>Status</InputLabel>
-            <Select
-              labelId='demo-select-small-label'
-              id='demo-select-small'
-              value={status}
-              label='Status'
-              onChange={handleChange}
-            >
-              <MenuItem value={0}>Not verify</MenuItem>
-              <MenuItem value={1}>Verify</MenuItem>
-              <MenuItem value={2}>Disable</MenuItem>
-              <MenuItem value={3}>Enable</MenuItem>
-            </Select>
-          </FormControl>
-        )
-      }
-    },
+    // {
+    //   field: 'status',
+    //   headerName: 'Trạng thái',
+    //   width: 150,
+    //   renderCell: (params: any) => {
+    //     const { row } = params
+    //     const handleChangeStatus = (e: any) => {}
+    //     return (
+    //       <FormControl sx={{ m: 1, minWidth: 120 }} size='small'>
+    //         <InputLabel id='demo-select-small-label'>Trạng thái</InputLabel>
+    //         <Select
+    //           labelId='demo-select-small-label'
+    //           id='demo-select-small'
+    //           value={status}
+    //           label='Status'
+    //           onChange={handleChange}
+    //         >
+    //           <MenuItem value={0}>Not verify</MenuItem>
+    //           <MenuItem value={1}>Verify</MenuItem>
+    //           <MenuItem value={2}>Disable</MenuItem>
+    //           <MenuItem value={3}>Enable</MenuItem>
+    //         </Select>
+    //       </FormControl>
+    //     )
+    //   }
+    // },
     {
       field: 'action',
-      headerName: 'Action',
+      headerName: 'Tùy chỉnh',
       width: 120,
       sortable: false,
       renderCell: (params: any) => {
@@ -213,7 +217,7 @@ const CarTable = () => {
         const handleClick = () => {}
         return (
           <>
-            <IconButton className='text-mainColor' onClick={handleClick}>
+            <IconButton onClick={handleOpen} className='text-mainColor'>
               <EditIcon
                 className='text-mainColor'
                 sx={{
@@ -221,7 +225,7 @@ const CarTable = () => {
                 }}
               />
             </IconButton>
-            <Tooltip title='Change account status'>
+            <Tooltip title='Thay đổi trạng thái xe' className='disabled:bg-white'>
               <IconButton>
                 <DeleteIcon className='text-red-700' />
               </IconButton>

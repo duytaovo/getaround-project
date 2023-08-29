@@ -16,13 +16,13 @@ const SingleCommonQuestion: FC<Props> = ({ contents, path, paddingRight }) => {
       style={{
         paddingRight: `${paddingRight}%`
       }}
-      className='text-justify text-white/50'
+      className='text-justify '
     >
       {contents.map((sentence, index) => (
         <Text className='pb-2' key={index} content={data[sentence]} id={sentence} tag='p' />
       ))}
       <Link to={path || '/'} className='text-mainColor'>
-        Read more
+        Xem thêm...
       </Link>
     </div>
   )
