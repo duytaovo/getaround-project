@@ -4,13 +4,7 @@ import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import { useSpring, animated } from '@react-spring/web'
 import Input from 'src/components/Input'
-import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
-
-import SelectMUI, { SelectChangeEvent } from '@mui/material/Select'
-import type { CustomTagProps } from 'rc-select/lib/BaseSelect'
-import { Select, Space } from 'antd'
+import { Space } from 'antd'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -22,7 +16,15 @@ import { ErrorResponse } from 'src/types/utils.type'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { addCars } from 'src/store/car/manageCar/managCarSlice'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { isAccessTokenExpired } from 'src/store/user/userSlice'
+import OutlinedInput from '@mui/material/OutlinedInput'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import ListItemText from '@mui/material/ListItemText'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
+import Checkbox from '@mui/material/Checkbox'
 interface FadeProps {
   children: React.ReactElement
   in?: boolean
@@ -55,6 +57,29 @@ const Fade = React.forwardRef<HTMLDivElement, FadeProps>(function Fade(props, re
     </animated.div>
   )
 })
+const ITEM_HEIGHT = 48
+const ITEM_PADDING_TOP = 8
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250
+    }
+  }
+}
+
+const names = [
+  'Oliver Hansen',
+  'Van Henry',
+  'April Tucker',
+  'Ralph Hubbard',
+  'Omar Alexander',
+  'Carlos Abbott',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder'
+]
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -63,7 +88,6 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 500,
   bgcolor: 'background.paper',
-  //   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
   borderRadius: 2
@@ -82,10 +106,12 @@ interface FormData {
   carSeri: string
   carType: string
   carLicense: string
+  currentLocation: string
+  regis: string[]
 }
 export default function CustomModal({ open, onChange }: Props) {
-  const { carLicense, carType, carsBrand, carsModel, carsSeri } = useAppSelector((state) => state.car)
-  const { permission, userId, userUuid } = useAppSelector((state) => state?.user)
+  const { carLicense, carType, carsBrand, carsModel, carsSeri, carRegis } = useAppSelector((state) => state.car)
+  const { userId } = useAppSelector((state) => state?.user)
   const navigate = useNavigate()
   const {
     handleSubmit,
@@ -93,22 +119,38 @@ export default function CustomModal({ open, onChange }: Props) {
     setError,
     register,
     setValue
-  } = useForm<FormData>({
+  } = useForm({
     resolver: yupResolver(schemaAddCar)
   })
   const dispatch = useAppDispatch()
 
-  const handleChange = (value: string[]) => {
-    console.log(`selected ${value}`)
+  const [personName, setPersonName] = React.useState<string[]>([])
+
+  const handleChange = (event: any) => {
+    const {
+      target: { value }
+    } = event
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value
+    )
   }
 
   useEffect(() => {
-    // setValue("avatar", profile?.user.avatar);
+    setValue('carBrand', '')
+    setValue('carLicense', '')
+    setValue('carModel', '')
+    setValue('carSeri', '')
+    setValue('carType', '')
+    setValue('currentLocation', '')
+    setValue('license_plate', '')
+    setValue('phoneOwner', '')
+    setValue('vinNumber', '')
   }, [])
   const onSubmit = handleSubmit(async (data) => {
     const body = {
-      userUuid: userUuid,
-      currentLocationInHCM: 'Phú Nhuận',
+      userUuid: isAccessTokenExpired().userUuid,
+      currentLocationInHCM: data.currentLocation,
       license_plate: data.license_plate,
       phone_owner: data.phoneOwner,
       vin_number: data.vinNumber,
@@ -118,15 +160,17 @@ export default function CustomModal({ open, onChange }: Props) {
       car_seri_id: data.carSeri,
       vehicle_type_id: data.carType,
       car_license_id: data.carLicense,
-      regis: [2, 3]
+      regis: data.regis
     }
+    console.log(body)
     try {
       const res = await dispatch(addCars(body))
       unwrapResult(res)
-      console.log(res)
       const d = res?.payload?.data
       if (d?.status !== 200) return toast.error(d?.message)
       await toast.success('Thêm xe thành công ')
+      onChange && onChange()
+
       navigate('/host/xe')
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
@@ -134,7 +178,7 @@ export default function CustomModal({ open, onChange }: Props) {
         if (formError) {
           Object.keys(formError).forEach((key) => {
             setError(key as keyof FormData, {
-              message: formError[key as keyof FormData],
+              // message: formError[key as keyof FormData],
               type: 'Server'
             })
           })
@@ -142,6 +186,20 @@ export default function CustomModal({ open, onChange }: Props) {
       }
     }
   })
+
+  const onClickHuy = () => {
+    setValue('carBrand', '')
+    setValue('carLicense', '')
+    setValue('carModel', '')
+    setValue('carSeri', '')
+    setValue('carType', '')
+    setValue('currentLocation', '')
+    setValue('license_plate', '')
+    setValue('phoneOwner', '')
+    setValue('vinNumber', '')
+    onChange && onChange()
+  }
+  console.log(carRegis)
   return (
     <div>
       <Modal
@@ -166,7 +224,7 @@ export default function CustomModal({ open, onChange }: Props) {
               </p>
               <div className='flex items-center w-full space-x-2'>
                 <div className='w-1/2'>
-                  <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '></h1>
+                  {/* <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '></h1> */}
                   <Input
                     classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
                     name='license_plate'
@@ -196,25 +254,54 @@ export default function CustomModal({ open, onChange }: Props) {
                 type='text'
                 className=''
                 errorMessage={errors.vinNumber?.message}
-                placeholder='Số VIN '
+                placeholder='Số khung '
+              />
+              <Input
+                classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
+                name='currentLocation'
+                register={register}
+                type='text'
+                className=''
+                errorMessage={errors.currentLocation?.message}
+                placeholder='Vị trí hiện tại'
               />
               <div className='rounded-2xl'>
-                <Select
-                  mode='multiple'
-                  style={{ width: '100%' }}
-                  placeholder='Lựa chọn phương thức đăng ký'
-                  defaultValue={['2', '3']}
-                  onChange={handleChange}
-                  optionLabelProp='label'
-                >
-                  <Select.Option value='2' label='Cho thuê có tài xế'>
-                    <Space>2</Space>
-                  </Select.Option>
-                  <Select.Option value='3' label='Cho thuê tự lái'>
-                    <Space>3</Space>
-                  </Select.Option>
-                </Select>
+                <FormControl sx={{ m: 1 }} fullWidth>
+                  <Select
+                    labelId='demo-multiple-checkbox-label'
+                    // id='demo-multiple-checkbox'
+                    multiple
+                    placeholder='Chọn 1 hoặc nhiều phương thức ĐK'
+                    // value={personName}
+                    defaultValue={[2, 3]}
+                    input={<OutlinedInput label='Tag' />}
+                    // renderValue={(selected: any) => selected.join(', ')}
+                    MenuProps={MenuProps}
+                    {...register('regis')}
+                    displayEmpty
+                    inputProps={{ 'aria-label': 'Without label' }}
+                  >
+                    <MenuItem value=''>
+                      <p className='text-left text-[#777777]'>Phương thức đăng ký</p>
+                    </MenuItem>
+                    {carRegis.map((item) => {
+                      return (
+                        <MenuItem
+                          // onClick={() => {
+                          //   handleChange(item.id)
+                          // }}
+                          value={item.id}
+                          key={item.id}
+                          className='text-black'
+                        >
+                          {item.registerMethodName}
+                        </MenuItem>
+                      )
+                    })}
+                  </Select>
+                </FormControl>
               </div>
+
               <div className='space-x-2 flex flex-row justify-between mt-2'>
                 <SelectCustom
                   className={''}
@@ -288,7 +375,8 @@ export default function CustomModal({ open, onChange }: Props) {
                   Lưu
                 </Button>
                 <Button
-                  type='submit'
+                  onClick={onClickHuy}
+                  // type='submit'
                   className='flex w-1/2 items-center justify-center rounded-xl bg-red-500 py-4 px-2 text-base text-white hover:opacity-80'
                 >
                   Hủy

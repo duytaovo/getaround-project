@@ -9,6 +9,7 @@ import {
   getCarsBrand,
   getCarsLicense,
   getCarsModel,
+  getCarsRegis,
   getCarsSeri,
   getCarsType
 } from 'src/store/car/manageCar/managCarSlice'
@@ -27,6 +28,7 @@ const Car = () => {
     dispatch(getCarsModel(''))
     dispatch(getCarsSeri(''))
     dispatch(getCarsType(''))
+    dispatch(getCarsRegis(''))
   }, [])
   const handleClose = () => setOpen(false)
   return (
