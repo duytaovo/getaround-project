@@ -1,9 +1,11 @@
 import React from 'react'
 import CustomTabs from '../../Tabs'
 
-type Props = {}
+type Props = {
+  onClick: (value: boolean) => void
+}
 
-const Main = (props: Props) => {
+const Main = ({ onClick }: Props) => {
   return (
     <div>
       <CustomTabs />

@@ -127,3 +127,8 @@ body {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+
+.css-3tbo2w-MuiCircularProgress-root {
+  width: 20px !important;
+  height: 20px !important;
+}

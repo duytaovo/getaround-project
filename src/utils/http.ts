@@ -51,7 +51,7 @@ export class Http {
         } else if (url === '/admin/logout') {
           this.accessToken = ''
           this.refreshToken = ''
-          clearLS()
+          // clearLS()
         }
         return response
       },
@@ -87,7 +87,7 @@ export class Http {
           //   })
           // }
 
-          clearLS()
+          // clearLS()
           this.accessToken = ''
           this.refreshToken = ''
           toast.error(error.response?.data.data?.message || error.response?.data.message)
@@ -110,7 +110,7 @@ export class Http {
         return access_token
       })
       .catch((error) => {
-        clearLS()
+        // clearLS()
         this.accessToken = ''
         this.refreshToken = ''
         throw error

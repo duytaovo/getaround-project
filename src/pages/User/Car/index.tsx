@@ -40,7 +40,7 @@ const Car = () => {
         </Grid>
         <Grid item xs={9.5}>
           <Header onClick={handleOpen} />
-          <Main />
+          <Main onClick={handleOpen} />
         </Grid>
       </Grid>
     </div>

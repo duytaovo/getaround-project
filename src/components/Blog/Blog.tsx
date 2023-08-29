@@ -73,7 +73,7 @@ const Blog = () => {
           <Text
             id={BlogNewsRoom.link}
             tag='p'
-            content={data[BlogNewsRoom.link] || 'Read more'}
+            content={data[BlogNewsRoom.link] || 'Xem thêm...'}
             className='text-mainColor underline hover:text-black hover:no-underline cursor-pointer duration-[0.5s]'
           />
           {/* <Link

@@ -45,7 +45,10 @@ export default function CustomTabs() {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
-
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = (value: boolean) => {
+    setOpen(value)
+  }
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -58,7 +61,7 @@ export default function CustomTabs() {
           <Search onChange={() => {}} placeholder='Tìm kiếm...' width='300px' />
         </div>
         <div>
-          <CarTable />
+          <CarTable onClick={handleOpen} />
         </div>
       </CustomTabPanel>
     </Box>
