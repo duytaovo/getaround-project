@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from './hooks/useRedux'
 import { _getData } from './store/dataSlice'
 import { Loader } from './components/Loader'
 import UserLayout from './layouts/UserLayout/MainLayout'
-import ManageCarLayout from './layouts/ManageCar'
+// import ManageCarLayout from './layouts/ManageCar'
 import ManageCarUserLayout from './layouts/ManageCarUser/ManageCarUserLayout'
 
 export default function useRouteElements() {
