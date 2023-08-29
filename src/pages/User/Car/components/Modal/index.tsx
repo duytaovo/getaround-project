@@ -117,7 +117,7 @@ export default function CustomModal({ open, onChange }: Props) {
     resolver: yupResolver(schemaAddCar)
   })
   const dispatch = useAppDispatch()
-
+  const [disabled, setDisabled] = useState<boolean>(false)
   const [personName, setPersonName] = React.useState<string[]>([])
 
   const handleChange = (event: any) => {
@@ -158,12 +158,13 @@ export default function CustomModal({ open, onChange }: Props) {
     }
     try {
       const res = await dispatch(addCars(body))
+      await setDisabled(true)
       unwrapResult(res)
       const d = res?.payload?.data
       if (d?.status !== 200) return toast.error(d?.message)
       await toast.success('Thêm xe thành công ')
-
       await dispatch(getCars(''))
+      await setDisabled(false)
       ;(await onChange) && onChange()
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
@@ -361,7 +362,9 @@ export default function CustomModal({ open, onChange }: Props) {
               <div className='flex space-x-2 mt-6'>
                 <Button
                   type='submit'
-                  className='flex w-1/2 items-center justify-center rounded-xl bg-mainColor py-4 px-2 text-base text-white hover:opacity-80'
+                  className={`flex w-1/2 items-center justify-center rounded-xl bg-mainColor py-4 px-2 text-base text-white hover:opacity-80 ${
+                    disabled == true && 'disabled'
+                  }`}
                 >
                   Lưu
                 </Button>
