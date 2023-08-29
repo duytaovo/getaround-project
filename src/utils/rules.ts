@@ -116,7 +116,7 @@ export const schemaAddCar = yup.object({
     .required('Số điện thoại là bắt buộc')
     .min(5, 'Độ dài từ 10 chữ số')
     .matches(/(84|0[3|5|7|8|9])+([0-9]{8})\b/g, 'Số điện thoại không đúng định dạng'),
-  vinNumber: yup.string(),
+  vinNumber: yup.string().matches(/\b[(A-H|J-N|P|R-Z|0-9)]{17}\b/, 'Số khung không đúng định dạng'),
   carBrand: yup.string().required('Nhãn hiệu là bắt buộc'),
   carModel: yup.string().required('Kiểu xe là bắt buộc'),
   carSeri: yup.string().required('Dòng xe là bắt buộc'),

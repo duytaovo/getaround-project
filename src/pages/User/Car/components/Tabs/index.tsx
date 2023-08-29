@@ -51,8 +51,6 @@ export default function CustomTabs() {
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label='basic tabs example'>
           <Tab label='Tất cả xe' {...a11yProps(0)} />
-          {/* <Tab label='Item Two' {...a11yProps(1)} />
-          <Tab label='Item Three' {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -63,12 +61,6 @@ export default function CustomTabs() {
           <CarTable />
         </div>
       </CustomTabPanel>
-      {/* <CustomTabPanel value={value} index={1}>
-        Item Two
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        Item Three
-      </CustomTabPanel> */}
     </Box>
   )
 }

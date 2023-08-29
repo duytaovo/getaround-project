@@ -15,16 +15,11 @@ import { toast } from 'react-toastify'
 import { ErrorResponse } from 'src/types/utils.type'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { unwrapResult } from '@reduxjs/toolkit'
-import { addCars } from 'src/store/car/manageCar/managCarSlice'
-import { useNavigate } from 'react-router-dom'
+import { addCars, getCars } from 'src/store/car/manageCar/managCarSlice'
 import { isAccessTokenExpired } from 'src/store/user/userSlice'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
-import ListItemText from '@mui/material/ListItemText'
-import Select, { SelectChangeEvent } from '@mui/material/Select'
-import Checkbox from '@mui/material/Checkbox'
+import Select from '@mui/material/Select'
 interface FadeProps {
   children: React.ReactElement
   in?: boolean
@@ -112,7 +107,6 @@ interface FormData {
 export default function CustomModal({ open, onChange }: Props) {
   const { carLicense, carType, carsBrand, carsModel, carsSeri, carRegis } = useAppSelector((state) => state.car)
   const { userId } = useAppSelector((state) => state?.user)
-  const navigate = useNavigate()
   const {
     handleSubmit,
     formState: { errors },
@@ -162,16 +156,15 @@ export default function CustomModal({ open, onChange }: Props) {
       car_license_id: data.carLicense,
       regis: data.regis
     }
-    console.log(body)
     try {
       const res = await dispatch(addCars(body))
       unwrapResult(res)
       const d = res?.payload?.data
       if (d?.status !== 200) return toast.error(d?.message)
       await toast.success('Thêm xe thành công ')
-      onChange && onChange()
 
-      navigate('/host/xe')
+      await dispatch(getCars(''))
+      ;(await onChange) && onChange()
     } catch (error: any) {
       if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
         const formError = error.response?.data.data
@@ -199,7 +192,6 @@ export default function CustomModal({ open, onChange }: Props) {
     setValue('vinNumber', '')
     onChange && onChange()
   }
-  console.log(carRegis)
   return (
     <div>
       <Modal
@@ -268,14 +260,13 @@ export default function CustomModal({ open, onChange }: Props) {
               <div className='rounded-2xl'>
                 <FormControl sx={{ m: 1 }} fullWidth>
                   <Select
-                    labelId='demo-multiple-checkbox-label'
-                    // id='demo-multiple-checkbox'
+                    // labelId='demo-multiple-checkbox-label'
                     multiple
-                    placeholder='Chọn 1 hoặc nhiều phương thức ĐK'
+                    // placeholder='Chọn 1 hoặc nhiều phương thức ĐK'
                     // value={personName}
                     defaultValue={[2, 3]}
-                    input={<OutlinedInput label='Tag' />}
-                    // renderValue={(selected: any) => selected.join(', ')}
+                    // input={<OutlinedInput label='Phương thức đăng ký' />}
+
                     MenuProps={MenuProps}
                     {...register('regis')}
                     displayEmpty
