@@ -13,27 +13,18 @@ interface Props {
 
 const DataTable = ({ rows, columns, totalPages, totalItems = 0, handleOnChange }: Props) => {
   return (
-    <Paper className='data-table'>
-      <div className='data-table_container'>
+    <Paper className=''>
+      <div className='' style={{ height: 400, width: '100%' }}>
         <DataGrid
           rows={rows}
           columns={columns}
-          getRowId={(row) => row.stt}
-          loading={!rows.length}
-          components={{ Toolbar: GridToolbar }}
-          autoHeight
-          density='comfortable'
-          rowHeight={60}
-          // disableColumnFilter={true}
-          disableDensitySelector={true}
           initialState={{
             pagination: {
               paginationModel: { page: 0, pageSize: 5 }
             }
           }}
           pageSizeOptions={[5, 10]}
-          // disableColumnMenu={true}
-          // hideFooterPagination
+          // checkboxSelection
         />
       </div>
       <div className=''>
