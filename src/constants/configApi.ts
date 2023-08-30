@@ -4,7 +4,7 @@ const config = {
   // baseUrl: 'http://192.168.102.28:8080/api/v1',
   // host: 'http://192.168.102.28:8080/'
 
-  baseUrl_bookCar: 'http://app.ult.unlockcar.co/api/v1',
+  baseUrl_bookCar: 'https://app.ult.unlockcar.co/api/v1',
   // baseUrl2: 'http://localhost:4940/api/v1',
   // host: 'http://localhost:8080/',
 
