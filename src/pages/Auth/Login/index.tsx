@@ -14,6 +14,7 @@ import { isAccessTokenExpired, login, updateUser } from 'src/store/user/userSlic
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { getAccessTokenFromLS, setAccessTokenToLS } from 'src/utils/auth'
 import { Helmet } from 'react-helmet-async'
+import LoginWithGG from '../LoginGG'
 
 type FormData = Pick<Schema, 'email' | 'password'>
 const loginSchema = schema.pick(['email', 'password'])
@@ -106,6 +107,7 @@ const Login = () => {
               Đăng nhập
             </Button>
           </div>
+          <LoginWithGG />
         </form>
       </div>
     </div>
