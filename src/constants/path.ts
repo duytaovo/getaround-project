@@ -1,5 +1,6 @@
 const path = {
   home: '/',
+  hostACar: '/host/xe',
   login: '/login',
   logout: '/logout',
   register: '/register',

@@ -38,7 +38,7 @@ const Header = (props: Props) => {
   const { t } = useTranslation('home')
   const { i18n } = useTranslation()
   const currentLanguage = locales[i18n.language as keyof typeof locales]
-  const { setOpenModal } = useContext(AppContext)
+  const { setOpenModal, isAuthenticated } = useContext(AppContext)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const handleOpenModal = () => {
@@ -126,7 +126,7 @@ const Header = (props: Props) => {
         <div className='flex  justify-center items-center'>
           <div>
             <Link to='/'>
-              <img src='/public/logo-main.png' alt='logo' className='fill-current bg-none h-[26px]' />
+              <img src='/logo-main.png' alt='logo' className='fill-current bg-none h-[26px]' />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
@@ -139,11 +139,19 @@ const Header = (props: Props) => {
           '
             children={<span>{t('header.bookACar')}</span>}
           />
-          <Button
-            onClick={() => navigate(path.sharACar)}
-            className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white/70 hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px]  leading-5 px-0 text-center'
-            children={<span>{t('header.shareACar')}</span>}
-          />
+          {isAuthenticated ? (
+            <Button
+              onClick={() => navigate(path.hostACar)}
+              className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white/70 hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px]  leading-5 px-0 text-center'
+              children={<span>{t('header.hostACar')}</span>}
+            />
+          ) : (
+            <Button
+              onClick={() => navigate(path.sharACar)}
+              className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white/70 hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px]  leading-5 px-0 text-center'
+              children={<span>{t('header.shareACar')}</span>}
+            />
+          )}
 
           <CustomDropDown
             {...customDropdownStyle}
