@@ -1,7 +1,7 @@
 import CustomDropDown from '../Dropdown/Dropdown'
 import { itemAcount, itemsFirst, itemsFive, itemsFour, itemsSecond, itemsThird } from 'src/items/HeaderItem/HeaderItem'
 import Button from '../Button'
-import { Avatar, IconButton, Popover } from '@mui/material'
+import SentimentSatisfiedAltRoundedIcon from '@mui/icons-material/SentimentSatisfiedAltRounded'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { locales } from 'src/i18n/i18n'
 import { useTranslation } from 'react-i18next'
@@ -17,7 +17,8 @@ import path from 'src/constants/path'
 import { clearLS } from 'src/utils/auth'
 import { toast } from 'react-toastify'
 import { useAppDispatch } from 'src/hooks/useRedux'
-import { updateUser } from 'src/store/user/userSlice'
+import { logoutUser, updateUser } from 'src/store/user/userSlice'
+import { unwrapResult } from '@reduxjs/toolkit'
 type Props = {}
 
 const titleStyle = 'py-5 text-base font-normal'
@@ -43,6 +44,8 @@ const Header = (props: Props) => {
   const handleOpenModal = () => {
     setOpenModal(true)
   }
+  const { isAuthenticated } = useContext(AppContext)
+
   const changeLanguage = (lng: 'en' | 'vi') => {
     i18n.changeLanguage(lng)
   }
@@ -89,7 +92,10 @@ const Header = (props: Props) => {
           </div>
         </CustomLink>
       )
-    },
+    }
+  ]
+
+  const itemLogout: MenuProps['items'] = [
     {
       key: '2',
       label: (
@@ -98,13 +104,13 @@ const Header = (props: Props) => {
             onClick={async () => {
               clearLS()
               await dispatch(updateUser('0'))
+              const res = await dispatch(logoutUser('')).then(unwrapResult)
               await toast.success('Đăng xuất thành công')
 
               setTimeout(async () => {
-                // await window.location.reload()
+                await window.location.reload()
                 await navigate('/')
               }, 1000)
-              // setTimeout(async () => {}, 2000)
             }}
             className={aStyle}
           >
@@ -114,7 +120,6 @@ const Header = (props: Props) => {
       )
     }
   ]
-
   return (
     <div>
       <div className='bg-white-main bg-opacity-80 blur-bg fixed cur z-50 flex items-center justify-between h-[100px] inset-x-0 top-0 px-10'>
@@ -151,10 +156,15 @@ const Header = (props: Props) => {
           <CustomDropDown
             {...customDropdownStyle}
             menuStyle={menuStyle}
-            items={itemAcount}
+            items={isAuthenticated ? itemLogout : itemAcount}
             children={
               <div className='flex items-center justify-around cursor-pointer '>
-                <AccountCircleIcon onClick={handleOpenModal} />
+                {isAuthenticated ? (
+                  <SentimentSatisfiedAltRoundedIcon />
+                ) : (
+                  <AccountCircleIcon onClick={handleOpenModal} />
+                )}
+
                 {/* <ArrowDropDownIcon className='group-hover:text-mainColor'/> */}
               </div>
             }

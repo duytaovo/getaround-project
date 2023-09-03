@@ -509,6 +509,14 @@ export const itemsHeaderMobile: ICommonQuestion[] = [
     ]
   }
 ]
+
+// export const itemsHeaderMobileAuth: ICommonQuestion[] = [
+//   {
+//     key: '1',
+//     label: 'Đăng ',
+//     contents: []
+//   }
+// ]
 export const itemsHostRefernal = [
   {
     key: '1',

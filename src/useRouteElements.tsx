@@ -1,30 +1,22 @@
 import path from 'src/constants/path'
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { lazy, Suspense, useContext, useEffect, useMemo, useState } from 'react'
+import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
-import { routeMain, routeManageCar, routeUser } from './routes'
+import { routeAuth, routeMain, routeManageCar, routeUser } from './routes'
 import { useAppDispatch, useAppSelector } from './hooks/useRedux'
 import { _getData } from './store/dataSlice'
-import { Loader } from './components/Loader'
 import UserLayout from './layouts/UserLayout/MainLayout'
-// import ManageCarLayout from './layouts/ManageCar'
+
 import ManageCarUserLayout from './layouts/ManageCarUser/ManageCarUserLayout'
+import { AppContext } from './contexts/app.context'
+import UnAuthenticatedGuard from './guards/UnAuthenticatedGuard'
+import AuthenticatedGuard from './guards/AuthenticatedGuard'
 
 export default function useRouteElements() {
   const data = useAppSelector((state) => state?.data?.data)
   const dataLength = Object?.values(data)?.length
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const dispatch = useAppDispatch()
-
-  const { pathname } = useLocation()
-
-  // useEffect(() => {
-  //   setIsLoading(true)
-  //   setTimeout(() => {
-  //     setIsLoading(false)
-  //   }, 2000)
-  // }, [pathname])
-
   useEffect(() => {
     dispatch(_getData(''))
   }, [])
@@ -82,6 +74,22 @@ export default function useRouteElements() {
     })
   }, [path])
 
+  const renderRouterAuth = useMemo(() => {
+    return routeAuth.map(({ path, Component }, index) => {
+      return (
+        <Route
+          key={index}
+          path={path}
+          element={
+            <Suspense>
+              <Component />
+            </Suspense>
+          }
+        />
+      )
+    })
+  }, [path])
+
   const routeElements = (
     <Routes>
       <Route path='' element={<MainLayout />}>
@@ -90,7 +98,24 @@ export default function useRouteElements() {
       <Route path='' element={<UserLayout />}>
         {renderRouterBookACar}
       </Route>
-      <Route path='' element={<ManageCarUserLayout />}>
+      <Route
+        path=''
+        element={
+          <AuthenticatedGuard>
+            <MainLayout />
+          </AuthenticatedGuard>
+        }
+      >
+        {renderRouterAuth}
+      </Route>
+      <Route
+        path=''
+        element={
+          <UnAuthenticatedGuard>
+            <ManageCarUserLayout />
+          </UnAuthenticatedGuard>
+        }
+      >
         {renderRouterManageCar}
       </Route>
     </Routes>

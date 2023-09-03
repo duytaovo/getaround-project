@@ -19,7 +19,7 @@ export class Http {
     this.refreshTokenRequest = null
     this.instance = axios.create({
       baseURL: url,
-      timeout: 10000,
+      timeout: 100000,
       headers: {
         'Content-Type': 'application/json',
         'expire-access-token': 60 * 60 * 24, // 1 ngày
@@ -118,5 +118,5 @@ export class Http {
   }
 }
 const http = new Http(config.baseUrl1).instance
-export const http_auth = new Http(config.baseUrl_bookCar).instance
+export const http_auth = new Http(config.baseUrlAuth).instance
 export default http
