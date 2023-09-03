@@ -161,8 +161,8 @@ const CarTable = ({ onClick }: Props) => {
     { field: 'location', headerName: 'Vị trí', width: 150 },
     { field: 'brand', headerName: 'Thuơng hiệu xe', width: 150 },
     { field: 'model', headerName: 'Kiểu xe', width: 150 },
-    { field: 'type', headerName: 'Loại xe', width: 150 },
-    { field: 'license', headerName: 'Giấy phép lái xe', width: 150 },
+    { field: 'type', headerName: 'Loại phương tiện', width: 150 },
+    { field: 'license', headerName: 'Loại biển xe', width: 150 },
     { field: 'seri', headerName: 'Dòng xe', width: 150 },
     {
       field: 'regis',

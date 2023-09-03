@@ -6,6 +6,9 @@ const authApi = {
   },
   register(data: any) {
     return http_auth.post('/auth/register', data)
+  },
+  logout() {
+    return http_auth.post('/auth/logout-user', {})
   }
 }
 

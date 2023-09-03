@@ -9,7 +9,7 @@ import { itemsHeaderMobile } from 'src/items/HeaderItem/HeaderItem'
 
 type Props = {}
 
-const ManageCarUserLayout = (props: Props) => {
+const ManageCarUserLayout = () => {
   return (
     <div>
       <div>

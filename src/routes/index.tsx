@@ -72,18 +72,6 @@ export const routeMain = [
     path: path.safetytrust,
     Component: SafetyTrust
   },
-  // {
-  //   path: path.hostBobus,
-  //   Component: HostBonus
-  // },
-  {
-    path: path.login,
-    Component: Login
-  },
-  {
-    path: path.register,
-    Component: Register
-  },
   {
     path: path.test,
     Component: Test
@@ -145,5 +133,16 @@ export const routeManageCar = [
   {
     path: path.carUser,
     Component: Car
+  }
+]
+
+export const routeAuth = [
+  {
+    path: path.login,
+    Component: Login
+  },
+  {
+    path: path.register,
+    Component: Register
   }
 ]

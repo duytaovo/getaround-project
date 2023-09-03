@@ -12,13 +12,13 @@ import { theme } from './constants/antdConfig'
 import viVN from 'antd/locale/vi_VN'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ConfigProvider theme={theme} locale={viVN}>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </ConfigProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <ConfigProvider theme={theme} locale={viVN}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ConfigProvider>
+  </BrowserRouter>
+  // </React.StrictMode>
 )

@@ -103,6 +103,8 @@ interface FormData {
   carType: string
   carLicense: string
   currentLocation: string
+}
+interface Regis {
   regis: string[]
 }
 export default function CustomModal({ open, onChange }: Props) {
@@ -163,7 +165,7 @@ export default function CustomModal({ open, onChange }: Props) {
         if (formError) {
           Object.keys(formError).forEach((key) => {
             setError(key as keyof FormData, {
-              // message: formError[key as keyof FormData],
+              message: formError[key as keyof FormData],
               type: 'Server'
             })
           })

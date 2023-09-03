@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 
 export const login = createAsyncThunk('auth/login', payloadCreator(authApi.login))
 export const registerUser = createAsyncThunk('auth/registerUser', payloadCreator(authApi.register))
+export const logoutUser = createAsyncThunk('auth/logoutUser', payloadCreator(authApi.logout))
 
 interface DecodedToken {
   userId: number
@@ -43,7 +44,6 @@ export const isAccessTokenExpired = (): any => {
   }
 }
 
-console.log(isAccessTokenExpired())
 const initialState: IUser = {
   name: 'admin',
   accessToken: '123',

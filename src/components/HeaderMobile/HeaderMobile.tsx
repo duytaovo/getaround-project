@@ -62,6 +62,7 @@ const HeaderMobile = (props: Props) => {
         } left-0   overflow-hidden transition-all  h-[803px] flex px-8`}
       >
         <CustomeCollapseHeader
+          itemsAuth={[]}
           titleClassName='text-black/90 text-bold text-[18px] '
           items={itemsHeaderMobile}
           className='w-full'
