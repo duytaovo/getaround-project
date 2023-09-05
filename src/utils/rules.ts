@@ -119,6 +119,7 @@ export const schemaAddCar = yup.object({
   vinNumber: yup.string().matches(/\b[(A-H|J-N|P|R-Z|0-9)]{17}\b/, 'Số khung không đúng định dạng'),
   carBrand: yup.string().required('Nhãn hiệu là bắt buộc'),
   carModel: yup.string().required('Kiểu xe là bắt buộc'),
+  carYear: yup.string().required('Năm sx là bắt buộc'),
   carSeri: yup.string().required('Dòng xe là bắt buộc'),
   carType: yup.string().required('Loại xe là bắt buộc'),
   carLicense: yup.string().required('Loại biển xe là bắt buộc'),
