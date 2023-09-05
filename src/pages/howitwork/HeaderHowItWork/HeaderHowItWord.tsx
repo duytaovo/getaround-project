@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from '../../../assets/HeaderHIW.jpg'
+import Img from 'src/assets/HeaderHIW.jpg'
 import { Select } from 'antd'
 import { DatePicker, Space } from 'antd'
 import type { RangePickerProps } from 'antd/es/date-picker'
@@ -17,6 +17,7 @@ import { RootState } from 'src/store/store'
 import { Text } from 'src/components/Edition/Text'
 import { Image } from 'src/components/Edition/Image'
 import { useAppSelector } from 'src/hooks/useRedux'
+import { useNavigate } from 'react-router-dom'
 dayjs.extend(customParseFormat)
 
 const { RangePicker } = DatePicker
@@ -43,6 +44,7 @@ const options = [
   }
 ]
 const HeaderHowItWord = () => {
+  const navigate = useNavigate()
   const {
     ExploreHowItWork,
     ProprietaryHowItWork,
@@ -95,13 +97,13 @@ const HeaderHowItWord = () => {
                         </div>
                       </div>
                       <Button
-                        // onClick={onClick}
+                        // onClick={() => navigate('/')}
                         children={
                           <Text
                             id={HeaderHIW.nameButton}
                             tag='span'
                             content={data[HeaderHIW.nameButton] || 's'}
-                            className={`text-base`}
+                            className={`text-xl -translate-y-3`}
                           />
                         }
                         isNext={true}
