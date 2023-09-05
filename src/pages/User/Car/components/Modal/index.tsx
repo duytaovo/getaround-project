@@ -15,7 +15,7 @@ import { toast } from 'react-toastify'
 import { ErrorResponse } from 'src/types/utils.type'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { unwrapResult } from '@reduxjs/toolkit'
-import { addCars, getCars } from 'src/store/car/manageCar/managCarSlice'
+import { addCars, getCarYear, getCars, getCarsSeri } from 'src/store/car/manageCar/managCarSlice'
 import { isAccessTokenExpired } from 'src/store/user/userSlice'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
@@ -81,6 +81,9 @@ const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
   left: '50%',
+  height: '80%',
+  overflowY: 'scroll',
+  scroll: 'smooth',
   transform: 'translate(-50%, -50%)',
   width: 500,
   bgcolor: 'background.paper',
@@ -98,7 +101,7 @@ interface FormData {
   phoneOwner: string
   vinNumber: string
   carBrand: string
-  carModel: string
+  carYear: string
   carSeri: string
   carType: string
   carLicense: string
@@ -108,7 +111,9 @@ interface Regis {
   regis: string[]
 }
 export default function CustomModal({ open, onChange }: Props) {
-  const { carLicense, carType, carsBrand, carsModel, carsSeri, carRegis } = useAppSelector((state) => state.car)
+  const { carLicense, carType, carsBrand, carsModel, carsYear, carsSeri, carRegis } = useAppSelector(
+    (state) => state.car
+  )
   const { userId } = useAppSelector((state) => state?.user)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const {
@@ -116,24 +121,43 @@ export default function CustomModal({ open, onChange }: Props) {
     formState: { errors },
     setError,
     register,
-    setValue
+    setValue,
+    getValues
   } = useForm({
     resolver: yupResolver(schemaAddCar)
   })
   const dispatch = useAppDispatch()
   const [disabled, setDisabled] = useState<boolean>(false)
+  const [disabledModel, setDisabledModel] = useState<boolean>(true)
+  const [disabledSeri, setDisabledSeri] = useState<boolean>(true)
+  const [valueYear, setValueYear] = useState<string>('')
 
   useEffect(() => {
     setValue('carBrand', '')
     setValue('carLicense', '')
-    setValue('carModel', '')
     setValue('carSeri', '')
+    setValue('carYear', '')
     setValue('carType', '')
     setValue('currentLocation', '')
     setValue('license_plate', '')
     setValue('phoneOwner', '')
     setValue('vinNumber', '')
   }, [])
+
+  const handleOnChangeCarBrand = async (value: string) => {
+    if (value !== '') {
+      setDisabledModel(false)
+    }
+    await dispatch(getCarYear(value))
+    await setValueYear(value)
+  }
+  const handleOnChangeYear = async ({ idBrand, idYear }: any) => {
+    await dispatch(getCarsSeri({ idYear, idBrand }))
+    if (idBrand !== '' && idYear !== '') {
+      setDisabledSeri(false)
+    }
+  }
+
   const onSubmit = handleSubmit(async (data) => {
     const body = {
       userUuid: isAccessTokenExpired().userUuid,
@@ -143,7 +167,7 @@ export default function CustomModal({ open, onChange }: Props) {
       vin_number: data.vinNumber,
       user_id: userId,
       car_brand_id: data.carBrand,
-      car_model_id: data.carModel,
+      car_model_id: data.carYear,
       car_seri_id: data.carSeri,
       vehicle_type_id: data.carType,
       car_license_id: data.carLicense,
@@ -179,7 +203,7 @@ export default function CustomModal({ open, onChange }: Props) {
   const onClickHuy = () => {
     setValue('carBrand', '')
     setValue('carLicense', '')
-    setValue('carModel', '')
+    setValue('carYear', '')
     setValue('carSeri', '')
     setValue('carType', '')
     setValue('currentLocation', '')
@@ -271,9 +295,9 @@ export default function CustomModal({ open, onChange }: Props) {
                     displayEmpty
                     inputProps={{ 'aria-label': 'Without label' }}
                   >
-                    <MenuItem value=''>
+                    {/* <MenuItem value=''>
                       <p className='text-left text-[#777777]'>Phương thức đăng ký</p>
-                    </MenuItem>
+                    </MenuItem> */}
                     {carRegis.map((item) => {
                       return (
                         <MenuItem
@@ -292,10 +316,23 @@ export default function CustomModal({ open, onChange }: Props) {
                   <p className='text-red-500 text-left text-sm'>{errors.regis?.message}</p>
                 </FormControl>
               </div>
-
-              <div className='space-x-2 flex flex-row justify-between mt-2'>
+              <SelectCustom
+                className={'flex-1'}
+                id='carModel'
+                label='Kiểu xe'
+                placeholder='Vui lòng chọn'
+                defaultValue={''}
+                options={carsModel}
+                register={register}
+                isModel={true}
+                disabled={false}
+                onChange={() => {}}
+              >
+                {errors.carModel?.message}
+              </SelectCustom>
+              <div className='space-x-2 flex flex-row  justify-between mt-2'>
                 <SelectCustom
-                  className={''}
+                  className={'flex-1'}
                   id='carBrand'
                   label='Hãng xe'
                   placeholder='Vui lòng chọn'
@@ -303,21 +340,51 @@ export default function CustomModal({ open, onChange }: Props) {
                   options={carsBrand}
                   register={register}
                   isBrand={true}
+                  disabled={false}
+                  onChange={handleOnChangeCarBrand}
                 >
                   {errors.carBrand?.message}
                 </SelectCustom>
-                <SelectCustom
-                  className={''}
-                  id='carModel'
-                  label='Kiểu xe'
-                  placeholder='Vui lòng chọn'
-                  defaultValue={''}
-                  options={carsModel}
-                  register={register}
-                  isModel={true}
-                >
-                  {errors.carModel?.message}
-                </SelectCustom>
+                <div className='flex-1'>
+                  <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '>
+                    Năm sản xuất
+                    <span className='text-red-500 text-sm font-medium '>*</span>
+                  </h1>
+                  <FormControl fullWidth disabled={disabledModel}>
+                    <Select
+                      // labelId='demo-multiple-checkbox-label'
+                      placeholder='Chọn năm sản xuất'
+                      // value={personName}
+                      defaultValue={[]}
+                      // input={<OutlinedInput label='Phương thức đăng ký' />}
+                      MenuProps={MenuProps}
+                      {...register('carYear')}
+                      displayEmpty
+                      inputProps={{ 'aria-label': 'Without label' }}
+                    >
+                      {/* <MenuItem value=''>
+                      <p className='text-left text-[#777777]'>Phương thức đăng ký</p>
+                    </MenuItem> */}
+                      {carsYear.map((item) => {
+                        return (
+                          <MenuItem
+                            onClick={() => {
+                              // console.log(item.brandID)
+                              // console.log(item.releaseYearID)
+                              handleOnChangeYear({ idBrand: item.brandID, idYear: item.releaseYearID })
+                            }}
+                            value={item.year}
+                            key={item.releaseYearID}
+                            className='text-black'
+                          >
+                            {item.year}
+                          </MenuItem>
+                        )
+                      })}
+                    </Select>
+                    <p className='text-red-500 text-left text-sm'>{errors.regis?.message}</p>
+                  </FormControl>
+                </div>
               </div>
               <SelectCustom
                 className={'mt-2'}
@@ -328,6 +395,8 @@ export default function CustomModal({ open, onChange }: Props) {
                 options={carsSeri}
                 register={register}
                 isCarSeri={true}
+                disabled={disabledSeri}
+                onChange={() => {}}
               >
                 {errors.carSeri?.message}
               </SelectCustom>
@@ -342,6 +411,8 @@ export default function CustomModal({ open, onChange }: Props) {
                   options={carType}
                   register={register}
                   isCarType={true}
+                  disabled={false}
+                  onChange={() => {}}
                 >
                   {errors.carType?.message}
                 </SelectCustom>
@@ -354,6 +425,8 @@ export default function CustomModal({ open, onChange }: Props) {
                   options={carLicense}
                   register={register}
                   isCarLicense={true}
+                  disabled={false}
+                  onChange={() => {}}
                 >
                   {errors.carLicense?.message}
                 </SelectCustom>

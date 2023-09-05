@@ -1,22 +1,19 @@
 import { Grid } from '@mui/material'
 import React, { ReactNode, useEffect } from 'react'
-import LocalCarWashIcon from '@mui/icons-material/LocalCarWash'
-import SideBar from './components/SideBar'
-import Header from './components/Main/Header'
-import Main from './components/Main/Main'
-import CustomModal from './components/Modal'
 import {
   getCarsBrand,
   getCarsLicense,
-  getCarsModel,
   getCarsRegis,
   getCarsSeri,
   getCarsType
 } from 'src/store/car/manageCar/managCarSlice'
 import { useAppDispatch } from 'src/hooks/useRedux'
+import SideBar from './SideBar'
+import Header from './Main/Header'
+import Main from './Main/Main'
 type Props = {}
 
-const Car = () => {
+const ManageCar = () => {
   const [open, setOpen] = React.useState(false)
   const handleOpen = (value: boolean) => {
     setOpen(value)
@@ -27,7 +24,6 @@ const Car = () => {
     dispatch(getCarsLicense(''))
     dispatch(getCarsSeri(''))
     dispatch(getCarsType(''))
-    dispatch(getCarsModel(''))
     dispatch(getCarsRegis(''))
   }, [])
   const handleClose = () => setOpen(false)
@@ -36,7 +32,7 @@ const Car = () => {
       <Grid container spacing={2} gap={1}>
         <Grid item xs={2} className='border-r-[1px]'>
           <SideBar />
-          <CustomModal open={open} onChange={handleClose} />
+          {/* <CustomModal open={open} onChange={handleClose} /> */}
         </Grid>
         <Grid item xs={9.5}>
           <Header onClick={handleOpen} />
@@ -47,4 +43,4 @@ const Car = () => {
   )
 }
 
-export default Car
+export default ManageCar

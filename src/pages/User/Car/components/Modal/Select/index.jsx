@@ -16,20 +16,23 @@ export default function SelectCustom({
   dispatch = () => {},
   action = () => {},
   name = '',
+  disabled,
+  onChange,
   ...props
 }) {
   const renderSelectOption = () => {
-    return options.map((item) => {
+    return options.map((item, index) => {
       return (
         <MenuItem
           onClick={() => {
-            handleChange(item.id)
+            handleChange(item?.id)
           }}
           value={item.id}
-          key={item.id}
+          key={index}
           className='text-black'
         >
           {props.isBrand && item.carBrandName}
+          {/* {props.isYear && item.year} */}
           {props.isModel && item.carModelName}
           {props.isCarSeri && item.carSeriName}
           {props.isCarType && item.vehicleTypeName}
@@ -39,8 +42,9 @@ export default function SelectCustom({
     })
   }
 
-  // handle change district
-  const handleChange = (id) => {}
+  const handleChange = (id) => {
+    onChange && onChange(id)
+  }
 
   return (
     <>
@@ -49,7 +53,7 @@ export default function SelectCustom({
           {label}
           {requirementField && <span className='text-red-500 text-sm font-medium '>*</span>}
         </h1>
-        <FormControl className='select-formControl hover:shadow-sm' fullWidth>
+        <FormControl className='select-formControl hover:shadow-sm' fullWidth disabled={disabled}>
           <Select
             className='select-field'
             displayEmpty
