@@ -44,7 +44,6 @@ const Header = (props: Props) => {
   const handleOpenModal = () => {
     setOpenModal(true)
   }
-  const { isAuthenticated } = useContext(AppContext)
 
   const changeLanguage = (lng: 'en' | 'vi') => {
     i18n.changeLanguage(lng)
