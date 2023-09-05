@@ -63,7 +63,7 @@ const Carousel_About = ({
             to=''
             className='text-[14px] font-semibold text-mainColor mt-3 underline hover:no-underline hover:text-black duration-100'
           >
-            <Text id={item.link} tag='strong' content={data[item.link] || 'Read more'} className='' />
+            <Text id={item.link} tag='strong' content={data[item.link] || 'Xem thêm...'} className='' />
           </Link>
         </div>
       </div>

@@ -1,44 +1,57 @@
 import CustomDropDown from '../Dropdown/Dropdown'
 import { itemAcount, itemsFirst, itemsFive, itemsFour, itemsSecond, itemsThird } from 'src/items/HeaderItem/HeaderItem'
 import Button from '../Button'
-import { Avatar, IconButton, Popover } from '@mui/material'
+import SentimentSatisfiedAltRoundedIcon from '@mui/icons-material/SentimentSatisfiedAltRounded'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { locales } from 'src/i18n/i18n'
 import { useTranslation } from 'react-i18next'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useLayoutEffect, useState } from 'react'
 import LanguageIcon from '@mui/icons-material/Language'
 import { AppContext } from 'src/contexts/app.context'
 import TransitionsModal from '../Modal'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Dropdown, MenuProps } from 'antd'
-import ComponentHeader from './components/HeaderItem'
+import ComponentHeader, { aInStyle, aStyle } from './components/HeaderItem'
 import CustomLink from '../CustomLink'
 import path from 'src/constants/path'
 import { clearLS } from 'src/utils/auth'
 import { toast } from 'react-toastify'
 import { useAppDispatch } from 'src/hooks/useRedux'
-import { updateUser } from 'src/store/user/userSlice'
+import { logoutUser, updateUser } from 'src/store/user/userSlice'
+import { unwrapResult } from '@reduxjs/toolkit'
 type Props = {}
+
+const titleStyle = 'py-5 text-base font-normal'
+
+const customDropdownStyle = {
+  arrow: false,
+  isOnClick: false,
+  className: 'px-1 mx-3 xl:p-0 xl:mr-0 hover:text-mainColor'
+}
+
+const menuStyle = {
+  padding: '20px 20px',
+  borderRadius: '16px'
+}
 
 const Header = (props: Props) => {
   const { t } = useTranslation('home')
   const { i18n } = useTranslation()
   const currentLanguage = locales[i18n.language as keyof typeof locales]
-  const { setOpenModal } = useContext(AppContext)
+  const { setOpenModal, isAuthenticated } = useContext(AppContext)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const handleOpenModal = () => {
     setOpenModal(true)
   }
+
   const changeLanguage = (lng: 'en' | 'vi') => {
     i18n.changeLanguage(lng)
   }
-  const url = useLocation()
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, 1000)
-  }, [url.pathname])
+  const location = useLocation()
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0)
+  }, [location.pathname])
 
   const items: MenuProps['items'] = [
     {
@@ -60,17 +73,28 @@ const Header = (props: Props) => {
   ]
   const itemAcount: MenuProps['items'] = [
     {
-      key: '1',
+      key: '0',
       label: (
-        <CustomLink to={path.login}>
-          <div className='flex flex-col px-5 text-black  duration-300 group-hover:text-mainColor'>
-            <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
-              <span className='group-hover:text-mainColor'>{t('header.login')}</span>
-            </span>
+        <CustomLink to={path.register}>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('header.register')}</span>
           </div>
         </CustomLink>
       )
     },
+    {
+      key: '1',
+      label: (
+        <CustomLink to={path.login}>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('header.login')}</span>
+          </div>
+        </CustomLink>
+      )
+    }
+  ]
+
+  const itemLogout: MenuProps['items'] = [
     {
       key: '2',
       label: (
@@ -79,83 +103,88 @@ const Header = (props: Props) => {
             onClick={async () => {
               clearLS()
               await dispatch(updateUser('0'))
+              const res = await dispatch(logoutUser('')).then(unwrapResult)
               await toast.success('Đăng xuất thành công')
 
               setTimeout(async () => {
-                // await window.location.reload()
+                await window.location.reload()
                 await navigate('/')
               }, 1000)
-              // setTimeout(async () => {}, 2000)
             }}
-            className='flex flex-col px-5 text-black mt-1 duration-300 group-hover:text-mainColor'
+            className={aStyle}
           >
-            <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black  duration-300 font-medium font-sans text-xs  hover:text-mainColor'>
-              <span className='group-hover:text-mainColor'>{t('header.logout')}</span>
-            </span>
+            <span className={aInStyle}>{t('header.logout')}</span>
           </div>
         </CustomLink>
       )
     }
   ]
-
   return (
     <div>
-      <div className='bg-white fixed cur z-50 flex items-center justify-between h-[100px] inset-x-0 top-0 px-10'>
-        <div className='flex  '>
+      <div className='bg-white-main bg-opacity-80 blur-bg fixed cur z-50 flex items-center justify-between h-[100px] inset-x-0 top-0 px-10'>
+        <div className='flex  justify-center items-center'>
           <div>
             <Link to='/'>
-              <img src='/public/logo.jpg' alt='logo' className='fill-current bg-none h-[26px]' />
+              <img src='/logo-main.png' alt='logo' className='fill-current bg-none h-[26px]' />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
           <ComponentHeader />
         </div>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center font-semibold text-sm justify-between'>
           <Button
             onClick={() => navigate(path.bookACar)}
-            className='bg-black border hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0
+            className='bg-black border hover:duration-500 duration-500 hover:transition-all  text-white  border-none hover:bg-mainColor rounded-full items-center w-[124px] h-[40px] leading-5 px-0
           '
             children={<span>{t('header.bookACar')}</span>}
           />
-          <Button
-            onClick={() => navigate(path.sharACar)}
-            className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px] text-sm font-medium leading-5 px-0 text-center'
-            children={<span>{t('header.shareACar')}</span>}
-          />
+          {isAuthenticated ? (
+            <Button
+              onClick={() => navigate(path.hostACar)}
+              className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white/70 hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px]  leading-5 px-0 text-center'
+              children={<span>{t('header.hostACar')}</span>}
+            />
+          ) : (
+            <Button
+              onClick={() => navigate(path.sharACar)}
+              className='rounded-full bg-transparent mx-2 duration-500 hover:duration-500 text-mainColor border hover:text-white/70 hover:bg-mainColor border-mainColor border-solid items-center w-[124px] h-[40px]  leading-5 px-0 text-center'
+              children={<span>{t('header.shareACar')}</span>}
+            />
+          )}
 
           <CustomDropDown
-            arrow={true}
-            isOnClick={false}
+            {...customDropdownStyle}
+            menuStyle={menuStyle}
+            items={isAuthenticated ? itemLogout : itemAcount}
             children={
               <div className='flex items-center justify-around cursor-pointer '>
-                <AccountCircleIcon onClick={handleOpenModal} />
+                {isAuthenticated ? (
+                  <SentimentSatisfiedAltRoundedIcon />
+                ) : (
+                  <AccountCircleIcon onClick={handleOpenModal} />
+                )}
+
                 {/* <ArrowDropDownIcon className='group-hover:text-mainColor'/> */}
               </div>
             }
-            items={itemAcount}
-            className='p-2 mx-2  text-black hover:text-mainColor cursor-pointer group-hover:text-mainColor'
           />
+
           <div className=''>
-            <Dropdown
-              arrow
-              menu={{
-                items
-              }}
-              placement='bottom'
+            <CustomDropDown
+              {...customDropdownStyle}
+              menuStyle={menuStyle}
+              items={items}
+              // arrow
+              // menu={{
+              //   items
+              // }}
+              // placement='bottom'
             >
-              <IconButton
-                sx={{
-                  color: 'black',
-                  '&:hover': {
-                    opacity: [0.9, 0.8, 0.7]
-                  }
-                }}
-                className='hover:text-mainColor '
-              >
+              <div className=' hover:text-mainColor'>
                 <LanguageIcon />
-              </IconButton>
-            </Dropdown>
-            <span className='mx-1 text-mainColor text-sm'>{currentLanguage}</span>
+                <span className='mx-1 text-mainColor text-sm'>{currentLanguage}</span>
+              </div>
+            </CustomDropDown>
           </div>
         </div>
       </div>

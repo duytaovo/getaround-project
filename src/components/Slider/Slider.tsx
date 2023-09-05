@@ -24,6 +24,7 @@ interface Props {
   breakPoint: Array<number>
   breakPointScroll: Array<number>
   prefix?: string
+  speed?: number
 }
 // breackPoint = {[1,1,2,2,3]}
 export default function CustomSlider({
@@ -41,15 +42,16 @@ export default function CustomSlider({
   autoPlay,
   prefix,
   breakPoint,
-  breakPointScroll
+  breakPointScroll,
+  speed = 1000
 }: Props) {
   const breakpoints = getBreakpoint([1, 1, 2, 2, 3, 3])
   const settings = {
-    speed: 2000,
+    speed: speed,
     infinite: true,
     autoplay: autoPlay,
     slidesToShow: numberItem,
-    autoplaySpeed: 3000,
+    autoplaySpeed: speed,
     nextArrow: <NextArrow breakpoints={breakpoints} />,
     prevArrow: <PrevArrow breakpoints={breakpoints} />,
     responsive: [
@@ -99,7 +101,6 @@ export default function CustomSlider({
                   2xl:w-1/3 
                   '
           >
-            {' '}
             <CustomCardSlider
               classNameImage={classNameImage}
               classNameTitle={classNameTitle}

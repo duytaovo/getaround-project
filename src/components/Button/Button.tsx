@@ -1,14 +1,14 @@
 import { ButtonHTMLAttributes } from 'react'
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean
   isNext?: boolean
-  _className?:string
+  _className?: string
 }
 
 export default function Button(props: ButtonProps) {
-  const { className, isLoading, disabled, children, isNext,_className, ...rest } = props
+  const { className, isLoading, disabled, children, isNext, _className, ...rest } = props
   const newClassName = disabled ? className + ' cursor-not-allowed' : className
   return (
     <button className={`${newClassName} group flex items-center justify-center`} disabled={disabled} {...rest}>
@@ -32,9 +32,14 @@ export default function Button(props: ButtonProps) {
       )}
       <div className=''>
         {children}
-        {isNext == true && <ArrowCircleRightOutlinedIcon sx={{
-          fontSize:"30px"
-        }} className=' ml-2 group-hover:delay-150 transition-transform group-hover:duration-700  hover:arrow group-hover:transition-all group-hover:-translate-x-1.5 animate-customBounce'/>}
+        {isNext == true && (
+          <ArrowCircleRightOutlinedIcon
+            sx={{
+              fontSize: '30px'
+            }}
+            className=' ml-2 group-hover:delay-150 transition-transform group-hover:duration-700  hover:arrow group-hover:transition-all group-hover:-translate-x-1.5 animate-customBounce'
+          />
+        )}
       </div>
     </button>
   )

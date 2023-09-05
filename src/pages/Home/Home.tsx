@@ -28,7 +28,7 @@ const Home = (props: Props) => {
   useEffect(() => {}, [dispatch])
 
   return (
-    <div className='overflow-x-hidden'>
+    <div className=''>
       <Helmet>
         <title>Home </title>
         <meta name='description' content='Trang chủ tìm kiếm và đặt xe' />
@@ -56,25 +56,25 @@ const Home = (props: Props) => {
             breakPointScroll={[1, 1, 1, 1]}
             breakPoint={[2, 3, 3, 5]}
             classNameContainer='px-6'
-            classNameTitle='text-center py-2 text-white/80 justify-center'
-            className='bg-mainColor/20
-             rounded-md h-fit p-1 box-border'
+            classNameTitle='text-center py-2 text-textMainColor justify-center font-semibold'
+            className='bg-white rounded-md h-fit p-1 box-border'
             classNameImage='rounded-md h-[100px] object-cover w-full'
             numberItem={5}
             numberItemScroll={1}
             isTitle={true}
             data={homePageData.perfectCarSliderSection.itemsData}
             prefix='sliderHome'
+            speed={1000}
           />
         </div>
       </WrapperContent>
 
-      <section title='' className='my-14 w-[70%] lg:w-[80%] md:w-full h-fit mx-auto mb-bottom'>
+      <section title='' className='my-14 w-[90%] lg:w-[90%] md:w-full h-fit mx-auto mb-bottom'>
         <CustomeCarousel.Carousel_Introduce
           classNameHeader='text-[11px] text-mainColor'
-          classNameTitle='text-[32px] text-white/60 text-bold tracking-[-0.48px] leading-[34px] py-4 md:py-0 sm:text-md'
-          classNameContent='leading-[22px] text-white/60 sm:text-sm  sm:w-fit'
-          className='w-full flex justify-between bg-black p-2 bg-mainColor/20 rounded-md md:flex-col-reverse'
+          classNameTitle='text-[32px] text-textMainColor text-bold tracking-[-0.48px] leading-[34px] py-4 md:py-0 sm:text-md'
+          classNameContent='leading-[22px] text-textMainColor/70 font-normal sm:text-sm  sm:w-fit'
+          className='w-full flex justify-between p-2 bg-white rounded-md md:flex-col-reverse'
           classNameImage='w-1/2 rounded-md mx-auto'
           numberItem={1}
           numberItemScroll={1}
@@ -94,7 +94,7 @@ const Home = (props: Props) => {
 
       <WrapperContent textAlign='center' title={homePageData.homeStepSection.wrapperTitle} classname='flex flex-col'>
         <Heading title={homePageData.homeStepSection.heading} breakLineAt={3} fontSize={30} className='text-center' />
-        <div className='flex justify-center px-[36px] xl:flex-col-reverse'>
+        <div className='flex justify-center px-[36px] xl:px-[7px] xl:flex-col-reverse'>
           <div className='w-1/2 flex justify-center xl:w-full'>
             {/* <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' /> */}
             <Image
@@ -108,8 +108,9 @@ const Home = (props: Props) => {
           <CustomeStep
             classname='w-1/2 xl:w-full'
             icons={[<Filter1OutlinedIcon />, <Filter2OutlinedIcon />, <Filter3OutlinedIcon />]}
-            textClassName='text-justify'
+            textClassName='text-textMainColor/80'
             items={homePageData.homeStepSection.itemsData}
+            titleClassName='text-mainColor'
           />
         </div>
       </WrapperContent>
@@ -176,7 +177,7 @@ const Home = (props: Props) => {
           fontSize={30}
           breakLineAt={6}
           className='text-center'
-          color='rgba(255,255,255, .8)'
+          color='rgba(0,0,0, .8)'
         />
         <div className='mx-auto w-full h-fit'>
           <CustomeSlider
@@ -186,11 +187,11 @@ const Home = (props: Props) => {
             numberItem={3}
             numberItemScroll={1}
             classNameContainer='px-6'
-            className='bg-mainColor/20 rounded-md p-2 overflow-hidden object-cover h-[360px]'
+            className='bg-white/75 rounded-md p-2 overflow-hidden object-cover h-[360px]'
             classNameImage='rounded-md w-full h-[160px] object-cover'
-            classNameTitle='text-[14px] leading-[22px] text-white/40 pt-6'
-            classNameContent='text-white/90 text-[24px] leading-[25px] break-words py-6'
-            classNameTime='text-[14px] leading-[22px] text-white/40'
+            classNameTitle='text-[14px] leading-[22px]  pt-6'
+            classNameContent=' text-[24px] leading-[25px] break-words py-6'
+            classNameTime='text-[14px] leading-[22px] '
             isContent={true}
             isTime={true}
             isTitle={true}
@@ -208,7 +209,7 @@ const Home = (props: Props) => {
       >
         <div className='flex xl:flex-col'>
           <CustomeCommonQuestions
-            titleClassName='text-white/90 text-bold text-[18px]'
+            titleClassName='text-bold text-[18px]'
             items={homePageData.qAndASection.itemsData}
             className='w-1/2 xl:w-full'
             paddingRightSingleCommonQuestion={10}

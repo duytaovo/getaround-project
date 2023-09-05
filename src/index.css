@@ -1,19 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* @layer base {
-  .container {
-    @apply max-w-[1535px] xl:max-w-[1279px] lg:max-w-[1023px] md:max-w-[767px] sm:max-w-[639px];
-  }
-} */
-@font-face {
-  font-family: 'Brown-pro';
-  src:
-    url('../src/assets/fonts/brownpro-bold.otf') format('woff2 supports variations'),
-    url('../src/assets/fonts/brownpro-bold.otf') format('woff2 supports variations');
-  font-weight: 100 900;
-}
 
 html {
   display: flex;
@@ -28,11 +17,14 @@ textarea {
   min-height: 150px;
 }
 body {
-  background: #1c2635;
-  font-family: 'Brown-pro', sans-serif !important;
+  background: #f9f8f8;
+  /* font-family: 'Brown-pro', sans-serif !important; */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Nunito Sans', sans-serif; */
+  font-family: 'Mulish', sans-serif;
   overflow-y: scroll;
-  height: 100dvh;
-  color: #fff;
+  height: 100vh;
+  color: #000;
   width: 100vw;
 }
 
@@ -44,6 +36,18 @@ body {
 
 .ant-steps-item-finish .ant-steps-icon > span > svg {
   color: #44c5e5;
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: transparent !important;
+}
+
+.ant-dropdown .ant-dropdown-menu {
+  box-shadow: 0 5px 20px rgb(0 0 0 / 3%);
+}
+
+.ant-steps .ant-steps-item-subtitle {
+  margin-inline-start: 0px;
 }
 
 .ant-steps-item-process .ant-steps-icon > span > svg {
@@ -117,4 +121,14 @@ body {
   100% {
     left: 10%;
   }
+}
+
+.blur-bg {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.css-3tbo2w-MuiCircularProgress-root {
+  width: 20px !important;
+  height: 20px !important;
 }

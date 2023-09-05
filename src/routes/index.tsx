@@ -1,7 +1,10 @@
 import { lazy } from 'react'
 import path from 'src/constants/path'
+import Register from 'src/pages/Auth/Register'
+import UploadImage from 'src/pages/User/Car/UploadImage/Main'
 
 const Home = lazy(() => import('../pages/Home'))
+const Car = lazy(() => import('../pages/User/Car'))
 const NotFound = lazy(() => import('../pages/NotFound'))
 const HowItWork = lazy(() => import('../pages/howitwork'))
 const HowItWorkConnect = lazy(() => import('../pages/howitworkConnect'))
@@ -20,6 +23,7 @@ const HostBonus = lazy(() => import('src/pages/HostBonus/HostBonus'))
 const Test = lazy(() => import('src/pages/Hosting/Test'))
 const Login = lazy(() => import('src/pages/Auth/Login'))
 const CommingSoon = lazy(() => import('src/pages/CommingSoon/CommingSoon'))
+const ManageCar = lazy(() => import('src/pages/User/Car/ManageCar'))
 export const routeMain = [
   {
     path: path.home,
@@ -33,10 +37,7 @@ export const routeMain = [
     path: path.sharACar,
     Component: ShareACar
   },
-  {
-    path: path.bookACar,
-    Component: BookACar
-  },
+
   {
     path: path.hostCommunity,
     Component: HostComunity
@@ -72,14 +73,6 @@ export const routeMain = [
   {
     path: path.safetytrust,
     Component: SafetyTrust
-  },
-  // {
-  //   path: path.hostBobus,
-  //   Component: HostBonus
-  // },
-  {
-    path: path.login,
-    Component: Login
   },
   {
     path: path.test,
@@ -128,5 +121,38 @@ export const routeMain = [
   {
     path: path.moveServer,
     Component: CommingSoon
+  }
+]
+
+export const routeUser = [
+  {
+    path: path.bookACar,
+    Component: BookACar
+  }
+]
+
+export const routeManageCar = [
+  {
+    path: path.carUser,
+    Component: Car
+  },
+  {
+    path: path.carMange,
+    Component: ManageCar
+  },
+  {
+    path: path.upload,
+    Component: UploadImage
+  }
+]
+
+export const routeAuth = [
+  {
+    path: path.login,
+    Component: Login
+  },
+  {
+    path: path.register,
+    Component: Register
   }
 ]

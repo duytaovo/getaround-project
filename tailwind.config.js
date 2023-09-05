@@ -35,10 +35,11 @@ module.exports = {
       },
       colors: {
         mainColor: '#3699d3',
-        textMainColor: '#ffffff',
+        textMainColor: '#333333',
         textCustom: '#ffffff99',
         textCustomBgWhite: '#727171',
-        mainL1: '#1f4160'
+        mainL1: '#1f4160',
+        'white-main': '#f9f8f8'
       },
       backgroundColor: {
         mainBackGroundColor: '#1c2635',

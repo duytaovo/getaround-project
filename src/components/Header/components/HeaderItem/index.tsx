@@ -9,6 +9,26 @@ import { ICommonQuestion } from 'src/components/HeaderMobile/CustomItemHeader'
 import path from 'src/constants/path'
 type Props = {}
 
+const customDropdownStyle = {
+  arrow: false,
+  isOnClick: false,
+  className: 'px-1 mx-3 xl:p-0 xl:mr-0 hover:text-mainColor'
+}
+
+{
+  /* <div className = 'font- text-'> */
+}
+
+export const titleStyle = 'py-5 text-base font-normal'
+
+export const aStyle = 'py-[5px] text-base font-nomal flex justify-center item-center'
+export const aInStyle = ''
+
+export const menuStyle = {
+  padding: '20px 20px',
+  borderRadius: '16px'
+}
+
 const ComponentHeader = (props: Props) => {
   const { t } = useTranslation('home')
   const { i18n } = useTranslation()
@@ -17,10 +37,8 @@ const ComponentHeader = (props: Props) => {
       key: '1',
       label: (
         <CustomLink to={path.insurance}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-            <span className='cursor-pointer  group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-              {t('solution.insurance')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('solution.insurance')}</span>
           </div>
         </CustomLink>
       )
@@ -30,10 +48,8 @@ const ComponentHeader = (props: Props) => {
       key: '2',
       label: (
         <CustomLink to={path.safetytrust}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
-              {t('solution.trust&safe')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('solution.trust&safe')}</span>
           </div>
         </CustomLink>
       )
@@ -42,10 +58,8 @@ const ComponentHeader = (props: Props) => {
       key: '3',
       label: (
         <CustomLink to={path.howitwork}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all '>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
-              {t('solution.technology')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('solution.technology')}</span>
           </div>
         </CustomLink>
       )
@@ -54,10 +68,8 @@ const ComponentHeader = (props: Props) => {
       key: '4',
       label: (
         <CustomLink to={path.howitworkconnect}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm hover:text-mainColor'>
-              {t('solution.term')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('solution.term')}</span>
           </div>
         </CustomLink>
       )
@@ -69,10 +81,8 @@ const ComponentHeader = (props: Props) => {
       key: '1',
       label: (
         <CustomLink to={path.sharACar}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 transition-all hover:text-mainColor'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 transition-all font-medium font-sans text-sm  hover:text-mainColor'>
-              {t('shareCar.shareaCar')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('shareCar.shareaCar')}</span>
           </div>
         </CustomLink>
       )
@@ -81,10 +91,8 @@ const ComponentHeader = (props: Props) => {
       key: '2',
       label: (
         <CustomLink to={path.termCarShare}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('shareCar.term')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('shareCar.term')}</span>
           </div>
         </CustomLink>
       )
@@ -93,10 +101,8 @@ const ComponentHeader = (props: Props) => {
       key: '3',
       label: (
         <CustomLink to={path.hostCommunity}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('shareCar.benefit')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('shareCar.benefit')}</span>
           </div>
         </CustomLink>
       )
@@ -106,10 +112,8 @@ const ComponentHeader = (props: Props) => {
       key: '4',
       label: (
         <CustomLink to={path.hostrefernal}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('shareCar.refer')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('shareCar.refer')}</span>
           </div>
         </CustomLink>
       )
@@ -121,10 +125,8 @@ const ComponentHeader = (props: Props) => {
       key: '1',
       label: (
         <CustomLink to={path.partnerWithUs}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('partners.partnerWithUs')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('partners.partnerWithUs')}</span>
           </div>
         </CustomLink>
       )
@@ -133,10 +135,8 @@ const ComponentHeader = (props: Props) => {
       key: '2',
       label: (
         <CustomLink to={path.partnerOur}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
-              {t('partners.partnerWithOur')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('partners.partnerWithOur')}</span>
           </div>
         </CustomLink>
       )
@@ -145,10 +145,8 @@ const ComponentHeader = (props: Props) => {
       key: '3',
       label: (
         <CustomLink to={path.driveWithUber}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
-              {t('partners.driveWithUber')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('partners.driveWithUber')}</span>
           </div>
         </CustomLink>
       )
@@ -160,10 +158,8 @@ const ComponentHeader = (props: Props) => {
       key: '1',
       label: (
         <CustomLink to={path.newsroom}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
-              {t('newsroom.news')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('newsroom.news')}</span>
           </div>
         </CustomLink>
       )
@@ -172,10 +168,8 @@ const ComponentHeader = (props: Props) => {
       key: '2',
       label: (
         <CustomLink to={path.blogs}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('newsroom.blogs')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('newsroom.blogs')}</span>
           </div>
         </CustomLink>
       )
@@ -184,10 +178,8 @@ const ComponentHeader = (props: Props) => {
       key: '3',
       label: (
         <CustomLink to={path.termPartner}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('newsroom.policy')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('newsroom.policy')}</span>
           </div>
         </CustomLink>
       )
@@ -196,10 +188,8 @@ const ComponentHeader = (props: Props) => {
       key: '4',
       label: (
         <CustomLink to={path.eligibilitis}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('newsroom.eligibilities')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('newsroom.eligibilities')}</span>
           </div>
         </CustomLink>
       )
@@ -211,10 +201,8 @@ const ComponentHeader = (props: Props) => {
       key: '1',
       label: (
         <CustomLink to={path.aboutus}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 hover:text-mainColor'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm  hover:text-mainColor'>
-              {t('about us.unlockTeam')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('about us.unlockTeam')}</span>
           </div>
         </CustomLink>
       )
@@ -223,10 +211,8 @@ const ComponentHeader = (props: Props) => {
       key: '2',
       label: (
         <CustomLink to={path.contact}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300 '>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('about us.contact')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('about us.contact')}</span>
           </div>
         </CustomLink>
       )
@@ -235,52 +221,46 @@ const ComponentHeader = (props: Props) => {
       key: '3',
       label: (
         <CustomLink to={path.moveServer}>
-          <div className='inline-block w-full group px-5 text-black hover:translate-x-2 duration-300'>
-            <span className='cursor-pointer group-hover:text-mainColor justify-between text-black hover:translate-x-2 duration-300 font-medium font-sans text-sm hover:text-mainColor'>
-              {t('about us.movetoLive')}
-            </span>
+          <div className={aStyle}>
+            <span className={aInStyle}>{t('about us.movetoLive')}</span>
           </div>
         </CustomLink>
       )
     }
   ]
+
   return (
     <div>
-      <div className='ml-6  flex items-center cursor-pointer justify-between text-black font-medium font-sans text-sm'>
+      <div className='ml-10 flex items-center cursor-pointer justify-between text-textMainColor font-bold  text-sm'>
         <CustomDropDown
-          arrow={true}
-          isOnClick={false}
-          children={<span>{t('header.howItWork')}</span>}
+          {...customDropdownStyle}
+          menuStyle={menuStyle}
           items={itemsFirst}
-          className='p-2 xl:p-0 xl:mr-0 hover:text-mainColor '
+          children={<span className={titleStyle}>{t('header.howItWork')}</span>}
         />
         <CustomDropDown
-          arrow={true}
-          isOnClick={false}
-          children={<span>{t('header.hoisting')}</span>}
+          {...customDropdownStyle}
+          menuStyle={menuStyle}
           items={itemsSecond}
-          className='p-2 xl:p-0 xl:mr-0 mx-2  hover:text-mainColor'
+          children={<span className={titleStyle}>{t('header.hoisting')}</span>}
         />
         <CustomDropDown
-          arrow={true}
-          isOnClick={false}
-          children={<span>{t('header.partners')}</span>}
+          {...customDropdownStyle}
+          menuStyle={menuStyle}
           items={itemsThird}
-          className='p-2 xl:p-0 xl:mr-0 mx-2 hover:text-mainColor'
+          children={<span className={titleStyle}>{t('header.partners')}</span>}
         />
         <CustomDropDown
-          arrow={true}
-          isOnClick={false}
-          children={<span>{t('header.newrooms')}</span>}
+          {...customDropdownStyle}
+          menuStyle={menuStyle}
           items={itemsFour}
-          className='p-2 xl:p-0 xl:mr-0 mx-2 hover:text-mainColor'
+          children={<span className={titleStyle}>{t('header.newrooms')}</span>}
         />
         <CustomDropDown
-          arrow={true}
-          isOnClick={false}
-          children={<span>{t('header.aboutUs')}</span>}
+          {...customDropdownStyle}
+          menuStyle={menuStyle}
           items={itemsFive}
-          className='p-2 xl:p-0 xl:mr-0 mx-2 hover:text-mainColor'
+          children={<span className={titleStyle}>{t('header.aboutUs')}</span>}
         />
       </div>
     </div>

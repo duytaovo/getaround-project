@@ -1,8 +1,10 @@
 const path = {
   home: '/',
+  hostACar: '/host/xe',
   login: '/login',
   logout: '/logout',
   register: '/register',
+  carUser: '/host/xe',
   howitwork: '/our-solution/technology',
   howitworkconnect: '/our-solution/terms-conditions',
   hostrefernal: '/carshare/referral',
@@ -27,7 +29,9 @@ const path = {
   unlockTeam: '/about-us/unlock-team',
   contact: '/about-us/contact-us',
   moveServer: '/about-us/ourVision',
-  hostBobus: '/host-bonus'
+  hostBobus: '/host-bonus',
+  carMange: '/host/user/xe',
+  upload: '/host/xe/upload-image'
 } as const
 
 export default path

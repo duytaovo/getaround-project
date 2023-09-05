@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'src/components/Button'
 import { useAppDispatch } from 'src/hooks/useRedux'
@@ -14,6 +14,8 @@ import { isAccessTokenExpired, login, updateUser } from 'src/store/user/userSlic
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { getAccessTokenFromLS, setAccessTokenToLS } from 'src/utils/auth'
 import { Helmet } from 'react-helmet-async'
+import { Spin } from 'antd'
+import { CircularProgress } from '@mui/material'
 
 type FormData = Pick<Schema, 'email' | 'password'>
 const loginSchema = schema.pick(['email', 'password'])
@@ -22,6 +24,7 @@ const Login = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const { setIsAuthenticated } = useContext(AppContext)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const {
     handleSubmit,
     formState: { errors },
@@ -37,14 +40,13 @@ const Login = () => {
       password: data.password
     }
     try {
+      setIsSubmitting(true)
       const res = await dispatch(login(body))
       unwrapResult(res)
-
       const d = res?.payload?.data
       if (d?.result == 0) return toast.error(d?.message)
       await setAccessTokenToLS(d?.accessToken)
-      // await getAccessTokenFromLS()
-      await dispatch(updateUser(isAccessTokenExpired()))
+      await getAccessTokenFromLS()
       await setIsAuthenticated(true)
       await toast.success('Đăng nhập thành công ')
 
@@ -64,6 +66,8 @@ const Login = () => {
           })
         }
       }
+    } finally {
+      setIsSubmitting(false)
     }
   })
 
@@ -103,8 +107,15 @@ const Login = () => {
               type='submit'
               className='flex w-full items-center justify-center rounded-[30px] bg-mainColor py-4 px-2 text-sm uppercase text-white hover:opacity-80'
             >
-              Đăng nhập
+              {isSubmitting ? <CircularProgress sx={{ width: '25px', height: '25px' }} disableShrink /> : 'Đăng nhập'}
             </Button>
+            <span className='text-base text-center flex w-full items-center justify-center mt-2 '>Hoặc</span>
+
+            <div onClick={() => navigate('/register')} className='mt-3'>
+              <Button className='flex w-full items-center justify-center rounded-[30px] bg-mainL1 py-4 px-2 text-sm uppercase text-white hover:opacity-80'>
+                Đăng ký
+              </Button>
+            </div>
           </div>
         </form>
       </div>

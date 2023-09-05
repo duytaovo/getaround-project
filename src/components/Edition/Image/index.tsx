@@ -87,7 +87,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
   const [imgFile, setImgFile] = useState<File>()
   const [enable, setEnable] = useState<boolean>(false)
 
-  const show = () => permission == '-1' && isActiveEdit && setEnable(true)
+  const show = () => permission == -1 && isActiveEdit && setEnable(true)
   const hidden = () => setEnable(false)
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -164,14 +164,14 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
         onChange={handleChangeInput}
         className={`hidden`}
       />
-      {permission == '-1' && enable && isActiveEdit ? (
+      {permission == -1 && enable && isActiveEdit ? (
         <div>
           <img
             src={val}
             alt={alt}
             onClick={show}
             className={`${className} border border-transparent ${
-              permission == '-1' ? 'border-dashed hover:border-slate-400' : ''
+              permission == -1 ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           />
@@ -219,7 +219,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
                   alt={alt}
                   onClick={show}
                   className={`h-80 w-auto border border-transparent ${
-                    permission == '-1' ? 'border-dashed focus:border-slate-400 hover:border-slate-400' : ''
+                    permission == -1 ? 'border-dashed focus:border-slate-400 hover:border-slate-400' : ''
                   }`}
                   {...props}
                 />
@@ -238,7 +238,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             alt={alt}
             onClick={show}
             className={`${className} border border-transparent ${
-              permission == '-1' && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
+              permission == -1 && isActiveEdit ? 'border-dashed hover:border-slate-400' : ''
             }`}
             {...props}
           />

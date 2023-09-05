@@ -9,7 +9,8 @@ export const DataProprietaryHowItWork: ISelectItemsProprietary = {
     ' allows you to find, book, and unlock cars directly from your phone, and avoid meeting up with anyone  throughout the process to exchange keys.',
   span: 'Getaround Connect®',
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg',
-  Link: '/'
+  Link: '/',
+  linkText: ''
 }
 
 export const DataProprietarySafetyTrust: ISelectItemsProprietary = {
@@ -22,5 +23,6 @@ export const DataProprietarySafetyTrust: ISelectItemsProprietary = {
     ' allows you to find, book, and unlock cars directly from your phone, and avoid meeting up with anyone  throughout the process to exchange keys.',
   span: 'Getaround Connect®',
   img: 'https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/639a1e9f44d6d5e62cda3fbb_iStock-1243633999%201.jpg',
-  Link: '/'
+  Link: '/',
+  linkText: ''
 }

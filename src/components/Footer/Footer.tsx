@@ -21,13 +21,13 @@ import logo from 'src/assets/images/logo.jpg'
 
 type Props = {}
 
-const style: React.CSSProperties = { padding: '8px 0' }
+const style: React.CSSProperties = { padding: '8px 0', color: 'white' }
 
 const Footer = (props: Props) => {
   return (
-    <div className='p-10 bg-white'>
+    <div className='p-10 bg-mainBackGroundColor border-t-[1px]'>
       <div className='flex items-start justify-between  '>
-        <img src={logo} alt='logo' className='fill-current bg-none h-[36px]' />
+        <img src='/logo-main.png' alt='logo' className='fill-current bg-none h-[36px]' />
 
         <CustomSelect
           width='200px'
@@ -36,8 +36,8 @@ const Footer = (props: Props) => {
           className='text-black border-none outline-none rounded-md h-10'
         />
       </div>
-      <div className='mt-8 flex flex-grow justify-between flex-wrap'>
-        <div style={style}>
+      <div className='mt-8 flex text-white/70 flex-grow justify-between flex-wrap'>
+        <div style={style} className=''>
           <ComponentFooter header='Giải pháp của chúng tôi' tabContent={firstColumn} />
         </div>
         <div style={style}>

@@ -46,7 +46,7 @@ const Carousel_About = ({
           <Text
             id={item.link}
             tag='h3'
-            content={data[item.link] || 'Read more'}
+            content={data[item.link] || 'Xem thêm...'}
             className='text-[14px] font-semibold text-mainColor mt-3 underline hover:no-underline hover:text-black duration-100'
           />
           {/* <Link

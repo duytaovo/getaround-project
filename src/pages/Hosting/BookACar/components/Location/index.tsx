@@ -10,7 +10,7 @@ import { debounce } from '@mui/material/utils'
 
 // This key was created specifically for the demo in mui.com.
 // You need to create a new one for your application.
-const GOOGLE_MAPS_API_KEY = 'AIzaSyC3aviU6KHXAjoSnxcw6qbOhjnFctbxPkE'
+const GOOGLE_MAPS_API_KEY = 'AIzaSyBI7135GTiX4YEAiKVqf-sD8DizXl0ONlQ'
 
 function loadScript(src: string, position: HTMLElement | null, id: string) {
   if (!position) {
@@ -26,30 +26,34 @@ function loadScript(src: string, position: HTMLElement | null, id: string) {
 
 const autocompleteService = { current: null }
 
-interface MainTextMatchedSubstrings {
-  offset: number
-  length: number
-}
-interface StructuredFormatting {
-  main_text: string
-  secondary_text: string
-  main_text_matched_substrings?: readonly MainTextMatchedSubstrings[]
-}
-interface PlaceType {
-  description: string
-  structured_formatting: StructuredFormatting
-}
+// interface MainTextMatchedSubstrings {
+//   offset: number
+//   length: number
+// }
+// interface StructuredFormatting {
+//   main_text: string
+//   secondary_text: string
+//   main_text_matched_substrings?: readonly MainTextMatchedSubstrings[]
+// }
+// interface PlaceType {
+//   description: string
+//   structured_formatting: StructuredFormatting
+// }
 
-export default function GoogleMaps() {
-  const [value, setValue] = React.useState<PlaceType | null>(null)
+export default function Location({ getValue }: any) {
+  const [value, setValue] = React.useState<any | null>(null)
   const [inputValue, setInputValue] = React.useState('')
-  const [options, setOptions] = React.useState<readonly PlaceType[]>([])
+  const [options, setOptions] = React.useState<readonly any[]>([])
   const loaded = React.useRef(false)
-
   if (typeof window !== 'undefined' && !loaded.current) {
     if (!document.querySelector('#google-maps')) {
       loadScript(
         `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`,
+        document.querySelector('head'),
+        'google-maps'
+      )
+      loadScript(
+        `https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJ0T2NLikpdTERKxE8d61aX_E&key=AIzaSyBI7135GTiX4YEAiKVqf-sD8DizXl0ONlQ`,
         document.querySelector('head'),
         'google-maps'
       )
@@ -60,7 +64,7 @@ export default function GoogleMaps() {
 
   const fetch = React.useMemo(
     () =>
-      debounce((request: { input: string }, callback: (results?: readonly PlaceType[]) => void) => {
+      debounce((request: { input: string }, callback: (results?: readonly any[]) => void) => {
         ;(autocompleteService.current as any).getPlacePredictions(request, callback)
       }, 400),
     []
@@ -80,10 +84,10 @@ export default function GoogleMaps() {
       setOptions(value ? [value] : [])
       return undefined
     }
-
-    fetch({ input: inputValue }, (results?: readonly PlaceType[]) => {
+    getValue && getValue(value)
+    fetch({ input: inputValue }, (results?: readonly any[]) => {
       if (active) {
-        let newOptions: readonly PlaceType[] = []
+        let newOptions: readonly any[] = []
 
         if (value) {
           newOptions = [value]
@@ -104,8 +108,8 @@ export default function GoogleMaps() {
 
   return (
     <Autocomplete
-      id='google-map-demo'
-      sx={{ width: 300 }}
+      id='google-maps'
+      sx={{ width: 250, height: 50 }}
       getOptionLabel={(option) => (typeof option === 'string' ? option : option.description)}
       filterOptions={(x) => x}
       options={options}
@@ -113,15 +117,15 @@ export default function GoogleMaps() {
       includeInputInList
       filterSelectedOptions
       value={value}
-      noOptionsText='No locations'
-      onChange={(event: any, newValue: PlaceType | null) => {
+      noOptionsText='Nhập địa chỉ để tìm kiếm xe'
+      onChange={(event: any, newValue: any | null) => {
         setOptions(newValue ? [newValue, ...options] : options)
         setValue(newValue)
       }}
       onInputChange={(event, newInputValue) => {
         setInputValue(newInputValue)
       }}
-      renderInput={(params) => <TextField {...params} label='Add a location' fullWidth />}
+      renderInput={(params) => <TextField {...params} label='Nhập địa chỉ' fullWidth />}
       renderOption={(props, option) => {
         const matches = option.structured_formatting.main_text_matched_substrings || []
 
