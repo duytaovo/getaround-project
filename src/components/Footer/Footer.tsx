@@ -27,7 +27,7 @@ const Footer = (props: Props) => {
   return (
     <div className='p-10 bg-mainBackGroundColor border-t-[1px]'>
       <div className='flex items-start justify-between  '>
-        <img src={logo} alt='logo' className='fill-current bg-none h-[36px]' />
+        <img src='/logo-main.png' alt='logo' className='fill-current bg-none h-[36px]' />
 
         <CustomSelect
           width='200px'
