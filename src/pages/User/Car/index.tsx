@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material'
 import React, { ReactNode, useEffect } from 'react'
-import LocalCarWashIcon from '@mui/icons-material/LocalCarWash'
 import SideBar from './components/SideBar'
 import Header from './components/Main/Header'
 import Main from './components/Main/Main'
@@ -22,6 +21,7 @@ const Car = () => {
     setOpen(value)
   }
   const dispatch = useAppDispatch()
+
   useEffect(() => {
     dispatch(getCarsBrand(''))
     dispatch(getCarsLicense(''))

@@ -179,7 +179,7 @@ export const Image: FC<Iprops> = ({ id, className, classNameContainer, src, alt,
             <div className='flex flex-col item-center relative '>
               <div className='flex justify-between'>
                 <div className='flex items-center text-gray-500'>
-                  Lưu ý: Dụng lượng file tối đa 2 MB, định dạng cho phép: .JPEG, .PNG, .JPG
+                  Lưu ý: Dung lượng file tối đa 2 MB, định dạng cho phép: .JPEG, .PNG, .JPG
                 </div>
 
                 <OptionWrapper>
