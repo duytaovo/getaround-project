@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 import path from 'src/constants/path'
 import Register from 'src/pages/Auth/Register'
-import UploadImage from 'src/pages/User/Car/UploadImage/Main'
+import UploadImage from 'src/pages/User/Car'
 
 const Home = lazy(() => import('../pages/Home'))
 const Car = lazy(() => import('../pages/User/Car'))
@@ -23,7 +23,7 @@ const HostBonus = lazy(() => import('src/pages/HostBonus/HostBonus'))
 const Test = lazy(() => import('src/pages/Hosting/Test'))
 const Login = lazy(() => import('src/pages/Auth/Login'))
 const CommingSoon = lazy(() => import('src/pages/CommingSoon/CommingSoon'))
-const ManageCar = lazy(() => import('src/pages/User/Car/ManageCar'))
+const ManageCar = lazy(() => import('src/pages/User/ManageCar'))
 export const routeMain = [
   {
     path: path.home,

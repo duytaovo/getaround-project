@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import { useSpring, animated } from '@react-spring/web'
 import Input from 'src/components/Input'
-import { Space } from 'antd'
+import { message, Steps, theme } from 'antd'
+import ListAltIcon from '@mui/icons-material/ListAlt'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
-import { useForm } from 'react-hook-form'
+import { FormProvider, useForm, useFormContext, Controller } from 'react-hook-form'
+import { useDropzone } from 'react-dropzone'
 import { yupResolver } from '@hookform/resolvers/yup'
 import SelectCustom from './Select'
 import { schemaAddCar } from 'src/utils/rules'
 import Button from 'src/components/Button'
 import { toast } from 'react-toastify'
 import { ErrorResponse } from 'src/types/utils.type'
-import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
+import { getAvatarUrl, isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { addCars, getCarYear, getCars, getCarsSeri } from 'src/store/car/manageCar/managCarSlice'
 import { isAccessTokenExpired } from 'src/store/user/userSlice'
@@ -21,6 +23,9 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import { CircularProgress, OutlinedInput } from '@mui/material'
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate'
+import InputFile from 'src/components/InputFile'
+
 interface FadeProps {
   children: React.ReactElement
   in?: boolean
@@ -64,28 +69,15 @@ const MenuProps = {
   }
 }
 
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder'
-]
-
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
   left: '50%',
-  height: '80%',
+  height: '90%',
   overflowY: 'scroll',
   scroll: 'smooth',
   transform: 'translate(-50%, -50%)',
-  width: 500,
+  width: 600,
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
@@ -107,30 +99,43 @@ interface FormData {
   carLicense: string
   currentLocation: string
 }
-interface Regis {
-  regis: string[]
-}
+
 export default function CustomModal({ open, onChange }: Props) {
   const { carLicense, carType, carsBrand, carsModel, carsYear, carsSeri, carRegis } = useAppSelector(
     (state) => state.car
   )
   const { userId } = useAppSelector((state) => state?.user)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const methods = ({} = useForm({
+    resolver: yupResolver(schemaAddCar)
+  }))
   const {
     handleSubmit,
     formState: { errors },
     setError,
     register,
     setValue,
-    getValues
-  } = useForm({
-    resolver: yupResolver(schemaAddCar)
-  })
+    watch,
+    getValues,
+    control
+  } = methods
   const dispatch = useAppDispatch()
   const [disabled, setDisabled] = useState<boolean>(false)
-  const [disabledModel, setDisabledModel] = useState<boolean>(true)
-  const [disabledSeri, setDisabledSeri] = useState<boolean>(true)
+  const [disabledModel, setDisabledModel] = useState<boolean>(false)
+  const [disabledSeri, setDisabledSeri] = useState<boolean>(false)
   const [valueYear, setValueYear] = useState<string>('')
+  const [file, setFile] = useState<File[]>()
+  const imageArray = file || [] // Mảng chứa các đối tượng ảnh (File hoặc Blob)
+
+  // Tạo một mảng chứa các URL tạm thời cho ảnh
+  const imageUrls: string[] = []
+
+  for (const image of imageArray) {
+    const imageUrl = URL.createObjectURL(image)
+    imageUrls.push(imageUrl)
+  }
+
+  const avatar = watch('image')
 
   useEffect(() => {
     setValue('carBrand', '')
@@ -149,8 +154,9 @@ export default function CustomModal({ open, onChange }: Props) {
       setDisabledModel(false)
     }
     await dispatch(getCarYear(value))
-    await setValueYear(value)
+    // await setValueYear(value)
   }
+
   const handleOnChangeYear = async ({ idBrand, idYear }: any) => {
     await dispatch(getCarsSeri({ idYear, idBrand }))
     if (idBrand !== '' && idYear !== '') {
@@ -159,7 +165,7 @@ export default function CustomModal({ open, onChange }: Props) {
   }
 
   const onSubmit = handleSubmit(async (data) => {
-    const body = {
+    const body = JSON.stringify({
       userUuid: isAccessTokenExpired().userUuid,
       currentLocationInHCM: data.currentLocation,
       license_plate: data.license_plate,
@@ -172,7 +178,15 @@ export default function CustomModal({ open, onChange }: Props) {
       vehicle_type_id: data.carType,
       car_license_id: data.carLicense,
       regis: data.regis
+    })
+    const form = new FormData()
+    if (file) {
+      file.map((item, index) => {
+        return form.append('image', item)
+      })
     }
+    console.log(body)
+    console.log(data.image)
     try {
       setIsSubmitting(true)
       const res = await dispatch(addCars(body))
@@ -211,6 +225,346 @@ export default function CustomModal({ open, onChange }: Props) {
     setValue('phoneOwner', '')
     setValue('vinNumber', '')
     onChange && onChange()
+    setOpenModalUpload(true)
+  }
+  const [openModalUpload, setOpenModalUpload] = useState<boolean>(false)
+  let _form = () => (
+    <div>
+      <FormProvider {...methods}>
+        <form className='profile-form__wrapper' autoComplete='off' onSubmit={onSubmit} noValidate>
+          {/* <span className='text-2xl p-4 pl-0  mb-8'>Thêm xe </span> */}
+          <p className='mb-3'>
+            (<span className='text-red-500 mb-2'> * </span>)Trường bắt buộc
+          </p>
+          <div className='flex items-center w-full space-x-2'>
+            <div className='w-1/2'>
+              {/* <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '></h1> */}
+              <Input
+                classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
+                name='license_plate'
+                register={register}
+                type='text'
+                className=''
+                errorMessage={errors.license_plate?.message}
+                placeholder='Biển số xe'
+              />
+            </div>
+            <div className='w-1/2'>
+              <Input
+                classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
+                name='phoneOwner'
+                register={register}
+                type='text'
+                className=''
+                errorMessage={errors.phoneOwner?.message}
+                placeholder='Số điện thoại '
+              />
+            </div>
+          </div>
+          <Input
+            classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
+            name='vinNumber'
+            register={register}
+            type='text'
+            className=''
+            errorMessage={errors.vinNumber?.message}
+            placeholder='Số khung '
+          />
+          <Input
+            classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
+            name='currentLocation'
+            register={register}
+            type='text'
+            className=''
+            errorMessage={errors.currentLocation?.message}
+            placeholder='Vị trí hiện tại'
+          />
+          <div className='rounded-2xl'>
+            <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '>
+              Phương thức đăng ký
+              <span className='text-red-500 text-sm font-medium '>*</span>
+            </h1>
+            <FormControl fullWidth>
+              <Select
+                // labelId='demo-multiple-checkbox-label'
+                multiple
+                placeholder='Chọn 1 hoặc nhiều phương thức ĐK'
+                // value={personName}
+                defaultValue={[]}
+                // input={<OutlinedInput label='Phương thức đăng ký' />}
+                MenuProps={MenuProps}
+                {...register('regis')}
+                displayEmpty
+                inputProps={{ 'aria-label': 'Without label' }}
+              >
+                {/* <MenuItem value=''>
+                        <p className='text-left text-[#777777]'>Phương thức đăng ký</p>
+                      </MenuItem> */}
+                {carRegis.map((item) => {
+                  return (
+                    <MenuItem
+                      // onClick={() => {
+                      //   handleChange(item.id)
+                      // }}
+                      value={item.id}
+                      key={item.id}
+                      className='text-black'
+                    >
+                      {item.registerMethodName}
+                    </MenuItem>
+                  )
+                })}
+              </Select>
+              <p className='text-red-500 text-left text-sm'>{errors.regis?.message}</p>
+            </FormControl>
+          </div>
+          {/* <SelectCustom
+          className={'flex-1'}
+          id='carModel'
+          label='Kiểu xe'
+          placeholder='Vui lòng chọn'
+          defaultValue={''}
+          options={carsModel}
+          register={register}
+          isModel={true}
+          disabled={false}
+          onChange={() => {}}
+        >
+          {errors.carModel?.message}
+        </SelectCustom> */}
+          <div className='space-x-2 flex flex-row  justify-between mt-2'>
+            <SelectCustom
+              className={'flex-1'}
+              id='carBrand'
+              label='Hãng xe'
+              placeholder='Vui lòng chọn'
+              defaultValue={''}
+              options={carsBrand}
+              register={register}
+              isBrand={true}
+              disabled={false}
+
+              // onChange={handleOnChangeCarBrand}
+            >
+              {errors.carBrand?.message}
+            </SelectCustom>
+            <div className='flex-1'>
+              <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '>
+                Năm sản xuất
+                <span className='text-red-500 text-sm font-medium '>*</span>
+              </h1>
+              <FormControl fullWidth disabled={disabledModel}>
+                <Select
+                  // labelId='demo-multiple-checkbox-label'
+                  placeholder='Chọn năm sản xuất'
+                  // value={personName}
+                  defaultValue={[]}
+                  // input={<OutlinedInput label='Phương thức đăng ký' />}
+                  MenuProps={MenuProps}
+                  {...register('carYear')}
+                  displayEmpty
+                  inputProps={{ 'aria-label': 'Without label' }}
+                >
+                  {/* <MenuItem value=''>
+                        <p className='text-left text-[#777777]'>Phương thức đăng ký</p>
+                      </MenuItem> */}
+                  {carsYear.map((item) => {
+                    return (
+                      <MenuItem
+                        onClick={() => {
+                          // console.log(item.brandID)
+                          // console.log(item.releaseYearID)
+                          // handleOnChangeYear({ idBrand: item.brandID, idYear: item.releaseYearID })
+                        }}
+                        value={item.year}
+                        key={item.releaseYearID}
+                        className='text-black'
+                      >
+                        {item.year}
+                      </MenuItem>
+                    )
+                  })}
+                </Select>
+                <p className='text-red-500 text-left text-sm'>{errors.regis?.message}</p>
+              </FormControl>
+            </div>
+          </div>
+          <SelectCustom
+            className={'mt-2'}
+            id='carSeri'
+            label='Dòng xe'
+            placeholder='Vui lòng chọn'
+            defaultValue={''}
+            options={carsSeri}
+            register={register}
+            isCarSeri={true}
+            disabled={disabledSeri}
+            // onChange={() => {}}
+          >
+            {errors.carSeri?.message}
+          </SelectCustom>
+
+          <div className='space-x-2 mt-2 flex flex-row justify-between w-full'>
+            <SelectCustom
+              className={''}
+              id='carType'
+              label='Loại phương tiện'
+              placeholder='Vui lòng chọn'
+              defaultValue={''}
+              options={carType}
+              register={register}
+              isCarType={true}
+              disabled={false}
+              // onChange={() => {}}
+            >
+              {errors.carType?.message}
+            </SelectCustom>
+            <SelectCustom
+              className={''}
+              id='carLicense'
+              label='Loại biển xe'
+              placeholder='Vui lòng chọn'
+              defaultValue={''}
+              options={carLicense}
+              register={register}
+              isCarLicense={true}
+              disabled={false}
+              // onChange={() => {}}
+            >
+              {errors.carLicense?.message}
+            </SelectCustom>
+          </div>
+          <div className='flex space-x-2 mt-6'>
+            {current === 0 && (
+              <Button
+                onClick={onClickHuy}
+                // type='submit'
+                className='flex w-1/2 items-center justify-center rounded-xl bg-red-500 py-4 px-2 text-base text-white hover:opacity-80'
+              >
+                Hủy
+              </Button>
+            )}
+            {current < steps.length - 1 && (
+              <Button
+                type='button'
+                onClick={() => {
+                  next()
+                }}
+                className={`flex w-1/2 items-center justify-center rounded-xl bg-mainColor py-4 px-2 text-base text-white hover:opacity-80 ${
+                  disabled == true && 'disabled'
+                }`}
+              >
+                {isSubmitting ? <CircularProgress sx={{ width: '25px', height: '25px' }} disableShrink /> : 'Tiếp tục'}
+              </Button>
+            )}
+          </div>
+        </form>
+      </FormProvider>
+    </div>
+  )
+  const handleChangeFile = (file?: File[]) => {
+    setFile(file)
+  }
+  // const onDrop = (acceptedFiles: File[]) => {}
+  // const { getRootProps, getInputProps } = useDropzone({ onDrop })
+
+  let _formUpload = () => {
+    const {
+      register,
+      formState: { errors }
+    } = useFormContext<FormData>()
+    return (
+      <div className='flex flex-col justify-between space-y-40 md:w-72 md:border-l md:border-l-gray-200'>
+        <form autoComplete='off' noValidate>
+          <div className='flex flex-col items-center '>
+            <div className='my-5 w-24 space-y-5 justify-between items-center'>
+              {imageUrls.map((imageUrl, index) => {
+                return (
+                  <img
+                    key={index}
+                    src={imageUrl || getAvatarUrl(avatar)}
+                    className='h-full rounded-md w-full  object-cover'
+                    alt='avatar'
+                  />
+                )
+              })}
+            </div>
+            <InputFile onChange={handleChangeFile} id='image' register={register} />
+            <div className='mt-3 text-gray-400 flex flex-col items-center'>
+              <div className='text-red-500'>Tối đa 3 ảnh</div>
+              <div>Dụng lượng file tối đa 2 MB</div>
+              <div>Định dạng:.JPEG, .PNG</div>
+            </div>
+          </div>
+          <div className='flex justify-between items-center space-x-4 w-full'>
+            {current > 0 && (
+              <Button
+                type='button'
+                onClick={() => prev()}
+                className={`flex w-1/2 items-center justify-center rounded-xl bg-mainBackGroundColor py-4 px-2 text-base text-white hover:opacity-80 ${
+                  disabled == true && 'disabled'
+                }`}
+              >
+                {isSubmitting ? <CircularProgress sx={{ width: '25px', height: '25px' }} disableShrink /> : 'Quay lại'}
+              </Button>
+            )}
+
+            {current === steps.length - 1 && (
+              <Button
+                onClick={onSubmit}
+                type='submit'
+                className={`flex w-1/2 items-center justify-center rounded-xl bg-mainColor py-4 px-2 text-base text-white hover:opacity-80 ${
+                  disabled == true && 'disabled'
+                }`}
+              >
+                {isSubmitting ? <CircularProgress sx={{ width: '25px', height: '25px' }} disableShrink /> : 'Lưu'}
+              </Button>
+            )}
+            {/* {current === steps.length - 1 && (
+                <Button onClick={() => message.success('Processing complete!')}>Done</Button>
+              )} */}
+          </div>
+        </form>
+      </div>
+    )
+  }
+  const steps = [
+    {
+      title: 'Bước 1',
+      content: <_form />,
+      icon: <ListAltIcon />
+    },
+    {
+      title: 'Bước 2',
+      content: <_formUpload />,
+      icon: <AddPhotoAlternateIcon />
+    }
+    // {
+    //   title: 'Hoàn thành',
+    //   content: 'Last-content',
+    //   icon: <ListAltIcon />
+    // }
+  ]
+  const { token } = theme.useToken()
+  const [current, setCurrent] = useState(0)
+
+  const next = () => {
+    setCurrent(current + 1)
+  }
+
+  const prev = () => {
+    setCurrent(current - 1)
+  }
+
+  const items = steps.map((item) => ({ key: item.title, title: item.title, icon: item.icon }))
+
+  const contentStyle: React.CSSProperties = {
+    // textAlign: 'center',
+    color: token.colorTextTertiary,
+    backgroundColor: token.colorFillAlter,
+    borderRadius: token.borderRadiusLG,
+    // border: `1px dashed ${token.colorBorder}`,
+    marginTop: 16
   }
   return (
     <div>
@@ -228,228 +582,12 @@ export default function CustomModal({ open, onChange }: Props) {
         }}
       >
         <Fade in={open}>
-          <Box sx={style}>
-            <form className='profile-form__wrapper' autoComplete='off' onSubmit={onSubmit} noValidate>
-              <span className='text-2xl p-4 pl-0  mb-8'>Thêm xe </span>
-              <p className='mb-3'>
-                (<span className='text-red-500 mb-2'> * </span>)Trường bắt buộc
-              </p>
-              <div className='flex items-center w-full space-x-2'>
-                <div className='w-1/2'>
-                  {/* <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '></h1> */}
-                  <Input
-                    classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
-                    name='license_plate'
-                    register={register}
-                    type='text'
-                    className=''
-                    errorMessage={errors.license_plate?.message}
-                    placeholder='Biển số xe'
-                  />
-                </div>
-                <div className='w-1/2'>
-                  <Input
-                    classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
-                    name='phoneOwner'
-                    register={register}
-                    type='text'
-                    className=''
-                    errorMessage={errors.phoneOwner?.message}
-                    placeholder='Số điện thoại '
-                  />
-                </div>
-              </div>
-              <Input
-                classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
-                name='vinNumber'
-                register={register}
-                type='text'
-                className=''
-                errorMessage={errors.vinNumber?.message}
-                placeholder='Số khung '
-              />
-              <Input
-                classNameInput='p-3 w-full text-black outline-none border border-gray-300 focus:border-gray-500 rounded-md focus:shadow-sm'
-                name='currentLocation'
-                register={register}
-                type='text'
-                className=''
-                errorMessage={errors.currentLocation?.message}
-                placeholder='Vị trí hiện tại'
-              />
-              <div className='rounded-2xl'>
-                <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '>
-                  Phương thức đăng ký
-                  <span className='text-red-500 text-sm font-medium '>*</span>
-                </h1>
-                <FormControl fullWidth>
-                  <Select
-                    // labelId='demo-multiple-checkbox-label'
-                    multiple
-                    placeholder='Chọn 1 hoặc nhiều phương thức ĐK'
-                    // value={personName}
-                    defaultValue={[]}
-                    // input={<OutlinedInput label='Phương thức đăng ký' />}
-                    MenuProps={MenuProps}
-                    {...register('regis')}
-                    displayEmpty
-                    inputProps={{ 'aria-label': 'Without label' }}
-                  >
-                    {/* <MenuItem value=''>
-                      <p className='text-left text-[#777777]'>Phương thức đăng ký</p>
-                    </MenuItem> */}
-                    {carRegis.map((item) => {
-                      return (
-                        <MenuItem
-                          // onClick={() => {
-                          //   handleChange(item.id)
-                          // }}
-                          value={item.id}
-                          key={item.id}
-                          className='text-black'
-                        >
-                          {item.registerMethodName}
-                        </MenuItem>
-                      )
-                    })}
-                  </Select>
-                  <p className='text-red-500 text-left text-sm'>{errors.regis?.message}</p>
-                </FormControl>
-              </div>
-              <SelectCustom
-                className={'flex-1'}
-                id='carModel'
-                label='Kiểu xe'
-                placeholder='Vui lòng chọn'
-                defaultValue={''}
-                options={carsModel}
-                register={register}
-                isModel={true}
-                disabled={false}
-                onChange={() => {}}
-              >
-                {errors.carModel?.message}
-              </SelectCustom>
-              <div className='space-x-2 flex flex-row  justify-between mt-2'>
-                <SelectCustom
-                  className={'flex-1'}
-                  id='carBrand'
-                  label='Hãng xe'
-                  placeholder='Vui lòng chọn'
-                  defaultValue={''}
-                  options={carsBrand}
-                  register={register}
-                  isBrand={true}
-                  disabled={false}
-                  onChange={handleOnChangeCarBrand}
-                >
-                  {errors.carBrand?.message}
-                </SelectCustom>
-                <div className='flex-1'>
-                  <h1 className='text-sm mb-2 text-[#29303b] font-medium text-left '>
-                    Năm sản xuất
-                    <span className='text-red-500 text-sm font-medium '>*</span>
-                  </h1>
-                  <FormControl fullWidth disabled={disabledModel}>
-                    <Select
-                      // labelId='demo-multiple-checkbox-label'
-                      placeholder='Chọn năm sản xuất'
-                      // value={personName}
-                      defaultValue={[]}
-                      // input={<OutlinedInput label='Phương thức đăng ký' />}
-                      MenuProps={MenuProps}
-                      {...register('carYear')}
-                      displayEmpty
-                      inputProps={{ 'aria-label': 'Without label' }}
-                    >
-                      {/* <MenuItem value=''>
-                      <p className='text-left text-[#777777]'>Phương thức đăng ký</p>
-                    </MenuItem> */}
-                      {carsYear.map((item) => {
-                        return (
-                          <MenuItem
-                            onClick={() => {
-                              // console.log(item.brandID)
-                              // console.log(item.releaseYearID)
-                              handleOnChangeYear({ idBrand: item.brandID, idYear: item.releaseYearID })
-                            }}
-                            value={item.year}
-                            key={item.releaseYearID}
-                            className='text-black'
-                          >
-                            {item.year}
-                          </MenuItem>
-                        )
-                      })}
-                    </Select>
-                    <p className='text-red-500 text-left text-sm'>{errors.regis?.message}</p>
-                  </FormControl>
-                </div>
-              </div>
-              <SelectCustom
-                className={'mt-2'}
-                id='carSeri'
-                label='Dòng xe'
-                placeholder='Vui lòng chọn'
-                defaultValue={''}
-                options={carsSeri}
-                register={register}
-                isCarSeri={true}
-                disabled={disabledSeri}
-                onChange={() => {}}
-              >
-                {errors.carSeri?.message}
-              </SelectCustom>
-
-              <div className='space-x-2 mt-2 flex flex-row justify-between w-full'>
-                <SelectCustom
-                  className={''}
-                  id='carType'
-                  label='Loại phương tiện'
-                  placeholder='Vui lòng chọn'
-                  defaultValue={''}
-                  options={carType}
-                  register={register}
-                  isCarType={true}
-                  disabled={false}
-                  onChange={() => {}}
-                >
-                  {errors.carType?.message}
-                </SelectCustom>
-                <SelectCustom
-                  className={''}
-                  id='carLicense'
-                  label='Loại biển xe'
-                  placeholder='Vui lòng chọn'
-                  defaultValue={''}
-                  options={carLicense}
-                  register={register}
-                  isCarLicense={true}
-                  disabled={false}
-                  onChange={() => {}}
-                >
-                  {errors.carLicense?.message}
-                </SelectCustom>
-              </div>
-              <div className='flex space-x-2 mt-6'>
-                <Button
-                  type='submit'
-                  className={`flex w-1/2 items-center justify-center rounded-xl bg-mainColor py-4 px-2 text-base text-white hover:opacity-80 ${
-                    disabled == true && 'disabled'
-                  }`}
-                >
-                  {isSubmitting ? <CircularProgress sx={{ width: '25px', height: '25px' }} disableShrink /> : 'Lưu'}
-                </Button>
-                <Button
-                  onClick={onClickHuy}
-                  // type='submit'
-                  className='flex w-1/2 items-center justify-center rounded-xl bg-red-500 py-4 px-2 text-base text-white hover:opacity-80'
-                >
-                  Hủy
-                </Button>
-              </div>
-            </form>
-          </Box>
+          <FormProvider {...methods}>
+            <Box sx={style}>
+              <Steps current={current} items={items} />
+              <div style={contentStyle}>{steps[current].content}</div>
+            </Box>
+          </FormProvider>
         </Fade>
       </Modal>
     </div>

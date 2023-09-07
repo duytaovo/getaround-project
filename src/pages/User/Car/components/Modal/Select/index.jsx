@@ -17,7 +17,6 @@ export default function SelectCustom({
   action = () => {},
   name = '',
   disabled,
-  onChange,
   ...props
 }) {
   const renderSelectOption = () => {
@@ -43,7 +42,7 @@ export default function SelectCustom({
   }
 
   const handleChange = (id) => {
-    onChange && onChange(id)
+    props.onChange && props.onChange(id)
   }
 
   return (
