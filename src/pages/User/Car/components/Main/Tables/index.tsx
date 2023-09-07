@@ -16,6 +16,7 @@ type Props = {
 const CarTable = ({ onClick }: Props) => {
   const dispatch = useAppDispatch()
   const { carList } = useAppSelector((state) => state.car)
+
   useEffect(() => {
     dispatch(getCars(''))
   }, [])

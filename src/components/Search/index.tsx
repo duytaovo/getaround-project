@@ -1,7 +1,11 @@
 import React, { ChangeEvent, memo, useState } from 'react'
 import { IconButton } from '@mui/material'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
-
+import { searchCars, getCars } from 'src/store/car/manageCar/managCarSlice'
+import { useAppDispatch } from 'src/hooks/useRedux'
+import { unwrapResult } from '@reduxjs/toolkit'
+import axios from 'axios'
+import { use } from 'i18next'
 interface Props {
   placeholder: string
   onChange: (value: string) => void
@@ -9,12 +13,33 @@ interface Props {
 }
 
 const Search = ({ placeholder, onChange, width }: Props) => {
+  const dispatch = useAppDispatch()
   const [valueSearch, setValueSearch] = useState('')
+  const [valueSearchcar, setValueSearchCar] = useState('')
   const getValue = (event: ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
     const value = target.value
     setValueSearch(value)
     onChange && onChange(valueSearch)
+  }
+
+  const handleInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement
+    const value = target.value
+    setValueSearchCar(value)
+  }
+
+  const handleSearch = async () => {
+    const body = {
+      carname: valueSearchcar
+    }
+    try {
+      const res = await dispatch(getCars(body))
+
+      unwrapResult(res)
+    } catch (error: any) {
+      console.log('Error')
+    }
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -24,7 +49,7 @@ const Search = ({ placeholder, onChange, width }: Props) => {
   }
   return (
     <div style={{ width: width }} className='flex h-8 content-center border items-center  rounded-full bg-white'>
-      <IconButton>
+      <IconButton onClick={handleSearch}>
         <SearchOutlinedIcon
           sx={{
             fontSize: '20px',
@@ -37,7 +62,7 @@ const Search = ({ placeholder, onChange, width }: Props) => {
         className='mr-5 text-base placeholder:text-xs focus:outline-none'
         type='search'
         placeholder={`${placeholder}...`}
-        onChange={getValue}
+        onChange={handleInputSearch}
         onKeyDown={handleKeyDown}
       />
     </div>
