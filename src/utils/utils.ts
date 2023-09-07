@@ -1,6 +1,8 @@
 import axios, { AxiosError } from 'axios'
+import config from 'src/constants/configApi'
 import HttpStatusCode from 'src/constants/httpStatusCode.enum'
 import { ErrorResponse } from 'src/types/utils.type'
+import userImage from 'src/assets/images/user.svg'
 
 export const payloadCreator = (asyncFunc: any) => async (arg: any, thunkAPI: any) => {
   try {
@@ -43,27 +45,5 @@ export const getIdFromNameId = (name: string) => {
   const arr = name?.split('-i-')
   return arr[arr?.length - 1]
 }
-//////////// routes
-// export const showPlayerInfo = (value: boolean) => {
-//   const dispatch = useAppDispatch()
-//   document.body.style.overflowY = value ? "hidden" : "scroll"
-
-//   dispatch(togglePlayerInfo(value))
-// }
-
-// export const showPlayer = (value: boolean) => {
-//   const dispatch = useAppDispatch()
-
-//   dispatch(togglePlayer(value))
-// }
-// interface IPlaySongProps {
-//   id: string
-//   idPlayList?: string
-// }
-// export const playSong = ({ id = "" }: IPlaySongProps) => {
-//   const { isLoading,idPlayList } = useAppSelector((state) => state.audio)
-
-//   showPlayer(true)
-//   showPlayerInfo(true)
-//   // setSong({ id, idPlayList })
-// }
+export const getAvatarUrl = (avatarName?: string) =>
+  avatarName ? `${config.baseUrlAuth}images/${avatarName}` : userImage
