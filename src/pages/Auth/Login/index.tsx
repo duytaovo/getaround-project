@@ -79,7 +79,7 @@ const Login = () => {
       </Helmet>
       <div className='lg:col-span-2 lg:col-start-4 bg-white w-1/2 md:w-full justify-center m-10 rounded-2xl'>
         <div className='flex items-center justify-center rounded-2xl mt-3'>
-          <img src='/logo.jpg' alt='logo' className='w-30 h-20'></img>
+          <img src='/logo.jpg' alt='logo' className='w-30 h-20 md:hidden'></img>
         </div>
         <form className='rounded p-10 shadow-sm' onSubmit={onSubmit} noValidate>
           <div className=' flex items-center justify-center text-[25px] text-black'>Đăng nhập</div>

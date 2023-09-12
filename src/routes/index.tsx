@@ -24,6 +24,9 @@ const Test = lazy(() => import('src/pages/Hosting/Test'))
 const Login = lazy(() => import('src/pages/Auth/Login'))
 const CommingSoon = lazy(() => import('src/pages/CommingSoon/CommingSoon'))
 const ManageCar = lazy(() => import('src/pages/User/ManageCar'))
+const BookACarMobilePage1 = lazy(() => import('src/pages/BookACarMobile/Page1'))
+const BookACarMobilePage2 = lazy(() => import('src/pages/BookACarMobile/Page2'))
+
 export const routeMain = [
   {
     path: path.home,
@@ -128,6 +131,14 @@ export const routeUser = [
   {
     path: path.bookACar,
     Component: BookACar
+  },
+  {
+    path: path.bookACarMobile,
+    Component: BookACarMobilePage1
+  },
+  {
+    path: path.bookACarMobile2,
+    Component: BookACarMobilePage2
   }
 ]
 

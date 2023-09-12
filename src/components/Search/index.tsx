@@ -29,16 +29,18 @@ const Search = ({ placeholder, onChange, width }: Props) => {
           sx={{
             fontSize: '20px',
             alignItems: 'center',
-            marginTop: '3px'
+            marginTop: '3px',
+            color: '#3699d3'
           }}
         />
       </IconButton>
       <input
-        className='mr-5 text-base placeholder:text-xs focus:outline-none'
+        className='mr-5 text-base placeholder:text-xs focus:outline-none w-[inherit]'
         type='search'
         placeholder={`${placeholder}...`}
         onChange={getValue}
         onKeyDown={handleKeyDown}
+        width={300}
       />
     </div>
   )

@@ -13,6 +13,8 @@ const path = {
   partnerWithUs: '/partners/partner-with-us',
   sharACar: '/carshare/share-a-car',
   bookACar: '/carshare/book-a-car',
+  bookACarMobile: '/book-a-car/mobile/1',
+  bookACarMobile2: '/book-a-car/mobile/2',
   hostCommunity: '/carshare/benefits',
   newsroom: 'newsroom/news',
   safetytrust: '/our-solution/safety-trust',
