@@ -1,6 +1,8 @@
 import { lazy } from 'react'
 import path from 'src/constants/path'
 import Register from 'src/pages/Auth/Register'
+import BookACarMobilePage2 from 'src/pages/BookACarMobile/Page2'
+import BookACarMobilePage3 from 'src/pages/BookACarMobile/Page3'
 import UploadImage from 'src/pages/User/Car'
 
 const Home = lazy(() => import('../pages/Home'))
@@ -25,7 +27,6 @@ const Login = lazy(() => import('src/pages/Auth/Login'))
 const CommingSoon = lazy(() => import('src/pages/CommingSoon/CommingSoon'))
 const ManageCar = lazy(() => import('src/pages/User/ManageCar'))
 const BookACarMobilePage1 = lazy(() => import('src/pages/BookACarMobile/Page1'))
-const BookACarMobilePage2 = lazy(() => import('src/pages/BookACarMobile/Page2'))
 
 export const routeMain = [
   {
@@ -139,6 +140,10 @@ export const routeUser = [
   {
     path: path.bookACarMobile2,
     Component: BookACarMobilePage2
+  },
+  {
+    path: path.bookACarMobile3,
+    Component: BookACarMobilePage3
   }
 ]
 

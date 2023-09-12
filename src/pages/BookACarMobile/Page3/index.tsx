@@ -1,7 +1,7 @@
 import { Drawer, Hidden } from '@mui/material'
 import SwipeableEdgeDrawer from './components/ListCarHistory'
 
-const BookACarMobilePage1 = () => {
+const BookACarMobilePage3 = () => {
   return (
     <div>
       <div className=''>
@@ -12,4 +12,4 @@ const BookACarMobilePage1 = () => {
   )
 }
 
-export default BookACarMobilePage1
+export default BookACarMobilePage3

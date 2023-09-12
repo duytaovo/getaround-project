@@ -6,9 +6,9 @@ import { grey } from '@mui/material/colors'
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CustomMapHistory from '../map'
-import Search from 'src/components/Search'
 import ItemListInfoCar from '../ItemListInfoCar'
 import Button from 'src/components/Button'
+import SearchBox from '../map/SearchBox'
 
 const drawerBleeding = 56
 
@@ -47,6 +47,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
     setOpen(newOpen)
   }
 
+  const [selectPosition, setSelectPosition] = React.useState(null)
   // This is used only for the example
   const container = window !== undefined ? () => window().document.body : undefined
 
@@ -61,13 +62,14 @@ export default function SwipeableEdgeDrawer(props: Props) {
           }
         }}
       />
+      {/* map */}
       <Box sx={{ textAlign: 'center', pt: 1 }}>
-        <CustomMapHistory />
+        <CustomMapHistory selectPosition={selectPosition} />
       </Box>
       <SwipeableDrawer
         container={container}
         anchor='bottom'
-        open={false}
+        open={true}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
         swipeAreaWidth={drawerBleeding}
@@ -79,7 +81,6 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
-            // top: -drawerBleeding,
             borderTopLeftRadius: 12,
             borderTopRightRadius: 12,
             visibility: 'visible',
@@ -102,7 +103,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
           }}
         >
           <div className='mt-6 '>
-            <Search onChange={() => {}} placeholder='Tìm kiếm...' width='330px' />
+            <SearchBox selectPosition={selectPosition} setSelectPosition={setSelectPosition} width={'320px'} />
           </div>
           <div className='mt-2'>
             <ItemListInfoCar />

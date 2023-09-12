@@ -6,9 +6,9 @@ import { grey } from '@mui/material/colors'
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CustomMapHistory from '../map'
-import ItemListInfoCar from '../ItemListInfoCar'
 import Button from 'src/components/Button'
 import Address from '../Address'
+import ItemListInfoCar from '../ItemListCar'
 
 const drawerBleeding = 56
 
@@ -101,9 +101,9 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          <div className='mt-6 '>
+          {/* <div className='mt-6 '>
             <Address selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
-          </div>
+          </div>*/}
           <div className='mt-2'>
             <ItemListInfoCar />
           </div>
