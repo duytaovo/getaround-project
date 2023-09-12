@@ -16,6 +16,8 @@ const path = {
   bookACarMobile: '/book-a-car/mobile/1',
   bookACarMobile2: '/book-a-car/mobile/2',
   bookACarMobile3: '/book-a-car/mobile/3',
+  bookACarMobile4: '/book-a-car/mobile/4',
+  bookACarMobile5: '/book-a-car/mobile/5',
   hostCommunity: '/carshare/benefits',
   newsroom: 'newsroom/news',
   safetytrust: '/our-solution/safety-trust',

@@ -3,6 +3,8 @@ import path from 'src/constants/path'
 import Register from 'src/pages/Auth/Register'
 import BookACarMobilePage2 from 'src/pages/BookACarMobile/Page2'
 import BookACarMobilePage3 from 'src/pages/BookACarMobile/Page3'
+import BookACarMobilePage4 from 'src/pages/BookACarMobile/Page4'
+import BookACarMobilePage5 from 'src/pages/BookACarMobile/Page5'
 import UploadImage from 'src/pages/User/Car'
 
 const Home = lazy(() => import('../pages/Home'))
@@ -144,6 +146,14 @@ export const routeUser = [
   {
     path: path.bookACarMobile3,
     Component: BookACarMobilePage3
+  },
+  {
+    path: path.bookACarMobile4,
+    Component: BookACarMobilePage4
+  },
+  {
+    path: path.bookACarMobile5,
+    Component: BookACarMobilePage5
   }
 ]
 

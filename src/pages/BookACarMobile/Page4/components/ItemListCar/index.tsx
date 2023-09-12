@@ -21,47 +21,47 @@ interface Item {
 }
 const item: Item[] = [
   {
-    link: '/book-a-car/mobile/4',
+    link: '/book-a-car/mobile/3',
     icon: <img src={car1} alt='' />,
     title: 'Standard',
     price: '500.000đ',
     time: '24 phút'
-  },
-  {
-    link: '/book-a-car/mobile/4',
-    icon: <img src={car2} alt='' />,
-    title: 'Exec',
-    price: '500.000đ',
-    time: '15 phút'
-  },
-  {
-    link: '/book-a-car/mobile/3',
-    icon: <img src={car1} alt='' />,
-    title: 'Van',
-    price: '500.000đ',
-    time: '18 phút'
-  },
-  {
-    link: '/book-a-car/mobile',
-    icon: <img src={car2} alt='' />,
-    title: '83 MidStation',
-    price: '500.000đ',
-    time: '23 phút'
-  },
-  {
-    link: '/book-a-car/mobile',
-    icon: <img src={car1} alt='' />,
-    title: '83 MidStation',
-    price: '500.000đ',
-    time: '23 phút'
-  },
-  {
-    link: '/book-a-car/mobile',
-    icon: <img src={car1} alt='' />,
-    title: '83 MidStation',
-    price: '500.000đ',
-    time: '23 phút'
   }
+  // {
+  //   link: '/book-a-car/mobile/3',
+  //   icon: <img src={car2} alt='' />,
+  //   title: 'Exec',
+  //   price: '500.000đ',
+  //   time: '15 phút'
+  // },
+  // {
+  //   link: '/book-a-car/mobile/3',
+  //   icon: <img src={car1} alt='' />,
+  //   title: 'Van',
+  //   price: '500.000đ',
+  //   time: '18 phút'
+  // },
+  // {
+  //   link: '/book-a-car/mobile',
+  //   icon: <img src={car2} alt='' />,
+  //   title: '83 MidStation',
+  //   price: '500.000đ',
+  //   time: '23 phút'
+  // },
+  // {
+  //   link: '/book-a-car/mobile',
+  //   icon: <img src={car1} alt='' />,
+  //   title: '83 MidStation',
+  //   price: '500.000đ',
+  //   time: '23 phút'
+  // },
+  // {
+  //   link: '/book-a-car/mobile',
+  //   icon: <img src={car1} alt='' />,
+  //   title: '83 MidStation',
+  //   price: '500.000đ',
+  //   time: '23 phút'
+  // }
 ]
 
 const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) => {
@@ -89,11 +89,21 @@ const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) =>
         </div>
         <Button
           onClick={() => {
-            navigate('/book-a-car/mobile/4')
+            navigate('/book-a-car/mobile/5')
           }}
+          // children={
+          //   <div>
+          //     <ArrowCircleRightOutlinedIcon
+          //       sx={{
+          //         fontSize: '30px'
+          //       }}
+          //       className=' ml-2 group-hover:delay-150 transition-transform group-hover:duration-700  hover:arrow group-hover:transition-all group-hover:-translate-x-1.5 animate-customBounce'
+          //     />
+          //   </div>
+          // }
           className='w-[80px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[40px]  rounded-lg bg-[#3699d3] hover:bg-black font-bold '
         >
-          Chọn xe
+          Đặt xe
         </Button>
       </div>
     </div>
@@ -107,8 +117,8 @@ const ItemListInfoCar = (props: Props) => {
         {item.map((item, index) => {
           return <ComponentListCarInfo item={item} index={index} key={index} />
         })}
-        {/* <span className='text-black/40  '>Thời gian ước tính:</span>
-        <span className='text-mainColor  ml-1'>24 phut</span> */}
+        <span className='text-black/40  '>Thời gian ước tính:</span>
+        <span className='text-mainColor  ml-1'>24 phút</span>
       </div>
     </div>
   )

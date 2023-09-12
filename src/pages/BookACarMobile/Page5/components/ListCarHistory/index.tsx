@@ -9,6 +9,7 @@ import CustomMapHistory from '../map'
 import Button from 'src/components/Button'
 import Address from '../Address'
 import ItemListCar from '../ItemListCar'
+import ItemListPayment from '../ItemListCar'
 
 const drawerBleeding = 56
 
@@ -101,12 +102,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          {/* <div className='mt-6 '>
-            <Address selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
-          </div>*/}
-          <div className='mt-2'>
-            <ItemListCar />
-          </div>
+          <ItemListPayment />
         </StyledBox>
       </SwipeableDrawer>
     </Root>
