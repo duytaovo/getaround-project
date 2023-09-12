@@ -1,5 +1,5 @@
 import { Drawer, Hidden } from '@mui/material'
-import SwipeableEdgeDrawer from '../Page2/components/ListCarHistory'
+import SwipeableEdgeDrawer from './components/ListCarHistory'
 
 const BookACarMobilePage1 = () => {
   return (

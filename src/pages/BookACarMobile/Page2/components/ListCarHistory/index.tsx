@@ -6,9 +6,9 @@ import { grey } from '@mui/material/colors'
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CustomMapHistory from '../map'
-import Search from 'src/components/Search'
 import ItemListInfoCar from '../ItemListInfoCar'
 import Button from 'src/components/Button'
+import Address from '../Address'
 
 const drawerBleeding = 56
 
@@ -47,7 +47,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
     setOpen(newOpen)
   }
 
-  // This is used only for the example
+  const [selectPosition, setSelectPosition] = React.useState(null)
   const container = window !== undefined ? () => window().document.body : undefined
 
   return (
@@ -56,18 +56,19 @@ export default function SwipeableEdgeDrawer(props: Props) {
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(40% - ${drawerBleeding}px)`,
+            height: `calc(60% - ${drawerBleeding}px)`,
             overflow: 'visible'
           }
         }}
       />
+      {/* map */}
       <Box sx={{ textAlign: 'center', pt: 1 }}>
-        <CustomMapHistory />
+        <CustomMapHistory selectPosition={selectPosition} />
       </Box>
-      {/* <SwipeableDrawer
+      <SwipeableDrawer
         container={container}
         anchor='bottom'
-        open={false}
+        open={true}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
         swipeAreaWidth={drawerBleeding}
@@ -79,7 +80,6 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
-            // top: -drawerBleeding,
             borderTopLeftRadius: 12,
             borderTopRightRadius: 12,
             visibility: 'visible',
@@ -102,13 +102,13 @@ export default function SwipeableEdgeDrawer(props: Props) {
           }}
         >
           <div className='mt-6 '>
-            <Search onChange={() => {}} placeholder='Tìm kiếm...' width='330px' />
+            <Address selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
           </div>
           <div className='mt-2'>
             <ItemListInfoCar />
           </div>
         </StyledBox>
-      </SwipeableDrawer> */}
+      </SwipeableDrawer>
     </Root>
   )
 }

@@ -16,13 +16,13 @@ interface Item {
 }
 const item: Item[] = [
   {
-    link: '/book-a-car/mobile',
+    link: '/book-a-car/mobile/1',
     icon: <AddLocationOutlinedIcon />,
     title: '83 MidStation',
     country: 'United States'
   },
   {
-    link: '/book-a-car/mobile',
+    link: '/book-a-car/mobile/1',
     icon: <AddLocationOutlinedIcon />,
     title: '83 MidStation',
     country: 'United States'
@@ -81,7 +81,7 @@ const ItemListInfoCar = (props: Props) => {
   return (
     <div>
       {item.map((item, index) => {
-        return <ComponentListCarInfo item={item} index={index} />
+        return <ComponentListCarInfo item={item} index={index} key={index} />
       })}
     </div>
   )

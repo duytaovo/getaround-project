@@ -1,6 +1,6 @@
 import path from 'src/constants/path'
 import { lazy, Suspense, useContext, useEffect, useMemo, useState } from 'react'
-import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import { routeAuth, routeMain, routeManageCar, routeUser } from './routes'
 import { useAppDispatch, useAppSelector } from './hooks/useRedux'

@@ -179,15 +179,12 @@ export default function CustomModal({ open, onChange }: Props) {
       car_license_id: data.carLicense,
       regis: data.regis
     })
-    console.log()
     if (file) {
       const form = new FormData()
       form.append('file', file[0])
-      console.log(form)
       for (let i = 0; i < file.length; i++) {
         form.append('image', file[i])
       }
-      console.log(form)
     } else {
       toast.warning('Cần chọn ảnh')
     }
