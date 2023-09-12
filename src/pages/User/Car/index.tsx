@@ -23,11 +23,11 @@ const Car = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(getCarsBrand(''))
-    dispatch(getCarsLicense(''))
-    dispatch(getCarsSeri(''))
-    dispatch(getCarsType(''))
-    dispatch(getCarsModel(''))
+    // dispatch(getCarsBrand(''))
+    // dispatch(getCarsLicense(''))
+    // dispatch(getCarsSeri(''))
+    // dispatch(getCarsType(''))
+    // dispatch(getCarsModel(''))
     dispatch(getCarsRegis(''))
   }, [])
   const handleClose = () => setOpen(false)

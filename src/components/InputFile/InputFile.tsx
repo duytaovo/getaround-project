@@ -1,25 +1,33 @@
 import { Fragment, useRef } from 'react'
+import { UseFormRegister } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import config from 'src/constants/configApi'
 
 interface Props {
   onChange?: any
-  register?: any
+  // register: any
   id: string
+  label: string
 }
 
-export default function InputFile({ onChange, register, id }: Props) {
+export default function InputFile({ onChange, id, label }: Props) {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const fileFromLocal = event.target.files?.[0]
     const fileFromLocal2 = event.target.files?.[1]
     const fileFromLocal3 = event.target.files?.[2]
-    const fileUpload = event.target.files
+    const fileUpload: any = event.target.files
     fileInputRef.current?.setAttribute('value', '')
     if (fileFromLocal && (fileFromLocal.size >= config.maxSizeUploadImage || !fileFromLocal.type.includes('image'))) {
       toast.error(`Dụng lượng file tối đa 2 MB. Định dạng:.JPEG, .PNG`, {})
     } else {
-      onChange && onChange(fileUpload)
+      if (fileUpload && fileUpload?.length > 3) {
+        toast.error(`Chỉ được upload tối đa 3 ảnh`, {})
+      } else {
+        const files = Array.from(fileUpload)
+        files.length > 3 ? files.slice(0, 3) : files
+        onChange && onChange(files)
+      }
     }
   }
 
@@ -35,8 +43,8 @@ export default function InputFile({ onChange, register, id }: Props) {
         accept='.jpg,.jpeg,.png'
         ref={fileInputRef}
         onChange={onFileChange}
-        multiple={true}
-        {...register(id)}
+        // multiple={true}
+        // {...register(id)}
         onClick={(event) => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           ;(event.target as any).value = null
@@ -47,7 +55,7 @@ export default function InputFile({ onChange, register, id }: Props) {
         type='button'
         onClick={handleUpload}
       >
-        Chọn ảnh
+        {label}
       </button>
     </Fragment>
   )

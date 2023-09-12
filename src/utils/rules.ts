@@ -118,15 +118,15 @@ export const schemaAddCar = yup.object({
     .matches(/(84|0[3|5|7|8|9])+([0-9]{8})\b/g, 'Số điện thoại không đúng định dạng'),
   vinNumber: yup.string().matches(/\b[(A-H|J-N|P|R-Z|0-9)]{17}\b/, 'Số khung không đúng định dạng'),
   carBrand: yup.string(),
-  carModel: yup.string().required('Kiểu xe là bắt buộc'),
+  carModel: yup.string(),
   carYear: yup.string(),
   carSeri: yup.string(),
-  carType: yup.string().required('Loại xe là bắt buộc'),
-  carLicense: yup.string().required('Loại biển xe là bắt buộc'),
-  currentLocation: yup.string().required('Địa điểm là bắt buộc'),
-  regis: yup.array().required('Phương thức đăng ký là bắt buộc'),
-  image: yup.string().required('Bắt buộc upload ảnh trước khi lưu'),
-  photos: yup.array().of(yup.mixed()).required('Bắt buộc upload ảnh trước khi lưu')
+  carType: yup.string(),
+  carLicense: yup.string(),
+  currentLocation: yup.string(),
+  regis: yup.array(),
+  image: yup.string(),
+  photos: yup.array().of(yup.mixed())
 })
 
 export const userSchema = yup.object({
