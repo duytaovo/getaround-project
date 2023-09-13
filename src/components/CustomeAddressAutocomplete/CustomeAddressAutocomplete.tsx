@@ -25,8 +25,8 @@ const CustomeAddressAutocomplete: FC<Props> = ({ items }) => {
         }}
       >
         <div className='flex justify-between items-center h-full'>
-          <LocationIcon size={16} fillColor='rgba(0,0,0,0.3)' />
-          <input className='outline-none border-0 bg-transparent pl-2' placeholder='Address' />
+          {/* <LocationIcon size={16} fillColor='rgba(0,0,0,0.3)' /> */}
+          <input className='outline-none border-0 bg-transparent pl-2' placeholder='Business Class' />
         </div>
       </AutoComplete>
     </div>

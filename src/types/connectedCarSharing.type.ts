@@ -3,3 +3,6 @@ export interface IConnectedCarSharing {
   total: string
   title: string
 }
+export interface IImgItemBrand {
+  img: string
+}

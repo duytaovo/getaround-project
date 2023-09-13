@@ -27,8 +27,9 @@ const WrapperContent: FC<WrapperProps> = ({
   return (
     <div
       className={`max-w-[1272px] h-fit ${
-        isBgTransparent ? 'bg-transparent' : 'bg-white/90'
+        isBgTransparent ? 'bg-transparent' : 'bg-[#f8f8f8]'
       } mb-bottom my-8 rounded-[22px] m-auto xl:mx-[8px]`}
+      style={{ marginBottom: '20px' }}
     >
       <Text
         id={title}

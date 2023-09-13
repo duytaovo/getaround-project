@@ -12,7 +12,7 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
     <div className={className}>
       <div className='w-full flex-col max-w-[1272px] self-center items-stretch px-auto flex'>
         <div className='w-full flex-col mx-auto flex items-center'>
-          <div className='w-full max-w-[1272px] bg-white/90 rounded-[22px] flex-col justify-center mt-auto mx-auto p-[10px_36px] flex'>
+          <div className='w-full max-w-[1272px] bg-[#1b1b1b]/90  flex-col justify-center mt-auto mx-auto p-[10px_36px] flex h-40'>
             <div className='w-full max-w-[1072px] justify-around items-center flex md:flex-wrap md:w-[80%] md:mx-auto'>
               {DataConnectedCarSharingHome.map((item: any, index: number) => (
                 <div key={index} className='flex'>
@@ -20,8 +20,8 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
                     <Text
                       id={DataConnectedCarSharingHome?.[index]?.total}
                       tag='div'
-                      content={data[DataConnectedCarSharingHome?.[index]?.total]}
-                      className='mb-1 text-[32px] font-bold text-black sm:text-[20px]'
+                      content={data[DataConnectedCarSharingHome?.[index]?.total] || 'content'}
+                      className='mb-1 text-[32px] font-bold text-white sm:text-[20px]'
                     />
                     {/* <div className='mb-1 text-[32px] font-bold text-black sm:text-[20px]'>
                       {DataConnectedCarSharingHome?.[index]?.total}
@@ -29,8 +29,8 @@ const ConnectedCarSharing: React.FC<Props> = ({ DataConnectedCarSharingHome, cla
                     <Text
                       id={DataConnectedCarSharingHome?.[index]?.title}
                       tag='div'
-                      content={data[DataConnectedCarSharingHome?.[index]?.title]}
-                      className='text-[13px] font-bold text-black sm:text-[10px]'
+                      content={data[DataConnectedCarSharingHome?.[index]?.title] || 'content'}
+                      className='text-[13px] font-bold text-white sm:text-[10px]'
                     />
                     {/* <div className='text-[13px] font-bold text-black sm:text-[10px]'>
                       {DataConnectedCarSharingHome?.[index]?.title}

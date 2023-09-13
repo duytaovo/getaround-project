@@ -43,6 +43,7 @@ const Login = () => {
       setIsSubmitting(true)
       const res = await dispatch(login(body))
       unwrapResult(res)
+      console.log(res)
       const d = res?.payload?.data
       if (d?.result == 0) return toast.error(d?.message)
       await setAccessTokenToLS(d?.accessToken)

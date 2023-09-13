@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from 'src/store/store'
 import { ICommonQuestions } from 'src/types/commonQuestion.type'
-import { IConnectedCarSharing } from 'src/types/connectedCarSharing.type'
+import { IConnectedCarSharing, IImgItemBrand } from 'src/types/connectedCarSharing.type'
 import { ICustomeSteps } from 'src/types/customeSteps.type'
 import { IExploreHostingText } from 'src/types/exploreHostingText.type'
 import { IItemSlider, IItemCarousel } from 'src/types/hoisting.type'
 import { IHeroSection } from './HomeTypes/Hero.type'
 import { IQAndASection } from 'src/types/IQAndASection.type'
 import { IExploreHostingSection } from 'src/types/IExploreHostingSection.type'
-
+import { ISelectItemsSlideLeftRight, ISelectImglideLeftRight } from 'src/types/HowItWork'
 interface IHomeStepSection {
   id?: string
   wrapperTitle: string
@@ -41,13 +41,86 @@ type HomePageType = {
   homeIntoduceCarouselSection: IHomeCarouselSection
   sharingMaketPlaceSection: ISharingMarketplace
   homeStepSection: IHomeStepSection
+  ConnectedCarSharingR: IConnectedCarSharing[]
   exploreHostingSection: IExploreHostingSection
   localFavouriteSection: ISectionIncludesSliderPart
   blogSilerSection: ISectionIncludesSliderPart
   qAndASection: IQAndASection
+  ItemBrandR: IImgItemBrand[]
+  SlideLeftRightHome: ISelectItemsSlideLeftRight[]
+  ImgSlideLeftRight_Home: ISelectImglideLeftRight
 }
 
 const initialState: HomePageType = {
+  ImgSlideLeftRight_Home: {
+    img: 'ImgSlideLeftRight_Home',
+    mainTitle: 'MainTirleLeftRight_Home'
+  },
+  SlideLeftRightHome: [
+    {
+      id: 'SlideLeftRight_Home_01',
+      img: 'img1_SlideLeftRight_Homek',
+      label: 'label1_SlideLeftRight_Homek',
+      Linkto: 'linkto1_SlideLeftRight_Home',
+      Link: 'link_SlideLeftRight_Home',
+      contents: [`contents1_SlideLeftRight_Home`]
+    },
+    {
+      id: 'SlideLeftRight_Home_02',
+      img: 'img2_SlideLeftRight_Homek',
+      label: 'label2_SlideLeftRight_Homek',
+      Linkto: 'linkto2_SlideLeftRight_Home',
+      Link: 'link2_SlideLeftRight_Home',
+      contents: [`contents2_SlideLeftRight_Home`]
+    },
+    {
+      id: 'SlideLeftRight_Home_03',
+      img: 'img3_SlideLeftRight_Homek',
+      label: 'label3_SlideLeftRight_Homek',
+      Linkto: 'linkto3_SlideLeftRight_Home',
+      Link: 'link3_SlideLeftRight_Home',
+      contents: [`contents3_SlideLeftRight_Home`]
+    }
+  ],
+  ItemBrandR: [
+    {
+      img: 'img_ItemBrand1'
+    },
+    {
+      img: 'img_ItemBrand2'
+    },
+    {
+      img: 'img_ItemBrand3'
+    },
+    {
+      img: 'img_ItemBrand4'
+    },
+    {
+      img: 'img_ItemBrand5'
+    }
+  ],
+  ConnectedCarSharingR: [
+    {
+      id: 'Connected_AboutUs_HomeNew',
+      total: 'total1_ConnectedCarSharing_HomeNew',
+      title: 'title1_ConnectedCarSharing_HomeNew'
+    },
+    {
+      id: 'Connected_AboutUs_HomeNew',
+      total: 'total2_ConnectedCarSharing_HomeNew',
+      title: 'title2_ConnectedCarSharing_HomeNew'
+    },
+    {
+      id: 'Connected_AboutUs_HomeNew',
+      total: 'total3_ConnectedCarSharing_HomeNew',
+      title: 'title3_ConnectedCarSharing_HomeNew'
+    },
+    {
+      id: 'Connected_AboutUs_HomeNew',
+      total: 'total4_ConnectedCarSharing_HomeNew',
+      title: 'title4_ConnectedCarSharing_HomeNew'
+    }
+  ],
   heroSection: {
     id: 'p-001',
     title: 'home_hero_t1',

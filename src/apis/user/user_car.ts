@@ -8,8 +8,12 @@ const URL_GET_CAR_TYPE = '/vehicletype/getvehicletype'
 const URL_GET_CAR_LICENSE = '/licensePlateType/getlicensePlateType'
 const URL_GET_CAR_REGIS = 'regiterMethods/getregistrationmethod'
 const CarApi = {
-  getCar() {
-    return http_auth.get<SuccessResponse<Car>>(URL_GET_CAR, {})
+  getCar(carname: any) {
+    if (carname.carname === undefined || carname.carname === '') {
+      return http_auth.get<SuccessResponse<Car>>(`/car/get-cars-of-one-user`, {})
+    } else if (carname.carname !== undefined) {
+      return http_auth.get<SuccessResponse<Car>>(`/car/get-cars-of-one-user?carname=${carname.carname}`, {})
+    }
   },
   getCarBrand() {
     return http_auth.get<SuccessResponse<any>>(URL_GET_CAR_BRAND_, {})
@@ -17,11 +21,8 @@ const CarApi = {
   getCarYear(id: string) {
     return http_auth.get<SuccessResponse<any>>(`/release-year/get-release-year-by-brand-uuid?brandID=${id}`, {})
   },
-  getCarSeri({ idYear, idBrand }: { idYear: string; idBrand: string }) {
-    return http_auth.get<SuccessResponse<any>>(
-      `/carseri/get-car-seri-by-rly-id-and-brand-id?rly_id=${idYear}&brand_id=${idBrand}`,
-      {}
-    )
+  getCarSeri() {
+    return http_auth.get<SuccessResponse<any>>(`/carseri/getcarseri`, {})
   },
   getCarType() {
     return http_auth.get<SuccessResponse<any>>(URL_GET_CAR_TYPE, {})
@@ -37,6 +38,9 @@ const CarApi = {
   },
   addCar(data: any) {
     return http_auth.post('/car/create-a-car', data)
+  },
+  searchCars(data: any) {
+    return http_auth.get<SuccessResponse<any>>('/car/find-car', data)
   }
 }
 
