@@ -4,9 +4,17 @@ import osm from './osm-providers'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import markerImg from './marker.png'
+import markerImgStart from './car_top.png'
 
 const markerIcon = new L.Icon({
   iconUrl: markerImg,
+  iconSize: [40, 40],
+  iconAnchor: [17, 46], //[left/right, top/bottom]
+  popupAnchor: [0, -46] //[left/right, top/bottom]
+})
+
+const markerIconStart = new L.Icon({
+  iconUrl: markerImgStart,
   iconSize: [40, 40],
   iconAnchor: [17, 46], //[left/right, top/bottom]
   popupAnchor: [0, -46] //[left/right, top/bottom]
@@ -34,7 +42,20 @@ const CustomMapHistory = ({ selectPosition }: any) => {
   const ZOOM_LEVEL = 9
   const mapRef: any = useRef()
   const locationSelection: any = [selectPosition?.geometry.coordinates[1], selectPosition?.geometry.coordinates[0]]
+  const [itemStart, setItemStart] = React.useState<any>(JSON.parse(localStorage.getItem('start') || ''))
+  const [itemEnd, setItemEnd] = React.useState<any>()
+  const [pointA, setPointA] = React.useState<any>()
+  // React.useEffect(() => {
+  //   setItemStart(JSON.parse(localStorage.getItem('start') || ''))
+  // }, [])
 
+  // if (itemStart?.geometry?.coordinates.length > 0) {
+  //   setPointA([itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]])
+  // } else {
+  //   setPointA([itemStart?.lat, itemStart?.lng])
+  // }
+
+  // // const pointB = [itemEnd?.geometry.coordinates[1], itemEnd?.geometry.coordinates[0]]
   return (
     <MapContainer
       center={center}
@@ -49,6 +70,23 @@ const CustomMapHistory = ({ selectPosition }: any) => {
             <b>
               {locationSelection[1]}, {locationSelection[0]}
             </b>
+          </Popup>
+        </Marker>
+      )}
+      {itemStart?.geometry?.coordinates.length > 0 && (
+        <Marker
+          position={[itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]]}
+          icon={markerIconStart}
+        >
+          <Popup>
+            <b>{itemStart?.properties?.name}</b>
+          </Popup>
+        </Marker>
+      )}
+      {itemStart?.lat && itemStart?.lng && (
+        <Marker position={[itemStart?.lat, itemStart?.lng]} icon={markerIconStart}>
+          <Popup>
+            <b>{itemStart?.display}</b>
           </Popup>
         </Marker>
       )}

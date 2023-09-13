@@ -7,6 +7,7 @@ import Button from 'src/components/Button'
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined'
 import MoneyOutlinedIcon from '@mui/icons-material/MoneyOutlined'
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined'
+import { useNavigate } from 'react-router-dom'
 interface Item {
   icon: any
   title: string
@@ -28,6 +29,7 @@ const ComponentListPayment = ({ item, index }: { item: Item; index: number }) =>
   const handleClick = (value: number) => {
     dispatch(updateIndexCardActive(value))
   }
+  const navigate = useNavigate()
   return (
     <div
       className={`flex items-center justify-start space-2 shadow mb-2  rounded-md p-1 ${
@@ -43,7 +45,9 @@ const ComponentListPayment = ({ item, index }: { item: Item; index: number }) =>
           </div>
         </div>
         <Button
-          onClick={() => {}}
+          onClick={() => {
+            navigate('/book-a-car/mobile/6')
+          }}
           className='w-[45px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[26px]  rounded-lg bg-mainColor hover:bg-black font-bold '
         >
           <LogoutOutlinedIcon

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 type Props = {}
 import LocationOnIcon from '@mui/icons-material/LocationOn'
@@ -38,18 +38,6 @@ const item: Item[] = [
     icon: <AddLocationOutlinedIcon />,
     title: '83 MidStation',
     country: 'United States'
-  },
-  {
-    link: '/book-a-car/mobile',
-    icon: <AddLocationOutlinedIcon />,
-    title: '83 MidStation',
-    country: 'United States'
-  },
-  {
-    link: '/book-a-car/mobile',
-    icon: <AddLocationOutlinedIcon />,
-    title: '83 MidStation',
-    country: 'United States'
   }
 ]
 
@@ -59,6 +47,8 @@ const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) =>
   const handleClick = (value: number) => {
     dispatch(updateIndexCardActive(value))
   }
+
+  useEffect(() => {}, [])
   return (
     <CustomLink to={item.link}>
       <div

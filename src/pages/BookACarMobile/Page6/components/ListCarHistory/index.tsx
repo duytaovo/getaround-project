@@ -6,9 +6,8 @@ import { grey } from '@mui/material/colors'
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CustomMapHistory from '../map'
-import ItemListInfoCar from '../ItemListInfoCar'
 import Button from 'src/components/Button'
-import SearchBox from '../map/SearchBox'
+import ItemPrice from '../ItemPrice'
 
 const drawerBleeding = 56
 
@@ -48,8 +47,6 @@ export default function SwipeableEdgeDrawer(props: Props) {
   }
 
   const [selectPosition, setSelectPosition] = React.useState(null)
-  const [selectMyPosition, setSelectMyPosition] = React.useState(null)
-  // This is used only for the example
   const container = window !== undefined ? () => window().document.body : undefined
 
   return (
@@ -58,7 +55,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(40% - ${drawerBleeding}px)`,
+            height: `calc(50% - ${drawerBleeding}px)`,
             overflow: 'visible'
           }
         }}
@@ -103,18 +100,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          <div className='mt-6 '>
-            <SearchBox
-              selectPosition={selectPosition}
-              setSelectPosition={setSelectPosition}
-              selectMyPosition={selectMyPosition}
-              setSelectMyPosition={setSelectMyPosition}
-              width={'380px'}
-            />
-          </div>
-          <div className='mt-2'>
-            <ItemListInfoCar />
-          </div>
+          <ItemPrice />
         </StyledBox>
       </SwipeableDrawer>
     </Root>

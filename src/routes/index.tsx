@@ -5,6 +5,10 @@ import BookACarMobilePage2 from 'src/pages/BookACarMobile/Page2'
 import BookACarMobilePage3 from 'src/pages/BookACarMobile/Page3'
 import BookACarMobilePage4 from 'src/pages/BookACarMobile/Page4'
 import BookACarMobilePage5 from 'src/pages/BookACarMobile/Page5'
+import BookACarMobilePage6 from 'src/pages/BookACarMobile/Page6'
+import BookACarMobilePage7 from 'src/pages/BookACarMobile/Page7'
+import BookACarMobilePage8 from 'src/pages/BookACarMobile/Page8'
+import BookACarMobilePage9 from 'src/pages/BookACarMobile/Page9'
 import UploadImage from 'src/pages/User/Car'
 
 const Home = lazy(() => import('../pages/Home'))
@@ -154,6 +158,22 @@ export const routeUser = [
   {
     path: path.bookACarMobile5,
     Component: BookACarMobilePage5
+  },
+  {
+    path: path.bookACarMobile6,
+    Component: BookACarMobilePage6
+  },
+  {
+    path: path.bookACarMobile7,
+    Component: BookACarMobilePage7
+  },
+  {
+    path: path.bookACarMobile8,
+    Component: BookACarMobilePage8
+  },
+  {
+    path: path.bookACarMobile9,
+    Component: BookACarMobilePage9
   }
 ]
 
