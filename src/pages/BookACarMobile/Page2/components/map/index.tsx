@@ -46,7 +46,6 @@ const CustomMapHistory = ({ selectPosition }: any) => {
   const [itemEnd, setItemEnd] = React.useState<any>()
   const [pointA, setPointA] = React.useState<any>()
 
-  // // const pointB = [itemEnd?.geometry.coordinates[1], itemEnd?.geometry.coordinates[0]]
   return (
     <MapContainer
       center={center}

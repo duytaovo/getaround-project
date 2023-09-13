@@ -56,7 +56,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(50% - ${drawerBleeding}px)`,
+            height: `calc(29% - ${drawerBleeding}px)`,
             overflow: 'visible'
           }
         }}
@@ -101,9 +101,6 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          {/* <div className='mt-6 '>
-            <Address selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
-          </div>*/}
           <div className='mt-2'>
             <ItemListCar />
           </div>

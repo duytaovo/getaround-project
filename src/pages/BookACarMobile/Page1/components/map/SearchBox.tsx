@@ -64,8 +64,9 @@ export default function SearchBox(props: any) {
       fetch(`${URL}${queryString}`, requestOptions)
         .then((response) => response.text())
         .then((result) => {
-          let myPosition = JSON.parse(result)[0]
+          let myPosition = JSON.parse(result)[1]
           localStorage.setItem('start', JSON.stringify(myPosition))
+          // console.log(JSON.parse(result))
           setSelectMyPosition(myPosition)
           navigate('/book-a-car/mobile/2')
         })

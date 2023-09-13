@@ -101,9 +101,10 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          <div className='mt-6 '>
+          <div className='mt-6 mb-2'>
             <Address selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
           </div>
+          <span className='mt-4'>Tìm kiếm gần đây</span>
           <div className='mt-2'>
             <ItemListInfoCar />
           </div>

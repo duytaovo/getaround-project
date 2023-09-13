@@ -2,7 +2,7 @@ const config = {
   // baseUrl: 'https://landing.ult.unlockcar.co/'
   // baseUrl: 'http://localhost:5026/'
   // baseUrl: 'http://192.168.102.28:8080/api/v1',
-  // host: 'http://192.168.102.28:8080/'
+  hostCar: 'http://192.168.0.95:5032/api/v1',
 
   baseUrl_bookCar: 'https://app.ult.unlockcar.co/api/v1',
   baseUrlAuth: 'http://localhost:5032/api/v1',

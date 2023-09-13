@@ -4,7 +4,7 @@ import CarApi from 'src/apis/user/user_car'
 import { payloadCreator } from 'src/utils/utils'
 
 export const getCarsHistory = createAsyncThunk('Car/getCarsHistory', payloadCreator(CarApiMobile.getCarHistory))
-export const getCars = createAsyncThunk('Car/getCarsBrand', payloadCreator(CarApi.getCarBrand))
+export const getCars = createAsyncThunk('Car/getCars', payloadCreator(CarApiMobile.getCars))
 
 interface CarState {
   carListHistory: any[]
@@ -23,10 +23,10 @@ const CarSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getCarsHistory.fulfilled, (state, { payload }) => {
       state.carListHistory = payload.data.cars
-    }),
-      builder.addCase(getCars.fulfilled, (state, { payload }) => {
-        state.cars = payload.data.cars
-      })
+    })
+    builder.addCase(getCars.fulfilled, (state, { payload }) => {
+      state.cars = payload.data.data
+    })
   }
 })
 

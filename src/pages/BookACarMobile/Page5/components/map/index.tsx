@@ -25,15 +25,18 @@ const CustomMapHistory = ({ selectPosition }: any) => {
   const ZOOM_LEVEL = 9
   const mapRef: any = useRef()
   const locationSelection: any = [selectPosition?.geometry.coordinates[1], selectPosition?.geometry.coordinates[0]]
-  const [itemStart, setItemStart] = React.useState<any>()
-  const [itemEnd, setItemEnd] = React.useState<any>()
+  const [itemEnd, setItemEnd] = React.useState<any>(JSON.parse(localStorage.getItem('end') || ''))
+  const [itemStart, setItemStart] = React.useState<any>(JSON.parse(localStorage.getItem('start') || ''))
+  const [pointA, setPointA] = React.useState<any>()
   const navigate = useNavigate()
   React.useEffect(() => {
     setItemStart(JSON.parse(localStorage.getItem('start') || ''))
     setItemEnd(JSON.parse(localStorage.getItem('end') || ''))
+
+    setPointA
   }, [])
 
-  const pointA = [itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]] // Ví dụ điểm A
+  // const pointA = [itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]] // Ví dụ điểm A
   const pointB = [itemEnd?.geometry.coordinates[1], itemEnd?.geometry.coordinates[0]]
   return (
     <MapContainer
@@ -43,17 +46,25 @@ const CustomMapHistory = ({ selectPosition }: any) => {
       style={{ height: '600px', width: '100%', position: 'unset' }}
     >
       <TileLayer url={osm.maptiler.url} attribution={osm.maptiler.attribution} />
-
-      <Marker
-        position={[itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]]}
-        icon={markerIconStart}
-      >
-        <Popup>
-          <b>
-            {itemStart?.geometry?.coordinates[1]}, {itemStart?.geometry.coordinates[0]}
-          </b>
-        </Popup>
-      </Marker>
+      {/* marker start */}
+      {itemStart?.geometry?.coordinates.length > 0 && (
+        <Marker
+          position={[itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]]}
+          icon={markerIconStart}
+        >
+          <Popup>
+            <b>{itemStart?.properties?.name}</b>
+          </Popup>
+        </Marker>
+      )}
+      {itemStart?.lat && itemStart?.lng && (
+        <Marker position={[itemStart?.lat, itemStart?.lng]} icon={markerIconStart}>
+          <Popup>
+            <b>{itemStart?.display}</b>
+          </Popup>
+        </Marker>
+      )}
+      {/* marker end */}
       <Marker position={[itemEnd?.geometry.coordinates[1], itemEnd?.geometry.coordinates[0]]} icon={markerIcon}>
         <Popup>
           <b>
@@ -61,7 +72,17 @@ const CustomMapHistory = ({ selectPosition }: any) => {
           </b>
         </Popup>
       </Marker>
-      <Polyline positions={[pointA, pointB]} color='blue' />
+      {/* line */}
+
+      {itemStart?.lat && itemStart?.lng && (
+        <Polyline positions={[[itemStart?.lat, itemStart?.lng], pointB]} color='blue' />
+      )}
+      {itemStart?.geometry?.coordinates.length > 0 && (
+        <Polyline
+          positions={[[itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]], pointB]}
+          color='blue'
+        />
+      )}
     </MapContainer>
   )
 }
