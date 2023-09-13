@@ -21,11 +21,8 @@ const CarApi = {
   getCarYear(id: string) {
     return http_auth.get<SuccessResponse<any>>(`/release-year/get-release-year-by-brand-uuid?brandID=${id}`, {})
   },
-  getCarSeri({ idYear, idBrand }: { idYear: string; idBrand: string }) {
-    return http_auth.get<SuccessResponse<any>>(
-      `/carseri/get-car-seri-by-rly-id-and-brand-id?rly_id=${idYear}&brand_id=${idBrand}`,
-      {}
-    )
+  getCarSeri() {
+    return http_auth.get<SuccessResponse<any>>(`/carseri/getcarseri`, {})
   },
   getCarType() {
     return http_auth.get<SuccessResponse<any>>(URL_GET_CAR_TYPE, {})

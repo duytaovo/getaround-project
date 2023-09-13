@@ -20,6 +20,7 @@ const CarTable = ({ onClick }: Props) => {
   useEffect(() => {
     dispatch(getCars(''))
   }, [])
+  console.log(carList)
   const [status, setStatus] = React.useState<string>('')
 
   const handleChange = (event: SelectChangeEvent) => {

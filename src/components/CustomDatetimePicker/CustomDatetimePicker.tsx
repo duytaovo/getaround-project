@@ -20,7 +20,7 @@ const CustomDatetimePicker: FC<CustomeDateTimeProps> = ({ className, title }) =>
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          background: 'rgba(255, 255, 255, 0.9)',
+          background: '#fff',
           borderRadius: '10px',
           padding: '10px'
         }}

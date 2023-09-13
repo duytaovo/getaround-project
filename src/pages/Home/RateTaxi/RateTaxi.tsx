@@ -1,10 +1,10 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import NextArrow from '../NextArrow'
-import PrevArrow from '../PreArrow/PreArrow'
+import NextArrow from 'src/components/NextArrow/NextArrow'
+import PrevArrow from 'src/components/PreArrow/PreArrow'
 import { IItemSlider } from 'src/types/hosting_shareACar.type'
-import CustomCardSlider from '../Card'
+
 import getBreakpoint from 'src/helpers/getBreakpoint'
 import CardSlide from 'src/pages/Home/CardSlide/CardSlide'
 interface Props {
@@ -27,7 +27,7 @@ interface Props {
   speed?: number
 }
 // breackPoint = {[1,1,2,2,3]}
-export default function CustomSlider({
+export default function RateTaxi({
   numberItem,
   data,
   className,
@@ -90,35 +90,51 @@ export default function CustomSlider({
     <div className={classNameContainer + ' ' + 'px-2'}>
       <Slider {...settings}>
         {data?.map((item, index: number) => (
-          <div className='col-md-6 col-xl-4'>
-            <div className='testi-item  wow fadeInUp'>
-              <p className='testi-item_text'>
-                “Proactively synthesize schemas before foster like leveraged expertise user friendly business low before
-                open.”
-              </p>
-              <div className='testi-item_wrapper'>
-                <div className='testi-item_profile'>
-                  <div className='testi-item_img'>
-                    <img
-                      src='https://inkythuatso.com/uploads/images/2022/08/anh-lai-xe-o-to-inkythuatso-09-15-56-00.jpg'
-                      alt='Avatar'
-                      style={{ width: '50px', height: '50px' }}
-                    />
-                  </div>
-                  <div className='media-body'>
-                    <h3 className='testi-item_name'>David Smith</h3>
-                    <p className='testi-item_desig'>Head Of Growth</p>
-                  </div>
-                </div>
-                <div className='testi-item_quote'>
-                  {' '}
-                  <img
-                    src='https://inkythuatso.com/uploads/images/2022/08/anh-lai-xe-o-to-inkythuatso-09-15-56-00.jpg'
-                    alt='Avatar'
-                    style={{ width: '50px', height: '50px' }}
-                  />
-                </div>
+          <div className='col-auto'>
+            <div className='taxi-item'>
+              <div className='taxi-item_img'>
+                <img
+                  src='https://vcdn-vnexpress.vnecdn.net/2020/07/01/Volvo-XC40-1-3708-1593572980.jpg'
+                  alt='service image'
+                  style={{ width: '200px', height: '150px' }}
+                />
               </div>
+              <h3 className='taxi-item_title'>
+                <a href='taxi-details.html'>BMW X6 2030</a>
+              </h3>
+              <p className='taxi-item_subtitle'>$0.88/km</p>
+              <div className='taxi-item_feature'>
+                <span>
+                  <img src='assets/img/icon/taxi_f_2_1.svg' alt='' />
+                  Passengers
+                </span>
+                <span className='taxi-item_info'>4</span>
+              </div>
+              <div className='taxi-item_feature'>
+                <span>
+                  <img src='assets/img/icon/taxi_f_2_2.svg' alt='' />
+                  Luggage's:
+                </span>
+                <span className='taxi-item_info'>2</span>
+              </div>
+              <div className='taxi-item_feature'>
+                <span>
+                  <img src='assets/img/icon/taxi_f_2_3.svg' alt='' />
+                  Base Rate:
+                </span>
+                <span className='taxi-item_info'>$10.50</span>
+              </div>
+
+              <div className='taxi-item_feature'>
+                <span>
+                  <img src='assets/img/icon/taxi_f_2_4.svg' alt='' />
+                  Air Conditioner:
+                </span>
+                <span className='taxi-item_info'>yes</span>
+              </div>
+              <a href='taxi-details.html' className='th-btn fw-btn'>
+                book Now Taxi<i className='fa-regular fa-arrow-right ms-2'></i>
+              </a>
             </div>
           </div>
         ))}

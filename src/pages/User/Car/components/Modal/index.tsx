@@ -8,7 +8,7 @@ import { message, Steps, theme } from 'antd'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { FormProvider, useForm, useFormContext, Controller } from 'react-hook-form'
-import { useDropzone } from 'react-dropzone'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import SelectCustom from './Select'
 import { schemaAddCar } from 'src/utils/rules'
@@ -158,7 +158,7 @@ export default function CustomModal({ open, onChange }: Props) {
   }
 
   const handleOnChangeYear = async ({ idBrand, idYear }: any) => {
-    await dispatch(getCarsSeri({ idYear, idBrand }))
+    await dispatch(getCarsSeri({ idBrand }))
     if (idBrand !== '' && idYear !== '') {
       setDisabledSeri(false)
     }
