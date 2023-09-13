@@ -12,10 +12,6 @@ import ItemListCar from '../ItemListCar'
 const drawerBleeding = 56
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window
 }
 
@@ -100,9 +96,6 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          {/* <div className='mt-6 '>
-            <Address selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
-          </div>*/}
           <div className='mt-2'>
             <ItemListCar />
           </div>

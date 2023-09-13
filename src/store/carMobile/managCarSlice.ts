@@ -30,6 +30,6 @@ const CarSlice = createSlice({
   }
 })
 
-const carReducer = CarSlice.reducer
+const carMobileReducer = CarSlice.reducer
 export const {} = CarSlice.actions
-export default carReducer
+export default carMobileReducer

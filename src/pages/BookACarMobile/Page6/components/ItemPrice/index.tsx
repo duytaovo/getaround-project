@@ -7,7 +7,7 @@ type Props = {}
 const ItemPrice = (props: Props) => {
   const navigate = useNavigate()
   return (
-    <div className='flex justify-between flex-col  '>
+    <div className='flex  flex-col  '>
       <div className='flex justify-center items-center text-center border-[1px] mt-10 flex-col rounded-lg'>
         <span className='flex justify-center items-center text-center'>Giá đề xuất</span>
         <span className='flex justify-center items-center text-center text-3xl font-bold'>20.000đ</span>
@@ -23,7 +23,7 @@ const ItemPrice = (props: Props) => {
         ></Button>
       </div>
       <span className='flex justify-center  items-center text-center mt-3 text-black/40'>Hoặc thay đổi giá</span>
-      <div className='fixed bottom-0 w-[92%] mb-2'>
+      <div className='w-full mb-2'>
         <Button
           onClick={() => {
             navigate('/book-a-car/mobile/7')

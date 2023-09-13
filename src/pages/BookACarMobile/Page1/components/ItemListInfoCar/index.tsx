@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import CustomLink from 'src/components/CustomLink'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { updateIndexCardActive } from 'src/store/car/manageCar/managCarSlice'
+import { getCarsHistory } from 'src/store/carMobile/managCarSlice'
 interface Item {
   icon: JSX.Element
   title: string
@@ -68,11 +69,20 @@ const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) =>
 }
 
 const ItemListInfoCar = (props: Props) => {
+  const { carListHistory } = useAppSelector((state) => state.carMobile)
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(getCarsHistory(''))
+  }, [])
   return (
     <div>
-      {item.map((item, index) => {
-        return <ComponentListCarInfo item={item} index={index} key={index} />
-      })}
+      {carListHistory.length > 0
+        ? carListHistory.map((item, index) => {
+            return <ComponentListCarInfo item={item} index={index} key={index} />
+          })
+        : item.map((item, index) => {
+            return <ComponentListCarInfo item={item} index={index} key={index} />
+          })}
     </div>
   )
 }

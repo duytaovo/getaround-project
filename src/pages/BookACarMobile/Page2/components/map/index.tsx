@@ -45,15 +45,6 @@ const CustomMapHistory = ({ selectPosition }: any) => {
   const [itemStart, setItemStart] = React.useState<any>(JSON.parse(localStorage.getItem('start') || ''))
   const [itemEnd, setItemEnd] = React.useState<any>()
   const [pointA, setPointA] = React.useState<any>()
-  // React.useEffect(() => {
-  //   setItemStart(JSON.parse(localStorage.getItem('start') || ''))
-  // }, [])
-
-  // if (itemStart?.geometry?.coordinates.length > 0) {
-  //   setPointA([itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]])
-  // } else {
-  //   setPointA([itemStart?.lat, itemStart?.lng])
-  // }
 
   // // const pointB = [itemEnd?.geometry.coordinates[1], itemEnd?.geometry.coordinates[0]]
   return (

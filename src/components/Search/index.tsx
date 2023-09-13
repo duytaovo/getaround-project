@@ -27,7 +27,7 @@ const Search = ({ placeholder, onChange, width }: Props) => {
     setItemEnd(JSON.parse(localStorage.getItem('end') || ''))
   }, [])
   return (
-    <div style={{ width: width, height: 40 }} className='flex h-8 content-center border items-center  rounded bg-white'>
+    <div style={{ width: width, height: 45 }} className='flex h-8 content-center border items-center  rounded bg-white'>
       <IconButton />
       <input
         className='mr-5 text-base placeholder:text-sm focus:outline-none w-[inherit]'
