@@ -47,7 +47,12 @@ const Search = ({ placeholder, onChange, width }: Props) => {
       // onChange && onChange(valueSearch)
     }
   }
+  const [itemEnd, setItemEnd] = React.useState<any>()
+  React.useEffect(() => {
+    setItemEnd(JSON.parse(localStorage.getItem('end') || ''))
+  }, [])
   return (
+
     <div style={{ width: width }} className='flex h-8 content-center border items-center  rounded-full bg-white'>
       <IconButton onClick={handleSearch}>
         <SearchOutlinedIcon
@@ -58,12 +63,16 @@ const Search = ({ placeholder, onChange, width }: Props) => {
           }}
         />
       </IconButton>
+
       <input
-        className='mr-5 text-base placeholder:text-xs focus:outline-none'
+        className='mr-5 text-base placeholder:text-xs focus:outline-none w-[inherit]'
         type='search'
         placeholder={`${placeholder}...`}
         onChange={handleInputSearch}
         onKeyDown={handleKeyDown}
+        width={300}
+        defaultValue={JSON.parse(localStorage.getItem('end') || '')?.properties?.name}
+        // defaultValue={''}
       />
     </div>
   )

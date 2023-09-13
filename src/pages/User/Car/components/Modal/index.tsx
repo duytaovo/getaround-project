@@ -179,14 +179,16 @@ export default function CustomModal({ open, onChange }: Props) {
       car_license_id: data.carLicense,
       regis: data.regis
     })
-    const form = new FormData()
     if (file) {
-      file.map((item, index) => {
-        return form.append('image', item)
-      })
+      const form = new FormData()
+      form.append('file', file[0])
+      for (let i = 0; i < file.length; i++) {
+        form.append('image', file[i])
+      }
+    } else {
+      toast.warning('Cần chọn ảnh')
     }
-    console.log(body)
-    console.log(data.image)
+
     try {
       setIsSubmitting(true)
       const res = await dispatch(addCars(body))
@@ -231,7 +233,7 @@ export default function CustomModal({ open, onChange }: Props) {
   let _form = () => (
     <div>
       <FormProvider {...methods}>
-        <form className='profile-form__wrapper' autoComplete='off' onSubmit={onSubmit} noValidate>
+        <form className='profile-form__wrapper' autoComplete='off' noValidate>
           {/* <span className='text-2xl p-4 pl-0  mb-8'>Thêm xe </span> */}
           <p className='mb-3'>
             (<span className='text-red-500 mb-2'> * </span>)Trường bắt buộc
@@ -476,7 +478,7 @@ export default function CustomModal({ open, onChange }: Props) {
     return (
       <div className='flex flex-col justify-between space-y-40 md:w-72 md:border-l md:border-l-gray-200'>
         <form autoComplete='off' noValidate>
-          <div className='flex flex-col items-center '>
+          <div className='flex flex-col items-start '>
             <div className='my-5 w-24 space-y-5 justify-between items-center'>
               {imageUrls.map((imageUrl, index) => {
                 return (
@@ -489,9 +491,13 @@ export default function CustomModal({ open, onChange }: Props) {
                 )
               })}
             </div>
-            <InputFile onChange={handleChangeFile} id='image' register={register} />
-            <div className='mt-3 text-gray-400 flex flex-col items-center'>
-              <div className='text-red-500'>Tối đa 3 ảnh</div>
+            <InputFile label='Chọn ảnh mặt trước' onChange={handleChangeFile} id='image' />
+            <InputFile label='Chọn ảnh mặt trước' onChange={handleChangeFile} id='image' />
+            <InputFile label='Chọn ảnh mặt trước' onChange={handleChangeFile} id='image' />
+            <InputFile label='Chọn ảnh mặt trước' onChange={handleChangeFile} id='image' />
+            <InputFile label='Chọn ảnh mặt trước' onChange={handleChangeFile} id='image' />
+            <InputFile label='Chọn ảnh mặt trước' onChange={handleChangeFile} id='image' />
+            <div className='mt-3  flex flex-col items-center text-red-500'>
               <div>Dụng lượng file tối đa 2 MB</div>
               <div>Định dạng:.JPEG, .PNG</div>
             </div>
