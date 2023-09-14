@@ -51,20 +51,18 @@ const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) =>
 
   useEffect(() => {}, [])
   return (
-    <CustomLink to={item.link}>
-      <div
-        className={`flex items-center justify-start space-x-2 border-b-[1px] rounded-md p-1 ${
-          index === indexCardActive ? ' ' : ''
-        }`}
-        onClick={() => handleClick(index)}
-      >
-        <div className='text-[#3699d3]'>{item.icon}</div>
-        <div className='flex justify-between flex-col '>
-          <span className='text-black/90'>{item.title}</span>
-          <span className='text-black/40'>{item.country}</span>
-        </div>
+    <div
+      className={`flex items-center justify-start space-x-2 border-b-[1px] rounded-md p-1 ${
+        index === indexCardActive ? 'bg-mainColor/20' : ''
+      }`}
+      onClick={() => handleClick(index)}
+    >
+      <div className='text-red-400'>{item.icon}</div>
+      <div className='flex justify-between flex-col '>
+        <span className='text-black/90'>{item.title}</span>
+        <span className='text-black/40'>{item.country}</span>
       </div>
-    </CustomLink>
+    </div>
   )
 }
 

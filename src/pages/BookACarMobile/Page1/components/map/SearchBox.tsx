@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { updateIndexCardActive } from 'src/store/car/manageCar/managCarSlice'
 import { useNavigate } from 'react-router-dom'
 import useGeoLocation from 'src/hooks/useGeoLocation'
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt'
 
 const VIETMAP_API_KEY = import.meta.env.VITE_API_KEY_VIETMAP
 const VIETMAP_SEARCH_URL = 'https://maps.vietmap.vn/api/search?api-version=1.1&'
@@ -76,12 +77,14 @@ export default function SearchBox(props: any) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div className='flex flex-col justify-center items-center'>
-        <div>
+        <div className='flex flex-row justify-start items-start'>
+          <AddLocationAltIcon className='m-2 ml-0 text-mainColor' />
+
           <Search onChange={onChange} placeholder='Nhập điểm đi' width={props.width} />
         </div>
         <span className='mt-1'>Hoặc </span>
         <Button
-          className='bg-blue-300'
+          className='bg-blue-300 w-[150px]'
           sx={{
             backgroundColor: 'rgb(147 197 253 / .5)'
           }}
@@ -92,7 +95,6 @@ export default function SearchBox(props: any) {
         </Button>
       </div>
       <div>
-        <span>Tìm kiếm gần đây</span>
         <List component='nav' aria-label='main mailbox folders'>
           {listPlace?.data?.features?.map((item: any, index: number) => {
             return (

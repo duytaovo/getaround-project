@@ -10,7 +10,7 @@ import Button from 'src/components/Button'
 import Address from '../Address'
 import ItemListCar from '../ItemListCar'
 
-const drawerBleeding = 56
+const drawerBleeding = 18
 
 interface Props {
   /**
@@ -80,8 +80,8 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
-            borderTopLeftRadius: 12,
-            borderTopRightRadius: 12,
+            borderTopLeftRadius: 21,
+            borderTopRightRadius: 21,
             visibility: 'visible',
             right: 0,
             left: 0

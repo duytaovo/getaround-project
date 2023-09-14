@@ -75,12 +75,12 @@ const CustomMapHistory = ({ selectPosition }: any) => {
       {/* line */}
 
       {itemStart?.lat && itemStart?.lng && (
-        <Polyline positions={[[itemStart?.lat, itemStart?.lng], pointB]} color='blue' />
+        <Polyline positions={[[itemStart?.lat, itemStart?.lng], pointB]} color='red' />
       )}
       {itemStart?.geometry?.coordinates.length > 0 && (
         <Polyline
           positions={[[itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]], pointB]}
-          color='blue'
+          color='red'
         />
       )}
     </MapContainer>

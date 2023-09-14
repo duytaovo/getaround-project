@@ -9,10 +9,17 @@ import CustomMapHistory from '../map'
 import ItemListInfoCar from '../ItemListInfoCar'
 import Button from 'src/components/Button'
 import SearchBox from '../map/SearchBox'
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt'
+import HistoryIcon from '@mui/icons-material/History'
+import Typography from '@mui/material/Typography'
 
-const drawerBleeding = 56
+const drawerBleeding = 10
 
 interface Props {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
   window?: () => Window
 }
 
@@ -75,18 +82,16 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
-            borderTopLeftRadius: 12,
-            borderTopRightRadius: 12,
+            top: -drawerBleeding,
+            borderTopLeftRadius: 21,
+            borderTopRightRadius: 21,
             visibility: 'visible',
             right: 0,
             left: 0
           }}
         >
-          <div onClick={toggleDrawer(true)}>
-            <Button onClick={toggleDrawer(true)}>
-              <Puller />
-            </Button>
-          </div>
+          <Puller />
+          <Typography sx={{ p: 2, color: 'text.secondary' }}></Typography>
         </StyledBox>
         <StyledBox
           sx={{
@@ -96,14 +101,18 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          <div className='mt-6 '>
+          <div className='mt-6 flex flex-row justify-start items-start'>
             <SearchBox
               selectPosition={selectPosition}
               setSelectPosition={setSelectPosition}
               selectMyPosition={selectMyPosition}
               setSelectMyPosition={setSelectMyPosition}
-              width={'380px'}
+              width={'340px'}
             />
+          </div>
+          <div className='text-black/70 flex flex-row justify-start items-start space-x-1'>
+            <HistoryIcon className='text-mainColor'></HistoryIcon>
+            <span> Tìm kiếm gần dây</span>
           </div>
           <div className='mt-2'>
             <ItemListInfoCar />

@@ -4,7 +4,7 @@ import osm from './osm-providers'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import markerImg from './marker.png'
-import markerImgStart from './car_top.png'
+import markerImgStart from './mark.png'
 
 const markerIcon = new L.Icon({
   iconUrl: markerImg,

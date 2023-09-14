@@ -4,7 +4,7 @@ import osm from './osm-providers'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import markerImg from './marker.png'
-import markerImgStart from './car_top.png'
+import markerImgStart from './mark.png'
 import { useNavigate } from 'react-router-dom'
 
 const markerIconStart = new L.Icon({
@@ -75,12 +75,12 @@ const CustomMapHistory = ({ selectPosition }: any) => {
       {/* line */}
 
       {itemStart?.lat && itemStart?.lng && (
-        <Polyline positions={[[itemStart?.lat, itemStart?.lng], pointB]} color='blue' />
+        <Polyline positions={[[itemStart?.lat, itemStart?.lng], pointB]} color='red' />
       )}
       {itemStart?.geometry?.coordinates.length > 0 && (
         <Polyline
           positions={[[itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]], pointB]}
-          color='blue'
+          color='red'
         />
       )}
     </MapContainer>

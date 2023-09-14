@@ -6,7 +6,6 @@ const BookACarMobilePage7 = () => {
     <div>
       <div className=''>
         <SwipeableEdgeDrawer />
-        {/* <CustomMapHistory /> */}
       </div>
     </div>
   )
