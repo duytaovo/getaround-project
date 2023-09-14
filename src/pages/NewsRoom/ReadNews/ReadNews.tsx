@@ -65,7 +65,7 @@ const ReadNews = () => {
                         </div> */}
                         <Link
                           // to={ReadNewsRoom?.[index]?.link}
-                          to=''
+                          to='/'
                           className='text-[20px] underline text-black hover:text-mainColor hover:no-underline duration-[0.3s] mt-2'
                         >
                           <Text

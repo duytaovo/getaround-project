@@ -125,7 +125,12 @@ const Header = (props: Props) => {
         <div className='flex  justify-center items-center'>
           <div>
             <Link to='/'>
-              <img src='/logo-main.png' alt='logo' className='fill-current bg-none h-[26px]' />
+              <img
+                src='/logo-main.png'
+                alt='logo'
+                className='fill-current bg-none h-[26px]'
+                style={{ height: '26px', background: 'none', fill: 'currentcolor' }}
+              />
             </Link>
             {/* <span className='text-mainColor font-bold fill-current text-2xl w-[120px] h-[26px]'>Unlock</span> */}
           </div>
