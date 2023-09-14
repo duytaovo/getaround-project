@@ -1,10 +1,10 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import NextArrow from '../NextArrow'
-import PrevArrow from '../PreArrow/PreArrow'
+import NextArrow from 'src/components/NextArrow/NextArrow'
+import PrevArrow from 'src/components/PreArrow/PreArrow'
 import { IItemSlider } from 'src/types/hosting_shareACar.type'
-import CustomCardSlider from '../Card'
+
 import getBreakpoint from 'src/helpers/getBreakpoint'
 import CardSlide from 'src/pages/Home/CardSlide/CardSlide'
 interface Props {
@@ -27,7 +27,7 @@ interface Props {
   speed?: number
 }
 // breackPoint = {[1,1,2,2,3]}
-export default function CustomSlider({
+export default function SlideBookCar({
   numberItem,
   data,
   className,
@@ -90,34 +90,18 @@ export default function CustomSlider({
     <div className={classNameContainer + ' ' + 'px-2'}>
       <Slider {...settings}>
         {data?.map((item, index: number) => (
-          <div className='col-md-6 col-xl-4'>
-            <div className='testi-item  wow fadeInUp'>
-              <p className='testi-item_text'>
-                “Proactively synthesize schemas before foster like leveraged expertise user friendly business low before
-                open.”
-              </p>
-              <div className='testi-item_wrapper'>
-                <div className='testi-item_profile'>
-                  <div className='testi-item_img'>
-                    <img
-                      src='https://inkythuatso.com/uploads/images/2022/08/anh-lai-xe-o-to-inkythuatso-09-15-56-00.jpg'
-                      alt='Avatar'
-                      style={{ width: '50px', height: '50px' }}
-                    />
-                  </div>
-                  <div className='media-body'>
-                    <h3 className='testi-item_name'>David Smith</h3>
-                    <p className='testi-item_desig'>Head Of Growth</p>
-                  </div>
-                </div>
-                <div className='testi-item_quote'>
-                  {' '}
-                  <img
-                    src='https://inkythuatso.com/uploads/images/2022/08/anh-lai-xe-o-to-inkythuatso-09-15-56-00.jpg'
-                    alt='Avatar'
-                    style={{ width: '50px', height: '50px' }}
-                  />
-                </div>
+          <div className='col-md-6 col-lg-4'>
+            <div className='service-list'>
+              <div className='service-list_icon'>
+                <img
+                  src='https://png.pngtree.com/png-clipart/20210311/original/pngtree-woman-s-bag-icon-design-template-illustration-png-image_5997192.png'
+                  alt='service Icon'
+                  style={{ height: '30px', width: '30px' }}
+                />
+              </div>
+              <div className='service-list_content'>
+                <span className='service-list_text'>Available Now</span>
+                <h3 className='service-list_title'>STANDARD TAXI</h3>
               </div>
             </div>
           </div>

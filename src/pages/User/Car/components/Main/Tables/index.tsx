@@ -16,9 +16,11 @@ type Props = {
 const CarTable = ({ onClick }: Props) => {
   const dispatch = useAppDispatch()
   const { carList } = useAppSelector((state) => state.car)
+
   useEffect(() => {
     dispatch(getCars(''))
   }, [])
+  console.log(carList)
   const [status, setStatus] = React.useState<string>('')
 
   const handleChange = (event: SelectChangeEvent) => {

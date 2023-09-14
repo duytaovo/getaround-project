@@ -20,7 +20,7 @@ const MainLayoutInner = (props: Props) => {
           <HeaderMobile />
         </Hidden>
       </div>
-      <div className='pt-[100px]  container px-[96px] lg:px-2'>
+      <div className='pt-[100px]  container  lg:px-2'>
         <Outlet />
       </div>
       <div className='bg-white-main '>

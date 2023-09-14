@@ -12,7 +12,7 @@ export const getCarsType = createAsyncThunk('Car/getCarsType', payloadCreator(Ca
 export const getCarsLicense = createAsyncThunk('Car/getCarsLicense', payloadCreator(CarApi.getCarLicense))
 export const getCarsRegis = createAsyncThunk('Car/getCarsRegis', payloadCreator(CarApi.getCarRegis))
 export const addCars = createAsyncThunk('Car/addCars', payloadCreator(CarApi.addCar))
-
+export const searchCars = createAsyncThunk('Car/findCar', payloadCreator(CarApi.searchCars))
 interface CarState {
   carList: Car[]
   carsBrand: any[]
@@ -23,6 +23,7 @@ interface CarState {
   carRegis: any[]
   carLicense: any[]
   indexCardActive: number
+  carSearch: any
 }
 
 const initialState: CarState = {
@@ -34,7 +35,8 @@ const initialState: CarState = {
   carRegis: [],
   carsYear: [],
   carsSeri: [],
-  carType: []
+  carType: [],
+  carSearch: []
 }
 
 const CarSlice = createSlice({
@@ -69,6 +71,9 @@ const CarSlice = createSlice({
     })
     builder.addCase(getCarsRegis.fulfilled, (state, { payload }) => {
       state.carRegis = payload.data
+    })
+    builder.addCase(searchCars.fulfilled, (state, { payload }) => {
+      state.carSearch = payload.data
     })
   }
 })

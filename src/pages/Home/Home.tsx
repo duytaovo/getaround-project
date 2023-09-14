@@ -16,17 +16,39 @@ import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { Image } from 'src/components/Edition/Image'
 import { _getData } from 'src/store/dataSlice'
 import { Helmet } from 'react-helmet-async'
-
+import SlideBookCar from './SlideBookCar/SlideBookCar'
+import ItemBrand from './ItemBrand/ItemBrand'
+import SlideLeftRightHome from './SlideLeftRightHome/SlideLeftRightHome'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'src/store/store'
+import About_Area from './About_Area/About_Area'
+import FaqQuestion from './FaqQuestion/FaqQuestion'
+import RateTaxi from './RateTaxi/RateTaxi'
+import FormBookTaxi from './FormBookTaxi/FormBookTaxi'
+import { RightOutlined, LeftOutlined } from '@ant-design/icons'
+import UpdateNews from './UpdateNews/UpdateNews'
 type Props = {}
 
 const Home = (props: Props) => {
   const homePageData = useAppSelector((state) => state.homePageData)
   const data = useAppSelector((state) => state.data.data)
-  // console.log('Home', data)
+
   const dispatch = useAppDispatch()
 
   useEffect(() => {}, [dispatch])
-
+  const {
+    ExploreHowItWork,
+    ProprietaryHowItWork,
+    HearCommunityHowItWork,
+    SlideLeftRightHowItWork,
+    SlideHowItWorkR,
+    ImgExploreHowItWork,
+    ImgSlideLeftRight_HowItWork,
+    customeSteps,
+    titleimgSide
+  } = useSelector((state: RootState) => state.howitwork)
+  const data1 = useAppSelector((state) => state.data.data)
+  const howitwork = useAppSelector((state) => state.howitwork)
   return (
     <div className=''>
       <Helmet>
@@ -44,8 +66,52 @@ const Home = (props: Props) => {
         datePickerPlaceholder={homePageData.heroSection.datePickerPlaceholder}
         timePickerPlaceholder={homePageData.heroSection.timePickerPlaceholder}
       />
-
-      <WrapperContent
+      {/* <ConnectedCarSharing
+        DataConnectedCarSharingHome={homePageData.ConnectedCarSharingR}
+        className={'flex-col items-stretch flex py-10 sm:py-3'}
+      /> */}
+      <ItemBrand
+        DataConnectedCarSharingHome={homePageData.ItemBrandR}
+        className={'flex-col items-stretch flex py-10 sm:py-3'}
+      />
+      <SlideLeftRightHome
+        Data={homePageData.SlideLeftRightHome}
+        img={data[homePageData.ImgSlideLeftRight_Home.img]}
+        mainTitle={data[ImgSlideLeftRight_HowItWork.mainTitle]}
+        idTitle={ImgSlideLeftRight_HowItWork.mainTitle}
+        idimg={ImgSlideLeftRight_HowItWork.img}
+      />
+      <About_Area />
+      <div style={{ height: 'full', width: 'full' }}>
+        <div className='container'>
+          <div className='title-area text-center'>
+            <span className='sub-title'>
+              Choose Your Taxi<span className='double-line'></span>
+            </span>
+            <h2 className='sec-title'>Available Our Taxi</h2>
+          </div>
+          <div className='mx-auto w-full h-fit' style={{ marginBottom: '100px' }}>
+            <SlideBookCar
+              prefix='blogSlider'
+              breakPointScroll={[1, 2, 2, 2]}
+              breakPoint={[1, 2, 3, 3]}
+              numberItem={3}
+              numberItemScroll={1}
+              classNameContainer='px-6'
+              className='bg-white/75 rounded-md p-2 overflow-hidden object-cover h-[360px]'
+              classNameImage='rounded-md w-full h-[160px] object-cover'
+              classNameTitle='text-[14px] leading-[22px]  pt-6'
+              classNameContent=' text-[24px] leading-[25px] break-words py-6'
+              classNameTime='text-[14px] leading-[22px] '
+              isContent={true}
+              isTime={true}
+              isTitle={true}
+              data={homePageData.blogSilerSection.itemsData}
+            />
+          </div>
+        </div>
+      </div>
+      {/* <WrapperContent
         title={homePageData.perfectCarSliderSection.wrapperTitle}
         textAlign='center'
         isBgTransparent={true}
@@ -81,7 +147,7 @@ const Home = (props: Props) => {
           data={homePageData.homeIntoduceCarouselSection.itemsData}
           prefix='home'
         />
-      </section>
+      </section> */}
 
       {/* <WrapperContent
         title={homePageData.sharingMaketPlaceSection.wrapperTitle}
@@ -92,11 +158,11 @@ const Home = (props: Props) => {
         <ConnectedCarSharing DataConnectedCarSharingHome={homePageData.sharingMaketPlaceSection.itemsData} />
       </WrapperContent> */}
 
-      <WrapperContent textAlign='center' title={homePageData.homeStepSection.wrapperTitle} classname='flex flex-col'>
+      {/* <WrapperContent textAlign='center' title={homePageData.homeStepSection.wrapperTitle} classname='flex flex-col'>
         <Heading title={homePageData.homeStepSection.heading} breakLineAt={3} fontSize={30} className='text-center' />
         <div className='flex justify-center px-[36px] xl:px-[7px] xl:flex-col-reverse'>
           <div className='w-1/2 flex justify-center xl:w-full'>
-            {/* <img className='object-contain h-[500px]' src={homePageData.homeStepSection.img} alt='ss' /> */}
+          
             <Image
               alt='Image thumb'
               id={homePageData.homeStepSection.img}
@@ -113,7 +179,7 @@ const Home = (props: Props) => {
             titleClassName='text-mainColor'
           />
         </div>
-      </WrapperContent>
+      </WrapperContent> */}
 
       {/* <WrapperContent title='TESTIMONIALS' textAlign='center' classname='flex flex-col' isBgTransparent>
         <Heading title='Hear from our guests' breakLineAt={4} fontSize={30} className='text-center' />
@@ -132,7 +198,7 @@ const Home = (props: Props) => {
         </div>
       </WrapperContent> */}
 
-      <WrapperContent
+      {/* <WrapperContent
         title={homePageData.exploreHostingSection.wrapperTitle}
         textAlign='center'
         classname='pt-4'
@@ -144,7 +210,7 @@ const Home = (props: Props) => {
           img={homePageData.exploreHostingSection.img}
           className='flex-col items-center flex w-full'
         />
-      </WrapperContent>
+      </WrapperContent> */}
 
       {/* <WrapperContent title={homePageData.localFavouriteSection.wrapperTitle} isBgTransparent textAlign='center'>
         <Heading
@@ -171,16 +237,104 @@ const Home = (props: Props) => {
         </div>
       </WrapperContent> */}
 
-      <WrapperContent title={homePageData.blogSilerSection.wrapperTitle} isBgTransparent textAlign='center'>
-        <Heading
-          title={homePageData.blogSilerSection.heading}
-          fontSize={30}
-          breakLineAt={6}
-          className='text-center'
-          color='rgba(0,0,0, .8)'
-        />
-        <div className='mx-auto w-full h-fit'>
-          <CustomeSlider
+      {/* <WrapperContent title={homePageData.blogSilerSection.wrapperTitle} isBgTransparent textAlign='center'> */}
+      <div style={{ width: '100%' }}>
+        <div className=''>
+          <div className='row justify-content-center justify-content-lg-between align-items-center'>
+            <div className='col-lg-8'>
+              <div className='title-area text-center text-lg-start'>
+                <span className='sub-title'>Client’s Testimonial</span>
+                <h2 className='sec-title'>Our Happy Client’s Review</h2>
+              </div>
+            </div>
+            <div className='col-auto'>
+              <div className='sec-btn'>
+                <div className='icon-item'>
+                  <button className='slick-arrow default'>
+                    <LeftOutlined />
+                  </button>
+                  <button className='slick-arrow default'>
+                    <RightOutlined />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='mx-auto w-full h-fit' style={{ marginBottom: '100px' }}>
+            <CustomeSlider
+              prefix='blogSlider'
+              breakPointScroll={[1, 2, 2, 2]}
+              breakPoint={[1, 2, 3, 3]}
+              numberItem={3}
+              numberItemScroll={1}
+              classNameContainer='px-6'
+              className='bg-white/75 rounded-md p-2 overflow-hidden object-cover h-[360px]'
+              classNameImage='rounded-md w-full h-[160px] object-cover'
+              classNameTitle='text-[14px] leading-[22px]  pt-6'
+              classNameContent=' text-[24px] leading-[25px] break-words py-6'
+              classNameTime='text-[14px] leading-[22px] '
+              isContent={true}
+              isTime={true}
+              isTitle={true}
+              data={homePageData.blogSilerSection.itemsData}
+            />
+          </div>
+        </div>
+      </div>
+      {/* </WrapperContent> */}
+
+      <FaqQuestion />
+      <div style={{ height: 'full', width: 'full' }}>
+        <div className='container'>
+          <div className='title-area text-center'>
+            <span className='sub-title'>
+              Our Taxi<span className='double-line'></span>
+            </span>
+            <h2 className='sec-title text-capitalize' style={{ color: '#3699d3' }}>
+              Choose Our Taxi Collection
+            </h2>
+          </div>
+          <div className='nav tab-menu4 style2' id='tab-menu4' role='tablist'>
+            <button
+              className='active'
+              id='nav-one-tab'
+              data-bs-toggle='tab'
+              data-bs-target='#nav-one'
+              type='button'
+              role='tab'
+              aria-controls='nav-one'
+              aria-selected='true'
+              style={{ color: 'black' }}
+            >
+              Town Taxi
+            </button>
+            <button
+              className=''
+              id='nav-two-tab'
+              data-bs-toggle='tab'
+              data-bs-target='#nav-two'
+              type='button'
+              role='tab'
+              aria-controls='nav-two'
+              aria-selected='false'
+            >
+              Limousine Taxi
+            </button>
+            <button
+              className=''
+              id='nav-three-tab'
+              data-bs-toggle='tab'
+              data-bs-target='#nav-three'
+              type='button'
+              role='tab'
+              aria-controls='nav-three'
+              aria-selected='false'
+              style={{ color: 'black' }}
+            >
+              Hybrid Taxi
+            </button>
+          </div>
+          <RateTaxi
             prefix='blogSlider'
             breakPointScroll={[1, 2, 2, 2]}
             breakPoint={[1, 2, 3, 3]}
@@ -198,35 +352,37 @@ const Home = (props: Props) => {
             data={homePageData.blogSilerSection.itemsData}
           />
         </div>
-      </WrapperContent>
-
-      <WrapperContent
-        titlePadding={0}
-        textAlign='left'
-        title={homePageData.qAndASection.wrapperTitle}
-        isBgTransparent={true}
-        fontSize={12}
-      >
-        <div className='flex xl:flex-col'>
-          <CustomeCommonQuestions
-            titleClassName='text-bold text-[18px]'
-            items={homePageData.qAndASection.itemsData}
-            className='w-1/2 xl:w-full'
-            paddingRightSingleCommonQuestion={10}
-          />
-          <div className='w-1/2 p-4 flex justify-center items-center xl:w-full'>
-            {/* <img width='50%' src={homePageData.qAndASection.img} alt='' /> */}
-            <Image
-              id={homePageData.qAndASection.img || 'xxx'}
-              alt='image-thumb'
-              src={homePageData.qAndASection.img ? data[homePageData.qAndASection.img] : ''}
-              style={{
-                width: '100%'
-              }}
+      </div>
+      <FormBookTaxi />
+      <div style={{ height: 'full', width: 'full' }}>
+        <div className='container'>
+          <div className='title-area text-center'>
+            <span className='sub-title'>
+              LATEST NEWS UPDATES<span className='double-line'></span>
+            </span>
+            <h2 className='sec-title'>Our Company News</h2>
+          </div>
+          <div className='mx-auto w-full h-fit' style={{ marginBottom: '100px' }}>
+            <UpdateNews
+              prefix='blogSlider'
+              breakPointScroll={[1, 2, 2, 2]}
+              breakPoint={[1, 2, 3, 3]}
+              numberItem={2}
+              numberItemScroll={1}
+              classNameContainer='px-6'
+              className='bg-white/75 rounded-md p-2 overflow-hidden object-cover h-[360px]'
+              classNameImage='rounded-md w-full h-[160px] object-cover'
+              classNameTitle='text-[14px] leading-[22px]  pt-6'
+              classNameContent=' text-[24px] leading-[25px] break-words py-6'
+              classNameTime='text-[14px] leading-[22px] '
+              isContent={true}
+              isTime={true}
+              isTitle={true}
+              data={homePageData.blogSilerSection.itemsData}
             />
           </div>
         </div>
-      </WrapperContent>
+      </div>
     </div>
   )
 }
