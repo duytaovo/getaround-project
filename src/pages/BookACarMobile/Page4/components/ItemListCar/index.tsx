@@ -41,7 +41,9 @@ const ComponentListCarInfo = () => {
 
   const itemCar = JSON.parse(localStorage.getItem('itemCar') || '')
   return (
-    <div className={`flex  justify-start space-2 shadow mb-2  rounded-md p-1 `}>
+    <div
+      className={`flex  justify-start space-2 shadow mb-2  rounded-md mt-10 bg-mainColor/20 border-[1px] border-mainColor border-solid `}
+    >
       <div className='flex flex-row items-center justify-between space-x-10'>
         <div className='flex justify-between items-center '>
           <div className='text-[#3699d3] mx-2'>

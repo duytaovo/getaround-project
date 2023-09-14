@@ -82,7 +82,7 @@ const Login = () => {
         <div className='flex items-center justify-center rounded-2xl mt-3'>
           <img src='/logo.jpg' alt='logo' className='w-30 h-20 md:hidden'></img>
         </div>
-        <form className='rounded p-10 shadow-sm' onSubmit={onSubmit} noValidate>
+        <form className='rounded p-10 md:p-2 shadow-sm' onSubmit={onSubmit} noValidate>
           <div className=' flex items-center justify-center text-[25px] text-black'>Đăng nhập</div>
 
           <Input

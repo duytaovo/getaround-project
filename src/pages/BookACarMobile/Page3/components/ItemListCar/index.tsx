@@ -13,6 +13,15 @@ import Button from 'src/components/Button'
 import { getCars } from 'src/store/carMobile/managCarSlice'
 import numberWithCommas from 'src/utils/numberWithCommas'
 import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms'
+
+import { Global } from '@emotion/react'
+import { styled } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import { grey } from '@mui/material/colors'
+import Box from '@mui/material/Box'
+import Skeleton from '@mui/material/Skeleton'
+import Typography from '@mui/material/Typography'
+import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 interface Item {
   icon: any
   seri: string
@@ -53,22 +62,6 @@ const item: Item[] = [
     suggested_price: '500.000',
     min: '23 ',
     type: 'Xe 5 chỗ'
-  },
-  {
-    link: '/book-a-car/mobile',
-    icon: <img src={car1} alt='' className='w-[120px] h-[80px] object-contain' />,
-    seri: '83 MidStation',
-    suggested_price: '500.000',
-    min: '23 ',
-    type: 'Xe 5 chỗ'
-  },
-  {
-    link: '/book-a-car/mobile',
-    icon: <img src={car1} alt='' />,
-    seri: '83 MidStation',
-    suggested_price: '500.000',
-    min: '23 ',
-    type: 'Xe 5 chỗ'
   }
 ]
 
@@ -81,8 +74,8 @@ const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) =>
   const navigate = useNavigate()
   return (
     <div
-      className={`flex items-center justify-start space-2 shadow mb-2  rounded-md p-1 ${
-        index === indexCardActive ? 'bg-mainColor/20' : ''
+      className={`flex items-center justify-start space-2 mt-4 shadow mb-2  rounded-md p-1 border-[1px] ${
+        index === indexCardActive ? 'bg-mainColor/20 border-[1px] border-mainColor border-solid' : ''
       }`}
       onClick={() => handleClick(index)}
     >
@@ -120,12 +113,12 @@ const ItemListInfoCar = (props: Props) => {
   const { cars } = useAppSelector((state) => state.carMobile)
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(
-      getCars({
-        lat: '22.001612',
-        lng: '106.710186'
-      })
-    )
+    // dispatch(
+    //   getCars({
+    //     lat: '22.001612',
+    //     lng: '106.710186'
+    //   })
+    // )
   }, [])
   return (
     <div className='my-4 space-y-2 mt-3'>

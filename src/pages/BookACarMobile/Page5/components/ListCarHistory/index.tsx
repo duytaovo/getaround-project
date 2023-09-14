@@ -10,6 +10,7 @@ import Button from 'src/components/Button'
 import Address from '../Address'
 import ItemListCar from '../ItemListCar'
 import ItemListPayment from '../ItemListCar'
+import Typography from '@mui/material/Typography'
 
 const drawerBleeding = 18
 
@@ -57,7 +58,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(30% - ${drawerBleeding}px)`,
+            height: `calc(40% - ${drawerBleeding}px)`,
             overflow: 'visible'
           }
         }}
@@ -81,6 +82,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
+            top: -drawerBleeding,
             borderTopLeftRadius: 21,
             borderTopRightRadius: 21,
             visibility: 'visible',
@@ -88,11 +90,8 @@ export default function SwipeableEdgeDrawer(props: Props) {
             left: 0
           }}
         >
-          <div onClick={toggleDrawer(true)}>
-            <Button onClick={toggleDrawer(true)}>
-              <Puller />
-            </Button>
-          </div>
+          <Puller />
+          <Typography sx={{ p: 2, color: 'text.secondary', borderRadius: 26 }}></Typography>
         </StyledBox>
         <StyledBox
           sx={{

@@ -8,8 +8,9 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CustomMapHistory from '../map'
 import Button from 'src/components/Button'
 import ItemPrice from '../ItemPrice'
+import Typography from '@mui/material/Typography'
 
-const drawerBleeding = 18
+const drawerBleeding = 10
 
 interface Props {
   /**
@@ -55,7 +56,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(35% - ${drawerBleeding}px)`,
+            height: `calc(40% - ${drawerBleeding}px)`,
             overflow: 'visible'
           }
         }}
@@ -79,6 +80,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
+            top: -drawerBleeding,
             borderTopLeftRadius: 21,
             borderTopRightRadius: 21,
             visibility: 'visible',
@@ -86,11 +88,8 @@ export default function SwipeableEdgeDrawer(props: Props) {
             left: 0
           }}
         >
-          <div onClick={toggleDrawer(true)}>
-            <Button onClick={toggleDrawer(true)}>
-              <Puller />
-            </Button>
-          </div>
+          <Puller />
+          <Typography sx={{ p: 2, color: 'text.secondary', borderRadius: 26 }}></Typography>
         </StyledBox>
         <StyledBox
           sx={{

@@ -68,7 +68,7 @@ const CustomMapHistory = ({ selectPosition }: any) => {
       <Marker position={[itemEnd?.geometry.coordinates[1], itemEnd?.geometry.coordinates[0]]} icon={markerIcon}>
         <Popup>
           <b>
-            {itemEnd?.geometry.coordinates[1]}, {itemEnd?.geometry.coordinates[0]}
+            <b>{itemEnd?.properties.name}</b>
           </b>
         </Popup>
       </Marker>

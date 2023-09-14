@@ -13,7 +13,7 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt'
 import HistoryIcon from '@mui/icons-material/History'
 import Typography from '@mui/material/Typography'
 
-const drawerBleeding = 10
+const drawerBleeding = 20
 
 interface Props {
   /**
@@ -91,7 +91,12 @@ export default function SwipeableEdgeDrawer(props: Props) {
           }}
         >
           <Puller />
-          <Typography sx={{ p: 2, color: 'text.secondary' }}></Typography>
+          <Typography
+            sx={{ p: 1, color: 'text.secondary', marginLeft: 2, fontWeight: 700, fontSize: 18 }}
+            className='font-bold'
+          >
+            Điểm khởi hành
+          </Typography>
         </StyledBox>
         <StyledBox
           sx={{
@@ -107,7 +112,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
               setSelectPosition={setSelectPosition}
               selectMyPosition={selectMyPosition}
               setSelectMyPosition={setSelectMyPosition}
-              width={'340px'}
+              width={'300px'}
             />
           </div>
           <div className='text-black/70 flex flex-row justify-start items-start space-x-1'>

@@ -8,6 +8,8 @@ import { IHeroSection } from 'src/store/app/home/HomeTypes/Hero.type'
 import { Text } from 'src/components/Edition/Text'
 import { useAppSelector } from 'src/hooks/useRedux'
 import Button from '../../../components/Button/Button'
+import { useNavigate } from 'react-router-dom'
+import path from 'src/constants/path'
 
 const options = [
   {
@@ -36,6 +38,7 @@ const HomeHeroSection: FC<IHeroSection> = ({
   addressPlaceholder,
   mainText
 }) => {
+  const navigate = useNavigate()
   const data = useAppSelector((state) => state.data.data)
   return (
     <div
@@ -83,6 +86,7 @@ const HomeHeroSection: FC<IHeroSection> = ({
           <CustomeButton
             className='min-w-[140px] h-[52px] rounded-[10px] text-white/80 lg:w-full bg-mainColor grow [&>*]:flex'
             isNext={true}
+            onClick={() => navigate(path.bookACarMobile)}
           >
             <Text id={buttonSearchText || ''} tag='span' className='flex' content={data[buttonSearchText || '']} />
           </CustomeButton>

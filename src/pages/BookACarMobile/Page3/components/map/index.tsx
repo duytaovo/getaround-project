@@ -36,7 +36,6 @@ const CustomMapHistory = ({ selectPosition }: any) => {
     setPointA
   }, [])
 
-  // const pointA = [itemStart?.geometry?.coordinates[1], itemStart?.geometry?.coordinates[0]] // Ví dụ điểm A
   const pointB = [itemEnd?.geometry.coordinates[1], itemEnd?.geometry.coordinates[0]]
   return (
     <MapContainer
@@ -67,9 +66,7 @@ const CustomMapHistory = ({ selectPosition }: any) => {
       {/* marker end */}
       <Marker position={[itemEnd?.geometry.coordinates[1], itemEnd?.geometry.coordinates[0]]} icon={markerIcon}>
         <Popup>
-          <b>
-            {itemEnd?.geometry.coordinates[1]}, {itemEnd?.geometry.coordinates[0]}
-          </b>
+          <b>{itemEnd?.properties.name}</b>
         </Popup>
       </Marker>
       {/* line */}
