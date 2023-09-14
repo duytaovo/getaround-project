@@ -22,10 +22,7 @@ const Search = ({ placeholder, onChange, width }: Props) => {
       // onChange && onChange(valueSearch)
     }
   }
-  const [itemEnd, setItemEnd] = React.useState<any>()
-  React.useEffect(() => {
-    setItemEnd(JSON.parse(localStorage.getItem('end') || ''))
-  }, [])
+
   return (
     <div style={{ width: width, height: 45 }} className='flex h-8 content-center border items-center  rounded bg-white'>
       <IconButton />
