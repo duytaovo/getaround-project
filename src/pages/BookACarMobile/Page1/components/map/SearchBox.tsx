@@ -26,7 +26,6 @@ export default function SearchBox(props: any) {
 
   const onChange = (value: string) => {
     setSearchText(value)
-
     const params: any = {
       apikey: VIETMAP_API_KEY,
       text: debouncedValue

@@ -9,13 +9,23 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import FmdGoodIcon from '@mui/icons-material/FmdGood'
 import { IconButton, Input } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 const ariaLabel = { 'aria-label': 'description' }
 export default function Address({ selectPosition, setSelectPosition }: any) {
   const [itemStart, setItemStart] = React.useState<any>()
+  const [itemEnd, setItemEnd] = React.useState<any>()
   const navigate = useNavigate()
   React.useEffect(() => {
     setItemStart(JSON.parse(localStorage.getItem('start') || ''))
+    // setItemEnd(JSON.parse(localStorage.getItem('end') || ''))
   }, [])
+  const onClick = () => {
+    if (!selectPosition) {
+      toast.error('Bạn phải nhập điểm đến')
+    } else {
+      navigate('/book-a-car/mobile/3')
+    }
+  }
   return (
     <div className='flex items-stretch justify-start space-x-3'>
       <div className='space-y-0 '>
@@ -41,9 +51,7 @@ export default function Address({ selectPosition, setSelectPosition }: any) {
           width={'300px'}
         />
         <IconButton
-          onClick={() => {
-            navigate('/book-a-car/mobile/3')
-          }}
+          onClick={onClick}
           sx={{
             border: '1px solid rgb(54 153 211 / 1)',
             borderRadius: '5px',
