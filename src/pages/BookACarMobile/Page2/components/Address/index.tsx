@@ -30,7 +30,7 @@ export default function Address({ selectPosition, setSelectPosition }: any) {
         </div>
       </div>
       <div className='space-y-3'>
-        <span className='truncate hover:text-ellipsis w-[55%] block'>
+        <span className='truncate hover:text-ellipsis w-[50%] block'>
           {itemStart?.properties?.name || itemStart?.display}
         </span>
 
@@ -38,7 +38,7 @@ export default function Address({ selectPosition, setSelectPosition }: any) {
           placeholder='Nhập vị trí bạn cần đến'
           selectPosition={selectPosition}
           setSelectPosition={setSelectPosition}
-          width={'330px'}
+          width={'300px'}
         />
         <IconButton
           onClick={() => {
@@ -49,7 +49,7 @@ export default function Address({ selectPosition, setSelectPosition }: any) {
             borderRadius: '5px',
             fontSize: '10px',
             margin: '0',
-            width: '330px'
+            width: '300px'
           }}
         >
           <FmdGoodIcon className='text-sm text-mainColor mr-2' fontSize='small' />

@@ -9,8 +9,9 @@ import CustomMapHistory from '../map'
 import Button from 'src/components/Button'
 import Address from '../Address'
 import ItemListCar from '../ItemListCar'
+import Typography from '@mui/material/Typography'
 
-const drawerBleeding = 18
+const drawerBleeding = 10
 
 interface Props {
   /**
@@ -56,7 +57,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(29% - ${drawerBleeding}px)`,
+            height: `calc(28% - ${drawerBleeding}px)`,
             overflow: 'visible'
           }
         }}
@@ -80,6 +81,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
+            top: -drawerBleeding,
             borderTopLeftRadius: 21,
             borderTopRightRadius: 21,
             visibility: 'visible',
@@ -87,11 +89,13 @@ export default function SwipeableEdgeDrawer(props: Props) {
             left: 0
           }}
         >
-          <div onClick={toggleDrawer(true)}>
-            <Button onClick={toggleDrawer(true)}>
-              <Puller />
-            </Button>
-          </div>
+          <Puller />
+          <Typography
+            sx={{ p: 1, color: 'text.secondary', marginLeft: 2, fontWeight: 700, fontSize: 18 }}
+            className='font-bold'
+          >
+            Xe đã chọn
+          </Typography>
         </StyledBox>
         <StyledBox
           sx={{

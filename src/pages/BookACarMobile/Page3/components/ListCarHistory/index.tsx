@@ -8,8 +8,9 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CustomMapHistory from '../map'
 import Button from 'src/components/Button'
 import ItemListCar from '../ItemListCar'
+import Typography from '@mui/material/Typography'
 
-const drawerBleeding = 18
+const drawerBleeding = 28
 
 interface Props {
   window?: () => Window
@@ -75,6 +76,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
+            top: -drawerBleeding,
             borderTopLeftRadius: 21,
             borderTopRightRadius: 21,
             visibility: 'visible',
@@ -82,11 +84,13 @@ export default function SwipeableEdgeDrawer(props: Props) {
             left: 0
           }}
         >
-          <div onClick={toggleDrawer(true)}>
-            <Button onClick={toggleDrawer(true)}>
-              <Puller />
-            </Button>
-          </div>
+          <Puller />
+          <Typography
+            sx={{ p: 1, color: 'text.secondary', marginLeft: 2, fontWeight: 700, fontSize: 18 }}
+            className='font-bold'
+          >
+            Danh sách xe
+          </Typography>
         </StyledBox>
         <StyledBox
           sx={{
@@ -104,3 +108,68 @@ export default function SwipeableEdgeDrawer(props: Props) {
     </Root>
   )
 }
+
+// const SwipeableEdgeDrawer2 = (props: Props) => {
+//   const { window } = props
+//   const [open, setOpen] = React.useState(false)
+
+//   const toggleDrawer = (newOpen: boolean) => () => {
+//     setOpen(newOpen)
+//   }
+
+//   // This is used only for the example
+//   const container = window !== undefined ? () => window().document.body : undefined
+
+//   return (
+//     <Root>
+//       <CssBaseline />
+//       <Global
+//         styles={{
+//           '.MuiDrawer-root > .MuiPaper-root': {
+//             height: `calc(20% - ${drawerBleeding}px)`,
+//             overflow: 'visible'
+//           }
+//         }}
+//       />
+//       <Box sx={{ textAlign: 'center', pt: 1 }}>
+//         <Button onClick={toggleDrawer(true)}>Open</Button>
+//       </Box>
+//       <SwipeableDrawer
+//         container={container}
+//         anchor='bottom'
+//         open={open}
+//         onClose={toggleDrawer(false)}
+//         onOpen={toggleDrawer(true)}
+//         swipeAreaWidth={drawerBleeding}
+//         disableSwipeToOpen={false}
+//         ModalProps={{
+//           keepMounted: true
+//         }}
+//       >
+//         <StyledBox
+//           sx={{
+//             position: 'absolute',
+//             top: -drawerBleeding,
+//             borderTopLeftRadius: 8,
+//             borderTopRightRadius: 8,
+//             visibility: 'visible',
+//             right: 0,
+//             left: 0
+//           }}
+//         >
+//           <Puller />
+//         </StyledBox>
+//         <StyledBox
+//           sx={{
+//             px: 2,
+//             pb: 2,
+//             height: '50%',
+//             overflow: 'auto'
+//           }}
+//         >
+//           {/* <Skeleton variant='rectangular' height='100%' /> */}
+//         </StyledBox>
+//       </SwipeableDrawer>
+//     </Root>
+//   )
+// }

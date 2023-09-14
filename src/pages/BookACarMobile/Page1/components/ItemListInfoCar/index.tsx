@@ -52,8 +52,8 @@ const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) =>
   useEffect(() => {}, [])
   return (
     <div
-      className={`flex items-center justify-start space-x-2 border-b-[1px] rounded-md p-1 ${
-        index === indexCardActive ? 'bg-mainColor/20' : ''
+      className={`flex items-center justify-start space-x-2 border-b-[1px] rounded-md p-1 border-[1px] m-2 ${
+        index === indexCardActive ? 'bg-mainColor/20 border-[1px] border-mainColor border-solid' : ''
       }`}
       onClick={() => handleClick(index)}
     >
@@ -70,7 +70,7 @@ const ItemListInfoCar = (props: Props) => {
   const { carListHistory } = useAppSelector((state) => state.carMobile)
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(getCarsHistory(''))
+    // dispatch(getCarsHistory(''))
   }, [])
   return (
     <div>

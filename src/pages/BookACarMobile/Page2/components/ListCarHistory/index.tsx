@@ -89,14 +89,18 @@ export default function SwipeableEdgeDrawer(props: Props) {
           }}
         >
           <Puller />
-          <Typography sx={{ p: 2, color: 'text.secondary', borderRadius: 26 }}></Typography>
+          {/* <Typography sx={{ p: 2, color: 'text.secondary', borderRadius: 26 }}></Typography> */}
+          <Typography sx={{ p: 1, color: 'text.secondary', marginLeft: 2, fontWeight: 700, fontSize: 18 }} className=''>
+            Địa điểm đến
+          </Typography>
         </StyledBox>
         <StyledBox
           sx={{
             px: 2,
             pb: 2,
             height: '100%',
-            overflow: 'auto'
+            overflow: 'auto',
+            overflowX: 'hidden'
           }}
         >
           <div className='mt-6 mb-2'>

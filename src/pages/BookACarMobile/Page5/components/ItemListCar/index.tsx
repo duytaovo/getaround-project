@@ -33,7 +33,7 @@ const ComponentListPayment = ({ item, index }: { item: Item; index: number }) =>
   return (
     <div
       className={`flex items-center justify-start space-2 shadow mb-2  rounded-md p-1 ${
-        index === indexCardActive ? 'bg-mainColor/20' : ''
+        index === indexCardActive ? ' bg-mainColor/20 border-[1px] border-mainColor border-solid' : ''
       }`}
       onClick={() => handleClick(index)}
     >
@@ -66,7 +66,7 @@ const ItemListPayment = () => {
         onClick={() => {
           navigate('/book-a-car/mobile/6')
         }}
-        className='w-[93%] fixed bottom-2  [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[56px]  rounded-lg bg-mainColor hover:bg-black font-bold text-2xl'
+        className='w-[93%]  fixed bottom-2  [&>*]:flex [&>*]:flex-row hover:duration-500 mt-3 duration-500 hover:transition-all  text-white h-[56px]  rounded-lg bg-mainColor hover:bg-black font-bold text-2xl'
       >
         Thanh toán
         {/* <LogoutOutlinedIcon
