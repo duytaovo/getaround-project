@@ -18,6 +18,7 @@ import NoticeReducer from './notice/noticeSlice'
 import hostBonusReducer from './hosting/host_bonus/hostbonusSlice'
 import bookAcarReducer from './hosting/book_a_car/BookACarSlice'
 import carReducer from './car/manageCar/managCarSlice'
+import carMobileReducer from './carMobile/managCarSlice'
 export const store = configureStore({
   reducer: {
     data: dataReducer,
@@ -37,7 +38,8 @@ export const store = configureStore({
     user: UserReducer,
     notice: NoticeReducer,
     hostBonus: hostBonusReducer,
-    car: carReducer
+    car: carReducer,
+    carMobile: carMobileReducer
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ serializableCheck: false })]

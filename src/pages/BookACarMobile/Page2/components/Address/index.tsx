@@ -30,32 +30,29 @@ export default function Address({ selectPosition, setSelectPosition }: any) {
         </div>
       </div>
       <div className='space-y-3'>
-        <Input
-          disabled
-          value={itemStart?.properties?.name}
-          defaultValue={itemStart?.properties?.name}
-          inputProps={ariaLabel}
-          placeholder={itemStart?.properties?.name}
-          className='w-[280px]'
-        />
+        <span className='truncate hover:text-ellipsis w-[55%] block'>
+          {itemStart?.properties?.name || itemStart?.display}
+        </span>
+
         <SearchBox
-          placeholder='Nhập điểm đến'
+          placeholder='Nhập vị trí bạn cần đến'
           selectPosition={selectPosition}
           setSelectPosition={setSelectPosition}
-          width={'280px'}
+          width={'330px'}
         />
         <IconButton
           onClick={() => {
             navigate('/book-a-car/mobile/3')
           }}
           sx={{
-            border: '0.1px solid black',
+            border: '1px solid rgb(54 153 211 / 1)',
             borderRadius: '5px',
             fontSize: '10px',
-            margin: '0'
+            margin: '0',
+            width: '330px'
           }}
         >
-          <FmdGoodIcon className='text-sm text-mainColor' fontSize='small' />
+          <FmdGoodIcon className='text-sm text-mainColor mr-2' fontSize='small' />
           <span className='text-sm'>Biểu diễn trên bảng đồ</span>
         </IconButton>
       </div>

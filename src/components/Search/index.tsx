@@ -20,7 +20,7 @@ const Search = ({ placeholder, onChange, width }: Props) => {
     const target = event.target as HTMLInputElement
     const value = target.value
     setValueSearch(value)
-    onChange && onChange(valueSearch)
+    onChange && onChange(value)
   }
 
   const handleInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
@@ -53,25 +53,15 @@ const Search = ({ placeholder, onChange, width }: Props) => {
   }, [])
   return (
 
-    <div style={{ width: width }} className='flex h-8 content-center border items-center  rounded-full bg-white'>
-      <IconButton onClick={handleSearch}>
-        <SearchOutlinedIcon
-          sx={{
-            fontSize: '20px',
-            alignItems: 'center',
-            marginTop: '3px'
-          }}
-        />
-      </IconButton>
-
+    <div style={{ width: width, height: 45 }} className='flex h-8 content-center border items-center  rounded bg-white'>
+      <IconButton />
       <input
-        className='mr-5 text-base placeholder:text-xs focus:outline-none w-[inherit]'
+        className='mr-5 text-base placeholder:text-sm focus:outline-none w-[inherit]'
         type='search'
         placeholder={`${placeholder}...`}
         onChange={handleInputSearch}
         onKeyDown={handleKeyDown}
-        width={300}
-        defaultValue={JSON.parse(localStorage.getItem('end') || '')?.properties?.name}
+        // defaultValue={JSON.parse(localStorage.getItem('end') || '')?.properties?.name}
         // defaultValue={''}
       />
     </div>

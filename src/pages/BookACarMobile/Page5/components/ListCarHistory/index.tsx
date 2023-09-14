@@ -11,7 +11,7 @@ import Address from '../Address'
 import ItemListCar from '../ItemListCar'
 import ItemListPayment from '../ItemListCar'
 
-const drawerBleeding = 56
+const drawerBleeding = 18
 
 interface Props {
   /**
@@ -57,7 +57,7 @@ export default function SwipeableEdgeDrawer(props: Props) {
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(50% - ${drawerBleeding}px)`,
+            height: `calc(30% - ${drawerBleeding}px)`,
             overflow: 'visible'
           }
         }}
@@ -81,8 +81,8 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
-            borderTopLeftRadius: 12,
-            borderTopRightRadius: 12,
+            borderTopLeftRadius: 21,
+            borderTopRightRadius: 21,
             visibility: 'visible',
             right: 0,
             left: 0

@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Button, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import Search from 'src/components/Search'
 import marker from './marker.png'
 import { useDebounce } from 'usehooks-ts'
-import { IconButton } from '@mui/material'
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { updateIndexCardActive } from 'src/store/car/manageCar/managCarSlice'
 import { useNavigate } from 'react-router-dom'
-const VIETMAP_API_KEY = '9c486497752392adc6b3a4156cb889271e83b5e462f4a54f'
-const VIETMAP_SEARCH_URL = 'https://maps.vietmap.vn/api/search?api-version=1.1&'
+import useGeoLocation from 'src/hooks/useGeoLocation'
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt'
 
+const VIETMAP_API_KEY = import.meta.env.VITE_API_KEY_VIETMAP
+const VIETMAP_SEARCH_URL = 'https://maps.vietmap.vn/api/search?api-version=1.1&'
+// const URL = 'https://maps.vietmap.vn/api/search/v3?'
 export default function SearchBox(props: any) {
-  const { selectPosition, setSelectPosition } = props
+  const { selectPosition, setSelectPosition, setSelectMyPosition, selectMyPosition } = props
   const [searchText, setSearchText] = useState('')
   const [listPlace, setListPlace] = useState<any>([])
   const debouncedValue = useDebounce<string>(searchText, 300)
@@ -22,14 +23,15 @@ export default function SearchBox(props: any) {
   const handleClick = (value: number) => {
     dispatch(updateIndexCardActive(value))
   }
+
   const onChange = (value: string) => {
     setSearchText(value)
 
     const params: any = {
-      text: debouncedValue,
       apikey: VIETMAP_API_KEY,
-      addressdetails: 1,
-      polygon_geojson: 0
+      text: debouncedValue
+      // addressdetails: 1,
+      // polygon_geojson: 0
     }
     const queryString = new URLSearchParams(params).toString()
     const requestOptions: any = {
@@ -44,12 +46,53 @@ export default function SearchBox(props: any) {
       .catch((err) => console.log('err: ', err))
   }
 
+  //current Location
+  const location = useGeoLocation()
+  const showMyLocation = () => {
+    if (location.loaded && !location.error) {
+      const URL = `https://maps.vietmap.vn/api/reverse/v3?`
+      const params: any = {
+        apikey: VIETMAP_API_KEY,
+        // text: 'vị trí của tôi',
+        lat: location.coordinates.lat,
+        lng: location.coordinates.lng
+      }
+      const queryString = new URLSearchParams(params).toString()
+      const requestOptions: any = {
+        method: 'GET',
+        redirect: 'follow'
+      }
+      fetch(`${URL}${queryString}`, requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+          let myPosition = JSON.parse(result)[1]
+          localStorage.setItem('start', JSON.stringify(myPosition))
+          // console.log(JSON.parse(result))
+          setSelectMyPosition(myPosition)
+          navigate('/book-a-car/mobile/2')
+        })
+        .catch((err) => console.log('err: ', err))
+    }
+  }
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <div style={{ display: 'flex' }}>
-        <div>
-          <Search onChange={onChange} placeholder='Tìm kiếm...' width={props.width} />
+      <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-row justify-start items-start'>
+          <AddLocationAltIcon className='m-2 ml-0 text-mainColor' />
+
+          <Search onChange={onChange} placeholder='Nhập điểm đi' width={props.width} />
         </div>
+        <span className='mt-1'>Hoặc </span>
+        <Button
+          className='bg-blue-300 w-[150px]'
+          sx={{
+            backgroundColor: 'rgb(147 197 253 / .5)'
+          }}
+          onClick={showMyLocation}
+        >
+          {' '}
+          Vị trí của tôi
+        </Button>
       </div>
       <div>
         <List component='nav' aria-label='main mailbox folders'>

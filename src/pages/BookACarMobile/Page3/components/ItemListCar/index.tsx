@@ -1,66 +1,74 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 type Props = {}
-import LocationOnIcon from '@mui/icons-material/LocationOn'
-import AddLocationOutlinedIcon from '@mui/icons-material/AddLocationOutlined'
-import { Box, Card, CardContent } from '@mui/material'
-import { Link, useNavigate } from 'react-router-dom'
-import CustomLink from 'src/components/CustomLink'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'src/hooks/useRedux'
 import { updateIndexCardActive } from 'src/store/car/manageCar/managCarSlice'
-import ToysTwoToneIcon from '@mui/icons-material/ToysTwoTone'
 import car1 from './exec.png'
 import car2 from './standard.png'
+import car3 from './anh1.avif'
+import car4 from './anh2.jpeg'
+import car5 from './anh3.jpeg'
 import Button from 'src/components/Button'
+import { getCars } from 'src/store/carMobile/managCarSlice'
+import numberWithCommas from 'src/utils/numberWithCommas'
+import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms'
 interface Item {
   icon: any
-  title: string
-  price: string
+  seri: string
+  suggested_price: string
+  type: string
   link: string
-  time: string
+  min: string
 }
 const item: Item[] = [
   {
     link: '/book-a-car/mobile/4',
-    icon: <img src={car1} alt='' />,
-    title: 'Standard',
-    price: '500.000đ',
-    time: '24 phút'
+    icon: <img src={car3} alt='' className='w-[120px] h-[80px] object-contain' />,
+    seri: 'Standard',
+    suggested_price: '500.000',
+    min: '24 ',
+    type: 'Xe 5 chỗ'
   },
   {
     link: '/book-a-car/mobile/4',
-    icon: <img src={car2} alt='' />,
-    title: 'Exec',
-    price: '500.000đ',
-    time: '15 phút'
+    icon: <img src={car4} alt='' className='w-[120px] h-[80px] object-contain' />,
+    seri: 'Exec',
+    suggested_price: '500.000',
+    min: '15 ',
+    type: 'Xe 5 chỗ'
   },
   {
     link: '/book-a-car/mobile/3',
-    icon: <img src={car1} alt='' />,
-    title: 'Van',
-    price: '500.000đ',
-    time: '18 phút'
+    icon: <img src={car1} alt='' className='w-[120px] h-[80px] object-contain' />,
+    seri: 'Van',
+    suggested_price: '500.000',
+    min: '18 ',
+    type: 'Xe 5 chỗ'
   },
   {
     link: '/book-a-car/mobile',
-    icon: <img src={car2} alt='' />,
-    title: '83 MidStation',
-    price: '500.000đ',
-    time: '23 phút'
+    icon: <img src={car5} alt='' className='w-[120px] h-[80px] object-contain' />,
+    seri: '83 MidStation',
+    suggested_price: '500.000',
+    min: '23 ',
+    type: 'Xe 5 chỗ'
+  },
+  {
+    link: '/book-a-car/mobile',
+    icon: <img src={car1} alt='' className='w-[120px] h-[80px] object-contain' />,
+    seri: '83 MidStation',
+    suggested_price: '500.000',
+    min: '23 ',
+    type: 'Xe 5 chỗ'
   },
   {
     link: '/book-a-car/mobile',
     icon: <img src={car1} alt='' />,
-    title: '83 MidStation',
-    price: '500.000đ',
-    time: '23 phút'
-  },
-  {
-    link: '/book-a-car/mobile',
-    icon: <img src={car1} alt='' />,
-    title: '83 MidStation',
-    price: '500.000đ',
-    time: '23 phút'
+    seri: '83 MidStation',
+    suggested_price: '500.000',
+    min: '23 ',
+    type: 'Xe 5 chỗ'
   }
 ]
 
@@ -74,24 +82,32 @@ const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) =>
   return (
     <div
       className={`flex items-center justify-start space-2 shadow mb-2  rounded-md p-1 ${
-        index === indexCardActive ? ' ' : ''
+        index === indexCardActive ? 'bg-mainColor/20' : ''
       }`}
       onClick={() => handleClick(index)}
     >
       <div className='flex flex-grow justify-between items-center'>
         <div className='flex'>
-          <div className='text-[#3699d3] mx-2'>{item.icon}</div>
+          <div className='text-[#3699d3] mx-2'>
+            {/* <img src={car1} alt='' /> */}
+            {item.icon}
+          </div>
           <div className='flex justify-between flex-col '>
-            <span className='text-black/70'>{item.title}</span>
-            <span className='text-black/80 font-bold'>{item.price}</span>
-            <span className='text-white font-bold bg-black/10 rounded-md px-2'>{item.time}</span>
+            <span className='text-black font-bold'>{item?.seri}</span>
+            <span className='text-yellow-500 font-bold'>{item?.type}</span>
+            <span className='text-mainColor font-bold text-lg'>{numberWithCommas(item?.suggested_price)}đ</span>
+            <div className='flex flex-row justify-between items-center space-x-1'>
+              <AccessAlarmsIcon sx={{}} fontSize='small' />
+              <span className='text-white font-bold text-xs bg-black/20 rounded-md px-2'>{item?.min} phút</span>
+            </div>
           </div>
         </div>
         <Button
           onClick={() => {
+            localStorage.setItem('itemCar', JSON.stringify(item))
             navigate('/book-a-car/mobile/4')
           }}
-          className='w-[80px] [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[40px]  rounded-lg bg-[#3699d3] hover:bg-black font-bold '
+          className='w-[80px] mr-2 [&>*]:flex [&>*]:flex-row hover:duration-500 mt-2 duration-500 hover:transition-all  text-white h-[40px]  rounded-lg bg-[#3699d3] hover:bg-black font-bold '
         >
           Chọn xe
         </Button>
@@ -101,14 +117,26 @@ const ComponentListCarInfo = ({ item, index }: { item: Item; index: number }) =>
 }
 
 const ItemListInfoCar = (props: Props) => {
+  const { cars } = useAppSelector((state) => state.carMobile)
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(
+      getCars({
+        lat: '22.001612',
+        lng: '106.710186'
+      })
+    )
+  }, [])
   return (
     <div className='my-4 space-y-2 mt-3'>
       <div className=''>
-        {item.map((item, index) => {
-          return <ComponentListCarInfo item={item} index={index} key={index} />
-        })}
-        {/* <span className='text-black/40  '>Thời gian ước tính:</span>
-        <span className='text-mainColor  ml-1'>24 phut</span> */}
+        {cars?.length > 0
+          ? cars.map((item, index) => {
+              return <ComponentListCarInfo item={item} index={index} key={index} />
+            })
+          : item.map((item, index) => {
+              return <ComponentListCarInfo item={item} index={index} key={index} />
+            })}
       </div>
     </div>
   )

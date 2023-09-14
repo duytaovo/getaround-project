@@ -9,8 +9,11 @@ import CustomMapHistory from '../map'
 import ItemListInfoCar from '../ItemListInfoCar'
 import Button from 'src/components/Button'
 import SearchBox from '../map/SearchBox'
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt'
+import HistoryIcon from '@mui/icons-material/History'
+import Typography from '@mui/material/Typography'
 
-const drawerBleeding = 56
+const drawerBleeding = 10
 
 interface Props {
   /**
@@ -42,13 +45,11 @@ const Puller = styled(Box)(({ theme }) => ({
 export default function SwipeableEdgeDrawer(props: Props) {
   const { window } = props
   const [open, setOpen] = React.useState(false)
-
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen)
   }
-
   const [selectPosition, setSelectPosition] = React.useState(null)
-  // This is used only for the example
+  const [selectMyPosition, setSelectMyPosition] = React.useState(null)
   const container = window !== undefined ? () => window().document.body : undefined
 
   return (
@@ -81,18 +82,16 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
-            borderTopLeftRadius: 12,
-            borderTopRightRadius: 12,
+            top: -drawerBleeding,
+            borderTopLeftRadius: 21,
+            borderTopRightRadius: 21,
             visibility: 'visible',
             right: 0,
             left: 0
           }}
         >
-          <div onClick={toggleDrawer(true)}>
-            <Button onClick={toggleDrawer(true)}>
-              <Puller />
-            </Button>
-          </div>
+          <Puller />
+          <Typography sx={{ p: 2, color: 'text.secondary' }}></Typography>
         </StyledBox>
         <StyledBox
           sx={{
@@ -102,8 +101,18 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          <div className='mt-6 '>
-            <SearchBox selectPosition={selectPosition} setSelectPosition={setSelectPosition} width={'320px'} />
+          <div className='mt-6 flex flex-row justify-start items-start'>
+            <SearchBox
+              selectPosition={selectPosition}
+              setSelectPosition={setSelectPosition}
+              selectMyPosition={selectMyPosition}
+              setSelectMyPosition={setSelectMyPosition}
+              width={'340px'}
+            />
+          </div>
+          <div className='text-black/70 flex flex-row justify-start items-start space-x-1'>
+            <HistoryIcon className='text-mainColor'></HistoryIcon>
+            <span> Tìm kiếm gần dây</span>
           </div>
           <div className='mt-2'>
             <ItemListInfoCar />

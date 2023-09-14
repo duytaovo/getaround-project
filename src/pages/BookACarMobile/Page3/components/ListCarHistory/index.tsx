@@ -7,16 +7,11 @@ import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CustomMapHistory from '../map'
 import Button from 'src/components/Button'
-import Address from '../Address'
 import ItemListCar from '../ItemListCar'
 
-const drawerBleeding = 56
+const drawerBleeding = 18
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window
 }
 
@@ -80,8 +75,8 @@ export default function SwipeableEdgeDrawer(props: Props) {
         <StyledBox
           sx={{
             position: 'absolute',
-            borderTopLeftRadius: 12,
-            borderTopRightRadius: 12,
+            borderTopLeftRadius: 21,
+            borderTopRightRadius: 21,
             visibility: 'visible',
             right: 0,
             left: 0
@@ -101,9 +96,6 @@ export default function SwipeableEdgeDrawer(props: Props) {
             overflow: 'auto'
           }}
         >
-          {/* <div className='mt-6 '>
-            <Address selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
-          </div>*/}
           <div className='mt-2'>
             <ItemListCar />
           </div>

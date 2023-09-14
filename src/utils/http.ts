@@ -119,4 +119,5 @@ export class Http {
 }
 const http = new Http(config.baseUrl1).instance
 export const http_auth = new Http(config.baseUrlAuth).instance
+export const http_car = new Http(config.hostCar).instance
 export default http
