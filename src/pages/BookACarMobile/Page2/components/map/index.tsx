@@ -43,8 +43,6 @@ const CustomMapHistory = ({ selectPosition }: any) => {
   const mapRef: any = useRef()
   const locationSelection: any = [selectPosition?.geometry.coordinates[1], selectPosition?.geometry.coordinates[0]]
   const [itemStart, setItemStart] = React.useState<any>(JSON.parse(localStorage.getItem('start') || ''))
-  const [itemEnd, setItemEnd] = React.useState<any>()
-  const [pointA, setPointA] = React.useState<any>()
 
   return (
     <MapContainer

@@ -37,6 +37,7 @@ export default function SearchBox(props: any) {
     fetch(`${VIETMAP_SEARCH_URL}${queryString}`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
+        console.log(result)
         setListPlace(JSON.parse(result))
       })
       .catch((err) => console.log('err: ', err))
